@@ -21,6 +21,8 @@ def main():
     p.add_argument("--repeats",type=int,default=3)
     p.add_argument("--mode",choices=["phases","throughput"],default="throughput")
     p.add_argument("--include-torch",action="store_true")
+    p.add_argument("--no-fingerprints",action="store_true",
+                   help="Compare saved initial weights and synthetic arrays numerically instead of hashes")
     args=p.parse_args()
     if args.repeats<1:
         p.error("repeats must be positive")
@@ -45,6 +47,8 @@ def main():
                      "--output",str(run),"--gpu",str(args.device),"--model",args.model,
                      "--samples",str(args.samples),"--batch",str(args.batch),"--epochs",str(args.epochs),
                      "--workers",str(args.workers),"--mode",args.mode]+flags
+            if args.no_fingerprints:
+                command += ["--no-fingerprints", "--save-comparison-inputs"]
             if args.data:
                 command += ["--data",str(Path(args.data).resolve())]
             commands.append(command)

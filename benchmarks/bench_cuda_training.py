@@ -66,6 +66,15 @@ def snapshot(model):
     return {k: cuda.as_numpy(p.data).copy() for k, p in parameters(model).items()}
 
 
+def torch_snapshot(model, keys):
+    result = {}
+    for key in keys:
+        name, param = key.split("/")
+        value = getattr(getattr(model, name), "weight" if param == "W" else "bias").detach().cpu().numpy()
+        result[key] = value.T.copy() if value.ndim == 2 else value.copy()
+    return result
+
+
 def state_hash(state):
     digest = hashlib.sha256()
     for k, v in sorted(state.items()):
@@ -147,6 +156,8 @@ def main():
     p.add_argument("--nvtx", action="store_true")
     p.add_argument("--no-fingerprints", action="store_true",
                    help="Skip data/weight hashes; retain numerical and finite-loss checks")
+    p.add_argument("--save-comparison-inputs", action="store_true",
+                   help="Save actual initial weights and synthetic arrays for hash-free comparisons")
     p.add_argument("--output", required=True)
     args = p.parse_args()
     native = args.matmul != "cupy" or args.conv != "cupy" or args.pool != "cupy"
@@ -158,6 +169,8 @@ def main():
         p.error("NVTX ranges here require HyTorch CUDA")
     if args.data and args.model != "donkey":
         p.error("Real DonkeyCar data requires --model donkey")
+    if args.save_comparison_inputs and args.data:
+        p.error("--save-comparison-inputs currently supports synthetic datasets only")
     out = Path(args.output); out.mkdir(parents=True, exist_ok=False)
     shape = (3, 16, 16) if args.model == "tiny" else (3, 66, 200)
     val_ds = None
@@ -233,6 +246,10 @@ def main():
                         runtime=cp.cuda.runtime.runtimeGetVersion(), physical_monitor_id=monitor_id)
     if args.framework == "torch":
         metadata["torch"] = torch.__version__
+    if args.save_comparison_inputs:
+        actual_initial = snapshot(model) if args.framework == "hytorch" else torch_snapshot(model, initial)
+        np.savez(out/"initial_weights.npz", **actual_initial)
+        np.savez(out/"comparison_inputs.npz", x=dataset.x, t=dataset.t)
     dump_json(out/"config.json", metadata)
     profile = StepProfiler(out/"steps.jsonl", sync, args.mode, args.nvtx)
     monitor = ResourceMonitor(out/"hardware.jsonl", monitor_id, args.interval)
@@ -302,11 +319,7 @@ def main():
     if args.framework == "hytorch":
         final = snapshot(model)
     else:
-        final = {}
-        for key in initial:
-            name,param = key.split("/")
-            v = getattr(getattr(model,name), "weight" if param == "W" else "bias").detach().cpu().numpy()
-            final[key] = v.T.copy() if v.ndim == 2 else v.copy()
+        final = torch_snapshot(model, initial)
     np.savez(out/"final_weights.npz", **final)
     summary["final_state_sha256"] = None if args.no_fingerprints else state_hash(final)
     dump_json(out/"summary.json", summary)

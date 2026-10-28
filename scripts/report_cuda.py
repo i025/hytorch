@@ -16,7 +16,8 @@ def compare_training(paths):
     runs=[]
     matched_keys=("initial_state_sha256","dataset_sha256","model","batch","epochs","steps",
                   "workers","seed","lr","mode","device","gpu","gpu_name","physical_monitor_id",
-                  "warmup","no_monitor","interval","nvtx","optimizer","dropout","dtype","platform")
+                  "warmup","no_monitor","interval","nvtx","optimizer","dropout","dtype","platform",
+                  "no_fingerprints","save_comparison_inputs","data_kind")
     for path in paths:
         config=json.loads((path/"config.json").read_text(encoding="utf-8"))
         summary=json.loads((path/"summary.json").read_text(encoding="utf-8"))
@@ -28,6 +29,22 @@ def compare_training(paths):
         mismatch=[k for k in matched_keys if config.get(k)!=first.get(k)]
         if mismatch:
             raise ValueError(f"Unmatched training conditions in {path}: {mismatch}")
+    initial_max_difference = None
+    if first.get("no_fingerprints"):
+        if not first.get("save_comparison_inputs"):
+            raise ValueError("Hash-free comparison requires saved initial weights and dataset arrays")
+        initial_max_difference = 0.
+        for filename in ("initial_weights.npz", "comparison_inputs.npz"):
+            with np.load(runs[0][0]/filename, allow_pickle=False) as data:
+                expected = {key: data[key] for key in data.files}
+            for path,_,_ in runs:
+                with np.load(path/filename, allow_pickle=False) as actual:
+                    if set(actual.files) != set(expected):
+                        raise ValueError(f"Unmatched numerical inputs: {path}/{filename}")
+                    for key, value in expected.items():
+                        np.testing.assert_array_equal(actual[key], value, err_msg=f"{path}/{filename}:{key}")
+                        if filename == "initial_weights.npz":
+                            initial_max_difference = max(initial_max_difference, float(np.max(np.abs(actual[key]-value))))
     groups={}
     for path,config,summary in runs:
         label=("torch" if config["framework"]=="torch" else
@@ -43,6 +60,7 @@ def compare_training(paths):
     for label,values in groups.items():
         times=[v[0] for v in values]
         max_difference=0.
+        max_relative_difference=0.
         correct=True
         for _,_,path in values:
             with np.load(path/"final_weights.npz",allow_pickle=False) as final:
@@ -52,13 +70,18 @@ def compare_training(paths):
                     if final[key].shape!=reference[key].shape:
                         raise ValueError("Mismatched final parameter shapes")
                     max_difference=max(max_difference,float(np.max(np.abs(final[key]-reference[key]))))
+                    delta=final[key].astype(np.float64)-reference[key].astype(np.float64)
+                    max_relative_difference=max(max_relative_difference,float(np.linalg.norm(delta.ravel())/max(np.linalg.norm(reference[key].astype(np.float64).ravel()),1e-30)))
                     correct=correct and bool(np.allclose(final[key],reference[key],atol=1e-4,rtol=1e-3))
         total_samples=sum(sum(e["samples"] for e in v[1]["epochs"]) for v in values)
         rows.append(dict(implementation=label,repeats=len(values),mean_train_wall_s=statistics.mean(times),
                          std_train_wall_s=statistics.stdev(times) if len(times)>1 else None,
                          speedup_vs_hytorch_cupy=baseline/statistics.mean(times) if baseline else None,
                          samples_per_sec=total_samples/sum(times),
+                         initial_weight_max_abs_difference=initial_max_difference,
+                         inputs_numerically_equal=True if initial_max_difference is not None else None,
                          final_weight_max_abs_difference=max_difference,final_weights_close=correct,
+                         final_weight_max_relative_l2_difference=max_relative_difference,
                          gpu_status=values[0][1]["gpu_status"],data_kind=first["data_kind"]))
     return rows
 
