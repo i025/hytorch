@@ -1,0 +1,10 @@
+# Common dependencies for CUDA development/benchmarking (CPU-safe to install).
+# Install exactly ONE CuPy CUDA wheel matching the target CUDA environment;
+# see docs/CUDA开发与GPU验收指南.md. Do not install CuPy on this Mac for these tests.
+numpy>=1.24
+pytest>=7
+Pillow>=9
+matplotlib>=3.6
+psutil>=5.9
+# Optional, installed separately on the target host:
+# torch, torchvision: matched-framework benchmark and official weight conversion.

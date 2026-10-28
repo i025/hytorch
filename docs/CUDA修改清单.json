@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-28",
+  "gpu_validation": "NOT_EXECUTED",
+  "files": [
+    {
+      "path": "hytorch/functions.py",
+      "kind": "modified",
+      "lines": 776,
+      "sha256": "f4beef87a62b5d2edd22f6b025ae7e7ccad573303f5f345a0838c2ab5fbc83b3",
+      "original_sha256": "fdff74678f4c424fdbfe57099ade649c1bf3e4a476e523f7c500a8532ad53ce3",
+      "added_lines": 15,
+      "removed_lines": 5,
+      "hunks": [
+        "@@ -261,14 +261,21 @@",
+        "@@ -318,7 +325,10 @@",
+        "@@ -326,8 +336,8 @@"
+      ],
+      "diff": "--- .cuda_baseline_backup/functions.py\n+++ hytorch/functions.py\n@@ -261,14 +261,21 @@\n \n \n class MatMul(Function):\n+    def __init__(self, native=True):\n+        self.native = native\n+\n     def forward(self, x, w):\n+        from hytorch.backends.cuda.runtime import selected, gemm, current_config\n+        mode = selected(\"matmul\", x) if self.native else None\n+        if mode is not None:\n+            return gemm(x, w, variant=mode, tile=current_config()[\"tile\"])\n         y = x.dot(w)   # 矩阵的乘法运算，其中包括：向量内积、多维矩阵乘法、矩阵与向量的乘法。\n         return y\n \n     def backward(self, gy):\n         x, w = self.inputs\n-        gx = matmul(gy, w.T)\n-        gw = matmul(x.T, gy)    # 可以从矩阵的形状来确定\n+        gx = MatMul(native=False)(gy, w.T)\n+        gw = MatMul(native=False)(x.T, gy)    # Preserve existing backward backend.\n         return gx, gw\n \n \n@@ -318,7 +325,10 @@\n \n class Linear(Function):\n     def forward(self, x, W, b):\n-        y = x.dot(W)\n+        from hytorch.backends.cuda.runtime import selected, gemm, current_config\n+        mode = selected(\"matmul\", x)\n+        y = (x.dot(W) if mode is None else\n+             gemm(x, W, variant=mode, tile=current_config()[\"tile\"]))\n         if b is not None:\n             y += b\n         return y\n@@ -326,8 +336,8 @@\n     def backward(self, gy):\n         x, W, b = self.inputs\n         gb = None if b.data is None else sum_to(gy, b.shape)\n-        gx = matmul(gy, W.T)\n-        gW = matmul(x.T, gy)\n+        gx = MatMul(native=False)(gy, W.T)\n+        gW = MatMul(native=False)(x.T, gy)\n         return gx, gW, gb\n \n "
+    },
+    {
+      "path": "hytorch/functions_conv.py",
+      "kind": "modified",
+      "lines": 610,
+      "sha256": "4489d1090cf111d6629121782fb192a7ebfa36d1ecd3019867ef6c2a949dc2ac",
+      "original_sha256": "0fb7a940f1cae6e630934cfe8e7b24999bf1c248f62116aafaeb4f6920ccd907",
+      "added_lines": 10,
+      "removed_lines": 0,
+      "hunks": [
+        "@@ -55,6 +55,12 @@",
+        "@@ -176,6 +182,10 @@"
+      ],
+      "diff": "--- .cuda_baseline_backup/functions_conv.py\n+++ hytorch/functions_conv.py\n@@ -55,6 +55,12 @@\n \n     def forward(self, x, W, b):\n         xp = cuda.get_array_module(x)\n+\n+        from hytorch.backends.cuda.runtime import selected, conv2d as native_conv, current_config\n+        mode = selected(\"conv\", x)\n+        if mode is not None:\n+            return native_conv(x, W, b, self.stride, self.pad,\n+                               variant=mode, tile=current_config()[\"tile\"])\n \n         if xp is np:\n             return conv2d_cpu_im2col_gemm_array(x, W, b, self.stride, self.pad)\n@@ -176,6 +182,10 @@\n         self.pad = pad\n \n     def forward(self, x):\n+        from hytorch.backends.cuda.runtime import selected, max_pool2d\n+        if selected(\"pool\", x) is not None:\n+            y, self.indexes = max_pool2d(x, self.kernel_size, self.stride, self.pad)\n+            return y\n         col = im2col_array(x, self.kernel_size, self.stride, self.pad,\n                            to_matrix=False)\n "
+    },
+    {
+      "path": "hytorch/layers.py",
+      "kind": "modified",
+      "lines": 488,
+      "sha256": "1de813480b7592642b254502b96eb438cbda6bd5446a34537cf3c074e90e4c60",
+      "original_sha256": "0ebb68ec397d23a8b8e9c7b327368192b3e913523df557b2a98ae8842cecc906",
+      "added_lines": 2,
+      "removed_lines": 2,
+      "hunks": [
+        "@@ -105,7 +105,7 @@",
+        "@@ -167,7 +167,7 @@"
+      ],
+      "diff": "--- .cuda_baseline_backup/layers.py\n+++ hytorch/layers.py\n@@ -105,7 +105,7 @@\n \n     def _init_W(self, xp=np):\n         I, O = self.in_size, self.out_size\n-        W_data = xp.random.randn(I, O).astype(self.dtype)*np.sqrt(1/I)   # 标准正态分布\n+        W_data = xp.random.randn(I, O).astype(self.dtype)*np.dtype(self.dtype).type(np.sqrt(1/I))\n         # “把权重初始化为均值为 0、方差为 1/I 的高斯随机数，保证前向传播时方差恒为 1，避免梯度爆炸/消失。”\n         self.W.data = W_data\n \n@@ -167,7 +167,7 @@\n     def _init_W(self, xp=np):\n         C, OC = self.in_channels, self.out_channels\n         KH, KW = pair(self.kernel_size)\n-        scale = np.sqrt(1 / (C * KH * KW))\n+        scale = np.dtype(self.dtype).type(np.sqrt(1 / (C * KH * KW)))\n         W_data = xp.random.randn(OC, C, KH, KW).astype(self.dtype) * scale\n         self.W.data = W_data\n "
+    },
+    {
+      "path": "hytorch/optimizers.py",
+      "kind": "modified",
+      "lines": 246,
+      "sha256": "ed11daa47ed5d9ff9e4eea060c0bf61ea6ddec726e1920ba7bc90332b8a2689a",
+      "original_sha256": "f27a03a64637247a54358aabb37077cfb041c324d0dcfae2de29ff44b042321a",
+      "added_lines": 3,
+      "removed_lines": 0,
+      "hunks": [
+        "@@ -21,6 +21,9 @@"
+      ],
+      "diff": "--- .cuda_baseline_backup/optimizers.py\n+++ hytorch/optimizers.py\n@@ -21,6 +21,9 @@\n         # 预处理（可选）\n         for f in self.hooks:\n             f(params)\n+\n+        # FreezeParam hooks can clear gradients after the first filter.\n+        params = [p for p in params if p.grad is not None]\n \n         # 更新参数\n         for param in params:"
+    },
+    {
+      "path": "hytorch/backends/cuda/__init__.py",
+      "kind": "added",
+      "lines": 4,
+      "sha256": "97d72d162f35ce975d7f5bc7c81ce385f73f9fa5fa420e0ef315973c9a84e6e6"
+    },
+    {
+      "path": "hytorch/backends/cuda/runtime.py",
+      "kind": "added",
+      "lines": 193,
+      "sha256": "b978fc1a57cef39dcf6f9821a70cd63a90a97179583862e3a189ec7ccc56b0b1"
+    },
+    {
+      "path": "hytorch/backends/cuda/kernels.cu",
+      "kind": "added",
+      "lines": 141,
+      "sha256": "8d234e6daaf6f20146dc027ec3255b3ca20fb0be76879bed15e418d89611a1cf"
+    },
+    {
+      "path": "hytorch/profiling.py",
+      "kind": "added",
+      "lines": 184,
+      "sha256": "3f351897d685c84bb3c98107f21b97303ab59efdc3b0c23705fe8c31a3c0cb4b"
+    },
+    {
+      "path": "hytorch/model_zoo.py",
+      "kind": "added",
+      "lines": 144,
+      "sha256": "385a8a065f7180061deb99b9e37ce99b95e097f774b3dd2527ae9d22df518324"
+    },
+    {
+      "path": "benchmarks/bench_cuda_gemm.py",
+      "kind": "added",
+      "lines": 138,
+      "sha256": "ffa72ae73a82c4b6b4b73cc29e69def0e58fad4b58e93c6fcb21ce3b727aa5c5"
+    },
+    {
+      "path": "benchmarks/bench_cuda_ops.py",
+      "kind": "added",
+      "lines": 69,
+      "sha256": "8670e6227c1c5ebbe05620d1fc23f6e8e13be50780efb9873be5d0cdec916f20"
+    },
+    {
+      "path": "benchmarks/bench_cuda_training.py",
+      "kind": "added",
+      "lines": 310,
+      "sha256": "6975e28bc708cbef0f851cc8fcc14b9ef0106c5342fc218dcff3a8101a679428"
+    },
+    {
+      "path": "scripts/build_cuda.py",
+      "kind": "added",
+      "lines": 58,
+      "sha256": "b4b8f7708114897775331820c42a1000ca504c189cb708cdc0d4b43ae16647d4"
+    },
+    {
+      "path": "scripts/validate_cuda.py",
+      "kind": "added",
+      "lines": 44,
+      "sha256": "6467c2790f35a19ec3e8cc3277a0d16d0a073ee147a5c044e3b4a99e2ecd231c"
+    },
+    {
+      "path": "scripts/run_cuda_comparison.py",
+      "kind": "added",
+      "lines": 58,
+      "sha256": "3a074a102817c616d661b6b05c8caafb97f9ca5d25a3c862f2c83448f8f07b7d"
+    },
+    {
+      "path": "scripts/report_cuda.py",
+      "kind": "added",
+      "lines": 137,
+      "sha256": "a74766b02a0aa67928619159a18b28738bc061f6971436c77c759ea520b3833f"
+    },
+    {
+      "path": "scripts/convert_imagenet_weights.py",
+      "kind": "added",
+      "lines": 73,
+      "sha256": "e37dac3a7a4a50bcf4d9fd3c20d66053965006b3c0c5d9685dd083d1d75cc668"
+    },
+    {
+      "path": "examples/finetune_imagenet.py",
+      "kind": "added",
+      "lines": 105,
+      "sha256": "4cf7b7baf0de64bd180af10711978b085bf68fed297bfca886d6a0f06c1b370c"
+    },
+    {
+      "path": "tests/test_cuda_host.py",
+      "kind": "added",
+      "lines": 146,
+      "sha256": "0afdbffbfa9182b67b892c06145c5dec3438ba8c7d5bcb3e73cf29b74e337eab"
+    },
+    {
+      "path": "tests/test_cuda_device.py",
+      "kind": "added",
+      "lines": 114,
+      "sha256": "69c783172ede1b44be457cb8dc3d151559aee8fd8980248b4f7652a597f54140"
+    },
+    {
+      "path": "requirements-cuda.txt",
+      "kind": "added",
+      "lines": 10,
+      "sha256": "31194a15d0cf681cc4ff96d1c007edcaa77945e44264f28baf552919010437a2"
+    }
+  ]
+}

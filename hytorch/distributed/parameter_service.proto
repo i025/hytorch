@@ -1,0 +1,18 @@
+syntax = "proto3";
+package hytorch.distributed;
+
+message Tensor {
+  string name = 1;
+  string dtype = 2;
+  repeated int64 shape = 3;
+  bytes data = 4;
+}
+
+message Envelope {
+  string metadata_json = 1;
+  repeated Tensor tensors = 2;
+}
+
+service ParameterService {
+  rpc Exchange(Envelope) returns (Envelope);
+}
