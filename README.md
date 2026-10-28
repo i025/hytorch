@@ -54,6 +54,8 @@ python benchmarks/bench_cuda_training.py --device cuda --model tiny --samples 8 
 
 ## 第二阶段：算子性能
 
+阶段 2A 已准备 5 次预热 / 10 次重复的 GEMM 计时与原始数据导出，CPU 格式检查通过；当前 8 张 GPU 均被占用，正式 GPU 性能结果尚未测量。见 [阶段 2A 工作记录](docs/experiments/a100-stage2a-gemm/README.md)。阶段 1 结果入口保持不变。
+
 ```bash
 python benchmarks/bench_cuda_gemm.py --sizes 1024 2048 4096 --tiles 16 32 --repeats 3 --output runs/gemm_01
 python benchmarks/bench_cuda_ops.py --batches 1 4 16 --repeats 3 --output runs/ops_01

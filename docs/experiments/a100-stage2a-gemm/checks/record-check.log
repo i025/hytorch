@@ -1,0 +1,2 @@
+PASS: 2 real CPU rows / 20 raw measurements; mean/std/median/P95/GFLOPS agree.
+GPU status remains NOT_EXECUTED; no CuPy speedup or GPU winner fabricated.

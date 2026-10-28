@@ -1,0 +1,45 @@
+{
+  "sizes": [
+    64,
+    128
+  ],
+  "tiles": [
+    16,
+    32
+  ],
+  "repeats": 10,
+  "warmup": 5,
+  "seed": 42,
+  "device": 0,
+  "cpu_only": true,
+  "output": "runs/gemm_stage2a_cpu_format_01",
+  "atol": 0.0001,
+  "rtol": 0.0001,
+  "benefit_speedup": 1.5,
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+  "numpy": "1.24.4",
+  "dtype": "float32",
+  "relative_error": "L2 norm(error) / L2 norm(reference)",
+  "timing": "preallocated device outputs; CUDA events; pageable transfer wall time separately",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0"
+  },
+  "p95_method": "numpy.percentile linear interpolation",
+  "std_method": "sample standard deviation (ddof=1)",
+  "transfer_scope": "pageable synchronous wall time; H2D copies both inputs once per size",
+  "transfer_plus_compute_scope": "sum of separate means; NOT measured end-to-end latency",
+  "gpu_status": "NOT_EXECUTED",
+  "best_per_size": {
+    "64": null,
+    "128": null
+  },
+  "first_measured_beneficial_size": null,
+  "threshold_scope": "tested sizes only, speedup versus CuPy, not a universal crossover",
+  "all_correct": true
+}
