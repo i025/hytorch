@@ -145,6 +145,8 @@ def main():
     p.add_argument("--interval", type=float, default=1.)
     p.add_argument("--no-monitor", action="store_true")
     p.add_argument("--nvtx", action="store_true")
+    p.add_argument("--no-fingerprints", action="store_true",
+                   help="Skip data/weight hashes; retain numerical and finite-loss checks")
     p.add_argument("--output", required=True)
     args = p.parse_args()
     native = args.matmul != "cupy" or args.conv != "cupy" or args.pool != "cupy"
@@ -165,11 +167,11 @@ def main():
         dataset, val_ds = dataset.split(seed=args.seed)
         manifest = [(Path(f).name, float(t), Path(f).stat().st_size)
                     for f, t in zip(dataset._paths, dataset._angles)]
-        data_hash = hashlib.sha256(json.dumps(manifest).encode()).hexdigest()
+        data_hash = None if args.no_fingerprints else hashlib.sha256(json.dumps(manifest).encode()).hexdigest()
         dump_json(out/"train_manifest.json", manifest)
     else:
         dataset = SyntheticDataset(args.samples, shape, args.seed)
-        data_hash = hashlib.sha256(dataset.x.tobytes()+dataset.t.tobytes()).hexdigest()
+        data_hash = None if args.no_fingerprints else hashlib.sha256(dataset.x.tobytes()+dataset.t.tobytes()).hexdigest()
     if len(dataset) == 0:
         p.error("Empty training split")
     if args.model == "tiny":
@@ -218,12 +220,13 @@ def main():
         scalar = lambda x: float(x.detach().cpu())
         if cp is not None:
             sync = lambda: torch.cuda.synchronize(args.gpu)
-    metadata = dict(vars(args), initial_state_sha256=state_hash(initial), dataset_sha256=data_hash,
+    metadata = dict(vars(args), initial_state_sha256=None if args.no_fingerprints else state_hash(initial), dataset_sha256=data_hash,
                     data_kind="real" if args.data else "SYNTHETIC_SMOKE_NOT_TASK_ACCURACY",
                     sample_order="fixed sequential; shared HyTorch loader for both frameworks",
                     optimizer="SGD, no momentum or weight decay", dropout=0., dtype="float32",
                     python=sys.version, platform=platform.platform(), numpy=np.__version__,
-                    data_fingerprint="filename/label/file-size manifest" if args.data else "full array bytes",
+                    data_fingerprint=("DISABLED" if args.no_fingerprints else
+                                      "filename/label/file-size manifest" if args.data else "full array bytes"),
                     backward_backend="original", status="RUNNING")
     if cp is not None:
         metadata.update(cupy=cp.__version__, gpu_name=str(cp.cuda.runtime.getDeviceProperties(args.gpu)["name"]),
@@ -265,10 +268,13 @@ def main():
                             backward(loss)
                         with profile.phase("update"):
                             update()
-                        profile.end(len(x),epoch,step)
+                        step_record = profile.end(len(x),epoch,step)
                         value = scalar(loss)
                         if not np.isfinite(value):
                             raise RuntimeError("Non-finite training loss")
+                        with (out/"losses.jsonl").open("a", encoding="utf-8") as log:
+                            log.write(json.dumps(dict(epoch=epoch, step=step, samples=len(x),
+                                timestamp=step_record["timestamp"], loss=value), allow_nan=False) + "\n")
                         total_loss += value*len(x); samples += len(x)
                 finally:
                     if hasattr(iterator, "_shutdown_workers"):
@@ -302,7 +308,7 @@ def main():
             v = getattr(getattr(model,name), "weight" if param == "W" else "bias").detach().cpu().numpy()
             final[key] = v.T.copy() if v.ndim == 2 else v.copy()
     np.savez(out/"final_weights.npz", **final)
-    summary["final_state_sha256"] = state_hash(final)
+    summary["final_state_sha256"] = None if args.no_fingerprints else state_hash(final)
     dump_json(out/"summary.json", summary)
 
 

@@ -1,0 +1,14 @@
+{
+  "status": "PASSED",
+  "steps": 4,
+  "finite_step_losses": true,
+  "finite_final_weights": true,
+  "weighted_loss": 0.09037914965301752,
+  "hashes_disabled": true,
+  "dispatch_counts": {
+    "gemm_shared": 8,
+    "conv_im2col": 4,
+    "pool_native": 4
+  },
+  "hardware_samples": 1
+}

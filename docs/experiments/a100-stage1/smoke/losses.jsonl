@@ -1,0 +1,4 @@
+{"epoch": 1, "step": 1, "samples": 2, "timestamp": 1793200501.0131943, "loss": 0.02499586157500744}
+{"epoch": 1, "step": 2, "samples": 2, "timestamp": 1793200501.0255675, "loss": 0.01695609651505947}
+{"epoch": 1, "step": 3, "samples": 2, "timestamp": 1793200501.0393035, "loss": 0.07541865110397339}
+{"epoch": 1, "step": 4, "samples": 2, "timestamp": 1793200501.043198, "loss": 0.24414598941802979}

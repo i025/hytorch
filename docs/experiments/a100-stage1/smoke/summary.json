@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 4,
+    "measured_step_total_s": 0.029390851967036724,
+    "mean_step_s": 0.007347712991759181,
+    "samples_per_sec": 272.1935386212142,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.006905038619613985,
+      "transfer": 0.02464759778500584,
+      "forward": 0.20112970209600445,
+      "backward": 0.7300843201163616,
+      "update": 0.02911406951229486,
+      "other": 0.008119271870719315
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 1.0,
+    "gpu_utilization_pct_max": 1.0,
+    "gpu_memory_used_mib_mean": 435.0,
+    "gpu_memory_used_mib_max": 435.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 35.0,
+    "gpu_temperature_c_max": 35.0,
+    "gpu_power_w_mean": 46.5,
+    "gpu_power_w_max": 46.5,
+    "cpu_utilization_pct_mean": 13.6,
+    "cpu_utilization_pct_max": 13.6,
+    "process_rss_mib_mean": 427.91796875,
+    "process_rss_mib_max": 427.91796875,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.09037914965301752,
+      "train_wall_s": 0.032655687071383,
+      "samples": 8,
+      "train_samples_per_sec": 244.98029952677373
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 8,
+    "conv_im2col": 4,
+    "pool_native": 4
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.7300843201163616,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

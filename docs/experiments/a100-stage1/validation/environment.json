@@ -1,0 +1,10 @@
+{
+  "status": "PASSED",
+  "gpu_status": "EXECUTED",
+  "device": 0,
+  "name": "b'NVIDIA A100-PCIE-40GB'",
+  "runtime": 12020,
+  "driver": 12020,
+  "cupy": "12.3.0",
+  "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so"
+}

@@ -1,0 +1,6 @@
+{
+  "PYTHONPATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/a100-stage1:/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "PYTEST_ADDOPTS": "-p numeric_audit",
+  "HYTORCH_NUMERIC_AUDIT": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/a100-stage1/validation/numeric-comparisons-01.jsonl",
+  "note": "Optional pytest instrumentation records errors before calling the original NumPy assertion; no tolerances or tests changed."
+}

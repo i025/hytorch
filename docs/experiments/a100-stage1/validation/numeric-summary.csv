@@ -1,0 +1,6 @@
+test_group,comparisons,max_abs_error,max_relative_l2_error
+test_gemm_rectangular_and_current_stream,24,5.7220458984375e-06,1.039333044668398e-07
+test_gemm_views_and_alias_rejection,1,0.0,0.0
+test_conv_forward_backward,36,0.0001220703125,1.1032500108105566e-07
+test_pool_ties_negative_padding_backward,4,0.0,0.0
+test_framework_linear_forward_native_backward_original,3,1.862645149230957e-07,5.072673034909718e-08

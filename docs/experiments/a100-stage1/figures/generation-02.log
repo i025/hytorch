@@ -1,0 +1,65 @@
+{
+  "host": {
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "passed": 21,
+    "elapsed_s": 0.797
+  },
+  "gpu": {
+    "tests": 37,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 37,
+    "elapsed_s": 4.711
+  },
+  "comparisons": 68,
+  "numeric_groups": [
+    {
+      "test_group": "test_gemm_rectangular_and_current_stream",
+      "comparisons": 24,
+      "max_abs_error": 5.7220458984375e-06,
+      "max_relative_l2_error": 1.039333044668398e-07
+    },
+    {
+      "test_group": "test_gemm_views_and_alias_rejection",
+      "comparisons": 1,
+      "max_abs_error": 0.0,
+      "max_relative_l2_error": 0.0
+    },
+    {
+      "test_group": "test_conv_forward_backward",
+      "comparisons": 36,
+      "max_abs_error": 0.0001220703125,
+      "max_relative_l2_error": 1.1032500108105566e-07
+    },
+    {
+      "test_group": "test_pool_ties_negative_padding_backward",
+      "comparisons": 4,
+      "max_abs_error": 0.0,
+      "max_relative_l2_error": 0.0
+    },
+    {
+      "test_group": "test_framework_linear_forward_native_backward_original",
+      "comparisons": 3,
+      "max_abs_error": 1.862645149230957e-07,
+      "max_relative_l2_error": 5.072673034909718e-08
+    }
+  ],
+  "smoke": {
+    "status": "PASSED",
+    "steps": 4,
+    "finite_step_losses": true,
+    "finite_final_weights": true,
+    "weighted_loss": 0.09037914965301752,
+    "hashes_disabled": true,
+    "dispatch_counts": {
+      "gemm_shared": 8,
+      "conv_im2col": 4,
+      "pool_native": 4
+    },
+    "hardware_samples": 1
+  }
+}

@@ -2,7 +2,7 @@
 
 供队友在 NVIDIA GPU 上编译、验证和运行课程实验的源码包。
 
-**当前状态：已完成 A100 服务器独立环境配置和主机回归（20 passed / 2 skipped，2026-10-28）；8 张 GPU 均被占用，CUDA 编译、GPU 正确性与 TinyNet GPU 烟测等待空闲设备。尚无 CUDA 加速结论。详见 [A100 阶段 1 实验记录与完整日志](docs/experiments/a100-stage1/README.md)。**
+**当前状态：A100 阶段 1 已完成（2026-10-28）：主机回归 21 passed / 2 skipped，CUDA sm_80 编译与库加载成功，GPU 正确性 37 passed / 0 skipped，TinyNet GPU 合成数据烟测完成。两项可选 PyTorch 对照尚未执行；尚无正式性能或真实任务训练结论。详见 [完整验收报告、原始日志与图像](docs/experiments/a100-stage1/README.md)。**
 
 ## 队友第一次运行：只做这四步
 

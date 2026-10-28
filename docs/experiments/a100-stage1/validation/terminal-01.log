@@ -1,0 +1,5 @@
+警告: 未找到scipy，无法加载SVHN数据集
+.....................................                                    [100%]
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu_acceptance_01/tests.xml -
+37 passed in 4.71s
+

@@ -1,0 +1,22 @@
+{
+  "command": [
+    "nvidia-smi",
+    "--query-compute-apps=gpu_uuid,pid,used_memory",
+    "--format=csv"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-28T15:12:10.974603+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage1-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache"
+  },
+  "returncode": 0,
+  "elapsed_s": 0.13616535486653447,
+  "finished_at": "2026-10-28T15:12:11.110800+00:00"
+}

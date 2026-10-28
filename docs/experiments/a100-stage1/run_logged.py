@@ -26,7 +26,8 @@ def main():
                     environment={key: os.environ.get(key) for key in (
                         "CUDA_VISIBLE_DEVICES", "CUDA_DEVICE_ORDER", "CUDA_PATH",
                         "LD_LIBRARY_PATH", "OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
-                        "HYTORCH_GEMM_BUILD_DIR", "MPLCONFIGDIR")})
+                        "HYTORCH_GEMM_BUILD_DIR", "MPLCONFIGDIR", "CUPY_CACHE_DIR",
+                        "CUDA_CACHE_PATH", "PYTHONPATH", "PYTEST_ADDOPTS", "HYTORCH_NUMERIC_AUDIT")})
     start = time.monotonic()
     with path.open("xb") as log:
         result = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT)

@@ -1,0 +1,47 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{
+  "physical_gpu": 1,
+  "visible_device_uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+  "logical_gpu": 0,
+  "visible_device_count": 1,
+  "name": "NVIDIA A100-PCIE-40GB",
+  "total_memory_bytes": 42298834944,
+  "compute_capability": "80",
+  "pci_bus_id": "0000:25:00.0",
+  "runtime": 12020,
+  "driver": 12020,
+  "cupy": "12.3.0",
+  "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so",
+  "library_abi": 1
+}
+OS                           : Linux-5.15.0-139-generic-x86_64-with-glibc2.29
+Python Version               : 3.8.10
+CuPy Version                 : 12.3.0
+CuPy Platform                : NVIDIA CUDA
+NumPy Version                : 1.24.4
+SciPy Version                : None
+Cython Build Version         : 0.29.36
+Cython Runtime Version       : None
+CUDA Root                    : /usr/local/cuda-12.2
+nvcc PATH                    : /usr/local/cuda-12.2/bin/nvcc
+CUDA Build Version           : 12020
+CUDA Driver Version          : 12020
+CUDA Runtime Version         : 12020
+cuBLAS Version               : (available)
+cuFFT Version                : 11008
+cuRAND Version               : 10303
+cuSOLVER Version             : (11, 5, 2)
+cuSPARSE Version             : (available)
+NVRTC Version                : (12, 2)
+Thrust Version               : 200101
+CUB Build Version            : 200101
+Jitify Build Version         : <unknown>
+cuDNN Build Version          : (not loaded; try `import cupy.cuda.cudnn` first)
+cuDNN Version                : (not loaded; try `import cupy.cuda.cudnn` first)
+NCCL Build Version           : None
+NCCL Runtime Version         : None
+cuTENSOR Version             : None
+cuSPARSELt Build Version     : None
+Device 0 Name                : NVIDIA A100-PCIE-40GB
+Device 0 Compute Capability  : 80
+Device 0 PCI Bus ID          : 0000:25:00.0

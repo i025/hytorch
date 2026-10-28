@@ -144,3 +144,32 @@ def test_missing_library_fails_not_silent_fallback(monkeypatch,tmp_path):
     monkeypatch.setenv("HYTORCH_CUDA_LIBRARY",str(tmp_path/"missing.so"))
     with pytest.raises(RuntimeError,match="missing"):
         runtime.load_library()
+
+
+def test_smoke_without_fingerprints_records_actual_losses(monkeypatch, tmp_path):
+    import sys
+    from benchmarks import bench_cuda_training as training
+
+    def forbidden_hash(*args, **kwargs):
+        raise AssertionError("--no-fingerprints must not compute hashes")
+
+    monkeypatch.setattr(training.hashlib, "sha256", forbidden_hash)
+    output = tmp_path / "smoke"
+    monkeypatch.setattr(sys, "argv", ["bench_cuda_training.py", "--device", "cpu",
+        "--model", "tiny", "--samples", "4", "--batch", "2", "--warmup", "0",
+        "--no-monitor", "--no-fingerprints", "--output", str(output)])
+    training.main()
+    config = json.loads((output / "config.json").read_text())
+    summary = json.loads((output / "summary.json").read_text())
+    losses = [json.loads(line) for line in (output / "losses.jsonl").read_text().splitlines()]
+    steps = [json.loads(line) for line in (output / "steps.jsonl").read_text().splitlines()]
+    assert config["initial_state_sha256"] is None and config["dataset_sha256"] is None
+    assert config["data_fingerprint"] == "DISABLED"
+    assert summary["final_state_sha256"] is None
+    assert summary["status"] == "COMPLETED" and summary["gpu_status"] == "NOT_EXECUTED"
+    assert len(losses) == len(steps) == 2
+    for loss, step in zip(losses, steps):
+        assert np.isfinite(loss["loss"])
+        assert (loss["epoch"], loss["step"], loss["timestamp"]) == (step["epoch"], step["step"], step["timestamp"])
+    weighted_loss = sum(row["loss"] * row["samples"] for row in losses) / 4
+    assert summary["epochs"][0]["train_loss"] == pytest.approx(weighted_loss)
