@@ -1,0 +1,41 @@
+{
+  "command": [
+    "nsys",
+    "profile",
+    "--trace=cuda,nvtx",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "-o",
+    "runs/nsys_dtype_fixed_01",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "benchmarks/bench_cuda_training.py",
+    "--model",
+    "donkey",
+    "--samples",
+    "64",
+    "--batch",
+    "4",
+    "--matmul",
+    "shared",
+    "--conv",
+    "im2col",
+    "--mode",
+    "throughput",
+    "--nvtx",
+    "--no-fingerprints",
+    "--output",
+    "runs/nsys_training_fixed_01"
+  ],
+  "physical_gpu": 2,
+  "logical_gpu": 0,
+  "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+  "started_at": "2026-10-28T17:14:50.403822+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4"
+  }
+}

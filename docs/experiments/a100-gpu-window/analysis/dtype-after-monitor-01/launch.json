@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/a100-gpu-window/scripts/audit_training_dtype.py",
+    "--output",
+    "runs/dtype_after_01"
+  ],
+  "physical_gpu": 2,
+  "logical_gpu": 0,
+  "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+  "started_at": "2026-10-28T17:10:25.385759+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4"
+  }
+}

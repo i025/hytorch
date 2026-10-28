@@ -1,0 +1,2 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.0007448701135217561, "train_wall_s": 0.09052355797030032, "samples": 64, "train_samples_per_sec": 706.9982823807878}

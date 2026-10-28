@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.05627625435590744,
+    "mean_step_s": 0.003517265897244215,
+    "samples_per_sec": 1137.2469744564971,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.01240911470672772,
+      "transfer": 0.04747262394663186,
+      "forward": 0.28102771219912537,
+      "backward": 0.5995354984284292,
+      "update": 0.045346781712188006,
+      "other": 0.014208269006897806
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 4.0,
+    "gpu_utilization_pct_max": 4.0,
+    "gpu_memory_used_mib_mean": 435.0,
+    "gpu_memory_used_mib_max": 435.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 34.0,
+    "gpu_temperature_c_max": 34.0,
+    "gpu_power_w_mean": 47.13,
+    "gpu_power_w_max": 47.13,
+    "cpu_utilization_pct_mean": 10.4,
+    "cpu_utilization_pct_max": 10.4,
+    "process_rss_mib_mean": 397.70703125,
+    "process_rss_mib_max": 397.70703125,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.08619654306676239,
+      "train_wall_s": 0.06195169407874346,
+      "samples": 64,
+      "train_samples_per_sec": 1033.0629525425577
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 32,
+    "conv_im2col": 16,
+    "pool_native": 16
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.5995354984284292,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

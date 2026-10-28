@@ -52,7 +52,9 @@ class Tanh(Function):
 
     def backward(self, gy):
         y = self.outputs[0]()       # weakref()
-        gx = gy*(1 - y*y)
+        xp = cuda.get_array_module(y.data)
+        one = xp.array(1, dtype=y.data.dtype)
+        gx = gy*(one - y*y)
         return gx
 
 
@@ -469,13 +471,16 @@ def mean_square_error_simple(x0, x1):
 class MeanSquareError(Function):
     def forward(self, x0, x1):
         diff = x0 - x1
-        y = (diff**2).sum()/len(diff)
+        xp = cuda.get_array_module(diff)
+        y = (diff**2).sum()/xp.array(len(diff), dtype=diff.dtype)
         return y
 
     def backward(self, gy):
         x0, x1 = self.inputs
         diff = x0 - x1
-        gx0 = gy * diff*(2./len(diff))
+        xp = cuda.get_array_module(diff.data)
+        scale = xp.array(2./len(diff), dtype=diff.data.dtype)
+        gx0 = gy * diff * scale
         gx1 = -gx0
         return gx0, gx1
 

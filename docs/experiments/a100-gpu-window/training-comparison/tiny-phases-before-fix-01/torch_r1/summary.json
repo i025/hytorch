@@ -1,0 +1,63 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.04892517416737974,
+    "mean_step_s": 0.0030578233854612336,
+    "samples_per_sec": 1308.1200238766082,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.019433144656871265,
+      "transfer": 0.03230723191581323,
+      "forward": 0.5365002458478211,
+      "backward": 0.2926949073345189,
+      "update": 0.0884671205016667,
+      "other": 0.030597349743308758
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 10.0,
+    "gpu_utilization_pct_max": 10.0,
+    "gpu_memory_used_mib_mean": 543.0,
+    "gpu_memory_used_mib_max": 543.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 33.0,
+    "gpu_temperature_c_max": 33.0,
+    "gpu_power_w_mean": 46.32,
+    "gpu_power_w_max": 46.32,
+    "cpu_utilization_pct_mean": 5.3,
+    "cpu_utilization_pct_max": 5.3,
+    "process_rss_mib_mean": 868.203125,
+    "process_rss_mib_max": 868.203125,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.08619653256027959,
+      "train_wall_s": 0.055246080039069057,
+      "samples": 64,
+      "train_samples_per_sec": 1158.4532324237362
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: forward",
+      "fraction": 0.5365002458478211,
+      "next_action": "Use Nsight Systems then Compute on forward kernels"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

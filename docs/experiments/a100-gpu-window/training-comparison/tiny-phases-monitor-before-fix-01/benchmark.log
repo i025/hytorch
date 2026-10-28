@@ -1,0 +1,7 @@
+Running cupy, repeat 1
+Running conv_direct, repeat 1
+Running conv_im2col, repeat 1
+Running gemm_shared, repeat 1
+Running pool_native, repeat 1
+Running combined, repeat 1
+Running torch, repeat 1

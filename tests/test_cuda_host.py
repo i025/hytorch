@@ -180,3 +180,15 @@ def test_smoke_without_fingerprints_records_actual_losses(monkeypatch, tmp_path)
         assert (loss["epoch"], loss["step"], loss["timestamp"]) == (step["epoch"], step["step"], step["timestamp"])
     weighted_loss = sum(row["loss"] * row["samples"] for row in losses) / 4
     assert summary["epochs"][0]["train_loss"] == pytest.approx(weighted_loss)
+
+
+@pytest.mark.parametrize("dtype",[np.float32,np.float64])
+def test_mse_and_tanh_preserve_float_dtype(dtype):
+    x=Variable(np.array([[.2],[-.3]],dtype=dtype))
+    t=np.array([[.1],[.4]],dtype=dtype)
+    y=F.tanh(x)
+    loss=F.mean_square_error(y,t)
+    loss.backward()
+    assert loss.data.dtype==x.grad.data.dtype==np.dtype(dtype)
+    expected=2*(np.tanh(x.data)-t)/len(t)*(1-np.tanh(x.data)**2)
+    np.testing.assert_allclose(x.grad.data,expected,atol=1e-7,rtol=1e-6)

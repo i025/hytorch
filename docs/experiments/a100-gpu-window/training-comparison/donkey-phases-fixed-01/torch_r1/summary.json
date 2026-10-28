@@ -1,0 +1,63 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.08473963057622313,
+    "mean_step_s": 0.005296226911013946,
+    "samples_per_sec": 755.2546496226712,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.05068657561071285,
+      "transfer": 0.07643757571940243,
+      "forward": 0.18730841497521133,
+      "backward": 0.6052569036331525,
+      "update": 0.05430231608811645,
+      "other": 0.02600821397340436
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 15.0,
+    "gpu_utilization_pct_max": 15.0,
+    "gpu_memory_used_mib_mean": 569.0,
+    "gpu_memory_used_mib_max": 569.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 34.0,
+    "gpu_temperature_c_max": 34.0,
+    "gpu_power_w_mean": 47.85,
+    "gpu_power_w_max": 47.85,
+    "cpu_utilization_pct_mean": 9.3,
+    "cpu_utilization_pct_max": 9.3,
+    "process_rss_mib_mean": 961.98828125,
+    "process_rss_mib_max": 961.98828125,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007448701135217561,
+      "train_wall_s": 0.09052355797030032,
+      "samples": 64,
+      "train_samples_per_sec": 706.9982823807878
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.6052569036331525,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

@@ -1,0 +1,65 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.10621837782673538,
+    "mean_step_s": 0.006638648614170961,
+    "samples_per_sec": 602.5322671035094,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.014277311129920367,
+      "transfer": 0.023054939057489572,
+      "forward": 0.20828878833908987,
+      "backward": 0.6788314513164371,
+      "update": 0.06822094871282264,
+      "other": 0.007326561444240509
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 13.0,
+    "gpu_utilization_pct_max": 13.0,
+    "gpu_memory_used_mib_mean": 469.0,
+    "gpu_memory_used_mib_max": 469.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 34.0,
+    "gpu_temperature_c_max": 34.0,
+    "gpu_power_w_mean": 49.04,
+    "gpu_power_w_max": 49.04,
+    "cpu_utilization_pct_mean": 10.1,
+    "cpu_utilization_pct_max": 10.1,
+    "process_rss_mib_mean": 425.51953125,
+    "process_rss_mib_max": 425.51953125,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007448711994584301,
+      "train_wall_s": 0.11286852206103504,
+      "samples": 64,
+      "train_samples_per_sec": 567.0314347289071
+    }
+  ],
+  "dispatch_counts": {
+    "conv_direct": 80
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.6788314513164371,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

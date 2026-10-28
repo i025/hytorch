@@ -1,0 +1,66 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.05461651389487088,
+    "mean_step_s": 0.00341353211842943,
+    "samples_per_sec": 1171.8067565277238,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.01606474547639523,
+      "transfer": 0.04415878765777803,
+      "forward": 0.3141408912511695,
+      "backward": 0.5028946017148436,
+      "update": 0.09594644580669438,
+      "other": 0.02679452809311924
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 4.0,
+    "gpu_utilization_pct_max": 4.0,
+    "gpu_memory_used_mib_mean": 435.0,
+    "gpu_memory_used_mib_max": 435.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 33.0,
+    "gpu_temperature_c_max": 33.0,
+    "gpu_power_w_mean": 46.8,
+    "gpu_power_w_max": 46.8,
+    "cpu_utilization_pct_mean": 4.2,
+    "cpu_utilization_pct_max": 4.2,
+    "process_rss_mib_mean": 409.37890625,
+    "process_rss_mib_max": 409.37890625,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.08619653349160217,
+      "train_wall_s": 0.06708058505319059,
+      "samples": 64,
+      "train_samples_per_sec": 954.0763538250616
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 16,
+    "conv_im2col": 16
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.5028946017148436,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

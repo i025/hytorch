@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "scripts/run_cuda_comparison.py",
+    "--model",
+    "donkey",
+    "--samples",
+    "64",
+    "--batch",
+    "4",
+    "--epochs",
+    "1",
+    "--repeats",
+    "1",
+    "--include-torch",
+    "--mode",
+    "phases",
+    "--no-fingerprints",
+    "--output",
+    "runs/synthetic_donkey_phases_01"
+  ],
+  "physical_gpu": 0,
+  "logical_gpu": 0,
+  "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "started_at": "2026-10-28T17:05:07.034623+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4"
+  }
+}

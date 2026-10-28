@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-8.3.5, pluggy-1.5.0 -- /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /srv/lab-disks/disk2/users/xymo/projects/hytorch
+collecting ... collected 18 items / 16 deselected / 2 selected
+
+tests/test_cuda_host.py::test_torch_parity_forward_backward_update[tiny-shape0] PASSED [ 50%]
+tests/test_cuda_host.py::test_torch_parity_forward_backward_update[donkey-shape1] PASSED [100%]
+
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/a100-gpu-window/pytorch-parity/tests-after-dtype-fix-02.xml -
+======================= 2 passed, 16 deselected in 3.05s =======================

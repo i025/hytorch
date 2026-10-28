@@ -112,3 +112,22 @@ def test_framework_linear_forward_native_backward_original(cp):
     np.testing.assert_allclose(cp.asnumpy(x.grad.data),np.ones((3,5))@b.T,atol=1e-5)
     np.testing.assert_allclose(cp.asnumpy(w.grad.data),a.T@np.ones((3,5)),atol=1e-5)
     assert dispatch_stats().get("gemm_shared")==1
+
+
+@pytest.mark.parametrize("kind,shape",[("tiny",(3,16,16)),("donkey",(3,66,200))])
+def test_training_preserves_fp32_gradients(cp,kind,shape):
+    from benchmarks.bench_cuda_training import TinyNet,initialize,parameters,SyntheticDataset
+    from donkeycar_hy.model import DonkeyNet
+    from hytorch.optimizers import SGD
+    model=TinyNet() if kind=="tiny" else DonkeyNet(dropout_rate=0.)
+    initialize(model,shape,42);model.to_gpu()
+    dataset=SyntheticDataset(4,shape,42)
+    prediction=model(cp.asarray(dataset.x))
+    loss=F.mean_square_error(prediction,cp.asarray(dataset.t))
+    loss.backward()
+    assert prediction.data.dtype==loss.data.dtype==cp.float32
+    for key,param in parameters(model).items():
+        assert param.grad.data.dtype==cp.float32,key
+    SGD(lr=.001).setup(model).update()
+    for key,param in parameters(model).items():
+        assert param.data.dtype==cp.float32,key

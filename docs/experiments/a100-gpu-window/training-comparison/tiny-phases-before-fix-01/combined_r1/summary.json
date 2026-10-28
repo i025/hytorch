@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.05275646783411503,
+    "mean_step_s": 0.0032972792396321893,
+    "samples_per_sec": 1213.1213977637512,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.015609462390708352,
+      "transfer": 0.045567111738970156,
+      "forward": 0.282723122033351,
+      "backward": 0.5921935370218271,
+      "update": 0.04656323109789064,
+      "other": 0.01734353571725272
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 5.0,
+    "gpu_utilization_pct_max": 5.0,
+    "gpu_memory_used_mib_mean": 435.0,
+    "gpu_memory_used_mib_max": 435.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 33.0,
+    "gpu_temperature_c_max": 33.0,
+    "gpu_power_w_mean": 48.4,
+    "gpu_power_w_max": 48.4,
+    "cpu_utilization_pct_mean": 4.8,
+    "cpu_utilization_pct_max": 4.8,
+    "process_rss_mib_mean": 397.4765625,
+    "process_rss_mib_max": 397.4765625,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.08619654597714543,
+      "train_wall_s": 0.06916548917070031,
+      "samples": 64,
+      "train_samples_per_sec": 925.3169574503855
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 32,
+    "conv_im2col": 16,
+    "pool_native": 16
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.5921935370218271,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

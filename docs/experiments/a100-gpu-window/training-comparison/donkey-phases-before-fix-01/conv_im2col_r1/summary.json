@@ -1,0 +1,66 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.11290660966187716,
+    "mean_step_s": 0.007056663103867322,
+    "samples_per_sec": 566.840153925989,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.021074798155073023,
+      "transfer": 0.024179645022559083,
+      "forward": 0.24229110904861037,
+      "backward": 0.6459342696819812,
+      "update": 0.05971138988424635,
+      "other": 0.006808788207529976
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 5.0,
+    "gpu_utilization_pct_max": 5.0,
+    "gpu_memory_used_mib_mean": 497.0,
+    "gpu_memory_used_mib_max": 497.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 33.0,
+    "gpu_temperature_c_max": 33.0,
+    "gpu_power_w_mean": 51.15,
+    "gpu_power_w_max": 51.15,
+    "cpu_utilization_pct_mean": 2.7,
+    "cpu_utilization_pct_max": 2.7,
+    "process_rss_mib_mean": 431.80859375,
+    "process_rss_mib_max": 431.80859375,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007448703481713892,
+      "train_wall_s": 0.12015521293506026,
+      "samples": 64,
+      "train_samples_per_sec": 532.6443891751063
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 80,
+    "conv_im2col": 80
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.6459342696819812,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

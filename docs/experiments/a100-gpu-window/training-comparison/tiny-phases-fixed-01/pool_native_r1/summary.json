@@ -1,0 +1,65 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.05847341567277908,
+    "mean_step_s": 0.0036545884795486927,
+    "samples_per_sec": 1094.514477453276,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.1352546132097818,
+      "transfer": 0.038031370756669486,
+      "forward": 0.3349425515683977,
+      "backward": 0.4371830869085515,
+      "update": 0.04021441577646964,
+      "other": 0.014373961780129863
+    }
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 4.0,
+    "gpu_utilization_pct_max": 4.0,
+    "gpu_memory_used_mib_mean": 435.0,
+    "gpu_memory_used_mib_max": 435.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 34.0,
+    "gpu_temperature_c_max": 34.0,
+    "gpu_power_w_mean": 48.29,
+    "gpu_power_w_max": 48.29,
+    "cpu_utilization_pct_mean": 10.5,
+    "cpu_utilization_pct_max": 10.5,
+    "process_rss_mib_mean": 408.421875,
+    "process_rss_mib_max": 408.421875,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.08619653340429068,
+      "train_wall_s": 0.064356436021626,
+      "samples": 64,
+      "train_samples_per_sec": 994.461532619578
+    }
+  ],
+  "dispatch_counts": {
+    "pool_native": 16
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.4371830869085515,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    },
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}

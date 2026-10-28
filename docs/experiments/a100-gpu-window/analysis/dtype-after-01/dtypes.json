@@ -1,0 +1,122 @@
+[
+  {
+    "device": "cpu",
+    "model": "tiny",
+    "prediction": "float32",
+    "loss": "float32",
+    "gradients": {
+      "conv1/W": "float32",
+      "conv1/b": "float32",
+      "fc1/W": "float32",
+      "fc1/b": "float32"
+    },
+    "updated": {
+      "conv1/W": "float32",
+      "conv1/b": "float32",
+      "fc1/W": "float32",
+      "fc1/b": "float32"
+    }
+  },
+  {
+    "device": "cpu",
+    "model": "donkey",
+    "prediction": "float32",
+    "loss": "float32",
+    "gradients": {
+      "conv1/W": "float32",
+      "conv1/b": "float32",
+      "conv2/W": "float32",
+      "conv2/b": "float32",
+      "conv3/W": "float32",
+      "conv3/b": "float32",
+      "conv4/W": "float32",
+      "conv4/b": "float32",
+      "conv5/W": "float32",
+      "conv5/b": "float32",
+      "fc1/W": "float32",
+      "fc1/b": "float32",
+      "fc2/W": "float32",
+      "fc2/b": "float32",
+      "fc3/W": "float32",
+      "fc3/b": "float32"
+    },
+    "updated": {
+      "conv1/W": "float32",
+      "conv1/b": "float32",
+      "conv2/W": "float32",
+      "conv2/b": "float32",
+      "conv3/W": "float32",
+      "conv3/b": "float32",
+      "conv4/W": "float32",
+      "conv4/b": "float32",
+      "conv5/W": "float32",
+      "conv5/b": "float32",
+      "fc1/W": "float32",
+      "fc1/b": "float32",
+      "fc2/W": "float32",
+      "fc2/b": "float32",
+      "fc3/W": "float32",
+      "fc3/b": "float32"
+    }
+  },
+  {
+    "device": "cuda",
+    "model": "tiny",
+    "prediction": "float32",
+    "loss": "float32",
+    "gradients": {
+      "conv1/W": "float32",
+      "conv1/b": "float32",
+      "fc1/W": "float32",
+      "fc1/b": "float32"
+    },
+    "updated": {
+      "conv1/W": "float32",
+      "conv1/b": "float32",
+      "fc1/W": "float32",
+      "fc1/b": "float32"
+    }
+  },
+  {
+    "device": "cuda",
+    "model": "donkey",
+    "prediction": "float32",
+    "loss": "float32",
+    "gradients": {
+      "conv1/W": "float32",
+      "conv1/b": "float32",
+      "conv2/W": "float32",
+      "conv2/b": "float32",
+      "conv3/W": "float32",
+      "conv3/b": "float32",
+      "conv4/W": "float32",
+      "conv4/b": "float32",
+      "conv5/W": "float32",
+      "conv5/b": "float32",
+      "fc1/W": "float32",
+      "fc1/b": "float32",
+      "fc2/W": "float32",
+      "fc2/b": "float32",
+      "fc3/W": "float32",
+      "fc3/b": "float32"
+    },
+    "updated": {
+      "conv1/W": "float32",
+      "conv1/b": "float32",
+      "conv2/W": "float32",
+      "conv2/b": "float32",
+      "conv3/W": "float32",
+      "conv3/b": "float32",
+      "conv4/W": "float32",
+      "conv4/b": "float32",
+      "conv5/W": "float32",
+      "conv5/b": "float32",
+      "fc1/W": "float32",
+      "fc1/b": "float32",
+      "fc2/W": "float32",
+      "fc2/b": "float32",
+      "fc3/W": "float32",
+      "fc3/b": "float32"
+    }
+  }
+]

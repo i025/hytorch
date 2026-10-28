@@ -1,0 +1,51 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.05642606387846172,
+    "mean_step_s": 0.0035266289924038574,
+    "samples_per_sec": 1134.227617539513,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 1,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": 9.0,
+    "gpu_utilization_pct_max": 9.0,
+    "gpu_memory_used_mib_mean": 569.0,
+    "gpu_memory_used_mib_max": 569.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 34.0,
+    "gpu_temperature_c_max": 34.0,
+    "gpu_power_w_mean": 57.52,
+    "gpu_power_w_max": 57.52,
+    "cpu_utilization_pct_mean": 10.2,
+    "cpu_utilization_pct_max": 10.2,
+    "process_rss_mib_mean": 961.64453125,
+    "process_rss_mib_max": 961.64453125,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007448701135217561,
+      "train_wall_s": 0.07779365801252425,
+      "samples": 64,
+      "train_samples_per_sec": 822.6891707508655
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": null
+}
