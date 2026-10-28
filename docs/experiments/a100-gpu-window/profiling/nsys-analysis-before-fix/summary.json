@@ -1,0 +1,9 @@
+{
+  "training_nvtx_envelope_ms": 172.492804,
+  "activity_covered_ms": 30.167608,
+  "activity_coverage_fraction": 0.17489197984166344,
+  "coverage_definition": "Union of measured kernel and memcpy intervals clipped to first-to-last training NVTX envelope; NOT SM utilization, includes profiling overhead",
+  "whole_trace_kernel_count": 2916,
+  "training_envelope_kernel_count": 2592,
+  "whole_trace_kernel_duration_sum_ms": 33.18835
+}

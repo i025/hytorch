@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.0007448702490364667, "train_wall_s": 0.1728792479261756, "samples": 64, "train_samples_per_sec": 370.20059242350385}
+Generating '/tmp/nsys-report-fd89.qdstrm'
+[1/1] [0%                          ] nsys_window_01.nsys-rep[1/1] [0%                          ] nsys_window_01.nsys-rep[1/1] [========42%                 ] nsys_window_01.nsys-rep[1/1] [===============65%          ] nsys_window_01.nsys-rep[1/1] [=====================89%    ] nsys_window_01.nsys-rep[1/1] [========================100%] nsys_window_01.nsys-rep[1/1] [========================100%] nsys_window_01.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/nsys_window_01.nsys-rep

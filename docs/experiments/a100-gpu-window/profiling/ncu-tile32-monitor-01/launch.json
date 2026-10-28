@@ -1,0 +1,43 @@
+{
+  "command": [
+    "ncu",
+    "--section",
+    "SpeedOfLight",
+    "--section",
+    "MemoryWorkloadAnalysis",
+    "--section",
+    "SchedulerStats",
+    "--section",
+    "Occupancy",
+    "--kernel-name",
+    "regex:gemm_shared",
+    "--launch-count",
+    "2",
+    "-o",
+    "runs/ncu_window_tile32_01",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "benchmarks/bench_cuda_gemm.py",
+    "--sizes",
+    "1024",
+    "--tiles",
+    "32",
+    "--repeats",
+    "3",
+    "--warmup",
+    "1",
+    "--output",
+    "runs/ncu_gemm_tile32_01"
+  ],
+  "physical_gpu": 0,
+  "logical_gpu": 0,
+  "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "started_at": "2026-10-28T17:05:52.344937+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4"
+  }
+}
