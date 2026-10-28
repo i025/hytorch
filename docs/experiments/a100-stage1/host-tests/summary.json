@@ -1,0 +1,9 @@
+{
+  "tests": 22,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 2,
+  "passed": 20,
+  "elapsed_s": 2.183,
+  "source": "tests.xml"
+}

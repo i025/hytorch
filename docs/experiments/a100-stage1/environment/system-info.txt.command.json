@@ -1,0 +1,20 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "date -Is; hostname; cat /etc/os-release; lscpu; gcc --version; /usr/local/cuda-12.2/bin/nvcc --version; cat /usr/local/cuda-12.2/version.json; nvidia-smi; nvidia-smi --query-gpu=index,uuid,pci.bus_id,name,driver_version,memory.total,memory.used,utilization.gpu,compute_mode --format=csv; nvidia-smi --query-compute-apps=gpu_uuid,pid,used_memory --format=csv; python3 --version; id; command -v gh || true"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-28T09:15:44.815173+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": null,
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null
+  },
+  "returncode": 0,
+  "elapsed_s": 3.6063213308807462,
+  "finished_at": "2026-10-28T09:15:48.421536+00:00"
+}

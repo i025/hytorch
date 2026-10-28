@@ -1,0 +1,321 @@
+2026-10-28T09:15:44+00:00
+root
+NAME="Ubuntu"
+VERSION="20.04.6 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Byte Order:                           Little Endian
+Address sizes:                        48 bits physical, 48 bits virtual
+CPU(s):                               256
+On-line CPU(s) list:                  0-255
+Thread(s) per core:                   2
+Core(s) per socket:                   64
+Socket(s):                            2
+NUMA node(s):                         2
+Vendor ID:                            AuthenticAMD
+CPU family:                           25
+Model:                                1
+Model name:                           AMD EPYC 7763 64-Core Processor
+Stepping:                             1
+Frequency boost:                      enabled
+CPU MHz:                              2700.008
+CPU max MHz:                          3529.0520
+CPU min MHz:                          1500.0000
+BogoMIPS:                             4890.93
+Virtualization:                       AMD-V
+L1d cache:                            4 MiB
+L1i cache:                            4 MiB
+L2 cache:                             64 MiB
+L3 cache:                             512 MiB
+NUMA node0 CPU(s):                    0-63,128-191
+NUMA node1 CPU(s):                    64-127,192-255
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Mitigation; safe RET
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 invpcid_single hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Tue_Aug_15_22:02:13_PDT_2023
+Cuda compilation tools, release 12.2, V12.2.140
+Build cuda_12.2.r12.2/compiler.33191640_0
+{
+   "cuda" : {
+      "name" : "CUDA SDK",
+      "version" : "12.2.2"
+   },
+   "cuda_cccl" : {
+      "name" : "CUDA C++ Core Compute Libraries",
+      "version" : "12.2.140"
+   },
+   "cuda_cudart" : {
+      "name" : "CUDA Runtime (cudart)",
+      "version" : "12.2.140"
+   },
+   "cuda_cuobjdump" : {
+      "name" : "cuobjdump",
+      "version" : "12.2.140"
+   },
+   "cuda_cupti" : {
+      "name" : "CUPTI",
+      "version" : "12.2.142"
+   },
+   "cuda_cuxxfilt" : {
+      "name" : "CUDA cu++ filt",
+      "version" : "12.2.140"
+   },
+   "cuda_demo_suite" : {
+      "name" : "CUDA Demo Suite",
+      "version" : "12.2.140"
+   },
+   "cuda_gdb" : {
+      "name" : "CUDA GDB",
+      "version" : "12.2.140"
+   },
+   "cuda_nsight" : {
+      "name" : "Nsight Eclipse Plugins",
+      "version" : "12.2.144"
+   },
+   "cuda_nvcc" : {
+      "name" : "CUDA NVCC",
+      "version" : "12.2.140"
+   },
+   "cuda_nvdisasm" : {
+      "name" : "CUDA nvdisasm",
+      "version" : "12.2.140"
+   },
+   "cuda_nvml_dev" : {
+      "name" : "CUDA NVML Headers",
+      "version" : "12.2.140"
+   },
+   "cuda_nvprof" : {
+      "name" : "CUDA nvprof",
+      "version" : "12.2.142"
+   },
+   "cuda_nvprune" : {
+      "name" : "CUDA nvprune",
+      "version" : "12.2.140"
+   },
+   "cuda_nvrtc" : {
+      "name" : "CUDA NVRTC",
+      "version" : "12.2.140"
+   },
+   "cuda_nvtx" : {
+      "name" : "CUDA NVTX",
+      "version" : "12.2.140"
+   },
+   "cuda_nvvp" : {
+      "name" : "CUDA NVVP",
+      "version" : "12.2.142"
+   },
+   "cuda_opencl" : {
+      "name" : "CUDA OpenCL",
+      "version" : "12.2.140"
+   },
+   "cuda_sanitizer_api" : {
+      "name" : "CUDA Compute Sanitizer API",
+      "version" : "12.2.140"
+   },
+   "fabricmanager" : {
+      "name" : "Fabric Manager",
+      "version" : "535.104.05"
+   },
+   "libcublas" : {
+      "name" : "CUDA cuBLAS",
+      "version" : "12.2.5.6"
+   },
+   "libcufft" : {
+      "name" : "CUDA cuFFT",
+      "version" : "11.0.8.103"
+   },
+   "libcufile" : {
+      "name" : "GPUDirect Storage (cufile)",
+      "version" : "1.7.2.10"
+   },
+   "libcurand" : {
+      "name" : "CUDA cuRAND",
+      "version" : "10.3.3.141"
+   },
+   "libcusolver" : {
+      "name" : "CUDA cuSOLVER",
+      "version" : "11.5.2.141"
+   },
+   "libcusparse" : {
+      "name" : "CUDA cuSPARSE",
+      "version" : "12.1.2.141"
+   },
+   "libnpp" : {
+      "name" : "CUDA NPP",
+      "version" : "12.2.1.4"
+   },
+   "libnvidia_nscq" : {
+      "name" : "NvSwitch Library",
+      "version" : "535.104.05"
+   },
+   "libnvjitlink" : {
+      "name" : "JIT Linker Library",
+      "version" : "12.2.140"
+   },
+   "libnvjpeg" : {
+      "name" : "CUDA nvJPEG",
+      "version" : "12.2.2.4"
+   },
+   "nsight_compute" : {
+      "name" : "Nsight Compute",
+      "version" : "2023.2.2.3"
+   },
+   "nsight_systems" : {
+      "name" : "Nsight Systems",
+      "version" : "2023.2.3.1004"
+   },
+   "nvidia_driver" : {
+      "name" : "NVIDIA Linux Driver",
+      "version" : "535.104.05"
+   },
+   "nvidia_fs" : {
+      "name" : "NVIDIA file-system",
+      "version" : "2.17.5"
+   }
+}
+Wed Oct 28 09:15:44 2026       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.247.01             Driver Version: 535.247.01   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off | 00000000:01:00.0 Off |                    0 |
+| N/A   46C    P0             240W / 250W |  29390MiB / 40960MiB |     94%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-PCIE-40GB          Off | 00000000:25:00.0 Off |                    0 |
+| N/A   53C    P0             245W / 250W |  29808MiB / 40960MiB |     96%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   2  NVIDIA A100-PCIE-40GB          Off | 00000000:41:00.0 Off |                    0 |
+| N/A   51C    P0             247W / 250W |  29504MiB / 40960MiB |     94%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   3  NVIDIA A100-PCIE-40GB          Off | 00000000:61:00.0 Off |                    0 |
+| N/A   52C    P0             243W / 250W |  29882MiB / 40960MiB |     96%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   4  NVIDIA A100-PCIE-40GB          Off | 00000000:81:00.0 Off |                    0 |
+| N/A   43C    P0             168W / 250W |  21193MiB / 40960MiB |    100%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   5  NVIDIA A100-PCIE-40GB          Off | 00000000:A1:00.0 Off |                    0 |
+| N/A   42C    P0             156W / 250W |  19805MiB / 40960MiB |    100%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   6  NVIDIA A100-PCIE-40GB          Off | 00000000:C1:00.0 Off |                    0 |
+| N/A   43C    P0             171W / 250W |  17419MiB / 40960MiB |    100%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   7  NVIDIA A100-PCIE-40GB          Off | 00000000:E1:00.0 Off |                    0 |
+| N/A   40C    P0             124W / 250W |   2732MiB / 40960MiB |     79%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A   1188558      C   ...nx/miniforge3/envs/bagel/bin/python    29382MiB |
+|    1   N/A  N/A   1159639      C   ...nx/miniforge3/envs/bagel/bin/python    29800MiB |
+|    2   N/A  N/A   1187518      C   ...nx/miniforge3/envs/bagel/bin/python    29496MiB |
+|    3   N/A  N/A   1159693      C   ...nx/miniforge3/envs/bagel/bin/python    29874MiB |
+|    4   N/A  N/A   1145925      C   .../environments/wpdp-py311/bin/python     3504MiB |
+|    4   N/A  N/A   1146194      C   .../environments/wpdp-py311/bin/python     3330MiB |
+|    4   N/A  N/A   1146661      C   .../environments/wpdp-py311/bin/python     2798MiB |
+|    4   N/A  N/A   1147128      C   .../environments/wpdp-py311/bin/python     2592MiB |
+|    4   N/A  N/A   1147621      C   .../environments/wpdp-py311/bin/python     2818MiB |
+|    4   N/A  N/A   1148105      C   .../environments/wpdp-py311/bin/python     2140MiB |
+|    4   N/A  N/A   1148597      C   .../environments/wpdp-py311/bin/python     2084MiB |
+|    4   N/A  N/A   1149106      C   .../environments/wpdp-py311/bin/python     1878MiB |
+|    5   N/A  N/A   1146017      C   .../environments/wpdp-py311/bin/python     2750MiB |
+|    5   N/A  N/A   1146346      C   .../environments/wpdp-py311/bin/python     3394MiB |
+|    5   N/A  N/A   1146813      C   .../environments/wpdp-py311/bin/python     3392MiB |
+|    5   N/A  N/A   1147297      C   .../environments/wpdp-py311/bin/python     2078MiB |
+|    5   N/A  N/A   1147780      C   .../environments/wpdp-py311/bin/python     1874MiB |
+|    5   N/A  N/A   1148274      C   .../environments/wpdp-py311/bin/python     2484MiB |
+|    5   N/A  N/A   1148701      C   .../environments/wpdp-py311/bin/python     2042MiB |
+|    5   N/A  N/A   1149210      C   .../environments/wpdp-py311/bin/python     1742MiB |
+|    6   N/A  N/A   1146105      C   .../environments/wpdp-py311/bin/python     2644MiB |
+|    6   N/A  N/A   1146501      C   .../environments/wpdp-py311/bin/python     2352MiB |
+|    6   N/A  N/A   1146968      C   .../environments/wpdp-py311/bin/python     2088MiB |
+|    6   N/A  N/A   1147462      C   .../environments/wpdp-py311/bin/python     2526MiB |
+|    6   N/A  N/A   1147942      C   .../environments/wpdp-py311/bin/python     2516MiB |
+|    6   N/A  N/A   1148435      C   .../environments/wpdp-py311/bin/python     1714MiB |
+|    6   N/A  N/A   1148868      C   .../environments/wpdp-py311/bin/python     2002MiB |
+|    6   N/A  N/A   1149380      C   .../environments/wpdp-py311/bin/python     1528MiB |
+|    7   N/A  N/A   1175070      C   .../environments/wpdp-py311/bin/python     2724MiB |
++---------------------------------------------------------------------------------------+
+index, uuid, pci.bus_id, name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%], compute_mode
+0, GPU-f099fdbd-adf2-6157-3462-4145bc2a8359, 00000000:01:00.0, NVIDIA A100-PCIE-40GB, 535.247.01, 40960 MiB, 29390 MiB, 94 %, Default
+1, GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5, 00000000:25:00.0, NVIDIA A100-PCIE-40GB, 535.247.01, 40960 MiB, 29808 MiB, 94 %, Default
+2, GPU-158426a4-6684-7863-8cbe-ed6595f97683, 00000000:41:00.0, NVIDIA A100-PCIE-40GB, 535.247.01, 40960 MiB, 29504 MiB, 94 %, Default
+3, GPU-6deac1db-e8b2-558c-0285-ff9639a06a43, 00000000:61:00.0, NVIDIA A100-PCIE-40GB, 535.247.01, 40960 MiB, 29882 MiB, 96 %, Default
+4, GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 00000000:81:00.0, NVIDIA A100-PCIE-40GB, 535.247.01, 40960 MiB, 21193 MiB, 100 %, Default
+5, GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 00000000:A1:00.0, NVIDIA A100-PCIE-40GB, 535.247.01, 40960 MiB, 19805 MiB, 100 %, Default
+6, GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 00000000:C1:00.0, NVIDIA A100-PCIE-40GB, 535.247.01, 40960 MiB, 17421 MiB, 100 %, Default
+7, GPU-34a1ad0c-b19e-9660-0977-c4620b3cc451, 00000000:E1:00.0, NVIDIA A100-PCIE-40GB, 535.247.01, 40960 MiB, 2732 MiB, 80 %, Default
+gpu_uuid, pid, used_gpu_memory [MiB]
+GPU-f099fdbd-adf2-6157-3462-4145bc2a8359, 1188558, 29382 MiB
+GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5, 1159639, 29800 MiB
+GPU-158426a4-6684-7863-8cbe-ed6595f97683, 1187518, 29496 MiB
+GPU-6deac1db-e8b2-558c-0285-ff9639a06a43, 1159693, 29874 MiB
+GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 1145925, 3504 MiB
+GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 1146194, 3330 MiB
+GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 1146661, 2798 MiB
+GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 1147128, 2592 MiB
+GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 1147621, 2818 MiB
+GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 1148105, 2140 MiB
+GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 1148597, 2084 MiB
+GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b, 1149106, 1878 MiB
+GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 1146017, 2750 MiB
+GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 1146346, 3394 MiB
+GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 1146813, 3392 MiB
+GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 1147297, 2078 MiB
+GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 1147780, 1874 MiB
+GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 1148274, 2484 MiB
+GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 1148701, 2042 MiB
+GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a, 1149210, 1742 MiB
+GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 1146105, 2644 MiB
+GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 1146501, 2352 MiB
+GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 1146968, 2088 MiB
+GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 1147462, 2526 MiB
+GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 1147942, 2516 MiB
+GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 1148435, 1714 MiB
+GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 1148868, 2004 MiB
+GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82, 1149380, 1528 MiB
+GPU-34a1ad0c-b19e-9660-0977-c4620b3cc451, 1175070, 2724 MiB
+Python 3.8.10
+uid=1005(xymo) gid=1005(xymo) groups=1005(xymo)

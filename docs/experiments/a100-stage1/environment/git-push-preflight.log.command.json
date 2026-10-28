@@ -1,0 +1,24 @@
+{
+  "command": [
+    "git",
+    "push",
+    "--dry-run",
+    "origin",
+    "HEAD:refs/heads/experiment/a100-stage1"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-28T09:28:06.457236+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": null,
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null
+  },
+  "returncode": 128,
+  "elapsed_s": 1.8609986410010606,
+  "finished_at": "2026-10-28T09:28:08.318276+00:00"
+}

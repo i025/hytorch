@@ -1,0 +1,48 @@
+{
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "executable": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+  "prefix": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv",
+  "base_prefix": "/usr",
+  "cuda_visible_devices": "",
+  "cuda_path": "/usr/local/cuda-12.2",
+  "runtime_version": 12020,
+  "packages": {
+    "numpy": "1.24.4",
+    "cupy-cuda12x": "12.3.0",
+    "pytest": "8.3.5",
+    "Pillow": "10.4.0",
+    "matplotlib": "3.7.5",
+    "psutil": "7.2.2"
+  },
+  "selected_physical_gpu": null,
+  "selected_logical_gpu": null,
+  "gpu_status": "NOT_EXECUTED_WAITING_FOR_IDLE_DEVICE"
+}
+OS                        : Linux-5.15.0-139-generic-x86_64-with-glibc2.29
+Python Version            : 3.8.10
+CuPy Version              : 12.3.0
+CuPy Platform             : NVIDIA CUDA
+NumPy Version             : 1.24.4
+SciPy Version             : None
+Cython Build Version      : 0.29.36
+Cython Runtime Version    : None
+CUDA Root                 : /usr/local/cuda-12.2
+nvcc PATH                 : /usr/local/cuda-12.2/bin/nvcc
+CUDA Build Version        : 12020
+CUDA Driver Version       : 12020
+CUDA Runtime Version      : 12020
+cuBLAS Version            : (available)
+cuFFT Version             : 11008
+cuRAND Version            : 10303
+cuSOLVER Version          : (11, 5, 2)
+cuSPARSE Version          : (available)
+NVRTC Version             : (12, 2)
+Thrust Version            : 200101
+CUB Build Version         : 200101
+Jitify Build Version      : <unknown>
+cuDNN Build Version       : (not loaded; try `import cupy.cuda.cudnn` first)
+cuDNN Version             : (not loaded; try `import cupy.cuda.cudnn` first)
+NCCL Build Version        : None
+NCCL Runtime Version      : None
+cuTENSOR Version          : None
+cuSPARSELt Build Version  : None

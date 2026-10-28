@@ -1,0 +1,25 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-cache-dir",
+    "-r",
+    "requirements-cuda.txt",
+    "cupy-cuda12x==12.3.0"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-28T09:16:41.143000+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null
+  },
+  "returncode": 1,
+  "elapsed_s": 193.18625916005112,
+  "finished_at": "2026-10-28T09:19:54.329304+00:00"
+}

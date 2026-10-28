@@ -1,0 +1,22 @@
+{
+  "command": [
+    "nvidia-smi",
+    "--query-gpu=index,uuid,name,memory.total,memory.used,utilization.gpu",
+    "--format=csv"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-28T09:27:45.350972+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": null,
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.1461619979236275,
+  "finished_at": "2026-10-28T09:27:45.497166+00:00"
+}

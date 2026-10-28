@@ -1,0 +1,5 @@
+............ss........                                                   [100%]
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/a100-stage1/host-tests/tests.xml -
+=========================== short test summary info ============================
+SKIPPED [2] tests/test_cuda_host.py:114: could not import 'torch': No module named 'torch'
+20 passed, 2 skipped in 2.18s
