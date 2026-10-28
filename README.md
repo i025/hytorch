@@ -2,9 +2,9 @@
 
 供队友在 NVIDIA GPU 上编译、验证和运行课程实验的源码包。
 
-**当前状态：A100 阶段 1 已完成（2026-10-28）：主机回归 21 passed / 2 skipped，CUDA sm_80 编译与库加载成功，GPU 正确性 37 passed / 0 skipped，TinyNet GPU 合成数据烟测完成。两项可选 PyTorch 对照尚未执行；尚无正式性能或真实任务训练结论。详见 [完整验收报告、原始日志与图像](docs/experiments/a100-stage1/README.md)。**
+**A100 空闲窗口实测已完成（2026-10-28）：主机 25 passed / 0 skipped，GPU 39 passed / 0 skipped；Conv/Pooling、修复后的 HyTorch/PyTorch 合成训练与三个官方预训练 CNN 验证通过。GEMM 2048/4096 未达到既定数值容差，Nsight Compute 受权限阻止，真实训练缺少数据。详见 [完整实验报告与原始数据](docs/experiments/a100-gpu-window/README.md)。**
 
-后续空闲窗口实验正在进行：PyTorch 已安装，主机对齐补齐为 **23 passed / 0 failed / 0 skipped**。见 [原始数值与实时阶段记录](docs/experiments/a100-gpu-window/README.md)。上述阶段 1 历史记录保留。
+[阶段 1 历史验收记录](docs/experiments/a100-stage1/README.md) 保留；阶段 1 当时未安装 PyTorch 的跳过记录不改写，后续已实际补齐。实验没有自动推进 Kernel 优化。
 
 ## 队友第一次运行：只做这四步
 
@@ -56,11 +56,11 @@ python benchmarks/bench_cuda_training.py --device cuda --model tiny --samples 8 
 
 ## 第二阶段：算子性能
 
-阶段 2A 已准备 5 次预热 / 10 次重复的 GEMM 计时与原始数据导出，CPU 格式检查通过；当前 8 张 GPU 均被占用，正式 GPU 性能结果尚未测量。见 [阶段 2A 工作记录](docs/experiments/a100-stage2a-gemm/README.md)。阶段 1 结果入口保持不变。
+阶段 2A 七配置 GEMM 基线已测量并保留大矩阵失败记录，见 [GEMM 报告](docs/experiments/a100-stage2a-gemm/README.md)；阶段 2B 全部数值检查通过，见 [Conv/Pooling 报告](docs/experiments/a100-stage2b-ops/README.md)。
 
 ```bash
-python benchmarks/bench_cuda_gemm.py --sizes 1024 2048 4096 --tiles 16 32 --repeats 3 --output runs/gemm_01
-python benchmarks/bench_cuda_ops.py --batches 1 4 16 --repeats 3 --output runs/ops_01
+python benchmarks/bench_cuda_gemm.py --sizes 1024 2048 4096 --tiles 16 32 --repeats 10 --warmup 5 --seed 42 --output runs/gemm_01
+python benchmarks/bench_cuda_ops.py --batches 1 4 16 --repeats 10 --output runs/ops_01
 python scripts/report_cuda.py --gemm runs/gemm_01 --output outputs/gemm_report_01
 ```
 
@@ -90,9 +90,9 @@ python benchmarks/bench_cuda_training.py --data /path/to/donkey_images --model d
 需要兼容的 `torch`、`torchvision`；权重在运行时从官方来源下载，未放入 Git。
 
 ```bash
-python scripts/convert_imagenet_weights.py --model alexnet --output weights_imagenet/alexnet.npz --verify --verify-device cuda
-python scripts/convert_imagenet_weights.py --model vgg11 --output weights_imagenet/vgg11.npz --verify --verify-device cuda
-python scripts/convert_imagenet_weights.py --model vgg16 --output weights_imagenet/vgg16.npz --verify --verify-device cuda
+python scripts/convert_imagenet_weights.py --model alexnet --output weights_imagenet/alexnet.npz --verify --verify-device cuda --no-checksums
+python scripts/convert_imagenet_weights.py --model vgg11 --output weights_imagenet/vgg11.npz --verify --verify-device cuda --no-checksums
+python scripts/convert_imagenet_weights.py --model vgg16 --output weights_imagenet/vgg16.npz --verify --verify-device cuda --no-checksums
 ```
 
 分类数据使用 `train/类别名/图片` 和 `val/类别名/图片`，例如：
@@ -129,4 +129,4 @@ python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/tes
 - [核心修改清单](docs/CUDA修改清单.json)
 - `UPLOAD_MANIFEST.json`：本次上传文件及 SHA256，用于确认源码包内容。
 
-文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布；验证记录描述的是本机已做的检查。当前仓库只声明实现状态，不包含实测 GPU 加速结论。
+文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布；验证记录描述的是本机已做的检查。当前 A100 实测、失败与权限限制统一以最新实验报告为准，历史实现文档不代表最新验收状态。
