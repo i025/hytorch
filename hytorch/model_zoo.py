@@ -92,19 +92,20 @@ class ImageNetCNN(Model):
             if op[0] == "conv":
                 getattr(self,op[1]).cleargrads()
 
-    def load_pretrained(self,path,replace_head=False):
+    def load_pretrained(self,path,replace_head=False,verify_checksum=True):
         path = Path(path)
         metadata = json.loads(path.with_suffix(".json").read_text(encoding="utf-8"))
         if metadata.get("architecture") != self.architecture or metadata.get("source") != "torchvision":
             raise ValueError("Weight metadata does not match model / torchvision source")
         if metadata.get("weights") != "IMAGENET1K_V1":
             raise ValueError("Expected ImageNet V1 weight provenance")
-        digest = hashlib.sha256()
-        with path.open("rb") as stream:
-            for block in iter(lambda: stream.read(1024*1024), b""):
-                digest.update(block)
-        if digest.hexdigest() != metadata.get("npz_sha256"):
-            raise ValueError("Weight checksum does not match conversion metadata")
+        if verify_checksum:
+            digest = hashlib.sha256()
+            with path.open("rb") as stream:
+                for block in iter(lambda: stream.read(1024*1024), b""):
+                    digest.update(block)
+            if digest.hexdigest() != metadata.get("npz_sha256"):
+                raise ValueError("Weight checksum does not match conversion metadata")
         params = {}; self._flatten_params(params)
         with np.load(path, allow_pickle=False) as state:
             if set(state.files) != set(params):

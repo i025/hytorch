@@ -16,6 +16,7 @@ def main():
     p.add_argument("--output",required=True)
     p.add_argument("--verify",action="store_true",help="Compare eval logits on fixed input after conversion")
     p.add_argument("--verify-device",choices=["cpu","cuda"],default="cpu")
+    p.add_argument("--no-checksums",action="store_true",help="Use explicit array comparisons; disable download/file checksum checks")
     args=p.parse_args()
     import torch
     import torchvision
@@ -25,7 +26,12 @@ def main():
     if target.suffix != ".npz" or target.exists() or target.with_suffix(".json").exists():
         p.error("Use a new .npz output path")
     weights=models.get_model_weights(args.model).IMAGENET1K_V1
-    source=models.get_model(args.model,weights=weights).eval()
+    if args.no_checksums:
+        source=models.get_model(args.model,weights=None)
+        source.load_state_dict(weights.get_state_dict(progress=True,check_hash=False))
+        source.eval()
+    else:
+        source=models.get_model(args.model,weights=weights).eval()
     model=ImageNetCNN(args.model)
     state={}
     for key,dest in model.weight_map.items():
@@ -38,18 +44,28 @@ def main():
             raise RuntimeError(f"Shape mismatch for {key}")
     target.parent.mkdir(parents=True,exist_ok=True)
     np.savez(target,**state)
-    digest=hashlib.sha256()
-    with target.open("rb") as f:
-        for block in iter(lambda:f.read(1024*1024),b""):
-            digest.update(block)
+    checksum=None
+    if not args.no_checksums:
+        digest=hashlib.sha256()
+        with target.open("rb") as f:
+            for block in iter(lambda:f.read(1024*1024),b""):
+                digest.update(block)
+        checksum=digest.hexdigest()
+    mapping_errors={}
+    with np.load(target,allow_pickle=False) as saved:
+        for key,dest in model.weight_map.items():
+            expected=source.state_dict()[key].detach().cpu().numpy()
+            if expected.ndim==2: expected=expected.T
+            np.testing.assert_array_equal(saved[dest],expected,err_msg=key)
+            mapping_errors[dest]=dict(shape=list(saved[dest].shape),max_abs_error=float(np.max(np.abs(saved[dest]-expected))))
     metadata=dict(architecture=args.model,source="torchvision",weights="IMAGENET1K_V1",
                   source_url=weights.url,torch=torch.__version__,torchvision=torchvision.__version__,
-                  npz_sha256=digest.hexdigest(),input_shape=[1,3,224,224],
+                  npz_sha256=checksum,checksums_enabled=not args.no_checksums,mapping_numeric_checks=mapping_errors,input_shape=[1,3,224,224],
                   verification="NOT_EXECUTED",mapping=model.weight_map)
     meta_path=target.with_suffix(".json")
     meta_path.write_text(json.dumps(metadata,indent=2),encoding="utf-8")
     if args.verify:
-        model.load_pretrained(target)
+        model.load_pretrained(target,verify_checksum=not args.no_checksums)
         x=np.random.default_rng(42).standard_normal((1,3,224,224)).astype(np.float32)
         device=args.verify_device
         source=source.to(device)
@@ -61,7 +77,10 @@ def main():
             expected=source(torch.from_numpy(x).to(device)).cpu().numpy()
         with no_grad(),test_mode():
             actual=cuda.as_numpy(model(cuda.as_cupy(x) if device=="cuda" else x).data)
-        metadata.update(max_abs_error=float(np.max(np.abs(actual-expected))),
+        np.savez(target.with_name(target.stem+"-logits.npz"),actual=actual,expected=expected)
+        delta=actual.astype(np.float64)-expected.astype(np.float64)
+        metadata.update(relative_l2_error=float(np.linalg.norm(delta)/max(np.linalg.norm(expected.astype(np.float64)),1e-30)),
+                        rtol=1e-4,atol=1e-4,max_abs_error=float(np.max(np.abs(actual-expected))),
                         verification="PASSED" if np.allclose(actual,expected,rtol=1e-4,atol=1e-4) else "FAILED",
                         verification_device=device)
         meta_path.write_text(json.dumps(metadata,indent=2),encoding="utf-8")

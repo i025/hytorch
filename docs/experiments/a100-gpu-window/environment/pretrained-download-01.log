@@ -1,0 +1,7 @@
+{"torch_home": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/torch-cache/hub", "checksum_validation": false}
+alexnet
+vgg11
+vgg16
+Downloading: "https://download.pytorch.org/models/alexnet-owt-7be5be79.pth" to /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/torch-cache/hub/checkpoints/alexnet-owt-7be5be79.pth
+Downloading: "https://download.pytorch.org/models/vgg11-8a719046.pth" to /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/torch-cache/hub/checkpoints/vgg11-8a719046.pth
+Downloading: "https://download.pytorch.org/models/vgg16-397923af.pth" to /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/torch-cache/hub/checkpoints/vgg16-397923af.pth

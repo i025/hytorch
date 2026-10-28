@@ -1,0 +1,208 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{
+  "architecture": "vgg11",
+  "source": "torchvision",
+  "weights": "IMAGENET1K_V1",
+  "source_url": "https://download.pytorch.org/models/vgg11-8a719046.pth",
+  "torch": "2.4.1+cu121",
+  "torchvision": "0.19.1+cu121",
+  "npz_sha256": null,
+  "checksums_enabled": false,
+  "mapping_numeric_checks": {
+    "features_0/W": {
+      "shape": [
+        64,
+        3,
+        3,
+        3
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_0/b": {
+      "shape": [
+        64
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_3/W": {
+      "shape": [
+        128,
+        64,
+        3,
+        3
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_3/b": {
+      "shape": [
+        128
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_6/W": {
+      "shape": [
+        256,
+        128,
+        3,
+        3
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_6/b": {
+      "shape": [
+        256
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_8/W": {
+      "shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_8/b": {
+      "shape": [
+        256
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_11/W": {
+      "shape": [
+        512,
+        256,
+        3,
+        3
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_11/b": {
+      "shape": [
+        512
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_13/W": {
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_13/b": {
+      "shape": [
+        512
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_16/W": {
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_16/b": {
+      "shape": [
+        512
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_18/W": {
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "max_abs_error": 0.0
+    },
+    "features_18/b": {
+      "shape": [
+        512
+      ],
+      "max_abs_error": 0.0
+    },
+    "fc1/W": {
+      "shape": [
+        25088,
+        4096
+      ],
+      "max_abs_error": 0.0
+    },
+    "fc1/b": {
+      "shape": [
+        4096
+      ],
+      "max_abs_error": 0.0
+    },
+    "fc2/W": {
+      "shape": [
+        4096,
+        4096
+      ],
+      "max_abs_error": 0.0
+    },
+    "fc2/b": {
+      "shape": [
+        4096
+      ],
+      "max_abs_error": 0.0
+    },
+    "fc3/W": {
+      "shape": [
+        4096,
+        1000
+      ],
+      "max_abs_error": 0.0
+    },
+    "fc3/b": {
+      "shape": [
+        1000
+      ],
+      "max_abs_error": 0.0
+    }
+  },
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "verification": "PASSED",
+  "mapping": {
+    "features.0.weight": "features_0/W",
+    "features.0.bias": "features_0/b",
+    "features.3.weight": "features_3/W",
+    "features.3.bias": "features_3/b",
+    "features.6.weight": "features_6/W",
+    "features.6.bias": "features_6/b",
+    "features.8.weight": "features_8/W",
+    "features.8.bias": "features_8/b",
+    "features.11.weight": "features_11/W",
+    "features.11.bias": "features_11/b",
+    "features.13.weight": "features_13/W",
+    "features.13.bias": "features_13/b",
+    "features.16.weight": "features_16/W",
+    "features.16.bias": "features_16/b",
+    "features.18.weight": "features_18/W",
+    "features.18.bias": "features_18/b",
+    "classifier.0.weight": "fc1/W",
+    "classifier.0.bias": "fc1/b",
+    "classifier.3.weight": "fc2/W",
+    "classifier.3.bias": "fc2/b",
+    "classifier.6.weight": "fc3/W",
+    "classifier.6.bias": "fc3/b"
+  },
+  "relative_l2_error": 3.635791784626258e-07,
+  "rtol": 0.0001,
+  "atol": 0.0001,
+  "max_abs_error": 2.86102294921875e-06,
+  "verification_device": "cuda"
+}
