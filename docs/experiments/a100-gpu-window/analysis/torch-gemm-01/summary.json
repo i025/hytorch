@@ -1,0 +1,17 @@
+{
+  "torch": "2.4.1+cu121",
+  "torch_cuda": "12.1",
+  "cupy": "12.3.0",
+  "torch_tf32": false,
+  "cupy_fp32_compute_type": 1,
+  "gpu": "NVIDIA A100-PCIE-40GB",
+  "dtype": "float32",
+  "seed": "42+size",
+  "warmup": 5,
+  "repeats": 10,
+  "timing": "CUDA events, preallocated outputs, excludes H2D/D2H; separate session from seven-configuration baseline",
+  "atol": 0.0001,
+  "rtol": 0.0001,
+  "gpu_status": "EXECUTED",
+  "all_correct": false
+}
