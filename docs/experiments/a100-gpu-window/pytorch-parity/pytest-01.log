@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-8.3.5, pluggy-1.5.0 -- /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /srv/lab-disks/disk2/users/xymo/projects/hytorch
+collecting ... collected 23 items
+
+tests/test_cuda_host.py::test_context_restores_and_cpu_fallback PASSED   [  4%]
+tests/test_cuda_host.py::test_freeze_hook_excludes_update[SGD] PASSED    [  8%]
+tests/test_cuda_host.py::test_freeze_hook_excludes_update[Adam] PASSED   [ 13%]
+tests/test_cuda_host.py::test_freeze_hook_excludes_update[AdamW] PASSED  [ 17%]
+tests/test_cuda_host.py::test_initializers_preserve_float32 PASSED       [ 21%]
+tests/test_cuda_host.py::test_profiler_denominator_and_throughput PASSED [ 26%]
+tests/test_cuda_host.py::test_monitor_parsing_and_missing_fields PASSED  [ 30%]
+tests/test_cuda_host.py::test_pretrained_model_schema[alexnet-5] PASSED  [ 34%]
+tests/test_cuda_host.py::test_pretrained_model_schema[vgg11-8] PASSED    [ 39%]
+tests/test_cuda_host.py::test_pretrained_model_schema[vgg16-13] PASSED   [ 43%]
+tests/test_cuda_host.py::test_preprocess_shapes_and_channels PASSED      [ 47%]
+tests/test_cuda_host.py::test_build_arch_validation PASSED               [ 52%]
+tests/test_cuda_host.py::test_torch_parity_forward_backward_update[tiny-shape0] PASSED [ 56%]
+tests/test_cuda_host.py::test_torch_parity_forward_backward_update[donkey-shape1] PASSED [ 60%]
+tests/test_cuda_host.py::test_missing_library_fails_not_silent_fallback PASSED [ 65%]
+tests/test_cuda_host.py::test_smoke_without_fingerprints_records_actual_losses PASSED [ 69%]
+tests/test_conv2d_gemm_cpu.py::TestConv2dGemmCPU::test_forward_api_uses_new_cpu_path PASSED [ 73%]
+tests/test_conv2d_gemm_cpu.py::TestConv2dGemmCPU::test_no_bias_case_matches_legacy PASSED [ 78%]
+tests/test_conv2d_gemm_cpu.py::TestConv2dGemmCPU::test_non4_multiple_shape_matches_legacy PASSED [ 82%]
+tests/test_gemm_blocked_packed.py::TestGemmBlockedPacked::test_baseline_and_blocked_consistency PASSED [ 86%]
+tests/test_gemm_blocked_packed.py::TestGemmBlockedPacked::test_float32_non4_shape PASSED [ 91%]
+tests/test_gemm_blocked_packed.py::TestGemmBlockedPacked::test_float32_regular_shape PASSED [ 95%]
+tests/test_gemm_blocked_packed.py::TestGemmBlockedPacked::test_float64_non4_shape PASSED [100%]
+
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/a100-gpu-window/pytorch-parity/tests-01.xml -
+============================== 23 passed in 3.46s ==============================

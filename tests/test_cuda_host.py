@@ -116,26 +116,33 @@ def test_torch_parity_forward_backward_update(kind,shape):
     model=TinyNet() if kind=="tiny" else DonkeyNet(dropout_rate=0.)
     state=initialize(model,shape,42)
     reference=torch_model(kind,state)
+    for key, value in state.items():
+        layer,name=key.split("/")
+        ref=getattr(getattr(reference,layer),"weight" if name=="W" else "bias").detach().numpy()
+        np.testing.assert_array_equal(value,ref.T if ref.ndim==2 else ref,err_msg="initial:"+key)
     rng=np.random.default_rng(12)
     x=rng.normal(size=(2,*shape)).astype(np.float32)
     t=rng.normal(size=(2,1)).astype(np.float32)
     actual=model(x)
     expected=reference(torch.from_numpy(x))
-    np.testing.assert_allclose(actual.data,expected.detach().numpy(),atol=1e-6,rtol=1e-5)
-    F.mean_square_error(actual,t).backward()
-    torch.nn.functional.mse_loss(expected,torch.from_numpy(t)).backward()
+    np.testing.assert_allclose(actual.data,expected.detach().numpy(),atol=1e-6,rtol=1e-5,err_msg="forward")
+    actual_loss=F.mean_square_error(actual,t)
+    expected_loss=torch.nn.functional.mse_loss(expected,torch.from_numpy(t))
+    np.testing.assert_allclose(actual_loss.data,expected_loss.detach().numpy(),atol=1e-6,rtol=1e-5,err_msg="loss")
+    actual_loss.backward()
+    expected_loss.backward()
     for key,param in parameters(model).items():
         layer,name=key.split("/")
         ref=getattr(getattr(reference,layer),"weight" if name=="W" else "bias").grad.numpy()
         if ref.ndim==2:
             ref=ref.T
-        np.testing.assert_allclose(param.grad.data,ref,atol=1e-5,rtol=1e-4)
+        np.testing.assert_allclose(param.grad.data,ref,atol=1e-5,rtol=1e-4,err_msg="gradient:"+key)
     SGD(lr=.001).setup(model).update()
     torch.optim.SGD(reference.parameters(),lr=.001).step()
     for key,param in parameters(model).items():
         layer,name=key.split("/")
         ref=getattr(getattr(reference,layer),"weight" if name=="W" else "bias").detach().numpy()
-        np.testing.assert_allclose(param.data,ref.T if ref.ndim==2 else ref,atol=1e-6,rtol=1e-5)
+        np.testing.assert_allclose(param.data,ref.T if ref.ndim==2 else ref,atol=1e-6,rtol=1e-5,err_msg="updated:"+key)
 
 
 def test_missing_library_fails_not_silent_fallback(monkeypatch,tmp_path):

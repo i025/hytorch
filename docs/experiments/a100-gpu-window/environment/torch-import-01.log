@@ -1,0 +1,1 @@
+{'python': '3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]', 'torch': '2.4.1+cu121', 'torchvision': '0.19.1+cu121', 'torch_cuda_build': '12.1', 'cupy': '12.3.0', 'gpu_visibility': 'hidden for CPU-only import validation'}

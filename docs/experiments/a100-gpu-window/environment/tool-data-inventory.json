@@ -1,0 +1,12 @@
+{
+  "profiling_tools": {
+    "nsys": "/usr/local/bin/nsys",
+    "ncu": null,
+    "compute-sanitizer": null
+  },
+  "dataset_search_roots": [
+    "/home/xymo/projects"
+  ],
+  "donkey_filename_candidates": {},
+  "classification_dataset_status": "NOT_CONFIRMED; no user-specified labelled dataset path"
+}

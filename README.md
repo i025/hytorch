@@ -4,6 +4,8 @@
 
 **当前状态：A100 阶段 1 已完成（2026-10-28）：主机回归 21 passed / 2 skipped，CUDA sm_80 编译与库加载成功，GPU 正确性 37 passed / 0 skipped，TinyNet GPU 合成数据烟测完成。两项可选 PyTorch 对照尚未执行；尚无正式性能或真实任务训练结论。详见 [完整验收报告、原始日志与图像](docs/experiments/a100-stage1/README.md)。**
 
+后续空闲窗口实验正在进行：PyTorch 已安装，主机对齐补齐为 **23 passed / 0 failed / 0 skipped**。见 [原始数值与实时阶段记录](docs/experiments/a100-gpu-window/README.md)。上述阶段 1 历史记录保留。
+
 ## 队友第一次运行：只做这四步
 
 ### 1. 获取代码，确认环境
