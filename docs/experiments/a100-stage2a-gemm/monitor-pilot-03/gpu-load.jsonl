@@ -1,0 +1,2 @@
+{"timestamp": 1793206743.3957183, "gpu": "0, GPU-f099fdbd-adf2-6157-3462-4145bc2a8359, 0, 0, 210, 1215, 46.31, 38", "gpu_fields": "index,uuid,memory.used,utilization.gpu,clocks.sm,clocks.mem,power.draw,temperature.gpu", "compute_process_count": 0, "root_benchmark_process_observed": false}
+{"timestamp": 1793206744.6102252, "gpu": "0, GPU-f099fdbd-adf2-6157-3462-4145bc2a8359, 427, 7, 765, 1215, 47.69, 38", "gpu_fields": "index,uuid,memory.used,utilization.gpu,clocks.sm,clocks.mem,power.draw,temperature.gpu", "compute_process_count": 0, "root_benchmark_process_observed": false}

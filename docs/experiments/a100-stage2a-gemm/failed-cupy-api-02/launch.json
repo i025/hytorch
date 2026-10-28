@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/benchmarks/bench_cuda_gemm.py",
+    "--device",
+    "0",
+    "--sizes",
+    "128",
+    "256",
+    "--tiles",
+    "16",
+    "32",
+    "--repeats",
+    "10",
+    "--warmup",
+    "5",
+    "--seed",
+    "42",
+    "--output",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gemm_stage2a_pilot_02"
+  ],
+  "physical_gpu": 5,
+  "logical_gpu": 0,
+  "uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+  "started_at": "2026-10-28T16:50:16.980150+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4"
+  }
+}

@@ -1,0 +1,12 @@
+警告: 未找到scipy，无法加载SVHN数据集
+Traceback (most recent call last):
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/benchmarks/bench_cuda_gemm.py", line 165, in <module>
+    main()
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/benchmarks/bench_cuda_gemm.py", line 115, in main
+    _, copies = cpu_time(lambda: result.get(out=target, blocking=True),
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/benchmarks/bench_cuda_gemm.py", line 25, in cpu_time
+    fn()
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/benchmarks/bench_cuda_gemm.py", line 115, in <lambda>
+    _, copies = cpu_time(lambda: result.get(out=target, blocking=True),
+  File "cupy/_core/core.pyx", line 1771, in cupy._core.core._ndarray_base.get
+TypeError: get() got an unexpected keyword argument 'blocking'

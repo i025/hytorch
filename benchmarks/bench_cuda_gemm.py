@@ -112,7 +112,7 @@ def main():
                     lambda method=method, tile=tile: gemm(da, db, method, tile, out=dy))
                 result, times = gpu_time(fn, cp, args.repeats, args.warmup)
                 target = np.empty_like(reference)
-                _, copies = cpu_time(lambda: result.get(out=target, blocking=True),
+                _, copies = cpu_time(lambda: result.get(out=target),
                                      args.repeats, args.warmup)
                 entries.append((method, None if method == "basic" else tile,
                                 target, times, transfer, copies))
