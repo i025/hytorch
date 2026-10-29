@@ -1,0 +1,4 @@
+docs/experiments/gemm-fp32-accuracy/figures/absolute-errors.png
+docs/experiments/gemm-fp32-accuracy/figures/error-vs-k.png
+docs/experiments/gemm-fp32-accuracy/figures/historical-worst.png
+docs/experiments/gemm-fp32-accuracy/figures/cancellation.png

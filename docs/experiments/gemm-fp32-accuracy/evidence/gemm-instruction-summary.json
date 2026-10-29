@@ -1,0 +1,62 @@
+[
+  {
+    "symbol": "_Z11gemm_sharedILi32EEvPKfS1_Pfiii",
+    "ffma_instructions": 32,
+    "hmma_instructions": 0,
+    "dmma_instructions": 0,
+    "examples": [
+      "/*03b0*/                   FFMA R12, R26, R12, R25 ;                              /* 0x0000000c1a0c7223 */",
+      "/*03d0*/                   FFMA R12, R22, R13, R12 ;                              /* 0x0000000d160c7223 */",
+      "/*03f0*/                   FFMA R12, R27, R14, R12 ;                              /* 0x0000000e1b0c7223 */",
+      "/*0410*/                   FFMA R28, R28, R15, R12 ;                              /* 0x0000000f1c1c7223 */"
+    ]
+  },
+  {
+    "symbol": "_Z11gemm_sharedILi16EEvPKfS1_Pfiii",
+    "ffma_instructions": 16,
+    "hmma_instructions": 0,
+    "dmma_instructions": 0,
+    "examples": [
+      "/*03d0*/                   FFMA R8, R29, R8, R21 ;                                /* 0x000000081d087223 */",
+      "/*03f0*/                   FFMA R8, R25, R9, R8 ;                                 /* 0x0000000919087223 */",
+      "/*0410*/                   FFMA R8, R27, R10, R8 ;                                /* 0x0000000a1b087223 */",
+      "/*0420*/                   FFMA R22, R22, R11, R8 ;                               /* 0x0000000b16167223 */"
+    ]
+  },
+  {
+    "symbol": "_Z12gemm_blockedILi32EEvPKfS1_Pfiii",
+    "ffma_instructions": 31,
+    "hmma_instructions": 0,
+    "dmma_instructions": 0,
+    "examples": [
+      "/*04c0*/                   FFMA R23, R23, R9, R20 ;                               /* 0x0000000917177223 */",
+      "/*05f0*/                   FFMA R21, R26, R21, R23 ;                              /* 0x000000151a157223 */",
+      "/*0610*/                   FFMA R19, R22, R19, R21 ;                              /* 0x0000001316137223 */",
+      "/*0650*/                   FFMA R18, R18, R7, R19 ;                               /* 0x0000000712127223 */"
+    ]
+  },
+  {
+    "symbol": "_Z12gemm_blockedILi16EEvPKfS1_Pfiii",
+    "ffma_instructions": 31,
+    "hmma_instructions": 0,
+    "dmma_instructions": 0,
+    "examples": [
+      "/*04c0*/                   FFMA R23, R23, R9, R20 ;                               /* 0x0000000917177223 */",
+      "/*05f0*/                   FFMA R21, R26, R21, R23 ;                              /* 0x000000151a157223 */",
+      "/*0610*/                   FFMA R19, R22, R19, R21 ;                              /* 0x0000001316137223 */",
+      "/*0650*/                   FFMA R18, R18, R7, R19 ;                               /* 0x0000000712127223 */"
+    ]
+  },
+  {
+    "symbol": "_Z10gemm_basicPKfS0_Pfiii",
+    "ffma_instructions": 29,
+    "hmma_instructions": 0,
+    "dmma_instructions": 0,
+    "examples": [
+      "/*0680*/                   FFMA R14, R24, R23, R22 ;                              /* 0x00000017180e7223 */",
+      "/*06c0*/                   FFMA R14, R27, R28, R14 ;                              /* 0x0000001c1b0e7223 */",
+      "/*06f0*/                   FFMA R29, R16, R29, R14 ;                              /* 0x0000001d101d7223 */",
+      "/*0730*/                   FFMA R26, R26, R17, R29 ;                              /* 0x000000111a1a7223 */"
+    ]
+  }
+]

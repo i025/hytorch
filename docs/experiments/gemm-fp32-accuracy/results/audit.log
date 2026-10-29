@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETED",
+  "cpu_rows": 10836,
+  "gpu_rows": 10836,
+  "cpu_attempt_02_and_03_rows_exactly_equal": true,
+  "finite_values": true,
+  "reference_decisions": [
+    {
+      "n": 1024,
+      "numpy_pass_fp64_fail": 0,
+      "numpy_fail_fp64_pass": 0
+    },
+    {
+      "n": 2048,
+      "numpy_pass_fp64_fail": 0,
+      "numpy_fail_fp64_pass": 0
+    },
+    {
+      "n": 4096,
+      "numpy_pass_fp64_fail": 4,
+      "numpy_fail_fp64_pass": 6
+    }
+  ]
+}

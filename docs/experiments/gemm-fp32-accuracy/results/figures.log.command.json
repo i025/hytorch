@@ -1,0 +1,30 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/gemm-fp32-accuracy/scripts/plot_results.py",
+    "--results",
+    "docs/experiments/gemm-fp32-accuracy/results",
+    "--output",
+    "docs/experiments/gemm-fp32-accuracy/figures"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-29T07:09:17.603962+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage2a-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cupy-cache",
+    "CUDA_CACHE_PATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cuda-cache",
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 1,
+  "elapsed_s": 0.7068122099153697,
+  "finished_at": "2026-10-29T07:09:18.310819+00:00"
+}

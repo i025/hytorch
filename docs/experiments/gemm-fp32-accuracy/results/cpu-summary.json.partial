@@ -1,0 +1,43 @@
+{
+  "status": "COMPLETED",
+  "scope": "STRATIFIED SAMPLES ONLY, not full-matrix acceptance",
+  "gpu_status": "NOT_RUN",
+  "started_at": 1793257323.709404,
+  "finished_at": 1793257340.1490796,
+  "seed": "np.random.default_rng(42+N); standard_normal((N,N), dtype=float32), A then B",
+  "selection": "All unique historical worst coordinates; 256 smallest |NumPy FP32 output|; 256 seeded random positions with |NumPy output|>1, disjoint priority in that order",
+  "near_zero_definition": "abs(FP64 dot)<=0.01; relative errors retained and explicitly labelled",
+  "random_selection_seed": "1000000+42+N",
+  "atol": 0.0001,
+  "rtol": 0.0001,
+  "ulp_definition": "Distance in ordered binary32 representations to round32(FP64 dot), signed zero unified",
+  "fp64_method": "NumPy dot of exact binary32-to-binary64 conversions; cross-check math.fsum of binary64 exact products",
+  "strategies": {
+    "numpy_fp32": "Original full NumPy FP32 matmul, 4 OpenBLAS threads",
+    "sequential_fma": "libm.fmaf ascending K; one binary32 rounding per multiply-add",
+    "pairwise_fp32": "Explicit binary32 products followed by adjacent balanced tree of binary32 adds",
+    "blocks": "32/64/128 ascending-K fmaf within each block, then binary32 balanced tree over partial sums",
+    "fp64_acc_fp32_out": "Independent ascending-K binary64 product/add, one final binary32 conversion"
+  },
+  "sizes": [
+    {
+      "n": 1024,
+      "samples": 518,
+      "full_matrix_fp64": false,
+      "historical_numpy_exact": true
+    },
+    {
+      "n": 2048,
+      "samples": 515,
+      "full_matrix_fp64": false,
+      "historical_numpy_exact": true
+    },
+    {
+      "n": 4096,
+      "samples": 515,
+      "full_matrix_fp64": false,
+      "historical_numpy_exact": true
+    }
+  ],
+  "reference_max_dot_fsum_difference": 8.526512829121202e-14,
+  "reference_rounded32_disagreements": 

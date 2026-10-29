@@ -1,0 +1,2 @@
+index, uuid, name, memory.total [MiB], driver_version, memory.used [MiB], utilization.gpu [%]
+2, GPU-158426a4-6684-7863-8cbe-ed6595f97683, NVIDIA A100-PCIE-40GB, 40960 MiB, 535.247.01, 0 MiB, 0 %

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "docs/experiments/gemm-fp32-accuracy/scripts/cpu_diagnosis.py", line 10, in <module>
+    from accuracy import sequential_fma,pairwise_product,blocked_fma,sequential_fp64,metrics,summarize
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/gemm-fp32-accuracy/scripts/accuracy.py", line 79
+    return groups
+    ^
+SyntaxError: invalid syntax

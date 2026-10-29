@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "docs/experiments/gemm-fp32-accuracy/scripts/plot_results.py", line 39, in <module>
+    assert all(v > 0 for group in data for v in group), 'Log plot needs an explicit zero-error annotation'
+AssertionError: Log plot needs an explicit zero-error annotation

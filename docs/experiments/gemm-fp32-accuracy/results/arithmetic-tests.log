@@ -1,0 +1,35 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-8.3.5, pluggy-1.5.0 -- /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /srv/lab-disks/disk2/users/xymo/projects/hytorch
+collecting ... collected 0 items / 1 error
+
+==================================== ERRORS ====================================
+_ ERROR collecting docs/experiments/gemm-fp32-accuracy/scripts/test_accuracy.py _
+.venv/lib/python3.8/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.8/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.8/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1014: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:991: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:975: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:671: in _load_unlocked
+    ???
+.venv/lib/python3.8/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+docs/experiments/gemm-fp32-accuracy/scripts/test_accuracy.py:3: in <module>
+    from accuracy import sequential_fma,pairwise_product,blocked_fma,sequential_fp64,ulp_distance
+E     File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/gemm-fp32-accuracy/scripts/accuracy.py", line 79
+E       return groups
+E       ^
+E   SyntaxError: invalid syntax
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/gemm-fp32-accuracy/results/arithmetic-tests.xml -
+=========================== short test summary info ============================
+ERROR docs/experiments/gemm-fp32-accuracy/scripts/test_accuracy.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.29s ===============================

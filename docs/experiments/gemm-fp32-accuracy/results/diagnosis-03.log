@@ -1,0 +1,16 @@
+{"n": 1024, "positions": 518, "historical_numpy_exact": true}
+N=1024: 128/518 positions
+N=1024: 256/518 positions
+N=1024: 384/518 positions
+N=1024: 512/518 positions
+{"n": 2048, "positions": 515, "historical_numpy_exact": true}
+N=2048: 128/515 positions
+N=2048: 256/515 positions
+N=2048: 384/515 positions
+N=2048: 512/515 positions
+{"n": 4096, "positions": 515, "historical_numpy_exact": true}
+N=4096: 128/515 positions
+N=4096: 256/515 positions
+N=4096: 384/515 positions
+N=4096: 512/515 positions
+{"status": "COMPLETED", "positions": 1548, "rows": 10836, "elapsed_s": 16.550668239593506}

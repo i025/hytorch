@@ -1,0 +1,29 @@
+{"n": 1024, "positions": 518, "historical_numpy_exact": true}
+N=1024: 128/518 positions
+N=1024: 256/518 positions
+N=1024: 384/518 positions
+N=1024: 512/518 positions
+{"n": 2048, "positions": 515, "historical_numpy_exact": true}
+N=2048: 128/515 positions
+N=2048: 256/515 positions
+N=2048: 384/515 positions
+N=2048: 512/515 positions
+{"n": 4096, "positions": 515, "historical_numpy_exact": true}
+N=4096: 128/515 positions
+N=4096: 256/515 positions
+N=4096: 384/515 positions
+N=4096: 512/515 positions
+Traceback (most recent call last):
+  File "docs/experiments/gemm-fp32-accuracy/scripts/cpu_diagnosis.py", line 80, in <module>
+    with (args.output/'cpu-summary.json').open('x') as f:json.dump(summary,f,indent=2,allow_nan=False)
+  File "/usr/lib/python3.8/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.8/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.8/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.8/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable

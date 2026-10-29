@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-8.3.5, pluggy-1.5.0 -- /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /srv/lab-disks/disk2/users/xymo/projects/hytorch
+collecting ... collected 4 items
+
+docs/experiments/gemm-fp32-accuracy/scripts/test_accuracy.py::test_fma_has_one_rounding_and_pairwise_rounds_products PASSED [ 25%]
+docs/experiments/gemm-fp32-accuracy/scripts/test_accuracy.py::test_odd_length_tree_and_blocks_preserve_dtype PASSED [ 50%]
+docs/experiments/gemm-fp32-accuracy/scripts/test_accuracy.py::test_ulp_ordering_across_negative_and_zero PASSED [ 75%]
+docs/experiments/gemm-fp32-accuracy/scripts/test_accuracy.py::test_pairwise_is_not_universally_better PASSED [100%]
+
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/gemm-fp32-accuracy/results/arithmetic-tests-02.xml -
+============================== 4 passed in 0.09s ===============================
