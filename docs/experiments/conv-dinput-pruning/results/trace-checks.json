@@ -1,0 +1,9 @@
+{
+  "status": "PASSED",
+  "A_native_kernel_count": 0,
+  "first_dInput_D_ranges": 0,
+  "other_convolution_components_each": 16,
+  "unmatched": 0,
+  "attribution": "CUDA correlation -> submitting API -> NVTX; no asynchronous GPU-overlap attribution",
+  "warning": "Inclusive layout/gradient components overlap; do not add categories as disjoint GPU work"
+}

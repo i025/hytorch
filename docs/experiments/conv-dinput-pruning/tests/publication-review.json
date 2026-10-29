@@ -1,0 +1,43 @@
+{
+  "status": "PASSED",
+  "review": "Publication scope, local documentation links, parseability, raw-file existence/sizes, credential pattern scan; no hashes",
+  "tracked_changes": [
+    "README.md",
+    "benchmarks/bench_cuda_training.py",
+    "hytorch/core.py",
+    "hytorch/functions_conv.py"
+  ],
+  "new_files": 324,
+  "package_bytes": 16060405,
+  "local_links_checked": 85,
+  "parsed": {
+    "json": 103,
+    "jsonl": 72,
+    "xml": 2,
+    "python": 9
+  },
+  "raw_index_files": 1363,
+  "portable_records": 269,
+  "largest_files": [
+    {
+      "path": "docs/experiments/conv-dinput-pruning/results/training-steps.csv",
+      "bytes": 1137731
+    },
+    {
+      "path": "docs/experiments/conv-dinput-pruning/results/raw/conv_dinput_trace_analysis_01/trace-B/nvtx-events.csv",
+      "bytes": 915671
+    },
+    {
+      "path": "docs/experiments/conv-dinput-pruning/results/raw/conv_dinput_trace_analysis_01/trace-C/nvtx-events.csv",
+      "bytes": 834909
+    },
+    {
+      "path": "docs/experiments/conv-dinput-pruning/results/raw/conv_dinput_trace_analysis_01/trace-A/nvtx-events.csv",
+      "bytes": 815644
+    },
+    {
+      "path": "docs/experiments/conv-dinput-pruning/results/raw/conv_dinput_trace_analysis_01/trace-D/nvtx-events.csv",
+      "bytes": 802929
+    }
+  ]
+}

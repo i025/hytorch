@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp_utc": "2026-10-29T14:20:37.176785+00:00",
+    "gpu": {
+      "index": "2",
+      "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "driver_version": "535.247.01",
+      "memory.total": "40960",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "clocks.sm": "210",
+      "clocks.mem": "1215",
+      "power.draw": "43.24",
+      "temperature.gpu": "26"
+    },
+    "process_ids": []
+  },
+  {
+    "timestamp_utc": "2026-10-29T14:20:38.423180+00:00",
+    "gpu": {
+      "index": "2",
+      "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "driver_version": "535.247.01",
+      "memory.total": "40960",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "clocks.sm": "210",
+      "clocks.mem": "1215",
+      "power.draw": "43.30",
+      "temperature.gpu": "26"
+    },
+    "process_ids": []
+  }
+]

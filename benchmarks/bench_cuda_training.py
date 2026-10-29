@@ -152,6 +152,8 @@ def main():
     p.add_argument("--lr", type=float, default=.001)
     p.add_argument("--fused-sgd", action="store_true",
                    help="Opt in to native multi-tensor SGD for HyTorch CUDA FP32")
+    p.add_argument("--prune-input-grad", action="store_true",
+                   help="Explicitly disable HyTorch training-input gradients; keep parameter gradients")
     p.add_argument("--mode", choices=["phases","throughput"], default="phases")
     p.add_argument("--interval", type=float, default=1.)
     p.add_argument("--no-monitor", action="store_true")
@@ -167,6 +169,8 @@ def main():
         p.error("Native backend requires --framework hytorch --device cuda")
     if args.fused_sgd and (args.framework != "hytorch" or args.device != "cuda"):
         p.error("--fused-sgd requires --framework hytorch --device cuda")
+    if args.prune_input_grad and args.framework != "hytorch":
+        p.error("--prune-input-grad is a HyTorch gradient-demand option")
     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
         p.error("Invalid batch/epoch/sample/step/worker/warmup value")
     if args.nvtx and args.device != "cuda":
@@ -214,6 +218,9 @@ def main():
         optimizer = SGD(args.lr, fused=args.fused_sgd).setup(model)
         convert = lambda x: cp.asarray(x) if cp is not None else x
         forward = lambda x,t: F.mean_square_error(model(x), t)
+        if args.prune_input_grad:
+            forward = lambda x,t: F.mean_square_error(
+                model(hytorch.Variable(x, requires_grad=False)), t)
         backward = lambda loss: (model.cleargrads(), loss.backward())
         update = optimizer.update
         restore = lambda: [setattr(v, "data", convert(initial[k].copy())) for k,v in parameters(model).items()]
@@ -244,7 +251,8 @@ def main():
                     python=sys.version, platform=platform.platform(), numpy=np.__version__,
                     data_fingerprint=("DISABLED" if args.no_fingerprints else
                                       "filename/label/file-size manifest" if args.data else "full array bytes"),
-                    backward_backend="original", status="RUNNING")
+                    backward_backend=("original_with_explicit_input_gradient_pruning"
+                                      if args.prune_input_grad else "original"), status="RUNNING")
     if cp is not None:
         metadata.update(cupy=cp.__version__, gpu_name=str(cp.cuda.runtime.getDeviceProperties(args.gpu)["name"]),
                         runtime=cp.cuda.runtime.runtimeGetVersion(), physical_monitor_id=monitor_id)

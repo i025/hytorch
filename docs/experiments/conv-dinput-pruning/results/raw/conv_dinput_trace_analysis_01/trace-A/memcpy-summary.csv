@@ -1,0 +1,4 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-A,transfer,unlabeled:transfer,Host-to-Device,32,0.6300149999999999,19.687968749999996,44.096000000000004,10137856
+trace-A,outside_phase,unlabeled:outside_phase,Device-to-Host,48,0.25792100000000007,5.373354166666668,32.160000000000004,2014056
+trace-A,outside_phase,unlabeled:outside_phase,Host-to-Device,34,0.23638300000000004,6.95244117647059,37.28,2647608

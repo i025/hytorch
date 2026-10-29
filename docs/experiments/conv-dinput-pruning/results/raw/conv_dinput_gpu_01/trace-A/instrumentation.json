@@ -1,0 +1,1496 @@
+{
+  "scope": "whole benchmark process; phase=outside includes initialization/warmup/final snapshots",
+  "timing": "NVTX host ranges; no added synchronization or CUDA Events; GPU attribution requires CUDA correlation IDs",
+  "memory_semantics": "CuPy pool malloc requests, pool backing alloc, and pool free; counts are not live or peak bytes; PyTorch allocator excluded",
+  "labels": "OP/{bwd|fwd}:Class|in=shape;shape[|layer=name]; OP/part:Conv2d.{dInput|dWeight|dBias}|layer=name; OP/internal:function|in=shape; OP/update:SGD|parameter=name",
+  "component_scope": "Conv2d components enclose original Deconv2d/Conv2DGradW/Sum.forward calls; dTarget encloses only original Neg.forward, shared MSE arithmetic stays in the MSE parent. Host component ranges exclude surrounding Function.__call__ bookkeeping; GPU kernels are attributed using CUDA API correlations.",
+  "calls": [
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Add|in=1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Add|in=100",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Add|in=50",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Conv2d|in=4x24x31x98;36x24x5x5;36|layer=conv2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Conv2d|in=4x36x14x47;48x36x5x5;48|layer=conv3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Conv2d|in=4x3x66x200;24x3x5x5;24|layer=conv1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Conv2d|in=4x48x5x22;64x48x3x3;64|layer=conv4",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Conv2d|in=4x64x3x20;64x64x3x3;64|layer=conv5",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:MatMul|in=4x100;100x50|layer=fc2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:MatMul|in=4x1152;1152x100|layer=fc1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:MatMul|in=4x50;50x1|layer=fc3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:MeanSquareError|in=4x1;4x1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:ReLU|in=4x100",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:ReLU|in=4x24x31x98",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:ReLU|in=4x36x14x47",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:ReLU|in=4x48x5x22",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:ReLU|in=4x50",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:ReLU|in=4x64x1x18",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:ReLU|in=4x64x3x20",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Reshape|in=4x64x1x18",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/bwd:Tanh|in=4x1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Conv2DGradW|in=4x24x31x98;4x36x14x47|layer=conv2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Conv2DGradW|in=4x36x14x47;4x48x5x22|layer=conv3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Conv2DGradW|in=4x3x66x200;4x24x31x98|layer=conv1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Conv2DGradW|in=4x48x5x22;4x64x3x20|layer=conv4",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Conv2DGradW|in=4x64x3x20;4x64x1x18|layer=conv5",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Deconv2d|in=4x24x31x98;24x3x5x5|layer=conv1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Deconv2d|in=4x36x14x47;36x24x5x5|layer=conv2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Deconv2d|in=4x48x5x22;48x36x5x5|layer=conv3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Deconv2d|in=4x64x1x18;64x64x3x3|layer=conv5",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Deconv2d|in=4x64x3x20;64x48x3x3|layer=conv4",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:MatMul|in=100x4;4x50|layer=fc2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:MatMul|in=1152x4;4x100|layer=fc1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:MatMul|in=4x100;100x1152|layer=fc1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:MatMul|in=4x1;1x50|layer=fc3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:MatMul|in=4x50;50x100|layer=fc2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:MatMul|in=50x4;4x1|layer=fc3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Neg|in=4x1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Reshape|in=4x1152",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Sum|in=4x24x31x98|layer=conv1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Sum|in=4x36x14x47|layer=conv2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Sum|in=4x48x5x22|layer=conv3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Sum|in=4x64x1x18|layer=conv5",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Sum|in=4x64x3x20|layer=conv4",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Transpose|in=100x50|layer=fc2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Transpose|in=1152x100|layer=fc1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Transpose|in=4x100|layer=fc2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Transpose|in=4x1152|layer=fc1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Transpose|in=4x50|layer=fc3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/fwd:Transpose|in=50x1|layer=fc3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:col2im_array|in=4x24x5x5x14x47",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:col2im_array|in=4x36x5x5x5x22",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:col2im_array|in=4x3x5x5x31x98",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:col2im_array|in=4x48x3x3x3x20",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:col2im_array|in=4x64x3x3x1x18",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.rollaxis|in=24x5x5x4x14x47",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.rollaxis|in=36x5x5x4x5x22",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.rollaxis|in=3x5x5x4x31x98",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.rollaxis|in=48x3x3x4x3x20",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.rollaxis|in=64x3x3x4x1x18",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=24x3x5x5;4x24x31x98",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=36x24x5x5;4x36x14x47",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=48x36x5x5;4x48x5x22",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=4x24x31x98;4x3x5x5x31x98",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=4x36x14x47;4x24x5x5x14x47",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=4x48x5x22;4x36x5x5x5x22",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=4x64x1x18;4x64x3x3x1x18",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=4x64x3x20;4x48x3x3x3x20",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=64x48x3x3;4x64x3x20",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:cupy.tensordot|in=64x64x3x3;4x64x1x18",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:im2col_array|in=4x24x31x98",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:im2col_array|in=4x36x14x47",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:im2col_array|in=4x3x66x200",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:im2col_array|in=4x48x5x22",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/internal:im2col_array|in=4x64x3x20",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dBias|layer=conv1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dBias|layer=conv2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dBias|layer=conv3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dBias|layer=conv4",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dBias|layer=conv5",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dInput|layer=conv1|leaf_input=true",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dInput|layer=conv2|leaf_input=false",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dInput|layer=conv3|leaf_input=false",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dInput|layer=conv4|leaf_input=false",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dInput|layer=conv5|leaf_input=false",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dWeight|layer=conv1",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dWeight|layer=conv2",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dWeight|layer=conv3",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dWeight|layer=conv4",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:Conv2d.dWeight|layer=conv5",
+      "calls": 16
+    },
+    {
+      "phase": "backward",
+      "label": "OP/part:MeanSquareError.dTarget|component=negate_only",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:Conv2d|in=4x24x31x98;36x24x5x5;36|layer=conv2",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:Conv2d|in=4x36x14x47;48x36x5x5;48|layer=conv3",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:Conv2d|in=4x3x66x200;24x3x5x5;24|layer=conv1",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:Conv2d|in=4x48x5x22;64x48x3x3;64|layer=conv4",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:Conv2d|in=4x64x3x20;64x64x3x3;64|layer=conv5",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:MatMul|in=4x100;100x50|layer=fc2",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:MatMul|in=4x1152;1152x100|layer=fc1",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:MatMul|in=4x50;50x1|layer=fc3",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:MeanSquareError|in=4x1;4x1",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:ReLU|in=4x100",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:ReLU|in=4x24x31x98",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:ReLU|in=4x36x14x47",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:ReLU|in=4x48x5x22",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:ReLU|in=4x50",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:ReLU|in=4x64x1x18",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:ReLU|in=4x64x3x20",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:Reshape|in=4x64x1x18",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/fwd:Tanh|in=4x1",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.rollaxis|in=4x14x47x36",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.rollaxis|in=4x1x18x64",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.rollaxis|in=4x31x98x24",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.rollaxis|in=4x3x20x64",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.rollaxis|in=4x5x22x48",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.tensordot|in=4x24x5x5x14x47;36x24x5x5",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.tensordot|in=4x36x5x5x5x22;48x36x5x5",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.tensordot|in=4x3x5x5x31x98;24x3x5x5",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.tensordot|in=4x48x3x3x3x20;64x48x3x3",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:cupy.tensordot|in=4x64x3x3x1x18;64x64x3x3",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:im2col_array|in=4x24x31x98",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:im2col_array|in=4x36x14x47",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:im2col_array|in=4x3x66x200",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:im2col_array|in=4x48x5x22",
+      "calls": 16
+    },
+    {
+      "phase": "forward",
+      "label": "OP/internal:im2col_array|in=4x64x3x20",
+      "calls": 16
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Add|in=1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Add|in=100",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Add|in=50",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Conv2d|in=4x24x31x98;36x24x5x5;36|layer=conv2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Conv2d|in=4x36x14x47;48x36x5x5;48|layer=conv3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Conv2d|in=4x3x66x200;24x3x5x5;24|layer=conv1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Conv2d|in=4x48x5x22;64x48x3x3;64|layer=conv4",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Conv2d|in=4x64x3x20;64x64x3x3;64|layer=conv5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:MatMul|in=4x100;100x50|layer=fc2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:MatMul|in=4x1152;1152x100|layer=fc1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:MatMul|in=4x50;50x1|layer=fc3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:MeanSquareError|in=4x1;4x1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:ReLU|in=4x100",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:ReLU|in=4x24x31x98",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:ReLU|in=4x36x14x47",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:ReLU|in=4x48x5x22",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:ReLU|in=4x50",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:ReLU|in=4x64x1x18",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:ReLU|in=4x64x3x20",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Reshape|in=4x64x1x18",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/bwd:Tanh|in=4x1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2DGradW|in=4x24x31x98;4x36x14x47|layer=conv2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2DGradW|in=4x36x14x47;4x48x5x22|layer=conv3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2DGradW|in=4x3x66x200;4x24x31x98|layer=conv1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2DGradW|in=4x48x5x22;4x64x3x20|layer=conv4",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2DGradW|in=4x64x3x20;4x64x1x18|layer=conv5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=1x24x31x98;36x24x5x5;36|layer=conv2",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=1x36x14x47;48x36x5x5;48|layer=conv3",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=1x3x66x200;24x3x5x5;24|layer=conv1",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=1x48x5x22;64x48x3x3;64|layer=conv4",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=1x64x3x20;64x64x3x3;64|layer=conv5",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=4x24x31x98;36x24x5x5;36|layer=conv2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=4x36x14x47;48x36x5x5;48|layer=conv3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=4x3x66x200;24x3x5x5;24|layer=conv1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=4x48x5x22;64x48x3x3;64|layer=conv4",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Conv2d|in=4x64x3x20;64x64x3x3;64|layer=conv5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Deconv2d|in=4x24x31x98;24x3x5x5|layer=conv1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Deconv2d|in=4x36x14x47;36x24x5x5|layer=conv2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Deconv2d|in=4x48x5x22;48x36x5x5|layer=conv3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Deconv2d|in=4x64x1x18;64x64x3x3|layer=conv5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Deconv2d|in=4x64x3x20;64x48x3x3|layer=conv4",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=100x4;4x50|layer=fc2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=1152x4;4x100|layer=fc1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=1x100;100x50|layer=fc2",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=1x1152;1152x100|layer=fc1",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=1x50;50x1|layer=fc3",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=4x100;100x1152|layer=fc1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=4x100;100x50|layer=fc2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=4x1152;1152x100|layer=fc1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=4x1;1x50|layer=fc3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=4x50;50x100|layer=fc2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=4x50;50x1|layer=fc3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MatMul|in=50x4;4x1|layer=fc3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:MeanSquareError|in=4x1;4x1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Neg|in=4x1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=1x100",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=1x24x31x98",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=1x36x14x47",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=1x48x5x22",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=1x50",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=1x64x1x18",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=1x64x3x20",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=4x100",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=4x24x31x98",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=4x36x14x47",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=4x48x5x22",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=4x50",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=4x64x1x18",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:ReLU|in=4x64x3x20",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Reshape|in=1x64x1x18",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Reshape|in=4x1152",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Reshape|in=4x64x1x18",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Sum|in=4x24x31x98|layer=conv1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Sum|in=4x36x14x47|layer=conv2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Sum|in=4x48x5x22|layer=conv3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Sum|in=4x64x1x18|layer=conv5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Sum|in=4x64x3x20|layer=conv4",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Tanh|in=1x1",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Tanh|in=4x1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Transpose|in=100x50|layer=fc2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Transpose|in=1152x100|layer=fc1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Transpose|in=4x100|layer=fc2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Transpose|in=4x1152|layer=fc1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Transpose|in=4x50|layer=fc3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/fwd:Transpose|in=50x1|layer=fc3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:col2im_array|in=4x24x5x5x14x47",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:col2im_array|in=4x36x5x5x5x22",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:col2im_array|in=4x3x5x5x31x98",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:col2im_array|in=4x48x3x3x3x20",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:col2im_array|in=4x64x3x3x1x18",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=24x5x5x4x14x47",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=36x5x5x4x5x22",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=3x5x5x4x31x98",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=48x3x3x4x3x20",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=4x14x47x36",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=4x1x18x64",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=4x31x98x24",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=4x3x20x64",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=4x5x22x48",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.rollaxis|in=64x3x3x4x1x18",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=24x3x5x5;4x24x31x98",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=36x24x5x5;4x36x14x47",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=48x36x5x5;4x48x5x22",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x24x31x98;4x3x5x5x31x98",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x24x5x5x14x47;36x24x5x5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x36x14x47;4x24x5x5x14x47",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x36x5x5x5x22;48x36x5x5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x3x5x5x31x98;24x3x5x5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x48x3x3x3x20;64x48x3x3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x48x5x22;4x36x5x5x5x22",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x64x1x18;4x64x3x3x1x18",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x64x3x20;4x48x3x3x3x20",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=4x64x3x3x1x18;64x64x3x3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=64x48x3x3;4x64x3x20",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:cupy.tensordot|in=64x64x3x3;4x64x1x18",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=1x24x31x98",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=1x36x14x47",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=1x3x66x200",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=1x48x5x22",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=1x64x3x20",
+      "calls": 1
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=4x24x31x98",
+      "calls": 20
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=4x36x14x47",
+      "calls": 20
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=4x3x66x200",
+      "calls": 20
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=4x48x5x22",
+      "calls": 20
+    },
+    {
+      "phase": "outside",
+      "label": "OP/internal:im2col_array|in=4x64x3x20",
+      "calls": 20
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dBias|layer=conv1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dBias|layer=conv2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dBias|layer=conv3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dBias|layer=conv4",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dBias|layer=conv5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dInput|layer=conv1|leaf_input=true",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dInput|layer=conv2|leaf_input=false",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dInput|layer=conv3|leaf_input=false",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dInput|layer=conv4|leaf_input=false",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dInput|layer=conv5|leaf_input=false",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dWeight|layer=conv1",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dWeight|layer=conv2",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dWeight|layer=conv3",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dWeight|layer=conv4",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:Conv2d.dWeight|layer=conv5",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/part:MeanSquareError.dTarget|component=negate_only",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv1/W",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv1/b",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv2/W",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv2/b",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv3/W",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv3/b",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv4/W",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv4/b",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv5/W",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=conv5/b",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=fc1/W",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=fc1/b",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=fc2/W",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=fc2/b",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=fc3/W",
+      "calls": 10
+    },
+    {
+      "phase": "outside",
+      "label": "OP/update:SGD|parameter=fc3/b",
+      "calls": 10
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv1/W",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv1/b",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv2/W",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv2/b",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv3/W",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv3/b",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv4/W",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv4/b",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv5/W",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=conv5/b",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=fc1/W",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=fc1/b",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=fc2/W",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=fc2/b",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=fc3/W",
+      "calls": 16
+    },
+    {
+      "phase": "update",
+      "label": "OP/update:SGD|parameter=fc3/b",
+      "calls": 16
+    }
+  ],
+  "memory": [],
+  "unclosed_ranges": 0
+}

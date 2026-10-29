@@ -1,0 +1,350 @@
+{
+  "status": "PASSED",
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "checks": [
+    {
+      "method": "A",
+      "mode": "throughput",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "B",
+      "mode": "throughput",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "C",
+      "mode": "throughput",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "D",
+      "mode": "throughput",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "E",
+      "mode": "throughput",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "A",
+      "mode": "throughput",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "B",
+      "mode": "throughput",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "C",
+      "mode": "throughput",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "D",
+      "mode": "throughput",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "E",
+      "mode": "throughput",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "A",
+      "mode": "throughput",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "B",
+      "mode": "throughput",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "C",
+      "mode": "throughput",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "D",
+      "mode": "throughput",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "E",
+      "mode": "throughput",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "A",
+      "mode": "phases",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "B",
+      "mode": "phases",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "C",
+      "mode": "phases",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "D",
+      "mode": "phases",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "E",
+      "mode": "phases",
+      "repeat": 1,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "A",
+      "mode": "phases",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "B",
+      "mode": "phases",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "C",
+      "mode": "phases",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "D",
+      "mode": "phases",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "E",
+      "mode": "phases",
+      "repeat": 2,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "A",
+      "mode": "phases",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    },
+    {
+      "method": "B",
+      "mode": "phases",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "C",
+      "mode": "phases",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "D",
+      "mode": "phases",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {
+        "gemm_shared": 2048,
+        "conv_im2col": 1280,
+        "sgd_fused": 256
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "method": "E",
+      "mode": "phases",
+      "repeat": 3,
+      "initial_equal": true,
+      "inputs_equal": true,
+      "dispatch": {},
+      "status": "COMPLETED"
+    }
+  ],
+  "all_initial_inputs_equal": true,
+  "loss_finite": true,
+  "max_abs": 4.190951585769653e-08,
+  "pruning_exact": true,
+  "failures": []
+}

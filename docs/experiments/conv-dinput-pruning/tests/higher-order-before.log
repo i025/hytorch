@@ -1,0 +1,19 @@
+警告: 未找到scipy，无法加载SVHN数据集
+Traceback (most recent call last):
+  File "docs/experiments/conv-dinput-pruning/scripts/reproduce_higher_order.py", line 17, in <module>
+    F.sum(gw*gw).backward()
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py", line 146, in backward
+    gxs = f.backward(*gys)
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py", line 168, in backward
+    gx = deconv2d(gy, gW, stride=self.stride, pad=self.pad,
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py", line 136, in deconv2d
+    return Deconv2d(stride, pad, outsize)(x, W, b)
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py", line 184, in __call__
+    inputs = [as_variable(x) for x in inputs]  # Variable和ndarray一起使用
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py", line 184, in <listcomp>
+    inputs = [as_variable(x) for x in inputs]  # Variable和ndarray一起使用
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py", line 179, in as_variable
+    return Variable(obj)
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py", line 48, in __init__
+    raise TypeError('{} is not supported'.format(type(data)))
+TypeError: <class 'weakref'> is not supported

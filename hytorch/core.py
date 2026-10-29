@@ -42,7 +42,13 @@ except ImportError:
 
 
 class Variable:
-    def __init__(self, data, name=None):
+    """Tensor with an explicit gradient-receipt flag (default: legacy behavior).
+
+    requires_grad=False stops gradient accumulation/traversal at this variable.
+    Operation outputs still default to True; this is not automatic graph-wide
+    requires-grad inference. Conv2d also avoids computing that input gradient.
+    """
+    def __init__(self, data, name=None, *, requires_grad=True):
         if data is not None:
             if not isinstance(data, array_types):      # 加入GPU，将ndarray改为array_types
                 raise TypeError('{} is not supported'.format(type(data)))
@@ -50,6 +56,7 @@ class Variable:
         self.data = data  # data的类型是ndarray/cparray，属性有shape,nidm,size,dtype,itemsize等
         self.name = name  # 命名变量
         self.grad = None
+        self.requires_grad = requires_grad
         self.creator = None
         self.generation = 0
 
@@ -124,6 +131,8 @@ class Variable:
             x.backward()
 
     def backward(self, retain_grad=False, create_graph=False):  # 不保留不必要的grad, 默认不要反向传播的计算图
+        if not self.requires_grad:
+            raise RuntimeError("backward requires requires_grad=True on its output")
         if self.grad is None:
             xp = hytorch.cuda.get_array_module(self.data)
             self.grad = Variable(xp.ones_like(self.data))    # 计算高阶导数，Variable类只修改一处，将grad也变为Variable，可以构建计算图
@@ -131,7 +140,7 @@ class Variable:
         seen_set = set()
 
         def add_func(f):
-            if f not in seen_set:
+            if f is not None and f not in seen_set:
                 funcs.append(f)
                 seen_set.add(f)
                 funcs.sort(key=lambda x: x.generation)
@@ -148,6 +157,8 @@ class Variable:
                     gxs = (gxs,)
 
                 for x, gx in zip(f.inputs, gxs):
+                    if gx is None or not x.requires_grad:
+                        continue
                     if x.grad is None:
                         x.grad = gx
                     else:

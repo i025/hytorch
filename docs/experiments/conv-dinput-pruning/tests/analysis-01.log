@@ -1,0 +1,42 @@
+[
+  {
+    "comparison": "B/A",
+    "label": "native_increment",
+    "throughput_ratio": 0.9985582905485871,
+    "throughput_gain_pct": -0.14417094514128648,
+    "wall_speedup": 0.9988761335902683,
+    "wall_reduction_pct": -0.11251309065640758
+  },
+  {
+    "comparison": "C/B",
+    "label": "fused_increment",
+    "throughput_ratio": 1.0529150858482934,
+    "throughput_gain_pct": 5.291508584829341,
+    "wall_speedup": 1.0528334474701393,
+    "wall_reduction_pct": 5.018215140969651
+  },
+  {
+    "comparison": "D/C",
+    "label": "pruning_increment",
+    "throughput_ratio": 1.009696775985827,
+    "throughput_gain_pct": 0.9696775985827077,
+    "wall_speedup": 1.0092623794177202,
+    "wall_reduction_pct": 0.9177375087600192
+  },
+  {
+    "comparison": "D/A",
+    "label": "cumulative",
+    "throughput_ratio": 1.0615922502540867,
+    "throughput_gain_pct": 6.159225025408666,
+    "wall_speedup": 1.0613909865213902,
+    "wall_reduction_pct": 5.784012423413676
+  },
+  {
+    "comparison": "D/E",
+    "label": "versus_pytorch",
+    "throughput_ratio": 0.4891126498547493,
+    "throughput_gain_pct": -51.088735014525064,
+    "wall_speedup": 0.4921738593000656,
+    "wall_reduction_pct": -103.18023420059905
+  }
+]

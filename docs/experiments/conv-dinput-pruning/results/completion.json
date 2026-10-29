@@ -1,0 +1,7 @@
+{
+  "status": "PASSED",
+  "training_runs": 30,
+  "trace_count": 5,
+  "raw_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_gpu_01",
+  "trace_analysis_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_trace_analysis_01"
+}

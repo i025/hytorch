@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.000744870360904315, "train_wall_s": 0.17814844194799662, "samples": 64, "train_samples_per_sec": 359.25096677905424}
+Generating '/tmp/nsys-report-c6f1.qdstrm'
+[1/1] [0%                          ] trace-B.nsys-rep[1/1] [0%                          ] trace-B.nsys-rep[1/1] [=16%                        ] trace-B.nsys-rep[1/1] [======33%                   ] trace-B.nsys-rep[1/1] [==================78%       ] trace-B.nsys-rep[1/1] [====================85%     ] trace-B.nsys-rep[1/1] [========================100%] trace-B.nsys-rep[1/1] [========================100%] trace-B.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_gpu_01/trace-B.nsys-rep

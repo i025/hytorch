@@ -1,0 +1,36 @@
+{
+  "status": "PASSED",
+  "checks": [
+    {
+      "method": "A",
+      "sqlite_total": 3952,
+      "measured_total": 2432,
+      "kernels_per_step": 152
+    },
+    {
+      "method": "B",
+      "sqlite_total": 3848,
+      "measured_total": 2368,
+      "kernels_per_step": 148
+    },
+    {
+      "method": "C",
+      "sqlite_total": 3042,
+      "measured_total": 1872,
+      "kernels_per_step": 117
+    },
+    {
+      "method": "D",
+      "sqlite_total": 2964,
+      "measured_total": 1824,
+      "kernels_per_step": 114
+    },
+    {
+      "method": "E",
+      "sqlite_total": 2444,
+      "measured_total": 1504,
+      "kernels_per_step": 94
+    }
+  ],
+  "scope": "Raw SQLite totals and measured phase event scopes; CPU only"
+}

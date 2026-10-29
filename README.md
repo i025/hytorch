@@ -105,6 +105,12 @@ python examples/finetune_imagenet.py --model alexnet --weights weights_imagenet/
 
 ## 需要回传哪些结果
 
+### 长期 DonkeyNet 性能基线
+
+阶段 4C 建立了[同一 GPU 窗口的 A–E 性能表与原始数据](docs/experiments/conv-dinput-pruning/README.md)：A 为当前代码复现的 CuPy 无自研 Native CUDA C 基线，B 为 Combined，C 加 Fused SGD，D 加显式 dInput 剪枝，E 为 PyTorch 对照。
+
+后续训练实验保留这些配置并加入新版本，在同一 GPU/窗口、相同输入和初始权重下至少重复 3 次；分别报告增量和累计收益，不跨历史窗口拼接加速比。吞吐、同步阶段和 Nsight 核时分开统计，使用 `--no-fingerprints`，保留失败及退化记录。阶段 4C 的首层梯度剪枝已验证，端到端稳定收益仍待复核。
+
 第一次先回传：
 
 1. `nvidia-smi`、`nvcc --version`、CuPy 配置信息。
