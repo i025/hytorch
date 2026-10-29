@@ -1,0 +1,10 @@
+scope,family,count,total_ms,mean_us,fraction_gpu_duration,source
+submitted_in_training_nvtx,HyTorch CUDA gemm_shared,128,4.818177999999994,37.64201562499996,0.2096876374555478,historical-nsys-fixed-01/kernel-summary.csv
+submitted_in_training_nvtx,CuPy elementwise,1136,4.058471999999999,3.572598591549295,0.1766251486266163,historical-nsys-fixed-01/kernel-summary.csv
+submitted_in_training_nvtx,cuBLAS GEMM/GEMV/reduction,320,3.635086,11.35964375,0.15819934325542526,historical-nsys-fixed-01/kernel-summary.csv
+submitted_in_training_nvtx,CuPy col2im,80,3.3914059999999995,42.392574999999994,0.14759436280531155,historical-nsys-fixed-01/kernel-summary.csv
+submitted_in_training_nvtx,CuPy copy/layout,320,2.327205999999998,7.272518749999994,0.10128026154541733,historical-nsys-fixed-01/kernel-summary.csv
+submitted_in_training_nvtx,HyTorch CUDA im2col_kernel,80,1.6257030000000001,20.321287500000004,0.07075077368963888,historical-nsys-fixed-01/kernel-summary.csv
+submitted_in_training_nvtx,CuPy im2col,80,1.5682249999999993,19.60281249999999,0.06824932479637048,historical-nsys-fixed-01/kernel-summary.csv
+submitted_in_training_nvtx,CuPy/CUB reduction,144,1.060359,7.363604166666668,0.04614694051666989,historical-nsys-fixed-01/kernel-summary.csv
+submitted_in_training_nvtx,HyTorch CUDA conv_pack,80,0.493248,6.1656,0.021466207309002318,historical-nsys-fixed-01/kernel-summary.csv

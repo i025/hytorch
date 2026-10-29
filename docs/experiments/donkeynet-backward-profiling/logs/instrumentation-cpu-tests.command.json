@@ -1,0 +1,7 @@
+{
+  "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 .venv/bin/python -m pytest docs/experiments/donkeynet-backward-profiling/scripts/test_profile_training.py -q",
+  "cwd": "/home/xymo/projects/hytorch",
+  "exit_code": 0,
+  "stdout_source": "Verbatim combined stdout/stderr returned by terminal execution; no test output omitted.",
+  "scope": "CPU only; no GPU operations"
+}

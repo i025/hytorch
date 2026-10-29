@@ -1,0 +1,53 @@
+figure: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/figures/phase-timing.png
+figure: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/figures/training-comparison.png
+figure: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/figures/backward-kernel-distribution.png
+figure: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/figures/kernel-launches.png
+figure: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/figures/cpu-gpu-timeline.png
+figure: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/figures/host-gpu-time-accounting.png
+{
+  "evidence": "HISTORICAL_REANALYSIS_ONLY_NEW_GPU_MEASUREMENTS_NOT_RUN",
+  "source_date_timezone": "2026-10-29 Asia/Shanghai",
+  "phase_repeats": 1,
+  "throughput_repeats": 3,
+  "steps_per_repeat": 16,
+  "throughput_statistics": [
+    {
+      "variant": "cupy",
+      "repeats": 3,
+      "steps_per_repeat": 16,
+      "epoch_wall_mean_ms": 121.83532398194075,
+      "epoch_wall_std_ms": 1.228058661769556,
+      "mean_individual_samples_per_sec": 525.334975455238,
+      "aggregate_samples_per_sec": 525.2992146143634
+    },
+    {
+      "variant": "combined",
+      "repeats": 3,
+      "steps_per_repeat": 16,
+      "epoch_wall_mean_ms": 120.97628562090297,
+      "epoch_wall_std_ms": 1.2427651611037556,
+      "mean_individual_samples_per_sec": 529.0664760290493,
+      "aggregate_samples_per_sec": 529.0293024911795
+    },
+    {
+      "variant": "torch",
+      "repeats": 3,
+      "steps_per_repeat": 16,
+      "epoch_wall_mean_ms": 79.89488930130999,
+      "epoch_wall_std_ms": 1.9117412465985912,
+      "mean_individual_samples_per_sec": 801.3609436853136,
+      "aggregate_samples_per_sec": 801.0524898361757
+    }
+  ],
+  "figures": [
+    "backward-kernel-distribution.png",
+    "cpu-gpu-timeline.png",
+    "host-gpu-time-accounting.png",
+    "kernel-launches.png",
+    "phase-timing.png",
+    "training-comparison.png"
+  ],
+  "backward_gpu_kernel_duration_ms": 12.940980999999997,
+  "backward_family_count": 1232,
+  "nvtx_activity_coverage_definition": "Union of measured CUDA kernel and memcpy intervals clipped to first-to-last training NVTX envelope. NOT GPU/SM utilization; profiled process only."
+}

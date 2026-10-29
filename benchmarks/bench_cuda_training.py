@@ -165,8 +165,8 @@ def main():
         p.error("Native backend requires --framework hytorch --device cuda")
     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
         p.error("Invalid batch/epoch/sample/step/worker/warmup value")
-    if args.nvtx and (args.device != "cuda" or args.framework != "hytorch"):
-        p.error("NVTX ranges here require HyTorch CUDA")
+    if args.nvtx and args.device != "cuda":
+        p.error("NVTX ranges here require CUDA")
     if args.data and args.model != "donkey":
         p.error("Real DonkeyCar data requires --model donkey")
     if args.save_comparison_inputs and args.data:

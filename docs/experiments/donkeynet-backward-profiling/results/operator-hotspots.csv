@@ -1,0 +1,7 @@
+rank,kernel_family,calls,gpu_total_ms,mean_kernel_us,backward_gpu_time_percent,training_nvtx_envelope_percent,implementation,scope
+1,cuBLAS GEMM/GEMV/reduction,320,3.635086,11.35964375,28.089725191621863,2.2565476137415246,"hytorch/functions_conv.py:Deconv2d.forward,Conv2DGradW.forward; hytorch/functions.py:MatMul.forward(native=False)","historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+2,CuPy col2im,80,3.3914059999999995,42.392574999999994,26.206714931425974,2.10527869671548,hytorch/functions_conv.py:_col2im_gpu,"historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+3,CuPy copy/layout,240,1.964264999999998,8.18443749999999,15.17864063010368,1.2193542321986306,CuPy array layout materialization; exact parent node NOT_MEASURED,"historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+4,CuPy im2col,80,1.5682249999999993,19.60281249999999,12.11828531391862,0.973504995909258,hytorch/functions_conv.py:_im2col_gpu,"historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+5,CuPy elementwise,384,1.3794340000000003,3.592276041666667,10.65942373302302,0.8563094521048269,hytorch/core.py arithmetic; functions.py ReLU/Tanh/MSE; exact split NOT_MEASURED,"historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+6,CuPy/CUB reduction,128,1.0025650000000002,7.832539062500001,7.747210199906791,0.6223609725796782,CuPy reductions including Conv/Linear bias; exact split NOT_MEASURED,"historical instrumented 16 steps; GPU duration sum, not CPU node duration"

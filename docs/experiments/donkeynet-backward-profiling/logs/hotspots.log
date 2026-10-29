@@ -1,0 +1,123 @@
+{
+  "stage": "4A",
+  "overall_status": "PARTIAL_GPU_BLOCKED",
+  "baseline": "aad4d0562fd968083a727099e478e7db64d35dd0",
+  "branch": "experiment/donkeynet-backward-profiling",
+  "source_analysis": "COMPLETED",
+  "historical_trace_reanalysis": "PASS",
+  "cpu_instrumentation_tests": {
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0
+  },
+  "new_matched_training": "NOT_RUN",
+  "new_operator_nvtx": "NOT_RUN",
+  "gpu_instrumentation_equivalence": "NOT_RUN",
+  "memory_pool_callbacks": "NOT_RUN",
+  "profiler_overhead_measurement": "NOT_RUN",
+  "achieved_occupancy": "BLOCKED_NO_PERMISSION",
+  "attempted_physical_gpu": 6,
+  "gpu_jobs_started": 0,
+  "gpu_block_reason": "The selected device was occupied at the pre-launch guard; subsequent snapshot showed all eight occupied",
+  "planned_measurement": {
+    "samples": 256,
+    "batch": 4,
+    "epochs": 4,
+    "steps_per_run": 256,
+    "warmup": 10,
+    "independent_repeats": 3,
+    "methods": [
+      "cupy",
+      "combined",
+      "torch"
+    ],
+    "modes": [
+      "throughput",
+      "phases"
+    ],
+    "executed": false
+  },
+  "historical_measurement": {
+    "samples": 64,
+    "batch": 4,
+    "steps_per_run": 16,
+    "warmup": 2,
+    "throughput_repeats": 3,
+    "phases_repeats": 1,
+    "trace_method": "combined",
+    "physical_gpu": 2
+  },
+  "conv_backward_total_fraction": null,
+  "conv_backward_fraction_status": "NOT_MEASURED: no historical node NVTX; col2im+im2col gives only a measured subset",
+  "kernel_family_ranking": [
+    {
+      "rank": 1,
+      "kernel_family": "cuBLAS GEMM/GEMV/reduction",
+      "calls": 320,
+      "gpu_total_ms": 3.635086,
+      "mean_kernel_us": 11.35964375,
+      "backward_gpu_time_percent": 28.089725191621863,
+      "training_nvtx_envelope_percent": 2.2565476137415246,
+      "implementation": "hytorch/functions_conv.py:Deconv2d.forward,Conv2DGradW.forward; hytorch/functions.py:MatMul.forward(native=False)",
+      "scope": "historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+    },
+    {
+      "rank": 2,
+      "kernel_family": "CuPy col2im",
+      "calls": 80,
+      "gpu_total_ms": 3.3914059999999995,
+      "mean_kernel_us": 42.392574999999994,
+      "backward_gpu_time_percent": 26.206714931425974,
+      "training_nvtx_envelope_percent": 2.10527869671548,
+      "implementation": "hytorch/functions_conv.py:_col2im_gpu",
+      "scope": "historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+    },
+    {
+      "rank": 3,
+      "kernel_family": "CuPy copy/layout",
+      "calls": 240,
+      "gpu_total_ms": 1.964264999999998,
+      "mean_kernel_us": 8.18443749999999,
+      "backward_gpu_time_percent": 15.17864063010368,
+      "training_nvtx_envelope_percent": 1.2193542321986306,
+      "implementation": "CuPy array layout materialization; exact parent node NOT_MEASURED",
+      "scope": "historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+    },
+    {
+      "rank": 4,
+      "kernel_family": "CuPy im2col",
+      "calls": 80,
+      "gpu_total_ms": 1.5682249999999993,
+      "mean_kernel_us": 19.60281249999999,
+      "backward_gpu_time_percent": 12.11828531391862,
+      "training_nvtx_envelope_percent": 0.973504995909258,
+      "implementation": "hytorch/functions_conv.py:_im2col_gpu",
+      "scope": "historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+    },
+    {
+      "rank": 5,
+      "kernel_family": "CuPy elementwise",
+      "calls": 384,
+      "gpu_total_ms": 1.3794340000000003,
+      "mean_kernel_us": 3.592276041666667,
+      "backward_gpu_time_percent": 10.65942373302302,
+      "training_nvtx_envelope_percent": 0.8563094521048269,
+      "implementation": "hytorch/core.py arithmetic; functions.py ReLU/Tanh/MSE; exact split NOT_MEASURED",
+      "scope": "historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+    },
+    {
+      "rank": 6,
+      "kernel_family": "CuPy/CUB reduction",
+      "calls": 128,
+      "gpu_total_ms": 1.0025650000000002,
+      "mean_kernel_us": 7.832539062500001,
+      "backward_gpu_time_percent": 7.747210199906791,
+      "training_nvtx_envelope_percent": 0.6223609725796782,
+      "implementation": "CuPy reductions including Conv/Linear bias; exact split NOT_MEASURED",
+      "scope": "historical instrumented 16 steps; GPU duration sum, not CPU node duration"
+    }
+  ],
+  "historical_trace_summary": "historical-nsys-fixed-01/summary.json",
+  "new_kernel_optimization": "NOT_RUN_BY_DESIGN",
+  "production_kernels_modified": false
+}

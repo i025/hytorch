@@ -1,0 +1,23 @@
+{
+  "status": "NOT_RUN",
+  "reason": "GPU 6 became occupied before the launch guard completed",
+  "guard_returncode": 1,
+  "gpu_work_started": false,
+  "stdout": "BLOCKED: selected GPU is not idle; no GPU work started\n",
+  "provenance": "Return code and stdout copied from the actual execution result; no child launch.json exists because the guard rejected launch",
+  "command": [
+    "python",
+    "docs/experiments/donkeynet-backward-profiling/scripts/run_gpu.py",
+    "--gpu",
+    "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "--record",
+    "runs/donkeynet_4a_measurement_monitor_01",
+    "--",
+    "python",
+    "docs/experiments/donkeynet-backward-profiling/scripts/run_measurements.py",
+    "--gpu-uuid",
+    "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "--output",
+    "runs/donkeynet_4a_measurements_01"
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "mode": "throughput",
+    "method": "cupy",
+    "repeat": 1,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/cupy_r1",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/cupy_r1"
+  },
+  {
+    "mode": "throughput",
+    "method": "cupy",
+    "repeat": 2,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/cupy_r2",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/cupy_r2"
+  },
+  {
+    "mode": "throughput",
+    "method": "cupy",
+    "repeat": 3,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/cupy_r3",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/cupy_r3"
+  },
+  {
+    "mode": "throughput",
+    "method": "combined",
+    "repeat": 1,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/combined_r1",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/combined_r1"
+  },
+  {
+    "mode": "throughput",
+    "method": "combined",
+    "repeat": 2,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/combined_r2",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/combined_r2"
+  },
+  {
+    "mode": "throughput",
+    "method": "combined",
+    "repeat": 3,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/combined_r3",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/combined_r3"
+  },
+  {
+    "mode": "throughput",
+    "method": "torch",
+    "repeat": 1,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/torch_r1",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/torch_r1"
+  },
+  {
+    "mode": "throughput",
+    "method": "torch",
+    "repeat": 2,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/torch_r2",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/torch_r2"
+  },
+  {
+    "mode": "throughput",
+    "method": "torch",
+    "repeat": 3,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-throughput-fixed-01/torch_r3",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/throughput/torch_r3"
+  },
+  {
+    "mode": "phases",
+    "method": "cupy",
+    "repeat": 1,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-phases-fixed-01/cupy_r1",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/phases/cupy_r1"
+  },
+  {
+    "mode": "phases",
+    "method": "combined",
+    "repeat": 1,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-phases-fixed-01/combined_r1",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/phases/combined_r1"
+  },
+  {
+    "mode": "phases",
+    "method": "torch",
+    "repeat": 1,
+    "source": "docs/experiments/a100-gpu-window/training-comparison/donkey-phases-fixed-01/torch_r1",
+    "archive": "docs/experiments/donkeynet-backward-profiling/results/historical-training/phases/torch_r1"
+  }
+]

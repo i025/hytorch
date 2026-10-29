@@ -1,0 +1,128 @@
+scope,phase,name,count,total_ms,mean_us,max_us,family
+whole_trace,forward,gemm_shared,128,4.818177999999994,37.64201562499996,77.24799999999999,HyTorch CUDA gemm_shared
+whole_trace,backward,col2im,80,3.3914059999999995,42.392574999999994,88.384,CuPy col2im
+whole_trace,backward,cupy_copy__float32_float32,240,1.964264999999998,8.18443749999999,34.368,CuPy copy/layout
+whole_trace,forward,im2col_kernel,80,1.6257030000000001,20.321287500000004,45.888,HyTorch CUDA im2col_kernel
+whole_trace,backward,im2col,80,1.5682249999999993,19.60281249999999,44.288000000000004,CuPy im2col
+whole_trace,backward,ampere_sgemm_32x32_sliced1x4_nt,80,1.0069490000000003,12.586862500000004,18.848,cuBLAS GEMM/GEMV/reduction
+whole_trace,backward,cupy_sum,112,0.9566460000000001,8.541482142857143,25.152,CuPy/CUB reduction
+whole_trace,update,cupy_subtract__float32_float32_float32,256,0.9094189999999993,3.5524179687499973,5.28,CuPy elementwise
+whole_trace,update,cupy_multiply__float_float32_float32,256,0.8875689999999997,3.467066406249999,4.96,CuPy elementwise
+whole_trace,backward,ampere_sgemm_64x32_sliced1x4_nt,32,0.79309,24.784062499999997,30.496,cuBLAS GEMM/GEMV/reduction
+whole_trace,backward,ampere_sgemm_128x32_nt,32,0.609218,19.038062500000002,23.233,cuBLAS GEMM/GEMV/reduction
+whole_trace,outside_nvtx,gemm_shared,16,0.59975,37.484375,76.192,HyTorch CUDA gemm_shared
+whole_trace,forward,conv_pack,80,0.493248,6.1656,9.856,HyTorch CUDA conv_pack
+whole_trace,backward,ampere_sgemm_32x128_nt,48,0.48819400000000013,10.170708333333335,15.457,cuBLAS GEMM/GEMV/reduction
+whole_trace,backward,cupy_multiply__float32_bool_float32,112,0.47798900000000016,4.26775892857143,6.88,CuPy elementwise
+whole_trace,forward,cupy_maximum__float_float32_float32,112,0.4564809999999999,4.075723214285714,6.497,CuPy elementwise
+whole_trace,backward,cupy_greater__float32_float_bool,112,0.4553940000000001,4.066017857142858,6.816,CuPy elementwise
+whole_trace,outside_nvtx,col2im,10,0.425924,42.592400000000005,88.545,CuPy col2im
+whole_trace,backward,splitKreduce_kernel,64,0.3760969999999999,5.876515624999999,8.864,cuBLAS GEMM/GEMV/reduction
+whole_trace,forward,cupy_copy__float32_float32,80,0.3629410000000002,4.536762500000003,4.928,CuPy copy/layout
+whole_trace,outside_nvtx,cupy_copy__float32_float32,40,0.292899,7.322475,34.272,CuPy copy/layout
+whole_trace,backward,gemmSN_TN_kernel,32,0.227456,7.108,7.84,cuBLAS GEMM/GEMV/reduction
+whole_trace,outside_nvtx,im2col_kernel,10,0.203904,20.3904,46.016,HyTorch CUDA im2col_kernel
+whole_trace,outside_nvtx,im2col,10,0.195809,19.5809,43.968,CuPy im2col
+whole_trace,backward,cupy_multiply__float32_float32_float32,64,0.19446300000000005,3.038484375000001,3.68,CuPy elementwise
+whole_trace,forward,cupy_add__float32_float32_float32,48,0.18601499999999999,3.8753124999999997,4.288,CuPy elementwise
+whole_trace,outside_nvtx,cupy_subtract__float32_float32_float32,38,0.13081800000000002,3.442578947368421,5.152,CuPy elementwise
+whole_trace,outside_nvtx,ampere_sgemm_32x32_sliced1x4_nt,10,0.126175,12.617500000000001,18.656,cuBLAS GEMM/GEMV/reduction
+whole_trace,outside_nvtx,cupy_sum,14,0.11967899999999998,8.548499999999999,25.12,CuPy/CUB reduction
+whole_trace,backward,cupy_fill,48,0.111489,2.3226875000000002,2.369,CuPy elementwise
+whole_trace,outside_nvtx,cupy_multiply__float_float32_float32,32,0.108928,3.404,4.896,CuPy elementwise
+whole_trace,outside_nvtx,ampere_sgemm_64x32_sliced1x4_nt,4,0.099073,24.76825,30.465,cuBLAS GEMM/GEMV/reduction
+whole_trace,backward,cupy_subtract__float32_float32_float32,32,0.09542599999999998,2.9820624999999996,3.2,CuPy elementwise
+whole_trace,outside_nvtx,ampere_sgemm_128x32_nt,4,0.075872,18.968,23.136,cuBLAS GEMM/GEMV/reduction
+whole_trace,backward,gemvNSP_kernel,16,0.069698,4.356125,4.4799999999999995,cuBLAS GEMM/GEMV/reduction
+whole_trace,backward,gemmk1_kernel,16,0.06438400000000001,4.024000000000001,4.128,cuBLAS GEMM/GEMV/reduction
+whole_trace,outside_nvtx,conv_pack,10,0.062402,6.2402,9.792,HyTorch CUDA conv_pack
+whole_trace,outside_nvtx,ampere_sgemm_32x128_nt,6,0.061184,10.197333333333335,15.488,cuBLAS GEMM/GEMV/reduction
+whole_trace,outside_nvtx,cupy_multiply__float32_bool_float32,14,0.059328,4.2377142857142855,6.56,CuPy elementwise
+whole_trace,forward,DeviceReduceSingleTileKernel,16,0.057793999999999984,3.612124999999999,3.8400000000000003,CuPy/CUB reduction
+whole_trace,outside_nvtx,cupy_maximum__float_float32_float32,14,0.057376,4.098285714285715,6.464,CuPy elementwise
+whole_trace,outside_nvtx,cupy_greater__float32_float_bool,14,0.05708800000000001,4.077714285714286,6.656,CuPy elementwise
+whole_trace,forward,cupy_power__float32_float_float32,16,0.05494399999999999,3.4339999999999997,3.648,CuPy elementwise
+whole_trace,forward,cupy_tanh__float32_float32,16,0.049569999999999996,3.0981249999999996,3.296,CuPy elementwise
+whole_trace,forward,cupy_true_divide__float32_float32_float32,16,0.049055999999999995,3.066,3.264,CuPy elementwise
+whole_trace,forward,cupy_subtract__float32_float32_float32,16,0.047966999999999996,2.9979375,3.232,CuPy elementwise
+whole_trace,outside_nvtx,splitKreduce_kernel,8,0.046079999999999996,5.76,8.767999999999999,cuBLAS GEMM/GEMV/reduction
+whole_trace,backward,DeviceReduceSingleTileKernel,16,0.045919,2.8699375000000003,2.944,CuPy/CUB reduction
+whole_trace,backward,cupy_negative__float32_float32,16,0.044673000000000004,2.7920625,3.2,CuPy elementwise
+whole_trace,forward,cupy_fill,16,0.038016999999999995,2.3760624999999997,2.432,CuPy elementwise
+whole_trace,outside_nvtx,gemmSN_TN_kernel,4,0.028449,7.1122499999999995,7.808,cuBLAS GEMM/GEMV/reduction
+whole_trace,outside_nvtx,cupy_multiply__float32_float32_float32,8,0.024129,3.016125,3.2,CuPy elementwise
+whole_trace,outside_nvtx,cupy_add__float32_float32_float32,6,0.023327,3.8878333333333335,4.288,CuPy elementwise
+whole_trace,outside_nvtx,cupy_fill,8,0.019135,2.3918749999999998,2.432,CuPy elementwise
+whole_trace,outside_nvtx,DeviceReduceSingleTileKernel,4,0.012544,3.136,3.264,CuPy/CUB reduction
+whole_trace,outside_nvtx,gemvNSP_kernel,2,0.008672,4.335999999999999,4.4799999999999995,cuBLAS GEMM/GEMV/reduction
+whole_trace,outside_nvtx,gemmk1_kernel,2,0.007776,3.888,4.0,cuBLAS GEMM/GEMV/reduction
+whole_trace,outside_nvtx,cupy_power__float32_float_float32,2,0.0063999999999999994,3.1999999999999997,3.232,CuPy elementwise
+whole_trace,outside_nvtx,cupy_tanh__float32_float32,2,0.005665,2.8325,2.8489999999999998,CuPy elementwise
+whole_trace,outside_nvtx,cupy_true_divide__float32_float32_float32,2,0.005632,2.816,2.816,CuPy elementwise
+whole_trace,outside_nvtx,cupy_negative__float32_float32,2,0.005536,2.7680000000000002,2.784,CuPy elementwise
+training_envelope,forward,gemm_shared,128,4.818177999999994,37.64201562499996,77.24799999999999,HyTorch CUDA gemm_shared
+training_envelope,backward,col2im,80,3.3914059999999995,42.392574999999994,88.384,CuPy col2im
+training_envelope,backward,cupy_copy__float32_float32,240,1.964264999999998,8.18443749999999,34.368,CuPy copy/layout
+training_envelope,forward,im2col_kernel,80,1.6257030000000001,20.321287500000004,45.888,HyTorch CUDA im2col_kernel
+training_envelope,backward,im2col,80,1.5682249999999993,19.60281249999999,44.288000000000004,CuPy im2col
+training_envelope,backward,ampere_sgemm_32x32_sliced1x4_nt,80,1.0069490000000003,12.586862500000004,18.848,cuBLAS GEMM/GEMV/reduction
+training_envelope,backward,cupy_sum,112,0.9566460000000001,8.541482142857143,25.152,CuPy/CUB reduction
+training_envelope,update,cupy_subtract__float32_float32_float32,256,0.9094189999999993,3.5524179687499973,5.28,CuPy elementwise
+training_envelope,update,cupy_multiply__float_float32_float32,256,0.8875689999999997,3.467066406249999,4.96,CuPy elementwise
+training_envelope,backward,ampere_sgemm_64x32_sliced1x4_nt,32,0.79309,24.784062499999997,30.496,cuBLAS GEMM/GEMV/reduction
+training_envelope,backward,ampere_sgemm_128x32_nt,32,0.609218,19.038062500000002,23.233,cuBLAS GEMM/GEMV/reduction
+training_envelope,forward,conv_pack,80,0.493248,6.1656,9.856,HyTorch CUDA conv_pack
+training_envelope,backward,ampere_sgemm_32x128_nt,48,0.48819400000000013,10.170708333333335,15.457,cuBLAS GEMM/GEMV/reduction
+training_envelope,backward,cupy_multiply__float32_bool_float32,112,0.47798900000000016,4.26775892857143,6.88,CuPy elementwise
+training_envelope,forward,cupy_maximum__float_float32_float32,112,0.4564809999999999,4.075723214285714,6.497,CuPy elementwise
+training_envelope,backward,cupy_greater__float32_float_bool,112,0.4553940000000001,4.066017857142858,6.816,CuPy elementwise
+training_envelope,backward,splitKreduce_kernel,64,0.3760969999999999,5.876515624999999,8.864,cuBLAS GEMM/GEMV/reduction
+training_envelope,forward,cupy_copy__float32_float32,80,0.3629410000000002,4.536762500000003,4.928,CuPy copy/layout
+training_envelope,backward,gemmSN_TN_kernel,32,0.227456,7.108,7.84,cuBLAS GEMM/GEMV/reduction
+training_envelope,backward,cupy_multiply__float32_float32_float32,64,0.19446300000000005,3.038484375000001,3.68,CuPy elementwise
+training_envelope,forward,cupy_add__float32_float32_float32,48,0.18601499999999999,3.8753124999999997,4.288,CuPy elementwise
+training_envelope,backward,cupy_fill,48,0.111489,2.3226875000000002,2.369,CuPy elementwise
+training_envelope,backward,cupy_subtract__float32_float32_float32,32,0.09542599999999998,2.9820624999999996,3.2,CuPy elementwise
+training_envelope,backward,gemvNSP_kernel,16,0.069698,4.356125,4.4799999999999995,cuBLAS GEMM/GEMV/reduction
+training_envelope,backward,gemmk1_kernel,16,0.06438400000000001,4.024000000000001,4.128,cuBLAS GEMM/GEMV/reduction
+training_envelope,forward,DeviceReduceSingleTileKernel,16,0.057793999999999984,3.612124999999999,3.8400000000000003,CuPy/CUB reduction
+training_envelope,forward,cupy_power__float32_float_float32,16,0.05494399999999999,3.4339999999999997,3.648,CuPy elementwise
+training_envelope,forward,cupy_tanh__float32_float32,16,0.049569999999999996,3.0981249999999996,3.296,CuPy elementwise
+training_envelope,forward,cupy_true_divide__float32_float32_float32,16,0.049055999999999995,3.066,3.264,CuPy elementwise
+training_envelope,forward,cupy_subtract__float32_float32_float32,16,0.047966999999999996,2.9979375,3.232,CuPy elementwise
+training_envelope,backward,DeviceReduceSingleTileKernel,16,0.045919,2.8699375000000003,2.944,CuPy/CUB reduction
+training_envelope,backward,cupy_negative__float32_float32,16,0.044673000000000004,2.7920625,3.2,CuPy elementwise
+training_envelope,forward,cupy_fill,16,0.038016999999999995,2.3760624999999997,2.432,CuPy elementwise
+submitted_in_training_nvtx,forward,gemm_shared,128,4.818177999999994,37.64201562499996,77.24799999999999,HyTorch CUDA gemm_shared
+submitted_in_training_nvtx,backward,col2im,80,3.3914059999999995,42.392574999999994,88.384,CuPy col2im
+submitted_in_training_nvtx,backward,cupy_copy__float32_float32,240,1.964264999999998,8.18443749999999,34.368,CuPy copy/layout
+submitted_in_training_nvtx,forward,im2col_kernel,80,1.6257030000000001,20.321287500000004,45.888,HyTorch CUDA im2col_kernel
+submitted_in_training_nvtx,backward,im2col,80,1.5682249999999993,19.60281249999999,44.288000000000004,CuPy im2col
+submitted_in_training_nvtx,backward,ampere_sgemm_32x32_sliced1x4_nt,80,1.0069490000000003,12.586862500000004,18.848,cuBLAS GEMM/GEMV/reduction
+submitted_in_training_nvtx,backward,cupy_sum,112,0.9566460000000001,8.541482142857143,25.152,CuPy/CUB reduction
+submitted_in_training_nvtx,update,cupy_subtract__float32_float32_float32,256,0.9094189999999993,3.5524179687499973,5.28,CuPy elementwise
+submitted_in_training_nvtx,update,cupy_multiply__float_float32_float32,256,0.8875689999999997,3.467066406249999,4.96,CuPy elementwise
+submitted_in_training_nvtx,backward,ampere_sgemm_64x32_sliced1x4_nt,32,0.79309,24.784062499999997,30.496,cuBLAS GEMM/GEMV/reduction
+submitted_in_training_nvtx,backward,ampere_sgemm_128x32_nt,32,0.609218,19.038062500000002,23.233,cuBLAS GEMM/GEMV/reduction
+submitted_in_training_nvtx,forward,conv_pack,80,0.493248,6.1656,9.856,HyTorch CUDA conv_pack
+submitted_in_training_nvtx,backward,ampere_sgemm_32x128_nt,48,0.48819400000000013,10.170708333333335,15.457,cuBLAS GEMM/GEMV/reduction
+submitted_in_training_nvtx,backward,cupy_multiply__float32_bool_float32,112,0.47798900000000016,4.26775892857143,6.88,CuPy elementwise
+submitted_in_training_nvtx,forward,cupy_maximum__float_float32_float32,112,0.4564809999999999,4.075723214285714,6.497,CuPy elementwise
+submitted_in_training_nvtx,backward,cupy_greater__float32_float_bool,112,0.4553940000000001,4.066017857142858,6.816,CuPy elementwise
+submitted_in_training_nvtx,backward,splitKreduce_kernel,64,0.3760969999999999,5.876515624999999,8.864,cuBLAS GEMM/GEMV/reduction
+submitted_in_training_nvtx,forward,cupy_copy__float32_float32,80,0.3629410000000002,4.536762500000003,4.928,CuPy copy/layout
+submitted_in_training_nvtx,backward,gemmSN_TN_kernel,32,0.227456,7.108,7.84,cuBLAS GEMM/GEMV/reduction
+submitted_in_training_nvtx,backward,cupy_multiply__float32_float32_float32,64,0.19446300000000005,3.038484375000001,3.68,CuPy elementwise
+submitted_in_training_nvtx,forward,cupy_add__float32_float32_float32,48,0.18601499999999999,3.8753124999999997,4.288,CuPy elementwise
+submitted_in_training_nvtx,backward,cupy_fill,48,0.111489,2.3226875000000002,2.369,CuPy elementwise
+submitted_in_training_nvtx,backward,cupy_subtract__float32_float32_float32,32,0.09542599999999998,2.9820624999999996,3.2,CuPy elementwise
+submitted_in_training_nvtx,backward,gemvNSP_kernel,16,0.069698,4.356125,4.4799999999999995,cuBLAS GEMM/GEMV/reduction
+submitted_in_training_nvtx,backward,gemmk1_kernel,16,0.06438400000000001,4.024000000000001,4.128,cuBLAS GEMM/GEMV/reduction
+submitted_in_training_nvtx,forward,DeviceReduceSingleTileKernel,16,0.057793999999999984,3.612124999999999,3.8400000000000003,CuPy/CUB reduction
+submitted_in_training_nvtx,forward,cupy_power__float32_float_float32,16,0.05494399999999999,3.4339999999999997,3.648,CuPy elementwise
+submitted_in_training_nvtx,forward,cupy_tanh__float32_float32,16,0.049569999999999996,3.0981249999999996,3.296,CuPy elementwise
+submitted_in_training_nvtx,forward,cupy_true_divide__float32_float32_float32,16,0.049055999999999995,3.066,3.264,CuPy elementwise
+submitted_in_training_nvtx,forward,cupy_subtract__float32_float32_float32,16,0.047966999999999996,2.9979375,3.232,CuPy elementwise
+submitted_in_training_nvtx,backward,DeviceReduceSingleTileKernel,16,0.045919,2.8699375000000003,2.944,CuPy/CUB reduction
+submitted_in_training_nvtx,backward,cupy_negative__float32_float32,16,0.044673000000000004,2.7920625,3.2,CuPy elementwise
+submitted_in_training_nvtx,forward,cupy_fill,16,0.038016999999999995,2.3760624999999997,2.432,CuPy elementwise

@@ -1,0 +1,7 @@
+scope,phase,name,count,total_ms,mean_us,max_us,bytes
+whole_trace,transfer,Host-to-Device,32,0.5962259999999999,18.632062499999996,37.024,10137856
+whole_trace,outside_nvtx,Host-to-Device,34,0.224833,6.612735294117647,39.936,2647608
+whole_trace,outside_nvtx,Device-to-Host,32,0.13670400000000002,4.272,28.417,1007060
+training_envelope,transfer,Host-to-Device,32,0.5962259999999999,18.632062499999996,37.024,10137856
+training_envelope,outside_nvtx,Device-to-Host,15,0.03875200000000001,2.5834666666666672,3.552,60
+submitted_in_training_nvtx,transfer,Host-to-Device,32,0.5962259999999999,18.632062499999996,37.024,10137856

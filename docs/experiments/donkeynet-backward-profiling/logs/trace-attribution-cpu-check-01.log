@@ -1,0 +1,23 @@
+{
+  "status": "PASSED",
+  "scope": "CPU synthetic attribution test, not a GPU experiment",
+  "checked": [
+    "deepest exclusive scope",
+    "inclusive parent/child membership",
+    "no duplicate exclusive kernels",
+    "GPU execution crossing host phase boundary",
+    "cross-thread submission explicitly tagged",
+    "nested host self time",
+    "PyTorch sequence normalization"
+  ],
+  "command": [
+    "/usr/bin/python3",
+    "docs/experiments/donkeynet-backward-profiling/scripts/analyze_trace.py",
+    "--input",
+    "runs/stage4a_trace_attribution_check_01/synthetic-nested.sqlite",
+    "--output",
+    "runs/stage4a_trace_attribution_check_01/analysis",
+    "--label",
+    "SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT"
+  ]
+}

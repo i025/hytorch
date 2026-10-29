@@ -1,0 +1,7 @@
+{
+  "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 .venv/bin/python -m pytest docs/experiments/donkeynet-backward-profiling/scripts/test_profile_training.py -q --junitxml=docs/experiments/donkeynet-backward-profiling/logs/instrumentation-cpu-tests-02.xml > docs/experiments/donkeynet-backward-profiling/logs/instrumentation-cpu-tests-02.log 2>&1",
+  "cwd": "/home/xymo/projects/hytorch",
+  "exit_code": 0,
+  "scope": "CPU only, CUDA_VISIBLE_DEVICES empty; Torch NVTX context test uses fake modules",
+  "reason_for_second_run": "Added CLI and Torch-context tests, requested JUnit output; first-run log retained"
+}
