@@ -1,0 +1,74 @@
+{
+  "method": "torch",
+  "warmup": 5,
+  "iterations": 30,
+  "nvtx": false,
+  "seed": 42,
+  "shapes": {
+    "conv2": [
+      [
+        4,
+        24,
+        31,
+        98
+      ],
+      [
+        36,
+        24,
+        5,
+        5
+      ],
+      2
+    ],
+    "conv3": [
+      [
+        4,
+        36,
+        14,
+        47
+      ],
+      [
+        48,
+        36,
+        5,
+        5
+      ],
+      2
+    ],
+    "conv4": [
+      [
+        4,
+        48,
+        5,
+        22
+      ],
+      [
+        64,
+        48,
+        3,
+        3
+      ],
+      1
+    ],
+    "conv5": [
+      [
+        4,
+        64,
+        3,
+        20
+      ],
+      [
+        64,
+        64,
+        3,
+        3
+      ],
+      1
+    ]
+  },
+  "dtype": "float32",
+  "tf32": false,
+  "full_scope": "dInput+dWeight+dBias; prepared NCHW input/weight/gy; no forward/H2D",
+  "event_scope": "stream event span; includes GPU work and host-submission gaps",
+  "memory_scope": "separate post-warmup call: CuPy memory-hook live requested peak, or torch allocator peak; includes outputs; not nvidia-smi"
+}

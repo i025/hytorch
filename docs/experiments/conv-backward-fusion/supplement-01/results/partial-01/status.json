@@ -1,0 +1,6 @@
+{
+  "micro": "PASSED",
+  "training": "INCOMPLETE_TWO_REPEATS",
+  "nsight": "NOT_RUN",
+  "scope": "First interrupted GPU window; do not combine with another window"
+}

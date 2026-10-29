@@ -1,0 +1,4 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+stage4d-window04-F-recovered-after-wrapper-interruption,transfer,unlabeled:transfer,Host-to-Device,32,4.246072,132.68975,282.175,10137856
+stage4d-window04-F-recovered-after-wrapper-interruption,outside_phase,unlabeled:outside_phase,Host-to-Device,34,1.1840600000000001,34.82529411764706,266.495,2647608
+stage4d-window04-F-recovered-after-wrapper-interruption,outside_phase,unlabeled:outside_phase,Device-to-Host,48,0.7667200000000002,15.973333333333336,204.543,2014056

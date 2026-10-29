@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_02/gpu-attempt-01",
+  "trace_raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_05/gpu-attempt-01",
+  "measurement_gpu": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+  "profiling_gpu": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "timing": "Uninstrumented measurements and Nsight are separate windows; comparisons stay within each matched window"
+}

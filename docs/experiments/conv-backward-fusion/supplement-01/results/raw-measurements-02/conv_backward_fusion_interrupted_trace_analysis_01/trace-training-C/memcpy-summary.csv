@@ -1,0 +1,4 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+stage4d-window02-C-completed-before-interruption,transfer,unlabeled:transfer,Host-to-Device,32,4.408098000000001,137.75306250000003,331.424,10137856
+stage4d-window02-C-completed-before-interruption,outside_phase,unlabeled:outside_phase,Host-to-Device,34,1.2206389999999998,35.901147058823526,299.55199999999996,2647608
+stage4d-window02-C-completed-before-interruption,outside_phase,unlabeled:outside_phase,Device-to-Host,48,0.739491,15.406062499999999,180.864,2014056

@@ -1,0 +1,18 @@
+{
+  "status": "GUARD_FALSE_EXTERNAL_CLASSIFICATION",
+  "reported_external_pid": 1995660,
+  "nsys_profiled_process": [
+    1995660,
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python"
+  ],
+  "source": "runs/conv_backward_fusion_wait_04/gpu-attempt-01/trace-training-F.sqlite:PROCESSES",
+  "guard": "runs/conv_backward_fusion_wait_04/guard-attempt-01/gpu-load.jsonl",
+  "recovered_F_trace": {
+    "whole_kernels": 2756,
+    "measured_kernels": 1696,
+    "measured_steps": 16,
+    "unmatched_api": 0
+  },
+  "cause": "Exact /proc timing or marker visibility cause NOT_PROVEN; target process was gone when inspected.",
+  "action": "Preserve original logs and guard; use a new complete matched trace window on idle GPU0. No production kernel change."
+}

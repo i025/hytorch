@@ -17,19 +17,22 @@ p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--results',type=Path,required=True)
 p.add_argument('--analysis',type=Path,required=True)
 p.add_argument('--figures',type=Path,required=True)
+p.add_argument('--measurements-only',action='store_true',help='Plot completed ordinary measurements while profiling is pending')
 a=p.parse_args();a.figures.mkdir(parents=True,exist_ok=False)
-assert json.loads((a.results/'completion.json').read_text())['status']=='PASSED'
+status='measurements-completion.json' if a.measurements_only else 'completion.json'
+assert json.loads((a.results/status).read_text())['status']=='PASSED'
 micro=csv_rows(a.results/'micro-summary.csv')
 training=csv_rows(a.results/'training-summary.csv')
 raw=csv_rows(a.results/'training-raw.csv')
 gains=csv_rows(a.results/'speedups.csv')
-categories=csv_rows(a.results/'kernel-categories.csv')
+categories=[] if a.measurements_only else csv_rows(a.results/'kernel-categories.csv')
 methods='ABCDFE';colors=['#718096','#4477aa','#ee9933','#228866','#cc4455','#aa5599']
 
 
 def save(fig,name):
     fig.text(.01,.01,'Source: actual stage 4D CSV / Nsight export; visualization, not a screenshot.',fontsize=8)
-    fig.tight_layout(rect=(0,.06,1,1));fig.savefig(a.figures/name,dpi=170);plt.close(fig)
+    fig.text(.01,.04,'A: CuPy; B: Combined; C: + fused SGD; D: + pruning; F: + gather; E: PyTorch',fontsize=8)
+    fig.tight_layout(rect=(0,.09,1,1));fig.savefig(a.figures/name,dpi=170);plt.close(fig)
 
 
 def stat(method,metric,mode='throughput'):
@@ -47,13 +50,26 @@ for ax,scope in zip(axes,('dinput','full')):
 fig.suptitle('Backward latency: 3 process means +/- sample SD')
 save(fig,'backward-latency.png')
 
-fig,ax=plt.subplots(figsize=(9,5))
-groups=['Copy','GEMM','Col2im','fused_dInput']
-for i,method in enumerate('DF'):
-    vals=[sum(int(r['kernels']) for r in categories if r['method']==method and r['category']==g)/16 for g in groups]
-    bars=ax.bar(np.arange(4)+(i-.5)*.35,vals,width=.35,label=method,color=colors[3+i]);ax.bar_label(bars,fmt='%.0f')
-ax.set_xticks(range(4),groups);ax.set(ylabel='Backward kernels / measured step',title='D versus F: actual launches');ax.legend()
-save(fig,'kernel-counts.png')
+if not a.measurements_only:
+    fig,ax=plt.subplots(figsize=(9,5))
+    groups=['Copy','GEMM','Col2im','fused_dInput']
+    for i,method in enumerate('DF'):
+        vals=[sum(int(r['kernels']) for r in categories if r['method']==method and r['category']==g)/16 for g in groups]
+        bars=ax.bar(np.arange(4)+(i-.5)*.35,vals,width=.35,label=method,color=colors[3+i]);ax.bar_label(bars,fmt='%.0f')
+    ax.set_xticks(range(4),groups);ax.set(ylabel='Backward kernels / measured step',title='D versus F: actual launches');ax.legend()
+    save(fig,'kernel-counts.png')
+
+    parts=csv_rows(a.results/'gradient-components.csv')
+    fig,ax=plt.subplots(figsize=(10,5))
+    for i,method in enumerate('DF'):
+        values=[np.mean([float(r['kernel_us']) for r in parts
+            if (r['method'],r['part'],r['layer'])==(method,'dInput',layer)])
+            for layer in ('conv2','conv3','conv4','conv5')]
+        bars=ax.bar(np.arange(4)+(i-.5)*.35,values,width=.35,label=method,color=colors[3+i])
+        ax.bar_label(bars,fmt='%.1f')
+    ax.set_xticks(range(4),['conv2','conv3','conv4','conv5']);ax.legend()
+    ax.set(ylabel='Sum of GPU kernel durations (us)',title='dInput pure device time: 16 attributed ranges per layer')
+    save(fig,'dinput-kernel-time.png')
 
 fig,ax=plt.subplots(figsize=(9,5))
 for i,metric in enumerate(('event_us','sync_wall_us')):
@@ -86,20 +102,21 @@ ax.bar_label(bars,fmt='%.2f%%');ax.axhline(0,color='black')
 ax.set(title='Same-window increments',ylabel='Throughput change (%)')
 save(fig,'incremental-gains.png')
 
-fig,axes=plt.subplots(2,1,figsize=(12,7))
-for ax,method in zip(axes,'DF'):
-    folder=a.analysis/('trace-training-'+method)
-    ranges=[r for r in csv_rows(folder/'nvtx-events.csv') if r['name']=='backward']
-    selected=sorted(ranges,key=lambda r:int(r['start']))[len(ranges)//2]
-    rid=int(selected['sqlite_rowid']);start=int(selected['start'])
-    kernels=[r for r in csv_rows(folder/'kernel-events.csv') if rid in json.loads(r['nvtx_ids'])]
-    apis=[r for r in csv_rows(folder/'cuda-api-events.csv') if rid in json.loads(r['nvtx_ids']) and r['kind']=='launch']
-    ax.broken_barh([(0,(int(selected['end'])-start)/1000)],(2.3,.45),facecolors='#718096')
-    ax.broken_barh([((int(r['start'])-start)/1000,(int(r['end'])-int(r['start']))/1000) for r in apis],(1.3,.45),facecolors='#ee9933')
-    for r in kernels:
-        color='#cc4455' if 'conv_dinput_gather' in r['name'] else '#4477aa'
-        ax.broken_barh([((int(r['start'])-start)/1000,(int(r['end'])-int(r['start']))/1000)],(.3,.45),facecolors=color)
-    ax.set_yticks([.52,1.52,2.52],['GPU kernels','Host launch APIs','Host Backward'])
-    ax.set(title=method+': middle measured backward, correlation-attributed',xlabel='Microseconds from host range start')
-fig.suptitle('Own-operation timeline; white gaps do not establish whole-device idle')
-save(fig,'gpu-timeline.png')
+if not a.measurements_only:
+    fig,axes=plt.subplots(2,1,figsize=(12,7),sharex=True)
+    for ax,method in zip(axes,'DF'):
+        folder=a.analysis/('trace-training-'+method)
+        ranges=[r for r in csv_rows(folder/'nvtx-events.csv') if r['name']=='backward']
+        selected=sorted(ranges,key=lambda r:int(r['start']))[len(ranges)//2]
+        rid=int(selected['sqlite_rowid']);start=int(selected['start'])
+        kernels=[r for r in csv_rows(folder/'kernel-events.csv') if rid in json.loads(r['nvtx_ids'])]
+        apis=[r for r in csv_rows(folder/'cuda-api-events.csv') if rid in json.loads(r['nvtx_ids']) and r['kind']=='launch']
+        ax.broken_barh([(0,(int(selected['end'])-start)/1000)],(2.3,.45),facecolors='#718096')
+        ax.broken_barh([((int(r['start'])-start)/1000,(int(r['end'])-int(r['start']))/1000) for r in apis],(1.3,.45),facecolors='#ee9933')
+        for r in kernels:
+            color='#cc4455' if 'conv_dinput_gather' in r['name'] else '#4477aa'
+            ax.broken_barh([((int(r['start'])-start)/1000,(int(r['end'])-int(r['start']))/1000)],(.3,.45),facecolors=color)
+        ax.set_yticks([.52,1.52,2.52],['GPU kernels','Host launch APIs','Host Backward'])
+        ax.set(title=method+': middle measured backward, correlation-attributed',xlabel='Microseconds from host range start')
+    fig.suptitle('Own-operation timeline; white gaps do not establish whole-device idle')
+    save(fig,'gpu-timeline.png')

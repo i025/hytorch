@@ -1,0 +1,254 @@
+[
+  {
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "B",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "C",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "B",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "C",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "B",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "C",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "A",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "B",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "C",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "D",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "F",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "E",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "A",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "B",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "C",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "D",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "F",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "E",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "A",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "B",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "C",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "D",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "F",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "E",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  }
+]

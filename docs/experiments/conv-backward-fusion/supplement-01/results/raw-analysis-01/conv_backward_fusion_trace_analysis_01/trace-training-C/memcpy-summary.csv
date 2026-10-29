@@ -1,0 +1,4 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-training-C,transfer,unlabeled:transfer,Host-to-Device,32,0.6046410000000001,18.895031250000002,36.608000000000004,10137856
+trace-training-C,outside_phase,unlabeled:outside_phase,Device-to-Host,48,0.24346,5.0720833333333335,29.823999999999998,2014056
+trace-training-C,outside_phase,unlabeled:outside_phase,Host-to-Device,34,0.22774000000000003,6.698235294117648,44.544,2647608

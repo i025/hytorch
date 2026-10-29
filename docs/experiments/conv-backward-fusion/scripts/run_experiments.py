@@ -33,15 +33,17 @@ def commands(out,gpu):
         '--warmup','10','--seed','42','--lr','0.001','--workers','0','--no-monitor',
         '--no-fingerprints','--save-comparison-inputs']
     methods=list(CONFIGS)
-    for repeat in range(1,4):
-        order=methods[repeat-1:]+methods[:repeat-1]
-        for mode in ['throughput','phases']:
+    # Finish the three throughput repeats first during short idle windows.
+    for mode in ['throughput','phases']:
+        for repeat in range(1,4):
+            order=methods[repeat-1:]+methods[:repeat-1]
             for method in order:
                 name=f'training-{mode}-{method}-r{repeat}'
                 jobs.append((name,[sys.executable,ROOT/'benchmarks/bench_cuda_training.py',*common,
                     '--samples','256','--epochs','4',*CONFIGS[method],'--mode',mode,'--output',out/name],method))
     traces=[]
-    for method in methods:
+    # Capture the pruning/gather comparison first if the idle window is short.
+    for method in 'DFABCE':
         name='trace-training-'+method
         args=[sys.executable,SCRIPTS/'profile_training.py',*common,'--samples','64','--epochs','1',
               *CONFIGS[method],'--mode','throughput','--nvtx','--operator-nvtx','--output',out/name]
@@ -65,9 +67,11 @@ def main():
     p.add_argument('--library',type=Path,required=True)
     p.add_argument('--gpu-uuid',required=True)
     p.add_argument('--plan-only',action='store_true',help='Save commands without executing GPU work')
+    p.add_argument('--only',choices=['all','traces'],default='all',help='Resume profiling after completed correctness/performance stages')
     a=p.parse_args()
     out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
     jobs=commands(out,a.gpu_uuid)
+    if a.only=='traces':jobs=[job for job in jobs if job[0].startswith('trace-')]
     env=dict(os.environ,HYTORCH_CUDA_LIBRARY=str(a.library.resolve()),HYTORCH_REQUIRE_CUDA='1',
         HYTORCH_CONV_TEST_OUTPUT=str(out/'correctness'),HYTORCH_PRUNING_DEVICE='cuda',
         HYTORCH_PRUNING_TEST_OUTPUT=str(out/'pruning-regression'),HYTORCH_SGD_TEST_OUTPUT=str(out/'sgd-regression'))

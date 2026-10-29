@@ -41,6 +41,8 @@ def training(raw,out):
                 samples=sum(r['samples'] for r in summary['epochs'])
                 row=dict(method=method,mode=mode,repeat=repeat,train_wall_s=wall,samples=samples,
                     samples_per_sec=samples/wall,steps=len(ss),forward_ms=None,backward_ms=None,update_ms=None,
+                    complete_step_wall_ms=wall*1000/len(ss),
+                    profiled_step_ms=1000*np.mean([s['step_s'] for s in ss]),
                     loss_first=ll[0]['loss'],loss_last=ll[-1]['loss'],dispatch=json.dumps(summary['dispatch_counts']),source=str(path))
                 if mode=='phases':
                     for phase in ('forward','backward','update'):
@@ -67,7 +69,7 @@ def training(raw,out):
                     errors.append(dict(method=method,mode=mode,repeat=repeat,reference=label,parameter='loss',**error(actual_loss,ref_loss)))
     stats=[]
     for mode in ('throughput','phases'):
-        metrics=['train_wall_s','samples_per_sec']+(['forward_ms','backward_ms','update_ms'] if mode=='phases' else [])
+        metrics=['train_wall_s','samples_per_sec','complete_step_wall_ms','profiled_step_ms']+(['forward_ms','backward_ms','update_ms'] if mode=='phases' else [])
         for method in METHODS:
             for metric in metrics:
                 stats.append(dict(method=method,mode=mode,metric=metric,
@@ -80,11 +82,23 @@ def training(raw,out):
         wall=mean(old,'train_wall_s')/mean(new,'train_wall_s')
         gains.append(dict(comparison=new+'/'+old,throughput_ratio=rate,throughput_gain_pct=(rate-1)*100,
             wall_speedup=wall,wall_reduction_pct=(1-1/wall)*100))
-    progress=[dict(method=m,samples_per_sec=mean(m,'samples_per_sec'),versus_A=mean(m,'samples_per_sec')/mean('A','samples_per_sec'),
-                   versus_E=mean(m,'samples_per_sec')/mean('E','samples_per_sec')) for m in METHODS]
+    progress=[]
+    for m in METHODS:
+        previous={'B':'A','C':'B','D':'C','F':'D'}.get(m)
+        progress.append(dict(method=m,samples_per_sec=mean(m,'samples_per_sec'),
+            std=next(r['std'] for r in stats if r['method']==m and r['mode']=='throughput' and r['metric']=='samples_per_sec'),
+            complete_step_wall_ms=mean(m,'complete_step_wall_ms'),
+            versus_previous=mean(m,'samples_per_sec')/mean(previous,'samples_per_sec') if previous else None,
+            versus_A=mean(m,'samples_per_sec')/mean('A','samples_per_sec'),
+            versus_E=mean(m,'samples_per_sec')/mean('E','samples_per_sec')))
     for name,data in [('training-raw',rows),('training-summary',stats),('training-steps',steps),('training-losses',losses),
                        ('training-errors',errors),('speedups',gains),('progress-table',progress)]:write_csv(out/(name+'.csv'),data)
     (out/'training-checks.json').write_text(json.dumps(checks,indent=2)+'\n')
+    (out/'training-error-summary.json').write_text(json.dumps(dict(
+        comparisons=len(errors),max_abs=max(r['max_abs'] for r in errors),
+        all_passed=all(r['passed'] for r in errors),
+        initial_inputs_equal=all(r['initial_equal'] and r['inputs_equal'] for r in checks),
+        F_vs_D_max_abs=max(r['max_abs'] for r in errors if r['reference']=='D')),indent=2)+'\n')
     assert all(r['passed'] for r in errors), 'Training errors saved before assertion'
 
 
@@ -95,6 +109,7 @@ def micro(raw,out):
         for method in ('original','fused','torch'):
             path=raw/f'micro-{method}-r{repeat}'
             assert not json_file(path/'config.json')['nvtx']
+            assert json_file(path/'summary.json')['status']=='COMPLETED'
             local=csv_rows(path/'latencies.csv')
             for r in local:
                 for key in ('event_us','host_submit_us','end_event_wait_us','sync_wall_us'):r[key]=float(r[key])
@@ -155,7 +170,11 @@ def traces(raw,analysis,out):
                 scope,layer,step=re.match(r'OP/micro:(\w+)\|layer=(\w+)\|step=(\d+)',r['name']).groups()
                 events=[k for k in kernels if int(r['sqlite_rowid']) in json.loads(k['nvtx_ids'])]
                 micros.append(dict(method=name[len('trace-micro-'):],scope=scope,layer=layer,step=int(step),
-                    kernels=len(events),kernel_us=sum(float(k['duration_ms']) for k in events)*1000))
+                    kernels=len(events),kernel_us=sum(float(k['duration_ms']) for k in events)*1000,
+                    copy_kernels=sum('cupy_copy' in k['name'] for k in events),
+                    col2im_kernels=sum(k['name'].startswith('col2im') for k in events),
+                    gemm_kernels=sum('gemm' in k['name'].lower() for k in events),
+                    gather_kernels=sum('conv_dinput_gather' in k['name'] for k in events)))
             continue
         method=name[-1]
         phase_rows.extend(dict(r,method=method) for r in csv_rows(folder/'phase-summary.csv'))
@@ -199,10 +218,13 @@ def main():
     p.add_argument('--raw',type=Path,required=True)
     p.add_argument('--analysis',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--trace-raw',type=Path,help='Separate matched profiling window after a guarded interruption')
     a=p.parse_args();a.output.mkdir(parents=True,exist_ok=False)
-    assert json_file(a.raw/'completion.json')['status']=='COMPLETED'
-    training(a.raw,a.output);micro(a.raw,a.output);traces(a.raw,a.analysis,a.output)
+    trace_raw=a.trace_raw or a.raw
+    assert json_file(trace_raw/'completion.json')['status']=='COMPLETED'
+    training(a.raw,a.output);micro(a.raw,a.output);traces(trace_raw,a.analysis,a.output)
     (a.output/'completion.json').write_text(json.dumps(dict(status='PASSED',raw=str(a.raw.resolve()),
+        trace_raw=str(trace_raw.resolve()),
         timing='Uninstrumented CUDA Events/host/wall, training throughput/phases, Nsight are separate scopes'),indent=2)+'\n')
 
 

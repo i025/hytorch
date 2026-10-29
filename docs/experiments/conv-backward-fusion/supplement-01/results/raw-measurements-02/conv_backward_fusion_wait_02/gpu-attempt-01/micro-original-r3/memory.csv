@@ -1,0 +1,9 @@
+method,layer,scope,output_bytes,temporary_peak_over_retained,peak_live_bytes,retained_bytes,malloc_calls,requested_bytes
+original,conv2,dinput,1166592,6317056,7483904,1166848,3,7862400
+original,conv2,full,1253136,13012992,14266880,1253888,8,20961552
+original,conv3,dinput,379008,1584128,1963520,379392,3,2047488
+original,conv3,full,552000,3252224,3805184,552960,8,5472960
+original,conv4,dinput,84480,414720,499200,84480,3,560640
+original,conv4,full,195328,890368,1085952,195584,8,1562368
+original,conv5,dinput,61440,165888,227328,61440,3,245760
+original,conv5,full,209152,349696,559104,209408,8,743680

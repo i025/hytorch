@@ -1,0 +1,37 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/conv-backward-fusion/supplement-01/scripts/watch_gpu.py",
+    "--output",
+    "runs/conv_backward_fusion_wait_03",
+    "--seconds",
+    "6319.108599901199",
+    "--interval",
+    "20",
+    "--library",
+    "runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+    "--gpu-uuid",
+    "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "--trace-only"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-29T16:07:27.933425+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage2a-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cupy-cache",
+    "CUDA_CACHE_PATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cuda-cache",
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": -15,
+  "elapsed_s": 2218.054566683946,
+  "finished_at": "2026-10-29T16:44:25.988039+00:00"
+}

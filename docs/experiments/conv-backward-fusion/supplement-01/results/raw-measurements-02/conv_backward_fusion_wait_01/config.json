@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-10-29T15:52:47.008723+00:00",
+  "max_wait_seconds": 7200.0,
+  "interval_seconds": 20.0,
+  "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+  "pid": 1945449,
+  "command": [
+    "docs/experiments/conv-backward-fusion/supplement-01/scripts/watch_gpu.py",
+    "--output",
+    "runs/conv_backward_fusion_wait_01",
+    "--seconds",
+    "7200",
+    "--interval",
+    "20",
+    "--library",
+    "runs/conv_backward_fusion_build_01/libhytorch_cuda.so"
+  ]
+}

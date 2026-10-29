@@ -1,0 +1,5 @@
+{
+  "status": "PASSED",
+  "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_02/gpu-attempt-01",
+  "scope": "36 independent training runs and 9 microbenchmark runs"
+}

@@ -1,0 +1,131 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-training-E,outside_phase,"aten::copy_, op_id = 8554, sizes = [[100, 1152], [100, 1152], []], input_op_ids = [(8553,0), (8549,0), (0,-1)]",Device-to-Host,1,0.176287,176.287,176.287,460800
+trace-training-E,outside_phase,"aten::copy_, op_id = 420, sizes = [[100, 1152], [100, 1152], []], input_op_ids = [(419,0), (415,0), (0,-1)]",Device-to-Host,1,0.175264,175.264,175.264,460800
+trace-training-E,transfer,"aten::copy_, op_id = 5947, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(5946,0), (5943,0), (0,-1)]",Host-to-Device,1,0.152032,152.032,152.032,633600
+trace-training-E,transfer,"aten::copy_, op_id = 7507, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(7506,0), (7503,0), (0,-1)]",Host-to-Device,1,0.15088,150.88,150.88,633600
+trace-training-E,transfer,"aten::copy_, op_id = 5011, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(5010,0), (5007,0), (0,-1)]",Host-to-Device,1,0.145184,145.184,145.184,633600
+trace-training-E,transfer,"aten::copy_, op_id = 8131, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(8130,0), (8127,0), (0,-1)]",Host-to-Device,1,0.139936,139.936,139.936,633600
+trace-training-E,transfer,"aten::copy_, op_id = 6259, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(6258,0), (6255,0), (0,-1)]",Host-to-Device,1,0.139296,139.296,139.296,633600
+trace-training-E,transfer,"aten::copy_, op_id = 3763, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(3762,0), (3759,0), (0,-1)]",Host-to-Device,1,0.138848,138.848,138.848,633600
+trace-training-E,transfer,"aten::copy_, op_id = 5635, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(5634,0), (5631,0), (0,-1)]",Host-to-Device,1,0.137504,137.504,137.504,633600
+trace-training-E,transfer,"aten::copy_, op_id = 7819, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(7818,0), (7815,0), (0,-1)]",Host-to-Device,1,0.136447,136.447,136.447,633600
+trace-training-E,transfer,"aten::copy_, op_id = 6883, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(6882,0), (6879,0), (0,-1)]",Host-to-Device,1,0.135807,135.80700000000002,135.80700000000002,633600
+trace-training-E,transfer,"aten::copy_, op_id = 4387, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(4386,0), (4383,0), (0,-1)]",Host-to-Device,1,0.13568,135.68,135.68,633600
+trace-training-E,transfer,"aten::copy_, op_id = 7195, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(7194,0), (7191,0), (0,-1)]",Host-to-Device,1,0.135456,135.456,135.456,633600
+trace-training-E,transfer,"aten::copy_, op_id = 4075, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(4074,0), (4071,0), (0,-1)]",Host-to-Device,1,0.134687,134.687,134.687,633600
+trace-training-E,transfer,"aten::copy_, op_id = 3451, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(3450,0), (3447,0), (0,-1)]",Host-to-Device,1,0.133312,133.312,133.312,633600
+trace-training-E,transfer,"aten::copy_, op_id = 4699, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(4698,0), (4695,0), (0,-1)]",Host-to-Device,1,0.130976,130.976,130.976,633600
+trace-training-E,transfer,"aten::copy_, op_id = 6571, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(6570,0), (6567,0), (0,-1)]",Host-to-Device,1,0.130528,130.528,130.528,633600
+trace-training-E,outside_phase,"aten::copy_, op_id = 485, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(484,0), (481,0), (0,-1)]",Host-to-Device,1,0.130464,130.464,130.464,633600
+trace-training-E,transfer,"aten::copy_, op_id = 5323, sizes = [[4, 3, 66, 200], [4, 3, 66, 200], []], input_op_ids = [(5322,0), (5319,0), (0,-1)]",Host-to-Device,1,0.130176,130.176,130.176,633600
+trace-training-E,outside_phase,"aten::copy_, op_id = 160, sizes = [[100, 1152], [100, 1152], []], input_op_ids = [(159,0), (86,0), (0,-1)]",Host-to-Device,1,0.100928,100.928,100.928,460800
+trace-training-E,outside_phase,"aten::copy_, op_id = 354, sizes = [[48, 36, 5, 5], [48, 36, 5, 5], []], input_op_ids = [(353,0), (349,0), (0,-1)]",Device-to-Host,1,0.052576,52.576,52.576,172800
+trace-training-E,outside_phase,"aten::copy_, op_id = 8488, sizes = [[48, 36, 5, 5], [48, 36, 5, 5], []], input_op_ids = [(8487,0), (8483,0), (0,-1)]",Device-to-Host,1,0.052575,52.574999999999996,52.574999999999996,172800
+trace-training-E,outside_phase,"aten::copy_, op_id = 398, sizes = [[64, 64, 3, 3], [64, 64, 3, 3], []], input_op_ids = [(397,0), (393,0), (0,-1)]",Device-to-Host,1,0.04192,41.92,41.92,147456
+trace-training-E,outside_phase,"aten::copy_, op_id = 8532, sizes = [[64, 64, 3, 3], [64, 64, 3, 3], []], input_op_ids = [(8531,0), (8527,0), (0,-1)]",Device-to-Host,1,0.041376,41.376000000000005,41.376000000000005,147456
+trace-training-E,outside_phase,"aten::copy_, op_id = 124, sizes = [[48, 36, 5, 5], [48, 36, 5, 5], []], input_op_ids = [(123,0), (74,0), (0,-1)]",Host-to-Device,1,0.039424,39.424,39.424,172800
+trace-training-E,outside_phase,"aten::copy_, op_id = 148, sizes = [[64, 64, 3, 3], [64, 64, 3, 3], []], input_op_ids = [(147,0), (82,0), (0,-1)]",Host-to-Device,1,0.03376,33.76,33.76,147456
+trace-training-E,outside_phase,"aten::copy_, op_id = 376, sizes = [[64, 48, 3, 3], [64, 48, 3, 3], []], input_op_ids = [(375,0), (371,0), (0,-1)]",Device-to-Host,1,0.0272,27.2,27.2,110592
+trace-training-E,outside_phase,"aten::copy_, op_id = 8510, sizes = [[64, 48, 3, 3], [64, 48, 3, 3], []], input_op_ids = [(8509,0), (8505,0), (0,-1)]",Device-to-Host,1,0.0264,26.4,26.4,110592
+trace-training-E,outside_phase,"aten::copy_, op_id = 136, sizes = [[64, 48, 3, 3], [64, 48, 3, 3], []], input_op_ids = [(135,0), (78,0), (0,-1)]",Host-to-Device,1,0.024576,24.576,24.576,110592
+trace-training-E,outside_phase,"aten::copy_, op_id = 112, sizes = [[36, 24, 5, 5], [36, 24, 5, 5], []], input_op_ids = [(111,0), (70,0), (0,-1)]",Host-to-Device,1,0.020928,20.927999999999997,20.927999999999997,86400
+trace-training-E,outside_phase,"aten::copy_, op_id = 8466, sizes = [[36, 24, 5, 5], [36, 24, 5, 5], []], input_op_ids = [(8465,0), (8461,0), (0,-1)]",Device-to-Host,1,0.01568,15.68,15.68,86400
+trace-training-E,outside_phase,"aten::copy_, op_id = 332, sizes = [[36, 24, 5, 5], [36, 24, 5, 5], []], input_op_ids = [(331,0), (327,0), (0,-1)]",Device-to-Host,1,0.015648,15.647999999999998,15.647999999999998,86400
+trace-training-E,outside_phase,"aten::copy_, op_id = 3441, sizes = [[100, 1152], [100, 1152], []], input_op_ids = [(86,0), (277,0), (0,-1)]",Device-to-Device,1,0.004352,4.352,4.352,460800
+trace-training-E,outside_phase,"aten::copy_, op_id = 279, sizes = [[100, 1152], [100, 1152], []], input_op_ids = [(278,0), (275,0), (0,-1)]",Device-to-Device,1,0.004288,4.288,4.288,460800
+trace-training-E,outside_phase,"aten::copy_, op_id = 172, sizes = [[50, 100], [50, 100], []], input_op_ids = [(171,0), (90,0), (0,-1)]",Host-to-Device,1,0.004224,4.224,4.224,20000
+trace-training-E,outside_phase,"aten::copy_, op_id = 229, sizes = [[24, 3, 5, 5], [24, 3, 5, 5], []], input_op_ids = [(228,0), (225,0), (0,-1)]",Device-to-Device,1,0.004032,4.032,4.032,7200
+trace-training-E,outside_phase,"aten::copy_, op_id = 3439, sizes = [[64, 64, 3, 3], [64, 64, 3, 3], []], input_op_ids = [(82,0), (267,0), (0,-1)]",Device-to-Device,1,0.004032,4.032,4.032,147456
+trace-training-E,outside_phase,"aten::copy_, op_id = 3437, sizes = [[64, 48, 3, 3], [64, 48, 3, 3], []], input_op_ids = [(78,0), (257,0), (0,-1)]",Device-to-Device,1,0.004,4.0,4.0,110592
+trace-training-E,outside_phase,"aten::copy_, op_id = 249, sizes = [[48, 36, 5, 5], [48, 36, 5, 5], []], input_op_ids = [(248,0), (245,0), (0,-1)]",Device-to-Device,1,0.003936,3.9360000000000004,3.9360000000000004,172800
+trace-training-E,outside_phase,"aten::copy_, op_id = 239, sizes = [[36, 24, 5, 5], [36, 24, 5, 5], []], input_op_ids = [(238,0), (235,0), (0,-1)]",Device-to-Device,1,0.003904,3.904,3.904,86400
+trace-training-E,outside_phase,"aten::copy_, op_id = 269, sizes = [[64, 64, 3, 3], [64, 64, 3, 3], []], input_op_ids = [(268,0), (265,0), (0,-1)]",Device-to-Device,1,0.003904,3.904,3.904,147456
+trace-training-E,outside_phase,"aten::copy_, op_id = 3435, sizes = [[48, 36, 5, 5], [48, 36, 5, 5], []], input_op_ids = [(74,0), (247,0), (0,-1)]",Device-to-Device,1,0.003871,3.871,3.871,172800
+trace-training-E,outside_phase,"aten::copy_, op_id = 259, sizes = [[64, 48, 3, 3], [64, 48, 3, 3], []], input_op_ids = [(258,0), (255,0), (0,-1)]",Device-to-Device,1,0.00384,3.8400000000000003,3.8400000000000003,110592
+trace-training-E,outside_phase,"aten::copy_, op_id = 310, sizes = [[24, 3, 5, 5], [24, 3, 5, 5], []], input_op_ids = [(309,0), (305,0), (0,-1)]",Device-to-Host,1,0.003744,3.7439999999999998,3.7439999999999998,7200
+trace-training-E,outside_phase,"aten::copy_, op_id = 3433, sizes = [[36, 24, 5, 5], [36, 24, 5, 5], []], input_op_ids = [(70,0), (237,0), (0,-1)]",Device-to-Device,1,0.003712,3.712,3.712,86400
+trace-training-E,outside_phase,"aten::copy_, op_id = 289, sizes = [[50, 100], [50, 100], []], input_op_ids = [(288,0), (285,0), (0,-1)]",Device-to-Device,1,0.003648,3.648,3.648,20000
+trace-training-E,outside_phase,"aten::copy_, op_id = 3431, sizes = [[24, 3, 5, 5], [24, 3, 5, 5], []], input_op_ids = [(66,0), (227,0), (0,-1)]",Device-to-Device,1,0.003616,3.6159999999999997,3.6159999999999997,7200
+trace-training-E,outside_phase,"aten::copy_, op_id = 3443, sizes = [[50, 100], [50, 100], []], input_op_ids = [(90,0), (287,0), (0,-1)]",Device-to-Device,1,0.003616,3.6159999999999997,3.6159999999999997,20000
+trace-training-E,outside_phase,"aten::copy_, op_id = 8576, sizes = [[50, 100], [50, 100], []], input_op_ids = [(8575,0), (8571,0), (0,-1)]",Device-to-Host,1,0.003616,3.6159999999999997,3.6159999999999997,20000
+trace-training-E,outside_phase,"aten::copy_, op_id = 442, sizes = [[50, 100], [50, 100], []], input_op_ids = [(441,0), (437,0), (0,-1)]",Device-to-Host,1,0.003584,3.584,3.584,20000
+trace-training-E,outside_phase,"aten::copy_, op_id = 3756, sizes = [[], [], []], input_op_ids = [(3755,0), (3751,0), (0,-1)]",Device-to-Host,1,0.003488,3.4880000000000004,3.4880000000000004,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 234, sizes = [[24], [24], []], input_op_ids = [(233,0), (230,0), (0,-1)]",Device-to-Device,1,0.003392,3.392,3.392,96
+trace-training-E,outside_phase,"aten::copy_, op_id = 4068, sizes = [[], [], []], input_op_ids = [(4067,0), (4063,0), (0,-1)]",Device-to-Host,1,0.003296,3.296,3.296,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 100, sizes = [[24, 3, 5, 5], [24, 3, 5, 5], []], input_op_ids = [(99,0), (66,0), (0,-1)]",Host-to-Device,1,0.003104,3.104,3.104,7200
+trace-training-E,outside_phase,"aten::copy_, op_id = 3442, sizes = [[100], [100], []], input_op_ids = [(88,0), (282,0), (0,-1)]",Device-to-Device,1,0.00304,3.04,3.04,400
+trace-training-E,outside_phase,"aten::copy_, op_id = 3444, sizes = [[50], [50], []], input_op_ids = [(92,0), (292,0), (0,-1)]",Device-to-Device,1,0.00304,3.04,3.04,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 3445, sizes = [[1, 50], [1, 50], []], input_op_ids = [(94,0), (297,0), (0,-1)]",Device-to-Device,1,0.00304,3.04,3.04,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 299, sizes = [[1, 50], [1, 50], []], input_op_ids = [(298,0), (295,0), (0,-1)]",Device-to-Device,1,0.003008,3.008,3.008,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 304, sizes = [[1], [1], []], input_op_ids = [(303,0), (300,0), (0,-1)]",Device-to-Device,1,0.003008,3.008,3.008,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 3446, sizes = [[1], [1], []], input_op_ids = [(96,0), (302,0), (0,-1)]",Device-to-Device,1,0.003008,3.008,3.008,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 284, sizes = [[100], [100], []], input_op_ids = [(283,0), (280,0), (0,-1)]",Device-to-Device,1,0.002976,2.976,2.976,400
+trace-training-E,outside_phase,"aten::copy_, op_id = 294, sizes = [[50], [50], []], input_op_ids = [(293,0), (290,0), (0,-1)]",Device-to-Device,1,0.002975,2.975,2.975,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 321, sizes = [[24], [24], []], input_op_ids = [(320,0), (316,0), (0,-1)]",Device-to-Host,1,0.002944,2.944,2.944,96
+trace-training-E,outside_phase,"aten::copy_, op_id = 244, sizes = [[36], [36], []], input_op_ids = [(243,0), (240,0), (0,-1)]",Device-to-Device,1,0.002816,2.816,2.816,144
+trace-training-E,outside_phase,"aten::copy_, op_id = 264, sizes = [[64], [64], []], input_op_ids = [(263,0), (260,0), (0,-1)]",Device-to-Device,1,0.002816,2.816,2.816,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 8444, sizes = [[24, 3, 5, 5], [24, 3, 5, 5], []], input_op_ids = [(8443,0), (8439,0), (0,-1)]",Device-to-Host,1,0.002816,2.816,2.816,7200
+trace-training-E,outside_phase,"aten::copy_, op_id = 254, sizes = [[48], [48], []], input_op_ids = [(253,0), (250,0), (0,-1)]",Device-to-Device,1,0.002784,2.784,2.784,192
+trace-training-E,outside_phase,"aten::copy_, op_id = 3434, sizes = [[36], [36], []], input_op_ids = [(72,0), (242,0), (0,-1)]",Device-to-Device,1,0.002784,2.784,2.784,144
+trace-training-E,outside_phase,"aten::copy_, op_id = 3436, sizes = [[48], [48], []], input_op_ids = [(76,0), (252,0), (0,-1)]",Device-to-Device,1,0.002783,2.783,2.783,192
+trace-training-E,outside_phase,"aten::copy_, op_id = 3438, sizes = [[64], [64], []], input_op_ids = [(80,0), (262,0), (0,-1)]",Device-to-Device,1,0.002753,2.7529999999999997,2.7529999999999997,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 274, sizes = [[64], [64], []], input_op_ids = [(273,0), (270,0), (0,-1)]",Device-to-Device,1,0.002752,2.7520000000000002,2.7520000000000002,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 5940, sizes = [[], [], []], input_op_ids = [(5939,0), (5935,0), (0,-1)]",Device-to-Host,1,0.00272,2.72,2.72,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 5316, sizes = [[], [], []], input_op_ids = [(5315,0), (5311,0), (0,-1)]",Device-to-Host,1,0.002624,2.624,2.624,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 3432, sizes = [[24], [24], []], input_op_ids = [(68,0), (232,0), (0,-1)]",Device-to-Device,1,0.002592,2.592,2.592,96
+trace-training-E,outside_phase,"aten::copy_, op_id = 3440, sizes = [[64], [64], []], input_op_ids = [(84,0), (272,0), (0,-1)]",Device-to-Device,1,0.002559,2.559,2.559,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 431, sizes = [[100], [100], []], input_op_ids = [(430,0), (426,0), (0,-1)]",Device-to-Host,1,0.002496,2.496,2.496,400
+trace-training-E,outside_phase,"aten::copy_, op_id = 6876, sizes = [[], [], []], input_op_ids = [(6875,0), (6871,0), (0,-1)]",Device-to-Host,1,0.002496,2.496,2.496,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 4692, sizes = [[], [], []], input_op_ids = [(4691,0), (4687,0), (0,-1)]",Device-to-Host,1,0.002465,2.4650000000000003,2.4650000000000003,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 5628, sizes = [[], [], []], input_op_ids = [(5627,0), (5623,0), (0,-1)]",Device-to-Host,1,0.002465,2.4650000000000003,2.4650000000000003,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 343, sizes = [[36], [36], []], input_op_ids = [(342,0), (338,0), (0,-1)]",Device-to-Host,1,0.002464,2.464,2.464,144
+trace-training-E,outside_phase,"aten::copy_, op_id = 6252, sizes = [[], [], []], input_op_ids = [(6251,0), (6247,0), (0,-1)]",Device-to-Host,1,0.002464,2.464,2.464,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 7500, sizes = [[], [], []], input_op_ids = [(7499,0), (7495,0), (0,-1)]",Device-to-Host,1,0.002464,2.464,2.464,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 7812, sizes = [[], [], []], input_op_ids = [(7811,0), (7807,0), (0,-1)]",Device-to-Host,1,0.002464,2.464,2.464,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 8565, sizes = [[100], [100], []], input_op_ids = [(8564,0), (8560,0), (0,-1)]",Device-to-Host,1,0.002464,2.464,2.464,400
+trace-training-E,outside_phase,"aten::copy_, op_id = 8436, sizes = [[], [], []], input_op_ids = [(8435,0), (8431,0), (0,-1)]",Device-to-Host,1,0.002463,2.463,2.463,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 8477, sizes = [[36], [36], []], input_op_ids = [(8476,0), (8472,0), (0,-1)]",Device-to-Host,1,0.002463,2.463,2.463,144
+trace-training-E,outside_phase,"aten::copy_, op_id = 464, sizes = [[1, 50], [1, 50], []], input_op_ids = [(463,0), (459,0), (0,-1)]",Device-to-Host,1,0.002433,2.433,2.433,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 365, sizes = [[48], [48], []], input_op_ids = [(364,0), (360,0), (0,-1)]",Device-to-Host,1,0.002432,2.432,2.432,192
+trace-training-E,outside_phase,"aten::copy_, op_id = 409, sizes = [[64], [64], []], input_op_ids = [(408,0), (404,0), (0,-1)]",Device-to-Host,1,0.002432,2.432,2.432,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 475, sizes = [[1], [1], []], input_op_ids = [(474,0), (470,0), (0,-1)]",Device-to-Host,1,0.002432,2.432,2.432,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 4380, sizes = [[], [], []], input_op_ids = [(4379,0), (4375,0), (0,-1)]",Device-to-Host,1,0.002432,2.432,2.432,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 5004, sizes = [[], [], []], input_op_ids = [(5003,0), (4999,0), (0,-1)]",Device-to-Host,1,0.002432,2.432,2.432,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 8521, sizes = [[64], [64], []], input_op_ids = [(8520,0), (8516,0), (0,-1)]",Device-to-Host,1,0.002432,2.432,2.432,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 8598, sizes = [[1, 50], [1, 50], []], input_op_ids = [(8597,0), (8593,0), (0,-1)]",Device-to-Host,1,0.002432,2.432,2.432,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 7188, sizes = [[], [], []], input_op_ids = [(7187,0), (7183,0), (0,-1)]",Device-to-Host,1,0.002431,2.431,2.431,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 387, sizes = [[64], [64], []], input_op_ids = [(386,0), (382,0), (0,-1)]",Device-to-Host,1,0.0024,2.4,2.4,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 453, sizes = [[50], [50], []], input_op_ids = [(452,0), (448,0), (0,-1)]",Device-to-Host,1,0.0024,2.4,2.4,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 8124, sizes = [[], [], []], input_op_ids = [(8123,0), (8119,0), (0,-1)]",Device-to-Host,1,0.0024,2.4,2.4,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 8455, sizes = [[24], [24], []], input_op_ids = [(8454,0), (8450,0), (0,-1)]",Device-to-Host,1,0.0024,2.4,2.4,96
+trace-training-E,outside_phase,"aten::copy_, op_id = 8499, sizes = [[48], [48], []], input_op_ids = [(8498,0), (8494,0), (0,-1)]",Device-to-Host,1,0.0024,2.4,2.4,192
+trace-training-E,outside_phase,"aten::copy_, op_id = 8543, sizes = [[64], [64], []], input_op_ids = [(8542,0), (8538,0), (0,-1)]",Device-to-Host,1,0.0024,2.4,2.4,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 8587, sizes = [[50], [50], []], input_op_ids = [(8586,0), (8582,0), (0,-1)]",Device-to-Host,1,0.0024,2.4,2.4,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 8609, sizes = [[1], [1], []], input_op_ids = [(8608,0), (8604,0), (0,-1)]",Device-to-Host,1,0.0024,2.4,2.4,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 6564, sizes = [[], [], []], input_op_ids = [(6563,0), (6559,0), (0,-1)]",Device-to-Host,1,0.002368,2.368,2.368,4
+trace-training-E,transfer,"aten::copy_, op_id = 4080, sizes = [[4, 1], [4, 1], []], input_op_ids = [(4079,0), (4076,0), (0,-1)]",Host-to-Device,1,0.002048,2.048,2.048,16
+trace-training-E,transfer,"aten::copy_, op_id = 5016, sizes = [[4, 1], [4, 1], []], input_op_ids = [(5015,0), (5012,0), (0,-1)]",Host-to-Device,1,0.002048,2.048,2.048,16
+trace-training-E,transfer,"aten::copy_, op_id = 3456, sizes = [[4, 1], [4, 1], []], input_op_ids = [(3455,0), (3452,0), (0,-1)]",Host-to-Device,1,0.002016,2.016,2.016,16
+trace-training-E,transfer,"aten::copy_, op_id = 5952, sizes = [[4, 1], [4, 1], []], input_op_ids = [(5951,0), (5948,0), (0,-1)]",Host-to-Device,1,0.002016,2.016,2.016,16
+trace-training-E,transfer,"aten::copy_, op_id = 6576, sizes = [[4, 1], [4, 1], []], input_op_ids = [(6575,0), (6572,0), (0,-1)]",Host-to-Device,1,0.002016,2.016,2.016,16
+trace-training-E,transfer,"aten::copy_, op_id = 7824, sizes = [[4, 1], [4, 1], []], input_op_ids = [(7823,0), (7820,0), (0,-1)]",Host-to-Device,1,0.002016,2.016,2.016,16
+trace-training-E,transfer,"aten::copy_, op_id = 3768, sizes = [[4, 1], [4, 1], []], input_op_ids = [(3767,0), (3764,0), (0,-1)]",Host-to-Device,1,0.001984,1.984,1.984,16
+trace-training-E,transfer,"aten::copy_, op_id = 4704, sizes = [[4, 1], [4, 1], []], input_op_ids = [(4703,0), (4700,0), (0,-1)]",Host-to-Device,1,0.001984,1.984,1.984,16
+trace-training-E,transfer,"aten::copy_, op_id = 6264, sizes = [[4, 1], [4, 1], []], input_op_ids = [(6263,0), (6260,0), (0,-1)]",Host-to-Device,1,0.001984,1.984,1.984,16
+trace-training-E,transfer,"aten::copy_, op_id = 7512, sizes = [[4, 1], [4, 1], []], input_op_ids = [(7511,0), (7508,0), (0,-1)]",Host-to-Device,1,0.001984,1.984,1.984,16
+trace-training-E,outside_phase,"aten::copy_, op_id = 118, sizes = [[36], [36], []], input_op_ids = [(117,0), (72,0), (0,-1)]",Host-to-Device,1,0.001888,1.888,1.888,144
+trace-training-E,outside_phase,"aten::copy_, op_id = 166, sizes = [[100], [100], []], input_op_ids = [(165,0), (88,0), (0,-1)]",Host-to-Device,1,0.001888,1.888,1.888,400
+trace-training-E,transfer,"aten::copy_, op_id = 5640, sizes = [[4, 1], [4, 1], []], input_op_ids = [(5639,0), (5636,0), (0,-1)]",Host-to-Device,1,0.001888,1.888,1.888,16
+trace-training-E,transfer,"aten::copy_, op_id = 4392, sizes = [[4, 1], [4, 1], []], input_op_ids = [(4391,0), (4388,0), (0,-1)]",Host-to-Device,1,0.001857,1.857,1.857,16
+trace-training-E,transfer,"aten::copy_, op_id = 5328, sizes = [[4, 1], [4, 1], []], input_op_ids = [(5327,0), (5324,0), (0,-1)]",Host-to-Device,1,0.001856,1.856,1.856,16
+trace-training-E,transfer,"aten::copy_, op_id = 6888, sizes = [[4, 1], [4, 1], []], input_op_ids = [(6887,0), (6884,0), (0,-1)]",Host-to-Device,1,0.001856,1.856,1.856,16
+trace-training-E,transfer,"aten::copy_, op_id = 7200, sizes = [[4, 1], [4, 1], []], input_op_ids = [(7199,0), (7196,0), (0,-1)]",Host-to-Device,1,0.001856,1.856,1.856,16
+trace-training-E,transfer,"aten::copy_, op_id = 8136, sizes = [[4, 1], [4, 1], []], input_op_ids = [(8135,0), (8132,0), (0,-1)]",Host-to-Device,1,0.001856,1.856,1.856,16
+trace-training-E,outside_phase,"aten::copy_, op_id = 154, sizes = [[64], [64], []], input_op_ids = [(153,0), (84,0), (0,-1)]",Host-to-Device,1,0.001825,1.825,1.825,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 106, sizes = [[24], [24], []], input_op_ids = [(105,0), (68,0), (0,-1)]",Host-to-Device,1,0.001824,1.824,1.824,96
+trace-training-E,outside_phase,"aten::copy_, op_id = 130, sizes = [[48], [48], []], input_op_ids = [(129,0), (76,0), (0,-1)]",Host-to-Device,1,0.001824,1.824,1.824,192
+trace-training-E,outside_phase,"aten::copy_, op_id = 142, sizes = [[64], [64], []], input_op_ids = [(141,0), (80,0), (0,-1)]",Host-to-Device,1,0.001824,1.824,1.824,256
+trace-training-E,outside_phase,"aten::copy_, op_id = 178, sizes = [[50], [50], []], input_op_ids = [(177,0), (92,0), (0,-1)]",Host-to-Device,1,0.001824,1.824,1.824,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 184, sizes = [[1, 50], [1, 50], []], input_op_ids = [(183,0), (94,0), (0,-1)]",Host-to-Device,1,0.001824,1.824,1.824,200
+trace-training-E,outside_phase,"aten::copy_, op_id = 190, sizes = [[1], [1], []], input_op_ids = [(189,0), (96,0), (0,-1)]",Host-to-Device,1,0.001824,1.824,1.824,4
+trace-training-E,outside_phase,"aten::copy_, op_id = 490, sizes = [[4, 1], [4, 1], []], input_op_ids = [(489,0), (486,0), (0,-1)]",Host-to-Device,1,0.001792,1.792,1.792,16

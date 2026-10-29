@@ -1,0 +1,14 @@
+{
+  "status": "INTERRUPTED",
+  "returncode": 75,
+  "raw_output": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_04/gpu-attempt-01",
+  "guard": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_04/guard-attempt-01",
+  "gpu": {
+    "index": "6",
+    "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory.used": "0",
+    "utilization.gpu": "0"
+  },
+  "finished_at": "2026-10-29T17:35:39.836064+00:00"
+}

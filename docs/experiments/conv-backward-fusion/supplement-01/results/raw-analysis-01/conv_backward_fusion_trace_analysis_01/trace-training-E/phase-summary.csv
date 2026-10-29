@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-training-E,data,16,1.591543,1.591543,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-training-E,transfer,16,5.508999,5.508999,64,3.3596069999999996,3.359607,0,0,32,2.51646,0,0,0,0,0.0,0,32,2.2380139999999997,10137856,0,0
+trace-training-E,forward,16,27.508215999999997,27.508216,594,7.298825999999999,7.298826,432,3.461423,0,0,1,3.583504,432,6.0645400000000125,6.06454,336,0,0,0,0,0
+trace-training-E,backward,16,49.808254999999996,49.808255,2464,9.464122000000021,9.464122,1056,7.6111670000000045,0,0,0,0,1056,24.723789999999976,21.009963,368,0,0,0,64,0.13286799999999996
+trace-training-E,update,16,5.159345999999999,5.159346,16,0.261521,0.261521,16,0.261521,0,0,0,0,16,0.477344,0.477344,0,0,0,0,0,0
+trace-training-E,outside_phase,0,0,0.0,3835,726.1339939999986,726.133994,940,263.00110699999993,102,385.09216499999974,20,30.822404,940,19.442964999999997,17.248283,440,98,1.2070040000000004,5668660,42,0.094784
+trace-training-E,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

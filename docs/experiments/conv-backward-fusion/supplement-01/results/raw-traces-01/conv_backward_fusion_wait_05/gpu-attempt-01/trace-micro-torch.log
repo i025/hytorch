@@ -1,0 +1,55 @@
+警告: 未找到scipy，无法加载SVHN数据集
+[
+  {
+    "layer": "conv2",
+    "scope": "dinput",
+    "dispatch": {},
+    "finite": true
+  },
+  {
+    "layer": "conv2",
+    "scope": "full",
+    "dispatch": {},
+    "finite": true
+  },
+  {
+    "layer": "conv3",
+    "scope": "dinput",
+    "dispatch": {},
+    "finite": true
+  },
+  {
+    "layer": "conv3",
+    "scope": "full",
+    "dispatch": {},
+    "finite": true
+  },
+  {
+    "layer": "conv4",
+    "scope": "dinput",
+    "dispatch": {},
+    "finite": true
+  },
+  {
+    "layer": "conv4",
+    "scope": "full",
+    "dispatch": {},
+    "finite": true
+  },
+  {
+    "layer": "conv5",
+    "scope": "dinput",
+    "dispatch": {},
+    "finite": true
+  },
+  {
+    "layer": "conv5",
+    "scope": "full",
+    "dispatch": {},
+    "finite": true
+  }
+]
+Generating '/tmp/nsys-report-f562.qdstrm'
+[1/1] [0%                          ] trace-micro-torch.nsys-rep[1/1] [0%                          ] trace-micro-torch.nsys-rep[1/1] [=====32%                    ] trace-micro-torch.nsys-rep[1/1] [==============63%           ] trace-micro-torch.nsys-rep[1/1] [=======================94%  ] trace-micro-torch.nsys-rep[1/1] [========================100%] trace-micro-torch.nsys-rep[1/1] [========================100%] trace-micro-torch.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_05/gpu-attempt-01/trace-micro-torch.nsys-rep

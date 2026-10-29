@@ -1,0 +1,9 @@
+method,layer,scope,output_bytes,temporary_peak_over_retained,peak_live_bytes,retained_bytes,malloc_calls,requested_bytes
+torch,conv2,dinput,1166592,5849088,7015936,1166848,,
+torch,conv2,full,1253136,5762048,7015936,1253888,,
+torch,conv3,dinput,379008,10444800,10824192,379392,,
+torch,conv3,full,552000,10271232,10824192,552960,,
+torch,conv4,dinput,84480,373248,457728,84480,,
+torch,conv4,full,195328,262144,457728,195584,,
+torch,conv5,dinput,61440,0,61440,61440,,
+torch,conv5,full,209152,0,209408,209408,,

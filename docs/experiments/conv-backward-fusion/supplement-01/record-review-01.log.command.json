@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python",
+    "-c",
+    "import csv,json,math,pathlib,re; p=pathlib.Path(\"docs/experiments/conv-backward-fusion/supplement-01\"); r=p/\"results/acceptance-01\"; read=lambda n:list(csv.DictReader((r/n).open())); steps=read(\"training-steps.csv\"); losses=read(\"training-losses.csv\"); runs=read(\"training-raw.csv\"); micro=read(\"micro-latencies.csv\"); errors=read(\"training-errors.csv\"); assert len(steps)==len(losses)==9216 and len(runs)==36 and len(micro)==2160 and len(errors)==714; assert all(math.isfinite(float(v[\"loss\"])) for v in losses); assert all(v[\"passed\"]==\"True\" for v in errors); assert all(int(v[\"steps\"])==256 for v in runs); missing=[str(doc)+\":\"+link for doc in p.glob(\"*.md\") for link in re.findall(r\"\\]\\(([^)]+)\\)\",doc.read_text()) if not link.startswith((\"http://\",\"https://\",\"#\")) and not (doc.parent/link).exists()]; assert not missing,missing; print(\"PASS: 36 independent runs, 9216 finite losses/step records, 2160 micro calls, 714 passing comparisons, report links resolve.\")"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-29T16:49:32.385396+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage2a-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cupy-cache",
+    "CUDA_CACHE_PATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cuda-cache",
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.14929759805090725,
+  "finished_at": "2026-10-29T16:49:32.534741+00:00"
+}

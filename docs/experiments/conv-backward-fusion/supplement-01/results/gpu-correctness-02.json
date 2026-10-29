@@ -1,0 +1,14 @@
+{
+  "status": "PASSED",
+  "passed": 92,
+  "failed": 0,
+  "skipped": 0,
+  "comparisons": 533,
+  "max_abs": 2.980232238769531e-07,
+  "max_relative_l2": 2.0723114272336258e-06,
+  "mismatches": 0,
+  "finite": true,
+  "physical_gpu": 6,
+  "logical_gpu": 0,
+  "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82"
+}

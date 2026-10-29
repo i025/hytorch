@@ -1,0 +1,168 @@
+{
+  "training": [
+    {
+      "method": "A",
+      "steps": 16,
+      "whole_trace_kernels": 3952,
+      "gpu_kernels_per_step": 152.0,
+      "backward_kernels_per_step": 77.0,
+      "backward_gpu_us": 883.8545000000006,
+      "backward_host_nvtx_us": 7043.916249999998,
+      "phase_launch_api_calls_per_step": 152.0,
+      "backward_launch_api_us": 628.2126874999998,
+      "backward_malloc_requests_per_step": 74.0,
+      "backward_malloc_requested_bytes_per_step": 45294441.0,
+      "own_kernel_span_us": 6922.1209375,
+      "own_kernel_union_us": 883.8545,
+      "gap_between_own_kernels_us": 6038.2664375
+    },
+    {
+      "method": "B",
+      "steps": 16,
+      "whole_trace_kernels": 3848,
+      "gpu_kernels_per_step": 148.0,
+      "backward_kernels_per_step": 77.0,
+      "backward_gpu_us": 872.8031250000005,
+      "backward_host_nvtx_us": 6905.058937500002,
+      "phase_launch_api_calls_per_step": 148.0,
+      "backward_launch_api_us": 630.5456875000009,
+      "backward_malloc_requests_per_step": 74.0,
+      "backward_malloc_requested_bytes_per_step": 45294441.0,
+      "own_kernel_span_us": 6789.060187499999,
+      "own_kernel_union_us": 872.8031249999999,
+      "gap_between_own_kernels_us": 5916.257062500001
+    },
+    {
+      "method": "C",
+      "steps": 16,
+      "whole_trace_kernels": 3042,
+      "gpu_kernels_per_step": 117.0,
+      "backward_kernels_per_step": 77.0,
+      "backward_gpu_us": 872.7373125000001,
+      "backward_host_nvtx_us": 6712.088750000001,
+      "phase_launch_api_calls_per_step": 117.0,
+      "backward_launch_api_us": 642.0361249999978,
+      "backward_malloc_requests_per_step": 74.0,
+      "backward_malloc_requested_bytes_per_step": 45294441.0,
+      "own_kernel_span_us": 6586.741562499999,
+      "own_kernel_union_us": 872.7373125,
+      "gap_between_own_kernels_us": 5714.00425
+    },
+    {
+      "method": "D",
+      "steps": 16,
+      "whole_trace_kernels": 2964,
+      "gpu_kernels_per_step": 114.0,
+      "backward_kernels_per_step": 74.0,
+      "backward_gpu_us": 790.9081249999992,
+      "backward_host_nvtx_us": 6491.932875,
+      "phase_launch_api_calls_per_step": 114.0,
+      "backward_launch_api_us": 650.8637500000013,
+      "backward_malloc_requests_per_step": 71.0,
+      "backward_malloc_requested_bytes_per_step": 39848649.0,
+      "own_kernel_span_us": 6372.760625000001,
+      "own_kernel_union_us": 790.9081249999999,
+      "gap_between_own_kernels_us": 5581.8525
+    },
+    {
+      "method": "F",
+      "steps": 16,
+      "whole_trace_kernels": 2756,
+      "gpu_kernels_per_step": 106.0,
+      "backward_kernels_per_step": 66.0,
+      "backward_gpu_us": 1106.2432499999995,
+      "backward_host_nvtx_us": 5943.3421875,
+      "phase_launch_api_calls_per_step": 106.0,
+      "backward_launch_api_us": 563.8308125000009,
+      "backward_malloc_requests_per_step": 63.0,
+      "backward_malloc_requested_bytes_per_step": 30823881.0,
+      "own_kernel_span_us": 5825.4708125,
+      "own_kernel_union_us": 1106.24325,
+      "gap_between_own_kernels_us": 4719.2275625
+    },
+    {
+      "method": "E",
+      "steps": 16,
+      "whole_trace_kernels": 2444,
+      "gpu_kernels_per_step": 94.0,
+      "backward_kernels_per_step": 66.0,
+      "backward_gpu_us": 1545.2368749999985,
+      "backward_host_nvtx_us": 3113.0159375,
+      "phase_launch_api_calls_per_step": 94.0,
+      "backward_launch_api_us": 475.69793750000025,
+      "backward_malloc_requests_per_step": null,
+      "backward_malloc_requested_bytes_per_step": null,
+      "own_kernel_span_us": 2.4559375,
+      "own_kernel_union_us": 2.4559375,
+      "gap_between_own_kernels_us": 0.0
+    }
+  ],
+  "dinput": [
+    {
+      "method": "D",
+      "layer": "conv2",
+      "ranges": 16,
+      "kernels_per_range": 3.0,
+      "kernel_us": 124.917875,
+      "host_us": 268.80775
+    },
+    {
+      "method": "F",
+      "layer": "conv2",
+      "ranges": 16,
+      "kernels_per_range": 1.0,
+      "kernel_us": 262.883875,
+      "host_us": 102.891625
+    },
+    {
+      "method": "D",
+      "layer": "conv3",
+      "ranges": 16,
+      "kernels_per_range": 3.0,
+      "kernel_us": 67.45431250000001,
+      "host_us": 268.837
+    },
+    {
+      "method": "F",
+      "layer": "conv3",
+      "ranges": 16,
+      "kernels_per_range": 1.0,
+      "kernel_us": 163.7499375,
+      "host_us": 99.757
+    },
+    {
+      "method": "D",
+      "layer": "conv4",
+      "ranges": 16,
+      "kernels_per_range": 3.0,
+      "kernel_us": 32.840125,
+      "host_us": 270.142875
+    },
+    {
+      "method": "F",
+      "layer": "conv4",
+      "ranges": 16,
+      "kernels_per_range": 1.0,
+      "kernel_us": 78.596,
+      "host_us": 99.0325
+    },
+    {
+      "method": "D",
+      "layer": "conv5",
+      "ranges": 16,
+      "kernels_per_range": 3.0,
+      "kernel_us": 31.187875000000002,
+      "host_us": 276.05943750000006
+    },
+    {
+      "method": "F",
+      "layer": "conv5",
+      "ranges": 16,
+      "kernels_per_range": 1.0,
+      "kernel_us": 66.927875,
+      "host_us": 102.84156250000001
+    }
+  ],
+  "instrumented_numerical_comparisons": 119,
+  "max_abs": 4.1443854570388794e-08
+}

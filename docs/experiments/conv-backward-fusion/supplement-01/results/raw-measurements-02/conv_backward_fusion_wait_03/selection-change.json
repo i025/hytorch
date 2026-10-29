@@ -1,0 +1,4 @@
+{
+  "status": "CANCELLED_SELECTION_CHANGED",
+  "reason": "User permits any idle A100; replace GPU6-only idle watcher with any-GPU watcher. Original deadline preserved."
+}

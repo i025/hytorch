@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "docs/experiments/fused-sgd-cuda/scripts/summarize_hardware.py", line 17, in <module>
+    start, end = (datetime.fromisoformat(command[k]) for k in ('started_at', 'finished_at'))
+  File "docs/experiments/fused-sgd-cuda/scripts/summarize_hardware.py", line 17, in <genexpr>
+    start, end = (datetime.fromisoformat(command[k]) for k in ('started_at', 'finished_at'))
+KeyError: 'finished_at'

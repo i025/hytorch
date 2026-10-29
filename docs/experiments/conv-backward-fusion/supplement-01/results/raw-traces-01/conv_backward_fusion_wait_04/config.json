@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-10-29T16:44:35.093239+00:00",
+  "max_wait_seconds": 4091.986825942993,
+  "interval_seconds": 20.0,
+  "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+  "gpu_uuid": null,
+  "trace_only": true,
+  "pid": 1969047,
+  "command": [
+    "docs/experiments/conv-backward-fusion/supplement-01/scripts/watch_gpu.py",
+    "--output",
+    "runs/conv_backward_fusion_wait_04",
+    "--seconds",
+    "4091.986825942993",
+    "--interval",
+    "20",
+    "--library",
+    "runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+    "--trace-only"
+  ]
+}

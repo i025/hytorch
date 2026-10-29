@@ -1,0 +1,2 @@
+IDLE GPU 0 GPU-f099fdbd-adf2-6157-3462-4145bc2a8359; starting guarded batch
+{"status": "COMPLETED", "returncode": 0, "raw_output": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_05/gpu-attempt-01", "guard": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_05/guard-attempt-01", "gpu": {"index": "0", "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359", "name": "NVIDIA A100-PCIE-40GB", "memory.used": "0", "utilization.gpu": "0"}, "finished_at": "2026-10-29T17:40:19.470920+00:00"}

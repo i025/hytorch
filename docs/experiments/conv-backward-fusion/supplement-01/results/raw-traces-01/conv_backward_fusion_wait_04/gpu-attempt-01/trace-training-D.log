@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.000744870360904315, "train_wall_s": 0.16478946805000305, "samples": 64, "train_samples_per_sec": 388.37433458174706}
+Generating '/tmp/nsys-report-f0fc.qdstrm'
+[1/1] [0%                          ] trace-training-D.nsys-rep[1/1] [0%                          ] trace-training-D.nsys-rep[1/1] [==18%                       ] trace-training-D.nsys-rep[1/1] [=======36%                  ] trace-training-D.nsys-rep[1/1] [===================79%      ] trace-training-D.nsys-rep[1/1] [=====================86%    ] trace-training-D.nsys-rep[1/1] [========================100%] trace-training-D.nsys-rep[1/1] [========================100%] trace-training-D.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_wait_04/gpu-attempt-01/trace-training-D.nsys-rep

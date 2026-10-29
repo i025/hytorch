@@ -1,0 +1,23 @@
+{
+  "physical_gpu": "0",
+  "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "logical_gpu": 0,
+  "command": [
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/run_gpu.py",
+    "--gpu",
+    "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "--record",
+    "runs/conv_backward_fusion_wait_01/guard-attempt-01",
+    "--",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-backward-fusion/scripts/run_experiments.py",
+    "--output",
+    "runs/conv_backward_fusion_wait_01/gpu-attempt-01",
+    "--library",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+    "--gpu-uuid",
+    "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359"
+  ],
+  "selected_at": "2026-10-29T15:52:47.258852+00:00"
+}

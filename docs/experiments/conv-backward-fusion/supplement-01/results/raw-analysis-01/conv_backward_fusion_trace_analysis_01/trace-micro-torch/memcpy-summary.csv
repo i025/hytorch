@@ -1,0 +1,3 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-micro-torch,outside_phase,unlabeled:outside_phase,Device-to-Host,16,1.7767970000000002,111.04981250000002,644.671,3901136
+trace-micro-torch,outside_phase,unlabeled:outside_phase,Host-to-Device,12,0.412321,34.36008333333333,96.928,2752128

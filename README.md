@@ -111,7 +111,7 @@ python examples/finetune_imagenet.py --model alexnet --weights weights_imagenet/
 
 后续训练实验保留这些配置并加入新版本，在同一 GPU/窗口、相同输入和初始权重下至少重复 3 次；分别报告增量和累计收益，不跨历史窗口拼接加速比。吞吐、同步阶段和 Nsight 核时分开统计，使用 `--no-fingerprints`，保留失败及退化记录。阶段 4C 的首层梯度剪枝已验证，端到端稳定收益仍待复核。
 
-阶段 4D 新增[显式可选的 Conv2d dInput CUDA gather 原型](docs/experiments/conv-backward-fusion/README.md)：CPU 验证与 SM80 编译完成，因 GPU 全部被占用，GPU 正确性、性能及 Nsight 均为 **NOT_RUN**。该原型默认关闭；F/D、F/A、F/E 等收益等待同一窗口实测，尚不能宣称加速。
+阶段 4D 的[显式可选 Conv2d dInput CUDA gather](docs/experiments/conv-backward-fusion/README.md)已完成 [GPU 补测](docs/experiments/conv-backward-fusion/supplement-01/README.md)：92 项 GPU 回归通过，同一 GPU6 窗口中 F/D 吞吐 +4.69%、F/A +13.14%，F 为 PyTorch 的55.56%。独立 GPU0 的完整 Nsight 验证了 Launch/Copy/Col2im 减少，但四层纯设备 dInput 全部变慢，Backward 核时 +39.87%；端到端正收益主要支持减少主机提交和间隙的解释。不同窗口不混算计时；原型默认关闭，没有进入 4E。全部原始数据及负结果见[补测数据索引](docs/experiments/conv-backward-fusion/supplement-01/data-index.md)。
 
 第一次先回传：
 

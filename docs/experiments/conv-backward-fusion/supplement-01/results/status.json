@@ -1,0 +1,99 @@
+{
+  "status": "COMPLETED_WITH_MIXED_PERFORMANCE_RESULTS",
+  "baseline": "3e58e7093e152c7aae1c8a2334bb1f9f84f100ea",
+  "correctness": {
+    "status": "PASSED",
+    "passed": 92,
+    "failed": 0,
+    "skipped": 0,
+    "comparisons": 533,
+    "max_abs": 2.980232238769531e-07,
+    "max_relative_l2": 2.0723114272336258e-06,
+    "mismatches": 0,
+    "finite": true,
+    "physical_gpu": 6,
+    "logical_gpu": 0,
+    "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82"
+  },
+  "measurements": {
+    "status": "COMPLETED",
+    "micro_processes": 9,
+    "training_processes": 36,
+    "gpu_physical": 6,
+    "gpu_uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "steps_per_training_run": 256,
+    "comparisons": {
+      "comparisons": 714,
+      "max_abs": 4.190951585769653e-08,
+      "all_passed": true,
+      "initial_inputs_equal": true,
+      "F_vs_D_max_abs": 1.4901161193847656e-08
+    }
+  },
+  "profiling": {
+    "status": "COMPLETED",
+    "training_traces": 6,
+    "micro_traces": 3,
+    "sqlite_exports": 9,
+    "gpu_physical": 0,
+    "gpu_uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "guard_samples": 84,
+    "external_client_samples": 0,
+    "finished_at": "2026-10-29T17:40:19.470920+00:00",
+    "unmatched_kernel_api_count": 0,
+    "source": "results/trace-summary-02",
+    "instrumented_numerical_comparisons": 119,
+    "max_abs": 4.1443854570388794e-08
+  },
+  "throughput_gains": [
+    {
+      "comparison": "B/A",
+      "throughput_ratio": "0.9848491135979403",
+      "throughput_gain_pct": "-1.515088640205975",
+      "wall_speedup": "0.9847433068547965",
+      "wall_reduction_pct": "-1.5493066100578323"
+    },
+    {
+      "comparison": "C/B",
+      "throughput_ratio": "1.05513933211294",
+      "throughput_gain_pct": "5.513933211294009",
+      "wall_speedup": "1.0549577117088198",
+      "wall_reduction_pct": "5.209470588143228"
+    },
+    {
+      "comparison": "D/C",
+      "throughput_ratio": "1.039985533382873",
+      "throughput_gain_pct": "3.9985533382872918",
+      "wall_speedup": "1.0402735950890851",
+      "wall_reduction_pct": "3.871442597332897"
+    },
+    {
+      "comparison": "F/D",
+      "throughput_ratio": "1.0468690499575146",
+      "throughput_gain_pct": "4.686904995751462",
+      "wall_speedup": "1.0467744185580048",
+      "wall_reduction_pct": "4.4684334780018204"
+    },
+    {
+      "comparison": "F/A",
+      "throughput_ratio": "1.1313556999568462",
+      "throughput_gain_pct": "13.135569995684616",
+      "wall_speedup": "1.1312504489149964",
+      "wall_reduction_pct": "11.60224502371523"
+    },
+    {
+      "comparison": "F/E",
+      "throughput_ratio": "0.5555559709769418",
+      "throughput_gain_pct": "-44.444402902305825",
+      "wall_speedup": "0.5560236405393045",
+      "wall_reduction_pct": "-79.84846813888508"
+    }
+  ],
+  "performance_caveat": "Pure device dInput regressed on all four layers; backward GPU kernel sum +39.87%. F/D throughput +4.69% only in matched GPU6 window. Nsight GPU0 timings are separate.",
+  "production_kernel_modified": false,
+  "stage_4e_started": false,
+  "unresolved": [
+    "Guard falsely classified its own Nsight target PID1995660; exact marker visibility or exit race cause not proven. Original guard retained.",
+    "Cross-window throughput stability and microarchitectural cause of gather compute regression remain unverified."
+  ]
+}

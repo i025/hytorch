@@ -1,5 +1,11 @@
 # 阶段 4D：Conv2d dInput CUDA gather 原型
 
+**GPU 补测已完成：92 passed、0 failed、0 skipped；单算子、六版本训练和9份 Nsight 均已执行。** GPU6 同一窗口中 F/D 吞吐 +4.69%、F/A +13.14%，F 为 PyTorch 的55.56%；独立 GPU0 匹配 Trace 显示四层 dInput 各3→1 Kernel，但纯计算全部更慢，整个 Backward 核时 +39.87%、主机范围 −8.45%。详见 [GPU 补测报告](supplement-01/README.md)、[全部数据索引](supplement-01/data-index.md)、[最终状态](supplement-01/results/status.json) 和 [实测长期表](supplement-01/results/acceptance-01/progress-table.csv)。不同设备/插桩窗口不混算收益，后端默认关闭，没有进入 4E。
+
+以下保留首次 CPU/编译交付记录，其 NOT_RUN 状态对应当时的 GPU 不可用窗口；后续实际 GPU 结果以上述独立补测报告为准，旧数据和报告正文未覆盖。
+
+## 首次 CPU/编译交付记录
+
 **状态：实现、CPU 验证、SM80 编译完成；GPU 正确性、性能和 Nsight 均为 NOT_RUN。** 本轮检查时 8 张 A100 都有已有计算进程，未使用任何 GPU，也没有生成新的 GPU 加速结论。不能把 CPU 公式通过或动态库编译通过当成 CUDA 验收通过。
 
 基线为 `experiment/conv-backward-dinput-pruning` / `549f2ee4f9c046b3eeab2de1a54a47a5a2a16310`，新分支 `experiment/conv-backward-fusion`。只实现一个 dInput gather Kernel，没有重写 dWeight、Forward、SGD 或自动求导调度；没有进入 4E。

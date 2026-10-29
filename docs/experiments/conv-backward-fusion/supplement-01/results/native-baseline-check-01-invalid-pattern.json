@@ -1,0 +1,9 @@
+{
+  "status": "PASSED",
+  "whole_trace_kernels": 3952,
+  "measured_kernels": 2432,
+  "own_native_kernels": 0,
+  "pattern": "\\b(gemm_basic|gemm_blocked|gemm_shared|im2col_kernel|conv_direct|conv_pack|pool_kernel|multi_tensor_sgd_kernel|conv_dinput_gather)\\b",
+  "source": "runs/conv_backward_fusion_interrupted_trace_analysis_01/trace-training-A/kernel-events.csv",
+  "scope": "Complete A trace collected before interruption; includes warmup in whole-trace count"
+}

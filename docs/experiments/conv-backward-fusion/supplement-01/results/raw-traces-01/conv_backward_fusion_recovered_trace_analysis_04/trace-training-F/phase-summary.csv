@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+stage4d-window04-F-recovered-after-wrapper-interruption,data,16,1.2748890000000002,1.274889,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+stage4d-window04-F-recovered-after-wrapper-interruption,transfer,16,2.7778769999999997,2.777877,254,0.7546950000000002,0.754695,0,0,0,0,0,0,0,0,0.0,0,32,4.246072,10137856,0,0
+stage4d-window04-F-recovered-after-wrapper-interruption,forward,16,57.075908999999996,57.075909,624,10.206060000000015,10.20606,624,10.206060000000015,0,0,0,0,624,9.146757999999991,9.146758,453,0,0,0,0,0
+stage4d-window04-F-recovered-after-wrapper-interruption,backward,16,90.75294800000002,90.752948,1744,10.210749999999958,10.21075,1056,9.568426999999991,0,0,0,0,1056,18.02641600000001,18.026416,784,0,0,0,0,0
+stage4d-window04-F-recovered-after-wrapper-interruption,update,16,2.117874,2.117874,16,0.150512,0.150512,16,0.150512,0,0,0,0,16,0.160672,0.160672,6,0,0,0,0,0
+stage4d-window04-F-recovered-after-wrapper-interruption,outside_phase,0,0,0.0,2763,68.02976800000012,68.029768,1060,17.964637999999976,38,0.262131,41,27.69264400000001,1060,17.008192000000005,17.008192,782,82,1.9507799999999984,4661664,0,0
+stage4d-window04-F-recovered-after-wrapper-interruption,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

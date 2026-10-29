@@ -1,0 +1,69 @@
+{
+  "status": "COMPLETED",
+  "checks": [
+    {
+      "layer": "conv2",
+      "scope": "dinput",
+      "dispatch": {
+        "conv_dinput_fused": 31
+      },
+      "finite": true
+    },
+    {
+      "layer": "conv2",
+      "scope": "full",
+      "dispatch": {
+        "conv_dinput_fused": 31
+      },
+      "finite": true
+    },
+    {
+      "layer": "conv3",
+      "scope": "dinput",
+      "dispatch": {
+        "conv_dinput_fused": 31
+      },
+      "finite": true
+    },
+    {
+      "layer": "conv3",
+      "scope": "full",
+      "dispatch": {
+        "conv_dinput_fused": 31
+      },
+      "finite": true
+    },
+    {
+      "layer": "conv4",
+      "scope": "dinput",
+      "dispatch": {
+        "conv_dinput_fused": 31
+      },
+      "finite": true
+    },
+    {
+      "layer": "conv4",
+      "scope": "full",
+      "dispatch": {
+        "conv_dinput_fused": 31
+      },
+      "finite": true
+    },
+    {
+      "layer": "conv5",
+      "scope": "dinput",
+      "dispatch": {
+        "conv_dinput_fused": 31
+      },
+      "finite": true
+    },
+    {
+      "layer": "conv5",
+      "scope": "full",
+      "dispatch": {
+        "conv_dinput_fused": 31
+      },
+      "finite": true
+    }
+  ]
+}

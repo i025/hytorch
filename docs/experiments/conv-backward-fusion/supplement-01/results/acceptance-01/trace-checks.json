@@ -1,0 +1,32 @@
+[
+  {
+    "method": "A",
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "B",
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "C",
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "D",
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "F",
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "method": "E",
+    "initial_equal": true,
+    "inputs_equal": true
+  }
+]

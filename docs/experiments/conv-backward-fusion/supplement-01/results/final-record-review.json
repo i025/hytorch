@@ -1,0 +1,11 @@
+{
+  "status": "PASSED",
+  "scope": "Portable records, all current report links, numerical CSVs, complete 9-trace attribution, Python syntax and 11 final PNG files",
+  "raw_training_runs": 36,
+  "raw_training_steps": 9216,
+  "raw_micro_calls": 2160,
+  "training_comparisons": 714,
+  "trace_comparisons": 119,
+  "hashes_performed": false,
+  "production_kernel_changes": false
+}

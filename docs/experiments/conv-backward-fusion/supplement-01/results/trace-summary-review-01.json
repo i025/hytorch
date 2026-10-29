@@ -1,0 +1,6 @@
+{
+  "status": "SUPERSEDED_SCOPE_REVIEW",
+  "original": "results/acceptance-01/trace-training-summary.csv",
+  "replacement": "results/trace-summary-02/trace-training-summary.csv",
+  "reason": "Initial E own-kernel-window metrics covered only same-thread ancestry, omitting worker-thread backward kernels. Corrected E window fields to null with explicit scope; phase GPU time/counts and all D/F metrics unchanged. Original retained."
+}

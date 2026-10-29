@@ -1,0 +1,7 @@
+{
+  "comparisons": 714,
+  "max_abs": 4.190951585769653e-08,
+  "all_passed": true,
+  "initial_inputs_equal": true,
+  "F_vs_D_max_abs": 1.4901161193847656e-08
+}

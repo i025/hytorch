@@ -1,0 +1,14 @@
+{
+  "status": "PASSED",
+  "whole_trace_kernels": 3952,
+  "measured_kernels": 2432,
+  "own_native_kernels": 0,
+  "pattern": "\\b(gemm_basic|gemm_blocked|gemm_shared|im2col_kernel|conv_direct|conv_pack|pool_kernel|multi_tensor_sgd_kernel|conv_dinput_gather)\\b",
+  "positive_controls": [
+    "gemm_shared",
+    "conv_dinput_gather"
+  ],
+  "source": "runs/conv_backward_fusion_interrupted_trace_analysis_01/trace-training-A/kernel-events.csv",
+  "scope": "Complete A trace before interruption; whole trace includes warmup",
+  "review": "Initial scratch check had escaped literal boundaries; preserved as invalid-pattern and replaced by this word-boundary check. Main analyzer source pattern is unchanged."
+}
