@@ -1,0 +1,3 @@
+method,static_instructions,FFMA,FADD,shared_loads,shared_stores,local_loads,local_stores,barriers,branches,source
+shared32,134,32,0,40,2,0,0,2,3,docs/experiments/gemm-fp32-accuracy/evidence/cuda-sass.log
+block32_tree,331,32,14,64,2,0,0,2,18,docs/experiments/gemm-block32-tree/logs/new-sass.log

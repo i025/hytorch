@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/usr/local/cuda-12.2/bin/nvcc",
+    "-O3",
+    "-std=c++14",
+    "-lineinfo",
+    "--shared",
+    "--cudart",
+    "shared",
+    "-Xcompiler",
+    "-fPIC",
+    "-gencode=arch=compute_80,code=sm_80",
+    "-gencode=arch=compute_80,code=compute_80",
+    "--ptxas-options=-v,-warn-spills",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/experiments/gemm_block32_tree/kernel.cu",
+    "-o",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gemm_block32_tree_build_01/libblock32_tree.so"
+  ],
+  "started_at": "2026-10-29T07:41:15.849758+00:00",
+  "finished_at": "2026-10-29T07:41:16.873563+00:00",
+  "returncode": 0,
+  "architecture": "sm_80",
+  "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gemm_block32_tree_build_01/libblock32_tree.so",
+  "production_kernel_modified": false,
+  "maximum_k": 4096,
+  "partial_state_slots": 8
+}

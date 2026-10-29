@@ -1,0 +1,49 @@
+{
+  "gpu": "NVIDIA A100-PCIE-40GB",
+  "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+  "logical_device": 0,
+  "numpy": "1.24.4",
+  "cupy": "12.3.0",
+  "torch": "2.4.1+cu121",
+  "torch_cuda": "12.1",
+  "cuda_runtime": 12020,
+  "cuda_driver": 12020,
+  "cupy_compute_type": 1,
+  "cublas_math_mode": 0,
+  "CUPY_TF32": "0",
+  "NVIDIA_TF32_OVERRIDE": "0",
+  "torch_matmul_tf32": false,
+  "torch_cudnn_tf32": false,
+  "stream": 0,
+  "status": "PASSED",
+  "cases": 12,
+  "elements": 1376,
+  "resources": [
+    {
+      "registers_per_thread": 32,
+      "shared_bytes_per_block": 8192,
+      "local_bytes_per_thread": 0,
+      "max_threads_per_block": 1024,
+      "theoretical_active_blocks_per_sm": 2,
+      "binary_version": 80,
+      "method": "shared32",
+      "threads_per_block": 1024,
+      "max_threads_per_sm": 2048,
+      "theoretical_occupancy": 1.0,
+      "achieved_occupancy": "NOT_MEASURED"
+    },
+    {
+      "registers_per_thread": 29,
+      "shared_bytes_per_block": 8192,
+      "local_bytes_per_thread": 0,
+      "max_threads_per_block": 1024,
+      "theoretical_active_blocks_per_sm": 2,
+      "binary_version": 80,
+      "method": "block32_tree",
+      "threads_per_block": 1024,
+      "max_threads_per_sm": 2048,
+      "theoretical_occupancy": 1.0,
+      "achieved_occupancy": "NOT_MEASURED"
+    }
+  ]
+}

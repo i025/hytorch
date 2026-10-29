@@ -1,0 +1,6 @@
+Processing [runs/gemm_block32_tree_nsys_02.sqlite] with [/opt/nvidia/nsight-systems/2023.2.3/host-linux-x64/reports/cuda_gpu_kern_sum.py] to [docs/experiments/gemm-block32-tree/results/nsys-02/summary_cuda_gpu_kern_sum.csv]... PROCESSED
+
+Processing [runs/gemm_block32_tree_nsys_02.sqlite] with [/opt/nvidia/nsight-systems/2023.2.3/host-linux-x64/reports/cuda_api_sum.py] to [docs/experiments/gemm-block32-tree/results/nsys-02/summary_cuda_api_sum.csv]... PROCESSED
+
+Processing [runs/gemm_block32_tree_nsys_02.sqlite] with [/opt/nvidia/nsight-systems/2023.2.3/host-linux-x64/reports/nvtx_sum.py] to [docs/experiments/gemm-block32-tree/results/nsys-02/summary_nvtx_sum.csv]... PROCESSED
+

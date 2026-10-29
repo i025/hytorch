@@ -1,0 +1,87 @@
+{
+  "status": "PASSED",
+  "audited_positions": 66060288,
+  "all_maps_lossless": true,
+  "all_raw_position_classifications_confirmed": true,
+  "introduced_numpy_failures": [
+    {
+      "n": 4096,
+      "seed_base": 42,
+      "row": 4081,
+      "col": 3777,
+      "cpu_fsum": -0.03898794417308567,
+      "gpu_fp64": -0.038987944173146216,
+      "gpu_fp64_fsum_error": 6.054878820549447e-14,
+      "numpy_value": -0.03889346122741699,
+      "numpy_fsum_error": 9.448294566867521e-05,
+      "shared32_value": -0.038959190249443054,
+      "shared32_fsum_error": 2.87539236426132e-05,
+      "block32_tree_value": -0.03899955749511719,
+      "block32_tree_fsum_error": 1.1613322031520101e-05,
+      "numpy_tolerance": 0.00010388934612274171,
+      "new_minus_numpy_abs": 0.00010609626770019531
+    }
+  ],
+  "rounded_reference_differences": [
+    {
+      "n": "4096",
+      "seed_base": "42",
+      "row": "1397",
+      "col": "1705",
+      "stratum": "near_zero",
+      "gpu_fp64": "1.4550797982071373e-06",
+      "cpu_fsum": "1.4550798783740217e-06",
+      "cpu_fp64_dot": "1.4550798717039015e-06",
+      "abs_gpu_fsum": "8.016688441553343e-14",
+      "abs_dot_fsum": "6.670120185348072e-15",
+      "rounded32_match": "False",
+      "condition": "1784936691.8384101",
+      "rounded_reference_ulp_distance": 1
+    },
+    {
+      "n": "4096",
+      "seed_base": "20261029",
+      "row": "607",
+      "col": "711",
+      "stratum": "near_zero",
+      "gpu_fp64": "-1.573284995615154e-07",
+      "cpu_fsum": "-1.573286014099496e-07",
+      "cpu_fp64_dot": "-1.5732859282024947e-07",
+      "abs_gpu_fsum": "1.0184843420024681e-13",
+      "abs_dot_fsum": "8.589700131733657e-15",
+      "rounded32_match": "False",
+      "condition": "16863386207.870703",
+      "rounded_reference_ulp_distance": 7
+    }
+  ],
+  "instruction_counts": [
+    {
+      "method": "shared32",
+      "static_instructions": 134,
+      "FFMA": 32,
+      "FADD": 0,
+      "shared_loads": 40,
+      "shared_stores": 2,
+      "local_loads": 0,
+      "local_stores": 0,
+      "barriers": 2,
+      "branches": 3,
+      "source": "docs/experiments/gemm-fp32-accuracy/evidence/cuda-sass.log"
+    },
+    {
+      "method": "block32_tree",
+      "static_instructions": 331,
+      "FFMA": 32,
+      "FADD": 14,
+      "shared_loads": 64,
+      "shared_stores": 2,
+      "local_loads": 0,
+      "local_stores": 0,
+      "barriers": 2,
+      "branches": 18,
+      "source": "docs/experiments/gemm-block32-tree/logs/new-sass.log"
+    }
+  ],
+  "nsys_captured_kernel_count": 12,
+  "kernel_versions": 1
+}

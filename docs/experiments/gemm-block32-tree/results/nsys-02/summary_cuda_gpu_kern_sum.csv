@@ -1,0 +1,4 @@
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+48.9,121803788,3,40601262.7,40767716.0,39719714,41316358,811232.4,"gemm_block32_tree(const float *, const float *, float *, int, int, int)"
+32.4,80787976,3,26929325.3,26799245.0,26284556,27704175,718693.4,"void gemm_shared<(int)32>(const float *, const float *, float *, int, int, int)"
+18.7,46698992,6,7783165.3,7721725.5,7657549,7982605,152673.2,ampere_sgemm_128x64_nn

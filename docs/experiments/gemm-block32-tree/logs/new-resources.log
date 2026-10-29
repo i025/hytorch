@@ -1,0 +1,36 @@
+
+Fatbin elf code:
+================
+arch = sm_80
+code version = [1,7]
+host = linux
+compile_size = 64bit
+identifier = /srv/lab-disks/disk2/users/xymo/projects/hytorch/experiments/gemm_block32_tree/kernel.cu 
+
+Resource usage:
+ Common:
+  GLOBAL:0
+
+Fatbin ptx code:
+================
+arch = sm_80
+code version = [8,2]
+host = linux
+compile_size = 64bit
+compressed
+identifier = /srv/lab-disks/disk2/users/xymo/projects/hytorch/experiments/gemm_block32_tree/kernel.cu
+ptxasOptions = -v -warn-spills  --generate-line-info 
+
+Fatbin elf code:
+================
+arch = sm_80
+code version = [1,7]
+host = linux
+compile_size = 64bit
+identifier = /srv/lab-disks/disk2/users/xymo/projects/hytorch/experiments/gemm_block32_tree/kernel.cu
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _Z17gemm_block32_treePKfS0_Pfiii:
+  REG:29 STACK:0 SHARED:8192 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0

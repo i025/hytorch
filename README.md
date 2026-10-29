@@ -6,6 +6,8 @@
 
 [阶段 1 历史验收记录](docs/experiments/a100-stage1/README.md) 保留；阶段 1 当时未安装 PyTorch 的跳过记录不改写，后续已实际补齐。实验没有自动推进 Kernel 优化。
 
+**阶段 3B 独立 Block32 + Tree GEMM 实验已完成（2026-10-29）**：九组完整矩阵相对 FP64 均满足原数值阈值；原 NumPy FP32 标准在 N=4096 仍有一个超差位置。平均误差降低约 4.24–8.05 倍，相对 Shared32 延迟增加约 39%–52%，没有修改生产后端。见 [阶段 3B 完整报告、原始数据与图像](docs/experiments/gemm-block32-tree/README.md)。
+
 ## 队友第一次运行：只做这四步
 
 ### 1. 获取代码，确认环境

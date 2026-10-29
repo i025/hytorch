@@ -1,0 +1,7 @@
+==PROF== Connected to process 1758015 (/usr/bin/python3.8)
+==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device 0. For instructions on enabling permissions and to get more information see https://developer.nvidia.com/ERR_NVGPUCTRPERM
+警告: 未找到scipy，无法加载SVHN数据集
+Profiler workload completed
+==PROF== Disconnected from process 1758015
+==WARNING== No kernels were profiled.
+==WARNING== Profiling kernels launched by child processes requires the --target-processes all option.

@@ -1,0 +1,35 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-8.3.5, pluggy-1.5.0 -- /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /srv/lab-disks/disk2/users/xymo/projects/hytorch
+collecting ... collected 26 items
+
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[1] PASSED [  3%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[2] PASSED [  7%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[3] PASSED [ 11%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[4] PASSED [ 15%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[5] PASSED [ 19%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[6] PASSED [ 23%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[7] PASSED [ 26%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[9] PASSED [ 30%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[11] PASSED [ 34%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[31] PASSED [ 38%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[32] PASSED [ 42%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[33] PASSED [ 46%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[63] PASSED [ 50%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[64] PASSED [ 53%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[65] PASSED [ 57%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[127] PASSED [ 61%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_online_tree_matches_adjacent_pairwise[128] PASSED [ 65%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_fma_blocks_match_stage3a[31] PASSED [ 69%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_fma_blocks_match_stage3a[32] PASSED [ 73%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_fma_blocks_match_stage3a[33] PASSED [ 76%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_fma_blocks_match_stage3a[65] PASSED [ 80%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_fma_blocks_match_stage3a[127] PASSED [ 84%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_fma_blocks_match_stage3a[255] PASSED [ 88%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_fma_blocks_match_stage3a[4095] PASSED [ 92%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_fma_blocks_match_stage3a[4096] PASSED [ 96%]
+experiments/gemm_block32_tree/test_cpu_tree.py::test_right_to_left_final_fold_is_required PASSED [100%]
+
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/gemm-block32-tree/results/cpu-tests-01.xml -
+============================== 26 passed in 0.14s ==============================

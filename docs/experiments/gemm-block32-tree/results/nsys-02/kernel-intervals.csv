@@ -1,0 +1,13 @@
+start,end,deviceId,contextId,streamId,gridX,gridY,gridZ,blockX,blockY,blockZ,staticSharedMemory,dynamicSharedMemory,registersPerThread,localMemoryPerThread,kernel_name,duration_ms
+13283731,39568287,0,1,7,128,128,1,32,32,1,8192,0,32,0,"void gemm_shared<(int)32>(const float *, const float *, float *, int, int, int)",26.284556
+39569311,66368556,0,1,7,128,128,1,32,32,1,8192,0,32,0,"void gemm_shared<(int)32>(const float *, const float *, float *, int, int, int)",26.799245
+66369676,94073851,0,1,7,128,128,1,32,32,1,8192,0,32,0,"void gemm_shared<(int)32>(const float *, const float *, float *, int, int, int)",27.704175
+94214139,134981855,0,1,7,128,128,1,32,32,1,8192,0,29,0,"gemm_block32_tree(const float *, const float *, float *, int, int, int)",40.767716
+134983039,176299397,0,1,7,128,128,1,32,32,1,8192,0,29,0,"gemm_block32_tree(const float *, const float *, float *, int, int, int)",41.316358
+176300517,216020231,0,1,7,128,128,1,32,32,1,8192,0,29,0,"gemm_block32_tree(const float *, const float *, float *, int, int, int)",39.719714
+216433768,224092469,0,1,7,32,64,1,128,1,1,12544,0,122,0,ampere_sgemm_128x64_nn,7.658701
+224093556,231752674,0,1,7,32,64,1,128,1,1,12544,0,122,0,ampere_sgemm_128x64_nn,7.659118
+231753665,239411214,0,1,7,32,64,1,128,1,1,12544,0,122,0,ampere_sgemm_128x64_nn,7.657549
+239555983,247340316,0,1,7,32,64,1,128,1,1,12544,0,122,0,ampere_sgemm_128x64_nn,7.784333
+247341403,255298089,0,1,7,32,64,1,128,1,1,12544,0,122,0,ampere_sgemm_128x64_nn,7.956686
+255299273,263281878,0,1,7,32,64,1,128,1,1,12544,0,122,0,ampere_sgemm_128x64_nn,7.982605

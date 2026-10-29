@@ -1,0 +1,35 @@
+{
+  "command": [
+    "nsys",
+    "profile",
+    "--trace=cuda,nvtx",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "--capture-range=cudaProfilerApi",
+    "--capture-range-end=stop",
+    "--output",
+    "runs/gemm_block32_tree_nsys_02",
+    "python",
+    "docs/experiments/gemm-block32-tree/scripts/profile.py",
+    "--library",
+    "runs/gemm_block32_tree_build_01/libblock32_tree.so",
+    "--method",
+    "all",
+    "--warmup",
+    "5",
+    "--iterations",
+    "3"
+  ],
+  "physical_gpu": "3",
+  "logical_gpu": 0,
+  "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+  "started_at": "2026-10-29T07:53:50.545418+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4"
+  }
+}

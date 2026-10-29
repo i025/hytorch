@@ -1,0 +1,61 @@
+{
+  "gpu": "NVIDIA A100-PCIE-40GB",
+  "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+  "logical_device": 0,
+  "numpy": "1.24.4",
+  "cupy": "12.3.0",
+  "torch": "2.4.1+cu121",
+  "torch_cuda": "12.1",
+  "cuda_runtime": 12020,
+  "cuda_driver": 12020,
+  "cupy_compute_type": 1,
+  "cublas_math_mode": 0,
+  "CUPY_TF32": "0",
+  "NVIDIA_TF32_OVERRIDE": "0",
+  "torch_matmul_tf32": false,
+  "torch_cudnn_tf32": false,
+  "stream": 0,
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "scope": "FULL_MATRIX",
+  "cases": 9,
+  "elements_compared_per_method": 66060288,
+  "seed_bases": [
+    42,
+    1729,
+    20261029
+  ],
+  "sizes": [
+    1024,
+    2048,
+    4096
+  ],
+  "atol": 0.0001,
+  "rtol": 0.0001,
+  "new_all_numpy_tolerance_pass": false,
+  "new_all_fp64_tolerance_pass": true,
+  "large_stage3a_semantic_checks": [
+    {
+      "n": 1024,
+      "samples": 518,
+      "bitwise_mismatches": 0
+    },
+    {
+      "n": 2048,
+      "samples": 515,
+      "bitwise_mismatches": 0
+    },
+    {
+      "n": 4096,
+      "samples": 515,
+      "bitwise_mismatches": 0
+    }
+  ],
+  "reference_cross_checks": 4758,
+  "max_gpu_fp64_fsum_difference": 6.304956556846264e-13,
+  "rounded32_reference_disagreements": 2,
+  "raw_directory": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gemm_block32_tree_accuracy_raw_01",
+  "map_format": "gzip of 2-bit row-major statuses, little-bit-order: 0=worse,1=equal,2=better; relative to FP64",
+  "near_zero_definition": "abs(FP64)<=0.01",
+  "severe_cancellation_definition": "sum(abs(a*b))/abs(FP64)>=10000"
+}

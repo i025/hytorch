@@ -1,0 +1,902 @@
+[
+  {
+    "n": 1024,
+    "seed_base": 42,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "7",
+      "memory.used": "475",
+      "power.draw": "47.45",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "4",
+      "memory.used": "475",
+      "power.draw": "47.14",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 42,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "4",
+      "memory.used": "475",
+      "power.draw": "47.46",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "6",
+      "memory.used": "475",
+      "power.draw": "49.61",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 42,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "1",
+      "memory.used": "475",
+      "power.draw": "47.47",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "1",
+      "memory.used": "475",
+      "power.draw": "47.46",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 42,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "1",
+      "memory.used": "503",
+      "power.draw": "47.24",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "3",
+      "memory.used": "503",
+      "power.draw": "48.53",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 1729,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "6",
+      "memory.used": "503",
+      "power.draw": "47.46",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "6",
+      "memory.used": "503",
+      "power.draw": "47.65",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 1729,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "1",
+      "memory.used": "503",
+      "power.draw": "47.46",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "1",
+      "memory.used": "503",
+      "power.draw": "48.33",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 1729,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "2",
+      "memory.used": "503",
+      "power.draw": "47.46",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "2",
+      "memory.used": "503",
+      "power.draw": "47.46",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 1729,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "3",
+      "memory.used": "503",
+      "power.draw": "47.95",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "3",
+      "memory.used": "503",
+      "power.draw": "49.22",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 20261029,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "5",
+      "memory.used": "503",
+      "power.draw": "47.46",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "2",
+      "memory.used": "503",
+      "power.draw": "47.35",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 20261029,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "2",
+      "memory.used": "503",
+      "power.draw": "47.44",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "2",
+      "memory.used": "503",
+      "power.draw": "47.91",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 20261029,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "4",
+      "memory.used": "503",
+      "power.draw": "47.33",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "4",
+      "memory.used": "503",
+      "power.draw": "47.44",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 1024,
+    "seed_base": 20261029,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "4",
+      "memory.used": "503",
+      "power.draw": "47.53",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "6",
+      "memory.used": "503",
+      "power.draw": "48.22",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 42,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "2",
+      "memory.used": "595",
+      "power.draw": "47.16",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "11",
+      "memory.used": "595",
+      "power.draw": "47.82",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 42,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "13",
+      "memory.used": "595",
+      "power.draw": "48.00",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "15",
+      "memory.used": "595",
+      "power.draw": "48.01",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 42,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "25",
+      "memory.used": "595",
+      "power.draw": "47.41",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "42",
+      "memory.used": "595",
+      "power.draw": "47.52",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 42,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "42",
+      "memory.used": "595",
+      "power.draw": "48.11",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "7",
+      "memory.used": "595",
+      "power.draw": "51.86",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 1729,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "18",
+      "memory.used": "595",
+      "power.draw": "47.92",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "28",
+      "memory.used": "595",
+      "power.draw": "48.31",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 1729,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "22",
+      "memory.used": "595",
+      "power.draw": "48.61",
+      "temperature.gpu": "28"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "40",
+      "memory.used": "595",
+      "power.draw": "48.02",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 1729,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "7",
+      "memory.used": "595",
+      "power.draw": "48.03",
+      "temperature.gpu": "28"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "8",
+      "memory.used": "595",
+      "power.draw": "48.01",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 1729,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "8",
+      "memory.used": "595",
+      "power.draw": "47.53",
+      "temperature.gpu": "27"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "8",
+      "memory.used": "595",
+      "power.draw": "48.60",
+      "temperature.gpu": "27"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 20261029,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "765",
+      "clocks.mem": "1215",
+      "utilization.gpu": "27",
+      "memory.used": "595",
+      "power.draw": "47.66",
+      "temperature.gpu": "28"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "42",
+      "memory.used": "595",
+      "power.draw": "48.04",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 20261029,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "8",
+      "memory.used": "595",
+      "power.draw": "48.82",
+      "temperature.gpu": "28"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "8",
+      "memory.used": "595",
+      "power.draw": "47.65",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 20261029,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "8",
+      "memory.used": "595",
+      "power.draw": "47.37",
+      "temperature.gpu": "28"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "8",
+      "memory.used": "595",
+      "power.draw": "48.12",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 2048,
+    "seed_base": 20261029,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "13",
+      "memory.used": "595",
+      "power.draw": "48.24",
+      "temperature.gpu": "28"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "810",
+      "clocks.mem": "1215",
+      "utilization.gpu": "16",
+      "memory.used": "595",
+      "power.draw": "52.57",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 42,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "795",
+      "clocks.mem": "1215",
+      "utilization.gpu": "39",
+      "memory.used": "1027",
+      "power.draw": "49.22",
+      "temperature.gpu": "28"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1260",
+      "clocks.mem": "1215",
+      "utilization.gpu": "63",
+      "memory.used": "1027",
+      "power.draw": "58.26",
+      "temperature.gpu": "28"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 42,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1260",
+      "clocks.mem": "1215",
+      "utilization.gpu": "15",
+      "memory.used": "1027",
+      "power.draw": "58.56",
+      "temperature.gpu": "28"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1260",
+      "clocks.mem": "1215",
+      "utilization.gpu": "36",
+      "memory.used": "1027",
+      "power.draw": "57.96",
+      "temperature.gpu": "29"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 42,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "72",
+      "memory.used": "1027",
+      "power.draw": "68.53",
+      "temperature.gpu": "29"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "100",
+      "memory.used": "1027",
+      "power.draw": "67.47",
+      "temperature.gpu": "30"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 42,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "28",
+      "memory.used": "1027",
+      "power.draw": "67.68",
+      "temperature.gpu": "31"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "100",
+      "memory.used": "1027",
+      "power.draw": "72.65",
+      "temperature.gpu": "32"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 1729,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "21",
+      "memory.used": "1027",
+      "power.draw": "68.56",
+      "temperature.gpu": "30"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "22",
+      "memory.used": "1027",
+      "power.draw": "85.77",
+      "temperature.gpu": "31"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 1729,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "72",
+      "memory.used": "1027",
+      "power.draw": "67.89",
+      "temperature.gpu": "31"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "98",
+      "memory.used": "1027",
+      "power.draw": "68.37",
+      "temperature.gpu": "32"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 1729,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "92",
+      "memory.used": "1027",
+      "power.draw": "68.38",
+      "temperature.gpu": "32"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "68",
+      "memory.used": "1027",
+      "power.draw": "69.28",
+      "temperature.gpu": "33"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 1729,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "23",
+      "memory.used": "1027",
+      "power.draw": "68.96",
+      "temperature.gpu": "32"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "38",
+      "memory.used": "1027",
+      "power.draw": "67.90",
+      "temperature.gpu": "32"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 20261029,
+    "method": "shared32",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "50",
+      "memory.used": "1027",
+      "power.draw": "67.80",
+      "temperature.gpu": "32"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "44",
+      "memory.used": "1027",
+      "power.draw": "68.78",
+      "temperature.gpu": "33"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 20261029,
+    "method": "block32_tree",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "81",
+      "memory.used": "1027",
+      "power.draw": "77.58",
+      "temperature.gpu": "33"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "89",
+      "memory.used": "1027",
+      "power.draw": "68.38",
+      "temperature.gpu": "33"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 20261029,
+    "method": "cupy",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1410",
+      "clocks.mem": "1215",
+      "utilization.gpu": "21",
+      "memory.used": "1027",
+      "power.draw": "68.66",
+      "temperature.gpu": "33"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "15",
+      "memory.used": "1027",
+      "power.draw": "96.51",
+      "temperature.gpu": "33"
+    }
+  },
+  {
+    "n": 4096,
+    "seed_base": 20261029,
+    "method": "torch",
+    "before": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "25",
+      "memory.used": "1027",
+      "power.draw": "67.60",
+      "temperature.gpu": "33"
+    },
+    "after": {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "clocks.sm": "1395",
+      "clocks.mem": "1215",
+      "utilization.gpu": "37",
+      "memory.used": "1027",
+      "power.draw": "67.31",
+      "temperature.gpu": "33"
+    }
+  }
+]

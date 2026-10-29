@@ -1,0 +1,8 @@
+Capture range started in the application.
+Generating '/tmp/nsys-report-7fb5.qdstrm'
+Capture range ended in the application.
+[1/1] [0%                          ] gemm_block32_tree_nsys_02.nsys-rep[1/1] [0%                          ] gemm_block32_tree_nsys_02.nsys-rep[1/1] [===========50%              ] gemm_block32_tree_nsys_02.nsys-rep[1/1] [========================99% ] gemm_block32_tree_nsys_02.nsys-rep[1/1] [========================100%] gemm_block32_tree_nsys_02.nsys-rep[1/1] [========================100%] gemm_block32_tree_nsys_02.nsys-rep
+警告: 未找到scipy，无法加载SVHN数据集
+Profiler workload completed
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gemm_block32_tree_nsys_02.nsys-rep

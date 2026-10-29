@@ -1,0 +1,10 @@
+n,seed_base,positions,published_map_matches_raw,all_positions_recomputed,new_mean_and_max_exact
+1024,42,1048576,True,True,True
+1024,1729,1048576,True,True,True
+1024,20261029,1048576,True,True,True
+2048,42,4194304,True,True,True
+2048,1729,4194304,True,True,True
+2048,20261029,4194304,True,True,True
+4096,42,16777216,True,True,True
+4096,1729,16777216,True,True,True
+4096,20261029,16777216,True,True,True

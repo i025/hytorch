@@ -1,0 +1,36 @@
+{
+  "command": [
+    "ncu",
+    "--set",
+    "basic",
+    "--section",
+    "Occupancy",
+    "--launch-count",
+    "1",
+    "--kernel-name",
+    "regex:gemm_block32_tree",
+    "--csv",
+    "python",
+    "docs/experiments/gemm-block32-tree/scripts/profile.py",
+    "--library",
+    "runs/gemm_block32_tree_build_01/libblock32_tree.so",
+    "--method",
+    "block32_tree",
+    "--warmup",
+    "0",
+    "--iterations",
+    "1"
+  ],
+  "physical_gpu": "3",
+  "logical_gpu": 0,
+  "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+  "started_at": "2026-10-29T07:50:20.848826+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4"
+  }
+}
