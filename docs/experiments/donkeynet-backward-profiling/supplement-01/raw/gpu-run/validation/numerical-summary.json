@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "comparisons": 264,
+  "failed_comparisons": [],
+  "exact_instrumentation_comparisons": 160,
+  "torch_tolerance_comparisons": 68,
+  "torch_initial_and_input_exact_comparisons": 36
+}

@@ -1,0 +1,5 @@
+layer,part,backward_node,innermost_internal,kernel,calls,gpu_kernel_sum_ms,gpu_kernel_mean_us,fraction_of_backward_gpu_kernel_sum,operator_paths
+conv1,Conv2d.dInput,OP/bwd:Conv2d,OP/internal:cupy.tensordot,cupy_copy__synthetic,1,5e-05,0.05,0.5,"[""[\""OP/bwd:Conv2d|layer=conv1\"", \""OP/part:Conv2d.dInput|layer=conv1|leaf_input=true\"", \""OP/fwd:Deconv2d\"", \""OP/internal:cupy.tensordot\""]""]"
+conv1,unlabelled,OP/bwd:Sum,unlabelled,SYNTHETIC_KERNEL,1,2e-05,0.02,0.2,"[""[\""OP/bwd:Conv2d|layer=conv1\"", \""OP/bwd:Sum\""]""]"
+conv1,unlabelled,OP/bwd:Conv2d,unlabelled,SYNTHETIC_KERNEL,1,2e-05,0.02,0.2,"[""[\""OP/bwd:Conv2d|layer=conv1\""]""]"
+unlabelled,unlabelled,unlabelled,unlabelled,SYNTHETIC_KERNEL,1,1e-05,0.01,0.1,"[""[\""ReluBackward0, stashed seq = 12\""]""]"

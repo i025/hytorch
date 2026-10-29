@@ -1,0 +1,4 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-phase-cupy,transfer,unlabeled:transfer,Host-to-Device,32,0.6197839999999999,19.368249999999996,37.761,10137856
+trace-phase-cupy,outside_phase,unlabeled:outside_phase,Device-to-Host,48,0.2538620000000001,5.288791666666668,31.105,2014056
+trace-phase-cupy,outside_phase,unlabeled:outside_phase,Host-to-Device,34,0.24262500000000004,7.1360294117647065,37.6,2647608

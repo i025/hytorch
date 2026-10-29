@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.0007448701135217561, "train_wall_s": 0.08663393999449909, "samples": 64, "train_samples_per_sec": 738.7404982858191}
+Generating '/tmp/nsys-report-ae02.qdstrm'
+[1/1] [0%                          ] trace-detail-torch.nsys-rep[1/1] [0%                          ] trace-detail-torch.nsys-rep[1/1] [12%                         ] trace-detail-torch.nsys-rep[1/1] [====25%                     ] trace-detail-torch.nsys-rep[1/1] [=========46%                ] trace-detail-torch.nsys-rep[1/1] [=================72%        ] trace-detail-torch.nsys-rep[1/1] [====================83%     ] trace-detail-torch.nsys-rep[1/1] [========================100%] trace-detail-torch.nsys-rep[1/1] [========================100%] trace-detail-torch.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_01/trace-detail-torch.nsys-rep

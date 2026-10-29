@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-detail-cupy,data,16,2.649279,2.649279,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-detail-cupy,transfer,16,3.7125369999999998,3.712537,252,0.8749609999999997,0.874961,0,0,0,0,0,0,0,0,0.0,0,32,3.957027,10137856,0,0
+trace-detail-cupy,forward,16,53.423957,53.423957,1313,7.233634999999994,7.233635,688,6.111902000000005,0,0,1,0.552178,688,6.624659000000003,6.624659,498,0,0,0,0,0
+trace-detail-cupy,backward,16,108.597321,108.597321,2032,12.012811999999988,12.012812,1232,11.186188999999983,0,0,0,0,1232,14.316483000000009,14.316483,848,0,0,0,0,0
+trace-detail-cupy,update,16,17.614834000000002,17.614834,512,3.41561,3.41561,512,3.41561,0,0,0,0,512,1.9509019999999981,1.950902,512,0,0,0,0,0
+trace-detail-cupy,outside_phase,0,0,0.0,3695,79.88800799999984,79.888008,1520,20.608022000000044,38,0.22200899999999998,40,34.740018,1520,14.296588000000003,14.296588,1162,82,2.199508999999998,4661664,0,0
+trace-detail-cupy,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

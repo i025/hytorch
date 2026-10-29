@@ -1,0 +1,32 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/donkeynet-backward-profiling/scripts/review_supplement_traces.py",
+    "--raw",
+    "runs/donkeynet_4a_supplement_01",
+    "--analysis",
+    "runs/donkeynet_4a_supplement_analysis_01",
+    "--output",
+    "docs/experiments/donkeynet-backward-profiling/supplement-01/results/independent-review"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-29T12:51:49.375799+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": ".matplotlib_cache",
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 3.308189122006297,
+  "finished_at": "2026-10-29T12:51:52.684041+00:00"
+}

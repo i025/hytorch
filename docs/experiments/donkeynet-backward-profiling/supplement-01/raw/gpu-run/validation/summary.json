@@ -1,0 +1,41 @@
+{
+  "status": "PASSED",
+  "gpu_status": "EXECUTED",
+  "numerical": {
+    "status": "PASSED",
+    "comparisons": 264,
+    "failed_comparisons": [],
+    "exact_instrumentation_comparisons": 160,
+    "torch_tolerance_comparisons": 68,
+    "torch_initial_and_input_exact_comparisons": 36
+  },
+  "timing_scope": "resident fixed synthetic batch; warmup then restore; synchronization only before/after whole step block; excludes input transfer, DataLoader, scalar reads, file IO and NVTX context entry/exit",
+  "timing_blocks": 18,
+  "overhead": [
+    {
+      "method": "cupy",
+      "plain_mean_step_ms": 5.491143490265434,
+      "instrumented_mean_step_ms": 8.770902236089265,
+      "plain_std_step_ms": 0.06921221617971492,
+      "instrumented_std_step_ms": 0.08418674657134526,
+      "overhead_percent": 59.728155923044234
+    },
+    {
+      "method": "combined",
+      "plain_mean_step_ms": 5.550750196562149,
+      "instrumented_mean_step_ms": 8.775119635780962,
+      "plain_std_step_ms": 0.06146523790832024,
+      "instrumented_std_step_ms": 0.034152334690396406,
+      "overhead_percent": 58.08889474463872
+    },
+    {
+      "method": "torch",
+      "plain_mean_step_ms": 1.77069716786112,
+      "instrumented_mean_step_ms": 3.082797455135733,
+      "plain_std_step_ms": 0.06186747067645593,
+      "instrumented_std_step_ms": 0.06377000672430105,
+      "overhead_percent": 74.10077290966358
+    }
+  ],
+  "raw_arrays": "inputs.npz, initial-weights.npz and {cupy,combined,torch}-{plain,instrumented}.npz; server only"
+}

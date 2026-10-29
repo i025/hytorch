@@ -1,0 +1,28 @@
+{
+  "method": "combined",
+  "instrumented": false,
+  "leaf_gradients": {
+    "input_grad_present": true,
+    "target_grad_present": true,
+    "input_gradient_shape": [
+      4,
+      3,
+      66,
+      200
+    ],
+    "target_gradient_shape": [
+      4,
+      1
+    ],
+    "input_gradient_l2": 0.002235360537257735,
+    "target_gradient_l2": 0.02684722413504578
+  },
+  "dispatch_counts": {
+    "gemm_shared": 8,
+    "conv_im2col": 5
+  },
+  "initial_arrays_exact": true,
+  "input_arrays_exact": true,
+  "all_float32": true,
+  "all_finite": true
+}

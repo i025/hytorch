@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/summarize_supplement_training.py",
+    "--raw",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_01",
+    "--output",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/supplement-01/results/training",
+    "--figures",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/supplement-01/figures"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-29T12:47:29.145602+00:00",
+  "environment": {
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_plot_cache_01"
+  },
+  "returncode": 0,
+  "wall_s": 11.240056694950908,
+  "finished_at": "2026-10-29T12:47:40.386008+00:00"
+}

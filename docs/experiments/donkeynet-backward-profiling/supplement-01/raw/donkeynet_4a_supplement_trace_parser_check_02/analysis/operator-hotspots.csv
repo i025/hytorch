@@ -1,0 +1,12 @@
+label,attribution,phase,operator,operator_nvtx_call_count,host_nvtx_inclusive_ms,host_nvtx_exclusive_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_mean_us,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,exclusive,backward,OP/internal:col2im,1,0.0001,0.0001,2,1.6000000000000003e-05,1e-05,2,1.6000000000000003e-05,0,0,0,0,1,5e-05,0.05,5e-05,1,0,0,0,0,0
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,exclusive,backward,OP/bwd:Conv2d,1,0.0007,0.0004,3,3.0000000000000004e-05,3e-05,1,1e-05,0,0,0,0,1,2e-05,0.02,2e-05,1,1,5e-06,16,1,4e-06
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,exclusive,backward,OP/bwd:Sum,1,0.0001,0.0001,1,1e-05,1e-05,1,1e-05,0,0,0,0,1,2e-05,0.02,2e-05,1,0,0,0,0,0
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,exclusive,backward,ReluBackward0,1,4e-05,4e-05,1,1e-05,1e-05,1,1e-05,0,0,0,0,1,1e-05,0.01,1e-05,1,0,0,0,0,0
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,exclusive,backward,OP/fwd:Deconv2d,1,0.0002,0.0001,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,exclusive,backward,unlabeled:backward,0,0,0,1,5e-05,5e-05,0,0,1,5e-05,0,0,0,0,0,0.0,0,0,0,0,0,0
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,inclusive,backward,OP/bwd:Conv2d,1,0.0007,0.0004,6,5.6e-05,5e-05,4,3.6e-05,0,0,0,0,3,9e-05,0.030000000000000002,9e-05,3,1,5e-06,16,1,4e-06
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,inclusive,backward,OP/fwd:Deconv2d,1,0.0002,0.0001,2,1.6000000000000003e-05,1e-05,2,1.6000000000000003e-05,0,0,0,0,1,5e-05,0.05,5e-05,1,0,0,0,0,0
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,inclusive,backward,OP/internal:col2im,1,0.0001,0.0001,2,1.6000000000000003e-05,1e-05,2,1.6000000000000003e-05,0,0,0,0,1,5e-05,0.05,5e-05,1,0,0,0,0,0
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,inclusive,backward,OP/bwd:Sum,1,0.0001,0.0001,1,1e-05,1e-05,1,1e-05,0,0,0,0,1,2e-05,0.02,2e-05,1,0,0,0,0,0
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,inclusive,backward,ReluBackward0,1,4e-05,4e-05,1,1e-05,1e-05,1,1e-05,0,0,0,0,1,1e-05,0.01,1e-05,1,0,0,0,0,0

@@ -1,0 +1,8 @@
+label,phase,exclusive_operator,kind,name,count,total_ms,mean_us,max_us
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,backward,unlabeled:backward,synchronization,cudaDeviceSynchronize,1,5e-05,0.05,0.05
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,backward,OP/internal:col2im,launch,cuLaunchKernel,2,1.6000000000000003e-05,0.008000000000000002,0.01
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,backward,ReluBackward0,launch,cuLaunchKernel,1,1e-05,0.01,0.01
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,backward,OP/bwd:Conv2d,copy_or_memset_api,cudaMemcpyAsync,1,1e-05,0.01,0.01
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,backward,OP/bwd:Sum,launch,cuLaunchKernel,1,1e-05,0.01,0.01
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,backward,OP/bwd:Conv2d,copy_or_memset_api,cudaMemsetAsync,1,1e-05,0.01,0.01
+SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT,backward,OP/bwd:Conv2d,launch,cuLaunchKernel,1,1e-05,0.01,0.01

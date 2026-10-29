@@ -15,10 +15,12 @@ class Sink:
         self.stack = []
         self.labels = []
         self.maximum_depth = 0
+        self.paths = []
 
     def push(self, label):
         self.stack.append(label)
         self.labels.append(label)
+        self.paths.append(tuple(self.stack))
         self.maximum_depth = max(self.maximum_depth, len(self.stack))
 
     def pop(self):
@@ -63,13 +65,38 @@ def test_cpu_training_bitwise_unchanged(kind):
                    "OP/internal:col2im_array|"):
         assert any(label.startswith(prefix) for label in sink.labels)
     assert recorder.summary()["unclosed_ranges"] == 0
+    assert not recorder.nodes
+    assert not recorder.active_layers
+    if kind == "donkey":
+        for layer in range(1, 6):
+            for component in ("dInput", "dWeight", "dBias"):
+                prefix = "OP/part:Conv2d.{}|layer=conv{}".format(component, layer)
+                labels = [label for label in sink.labels if label.startswith(prefix)]
+                assert len(labels) == 1
+                if component == "dInput":
+                    assert labels[0].endswith("leaf_input=" + str(layer == 1).lower())
+            for operation in ("im2col_array", "col2im_array"):
+                part = "dWeight" if operation == "im2col_array" else "dInput"
+                assert any(path[-1].startswith("OP/internal:" + operation + "|")
+                    and any(label.startswith("OP/part:Conv2d.{}|layer=conv{}".format(part, layer))
+                            for label in path) for path in sink.paths)
+        for layer in range(1, 4):
+            assert any(label.startswith("OP/bwd:MatMul|") and label.endswith("|layer=fc" + str(layer))
+                       for label in sink.labels)
+        assert len([label for label in sink.labels if label.startswith(
+            "OP/part:MeanSquareError.dTarget|component=negate_only")]) == 1
+        for name in plain[1]:
+            assert "OP/update:SGD|parameter=" + name in sink.labels
 
 
 def test_exception_pops_and_restores_original_methods():
     import hytorch.functions as F
     import hytorch.functions_conv as FC
     from hytorch.profiling import StepProfiler
-    originals = F.MatMul.forward, F.MatMul.backward, FC.im2col_array, StepProfiler.phase
+    from hytorch.layers import Layer
+    from hytorch.optimizers import SGD
+    originals = (F.MatMul.forward, F.MatMul.backward, FC.im2col_array,
+                 StepProfiler.phase, Layer.__call__, SGD.update_one)
     sink = Sink()
     recorder = OperatorRanges(sink.push, sink.pop)
     with pytest.raises(ValueError):
@@ -78,7 +105,10 @@ def test_exception_pops_and_restores_original_methods():
                 F.matmul(np.ones((2, 3), np.float32), np.ones((4, 2), np.float32))
     assert not sink.stack
     assert not recorder.stack
-    assert (F.MatMul.forward, F.MatMul.backward, FC.im2col_array, StepProfiler.phase) == originals
+    assert not recorder.nodes
+    assert not recorder.active_layers
+    assert (F.MatMul.forward, F.MatMul.backward, FC.im2col_array,
+            StepProfiler.phase, Layer.__call__, SGD.update_one) == originals
 
 
 def test_phase_attribution_and_memory_aggregation(tmp_path):

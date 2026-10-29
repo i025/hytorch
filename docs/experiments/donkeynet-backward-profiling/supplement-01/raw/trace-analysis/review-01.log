@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE",
+  "traces": [
+    "trace-phase-cupy",
+    "trace-phase-combined",
+    "trace-phase-torch",
+    "trace-detail-cupy",
+    "trace-detail-combined",
+    "trace-detail-torch"
+  ],
+  "scope": "GPU events belong to CUDA APIs submitted within the measured training NVTX envelope. Initialization/warmup/exit APIs and their GPU activities are excluded even when their phase is outside_phase.",
+  "disjointness": "Each HyTorch backward GPU kernel has exactly one kernel-family group and one outer backward Function group. These are two alternative partitions, not additive tables.",
+  "timing": "API host elapsed sum/union, GPU event sum/union and transfer bytes are distinct. Copy kernels belong to kernel-family tables, not CUDA Memcpy tables. Memset is separately preserved.",
+  "caveat": "Function GPU totals omit host-only autograd traversal and do not measure each Function's wall-time contribution. They cannot be used as end-to-end speedup percentages."
+}

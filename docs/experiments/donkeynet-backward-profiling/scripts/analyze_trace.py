@@ -182,6 +182,7 @@ def main():
         aa = [a for a in apis if a["phase"] == phase]
         kk = [k for k in kernels if k["phase"] == phase]
         cc = [c for c in copies if c["phase"] == phase]
+        mm = [m for m in memsets if m["phase"] == phase]
         phase_rows.append(dict(label=args.label, phase=phase, nvtx_count=len(rs),
                                host_nvtx_sum_ms=sum(r["duration_ms"] for r in rs),
                                host_nvtx_union_ms=duration([(r["start"],r["end"]) for r in rs])/1e6,
@@ -195,21 +196,23 @@ def main():
                                allocation_api_ms=sum(a["duration_ms"] for a in aa if a["kind"] == "allocation_or_free"),
                                gpu_kernel_count=len(kk), gpu_kernel_sum_ms=sum(k["duration_ms"] for k in kk),
                                gpu_kernel_union_ms=duration([(k["start"],k["end"]) for k in kk])/1e6,
+                               gpu_kernel_under_10us_count=sum(k["duration_ms"] < .01 for k in kk),
                                gpu_memcpy_count=len(cc), gpu_memcpy_sum_ms=sum(c["duration_ms"] for c in cc),
-                               gpu_memcpy_bytes=sum(c["bytes"] for c in cc)))
+                               gpu_memcpy_bytes=sum(c["bytes"] for c in cc),
+                               gpu_memset_count=len(mm), gpu_memset_sum_ms=sum(m["duration_ms"] for m in mm)))
     write_csv(args.output/"phase-summary.csv", phase_rows)
 
     # Each GPU event belongs to exactly one exclusive bucket. Inclusive buckets
     # expose ancestry and intentionally overlap, with per-bucket de-duplication.
     ops = {}
     def op_group(scope, phase, name):
-        return ops.setdefault((scope,phase,name), {"range_ids":set(),"apis":{},"kernels":{},"copies":{}})
+        return ops.setdefault((scope,phase,name), {"range_ids":set(),"apis":{},"kernels":{},"copies":{},"memsets":{}})
 
     for r in ranges:
         if not phase_name(r["name"]):
             for scope in ("exclusive", "inclusive"):
                 op_group(scope, range_phase[r["sqlite_rowid"]], r["operator"])["range_ids"].add(r["sqlite_rowid"])
-    for collection, events in (("apis", apis), ("kernels", kernels), ("copies", copies)):
+    for collection, events in (("apis", apis), ("kernels", kernels), ("copies", copies), ("memsets", memsets)):
         for event in events:
             event_id = event.get("event_id", event.get("api_event_id"))
             op_group("exclusive",event["phase"],event["exclusive_operator"])[collection][event_id] = event
@@ -219,19 +222,26 @@ def main():
     operator_rows = []
     for (scope,phase,name), values in ops.items():
         rs = [range_by_id[rid] for rid in values["range_ids"]]
-        aa,kk,cc = [list(values[key].values()) for key in ("apis","kernels","copies")]
+        aa,kk,cc,mm = [list(values[key].values()) for key in ("apis","kernels","copies","memsets")]
         total = sum(k["duration_ms"] for k in kk)
         operator_rows.append(dict(label=args.label,attribution=scope,phase=phase,operator=name,
                                   operator_nvtx_call_count=len(rs), host_nvtx_inclusive_ms=sum(r["duration_ms"] for r in rs),
                                   host_nvtx_exclusive_ms=sum(r["host_self_ms"] for r in rs),
                                   cuda_api_count=len(aa),cuda_api_sum_ms=sum(a["duration_ms"] for a in aa),
+                                  cuda_api_union_ms=duration([(a["start"],a["end"]) for a in aa])/1e6,
                                   launch_api_count=sum(a["kind"] == "launch" for a in aa),
                                   launch_api_ms=sum(a["duration_ms"] for a in aa if a["kind"] == "launch"),
+                                  sync_api_count=sum(a["kind"] == "synchronization" for a in aa),
                                   sync_api_ms=sum(a["duration_ms"] for a in aa if a["kind"] == "synchronization"),
+                                  allocation_api_count=sum(a["kind"] == "allocation_or_free" for a in aa),
+                                  allocation_api_ms=sum(a["duration_ms"] for a in aa if a["kind"] == "allocation_or_free"),
                                   gpu_kernel_count=len(kk),gpu_kernel_sum_ms=total,
                                   gpu_kernel_mean_us=total*1000/len(kk) if kk else 0,
                                   gpu_kernel_union_ms=duration([(k["start"],k["end"]) for k in kk])/1e6,
-                                  gpu_memcpy_count=len(cc),gpu_memcpy_sum_ms=sum(c["duration_ms"] for c in cc)))
+                                  gpu_kernel_under_10us_count=sum(k["duration_ms"] < .01 for k in kk),
+                                  gpu_memcpy_count=len(cc),gpu_memcpy_sum_ms=sum(c["duration_ms"] for c in cc),
+                                  gpu_memcpy_bytes=sum(c["bytes"] for c in cc),
+                                  gpu_memset_count=len(mm),gpu_memset_sum_ms=sum(m["duration_ms"] for m in mm)))
     operator_rows.sort(key=lambda r:(r["attribution"],-r["gpu_kernel_sum_ms"]))
     write_csv(args.output/"operator-hotspots.csv",operator_rows)
 
@@ -279,6 +289,7 @@ def main():
                    operator_nvtx_range_count=sum(phase_name(r["name"]) is None for r in ranges),
                    attribution="CUDA correlation -> submitting API -> same-thread nested NVTX; worker API phase may use unique main-thread phase window, explicitly tagged. Innermost non-phase NVTX gets exclusive attribution; all operator ancestors get inclusive attribution.",
                    timing_caveat="Host API/NVTX elapsed time is not GPU execution time. Inclusive operator totals overlap; only exclusive GPU attribution sums without duplicate events. Per-op host self time excludes nested same-thread NVTX intervals, not arbitrary Python or profiler overhead.",
+                   api_count_caveat="Runtime and Driver API rows are both retained. Nested API wrappers can make API sums/counts exceed API interval union/unique GPU events; kernel count comes from CUPTI GPU activity rows.",
                    privacy="Published global process/thread identifiers replaced with stable labels. Original values remain in server SQLite.",
                    output_status="OFFLINE_ANALYSIS_COMPLETE")
     (args.output/"profiling-summary.json").write_text(json.dumps(summary,indent=2)+"\n")

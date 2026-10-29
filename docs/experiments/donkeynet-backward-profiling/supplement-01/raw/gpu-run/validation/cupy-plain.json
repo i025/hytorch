@@ -1,0 +1,25 @@
+{
+  "method": "cupy",
+  "instrumented": false,
+  "leaf_gradients": {
+    "input_grad_present": true,
+    "target_grad_present": true,
+    "input_gradient_shape": [
+      4,
+      3,
+      66,
+      200
+    ],
+    "target_gradient_shape": [
+      4,
+      1
+    ],
+    "input_gradient_l2": 0.002235361366838431,
+    "target_gradient_l2": 0.026847234101335073
+  },
+  "dispatch_counts": {},
+  "initial_arrays_exact": true,
+  "input_arrays_exact": true,
+  "all_float32": true,
+  "all_finite": true
+}

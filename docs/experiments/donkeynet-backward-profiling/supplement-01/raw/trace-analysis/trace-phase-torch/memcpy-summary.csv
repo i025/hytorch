@@ -1,0 +1,5 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-phase-torch,transfer,unlabeled:transfer,Host-to-Device,32,2.0067419999999996,62.710687499999985,127.137,10137856
+trace-phase-torch,outside_phase,unlabeled:outside_phase,Device-to-Host,48,0.8380230000000002,17.458812500000004,254.62600000000003,2014056
+trace-phase-torch,outside_phase,unlabeled:outside_phase,Host-to-Device,18,0.35744300000000007,19.857944444444446,130.017,1640612
+trace-phase-torch,outside_phase,unlabeled:outside_phase,Device-to-Device,32,0.10819000000000001,3.3809375000000004,4.4159999999999995,2013992

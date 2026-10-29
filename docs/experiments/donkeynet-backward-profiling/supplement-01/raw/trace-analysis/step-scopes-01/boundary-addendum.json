@@ -1,0 +1,4 @@
+{
+  "scope": "Clarification of existing step-scope time boundaries; numeric CSV data unchanged",
+  "detail": "The final window ends at the final update NVTX end, before StepProfiler.end synchronization and final loss readback. API-owned GPU kernel duration sums include all work submitted before this boundary, even if execution finishes after it. Wall-window-per-step is an instrumented trace envelope metric, not synchronized step wall time or uninstrumented throughput."
+}

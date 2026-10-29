@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "docs/experiments/donkeynet-backward-profiling/scripts/supplement_step_scopes.py",
+    "--input",
+    "runs/donkeynet_4a_supplement_analysis_01",
+    "--output",
+    "runs/donkeynet_4a_supplement_analysis_01/step-scopes-01"
+  ],
+  "started_at": "2026-10-29T12:51:49.782524+00:00",
+  "returncode": 0,
+  "wall_s": 1.4008356181439012,
+  "finished_at": "2026-10-29T12:51:51.183393+00:00"
+}

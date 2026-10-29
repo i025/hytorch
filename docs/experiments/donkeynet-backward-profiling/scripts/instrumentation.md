@@ -1,5 +1,7 @@
 # 阶段 4A 诊断插桩
 
+2026-10-29 补测已验证真实 GPU 的 NVTX 与 MemoryHook 数值透明性，详见 [补测报告](../supplement-01/README.md)。新增标签包含实际 `layer=conv1..5/fc1..3`、卷积 `dInput/dWeight/dBias`、首层 `leaf_input=true`、MSE target 的额外 Neg，以及 SGD 参数名。卷积子范围包围原 forward 函数，覆盖其全部 Kernel 提交但不包含外侧 `Function.__call__` 的对象管理；MSE 子范围只计算额外取负，不能将共享梯度运算全算作 target 开销。所有方法退出插桩 context 时恢复，生产计算未改。下文保留上一轮说明与当时 NOT_RUN 记录。
+
 `profile_training.py` 通过文件路径导入原 `benchmarks/bench_cuda_training.py`，把除 `--operator-nvtx`、`--memory-stats` 之外的参数原样交给其 `main()`。要求显式传 `--no-fingerprints`。不改模型、输入、初始权重、训练公式、Kernel 或默认 dispatch。
 
 唯一修改的原文件是 benchmark 对 `--nvtx` 的参数校验：允许 Torch CUDA 复用已存在的 `StepProfiler` 五个 phase。CPU 仍不允许 NVTX。普通未插桩 benchmark 路径不安装任何 wrapper。

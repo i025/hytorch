@@ -1,0 +1,2 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+SYNTHETIC_LAYER_CPU_TEST_NOT_GPU_MEASUREMENT,backward,OP/part:Conv2d.dInput|layer=conv1|leaf_input=true,Host-to-Device,1,5e-06,0.005,0.005,16

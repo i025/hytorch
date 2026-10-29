@@ -1,5 +1,9 @@
 # HyTorch 阶段 4A：DonkeyNet Backward 性能诊断
 
+**2026-10-29 GPU 补测已完成。** 在物理 A100 2 上完成真实 GPU 插桩等值验证、三后端各三次 256 Step 匹配计时、插桩开销和六份 Nsight Trace。最新逐层结论、原始数据索引与图见 [补测报告](supplement-01/README.md)。生产 Kernel、自动求导算法和训练公式未修改；未开始 4B。
+
+以下保留上一提交 `053ea938` 的离线报告及其当时的 GPU NOT_RUN 状态；其中历史数值没有被本次补测覆盖。
+
 **状态：PARTIAL / GPU BLOCKED。源码分析、历史 Trace 重算、CPU 插桩验证和可视化已完成；本轮新训练和新 Nsight 采集均为 NOT_RUN。** 下文所有 GPU 耗时来自明确标注的历史实测，不代表本轮完成了更长训练或算子级 GPU 插桩。
 
 阶段 4A 日期：2026-10-29（北京时间）；机器日志使用 UTC。基线为 `experiment/a100-gpu-complete` 最新提交 `aad4d0562fd968083a727099e478e7db64d35dd0`，本轮分支 `experiment/donkeynet-backward-profiling`。继承 FP32 梯度修复和 PyTorch 对照，未集成阶段 3A/3B 原型。

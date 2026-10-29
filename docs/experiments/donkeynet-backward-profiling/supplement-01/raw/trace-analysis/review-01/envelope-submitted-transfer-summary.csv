@@ -1,0 +1,15 @@
+trace,activity_kind,phase,name,count,bytes,gpu_sum_ms,gpu_union_ms
+trace-phase-cupy,memcpy,transfer,Host-to-Device,32,10137856,0.6197839999999999,0.619784
+trace-phase-cupy,memcpy,outside_phase,Device-to-Host,15,60,0.04096100000000001,0.040961
+trace-phase-combined,memcpy,transfer,Host-to-Device,32,10137856,0.621703,0.621703
+trace-phase-combined,memcpy,outside_phase,Device-to-Host,15,60,0.039809,0.039809
+trace-phase-torch,memcpy,transfer,Host-to-Device,32,10137856,2.0067419999999996,2.006742
+trace-phase-torch,memcpy,outside_phase,Device-to-Host,15,60,0.0408,0.0408
+trace-phase-torch,memset,backward,GPU Memset,64,20480,0.14028900000000005,0.140289
+trace-detail-cupy,memcpy,transfer,Host-to-Device,32,10137856,3.957027,3.957027
+trace-detail-cupy,memcpy,outside_phase,Device-to-Host,15,60,0.04032,0.04032
+trace-detail-combined,memcpy,transfer,Host-to-Device,32,10137856,0.6215039999999998,0.621504
+trace-detail-combined,memcpy,outside_phase,Device-to-Host,15,60,0.040256,0.040256
+trace-detail-torch,memcpy,transfer,Host-to-Device,32,10137856,2.112689,2.112689
+trace-detail-torch,memcpy,outside_phase,Device-to-Host,15,60,0.040416,0.040416
+trace-detail-torch,memset,backward,GPU Memset,64,20480,0.13888,0.13888

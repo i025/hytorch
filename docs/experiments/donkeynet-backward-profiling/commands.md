@@ -1,5 +1,7 @@
 # 阶段 4A 命令与执行状态
 
+2026-10-29 的 GPU 补测实际命令见 [supplement-01/commands.md](supplement-01/commands.md)。下文保留上一提交的历史命令及当时状态；本次新日志独立存放。
+
 工作目录 `/home/xymo/projects/hytorch`（实际 `/srv/lab-disks/disk2/users/xymo/projects/hytorch`）。下面区分已经执行的离线工作、被保护程序拒绝的 GPU 命令及未执行的后续采集计划。所有输出目录均为唯一目录；复现时换新名称，不覆盖原始文件。不计算哈希、checksum 或 fingerprint。
 
 ## 分支与环境：已执行

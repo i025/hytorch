@@ -11,6 +11,7 @@ import importlib.util
 import json
 from pathlib import Path
 import sys
+import weakref
 
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
@@ -44,7 +45,8 @@ def function_classes(base):
 class OperatorRanges:
     """Reversible Python wrappers; ranges measure host submission intervals."""
     FORWARDS = {"Conv2d", "Deconv2d", "Conv2DGradW", "MatMul", "Linear",
-                "Transpose", "Reshape", "Im2col", "Col2im", "ReLU", "Tanh"}
+                "Transpose", "Reshape", "Im2col", "Col2im", "ReLU", "Tanh",
+                "Sum", "Neg", "MeanSquareError"}
 
     def __init__(self, push, pop, cupy_module=None):
         self.push, self.pop, self.cp = push, pop, cupy_module
@@ -53,6 +55,12 @@ class OperatorRanges:
         self.phase = "outside"
         self.calls = Counter()
         self.memory = {}
+        self.nodes = []
+        self.active_layers = []
+        self.models = weakref.WeakSet()
+        self.layer_names = weakref.WeakKeyDictionary()
+        self.parameter_names = weakref.WeakKeyDictionary()
+        self.function_layers = weakref.WeakKeyDictionary()
 
     @contextmanager
     def range(self, label):
@@ -74,11 +82,74 @@ class OperatorRanges:
 
         @functools.wraps(original)
         def call(instance, *args, **kwargs):
+            parent = self.nodes[-1] if self.nodes else None
+            layer = self.function_layers.get(instance, "")
+            if direction == "fwd":
+                layer = (parent[3] if parent else
+                         self.active_layers[-1] if self.active_layers else "")
+                if layer:
+                    self.function_layers[instance] = layer
             values = instance.inputs if direction == "bwd" else args
             label = "OP/{}:{}|in={}".format(direction, cls.__name__, array_shapes(values))
-            with self.range(label):
-                return original(instance, *args, **kwargs)
+            if layer:
+                label += "|layer=" + layer
+            part = None
+            if direction == "fwd" and parent and parent[1] == "bwd":
+                if parent[0] == "Conv2d":
+                    component = {"Deconv2d": "dInput", "Conv2DGradW": "dWeight",
+                                 "Sum": "dBias"}.get(cls.__name__)
+                    if component:
+                        part = "OP/part:Conv2d.{}|layer={}".format(component, parent[3])
+                        if component == "dInput":
+                            part += "|leaf_input=" + str(parent[2].inputs[0].creator is None).lower()
+                elif parent[0] == "MeanSquareError" and cls.__name__ == "Neg":
+                    part = "OP/part:MeanSquareError.dTarget|component=negate_only"
+            self.nodes.append((cls.__name__, direction, instance, layer))
+            try:
+                with ExitStack() as scopes:
+                    if part:
+                        scopes.enter_context(self.range(part))
+                    scopes.enter_context(self.range(label))
+                    return original(instance, *args, **kwargs)
+            finally:
+                self.nodes.pop()
         self.patch(cls, method, call)
+
+    def wrap_layers_and_updates(self):
+        """Identify actual named model parameters without reading tensor values."""
+        from hytorch.layers import Layer
+        from hytorch.optimizers import SGD
+        original_call = Layer.__call__
+
+        def register(layer, path=""):
+            self.layer_names[layer] = path
+            for name in sorted(layer._params):
+                value = getattr(layer, name)
+                child_path = path + "/" + name if path else name
+                if isinstance(value, Layer):
+                    register(value, child_path)
+                else:
+                    self.parameter_names[value] = child_path
+
+        @functools.wraps(original_call)
+        def call(layer, *args, **kwargs):
+            if not self.active_layers and layer not in self.models:
+                register(layer)
+                self.models.add(layer)
+            self.active_layers.append(self.layer_names.get(layer, ""))
+            try:
+                return original_call(layer, *args, **kwargs)
+            finally:
+                self.active_layers.pop()
+        self.patch(Layer, "__call__", call)
+        original_update = SGD.update_one
+
+        @functools.wraps(original_update)
+        def update(optimizer, parameter):
+            name = self.parameter_names.get(parameter, "unnamed")
+            with self.range("OP/update:SGD|parameter=" + name):
+                return original_update(optimizer, parameter)
+        self.patch(SGD, "update_one", update)
 
     def wrap_array_function(self, module, name, prefix):
         original = getattr(module, name)
@@ -94,6 +165,7 @@ class OperatorRanges:
         from hytorch.core import Function
         import hytorch.functions_conv as FC
         from hytorch.profiling import StepProfiler
+        self.wrap_layers_and_updates()
         for cls in function_classes(Function):
             if "backward" in cls.__dict__:
                 self.wrap_method(cls, "backward", "bwd")
@@ -135,7 +207,8 @@ class OperatorRanges:
             scope="whole benchmark process; phase=outside includes initialization/warmup/final snapshots",
             timing="NVTX host ranges; no added synchronization or CUDA Events; GPU attribution requires CUDA correlation IDs",
             memory_semantics="CuPy pool malloc requests, pool backing alloc, and pool free; counts are not live or peak bytes; PyTorch allocator excluded",
-            labels="OP/{bwd|fwd}:Class|in=shape;shape or OP/internal:function|in=shape;shape",
+            labels="OP/{bwd|fwd}:Class|in=shape;shape[|layer=name]; OP/part:Conv2d.{dInput|dWeight|dBias}|layer=name; OP/internal:function|in=shape; OP/update:SGD|parameter=name",
+            component_scope="Conv2d components enclose original Deconv2d/Conv2DGradW/Sum.forward calls; dTarget encloses only original Neg.forward, shared MSE arithmetic stays in the MSE parent. Host component ranges exclude surrounding Function.__call__ bookkeeping; GPU kernels are attributed using CUDA API correlations.",
             calls=[dict(phase=p, label=l, calls=n) for (p, l), n in sorted(self.calls.items())],
             memory=[dict(phase=p, label=l, kind=k, **v) for (p, l, k), v in sorted(self.memory.items())],
             unclosed_ranges=len(self.stack))

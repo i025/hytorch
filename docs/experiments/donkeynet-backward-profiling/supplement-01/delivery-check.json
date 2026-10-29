@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "json_files": 135,
+  "python_scripts": 22,
+  "raw_files_indexed": 495,
+  "png_figures": 8,
+  "checks": [
+    "JSON/JSONL syntax",
+    "relative report links",
+    "Python AST syntax",
+    "raw index existence and byte sizes",
+    "no server-only binaries",
+    "credential pattern scan"
+  ],
+  "hashes": "NOT_PERFORMED"
+}

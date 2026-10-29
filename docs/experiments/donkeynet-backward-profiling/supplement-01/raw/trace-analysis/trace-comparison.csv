@@ -1,0 +1,7 @@
+trace,training_envelope_ms,whole_trace_kernel_count,training_phase_submitted_kernel_count,activity_covered_ms,activity_coverage_fraction,unmatched_kernel_api_count,kernel_cross_thread_phase_attributions
+trace-phase-cupy,126.07651,3952,2432,23.569124,0.1869430237242449,0,0
+trace-phase-combined,122.255002,3848,2368,25.798813,0.21102460085845812,0,0
+trace-phase-torch,86.145109,2444,1504,29.334105,0.3405196805775706,0,1040
+trace-detail-cupy,191.817433,3952,2432,26.889391,0.14018220648380797,0,0
+trace-detail-combined,188.132694,3848,2368,25.824608,0.13726804975216056,0,0
+trace-detail-torch,86.10068,2444,1504,29.673718,0.34463976358839443,0,1040

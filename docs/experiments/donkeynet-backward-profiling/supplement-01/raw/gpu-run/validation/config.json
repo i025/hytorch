@@ -1,0 +1,72 @@
+{
+  "status": "RUNNING",
+  "model": "DonkeyNet",
+  "input_shape": [
+    4,
+    3,
+    66,
+    200
+  ],
+  "dtype": "float32",
+  "seed": 42,
+  "optimizer": "SGD",
+  "lr": 0.001,
+  "dropout": 0.0,
+  "backend_settings": {
+    "cupy": [
+      "cupy",
+      "cupy",
+      "cupy",
+      16
+    ],
+    "combined": [
+      "shared",
+      "im2col",
+      "cupy",
+      16
+    ],
+    "torch": [
+      "cupy",
+      "cupy",
+      "cupy",
+      16
+    ]
+  },
+  "logical_gpu": 0,
+  "CUDA_VISIBLE_DEVICES": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+  "numpy": "1.24.4",
+  "cupy": "12.3.0",
+  "torch": "2.4.1+cu121",
+  "cuda_runtime": 12020,
+  "cudnn": 90100,
+  "tf32": false,
+  "cudnn_deterministic": true,
+  "tolerances": {
+    "prediction": [
+      1e-06,
+      1e-05
+    ],
+    "loss": [
+      1e-06,
+      1e-05
+    ],
+    "gradient": [
+      1e-05,
+      0.0001
+    ],
+    "updated": [
+      1e-06,
+      1e-05
+    ]
+  },
+  "tolerance_source": "tests/test_cuda_host.py:128-145; unchanged host parity thresholds reused for this GPU diagnostic",
+  "instrumentation_comparison": "exact dtype, shape and elementwise equality",
+  "timing_scope": "resident fixed synthetic batch; warmup then restore; synchronization only before/after whole step block; excludes input transfer, DataLoader, scalar reads, file IO and NVTX context entry/exit",
+  "timing_steps": 32,
+  "timing_warmup": 10,
+  "timing_repeats": 3,
+  "memory_stats": true,
+  "fingerprints": "DISABLED"
+}

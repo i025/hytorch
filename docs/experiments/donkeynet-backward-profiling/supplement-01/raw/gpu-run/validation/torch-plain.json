@@ -1,0 +1,15 @@
+{
+  "method": "torch",
+  "instrumented": false,
+  "leaf_gradients": {
+    "input_requires_grad": false,
+    "target_requires_grad": false,
+    "input_grad_present": false,
+    "target_grad_present": false
+  },
+  "dispatch_counts": {},
+  "initial_arrays_exact": true,
+  "input_arrays_exact": true,
+  "all_float32": true,
+  "all_finite": true
+}

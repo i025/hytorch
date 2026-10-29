@@ -1,0 +1,60 @@
+{
+  "status": "PASSED",
+  "runs": 27,
+  "steps_per_run": 256,
+  "repeats": 3,
+  "raw_root": "runs/donkeynet_4a_supplement_01",
+  "nsight": false,
+  "config_matching": "All matched config fields in load_runs verified; backend, mode and NVTX differ intentionally",
+  "initial_input_comparisons": 486,
+  "initial_input_exact": true,
+  "final_parameter_comparisons": 432,
+  "final_parameters_passed": true,
+  "final_parameter_reference": "throughput-cupy-r1",
+  "final_parameter_atol": 0.0001,
+  "final_parameter_rtol": 0.001,
+  "final_parameter_tolerance_source": "scripts/report_cuda.py compare_training; unchanged historical final-state tolerance",
+  "final_parameter_max_abs_error": 4.190951585769653e-08,
+  "instrumentation_exact_comparisons": 153,
+  "instrumentation_exact": true,
+  "all_losses_finite": true,
+  "failed_comparisons": [],
+  "overhead": [
+    {
+      "method": "cupy",
+      "repeats": 3,
+      "steps_per_repeat": 256,
+      "plain_mean_training_wall_s": 1.578965294873342,
+      "instrumented_mean_training_wall_s": 2.4685378059900054,
+      "wall_overhead_percent": 56.338952730941514,
+      "plain_aggregate_samples_per_second": 648.5259703457517,
+      "instrumented_aggregate_samples_per_second": 414.82046477685014
+    },
+    {
+      "method": "combined",
+      "repeats": 3,
+      "steps_per_repeat": 256,
+      "plain_mean_training_wall_s": 1.583649701361234,
+      "instrumented_mean_training_wall_s": 2.5203803497521826,
+      "wall_overhead_percent": 59.150116821022806,
+      "plain_aggregate_samples_per_second": 646.6076425359823,
+      "instrumented_aggregate_samples_per_second": 406.28788432693705
+    },
+    {
+      "method": "torch",
+      "repeats": 3,
+      "steps_per_repeat": 256,
+      "plain_mean_training_wall_s": 0.7128822216764092,
+      "instrumented_mean_training_wall_s": 1.0547414250516642,
+      "wall_overhead_percent": 47.95451380051827,
+      "plain_aggregate_samples_per_second": 1436.4224115337988,
+      "instrumented_aggregate_samples_per_second": 970.854064966531
+    }
+  ],
+  "timing_scopes": {
+    "training_wall": "Sum of four epoch train_wall_s, includes DataLoader, H2D, step synchronization, loss D2H and logs",
+    "measured_step": "Benchmark StepProfiler begin/end with per-step synchronization; excludes subsequent loss scalar read/logging",
+    "phases": "Separate mode=phases runs, each phase boundary synchronizes CUDA; CPU submission and waiting included",
+    "instrumentation": "Separate mode=throughput runs, HyTorch operator NVTX+CuPy MemoryHook, Torch autograd NVTX, no Nsight"
+  }
+}

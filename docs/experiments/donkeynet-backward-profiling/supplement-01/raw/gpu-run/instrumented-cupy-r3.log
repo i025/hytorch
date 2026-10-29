@@ -1,0 +1,5 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.000726606162970711, "train_wall_s": 0.6248168121092021, "samples": 256, "train_samples_per_sec": 409.72008921433707}
+{"epoch": 2, "train_loss": 0.00048736803432802844, "train_wall_s": 0.6187202378641814, "samples": 256, "train_samples_per_sec": 413.7572756367409}
+{"epoch": 3, "train_loss": 0.00038126582526842867, "train_wall_s": 0.6372999220620841, "samples": 256, "train_samples_per_sec": 401.6946984265615}
+{"epoch": 4, "train_loss": 0.00033147436977287725, "train_wall_s": 0.613678356166929, "samples": 256, "train_samples_per_sec": 417.15663820863915}

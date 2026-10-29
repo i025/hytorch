@@ -1,0 +1,1800 @@
+{
+  "method": "cupy",
+  "instrumented": true,
+  "leaf_gradients": {
+    "input_grad_present": true,
+    "target_grad_present": true,
+    "input_gradient_shape": [
+      4,
+      3,
+      66,
+      200
+    ],
+    "target_gradient_shape": [
+      4,
+      1
+    ],
+    "input_gradient_l2": 0.002235361366838431,
+    "target_gradient_l2": 0.026847234101335073
+  },
+  "dispatch_counts": {},
+  "initial_arrays_exact": true,
+  "input_arrays_exact": true,
+  "all_float32": true,
+  "all_finite": true,
+  "instrumentation": {
+    "scope": "whole benchmark process; phase=outside includes initialization/warmup/final snapshots",
+    "timing": "NVTX host ranges; no added synchronization or CUDA Events; GPU attribution requires CUDA correlation IDs",
+    "memory_semantics": "CuPy pool malloc requests, pool backing alloc, and pool free; counts are not live or peak bytes; PyTorch allocator excluded",
+    "labels": "OP/{bwd|fwd}:Class|in=shape;shape[|layer=name]; OP/part:Conv2d.{dInput|dWeight|dBias}|layer=name; OP/internal:function|in=shape; OP/update:SGD|parameter=name",
+    "component_scope": "Conv2d components enclose original Deconv2d/Conv2DGradW/Sum.forward calls; dTarget encloses only original Neg.forward, shared MSE arithmetic stays in the MSE parent. Host component ranges exclude surrounding Function.__call__ bookkeeping; GPU kernels are attributed using CUDA API correlations.",
+    "calls": [
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Add|in=1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Add|in=100",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Add|in=50",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Conv2d|in=4x24x31x98;36x24x5x5;36|layer=conv2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Conv2d|in=4x36x14x47;48x36x5x5;48|layer=conv3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Conv2d|in=4x3x66x200;24x3x5x5;24|layer=conv1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Conv2d|in=4x48x5x22;64x48x3x3;64|layer=conv4",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Conv2d|in=4x64x3x20;64x64x3x3;64|layer=conv5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:MatMul|in=4x100;100x50|layer=fc2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:MatMul|in=4x1152;1152x100|layer=fc1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:MatMul|in=4x50;50x1|layer=fc3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:MeanSquareError|in=4x1;4x1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x100",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x24x31x98",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x36x14x47",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x48x5x22",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x50",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x64x1x18",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x64x3x20",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Reshape|in=4x64x1x18",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Tanh|in=4x1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x24x31x98;4x36x14x47|layer=conv2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x36x14x47;4x48x5x22|layer=conv3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x3x66x200;4x24x31x98|layer=conv1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x48x5x22;4x64x3x20|layer=conv4",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x64x3x20;4x64x1x18|layer=conv5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x24x31x98;36x24x5x5;36|layer=conv2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x36x14x47;48x36x5x5;48|layer=conv3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x3x66x200;24x3x5x5;24|layer=conv1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x48x5x22;64x48x3x3;64|layer=conv4",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x64x3x20;64x64x3x3;64|layer=conv5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x24x31x98;24x3x5x5|layer=conv1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x36x14x47;36x24x5x5|layer=conv2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x48x5x22;48x36x5x5|layer=conv3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x64x1x18;64x64x3x3|layer=conv5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x64x3x20;64x48x3x3|layer=conv4",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=100x4;4x50|layer=fc2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=1152x4;4x100|layer=fc1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x100;100x1152|layer=fc1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x100;100x50|layer=fc2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x1152;1152x100|layer=fc1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x1;1x50|layer=fc3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x50;50x100|layer=fc2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x50;50x1|layer=fc3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=50x4;4x1|layer=fc3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MeanSquareError|in=4x1;4x1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Neg|in=4x1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x100",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x24x31x98",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x36x14x47",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x48x5x22",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x50",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x64x1x18",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x64x3x20",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Reshape|in=4x1152",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Reshape|in=4x64x1x18",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x24x31x98|layer=conv1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x36x14x47|layer=conv2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x48x5x22|layer=conv3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x64x1x18|layer=conv5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x64x3x20|layer=conv4",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Tanh|in=4x1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Transpose|in=100x50|layer=fc2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Transpose|in=1152x100|layer=fc1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Transpose|in=4x100|layer=fc2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Transpose|in=4x1152|layer=fc1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Transpose|in=4x50|layer=fc3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Transpose|in=50x1|layer=fc3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x24x5x5x14x47",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x36x5x5x5x22",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x3x5x5x31x98",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x48x3x3x3x20",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x64x3x3x1x18",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=24x5x5x4x14x47",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=36x5x5x4x5x22",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=3x5x5x4x31x98",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=48x3x3x4x3x20",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=4x14x47x36",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=4x1x18x64",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=4x31x98x24",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=4x3x20x64",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=4x5x22x48",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.rollaxis|in=64x3x3x4x1x18",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=24x3x5x5;4x24x31x98",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=36x24x5x5;4x36x14x47",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=48x36x5x5;4x48x5x22",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x24x31x98;4x3x5x5x31x98",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x24x5x5x14x47;36x24x5x5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x36x14x47;4x24x5x5x14x47",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x36x5x5x5x22;48x36x5x5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x3x5x5x31x98;24x3x5x5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x48x3x3x3x20;64x48x3x3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x48x5x22;4x36x5x5x5x22",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x1x18;4x64x3x3x1x18",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x3x20;4x48x3x3x3x20",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x3x3x1x18;64x64x3x3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=64x48x3x3;4x64x3x20",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=64x64x3x3;4x64x1x18",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x24x31x98",
+        "calls": 2
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x36x14x47",
+        "calls": 2
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x3x66x200",
+        "calls": 2
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x48x5x22",
+        "calls": 2
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x64x3x20",
+        "calls": 2
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dBias|layer=conv1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dBias|layer=conv2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dBias|layer=conv3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dBias|layer=conv4",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dBias|layer=conv5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dInput|layer=conv1|leaf_input=true",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dInput|layer=conv2|leaf_input=false",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dInput|layer=conv3|leaf_input=false",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dInput|layer=conv4|leaf_input=false",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dInput|layer=conv5|leaf_input=false",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dWeight|layer=conv1",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dWeight|layer=conv2",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dWeight|layer=conv3",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dWeight|layer=conv4",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:Conv2d.dWeight|layer=conv5",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/part:MeanSquareError.dTarget|component=negate_only",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv1/W",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv1/b",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv2/W",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv2/b",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv3/W",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv3/b",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv4/W",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv4/b",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv5/W",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv5/b",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc1/W",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc1/b",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc2/W",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc2/b",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc3/W",
+        "calls": 1
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc3/b",
+        "calls": 1
+      }
+    ],
+    "memory": [
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Add|in=1",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Add|in=1",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 1024,
+        "requested_bytes": 5
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Add|in=100",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 400
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Add|in=50",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 200
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:MeanSquareError|in=4x1;4x1",
+        "kind": "free",
+        "calls": 3,
+        "bytes": 1536,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:MeanSquareError|in=4x1;4x1",
+        "kind": "malloc",
+        "calls": 4,
+        "bytes": 2048,
+        "requested_bytes": 52
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x100",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x100",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 2560,
+        "requested_bytes": 2000
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x24x31x98",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 291840,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x24x31x98",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 1458688,
+        "requested_bytes": 1458240
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x36x14x47",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 95232,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x36x14x47",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 474624,
+        "requested_bytes": 473760
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x48x5x22",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 21504,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x48x5x22",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 105984,
+        "requested_bytes": 105600
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x50",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x50",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 1536,
+        "requested_bytes": 1000
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x64x1x18",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 4608,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x64x1x18",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 23040,
+        "requested_bytes": 23040
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x64x3x20",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 15360,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:ReLU|in=4x64x3x20",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 76800,
+        "requested_bytes": 76800
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Tanh|in=4x1",
+        "kind": "free",
+        "calls": 3,
+        "bytes": 1536,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/bwd:Tanh|in=4x1",
+        "kind": "malloc",
+        "calls": 4,
+        "bytes": 2048,
+        "requested_bytes": 52
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x24x31x98;4x36x14x47|layer=conv2",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 6317056,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x36x14x47;4x48x5x22|layer=conv3",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 1584128,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x3x66x200;4x24x31x98|layer=conv1",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 3645952,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x48x5x22;4x64x3x20|layer=conv4",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 414720,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2DGradW|in=4x64x3x20;4x64x1x18|layer=conv5",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 165888,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x24x31x98;36x24x5x5;36|layer=conv2",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 6317056,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x36x14x47;48x36x5x5;48|layer=conv3",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 1584128,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x3x66x200;24x3x5x5;24|layer=conv1",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 3645952,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x48x5x22;64x48x3x3;64|layer=conv4",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 414720,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Conv2d|in=4x64x3x20;64x64x3x3;64|layer=conv5",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 165888,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x24x31x98;24x3x5x5|layer=conv1",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 3645952,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x36x14x47;36x24x5x5|layer=conv2",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 6317056,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x48x5x22;48x36x5x5|layer=conv3",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 1584128,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x64x1x18;64x64x3x3|layer=conv5",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 165888,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Deconv2d|in=4x64x3x20;64x48x3x3|layer=conv4",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 414720,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=100x4;4x50|layer=fc2",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 20480,
+        "requested_bytes": 20000
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=1152x4;4x100|layer=fc1",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 460800,
+        "requested_bytes": 460800
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x100;100x1152|layer=fc1",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 18432,
+        "requested_bytes": 18432
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x100;100x50|layer=fc2",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 1024,
+        "requested_bytes": 800
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x1152;1152x100|layer=fc1",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 2048,
+        "requested_bytes": 1600
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x1;1x50|layer=fc3",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 1024,
+        "requested_bytes": 800
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x50;50x100|layer=fc2",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 2048,
+        "requested_bytes": 1600
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=4x50;50x1|layer=fc3",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 16
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MatMul|in=50x4;4x1|layer=fc3",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 200
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MeanSquareError|in=4x1;4x1",
+        "kind": "free",
+        "calls": 5,
+        "bytes": 2560,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:MeanSquareError|in=4x1;4x1",
+        "kind": "malloc",
+        "calls": 6,
+        "bytes": 3072,
+        "requested_bytes": 45
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Neg|in=4x1",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 16
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x100",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 2048,
+        "requested_bytes": 1600
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x24x31x98",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 1166848,
+        "requested_bytes": 1166592
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x36x14x47",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 379392,
+        "requested_bytes": 379008
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x48x5x22",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 84480,
+        "requested_bytes": 84480
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x50",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 1024,
+        "requested_bytes": 800
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x64x1x18",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 18432,
+        "requested_bytes": 18432
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:ReLU|in=4x64x3x20",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 61440,
+        "requested_bytes": 61440
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x24x31x98|layer=conv1",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 96
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x36x14x47|layer=conv2",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 144
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x48x5x22|layer=conv3",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 192
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x64x1x18|layer=conv5",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 256
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Sum|in=4x64x3x20|layer=conv4",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 256
+      },
+      {
+        "phase": "outside",
+        "label": "OP/fwd:Tanh|in=4x1",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 16
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x24x5x5x14x47",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 1166848,
+        "requested_bytes": 1166592
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x36x5x5x5x22",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 379392,
+        "requested_bytes": 379008
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x3x5x5x31x98",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 633856,
+        "requested_bytes": 633600
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x48x3x3x3x20",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 84480,
+        "requested_bytes": 84480
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:col2im_array|in=4x64x3x3x1x18",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 61440,
+        "requested_bytes": 61440
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=24x3x5x5;4x24x31x98",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 1166848,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=24x3x5x5;4x24x31x98",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 4812800,
+        "requested_bytes": 4812192
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=36x24x5x5;4x36x14x47",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 379392,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=36x24x5x5;4x36x14x47",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 6696448,
+        "requested_bytes": 6695808
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=48x36x5x5;4x48x5x22",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 84480,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=48x36x5x5;4x48x5x22",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 1668608,
+        "requested_bytes": 1668480
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x24x31x98;4x3x5x5x31x98",
+        "kind": "free",
+        "calls": 2,
+        "bytes": 4812800,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x24x31x98;4x3x5x5x31x98",
+        "kind": "malloc",
+        "calls": 3,
+        "bytes": 4820480,
+        "requested_bytes": 4819392
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x24x5x5x14x47;36x24x5x5",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 6317056,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x24x5x5x14x47;36x24x5x5",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 6696448,
+        "requested_bytes": 6695808
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x36x14x47;4x24x5x5x14x47",
+        "kind": "free",
+        "calls": 2,
+        "bytes": 6696448,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x36x14x47;4x24x5x5x14x47",
+        "kind": "malloc",
+        "calls": 3,
+        "bytes": 6782976,
+        "requested_bytes": 6782208
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x36x5x5x5x22;48x36x5x5",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 1584128,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x36x5x5x5x22;48x36x5x5",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 1668608,
+        "requested_bytes": 1668480
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x3x5x5x31x98;24x3x5x5",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 3645952,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x3x5x5x31x98;24x3x5x5",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 4812800,
+        "requested_bytes": 4812192
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x48x3x3x3x20;64x48x3x3",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 414720,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x48x3x3x3x20;64x48x3x3",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 476160,
+        "requested_bytes": 476160
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x48x5x22;4x36x5x5x5x22",
+        "kind": "free",
+        "calls": 2,
+        "bytes": 1668608,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x48x5x22;4x36x5x5x5x22",
+        "kind": "malloc",
+        "calls": 3,
+        "bytes": 1841664,
+        "requested_bytes": 1841280
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x1x18;4x64x3x3x1x18",
+        "kind": "free",
+        "calls": 2,
+        "bytes": 184320,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x1x18;4x64x3x3x1x18",
+        "kind": "malloc",
+        "calls": 3,
+        "bytes": 331776,
+        "requested_bytes": 331776
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x3x20;4x48x3x3x3x20",
+        "kind": "free",
+        "calls": 2,
+        "bytes": 476160,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x3x20;4x48x3x3x3x20",
+        "kind": "malloc",
+        "calls": 3,
+        "bytes": 586752,
+        "requested_bytes": 586752
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x3x3x1x18;64x64x3x3",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 165888,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=4x64x3x3x1x18;64x64x3x3",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 184320,
+        "requested_bytes": 184320
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=64x48x3x3;4x64x3x20",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 61440,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=64x48x3x3;4x64x3x20",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 476160,
+        "requested_bytes": 476160
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=64x64x3x3;4x64x1x18",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 18432,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:cupy.tensordot|in=64x64x3x3;4x64x1x18",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 184320,
+        "requested_bytes": 184320
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x24x31x98",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 12634112,
+        "requested_bytes": 12633600
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x36x14x47",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 3168256,
+        "requested_bytes": 3168000
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x3x66x200",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 7291904,
+        "requested_bytes": 7291200
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x48x5x22",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 829440,
+        "requested_bytes": 829440
+      },
+      {
+        "phase": "outside",
+        "label": "OP/internal:im2col_array|in=4x64x3x20",
+        "kind": "malloc",
+        "calls": 2,
+        "bytes": 331776,
+        "requested_bytes": 331776
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv1/W",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 7680,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv1/W",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 7680,
+        "requested_bytes": 7200
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv1/b",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv1/b",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 96
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv2/W",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 86528,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv2/W",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 86528,
+        "requested_bytes": 86400
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv2/b",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv2/b",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 144
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv3/W",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 173056,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv3/W",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 173056,
+        "requested_bytes": 172800
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv3/b",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv3/b",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 192
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv4/W",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 110592,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv4/W",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 110592,
+        "requested_bytes": 110592
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv4/b",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv4/b",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 256
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv5/W",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 147456,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv5/W",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 147456,
+        "requested_bytes": 147456
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv5/b",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=conv5/b",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 256
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc1/W",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 460800,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc1/W",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 460800,
+        "requested_bytes": 460800
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc1/b",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc1/b",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 400
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc2/W",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 20480,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc2/W",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 20480,
+        "requested_bytes": 20000
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc2/b",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc2/b",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 200
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc3/W",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc3/W",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 200
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc3/b",
+        "kind": "free",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "OP/update:SGD|parameter=fc3/b",
+        "kind": "malloc",
+        "calls": 1,
+        "bytes": 512,
+        "requested_bytes": 4
+      },
+      {
+        "phase": "outside",
+        "label": "unlabelled",
+        "kind": "free",
+        "calls": 20,
+        "bytes": 3432448,
+        "requested_bytes": 0
+      },
+      {
+        "phase": "outside",
+        "label": "unlabelled",
+        "kind": "malloc",
+        "calls": 4,
+        "bytes": 4096,
+        "requested_bytes": 2420
+      }
+    ],
+    "unclosed_ranges": 0
+  }
+}

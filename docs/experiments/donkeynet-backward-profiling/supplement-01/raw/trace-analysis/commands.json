@@ -1,0 +1,142 @@
+[
+  {
+    "name": "trace-phase-cupy",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/analyze_trace.py",
+      "--input",
+      "runs/donkeynet_4a_supplement_01/trace-phase-cupy.sqlite",
+      "--output",
+      "runs/donkeynet_4a_supplement_analysis_01/trace-phase-cupy",
+      "--label",
+      "trace-phase-cupy"
+    ],
+    "log": "runs/donkeynet_4a_supplement_analysis_01/trace-phase-cupy.log",
+    "started_at": "2026-10-29T12:47:52.795404+00:00",
+    "returncode": 0,
+    "wall_s": 3.2539712090510875,
+    "finished_at": "2026-10-29T12:47:56.049546+00:00"
+  },
+  {
+    "name": "trace-phase-combined",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/analyze_trace.py",
+      "--input",
+      "runs/donkeynet_4a_supplement_01/trace-phase-combined.sqlite",
+      "--output",
+      "runs/donkeynet_4a_supplement_analysis_01/trace-phase-combined",
+      "--label",
+      "trace-phase-combined"
+    ],
+    "log": "runs/donkeynet_4a_supplement_analysis_01/trace-phase-combined.log",
+    "started_at": "2026-10-29T12:47:56.050678+00:00",
+    "returncode": 0,
+    "wall_s": 2.860149016138166,
+    "finished_at": "2026-10-29T12:47:58.911079+00:00"
+  },
+  {
+    "name": "trace-phase-torch",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/analyze_trace.py",
+      "--input",
+      "runs/donkeynet_4a_supplement_01/trace-phase-torch.sqlite",
+      "--output",
+      "runs/donkeynet_4a_supplement_analysis_01/trace-phase-torch",
+      "--label",
+      "trace-phase-torch"
+    ],
+    "log": "runs/donkeynet_4a_supplement_analysis_01/trace-phase-torch.log",
+    "started_at": "2026-10-29T12:47:58.912263+00:00",
+    "returncode": 0,
+    "wall_s": 1.6172179279383272,
+    "finished_at": "2026-10-29T12:48:00.529735+00:00"
+  },
+  {
+    "name": "trace-detail-cupy",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/analyze_trace.py",
+      "--input",
+      "runs/donkeynet_4a_supplement_01/trace-detail-cupy.sqlite",
+      "--output",
+      "runs/donkeynet_4a_supplement_analysis_01/trace-detail-cupy",
+      "--label",
+      "trace-detail-cupy"
+    ],
+    "log": "runs/donkeynet_4a_supplement_analysis_01/trace-detail-cupy.log",
+    "started_at": "2026-10-29T12:48:00.530869+00:00",
+    "returncode": 0,
+    "wall_s": 14.450128339929506,
+    "finished_at": "2026-10-29T12:48:14.981280+00:00"
+  },
+  {
+    "name": "layer-trace-detail-cupy",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/supplement_attribution.py",
+      "--input",
+      "runs/donkeynet_4a_supplement_analysis_01/trace-detail-cupy",
+      "--output",
+      "runs/donkeynet_4a_supplement_analysis_01/layer-trace-detail-cupy"
+    ],
+    "log": "runs/donkeynet_4a_supplement_analysis_01/layer-trace-detail-cupy.log",
+    "started_at": "2026-10-29T12:48:14.982403+00:00",
+    "returncode": 0,
+    "wall_s": 0.13576982985250652,
+    "finished_at": "2026-10-29T12:48:15.118416+00:00"
+  },
+  {
+    "name": "trace-detail-combined",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/analyze_trace.py",
+      "--input",
+      "runs/donkeynet_4a_supplement_01/trace-detail-combined.sqlite",
+      "--output",
+      "runs/donkeynet_4a_supplement_analysis_01/trace-detail-combined",
+      "--label",
+      "trace-detail-combined"
+    ],
+    "log": "runs/donkeynet_4a_supplement_analysis_01/trace-detail-combined.log",
+    "started_at": "2026-10-29T12:48:15.119109+00:00",
+    "returncode": 0,
+    "wall_s": 14.588059300091118,
+    "finished_at": "2026-10-29T12:48:29.707650+00:00"
+  },
+  {
+    "name": "layer-trace-detail-combined",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/supplement_attribution.py",
+      "--input",
+      "runs/donkeynet_4a_supplement_analysis_01/trace-detail-combined",
+      "--output",
+      "runs/donkeynet_4a_supplement_analysis_01/layer-trace-detail-combined"
+    ],
+    "log": "runs/donkeynet_4a_supplement_analysis_01/layer-trace-detail-combined.log",
+    "started_at": "2026-10-29T12:48:29.708820+00:00",
+    "returncode": 0,
+    "wall_s": 0.1346660910639912,
+    "finished_at": "2026-10-29T12:48:29.843783+00:00"
+  },
+  {
+    "name": "trace-detail-torch",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/donkeynet-backward-profiling/scripts/analyze_trace.py",
+      "--input",
+      "runs/donkeynet_4a_supplement_01/trace-detail-torch.sqlite",
+      "--output",
+      "runs/donkeynet_4a_supplement_analysis_01/trace-detail-torch",
+      "--label",
+      "trace-detail-torch"
+    ],
+    "log": "runs/donkeynet_4a_supplement_analysis_01/trace-detail-torch.log",
+    "started_at": "2026-10-29T12:48:29.844797+00:00",
+    "returncode": 0,
+    "wall_s": 29.966959030833095,
+    "finished_at": "2026-10-29T12:48:59.812155+00:00"
+  }
+]

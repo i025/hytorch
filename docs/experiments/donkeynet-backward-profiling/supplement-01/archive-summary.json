@@ -1,0 +1,15 @@
+{
+  "files": 495,
+  "portable_files": 369,
+  "raw_bytes": 1310160292,
+  "portable_bytes": 44473378,
+  "verification": "direct byte equality; no hashes",
+  "groups": [
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_01",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_monitor_01",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_analysis_01",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_trace_parser_check_01",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_trace_parser_check_02",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_plot_draft_01"
+  ]
+}

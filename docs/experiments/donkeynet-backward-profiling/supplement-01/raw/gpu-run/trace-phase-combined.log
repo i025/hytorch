@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.000744870360904315, "train_wall_s": 0.12266714684665203, "samples": 64, "train_samples_per_sec": 521.7370880893425}
+Generating '/tmp/nsys-report-e529.qdstrm'
+[1/1] [0%                          ] trace-phase-combined.nsys-rep[1/1] [0%                          ] trace-phase-combined.nsys-rep[1/1] [===23%                      ] trace-phase-combined.nsys-rep[1/1] [=========46%                ] trace-phase-combined.nsys-rep[1/1] [=====================89%    ] trace-phase-combined.nsys-rep[1/1] [========================100%] trace-phase-combined.nsys-rep[1/1] [========================100%] trace-phase-combined.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_01/trace-phase-combined.nsys-rep

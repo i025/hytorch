@@ -1,0 +1,28 @@
+{
+  "status": "PASSED",
+  "scope": "CPU synthetic attribution test, not a GPU experiment",
+  "checked": [
+    "deepest exclusive scope",
+    "inclusive parent/child membership",
+    "no duplicate exclusive kernels",
+    "GPU execution crossing host phase boundary",
+    "cross-thread submission explicitly tagged",
+    "nested host self time",
+    "PyTorch sequence normalization",
+    "nested Runtime/Driver API correlation selects inner API without duplicating GPU event",
+    "API sum versus union remains distinct",
+    "Memcpy bytes and Memset attribution",
+    "synchronization API count",
+    "coverage explicitly excludes Memset"
+  ],
+  "command": [
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+    "docs/experiments/donkeynet-backward-profiling/scripts/analyze_trace.py",
+    "--input",
+    "runs/donkeynet_4a_supplement_trace_parser_check_01/synthetic-nested.sqlite",
+    "--output",
+    "runs/donkeynet_4a_supplement_trace_parser_check_01/analysis",
+    "--label",
+    "SYNTHETIC_CPU_TEST_NOT_GPU_MEASUREMENT"
+  ]
+}

@@ -1,0 +1,5 @@
+trace,step,phase,name,start_ns,duration_ms,api_event_id,operator_path
+trace-phase-cupy,0,forward,cudaMalloc_v3020,2420559663,1.028262,CUPTI_ACTIVITY_KIND_RUNTIME:3573,[]
+trace-phase-torch,0,forward,cudaMalloc_v3020,4505738314,21.540393,CUPTI_ACTIVITY_KIND_RUNTIME:3764,[]
+trace-detail-cupy,2,forward,cudaMalloc_v3020,2458486413,0.552178,CUPTI_ACTIVITY_KIND_RUNTIME:4111,"[""OP/fwd:Conv2d|in=4x24x31x98;36x24x5x5;36|layer=conv2"", ""OP/internal:cupy.tensordot|in=4x24x5x5x14x47;36x24x5x5""]"
+trace-detail-torch,0,forward,cudaMalloc_v3020,4516742987,1.254246,CUPTI_ACTIVITY_KIND_RUNTIME:3762,"[""aten::linear, seq = 221, op_id = 3504, sizes = [[4, 1152], [100, 1152], [100]], input_op_ids = [(3502,0), (3441,0), (3442,0)]"", ""aten::addmm, seq = 222, op_id = 3508, sizes = [[100], [4, 1152], [1152, 100], [], []], input_op_ids = [(3442,0), (3502,0), (3505,0), (0,-1), (0,-1)]""]"

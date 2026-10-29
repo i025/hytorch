@@ -1,0 +1,5 @@
+docs/experiments/donkeynet-backward-profiling/supplement-01/figures/trace-layer-layout-hotspots.png
+docs/experiments/donkeynet-backward-profiling/supplement-01/figures/trace-convolution-gradient-components.png
+docs/experiments/donkeynet-backward-profiling/supplement-01/figures/trace-kernel-count-and-time.png
+docs/experiments/donkeynet-backward-profiling/supplement-01/figures/trace-host-device-timelines.png
+docs/experiments/donkeynet-backward-profiling/supplement-01/figures/trace-host-device-timelines-steps2-3.png

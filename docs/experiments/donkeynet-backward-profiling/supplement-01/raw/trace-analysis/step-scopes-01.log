@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE",
+  "traces": [
+    "trace-phase-cupy",
+    "trace-phase-combined",
+    "trace-phase-torch",
+    "trace-detail-cupy",
+    "trace-detail-combined",
+    "trace-detail-torch"
+  ],
+  "step_definition": "Each step begins at its data-phase NVTX start; final boundary is final training phase end. First step is retained separately, not removed from full16 results.",
+  "attribution": "Kernel -> correlation-matched API event -> API submission step; phase from existing same-thread NVTX or explicitly tagged cross-thread unique phase window. Never assign owners by GPU temporal overlap.",
+  "coverage": "Kernel+Memcpy union clipped to each wall-time window; not SM utilization. First window includes loss logging until next data start; final window ends before final post-step loss readback.",
+  "torch_layer_mapping": "Exact DonkeyNet output-gradient shapes in aten::convolution_backward NVTX labels; raw paths remain in kernel-events.csv.",
+  "caveat": "remaining15 reduces the visible first-step allocation outlier; this is still a single short Nsight trace, not a replacement for the independent 3x256-step timing runs."
+}

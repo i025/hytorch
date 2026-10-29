@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+SYNTHETIC_LAYER_CPU_TEST_NOT_GPU_MEASUREMENT,data,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+SYNTHETIC_LAYER_CPU_TEST_NOT_GPU_MEASUREMENT,transfer,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+SYNTHETIC_LAYER_CPU_TEST_NOT_GPU_MEASUREMENT,forward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+SYNTHETIC_LAYER_CPU_TEST_NOT_GPU_MEASUREMENT,backward,1,0.001,0.001,8,0.000116,0.00011,5,4.6e-05,1,5e-05,0,0,4,0.0001,0.0001,4,1,5e-06,16,1,4e-06
+SYNTHETIC_LAYER_CPU_TEST_NOT_GPU_MEASUREMENT,update,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+SYNTHETIC_LAYER_CPU_TEST_NOT_GPU_MEASUREMENT,outside_phase,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+SYNTHETIC_LAYER_CPU_TEST_NOT_GPU_MEASUREMENT,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

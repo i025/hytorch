@@ -1,0 +1,482 @@
+{
+  "status": "PASSED",
+  "raw_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_01",
+  "parsed_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/donkeynet_4a_supplement_analysis_01",
+  "trace_reviews": [
+    {
+      "trace": "trace-phase-cupy",
+      "phase_counts": {
+        "data": 16,
+        "transfer": 16,
+        "forward": 16,
+        "backward": 16,
+        "update": 16
+      },
+      "full_trace_kernels": 3952,
+      "training_kernels": 2432,
+      "outside_phase_kernels_submitted_before_training": 1520,
+      "outside_phase_kernels_submitted_after_training": 0,
+      "warmup_kernel_overlap_with_training_envelope": 0,
+      "unmatched_events": [],
+      "parser_kernel_phase_or_api_mismatches": [],
+      "kernels_with_multiple_correlated_apis": 0,
+      "cross_thread_event_phases": [],
+      "cross_thread_api_crosses_phase_end": 0,
+      "cross_thread_kernels_with_own_worker_nvtx": 0,
+      "cross_thread_kernels_with_own_backward_autograd_nvtx": 0,
+      "training_stream_ids": [
+        7
+      ],
+      "training_context_count": 1,
+      "training_device_count": 1,
+      "training_kernel_sum_ms": 22.91052,
+      "training_kernel_union_ms": 22.91052,
+      "windows": [
+        {
+          "window": "full_16_steps",
+          "steps": 16,
+          "kernel_count_per_step": [
+            152
+          ],
+          "kernel_sum_mean_ms": 1.4319074999999999,
+          "kernel_sum_min_ms": 1.426386,
+          "kernel_sum_max_ms": 1.435794,
+          "kernel_union_mean_ms": 1.4319074999999999,
+          "kernel_union_min_ms": 1.426386,
+          "kernel_union_max_ms": 1.435794
+        },
+        {
+          "window": "first_step",
+          "steps": 1,
+          "kernel_count_per_step": [
+            152
+          ],
+          "kernel_sum_mean_ms": 1.43579,
+          "kernel_sum_min_ms": 1.43579,
+          "kernel_sum_max_ms": 1.43579,
+          "kernel_union_mean_ms": 1.43579,
+          "kernel_union_min_ms": 1.43579,
+          "kernel_union_max_ms": 1.43579
+        },
+        {
+          "window": "remaining_15_steps",
+          "steps": 15,
+          "kernel_count_per_step": [
+            152
+          ],
+          "kernel_sum_mean_ms": 1.4316486666666666,
+          "kernel_sum_min_ms": 1.426386,
+          "kernel_sum_max_ms": 1.435794,
+          "kernel_union_mean_ms": 1.4316486666666666,
+          "kernel_union_min_ms": 1.426386,
+          "kernel_union_max_ms": 1.435794
+        }
+      ],
+      "update_kernel_names": {
+        "cupy_multiply__float_float32_float32": 256,
+        "cupy_subtract__float32_float32_float32": 256
+      },
+      "limitations": "Same-process unique main-thread phase window identifies worker submission phase; detailed worker NVTX independently corroborates backward. GPU execution timestamps are never used to pick phase. Kernel union measures traced execution intervals, not SM utilization or achieved FLOP efficiency."
+    },
+    {
+      "trace": "trace-phase-combined",
+      "phase_counts": {
+        "data": 16,
+        "transfer": 16,
+        "forward": 16,
+        "backward": 16,
+        "update": 16
+      },
+      "full_trace_kernels": 3848,
+      "training_kernels": 2368,
+      "outside_phase_kernels_submitted_before_training": 1480,
+      "outside_phase_kernels_submitted_after_training": 0,
+      "warmup_kernel_overlap_with_training_envelope": 0,
+      "unmatched_events": [],
+      "parser_kernel_phase_or_api_mismatches": [],
+      "kernels_with_multiple_correlated_apis": 0,
+      "cross_thread_event_phases": [],
+      "cross_thread_api_crosses_phase_end": 0,
+      "cross_thread_kernels_with_own_worker_nvtx": 0,
+      "cross_thread_kernels_with_own_backward_autograd_nvtx": 0,
+      "training_stream_ids": [
+        7
+      ],
+      "training_context_count": 1,
+      "training_device_count": 1,
+      "training_kernel_sum_ms": 25.1399,
+      "training_kernel_union_ms": 25.1399,
+      "windows": [
+        {
+          "window": "full_16_steps",
+          "steps": 16,
+          "kernel_count_per_step": [
+            148
+          ],
+          "kernel_sum_mean_ms": 1.57124375,
+          "kernel_sum_min_ms": 1.564265,
+          "kernel_sum_max_ms": 1.579693,
+          "kernel_union_mean_ms": 1.57124375,
+          "kernel_union_min_ms": 1.564265,
+          "kernel_union_max_ms": 1.579693
+        },
+        {
+          "window": "first_step",
+          "steps": 1,
+          "kernel_count_per_step": [
+            148
+          ],
+          "kernel_sum_mean_ms": 1.579693,
+          "kernel_sum_min_ms": 1.579693,
+          "kernel_sum_max_ms": 1.579693,
+          "kernel_union_mean_ms": 1.579693,
+          "kernel_union_min_ms": 1.579693,
+          "kernel_union_max_ms": 1.579693
+        },
+        {
+          "window": "remaining_15_steps",
+          "steps": 15,
+          "kernel_count_per_step": [
+            148
+          ],
+          "kernel_sum_mean_ms": 1.5706804666666667,
+          "kernel_sum_min_ms": 1.564265,
+          "kernel_sum_max_ms": 1.575921,
+          "kernel_union_mean_ms": 1.5706804666666667,
+          "kernel_union_min_ms": 1.564265,
+          "kernel_union_max_ms": 1.575921
+        }
+      ],
+      "update_kernel_names": {
+        "cupy_multiply__float_float32_float32": 256,
+        "cupy_subtract__float32_float32_float32": 256
+      },
+      "limitations": "Same-process unique main-thread phase window identifies worker submission phase; detailed worker NVTX independently corroborates backward. GPU execution timestamps are never used to pick phase. Kernel union measures traced execution intervals, not SM utilization or achieved FLOP efficiency."
+    },
+    {
+      "trace": "trace-phase-torch",
+      "phase_counts": {
+        "data": 16,
+        "transfer": 16,
+        "forward": 16,
+        "backward": 16,
+        "update": 16
+      },
+      "full_trace_kernels": 2444,
+      "training_kernels": 1504,
+      "outside_phase_kernels_submitted_before_training": 940,
+      "outside_phase_kernels_submitted_after_training": 0,
+      "warmup_kernel_overlap_with_training_envelope": 0,
+      "unmatched_events": [],
+      "parser_kernel_phase_or_api_mismatches": [],
+      "kernels_with_multiple_correlated_apis": 0,
+      "cross_thread_event_phases": [
+        {
+          "kind": "kernel",
+          "phase": "backward",
+          "count": 1040
+        },
+        {
+          "kind": "memset",
+          "phase": "backward",
+          "count": 64
+        }
+      ],
+      "cross_thread_api_crosses_phase_end": 0,
+      "cross_thread_kernels_with_own_worker_nvtx": 0,
+      "cross_thread_kernels_with_own_backward_autograd_nvtx": 0,
+      "training_stream_ids": [
+        7,
+        29,
+        30
+      ],
+      "training_context_count": 1,
+      "training_device_count": 1,
+      "training_kernel_sum_ms": 31.36018,
+      "training_kernel_union_ms": 27.619995,
+      "windows": [
+        {
+          "window": "full_16_steps",
+          "steps": 16,
+          "kernel_count_per_step": [
+            94
+          ],
+          "kernel_sum_mean_ms": 1.96001125,
+          "kernel_sum_min_ms": 1.946357,
+          "kernel_sum_max_ms": 1.974481,
+          "kernel_union_mean_ms": 1.7262496875,
+          "kernel_union_min_ms": 1.709553,
+          "kernel_union_max_ms": 1.747535
+        },
+        {
+          "window": "first_step",
+          "steps": 1,
+          "kernel_count_per_step": [
+            94
+          ],
+          "kernel_sum_mean_ms": 1.958352,
+          "kernel_sum_min_ms": 1.958352,
+          "kernel_sum_max_ms": 1.958352,
+          "kernel_union_mean_ms": 1.728847,
+          "kernel_union_min_ms": 1.728847,
+          "kernel_union_max_ms": 1.728847
+        },
+        {
+          "window": "remaining_15_steps",
+          "steps": 15,
+          "kernel_count_per_step": [
+            94
+          ],
+          "kernel_sum_mean_ms": 1.9601218666666667,
+          "kernel_sum_min_ms": 1.946357,
+          "kernel_sum_max_ms": 1.974481,
+          "kernel_union_mean_ms": 1.7260765333333334,
+          "kernel_union_min_ms": 1.709553,
+          "kernel_union_max_ms": 1.747535
+        }
+      ],
+      "update_kernel_names": {
+        "multi_tensor_apply_kernel": 16
+      },
+      "limitations": "Same-process unique main-thread phase window identifies worker submission phase; detailed worker NVTX independently corroborates backward. GPU execution timestamps are never used to pick phase. Kernel union measures traced execution intervals, not SM utilization or achieved FLOP efficiency."
+    },
+    {
+      "trace": "trace-detail-cupy",
+      "phase_counts": {
+        "data": 16,
+        "transfer": 16,
+        "forward": 16,
+        "backward": 16,
+        "update": 16
+      },
+      "full_trace_kernels": 3952,
+      "training_kernels": 2432,
+      "outside_phase_kernels_submitted_before_training": 1520,
+      "outside_phase_kernels_submitted_after_training": 0,
+      "warmup_kernel_overlap_with_training_envelope": 0,
+      "unmatched_events": [],
+      "parser_kernel_phase_or_api_mismatches": [],
+      "kernels_with_multiple_correlated_apis": 0,
+      "cross_thread_event_phases": [],
+      "cross_thread_api_crosses_phase_end": 0,
+      "cross_thread_kernels_with_own_worker_nvtx": 0,
+      "cross_thread_kernels_with_own_backward_autograd_nvtx": 0,
+      "training_stream_ids": [
+        7
+      ],
+      "training_context_count": 1,
+      "training_device_count": 1,
+      "training_kernel_sum_ms": 22.892044,
+      "training_kernel_union_ms": 22.892044,
+      "windows": [
+        {
+          "window": "full_16_steps",
+          "steps": 16,
+          "kernel_count_per_step": [
+            152
+          ],
+          "kernel_sum_mean_ms": 1.43075275,
+          "kernel_sum_min_ms": 1.425164,
+          "kernel_sum_max_ms": 1.434569,
+          "kernel_union_mean_ms": 1.43075275,
+          "kernel_union_min_ms": 1.425164,
+          "kernel_union_max_ms": 1.434569
+        },
+        {
+          "window": "first_step",
+          "steps": 1,
+          "kernel_count_per_step": [
+            152
+          ],
+          "kernel_sum_mean_ms": 1.429837,
+          "kernel_sum_min_ms": 1.429837,
+          "kernel_sum_max_ms": 1.429837,
+          "kernel_union_mean_ms": 1.429837,
+          "kernel_union_min_ms": 1.429837,
+          "kernel_union_max_ms": 1.429837
+        },
+        {
+          "window": "remaining_15_steps",
+          "steps": 15,
+          "kernel_count_per_step": [
+            152
+          ],
+          "kernel_sum_mean_ms": 1.4308138,
+          "kernel_sum_min_ms": 1.425164,
+          "kernel_sum_max_ms": 1.434569,
+          "kernel_union_mean_ms": 1.4308138,
+          "kernel_union_min_ms": 1.425164,
+          "kernel_union_max_ms": 1.434569
+        }
+      ],
+      "update_kernel_names": {
+        "cupy_multiply__float_float32_float32": 256,
+        "cupy_subtract__float32_float32_float32": 256
+      },
+      "limitations": "Same-process unique main-thread phase window identifies worker submission phase; detailed worker NVTX independently corroborates backward. GPU execution timestamps are never used to pick phase. Kernel union measures traced execution intervals, not SM utilization or achieved FLOP efficiency."
+    },
+    {
+      "trace": "trace-detail-combined",
+      "phase_counts": {
+        "data": 16,
+        "transfer": 16,
+        "forward": 16,
+        "backward": 16,
+        "update": 16
+      },
+      "full_trace_kernels": 3848,
+      "training_kernels": 2368,
+      "outside_phase_kernels_submitted_before_training": 1480,
+      "outside_phase_kernels_submitted_after_training": 0,
+      "warmup_kernel_overlap_with_training_envelope": 0,
+      "unmatched_events": [],
+      "parser_kernel_phase_or_api_mismatches": [],
+      "kernels_with_multiple_correlated_apis": 0,
+      "cross_thread_event_phases": [],
+      "cross_thread_api_crosses_phase_end": 0,
+      "cross_thread_kernels_with_own_worker_nvtx": 0,
+      "cross_thread_kernels_with_own_backward_autograd_nvtx": 0,
+      "training_stream_ids": [
+        7
+      ],
+      "training_context_count": 1,
+      "training_device_count": 1,
+      "training_kernel_sum_ms": 25.162848,
+      "training_kernel_union_ms": 25.162848,
+      "windows": [
+        {
+          "window": "full_16_steps",
+          "steps": 16,
+          "kernel_count_per_step": [
+            148
+          ],
+          "kernel_sum_mean_ms": 1.572678,
+          "kernel_sum_min_ms": 1.56648,
+          "kernel_sum_max_ms": 1.588948,
+          "kernel_union_mean_ms": 1.572678,
+          "kernel_union_min_ms": 1.56648,
+          "kernel_union_max_ms": 1.588948
+        },
+        {
+          "window": "first_step",
+          "steps": 1,
+          "kernel_count_per_step": [
+            148
+          ],
+          "kernel_sum_mean_ms": 1.588948,
+          "kernel_sum_min_ms": 1.588948,
+          "kernel_sum_max_ms": 1.588948,
+          "kernel_union_mean_ms": 1.588948,
+          "kernel_union_min_ms": 1.588948,
+          "kernel_union_max_ms": 1.588948
+        },
+        {
+          "window": "remaining_15_steps",
+          "steps": 15,
+          "kernel_count_per_step": [
+            148
+          ],
+          "kernel_sum_mean_ms": 1.5715933333333334,
+          "kernel_sum_min_ms": 1.56648,
+          "kernel_sum_max_ms": 1.582351,
+          "kernel_union_mean_ms": 1.5715933333333334,
+          "kernel_union_min_ms": 1.56648,
+          "kernel_union_max_ms": 1.582351
+        }
+      ],
+      "update_kernel_names": {
+        "cupy_multiply__float_float32_float32": 256,
+        "cupy_subtract__float32_float32_float32": 256
+      },
+      "limitations": "Same-process unique main-thread phase window identifies worker submission phase; detailed worker NVTX independently corroborates backward. GPU execution timestamps are never used to pick phase. Kernel union measures traced execution intervals, not SM utilization or achieved FLOP efficiency."
+    },
+    {
+      "trace": "trace-detail-torch",
+      "phase_counts": {
+        "data": 16,
+        "transfer": 16,
+        "forward": 16,
+        "backward": 16,
+        "update": 16
+      },
+      "full_trace_kernels": 2444,
+      "training_kernels": 1504,
+      "outside_phase_kernels_submitted_before_training": 940,
+      "outside_phase_kernels_submitted_after_training": 0,
+      "warmup_kernel_overlap_with_training_envelope": 0,
+      "unmatched_events": [],
+      "parser_kernel_phase_or_api_mismatches": [],
+      "kernels_with_multiple_correlated_apis": 0,
+      "cross_thread_event_phases": [
+        {
+          "kind": "kernel",
+          "phase": "backward",
+          "count": 1040
+        },
+        {
+          "kind": "memset",
+          "phase": "backward",
+          "count": 64
+        }
+      ],
+      "cross_thread_api_crosses_phase_end": 0,
+      "cross_thread_kernels_with_own_worker_nvtx": 1040,
+      "cross_thread_kernels_with_own_backward_autograd_nvtx": 1040,
+      "training_stream_ids": [
+        7,
+        29,
+        30
+      ],
+      "training_context_count": 1,
+      "training_device_count": 1,
+      "training_kernel_sum_ms": 31.395195,
+      "training_kernel_union_ms": 27.588888,
+      "windows": [
+        {
+          "window": "full_16_steps",
+          "steps": 16,
+          "kernel_count_per_step": [
+            94
+          ],
+          "kernel_sum_mean_ms": 1.9621996875,
+          "kernel_sum_min_ms": 1.950893,
+          "kernel_sum_max_ms": 1.97486,
+          "kernel_union_mean_ms": 1.7243055,
+          "kernel_union_min_ms": 1.71713,
+          "kernel_union_max_ms": 1.731381
+        },
+        {
+          "window": "first_step",
+          "steps": 1,
+          "kernel_count_per_step": [
+            94
+          ],
+          "kernel_sum_mean_ms": 1.95973,
+          "kernel_sum_min_ms": 1.95973,
+          "kernel_sum_max_ms": 1.95973,
+          "kernel_union_mean_ms": 1.72539,
+          "kernel_union_min_ms": 1.72539,
+          "kernel_union_max_ms": 1.72539
+        },
+        {
+          "window": "remaining_15_steps",
+          "steps": 15,
+          "kernel_count_per_step": [
+            94
+          ],
+          "kernel_sum_mean_ms": 1.9623643333333334,
+          "kernel_sum_min_ms": 1.950893,
+          "kernel_sum_max_ms": 1.97486,
+          "kernel_union_mean_ms": 1.7242332,
+          "kernel_union_min_ms": 1.71713,
+          "kernel_union_max_ms": 1.731381
+        }
+      ],
+      "update_kernel_names": {
+        "multi_tensor_apply_kernel": 16
+      },
+      "limitations": "Same-process unique main-thread phase window identifies worker submission phase; detailed worker NVTX independently corroborates backward. GPU execution timestamps are never used to pick phase. Kernel union measures traced execution intervals, not SM utilization or achieved FLOP efficiency."
+    }
+  ],
+  "scope": "Independent read-only original SQLite correlation and phase audit; no CUDA imported or GPU work"
+}

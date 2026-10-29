@@ -1,0 +1,8 @@
+sqlite_rowid,start,end,text,textId,name,duration_ms,operator,host_self_ms,phase,phase_rule,globalTid_label
+1,0,1000,backward,,backward,0.001,backward,0.00030000000000000003,backward,same_thread_nvtx,thread_0
+2,100,800,OP/bwd:Conv2d|layer=conv1,,OP/bwd:Conv2d|layer=conv1,0.0007,OP/bwd:Conv2d|layer=conv1,0.00037999999999999997,backward,same_thread_nvtx,thread_0
+7,190,410,OP/part:Conv2d.dInput|layer=conv1|leaf_input=true,,OP/part:Conv2d.dInput|layer=conv1|leaf_input=true,0.00022,OP/part:Conv2d.dInput|layer=conv1|leaf_input=true,1.9999999999999998e-05,backward,same_thread_nvtx,thread_0
+3,200,400,OP/fwd:Deconv2d,,OP/fwd:Deconv2d,0.0002,OP/fwd:Deconv2d,0.0001,backward,same_thread_nvtx,thread_0
+4,250,350,OP/internal:cupy.tensordot,,OP/internal:cupy.tensordot,0.0001,OP/internal:cupy.tensordot,0.0001,backward,same_thread_nvtx,thread_0
+6,280,320,"ReluBackward0, stashed seq = 12",,"ReluBackward0, stashed seq = 12",4e-05,ReluBackward0,4e-05,backward,unique_cross_thread_phase_window_at_nvtx_start,thread_1
+5,500,600,OP/bwd:Sum,,OP/bwd:Sum,0.0001,OP/bwd:Sum,0.0001,backward,same_thread_nvtx,thread_0
