@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 256,
+    "measured_step_total_s": 0.9203820684924722,
+    "mean_step_s": 0.0035952424550487194,
+    "samples_per_sec": 1112.5814322711083,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 0,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": null,
+    "gpu_utilization_pct_max": null,
+    "gpu_memory_used_mib_mean": null,
+    "gpu_memory_used_mib_max": null,
+    "gpu_memory_total_mib_mean": null,
+    "gpu_memory_total_mib_max": null,
+    "gpu_temperature_c_mean": null,
+    "gpu_temperature_c_max": null,
+    "gpu_power_w_mean": null,
+    "gpu_power_w_max": null,
+    "cpu_utilization_pct_mean": null,
+    "cpu_utilization_pct_max": null,
+    "process_rss_mib_mean": null,
+    "process_rss_mib_max": null,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.034201644040877,
+      "train_wall_s": 0.24409603094682097,
+      "samples": 256,
+      "train_samples_per_sec": 1048.7675649907328
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.01653196987172123,
+      "train_wall_s": 0.24132636585272849,
+      "samples": 256,
+      "train_samples_per_sec": 1060.8041069007197
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.008231501022237353,
+      "train_wall_s": 0.24110669502988458,
+      "samples": 256,
+      "train_samples_per_sec": 1061.7705989801298
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0043197165587116615,
+      "train_wall_s": 0.2518768210429698,
+      "samples": 256,
+      "train_samples_per_sec": 1016.3698229156496
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [],
+  "final_state_sha256": null
+}

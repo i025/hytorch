@@ -1,0 +1,25 @@
+警告: 未找到scipy，无法加载SVHN数据集
+h00 torch torch complete
+h01 torch torch complete
+h02 torch torch complete
+h03 torch torch complete
+h04 torch torch complete
+h05 torch torch complete
+h06 torch torch complete
+h07 torch torch complete
+h08 torch torch complete
+h09 torch torch complete
+h10 torch torch complete
+h11 torch torch complete
+h12 torch torch complete
+h13 torch torch complete
+h14 torch torch complete
+h15 torch torch complete
+h16 torch torch complete
+h17 torch torch complete
+h18 torch torch complete
+h19 torch torch complete
+Generating '/tmp/nsys-report-7a82.qdstrm'
+[1/1] [0%                          ] trace-shapes-held-out-torch.nsys-rep[1/1] [0%                          ] trace-shapes-held-out-torch.nsys-rep[1/1] [=========43%                ] trace-shapes-held-out-torch.nsys-rep[1/1] [=========44%                ] trace-shapes-held-out-torch.nsys-rep[1/1] [================68%         ] trace-shapes-held-out-torch.nsys-rep[1/1] [=======================93%  ] trace-shapes-held-out-torch.nsys-rep[1/1] [========================100%] trace-shapes-held-out-torch.nsys-rep[1/1] [========================100%] trace-shapes-held-out-torch.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_traces_wait_02/attempt-01/results/trace-shapes-held-out-torch.nsys-rep

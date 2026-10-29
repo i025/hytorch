@@ -1,0 +1,34 @@
+{
+  "status": "COMPLETED_WITH_NEGATIVE_END_TO_END_RESULT",
+  "cpu_tests": {
+    "passed": 55,
+    "failed": 0,
+    "skipped": 0
+  },
+  "gpu_tests": {
+    "passed": 188,
+    "failed": 0,
+    "skipped": 0
+  },
+  "gpu_uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+  "logical_device": 0,
+  "shape_count": 100,
+  "fresh_final_validation_shapes": 24,
+  "auto_gather_validation_selected": 14,
+  "broad_candidates_rejected": 2,
+  "nsight_traces": 23,
+  "unmatched_kernel_api_count": 0,
+  "default_backend": "original",
+  "auto_status": "EXPERIMENTAL_RESTRICTED_POINTWISE_ONLY",
+  "end_to_end_increment": "NOT_DEMONSTRATED",
+  "training": {
+    "status": "PASSED",
+    "gpu_uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "training_processes": 60,
+    "steps": 15360,
+    "comparisons": 1248,
+    "max_abs": 4.190951585769653e-08
+  },
+  "gains_file": "training-01/speedups.csv",
+  "next_stage_started": false
+}

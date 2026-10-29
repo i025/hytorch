@@ -1,0 +1,35 @@
+{
+  "command": [
+    "env",
+    "HYTORCH_REQUIRE_CUDA=1",
+    "HYTORCH_PRUNING_DEVICE=cuda",
+    "HYTORCH_CUDA_LIBRARY=/home/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+    "HYTORCH_SHAPE_TEST_OUTPUT=/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_final_tests_wait_01/attempt-01/results/shape-correctness",
+    "HYTORCH_CONV_TEST_OUTPUT=/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_final_tests_wait_01/attempt-01/results/legacy-correctness",
+    "HYTORCH_SGD_TEST_OUTPUT=/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_final_tests_wait_01/attempt-01/results/sgd-correctness",
+    "HYTORCH_PRUNING_TEST_OUTPUT=/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_final_tests_wait_01/attempt-01/results/pruning-correctness",
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_conv_shape_dispatch_gpu.py",
+    "tests/test_conv_backward_fusion_gpu.py",
+    "tests/test_conv_dinput_pruning.py",
+    "tests/test_fused_sgd_gpu.py",
+    "tests/test_cuda_device.py",
+    "-q",
+    "-ra",
+    "--junitxml=/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_final_tests_wait_01/attempt-01/results/gpu-tests.xml"
+  ],
+  "physical_gpu": "6",
+  "logical_gpu": 0,
+  "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+  "started_at": "2026-10-29T19:09:40.065109+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4"
+  }
+}

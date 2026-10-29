@@ -1,0 +1,76 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 256,
+    "measured_step_total_s": 0.8225010642781854,
+    "mean_step_s": 0.0032128947823366616,
+    "samples_per_sec": 1244.983191479086,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 0,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": null,
+    "gpu_utilization_pct_max": null,
+    "gpu_memory_used_mib_mean": null,
+    "gpu_memory_used_mib_max": null,
+    "gpu_memory_total_mib_mean": null,
+    "gpu_memory_total_mib_max": null,
+    "gpu_temperature_c_mean": null,
+    "gpu_temperature_c_max": null,
+    "gpu_power_w_mean": null,
+    "gpu_power_w_max": null,
+    "cpu_utilization_pct_mean": null,
+    "cpu_utilization_pct_max": null,
+    "process_rss_mib_mean": null,
+    "process_rss_mib_max": null,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.03420164449198637,
+      "train_wall_s": 0.21824974194169044,
+      "samples": 256,
+      "train_samples_per_sec": 1172.96816812913
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.01653197118866956,
+      "train_wall_s": 0.2175654300954193,
+      "samples": 256,
+      "train_samples_per_sec": 1176.6575226943185
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.008231501218688209,
+      "train_wall_s": 0.2169282070826739,
+      "samples": 256,
+      "train_samples_per_sec": 1180.1139346642706
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0043197169734412455,
+      "train_wall_s": 0.22250270517542958,
+      "samples": 256,
+      "train_samples_per_sec": 1150.5478092869023
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 1024,
+    "conv_im2col": 768,
+    "conv_dinput_auto_fused": 256,
+    "conv_dinput_auto_reason_pointwise": 256,
+    "conv_dinput_fused": 256,
+    "conv_dinput_auto_original": 256,
+    "conv_dinput_auto_reason_geometry": 256,
+    "sgd_fused": 256
+  },
+  "bottleneck_hypotheses": [],
+  "final_state_sha256": null
+}

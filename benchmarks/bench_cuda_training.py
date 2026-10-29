@@ -32,6 +32,23 @@ class TinyNet(L.Layer):
         return F.tanh(self.fc1(x.reshape(x.shape[0], -1)))
 
 
+class SpatialNet(L.Layer):
+    """Independent small CNN for convolution-dispatch generalization tests."""
+    def __init__(self):
+        super().__init__()
+        self.conv1 = L.Conv2d(16, 3, pad=1)
+        self.conv2 = L.Conv2d(32, 3, stride=2, pad=1)
+        self.conv3 = L.Conv2d(32, 1)
+        self.fc1 = L.Linear(1)
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))
+        x = F.relu(self.conv2(x))
+        x = F.relu(self.conv3(x))
+        scale = np.float32(1 / (x.shape[2] * x.shape[3]))
+        return F.tanh(self.fc1(F.sum(x, axis=(2, 3)) * scale))
+
+
 class SyntheticDataset:
     def __init__(self, samples, shape, seed):
         rng = np.random.default_rng(seed)
@@ -106,6 +123,11 @@ def torch_model(kind, state):
             if kind == "tiny":
                 self.conv1 = nn.Conv2d(3, 4, 3, padding=1)
                 self.fc1 = nn.Linear(4*8*8, 1)
+            elif kind == "spatial":
+                self.conv1 = nn.Conv2d(3, 16, 3, padding=1)
+                self.conv2 = nn.Conv2d(16, 32, 3, stride=2, padding=1)
+                self.conv3 = nn.Conv2d(32, 32, 1)
+                self.fc1 = nn.Linear(32, 1)
             else:
                 specs = [(3,24,5,2), (24,36,5,2), (36,48,5,2), (48,64,3,1), (64,64,3,1)]
                 for i, (ci, co, k, s) in enumerate(specs, 1):
@@ -116,6 +138,11 @@ def torch_model(kind, state):
             if kind == "tiny":
                 x = torch.nn.functional.max_pool2d(torch.relu(self.conv1(x)), 2)
                 return torch.tanh(self.fc1(x.flatten(1)))
+            if kind == "spatial":
+                x = torch.relu(self.conv1(x))
+                x = torch.relu(self.conv2(x))
+                x = torch.relu(self.conv3(x))
+                return torch.tanh(self.fc1(x.mean(dim=(2, 3))))
             for i in range(1, 6):
                 x = torch.relu(getattr(self, f"conv{i}")(x))
             x = torch.relu(self.fc1(x.flatten(1)))
@@ -140,7 +167,7 @@ def main():
     p.add_argument("--conv", choices=["cupy","direct","im2col"], default="cupy")
     p.add_argument("--pool", choices=["cupy","native"], default="cupy")
     p.add_argument("--tile", type=int, choices=[16,32], default=16)
-    p.add_argument("--model", choices=["tiny","donkey"], default="donkey")
+    p.add_argument("--model", choices=["tiny","spatial","donkey"], default="donkey")
     p.add_argument("--data", help="Real DonkeyCar directory; absent means explicitly synthetic smoke test")
     p.add_argument("--samples", type=int, default=64)
     p.add_argument("--batch", type=int, default=4)
@@ -154,8 +181,8 @@ def main():
                    help="Opt in to native multi-tensor SGD for HyTorch CUDA FP32")
     p.add_argument("--prune-input-grad", action="store_true",
                    help="Explicitly disable HyTorch training-input gradients; keep parameter gradients")
-    p.add_argument("--conv-backward", choices=["original", "fused"], default="original",
-                   help="Opt in to native CUDA FP32 dInput; dWeight/dBias stay unchanged")
+    p.add_argument("--conv-backward", choices=["original", "fused", "auto"], default="original",
+                   help="Explicit fused or conservative shape auto; default original, dWeight/dBias unchanged")
     p.add_argument("--mode", choices=["phases","throughput"], default="phases")
     p.add_argument("--interval", type=float, default=1.)
     p.add_argument("--no-monitor", action="store_true")
@@ -173,8 +200,8 @@ def main():
         p.error("--fused-sgd requires --framework hytorch --device cuda")
     if args.prune_input_grad and args.framework != "hytorch":
         p.error("--prune-input-grad is a HyTorch gradient-demand option")
-    if args.conv_backward == "fused" and (args.framework != "hytorch" or args.device != "cuda"):
-        p.error("--conv-backward fused requires --framework hytorch --device cuda")
+    if args.conv_backward != "original" and (args.framework != "hytorch" or args.device != "cuda"):
+        p.error("--conv-backward fused/auto requires --framework hytorch --device cuda")
     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
         p.error("Invalid batch/epoch/sample/step/worker/warmup value")
     if args.nvtx and args.device != "cuda":
@@ -184,7 +211,7 @@ def main():
     if args.save_comparison_inputs and args.data:
         p.error("--save-comparison-inputs currently supports synthetic datasets only")
     out = Path(args.output); out.mkdir(parents=True, exist_ok=False)
-    shape = (3, 16, 16) if args.model == "tiny" else (3, 66, 200)
+    shape = (3, 66, 200) if args.model == "donkey" else (3, 16, 16)
     val_ds = None
     if args.data:
         from donkeycar_hy.tub_dataset import DonkeyDataset
@@ -201,6 +228,8 @@ def main():
         p.error("Empty training split")
     if args.model == "tiny":
         hy = TinyNet()
+    elif args.model == "spatial":
+        hy = SpatialNet()
     else:
         from donkeycar_hy.model import DonkeyNet
         hy = DonkeyNet(dropout_rate=0.)

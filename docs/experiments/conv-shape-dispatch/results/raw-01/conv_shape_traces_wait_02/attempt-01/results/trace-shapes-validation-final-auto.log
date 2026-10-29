@@ -1,0 +1,29 @@
+警告: 未找到scipy，无法加载SVHN数据集
+p00 auto fused complete
+p01 auto fused complete
+p02 auto fused complete
+p03 auto fused complete
+p04 auto fused complete
+p05 auto fused complete
+p06 auto fused complete
+p07 auto fused complete
+p08 auto fused complete
+p09 auto fused complete
+p10 auto fused complete
+p11 auto fused complete
+p12 auto fused complete
+p13 auto fused complete
+p14 auto original complete
+p15 auto original complete
+p16 auto original complete
+p17 auto original complete
+p18 auto original complete
+p19 auto original complete
+p20 auto original complete
+p21 auto original complete
+p22 auto original complete
+p23 auto original complete
+Generating '/tmp/nsys-report-1ab1.qdstrm'
+[1/1] [0%                          ] trace-shapes-validation-final-auto.nsys-rep[1/1] [0%                          ] trace-shapes-validation-final-auto.nsys-rep[1/1] [=====30%                    ] trace-shapes-validation-final-auto.nsys-rep[1/1] [==============63%           ] trace-shapes-validation-final-auto.nsys-rep[1/1] [=======================96%  ] trace-shapes-validation-final-auto.nsys-rep[1/1] [========================100%] trace-shapes-validation-final-auto.nsys-rep[1/1] [========================100%] trace-shapes-validation-final-auto.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_traces_wait_02/attempt-01/results/trace-shapes-validation-final-auto.nsys-rep

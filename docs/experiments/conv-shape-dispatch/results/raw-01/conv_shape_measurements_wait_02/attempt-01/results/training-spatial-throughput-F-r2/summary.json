@@ -1,0 +1,72 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 256,
+    "measured_step_total_s": 0.8314539061393589,
+    "mean_step_s": 0.0032478668208568706,
+    "samples_per_sec": 1231.5775925026069,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 0,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": null,
+    "gpu_utilization_pct_max": null,
+    "gpu_memory_used_mib_mean": null,
+    "gpu_memory_used_mib_max": null,
+    "gpu_memory_total_mib_mean": null,
+    "gpu_memory_total_mib_max": null,
+    "gpu_temperature_c_mean": null,
+    "gpu_temperature_c_max": null,
+    "gpu_power_w_mean": null,
+    "gpu_power_w_max": null,
+    "cpu_utilization_pct_mean": null,
+    "cpu_utilization_pct_max": null,
+    "process_rss_mib_mean": null,
+    "process_rss_mib_max": null,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.03420164465205744,
+      "train_wall_s": 0.2235087570734322,
+      "samples": 256,
+      "train_samples_per_sec": 1145.3689929289574
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.016531971101358067,
+      "train_wall_s": 0.21728670597076416,
+      "samples": 256,
+      "train_samples_per_sec": 1178.1668779793858
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.008231501356931403,
+      "train_wall_s": 0.21697905100882053,
+      "samples": 256,
+      "train_samples_per_sec": 1179.8374027803873
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.004319716643294669,
+      "train_wall_s": 0.23032672400586307,
+      "samples": 256,
+      "train_samples_per_sec": 1111.4645992771702
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 1024,
+    "conv_im2col": 768,
+    "conv_dinput_fused": 512,
+    "sgd_fused": 256
+  },
+  "bottleneck_hypotheses": [],
+  "final_state_sha256": null
+}

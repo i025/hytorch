@@ -1,0 +1,9 @@
+START original-r1
+START fused-r1
+START torch-r1
+START fused-r2
+START torch-r2
+START original-r2
+START torch-r3
+START original-r3
+START fused-r3

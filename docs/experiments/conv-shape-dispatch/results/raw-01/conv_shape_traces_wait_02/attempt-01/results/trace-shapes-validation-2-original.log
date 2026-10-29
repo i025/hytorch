@@ -1,0 +1,29 @@
+警告: 未找到scipy，无法加载SVHN数据集
+v00 original original complete
+v01 original original complete
+v02 original original complete
+v03 original original complete
+v04 original original complete
+v05 original original complete
+v06 original original complete
+v07 original original complete
+v08 original original complete
+v09 original original complete
+v10 original original complete
+v11 original original complete
+v12 original original complete
+v13 original original complete
+v14 original original complete
+v15 original original complete
+v16 original original complete
+v17 original original complete
+v18 original original complete
+v19 original original complete
+v20 original original complete
+v21 original original complete
+v22 original original complete
+v23 original original complete
+Generating '/tmp/nsys-report-22dc.qdstrm'
+[1/1] [0%                          ] trace-shapes-validation-2-original.nsys-rep[1/1] [0%                          ] trace-shapes-validation-2-original.nsys-rep[1/1] [======34%                   ] trace-shapes-validation-2-original.nsys-rep[1/1] [==============64%           ] trace-shapes-validation-2-original.nsys-rep[1/1] [=======================95%  ] trace-shapes-validation-2-original.nsys-rep[1/1] [========================100%] trace-shapes-validation-2-original.nsys-rep[1/1] [========================100%] trace-shapes-validation-2-original.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_traces_wait_02/attempt-01/results/trace-shapes-validation-2-original.nsys-rep

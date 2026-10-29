@@ -1,0 +1,3 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_spatial_failure_inputs_01/provenance.json,587,docs/experiments/conv-shape-dispatch/results/failure-inputs-01/conv_shape_spatial_failure_inputs_01/provenance.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_spatial_failure_inputs_01/reconstructed-first-batch.npz,39480,,server original only

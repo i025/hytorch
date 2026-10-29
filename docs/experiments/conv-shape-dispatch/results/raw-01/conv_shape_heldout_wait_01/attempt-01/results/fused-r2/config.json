@@ -1,0 +1,396 @@
+{
+  "split": "held-out",
+  "method": "fused",
+  "repeat": 2,
+  "warmup": 5,
+  "iterations": 30,
+  "nvtx": false,
+  "output": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_heldout_wait_01/attempt-01/results/fused-r2",
+  "cases": [
+    {
+      "case": "h00",
+      "split": "held-out",
+      "shape": [
+        1,
+        16,
+        5,
+        9
+      ],
+      "weight_shape": [
+        64,
+        16,
+        1,
+        1
+      ],
+      "stride": 1,
+      "pad": 0,
+      "work": 46080.0
+    },
+    {
+      "case": "h01",
+      "split": "held-out",
+      "shape": [
+        4,
+        64,
+        3,
+        7
+      ],
+      "weight_shape": [
+        32,
+        64,
+        1,
+        1
+      ],
+      "stride": 2,
+      "pad": 1,
+      "work": 43008.0
+    },
+    {
+      "case": "h02",
+      "split": "held-out",
+      "shape": [
+        16,
+        3,
+        7,
+        11
+      ],
+      "weight_shape": [
+        32,
+        3,
+        1,
+        1
+      ],
+      "stride": 1,
+      "pad": 0,
+      "work": 118272.0
+    },
+    {
+      "case": "h03",
+      "split": "held-out",
+      "shape": [
+        16,
+        64,
+        9,
+        13
+      ],
+      "weight_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "stride": 2,
+      "pad": 0,
+      "work": 1916928.0
+    },
+    {
+      "case": "h04",
+      "split": "held-out",
+      "shape": [
+        1,
+        32,
+        13,
+        15
+      ],
+      "weight_shape": [
+        16,
+        32,
+        3,
+        3
+      ],
+      "stride": 1,
+      "pad": 1,
+      "work": 898560.0
+    },
+    {
+      "case": "h05",
+      "split": "held-out",
+      "shape": [
+        4,
+        3,
+        17,
+        23
+      ],
+      "weight_shape": [
+        64,
+        3,
+        3,
+        3
+      ],
+      "stride": 2,
+      "pad": 1,
+      "work": 675648.0
+    },
+    {
+      "case": "h06",
+      "split": "held-out",
+      "shape": [
+        16,
+        16,
+        7,
+        9
+      ],
+      "weight_shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "stride": 1,
+      "pad": 0,
+      "work": 4644864.0
+    },
+    {
+      "case": "h07",
+      "split": "held-out",
+      "shape": [
+        4,
+        64,
+        19,
+        25
+      ],
+      "weight_shape": [
+        16,
+        64,
+        3,
+        3
+      ],
+      "stride": 2,
+      "pad": 0,
+      "work": 4377600.0
+    },
+    {
+      "case": "h08",
+      "split": "held-out",
+      "shape": [
+        1,
+        64,
+        31,
+        29
+      ],
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "stride": 1,
+      "pad": 1,
+      "work": 33140736.0
+    },
+    {
+      "case": "h09",
+      "split": "held-out",
+      "shape": [
+        16,
+        32,
+        13,
+        15
+      ],
+      "weight_shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "stride": 2,
+      "pad": 1,
+      "work": 14376960.0
+    },
+    {
+      "case": "h10",
+      "split": "held-out",
+      "shape": [
+        1,
+        3,
+        7,
+        9
+      ],
+      "weight_shape": [
+        32,
+        3,
+        5,
+        5
+      ],
+      "stride": 1,
+      "pad": 1,
+      "work": 151200.0
+    },
+    {
+      "case": "h11",
+      "split": "held-out",
+      "shape": [
+        4,
+        16,
+        11,
+        17
+      ],
+      "weight_shape": [
+        64,
+        16,
+        5,
+        5
+      ],
+      "stride": 2,
+      "pad": 0,
+      "work": 4787200.0
+    },
+    {
+      "case": "h12",
+      "split": "held-out",
+      "shape": [
+        16,
+        3,
+        9,
+        13
+      ],
+      "weight_shape": [
+        16,
+        3,
+        5,
+        5
+      ],
+      "stride": 1,
+      "pad": 0,
+      "work": 2246400.0
+    },
+    {
+      "case": "h13",
+      "split": "held-out",
+      "shape": [
+        1,
+        32,
+        9,
+        15
+      ],
+      "weight_shape": [
+        64,
+        32,
+        5,
+        5
+      ],
+      "stride": 1,
+      "pad": 1,
+      "work": 6912000.0
+    },
+    {
+      "case": "h14",
+      "split": "held-out",
+      "shape": [
+        4,
+        64,
+        23,
+        27
+      ],
+      "weight_shape": [
+        32,
+        64,
+        5,
+        5
+      ],
+      "stride": 2,
+      "pad": 1,
+      "work": 31795200.0
+    },
+    {
+      "case": "h15",
+      "split": "held-out",
+      "shape": [
+        16,
+        16,
+        33,
+        37
+      ],
+      "weight_shape": [
+        16,
+        16,
+        5,
+        5
+      ],
+      "stride": 2,
+      "pad": 0,
+      "work": 31257600.0
+    },
+    {
+      "case": "h16",
+      "split": "held-out",
+      "shape": [
+        2,
+        8,
+        9,
+        17
+      ],
+      "weight_shape": [
+        24,
+        8,
+        1,
+        1
+      ],
+      "stride": 1,
+      "pad": 0,
+      "work": 58752.0
+    },
+    {
+      "case": "h17",
+      "split": "held-out",
+      "shape": [
+        8,
+        24,
+        7,
+        11
+      ],
+      "weight_shape": [
+        48,
+        24,
+        3,
+        3
+      ],
+      "stride": 2,
+      "pad": 1,
+      "work": 1596672.0
+    },
+    {
+      "case": "h18",
+      "split": "held-out",
+      "shape": [
+        2,
+        48,
+        15,
+        21
+      ],
+      "weight_shape": [
+        24,
+        48,
+        5,
+        5
+      ],
+      "stride": 1,
+      "pad": 0,
+      "work": 18144000.0
+    },
+    {
+      "case": "h19",
+      "split": "held-out",
+      "shape": [
+        8,
+        8,
+        13,
+        19
+      ],
+      "weight_shape": [
+        48,
+        8,
+        3,
+        3
+      ],
+      "stride": 1,
+      "pad": 1,
+      "work": 6829056.0
+    }
+  ],
+  "dtype": "float32",
+  "tf32": false,
+  "event_scope": "Stream span, includes host submission gaps",
+  "wall_scope": "Prepared arrays, complete dInput call and end-event synchronization; no H2D",
+  "memory_scope": "Separate non-timed call; CuPy pool live requests / Torch allocator peak"
+}

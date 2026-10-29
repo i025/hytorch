@@ -1,0 +1,4 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-training-spatial-D,transfer,unlabeled:transfer,Host-to-Device,32,0.08671999999999999,2.7099999999999995,3.3600000000000003,196864
+trace-training-spatial-D,outside_phase,unlabeled:outside_phase,Device-to-Host,32,0.08208099999999997,2.565031249999999,3.904,49480
+trace-training-spatial-D,outside_phase,unlabeled:outside_phase,Host-to-Device,18,0.043647,2.4248333333333334,4.704,61720

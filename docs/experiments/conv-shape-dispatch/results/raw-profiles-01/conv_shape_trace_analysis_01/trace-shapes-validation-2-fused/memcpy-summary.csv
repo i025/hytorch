@@ -1,0 +1,3 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-shapes-validation-2-fused,outside_phase,unlabeled:outside_phase,Device-to-Host,72,0.791493,10.992958333333334,36.608000000000004,9713376
+trace-shapes-validation-2-fused,outside_phase,unlabeled:outside_phase,Host-to-Device,96,0.6390439999999998,6.656708333333332,26.272,6494656

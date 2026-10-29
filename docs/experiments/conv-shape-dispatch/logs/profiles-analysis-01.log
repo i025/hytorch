@@ -1,0 +1,9 @@
+{
+  "status": "PASSED",
+  "traces": 23,
+  "unmatched_kernel_api_count": 0,
+  "numerical_max_abs": 4.1443854570388794e-08,
+  "independent_timing": "Nsight only, never mixed with throughput",
+  "auto_donkey": "64 original / 0 gather",
+  "auto_spatial": "16 original / 16 gather"
+}

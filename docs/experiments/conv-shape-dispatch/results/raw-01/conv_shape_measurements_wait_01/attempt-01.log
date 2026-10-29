@@ -1,0 +1,9 @@
+START gpu-tests
+Traceback (most recent call last):
+  File "docs/experiments/conv-shape-dispatch/scripts/run_validation.py", line 90, in <module>
+    if __name__=='__main__':main()
+  File "docs/experiments/conv-shape-dispatch/scripts/run_validation.py", line 67, in main
+    (a.output/'commands.json').write_text(json.dumps(records,indent=2)+'\n');done.check_returncode()
+  File "/usr/lib/python3.8/subprocess.py", line 448, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python', '-m', 'pytest', 'tests/test_conv_shape_dispatch_gpu.py', 'tests/test_conv_backward_fusion_gpu.py', 'tests/test_conv_dinput_pruning.py', 'tests/test_fused_sgd_gpu.py', 'tests/test_cuda_device.py', '-q', '-ra', '--junitxml=/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_measurements_wait_01/attempt-01/results/gpu-tests.xml']' returned non-zero exit status 1.

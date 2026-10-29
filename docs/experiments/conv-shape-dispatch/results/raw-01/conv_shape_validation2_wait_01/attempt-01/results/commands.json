@@ -1,0 +1,200 @@
+[
+  {
+    "name": "original-r1",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "original",
+      "--repeat",
+      "1",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/original-r1"
+    ],
+    "started_at": "2026-10-29T18:42:05.398353+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:08.838459+00:00"
+  },
+  {
+    "name": "fused-r1",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "fused",
+      "--repeat",
+      "1",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/fused-r1"
+    ],
+    "started_at": "2026-10-29T18:42:08.839101+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:12.750191+00:00"
+  },
+  {
+    "name": "torch-r1",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "torch",
+      "--repeat",
+      "1",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/torch-r1"
+    ],
+    "started_at": "2026-10-29T18:42:12.750934+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:16.194810+00:00"
+  },
+  {
+    "name": "fused-r2",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "fused",
+      "--repeat",
+      "2",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/fused-r2"
+    ],
+    "started_at": "2026-10-29T18:42:16.195471+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:19.644306+00:00"
+  },
+  {
+    "name": "torch-r2",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "torch",
+      "--repeat",
+      "2",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/torch-r2"
+    ],
+    "started_at": "2026-10-29T18:42:19.645068+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:23.073765+00:00"
+  },
+  {
+    "name": "original-r2",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "original",
+      "--repeat",
+      "2",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/original-r2"
+    ],
+    "started_at": "2026-10-29T18:42:23.074564+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:26.807364+00:00"
+  },
+  {
+    "name": "torch-r3",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "torch",
+      "--repeat",
+      "3",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/torch-r3"
+    ],
+    "started_at": "2026-10-29T18:42:26.808169+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:30.256072+00:00"
+  },
+  {
+    "name": "original-r3",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "original",
+      "--repeat",
+      "3",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/original-r3"
+    ],
+    "started_at": "2026-10-29T18:42:30.256834+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:34.057921+00:00"
+  },
+  {
+    "name": "fused-r3",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "validation-2",
+      "--method",
+      "fused",
+      "--repeat",
+      "3",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results/fused-r3"
+    ],
+    "started_at": "2026-10-29T18:42:34.058737+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:42:37.591165+00:00"
+  }
+]

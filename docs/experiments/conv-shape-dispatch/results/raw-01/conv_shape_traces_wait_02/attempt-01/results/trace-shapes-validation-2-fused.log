@@ -1,0 +1,29 @@
+警告: 未找到scipy，无法加载SVHN数据集
+v00 fused fused complete
+v01 fused fused complete
+v02 fused fused complete
+v03 fused fused complete
+v04 fused fused complete
+v05 fused fused complete
+v06 fused fused complete
+v07 fused fused complete
+v08 fused fused complete
+v09 fused fused complete
+v10 fused fused complete
+v11 fused fused complete
+v12 fused fused complete
+v13 fused fused complete
+v14 fused fused complete
+v15 fused fused complete
+v16 fused fused complete
+v17 fused fused complete
+v18 fused fused complete
+v19 fused fused complete
+v20 fused fused complete
+v21 fused fused complete
+v22 fused fused complete
+v23 fused fused complete
+Generating '/tmp/nsys-report-9616.qdstrm'
+[1/1] [0%                          ] trace-shapes-validation-2-fused.nsys-rep[1/1] [0%                          ] trace-shapes-validation-2-fused.nsys-rep[1/1] [=====30%                    ] trace-shapes-validation-2-fused.nsys-rep[1/1] [=====31%                    ] trace-shapes-validation-2-fused.nsys-rep[1/1] [==============63%           ] trace-shapes-validation-2-fused.nsys-rep[1/1] [=======================95%  ] trace-shapes-validation-2-fused.nsys-rep[1/1] [========================100%] trace-shapes-validation-2-fused.nsys-rep[1/1] [========================100%] trace-shapes-validation-2-fused.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_traces_wait_02/attempt-01/results/trace-shapes-validation-2-fused.nsys-rep

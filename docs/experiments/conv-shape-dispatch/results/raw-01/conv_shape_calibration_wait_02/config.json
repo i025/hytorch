@@ -1,0 +1,14 @@
+{
+  "command": [
+    "env",
+    "HYTORCH_CUDA_LIBRARY=/home/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+    "python",
+    "docs/experiments/conv-shape-dispatch/scripts/run_shapes.py",
+    "--split",
+    "calibration",
+    "--output",
+    "{output}"
+  ],
+  "seconds": 3600.0,
+  "started_at": "2026-10-29T18:23:17.041384+00:00"
+}

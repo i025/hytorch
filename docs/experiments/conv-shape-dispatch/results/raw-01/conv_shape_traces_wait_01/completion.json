@@ -1,0 +1,5 @@
+{
+  "status": "CANCELLED_NO_GPU_WORK",
+  "reason": "Repeated no-process, zero-utilization GPU6 had 3 MiB driver resident memory; strict zero-memory watcher stopped, restarted with explicit 4 MiB idle-memory allowance",
+  "at": "2026-10-29T19:03:33.957295+00:00"
+}

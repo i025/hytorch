@@ -1,0 +1,328 @@
+........................................FFFF............................ [ 52%]
+................................................................         [100%]
+=================================== FAILURES ===================================
+_____________________ test_spatial_multistep[False-False] ______________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+pruned = False, fused_sgd = False
+request = <FixtureRequest for <Function test_spatial_multistep[False-False]>>
+
+    @pytest.mark.parametrize('pruned',[False,True])
+    @pytest.mark.parametrize('fused_sgd',[False,True])
+    def test_spatial_multistep(device,pruned,fused_sgd,request):
+        cp,torch=device
+        models=[SpatialNet(),SpatialNet()]
+        states=[initialize(m,(3,16,16),42) for m in models]
+        for m in models:m.to_gpu()
+        reference=torch_model('spatial',states[0]).cuda()
+        optimizers=[SGD(.001,fused=fused_sgd).setup(m) for m in models]
+        other=torch.optim.SGD(reference.parameters(),lr=.001)
+        rng=np.random.default_rng(42)
+        for step in range(3):
+            a=rng.normal(size=(4,3,16,16)).astype(np.float32)*.1
+            t=rng.normal(size=(4,1)).astype(np.float32)*.1
+            losses=[]
+            for mode,model,optimizer in zip(('original','fused'),models,optimizers):
+                dispatch_stats(reset=True)
+                with backend(matmul='shared',conv='im2col',conv_backward=mode):
+                    x=Variable(cp.asarray(a),requires_grad=not pruned)
+                    model.cleargrads();loss=F.mean_square_error(model(x),cp.asarray(t))
+>                   loss.backward();optimizer.update()
+
+tests/test_conv_shape_dispatch_gpu.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hytorch/core.py:155: in backward
+    gxs = f.backward(*gys)
+hytorch/functions_conv.py:77: in backward
+    gx = Variable(conv2d_dinput(gy.data, W.data, x.shape, self.stride, self.pad))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+gy = array([[[[ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00, ...,
+           0.00000000e+00,  0.00000000e+00,  0.00000...6.41816775e-05,  0.00000000e+00,  0.00000000e+00, ...,
+           6.41816775e-05,  6.41816775e-05,  6.41816775e-05]]]])
+w = array([[[[ 0.00097778]],
+
+        [[-0.14571689]],
+
+        [[ 0.06648104]],
+
+        ...,
+
+        [[ 0.21566108]],
+
+...5333013]],
+
+        ...,
+
+        [[-0.15388976]],
+
+        [[ 0.02748246]],
+
+        [[ 0.08821557]]]], dtype=float32)
+input_shape = (4, 32, 8, 8), stride = (1, 1), pad = (0, 0)
+
+    def conv2d_dinput(gy, w, input_shape, stride=1, pad=0):
+        """Gather dInput on the current stream; contiguous CUDA FP32 NCHW/OIHW only.
+    
+        Stride 1/2, padding 0/1, groups=1, dilation=1. Unsupported inputs raise;
+        no implicit copies, workspace, synchronization or alternative algorithm.
+        """
+        import cupy as cp
+        from hytorch.utils import pair
+        for value in (gy, w):
+            if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+>               raise TypeError("Fused dInput requires CuPy float32 arrays")
+E               TypeError: Fused dInput requires CuPy float32 arrays
+
+hytorch/backends/cuda/runtime.py:259: TypeError
+______________________ test_spatial_multistep[False-True] ______________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+pruned = True, fused_sgd = False
+request = <FixtureRequest for <Function test_spatial_multistep[False-True]>>
+
+    @pytest.mark.parametrize('pruned',[False,True])
+    @pytest.mark.parametrize('fused_sgd',[False,True])
+    def test_spatial_multistep(device,pruned,fused_sgd,request):
+        cp,torch=device
+        models=[SpatialNet(),SpatialNet()]
+        states=[initialize(m,(3,16,16),42) for m in models]
+        for m in models:m.to_gpu()
+        reference=torch_model('spatial',states[0]).cuda()
+        optimizers=[SGD(.001,fused=fused_sgd).setup(m) for m in models]
+        other=torch.optim.SGD(reference.parameters(),lr=.001)
+        rng=np.random.default_rng(42)
+        for step in range(3):
+            a=rng.normal(size=(4,3,16,16)).astype(np.float32)*.1
+            t=rng.normal(size=(4,1)).astype(np.float32)*.1
+            losses=[]
+            for mode,model,optimizer in zip(('original','fused'),models,optimizers):
+                dispatch_stats(reset=True)
+                with backend(matmul='shared',conv='im2col',conv_backward=mode):
+                    x=Variable(cp.asarray(a),requires_grad=not pruned)
+                    model.cleargrads();loss=F.mean_square_error(model(x),cp.asarray(t))
+>                   loss.backward();optimizer.update()
+
+tests/test_conv_shape_dispatch_gpu.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hytorch/core.py:155: in backward
+    gxs = f.backward(*gys)
+hytorch/functions_conv.py:77: in backward
+    gx = Variable(conv2d_dinput(gy.data, W.data, x.shape, self.stride, self.pad))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+gy = array([[[[ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00, ...,
+           0.00000000e+00,  0.00000000e+00,  0.00000...6.41816775e-05,  0.00000000e+00,  0.00000000e+00, ...,
+           6.41816775e-05,  6.41816775e-05,  6.41816775e-05]]]])
+w = array([[[[ 0.00097778]],
+
+        [[-0.14571689]],
+
+        [[ 0.06648104]],
+
+        ...,
+
+        [[ 0.21566108]],
+
+...5333013]],
+
+        ...,
+
+        [[-0.15388976]],
+
+        [[ 0.02748246]],
+
+        [[ 0.08821557]]]], dtype=float32)
+input_shape = (4, 32, 8, 8), stride = (1, 1), pad = (0, 0)
+
+    def conv2d_dinput(gy, w, input_shape, stride=1, pad=0):
+        """Gather dInput on the current stream; contiguous CUDA FP32 NCHW/OIHW only.
+    
+        Stride 1/2, padding 0/1, groups=1, dilation=1. Unsupported inputs raise;
+        no implicit copies, workspace, synchronization or alternative algorithm.
+        """
+        import cupy as cp
+        from hytorch.utils import pair
+        for value in (gy, w):
+            if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+>               raise TypeError("Fused dInput requires CuPy float32 arrays")
+E               TypeError: Fused dInput requires CuPy float32 arrays
+
+hytorch/backends/cuda/runtime.py:259: TypeError
+______________________ test_spatial_multistep[True-False] ______________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+pruned = False, fused_sgd = True
+request = <FixtureRequest for <Function test_spatial_multistep[True-False]>>
+
+    @pytest.mark.parametrize('pruned',[False,True])
+    @pytest.mark.parametrize('fused_sgd',[False,True])
+    def test_spatial_multistep(device,pruned,fused_sgd,request):
+        cp,torch=device
+        models=[SpatialNet(),SpatialNet()]
+        states=[initialize(m,(3,16,16),42) for m in models]
+        for m in models:m.to_gpu()
+        reference=torch_model('spatial',states[0]).cuda()
+        optimizers=[SGD(.001,fused=fused_sgd).setup(m) for m in models]
+        other=torch.optim.SGD(reference.parameters(),lr=.001)
+        rng=np.random.default_rng(42)
+        for step in range(3):
+            a=rng.normal(size=(4,3,16,16)).astype(np.float32)*.1
+            t=rng.normal(size=(4,1)).astype(np.float32)*.1
+            losses=[]
+            for mode,model,optimizer in zip(('original','fused'),models,optimizers):
+                dispatch_stats(reset=True)
+                with backend(matmul='shared',conv='im2col',conv_backward=mode):
+                    x=Variable(cp.asarray(a),requires_grad=not pruned)
+                    model.cleargrads();loss=F.mean_square_error(model(x),cp.asarray(t))
+>                   loss.backward();optimizer.update()
+
+tests/test_conv_shape_dispatch_gpu.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hytorch/optimizers.py:118: in update
+    multi_tensor_sgd([p.data for p in params],
+hytorch/backends/cuda/runtime.py:157: in multi_tensor_sgd
+    metadata = _sgd_metadata(parameters, gradients)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+parameters = [array([0.], dtype=float32), array([[ 0.29041725],
+       [ 0.06253484],
+       [ 0.11384289],
+       [ 0.1271511 ],
+ ...3]],
+
+        ...,
+
+        [[-0.15388976]],
+
+        [[ 0.02748246]],
+
+        [[ 0.08821557]]]], dtype=float32), ...]
+gradients = [array([-0.05543893]), array([[-6.75569793e-05],
+       [-1.74351118e-03],
+       [-5.60164089e-04],
+       [-6.040144...e-04]],
+
+        ...,
+
+        [[-2.49192538e-05]],
+
+        [[-1.41324180e-05]],
+
+        [[-2.18233726e-05]]]]), ...]
+
+    def _sgd_metadata(parameters, gradients):
+        """Refresh host descriptors; never copy or make parameter data contiguous."""
+        import cupy as cp
+        if len(parameters) != len(gradients):
+            raise ValueError("Fused SGD needs one gradient entry per parameter")
+        active = [(p, g) for p, g in zip(parameters, gradients) if g is not None]
+        count = len(active)
+        if count > _SGD_MAX_TENSORS:
+            raise ValueError(f"Fused SGD supports at most {_SGD_MAX_TENSORS} active tensors")
+        parameter_ptrs = (ct.c_uint64 * count)()
+        gradient_ptrs = (ct.c_uint64 * count)()
+        sizes = (ct.c_int64 * count)()
+        if not count:
+            return parameter_ptrs, gradient_ptrs, sizes, count
+        device = cp.cuda.runtime.getDevice()
+        ranges = []
+        for index, (parameter, gradient) in enumerate(active):
+            for value in (parameter, gradient):
+                if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+>                   raise TypeError("Fused SGD requires CuPy float32 parameters and gradients")
+E                   TypeError: Fused SGD requires CuPy float32 parameters and gradients
+
+hytorch/backends/cuda/runtime.py:111: TypeError
+______________________ test_spatial_multistep[True-True] _______________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+pruned = True, fused_sgd = True
+request = <FixtureRequest for <Function test_spatial_multistep[True-True]>>
+
+    @pytest.mark.parametrize('pruned',[False,True])
+    @pytest.mark.parametrize('fused_sgd',[False,True])
+    def test_spatial_multistep(device,pruned,fused_sgd,request):
+        cp,torch=device
+        models=[SpatialNet(),SpatialNet()]
+        states=[initialize(m,(3,16,16),42) for m in models]
+        for m in models:m.to_gpu()
+        reference=torch_model('spatial',states[0]).cuda()
+        optimizers=[SGD(.001,fused=fused_sgd).setup(m) for m in models]
+        other=torch.optim.SGD(reference.parameters(),lr=.001)
+        rng=np.random.default_rng(42)
+        for step in range(3):
+            a=rng.normal(size=(4,3,16,16)).astype(np.float32)*.1
+            t=rng.normal(size=(4,1)).astype(np.float32)*.1
+            losses=[]
+            for mode,model,optimizer in zip(('original','fused'),models,optimizers):
+                dispatch_stats(reset=True)
+                with backend(matmul='shared',conv='im2col',conv_backward=mode):
+                    x=Variable(cp.asarray(a),requires_grad=not pruned)
+                    model.cleargrads();loss=F.mean_square_error(model(x),cp.asarray(t))
+>                   loss.backward();optimizer.update()
+
+tests/test_conv_shape_dispatch_gpu.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hytorch/optimizers.py:118: in update
+    multi_tensor_sgd([p.data for p in params],
+hytorch/backends/cuda/runtime.py:157: in multi_tensor_sgd
+    metadata = _sgd_metadata(parameters, gradients)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+parameters = [array([0.], dtype=float32), array([[ 0.29041725],
+       [ 0.06253484],
+       [ 0.11384289],
+       [ 0.1271511 ],
+ ...3]],
+
+        ...,
+
+        [[-0.15388976]],
+
+        [[ 0.02748246]],
+
+        [[ 0.08821557]]]], dtype=float32), ...]
+gradients = [array([-0.05543893]), array([[-6.75569793e-05],
+       [-1.74351118e-03],
+       [-5.60164089e-04],
+       [-6.040144...e-04]],
+
+        ...,
+
+        [[-2.49192538e-05]],
+
+        [[-1.41324180e-05]],
+
+        [[-2.18233726e-05]]]]), ...]
+
+    def _sgd_metadata(parameters, gradients):
+        """Refresh host descriptors; never copy or make parameter data contiguous."""
+        import cupy as cp
+        if len(parameters) != len(gradients):
+            raise ValueError("Fused SGD needs one gradient entry per parameter")
+        active = [(p, g) for p, g in zip(parameters, gradients) if g is not None]
+        count = len(active)
+        if count > _SGD_MAX_TENSORS:
+            raise ValueError(f"Fused SGD supports at most {_SGD_MAX_TENSORS} active tensors")
+        parameter_ptrs = (ct.c_uint64 * count)()
+        gradient_ptrs = (ct.c_uint64 * count)()
+        sizes = (ct.c_int64 * count)()
+        if not count:
+            return parameter_ptrs, gradient_ptrs, sizes, count
+        device = cp.cuda.runtime.getDevice()
+        ranges = []
+        for index, (parameter, gradient) in enumerate(active):
+            for value in (parameter, gradient):
+                if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+>                   raise TypeError("Fused SGD requires CuPy float32 parameters and gradients")
+E                   TypeError: Fused SGD requires CuPy float32 parameters and gradients
+
+hytorch/backends/cuda/runtime.py:111: TypeError
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_measurements_wait_01/attempt-01/results/gpu-tests.xml -
+=========================== short test summary info ============================
+FAILED tests/test_conv_shape_dispatch_gpu.py::test_spatial_multistep[False-False]
+FAILED tests/test_conv_shape_dispatch_gpu.py::test_spatial_multistep[False-True]
+FAILED tests/test_conv_shape_dispatch_gpu.py::test_spatial_multistep[True-False]
+FAILED tests/test_conv_shape_dispatch_gpu.py::test_spatial_multistep[True-True]
+4 failed, 132 passed in 9.93s

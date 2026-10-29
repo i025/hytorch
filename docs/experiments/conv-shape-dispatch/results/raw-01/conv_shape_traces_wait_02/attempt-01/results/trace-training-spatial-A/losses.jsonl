@@ -1,0 +1,16 @@
+{"epoch": 1, "step": 1, "samples": 4, "timestamp": 1793300680.7717233, "loss": 0.04755305498838425}
+{"epoch": 1, "step": 2, "samples": 4, "timestamp": 1793300680.7796528, "loss": 0.03229871392250061}
+{"epoch": 1, "step": 3, "samples": 4, "timestamp": 1793300680.7871864, "loss": 0.04751136898994446}
+{"epoch": 1, "step": 4, "samples": 4, "timestamp": 1793300680.7945251, "loss": 0.04837077856063843}
+{"epoch": 1, "step": 5, "samples": 4, "timestamp": 1793300680.8017647, "loss": 0.046558916568756104}
+{"epoch": 1, "step": 6, "samples": 4, "timestamp": 1793300680.809064, "loss": 0.04624331742525101}
+{"epoch": 1, "step": 7, "samples": 4, "timestamp": 1793300680.8164222, "loss": 0.05453262850642204}
+{"epoch": 1, "step": 8, "samples": 4, "timestamp": 1793300680.8237135, "loss": 0.04078354686498642}
+{"epoch": 1, "step": 9, "samples": 4, "timestamp": 1793300680.8311038, "loss": 0.04255405440926552}
+{"epoch": 1, "step": 10, "samples": 4, "timestamp": 1793300680.8384125, "loss": 0.04478901997208595}
+{"epoch": 1, "step": 11, "samples": 4, "timestamp": 1793300680.845662, "loss": 0.03904403746128082}
+{"epoch": 1, "step": 12, "samples": 4, "timestamp": 1793300680.8529344, "loss": 0.042360566556453705}
+{"epoch": 1, "step": 13, "samples": 4, "timestamp": 1793300680.860118, "loss": 0.05342081934213638}
+{"epoch": 1, "step": 14, "samples": 4, "timestamp": 1793300680.8673785, "loss": 0.04577096924185753}
+{"epoch": 1, "step": 15, "samples": 4, "timestamp": 1793300680.8750672, "loss": 0.03499230742454529}
+{"epoch": 1, "step": 16, "samples": 4, "timestamp": 1793300680.8823564, "loss": 0.04306359961628914}

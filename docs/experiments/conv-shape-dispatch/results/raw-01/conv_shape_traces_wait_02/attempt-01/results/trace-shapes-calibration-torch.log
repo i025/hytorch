@@ -1,0 +1,37 @@
+警告: 未找到scipy，无法加载SVHN数据集
+c00 torch torch complete
+c01 torch torch complete
+c02 torch torch complete
+c03 torch torch complete
+c04 torch torch complete
+c05 torch torch complete
+c06 torch torch complete
+c07 torch torch complete
+c08 torch torch complete
+c09 torch torch complete
+c10 torch torch complete
+c11 torch torch complete
+c12 torch torch complete
+c13 torch torch complete
+c14 torch torch complete
+c15 torch torch complete
+c16 torch torch complete
+c17 torch torch complete
+c18 torch torch complete
+c19 torch torch complete
+c20 torch torch complete
+c21 torch torch complete
+c22 torch torch complete
+c23 torch torch complete
+c24 torch torch complete
+c25 torch torch complete
+c26 torch torch complete
+c27 torch torch complete
+c28 torch torch complete
+c29 torch torch complete
+c30 torch torch complete
+c31 torch torch complete
+Generating '/tmp/nsys-report-e24e.qdstrm'
+[1/1] [0%                          ] trace-shapes-calibration-torch.nsys-rep[1/1] [0%                          ] trace-shapes-calibration-torch.nsys-rep[1/1] [==19%                       ] trace-shapes-calibration-torch.nsys-rep[1/1] [=======39%                  ] trace-shapes-calibration-torch.nsys-rep[1/1] [======================90%   ] trace-shapes-calibration-torch.nsys-rep[1/1] [======================91%   ] trace-shapes-calibration-torch.nsys-rep[1/1] [========================100%] trace-shapes-calibration-torch.nsys-rep[1/1] [========================100%] trace-shapes-calibration-torch.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_traces_wait_02/attempt-01/results/trace-shapes-calibration-torch.nsys-rep

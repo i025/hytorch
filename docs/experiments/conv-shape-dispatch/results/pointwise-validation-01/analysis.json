@@ -1,0 +1,9 @@
+{
+  "status": "VALIDATED",
+  "policy": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/results/pointwise-frozen-policy.json",
+  "threshold": 1161216.0,
+  "selected_fused": 14,
+  "cases": 24,
+  "no_rule_reselection": true,
+  "failed_cases": []
+}

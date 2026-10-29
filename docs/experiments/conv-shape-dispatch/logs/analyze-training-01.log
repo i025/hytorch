@@ -1,0 +1,216 @@
+{
+  "summary": {
+    "status": "PASSED",
+    "gpu_uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "training_processes": 60,
+    "steps": 15360,
+    "comparisons": 1248,
+    "max_abs": 4.190951585769653e-08
+  },
+  "progress": [
+    {
+      "model": "donkey",
+      "method": "A",
+      "samples_per_sec": 672.6931823203896,
+      "std": 8.56703195172583,
+      "complete_step_wall_ms": 5.94688655534507,
+      "versus_A": 1.0,
+      "versus_E": 0.4441665193609767
+    },
+    {
+      "model": "donkey",
+      "method": "D",
+      "samples_per_sec": 718.9643174591707,
+      "std": 1.2953382349870308,
+      "complete_step_wall_ms": 5.563570496633474,
+      "versus_A": 1.0687849027682625,
+      "versus_E": 0.47471847020813907
+    },
+    {
+      "model": "donkey",
+      "method": "F",
+      "samples_per_sec": 748.4295211371679,
+      "std": 9.86938958811195,
+      "complete_step_wall_ms": 5.34514872985407,
+      "versus_A": 1.1125867495126576,
+      "versus_E": 0.49417378401817996
+    },
+    {
+      "model": "donkey",
+      "method": "G",
+      "samples_per_sec": 677.1856096493063,
+      "std": 7.472359533309849,
+      "complete_step_wall_ms": 5.907279501722466,
+      "versus_A": 1.0066782709368638,
+      "versus_E": 0.4471327837183531
+    },
+    {
+      "model": "donkey",
+      "method": "E",
+      "samples_per_sec": 1514.5067288912157,
+      "std": 83.25378690120586,
+      "complete_step_wall_ms": 2.6465585606274544,
+      "versus_A": 2.2514078761242566,
+      "versus_E": 1.0
+    },
+    {
+      "model": "spatial",
+      "method": "A",
+      "samples_per_sec": 1064.2917486097904,
+      "std": 15.584030823746668,
+      "complete_step_wall_ms": 3.758909149231234,
+      "versus_A": 1.0,
+      "versus_E": 0.3990829153776377
+    },
+    {
+      "model": "spatial",
+      "method": "D",
+      "samples_per_sec": 1142.3533226776324,
+      "std": 10.026771923723576,
+      "complete_step_wall_ms": 3.501723970657622,
+      "versus_A": 1.073346029573008,
+      "versus_E": 0.4283540626910081
+    },
+    {
+      "model": "spatial",
+      "method": "F",
+      "samples_per_sec": 1164.74471105602,
+      "std": 33.0862256744125,
+      "complete_step_wall_ms": 3.43605345672889,
+      "versus_A": 1.094384798695888,
+      "versus_E": 0.43675027600852406
+    },
+    {
+      "model": "spatial",
+      "method": "G",
+      "samples_per_sec": 1136.3804420774538,
+      "std": 29.76749732168721,
+      "complete_step_wall_ms": 3.521539805054393,
+      "versus_A": 1.0677339588151724,
+      "versus_E": 0.42611438113166555
+    },
+    {
+      "model": "spatial",
+      "method": "E",
+      "samples_per_sec": 2666.8436748355657,
+      "std": 109.78671689840822,
+      "complete_step_wall_ms": 1.5016162236255088,
+      "versus_A": 2.5057449504039435,
+      "versus_E": 1.0
+    }
+  ],
+  "gains": [
+    {
+      "model": "donkey",
+      "comparison": "D/A",
+      "throughput_ratio": 1.0687849027682625,
+      "throughput_gain_pct": 6.878490276826255,
+      "wall_speedup": 1.068897492885826,
+      "wall_reduction_pct": 6.445659508454393
+    },
+    {
+      "model": "donkey",
+      "comparison": "F/D",
+      "throughput_ratio": 1.040982845688542,
+      "throughput_gain_pct": 4.098284568854194,
+      "wall_speedup": 1.0408635526939525,
+      "wall_reduction_pct": 3.9259279074754683
+    },
+    {
+      "model": "donkey",
+      "comparison": "F/A",
+      "throughput_ratio": 1.1125867495126576,
+      "throughput_gain_pct": 11.258674951265757,
+      "wall_speedup": 1.1125764419107995,
+      "wall_reduction_pct": 10.118535470466606
+    },
+    {
+      "model": "donkey",
+      "comparison": "G/D",
+      "throughput_ratio": 0.9418904293365895,
+      "throughput_gain_pct": -5.810957066341049,
+      "wall_speedup": 0.9418160246203398,
+      "wall_reduction_pct": -6.177849373832345
+    },
+    {
+      "model": "donkey",
+      "comparison": "G/F",
+      "throughput_ratio": 0.9048087903058485,
+      "throughput_gain_pct": -9.519120969415152,
+      "wall_speedup": 0.9048410064726938,
+      "wall_reduction_pct": -10.516653516650475
+    },
+    {
+      "model": "donkey",
+      "comparison": "G/A",
+      "throughput_ratio": 1.0066782709368638,
+      "throughput_gain_pct": 0.6678270936863795,
+      "wall_speedup": 1.0067047874763764,
+      "wall_reduction_pct": 0.6660132702044685
+    },
+    {
+      "model": "donkey",
+      "comparison": "G/E",
+      "throughput_ratio": 0.4471327837183531,
+      "throughput_gain_pct": -55.28672162816469,
+      "wall_speedup": 0.4480164786270501,
+      "wall_reduction_pct": -123.2060756034036
+    },
+    {
+      "model": "spatial",
+      "comparison": "D/A",
+      "throughput_ratio": 1.073346029573008,
+      "throughput_gain_pct": 7.334602957300795,
+      "wall_speedup": 1.0734453031502973,
+      "wall_reduction_pct": 6.842016350041636
+    },
+    {
+      "model": "spatial",
+      "comparison": "F/D",
+      "throughput_ratio": 1.0196011058346668,
+      "throughput_gain_pct": 1.9601105834666788,
+      "wall_speedup": 1.0191121921575836,
+      "wall_reduction_pct": 1.8753766567271457
+    },
+    {
+      "model": "spatial",
+      "comparison": "F/A",
+      "throughput_ratio": 1.094384798695888,
+      "throughput_gain_pct": 9.43847986958879,
+      "wall_speedup": 1.0939611960547615,
+      "wall_reduction_pct": 8.589079429290647
+    },
+    {
+      "model": "spatial",
+      "comparison": "G/D",
+      "throughput_ratio": 0.9947714244957258,
+      "throughput_gain_pct": -0.5228575504274247,
+      "wall_speedup": 0.9943729631088282,
+      "wall_reduction_pct": -0.5658879615531021
+    },
+    {
+      "model": "spatial",
+      "comparison": "G/F",
+      "throughput_ratio": 0.9756476516189977,
+      "throughput_gain_pct": -2.435234838100231,
+      "wall_speedup": 0.9757247246778792,
+      "wall_reduction_pct": -2.4879225367723468
+    },
+    {
+      "model": "spatial",
+      "comparison": "G/A",
+      "throughput_ratio": 1.0677339588151724,
+      "throughput_gain_pct": 6.773395881517241,
+      "wall_speedup": 1.0674049868288156,
+      "wall_reduction_pct": 6.314846535340912
+    },
+    {
+      "model": "spatial",
+      "comparison": "G/E",
+      "throughput_ratio": 0.42611438113166555,
+      "throughput_gain_pct": -57.38856188683344,
+      "wall_speedup": 0.4264089877587839,
+      "wall_reduction_pct": -134.51663278863433
+    }
+  ]
+}

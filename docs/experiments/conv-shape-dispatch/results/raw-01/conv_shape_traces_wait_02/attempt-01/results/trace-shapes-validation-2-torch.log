@@ -1,0 +1,29 @@
+警告: 未找到scipy，无法加载SVHN数据集
+v00 torch torch complete
+v01 torch torch complete
+v02 torch torch complete
+v03 torch torch complete
+v04 torch torch complete
+v05 torch torch complete
+v06 torch torch complete
+v07 torch torch complete
+v08 torch torch complete
+v09 torch torch complete
+v10 torch torch complete
+v11 torch torch complete
+v12 torch torch complete
+v13 torch torch complete
+v14 torch torch complete
+v15 torch torch complete
+v16 torch torch complete
+v17 torch torch complete
+v18 torch torch complete
+v19 torch torch complete
+v20 torch torch complete
+v21 torch torch complete
+v22 torch torch complete
+v23 torch torch complete
+Generating '/tmp/nsys-report-6169.qdstrm'
+[1/1] [0%                          ] trace-shapes-validation-2-torch.nsys-rep[1/1] [0%                          ] trace-shapes-validation-2-torch.nsys-rep[1/1] [==21%                       ] trace-shapes-validation-2-torch.nsys-rep[1/1] [=========43%                ] trace-shapes-validation-2-torch.nsys-rep[1/1] [======================91%   ] trace-shapes-validation-2-torch.nsys-rep[1/1] [======================92%   ] trace-shapes-validation-2-torch.nsys-rep[1/1] [========================100%] trace-shapes-validation-2-torch.nsys-rep[1/1] [========================100%] trace-shapes-validation-2-torch.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_traces_wait_02/attempt-01/results/trace-shapes-validation-2-torch.nsys-rep

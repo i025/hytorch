@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-training-spatial-G,data,16,0.47318600000000005,0.473186,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-training-spatial-G,transfer,16,2.2837819999999995,2.283782,224,0.6753889999999995,0.675389,0,0,0,0,0,0,0,0,0.0,0,32,0.08768100000000001,196864,0,0
+trace-training-spatial-G,forward,16,33.557592,33.557592,416,3.782368000000001,3.782368,416,3.782368000000001,0,0,0,0,416,1.8704430000000005,1.870443,400,0,0,0,0,0
+trace-training-spatial-G,backward,16,59.53741900000001,59.537419,1024,6.47347899999999,6.473479,688,6.131320999999991,0,0,0,0,688,5.178370000000003,5.17837,606,0,0,0,0,0
+trace-training-spatial-G,update,16,1.539011,1.539011,16,0.16072000000000003,0.16072,16,0.16072000000000003,0,0,0,0,16,0.09539399999999999,0.095394,16,0,0,0,0,0
+trace-training-spatial-G,outside_phase,0,0,0.0,2011,57.83207999999997,57.83208,700,15.455446000000016,38,0.22387300000000004,34,22.653569999999995,700,4.466987000000002,4.466987,639,50,0.126781,111200,0,0
+trace-training-spatial-G,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

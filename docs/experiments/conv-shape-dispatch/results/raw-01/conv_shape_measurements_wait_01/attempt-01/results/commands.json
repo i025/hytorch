@@ -1,0 +1,22 @@
+[
+  {
+    "name": "gpu-tests",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_conv_shape_dispatch_gpu.py",
+      "tests/test_conv_backward_fusion_gpu.py",
+      "tests/test_conv_dinput_pruning.py",
+      "tests/test_fused_sgd_gpu.py",
+      "tests/test_cuda_device.py",
+      "-q",
+      "-ra",
+      "--junitxml=/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_measurements_wait_01/attempt-01/results/gpu-tests.xml"
+    ],
+    "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+    "started_at": "2026-10-29T18:35:17.683409+00:00",
+    "returncode": 1,
+    "finished_at": "2026-10-29T18:35:28.782144+00:00"
+  }
+]

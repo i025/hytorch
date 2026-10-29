@@ -6,6 +6,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 from collections import Counter
 import numpy as np
+from .conv_dispatch import select_conv_dinput
 
 _config = ContextVar("hytorch_cuda_backend", default={
     "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16,
@@ -35,8 +36,8 @@ def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="
         raise ValueError("conv must be cupy/direct/im2col; pool must be cupy/native")
     if tile not in (16, 32):
         raise ValueError("tile must be 16 or 32")
-    if conv_backward not in ("original", "fused"):
-        raise ValueError("conv_backward must be original/fused")
+    if conv_backward not in ("original", "fused", "auto"):
+        raise ValueError("conv_backward must be original/fused/auto")
     token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile,
                             conv_backward=conv_backward))
     try:
@@ -244,6 +245,22 @@ def conv2d(x, w, b=None, stride=1, pad=0, variant="im2col", tile=16):
         _call("hy_conv_pack", _ptr(result), _ptr(b), _ptr(y), n, oc, oh*ow)
     _counts["conv_" + variant] += 1
     return y
+
+
+def conv_dinput_dispatch(x, w, gy, stride=1, pad=0, *, create_graph=False):
+    """Record an explicit auto decision without copies or synchronization."""
+    from hytorch import cuda
+    if create_graph:
+        mode, reason = "original", "higher_order"
+    elif cuda.get_array_module(x) is np:
+        mode, reason = "original", "cpu"
+    else:
+        dtype = str(x.dtype) if x.dtype == w.dtype == gy.dtype else "mixed"
+        mode, reason = select_conv_dinput(x.shape, w.shape, stride, pad, dtype,
+                                         all(v.flags.c_contiguous for v in (x, w, gy)))
+    _counts["conv_dinput_auto_" + mode] += 1
+    _counts["conv_dinput_auto_reason_" + reason] += 1
+    return mode, reason
 
 
 def conv2d_dinput(gy, w, input_shape, stride=1, pad=0):

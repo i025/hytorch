@@ -1,0 +1,73 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 256,
+    "measured_step_total_s": 1.4674524578731507,
+    "mean_step_s": 0.005732236163566995,
+    "samples_per_sec": 697.807955893939,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 0,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": null,
+    "gpu_utilization_pct_max": null,
+    "gpu_memory_used_mib_mean": null,
+    "gpu_memory_used_mib_max": null,
+    "gpu_memory_total_mib_mean": null,
+    "gpu_memory_total_mib_max": null,
+    "gpu_temperature_c_mean": null,
+    "gpu_temperature_c_max": null,
+    "gpu_power_w_mean": null,
+    "gpu_power_w_max": null,
+    "cpu_utilization_pct_mean": null,
+    "cpu_utilization_pct_max": null,
+    "process_rss_mib_mean": null,
+    "process_rss_mib_max": null,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266056582011515,
+      "train_wall_s": 0.3879275980871171,
+      "samples": 256,
+      "train_samples_per_sec": 659.9169568299443
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0004873677808063803,
+      "train_wall_s": 0.3937838932033628,
+      "samples": 256,
+      "train_samples_per_sec": 650.1027706275261
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126561184981256,
+      "train_wall_s": 0.38177233189344406,
+      "samples": 256,
+      "train_samples_per_sec": 670.5567130293031
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.00033147407265232687,
+      "train_wall_s": 0.36543482914566994,
+      "samples": 256,
+      "train_samples_per_sec": 700.5353063868827
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 2048,
+    "conv_im2col": 1280,
+    "conv_dinput_auto_original": 1024,
+    "conv_dinput_auto_reason_geometry": 1024,
+    "sgd_fused": 256
+  },
+  "bottleneck_hypotheses": [],
+  "final_state_sha256": null
+}

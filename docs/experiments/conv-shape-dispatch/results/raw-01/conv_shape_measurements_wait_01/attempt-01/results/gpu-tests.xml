@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="136" time="9.934" timestamp="2026-10-29T18:35:17.843772+00:00" hostname="root"><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h00]" time="2.709" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h01]" time="0.198" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h02]" time="0.020" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h03]" time="0.029" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h04]" time="0.015" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h05]" time="0.014" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h06]" time="0.018" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h07]" time="0.048" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h08]" time="0.036" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h09]" time="0.031" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h10]" time="0.010" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h11]" time="0.015" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h12]" time="0.012" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h13]" time="0.033" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h14]" time="0.044" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h15]" time="0.075" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h16]" time="0.012" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h17]" time="0.014" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h18]" time="0.018" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[False-h19]" time="0.025" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h00]" time="0.010" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h01]" time="0.010" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h02]" time="0.014" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h03]" time="0.029" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h04]" time="0.011" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h05]" time="0.013" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h06]" time="0.014" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h07]" time="0.025" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h08]" time="0.025" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h09]" time="0.029" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h10]" time="0.009" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h11]" time="0.014" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h12]" time="0.011" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h13]" time="0.017" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h14]" time="0.040" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h15]" time="0.066" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h16]" time="0.011" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h17]" time="0.013" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h18]" time="0.017" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_held_out_full_gradients[True-h19]" time="0.023" /><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_spatial_multistep[False-False]" time="2.332"><failure message="TypeError: Fused dInput requires CuPy float32 arrays">device = (&lt;module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'&gt;)
+pruned = False, fused_sgd = False
+request = &lt;FixtureRequest for &lt;Function test_spatial_multistep[False-False]&gt;&gt;
+
+    @pytest.mark.parametrize('pruned',[False,True])
+    @pytest.mark.parametrize('fused_sgd',[False,True])
+    def test_spatial_multistep(device,pruned,fused_sgd,request):
+        cp,torch=device
+        models=[SpatialNet(),SpatialNet()]
+        states=[initialize(m,(3,16,16),42) for m in models]
+        for m in models:m.to_gpu()
+        reference=torch_model('spatial',states[0]).cuda()
+        optimizers=[SGD(.001,fused=fused_sgd).setup(m) for m in models]
+        other=torch.optim.SGD(reference.parameters(),lr=.001)
+        rng=np.random.default_rng(42)
+        for step in range(3):
+            a=rng.normal(size=(4,3,16,16)).astype(np.float32)*.1
+            t=rng.normal(size=(4,1)).astype(np.float32)*.1
+            losses=[]
+            for mode,model,optimizer in zip(('original','fused'),models,optimizers):
+                dispatch_stats(reset=True)
+                with backend(matmul='shared',conv='im2col',conv_backward=mode):
+                    x=Variable(cp.asarray(a),requires_grad=not pruned)
+                    model.cleargrads();loss=F.mean_square_error(model(x),cp.asarray(t))
+&gt;                   loss.backward();optimizer.update()
+
+tests/test_conv_shape_dispatch_gpu.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hytorch/core.py:155: in backward
+    gxs = f.backward(*gys)
+hytorch/functions_conv.py:77: in backward
+    gx = Variable(conv2d_dinput(gy.data, W.data, x.shape, self.stride, self.pad))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+gy = array([[[[ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00, ...,
+           0.00000000e+00,  0.00000000e+00,  0.00000...6.41816775e-05,  0.00000000e+00,  0.00000000e+00, ...,
+           6.41816775e-05,  6.41816775e-05,  6.41816775e-05]]]])
+w = array([[[[ 0.00097778]],
+
+        [[-0.14571689]],
+
+        [[ 0.06648104]],
+
+        ...,
+
+        [[ 0.21566108]],
+
+...5333013]],
+
+        ...,
+
+        [[-0.15388976]],
+
+        [[ 0.02748246]],
+
+        [[ 0.08821557]]]], dtype=float32)
+input_shape = (4, 32, 8, 8), stride = (1, 1), pad = (0, 0)
+
+    def conv2d_dinput(gy, w, input_shape, stride=1, pad=0):
+        """Gather dInput on the current stream; contiguous CUDA FP32 NCHW/OIHW only.
+    
+        Stride 1/2, padding 0/1, groups=1, dilation=1. Unsupported inputs raise;
+        no implicit copies, workspace, synchronization or alternative algorithm.
+        """
+        import cupy as cp
+        from hytorch.utils import pair
+        for value in (gy, w):
+            if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+&gt;               raise TypeError("Fused dInput requires CuPy float32 arrays")
+E               TypeError: Fused dInput requires CuPy float32 arrays
+
+hytorch/backends/cuda/runtime.py:259: TypeError</failure></testcase><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_spatial_multistep[False-True]" time="0.013"><failure message="TypeError: Fused dInput requires CuPy float32 arrays">device = (&lt;module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'&gt;)
+pruned = True, fused_sgd = False
+request = &lt;FixtureRequest for &lt;Function test_spatial_multistep[False-True]&gt;&gt;
+
+    @pytest.mark.parametrize('pruned',[False,True])
+    @pytest.mark.parametrize('fused_sgd',[False,True])
+    def test_spatial_multistep(device,pruned,fused_sgd,request):
+        cp,torch=device
+        models=[SpatialNet(),SpatialNet()]
+        states=[initialize(m,(3,16,16),42) for m in models]
+        for m in models:m.to_gpu()
+        reference=torch_model('spatial',states[0]).cuda()
+        optimizers=[SGD(.001,fused=fused_sgd).setup(m) for m in models]
+        other=torch.optim.SGD(reference.parameters(),lr=.001)
+        rng=np.random.default_rng(42)
+        for step in range(3):
+            a=rng.normal(size=(4,3,16,16)).astype(np.float32)*.1
+            t=rng.normal(size=(4,1)).astype(np.float32)*.1
+            losses=[]
+            for mode,model,optimizer in zip(('original','fused'),models,optimizers):
+                dispatch_stats(reset=True)
+                with backend(matmul='shared',conv='im2col',conv_backward=mode):
+                    x=Variable(cp.asarray(a),requires_grad=not pruned)
+                    model.cleargrads();loss=F.mean_square_error(model(x),cp.asarray(t))
+&gt;                   loss.backward();optimizer.update()
+
+tests/test_conv_shape_dispatch_gpu.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hytorch/core.py:155: in backward
+    gxs = f.backward(*gys)
+hytorch/functions_conv.py:77: in backward
+    gx = Variable(conv2d_dinput(gy.data, W.data, x.shape, self.stride, self.pad))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+gy = array([[[[ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00, ...,
+           0.00000000e+00,  0.00000000e+00,  0.00000...6.41816775e-05,  0.00000000e+00,  0.00000000e+00, ...,
+           6.41816775e-05,  6.41816775e-05,  6.41816775e-05]]]])
+w = array([[[[ 0.00097778]],
+
+        [[-0.14571689]],
+
+        [[ 0.06648104]],
+
+        ...,
+
+        [[ 0.21566108]],
+
+...5333013]],
+
+        ...,
+
+        [[-0.15388976]],
+
+        [[ 0.02748246]],
+
+        [[ 0.08821557]]]], dtype=float32)
+input_shape = (4, 32, 8, 8), stride = (1, 1), pad = (0, 0)
+
+    def conv2d_dinput(gy, w, input_shape, stride=1, pad=0):
+        """Gather dInput on the current stream; contiguous CUDA FP32 NCHW/OIHW only.
+    
+        Stride 1/2, padding 0/1, groups=1, dilation=1. Unsupported inputs raise;
+        no implicit copies, workspace, synchronization or alternative algorithm.
+        """
+        import cupy as cp
+        from hytorch.utils import pair
+        for value in (gy, w):
+            if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+&gt;               raise TypeError("Fused dInput requires CuPy float32 arrays")
+E               TypeError: Fused dInput requires CuPy float32 arrays
+
+hytorch/backends/cuda/runtime.py:259: TypeError</failure></testcase><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_spatial_multistep[True-False]" time="0.010"><failure message="TypeError: Fused SGD requires CuPy float32 parameters and gradients">device = (&lt;module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'&gt;)
+pruned = False, fused_sgd = True
+request = &lt;FixtureRequest for &lt;Function test_spatial_multistep[True-False]&gt;&gt;
+
+    @pytest.mark.parametrize('pruned',[False,True])
+    @pytest.mark.parametrize('fused_sgd',[False,True])
+    def test_spatial_multistep(device,pruned,fused_sgd,request):
+        cp,torch=device
+        models=[SpatialNet(),SpatialNet()]
+        states=[initialize(m,(3,16,16),42) for m in models]
+        for m in models:m.to_gpu()
+        reference=torch_model('spatial',states[0]).cuda()
+        optimizers=[SGD(.001,fused=fused_sgd).setup(m) for m in models]
+        other=torch.optim.SGD(reference.parameters(),lr=.001)
+        rng=np.random.default_rng(42)
+        for step in range(3):
+            a=rng.normal(size=(4,3,16,16)).astype(np.float32)*.1
+            t=rng.normal(size=(4,1)).astype(np.float32)*.1
+            losses=[]
+            for mode,model,optimizer in zip(('original','fused'),models,optimizers):
+                dispatch_stats(reset=True)
+                with backend(matmul='shared',conv='im2col',conv_backward=mode):
+                    x=Variable(cp.asarray(a),requires_grad=not pruned)
+                    model.cleargrads();loss=F.mean_square_error(model(x),cp.asarray(t))
+&gt;                   loss.backward();optimizer.update()
+
+tests/test_conv_shape_dispatch_gpu.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hytorch/optimizers.py:118: in update
+    multi_tensor_sgd([p.data for p in params],
+hytorch/backends/cuda/runtime.py:157: in multi_tensor_sgd
+    metadata = _sgd_metadata(parameters, gradients)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+parameters = [array([0.], dtype=float32), array([[ 0.29041725],
+       [ 0.06253484],
+       [ 0.11384289],
+       [ 0.1271511 ],
+ ...3]],
+
+        ...,
+
+        [[-0.15388976]],
+
+        [[ 0.02748246]],
+
+        [[ 0.08821557]]]], dtype=float32), ...]
+gradients = [array([-0.05543893]), array([[-6.75569793e-05],
+       [-1.74351118e-03],
+       [-5.60164089e-04],
+       [-6.040144...e-04]],
+
+        ...,
+
+        [[-2.49192538e-05]],
+
+        [[-1.41324180e-05]],
+
+        [[-2.18233726e-05]]]]), ...]
+
+    def _sgd_metadata(parameters, gradients):
+        """Refresh host descriptors; never copy or make parameter data contiguous."""
+        import cupy as cp
+        if len(parameters) != len(gradients):
+            raise ValueError("Fused SGD needs one gradient entry per parameter")
+        active = [(p, g) for p, g in zip(parameters, gradients) if g is not None]
+        count = len(active)
+        if count &gt; _SGD_MAX_TENSORS:
+            raise ValueError(f"Fused SGD supports at most {_SGD_MAX_TENSORS} active tensors")
+        parameter_ptrs = (ct.c_uint64 * count)()
+        gradient_ptrs = (ct.c_uint64 * count)()
+        sizes = (ct.c_int64 * count)()
+        if not count:
+            return parameter_ptrs, gradient_ptrs, sizes, count
+        device = cp.cuda.runtime.getDevice()
+        ranges = []
+        for index, (parameter, gradient) in enumerate(active):
+            for value in (parameter, gradient):
+                if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+&gt;                   raise TypeError("Fused SGD requires CuPy float32 parameters and gradients")
+E                   TypeError: Fused SGD requires CuPy float32 parameters and gradients
+
+hytorch/backends/cuda/runtime.py:111: TypeError</failure></testcase><testcase classname="tests.test_conv_shape_dispatch_gpu" name="test_spatial_multistep[True-True]" time="0.009"><failure message="TypeError: Fused SGD requires CuPy float32 parameters and gradients">device = (&lt;module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'&gt;)
+pruned = True, fused_sgd = True
+request = &lt;FixtureRequest for &lt;Function test_spatial_multistep[True-True]&gt;&gt;
+
+    @pytest.mark.parametrize('pruned',[False,True])
+    @pytest.mark.parametrize('fused_sgd',[False,True])
+    def test_spatial_multistep(device,pruned,fused_sgd,request):
+        cp,torch=device
+        models=[SpatialNet(),SpatialNet()]
+        states=[initialize(m,(3,16,16),42) for m in models]
+        for m in models:m.to_gpu()
+        reference=torch_model('spatial',states[0]).cuda()
+        optimizers=[SGD(.001,fused=fused_sgd).setup(m) for m in models]
+        other=torch.optim.SGD(reference.parameters(),lr=.001)
+        rng=np.random.default_rng(42)
+        for step in range(3):
+            a=rng.normal(size=(4,3,16,16)).astype(np.float32)*.1
+            t=rng.normal(size=(4,1)).astype(np.float32)*.1
+            losses=[]
+            for mode,model,optimizer in zip(('original','fused'),models,optimizers):
+                dispatch_stats(reset=True)
+                with backend(matmul='shared',conv='im2col',conv_backward=mode):
+                    x=Variable(cp.asarray(a),requires_grad=not pruned)
+                    model.cleargrads();loss=F.mean_square_error(model(x),cp.asarray(t))
+&gt;                   loss.backward();optimizer.update()
+
+tests/test_conv_shape_dispatch_gpu.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hytorch/optimizers.py:118: in update
+    multi_tensor_sgd([p.data for p in params],
+hytorch/backends/cuda/runtime.py:157: in multi_tensor_sgd
+    metadata = _sgd_metadata(parameters, gradients)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+parameters = [array([0.], dtype=float32), array([[ 0.29041725],
+       [ 0.06253484],
+       [ 0.11384289],
+       [ 0.1271511 ],
+ ...3]],
+
+        ...,
+
+        [[-0.15388976]],
+
+        [[ 0.02748246]],
+
+        [[ 0.08821557]]]], dtype=float32), ...]
+gradients = [array([-0.05543893]), array([[-6.75569793e-05],
+       [-1.74351118e-03],
+       [-5.60164089e-04],
+       [-6.040144...e-04]],
+
+        ...,
+
+        [[-2.49192538e-05]],
+
+        [[-1.41324180e-05]],
+
+        [[-2.18233726e-05]]]]), ...]
+
+    def _sgd_metadata(parameters, gradients):
+        """Refresh host descriptors; never copy or make parameter data contiguous."""
+        import cupy as cp
+        if len(parameters) != len(gradients):
+            raise ValueError("Fused SGD needs one gradient entry per parameter")
+        active = [(p, g) for p, g in zip(parameters, gradients) if g is not None]
+        count = len(active)
+        if count &gt; _SGD_MAX_TENSORS:
+            raise ValueError(f"Fused SGD supports at most {_SGD_MAX_TENSORS} active tensors")
+        parameter_ptrs = (ct.c_uint64 * count)()
+        gradient_ptrs = (ct.c_uint64 * count)()
+        sizes = (ct.c_int64 * count)()
+        if not count:
+            return parameter_ptrs, gradient_ptrs, sizes, count
+        device = cp.cuda.runtime.getDevice()
+        ranges = []
+        for index, (parameter, gradient) in enumerate(active):
+            for value in (parameter, gradient):
+                if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+&gt;                   raise TypeError("Fused SGD requires CuPy float32 parameters and gradients")
+E                   TypeError: Fused SGD requires CuPy float32 parameters and gradients
+
+hytorch/backends/cuda/runtime.py:111: TypeError</failure></testcase><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[False-shape0-wshape0-1-0]" time="0.042" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[False-shape1-wshape1-1-1]" time="0.008" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[False-shape2-wshape2-2-1]" time="0.007" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[False-shape3-wshape3-stride3-pad3]" time="0.007" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[False-shape4-wshape4-2-0]" time="0.112" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[False-shape5-wshape5-2-0]" time="0.036" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[False-shape6-wshape6-1-0]" time="0.016" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[False-shape7-wshape7-1-0]" time="0.014" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[True-shape0-wshape0-1-0]" time="0.007" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[True-shape1-wshape1-1-1]" time="0.007" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[True-shape2-wshape2-2-1]" time="0.007" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[True-shape3-wshape3-stride3-pad3]" time="0.007" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[True-shape4-wshape4-2-0]" time="0.112" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[True-shape5-wshape5-2-0]" time="0.036" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[True-shape6-wshape6-1-0]" time="0.015" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_independent_dinput[True-shape7-wshape7-1-0]" time="0.014" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_conv_parameters_and_higher_order[False]" time="0.028" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_conv_parameters_and_higher_order[True]" time="0.008" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_donkeynet_three_steps[False]" time="0.512" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_donkeynet_three_steps[True]" time="0.378" /><testcase classname="tests.test_conv_backward_fusion_gpu" name="test_unsupported_layout_and_dtype" time="0.002" /><testcase classname="tests.test_conv_dinput_pruning" name="test_none_gradient_does_not_schedule_its_creator" time="0.004" /><testcase classname="tests.test_conv_dinput_pruning" name="test_leaf_and_general_higher_order" time="0.006" /><testcase classname="tests.test_conv_dinput_pruning" name="test_conv_input_weight_bias[False-default]" time="0.005" /><testcase classname="tests.test_conv_dinput_pruning" name="test_conv_input_weight_bias[False-requested]" time="0.004" /><testcase classname="tests.test_conv_dinput_pruning" name="test_conv_input_weight_bias[False-pruned]" time="0.003" /><testcase classname="tests.test_conv_dinput_pruning" name="test_conv_input_weight_bias[True-default]" time="0.005" /><testcase classname="tests.test_conv_dinput_pruning" name="test_conv_input_weight_bias[True-requested]" time="0.005" /><testcase classname="tests.test_conv_dinput_pruning" name="test_conv_input_weight_bias[True-pruned]" time="0.004" /><testcase classname="tests.test_conv_dinput_pruning" name="test_two_layer_propagation[False]" time="0.008" /><testcase classname="tests.test_conv_dinput_pruning" name="test_two_layer_propagation[True]" time="0.005" /><testcase classname="tests.test_conv_dinput_pruning" name="test_conv_weight_higher_order[False]" time="0.007" /><testcase classname="tests.test_conv_dinput_pruning" name="test_conv_weight_higher_order[True]" time="0.004" /><testcase classname="tests.test_conv_dinput_pruning" name="test_donkeynet_three_steps[False]" time="0.362" /><testcase classname="tests.test_conv_dinput_pruning" name="test_donkeynet_three_steps[True]" time="0.349" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[False-scalar]" time="0.004" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[False-one]" time="0.003" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[False-tiny]" time="0.002" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[False-block_tail]" time="0.003" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[False-large]" time="0.204" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[False-mixed_sizes]" time="0.011" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[True-scalar]" time="0.002" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[True-one]" time="0.002" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[True-tiny]" time="0.002" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[True-block_tail]" time="0.003" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[True-large]" time="0.190" /><testcase classname="tests.test_fused_sgd_gpu" name="test_kernel_matches_baseline_and_torch_inplace[True-mixed_sizes]" time="0.011" /><testcase classname="tests.test_fused_sgd_gpu" name="test_repeated_updates_use_fresh_gradient_addresses" time="0.031" /><testcase classname="tests.test_fused_sgd_gpu" name="test_current_nondefault_stream_producer_update_consumer" time="0.005" /><testcase classname="tests.test_fused_sgd_gpu" name="test_hooks_missing_gradient_freeze_and_all_frozen" time="0.004" /><testcase classname="tests.test_fused_sgd_gpu" name="test_direct_missing_gradients_empty_and_supported_boundary" time="0.007" /><testcase classname="tests.test_fused_sgd_gpu" name="test_unsupported_arrays_rejected_without_parameter_updates" time="0.002" /><testcase classname="tests.test_fused_sgd_gpu" name="test_donkeynet_loss_gradients_and_updates" time="0.304" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-basic-shape0]" time="0.002" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-basic-shape1]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-basic-shape2]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-basic-shape3]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-blocked-shape0]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-blocked-shape1]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-blocked-shape2]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-blocked-shape3]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-shared-shape0]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-shared-shape1]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-shared-shape2]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[16-shared-shape3]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-basic-shape0]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-basic-shape1]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-basic-shape2]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-basic-shape3]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-blocked-shape0]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-blocked-shape1]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-blocked-shape2]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-blocked-shape3]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-shared-shape0]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-shared-shape1]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-shared-shape2]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_rectangular_and_current_stream[32-shared-shape3]" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_gemm_views_and_alias_rejection" time="0.002" /><testcase classname="tests.test_cuda_device" name="test_conv_forward_backward[stride0-pad0-False-direct]" time="0.004" /><testcase classname="tests.test_cuda_device" name="test_conv_forward_backward[stride0-pad0-False-im2col]" time="0.004" /><testcase classname="tests.test_cuda_device" name="test_conv_forward_backward[stride0-pad0-True-direct]" time="0.004" /><testcase classname="tests.test_cuda_device" name="test_conv_forward_backward[stride0-pad0-True-im2col]" time="0.004" /><testcase classname="tests.test_cuda_device" name="test_conv_forward_backward[stride1-pad1-False-direct]" time="0.003" /><testcase classname="tests.test_cuda_device" name="test_conv_forward_backward[stride1-pad1-False-im2col]" time="0.003" /><testcase classname="tests.test_cuda_device" name="test_conv_forward_backward[stride1-pad1-True-direct]" time="0.003" /><testcase classname="tests.test_cuda_device" name="test_conv_forward_backward[stride1-pad1-True-im2col]" time="0.004" /><testcase classname="tests.test_cuda_device" name="test_pool_ties_negative_padding_backward[0]" time="0.007" /><testcase classname="tests.test_cuda_device" name="test_pool_ties_negative_padding_backward[1]" time="0.002" /><testcase classname="tests.test_cuda_device" name="test_pool_nan_propagates_first_index" time="0.001" /><testcase classname="tests.test_cuda_device" name="test_framework_linear_forward_native_backward_original" time="0.002" /><testcase classname="tests.test_cuda_device" name="test_training_preserves_fp32_gradients[tiny-shape0]" time="0.006" /><testcase classname="tests.test_cuda_device" name="test_training_preserves_fp32_gradients[donkey-shape1]" time="0.030" /></testsuite></testsuites>

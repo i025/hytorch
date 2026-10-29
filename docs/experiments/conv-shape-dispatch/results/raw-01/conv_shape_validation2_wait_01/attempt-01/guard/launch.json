@@ -1,0 +1,24 @@
+{
+  "command": [
+    "env",
+    "HYTORCH_CUDA_LIBRARY=/home/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so",
+    "python",
+    "docs/experiments/conv-shape-dispatch/scripts/run_shapes.py",
+    "--split",
+    "validation-2",
+    "--output",
+    "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_validation2_wait_01/attempt-01/results"
+  ],
+  "physical_gpu": "6",
+  "logical_gpu": 0,
+  "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+  "started_at": "2026-10-29T18:42:05.363438+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4"
+  }
+}

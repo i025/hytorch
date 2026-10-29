@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-shapes-validation-2-original,data,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-shapes-validation-2-original,transfer,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-shapes-validation-2-original,forward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-shapes-validation-2-original,backward,72,16.055159000000007,16.055159,519,3.3464519999999975,3.346452,198,1.7403820000000008,72,0.8642880000000001,0,0,198,2.3885360000000007,2.388536,108,0,0,0,0,0
+trace-shapes-validation-2-original,update,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-shapes-validation-2-original,outside_phase,0,0,0.0,3860,185.77541999999949,185.77542,553,107.57043000000006,148,2.0866160000000007,46,24.97448,553,7.373491999999997,7.170772,268,168,5.321411,16208032,1,0.004224
+trace-shapes-validation-2-original,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

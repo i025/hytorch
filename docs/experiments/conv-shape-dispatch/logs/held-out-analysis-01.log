@@ -1,0 +1,11 @@
+{
+  "status": "NOT_VALIDATED",
+  "policy": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/results/calibration-01/frozen-policy.json",
+  "threshold": 1161216.0,
+  "selected_fused": 7,
+  "cases": 20,
+  "no_rule_reselection": true,
+  "failed_cases": [
+    "h10"
+  ]
+}

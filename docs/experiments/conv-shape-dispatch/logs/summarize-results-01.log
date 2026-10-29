@@ -1,0 +1,79 @@
+{
+  "calibration-01": {
+    "comparisons": 576,
+    "max_abs": 4.76837158203125e-07
+  },
+  "held-out-01": {
+    "comparisons": 360,
+    "max_abs": 3.650784492492676e-07
+  },
+  "validation-2-01": {
+    "comparisons": 432,
+    "max_abs": 4.76837158203125e-07
+  },
+  "pointwise-validation-01": {
+    "comparisons": 432,
+    "max_abs": 1.862645149230957e-07
+  },
+  "actual-auto-01": {
+    "comparisons": 576,
+    "max_abs": 1.862645149230957e-07
+  },
+  "shape_comparisons": 2376,
+  "auto_fused": {
+    "count": 14,
+    "minimum_ratio": 1.3124050174025994,
+    "maximum_ratio": 2.086167650017994,
+    "mean_wall_delta_us": -61.54770297663552
+  },
+  "auto_original": {
+    "count": 10,
+    "minimum_ratio": 0.8229332914387832,
+    "maximum_ratio": 0.8929207639740633,
+    "mean_wall_delta_us": 27.071564561790897
+  },
+  "donkey_dispatch_host": {
+    "calls": 64,
+    "mean_us": 23.915703125,
+    "timing": "NVTX instrumented host scope, not the uninstrumented dispatch overhead"
+  },
+  "donkey_trace": {
+    "D": {
+      "kernels_per_step": 74.0,
+      "gpu_kernel_us_per_step": 760.1975000000007,
+      "host_nvtx_ms_per_step": 6.622244687500001
+    },
+    "F": {
+      "kernels_per_step": 66.0,
+      "gpu_kernel_us_per_step": 1124.7781250000007,
+      "host_nvtx_ms_per_step": 6.0974316875
+    },
+    "G": {
+      "kernels_per_step": 74.0,
+      "gpu_kernel_us_per_step": 805.8616875000007,
+      "host_nvtx_ms_per_step": 6.608914250000001
+    }
+  },
+  "spatial_dispatch_host": {
+    "calls": 32,
+    "mean_us": 25.3875625,
+    "timing": "NVTX instrumented host scope, not the uninstrumented dispatch overhead"
+  },
+  "spatial_trace": {
+    "D": {
+      "kernels_per_step": 45.0,
+      "gpu_kernel_us_per_step": 326.4900625,
+      "host_nvtx_ms_per_step": 3.7343666875000006
+    },
+    "F": {
+      "kernels_per_step": 41.0,
+      "gpu_kernel_us_per_step": 334.05606249999937,
+      "host_nvtx_ms_per_step": 3.4108800625
+    },
+    "G": {
+      "kernels_per_step": 43.0,
+      "gpu_kernel_us_per_step": 323.64812500000016,
+      "host_nvtx_ms_per_step": 3.7210886875000004
+    }
+  }
+}

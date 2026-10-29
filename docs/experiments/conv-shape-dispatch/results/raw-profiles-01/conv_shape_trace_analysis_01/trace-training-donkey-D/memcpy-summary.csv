@@ -1,0 +1,4 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-training-donkey-D,transfer,unlabeled:transfer,Host-to-Device,32,4.111774,128.49293749999998,283.329,10137856
+trace-training-donkey-D,outside_phase,unlabeled:outside_phase,Host-to-Device,34,1.1790160000000005,34.676941176470606,257.89,2647608
+trace-training-donkey-D,outside_phase,unlabeled:outside_phase,Device-to-Host,48,0.7310750000000003,15.230729166666672,181.729,2014056

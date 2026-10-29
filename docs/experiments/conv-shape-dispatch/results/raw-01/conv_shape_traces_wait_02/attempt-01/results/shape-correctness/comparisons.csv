@@ -1,0 +1,5 @@
+case,max_abs,relative_l2,atol,rtol,finite,mismatches
+test_auto_uncovered_dtype_layout[float64]_0,0.0,0.0,0.0,0.0,True,0
+test_auto_uncovered_dtype_layout[float64]_1,0.0,0.0,0.0,0.0,True,0
+test_auto_uncovered_dtype_layout[noncontiguous]_0,0.0,0.0,0.0,0.0,True,0
+test_auto_uncovered_dtype_layout[noncontiguous]_1,0.0,0.0,0.0,0.0,True,0

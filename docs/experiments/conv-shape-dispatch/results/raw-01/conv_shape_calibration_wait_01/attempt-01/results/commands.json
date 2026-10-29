@@ -1,0 +1,66 @@
+[
+  {
+    "name": "original-r1",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "calibration",
+      "--method",
+      "original",
+      "--repeat",
+      "1",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_calibration_wait_01/attempt-01/results/original-r1"
+    ],
+    "started_at": "2026-10-29T18:21:29.164562+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:21:33.340403+00:00"
+  },
+  {
+    "name": "fused-r1",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "calibration",
+      "--method",
+      "fused",
+      "--repeat",
+      "1",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_calibration_wait_01/attempt-01/results/fused-r1"
+    ],
+    "started_at": "2026-10-29T18:21:33.341104+00:00",
+    "returncode": 0,
+    "finished_at": "2026-10-29T18:21:37.603665+00:00"
+  },
+  {
+    "name": "torch-r1",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-shape-dispatch/scripts/bench_shapes.py",
+      "--split",
+      "calibration",
+      "--method",
+      "torch",
+      "--repeat",
+      "1",
+      "--warmup",
+      "5",
+      "--iterations",
+      "30",
+      "--output",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_calibration_wait_01/attempt-01/results/torch-r1"
+    ],
+    "started_at": "2026-10-29T18:21:37.604379+00:00"
+  }
+]

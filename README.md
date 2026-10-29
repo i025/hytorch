@@ -113,6 +113,8 @@ python examples/finetune_imagenet.py --model alexnet --weights weights_imagenet/
 
 阶段 4D 的[显式可选 Conv2d dInput CUDA gather](docs/experiments/conv-backward-fusion/README.md)已完成 [GPU 补测](docs/experiments/conv-backward-fusion/supplement-01/README.md)：92 项 GPU 回归通过，同一 GPU6 窗口中 F/D 吞吐 +4.69%、F/A +13.14%，F 为 PyTorch 的55.56%。独立 GPU0 的完整 Nsight 验证了 Launch/Copy/Col2im 减少，但四层纯设备 dInput 全部变慢，Backward 核时 +39.87%；端到端正收益主要支持减少主机提交和间隙的解释。不同窗口不混算计时；原型默认关闭，没有进入 4E。全部原始数据及负结果见[补测数据索引](docs/experiments/conv-backward-fusion/supplement-01/data-index.md)。
 
+阶段 4E 的[通用 Shape-Aware 调度实验](docs/experiments/conv-shape-dispatch/README.md)已完成：100种卷积形状、最终188项GPU回归和两个CNN的匹配测量；仅小型1×1规则通过全新24形状验证，较宽规则失败记录完整保留。Auto默认关闭；本轮DonkeyNet G/D吞吐−5.81%，独立CNN−0.52%，没有证实端到端增量收益。相对当前代码复现的无Native基线G/A分别+0.67%/+6.77%，不可归为Auto独立贡献。详见[完整原始数据与23份Nsight索引](docs/experiments/conv-shape-dispatch/data-index.md)，等待人工审查后再决定后续工作。
+
 第一次先回传：
 
 1. `nvidia-smi`、`nvcc --version`、CuPy 配置信息。

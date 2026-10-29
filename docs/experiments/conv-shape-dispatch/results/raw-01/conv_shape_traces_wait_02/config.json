@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/conv-shape-dispatch/scripts/run_validation.py",
+    "--only",
+    "traces",
+    "--output",
+    "{output}",
+    "--gpu-uuid",
+    "{gpu}",
+    "--library",
+    "/home/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so"
+  ],
+  "seconds": 3600.0,
+  "idle_memory_mib": 4.0,
+  "started_at": "2026-10-29T19:03:32.737590+00:00"
+}

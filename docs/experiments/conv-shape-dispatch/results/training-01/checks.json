@@ -1,0 +1,482 @@
+[
+  {
+    "model": "donkey",
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "G",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "G",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "G",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "A",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "D",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "F",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "G",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "E",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "A",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "D",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "F",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "G",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "E",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "A",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "D",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "F",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "G",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "donkey",
+    "method": "E",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "G",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "G",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "A",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "D",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "F",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "G",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "E",
+    "mode": "throughput",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "A",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "D",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "F",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "G",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "E",
+    "mode": "phases",
+    "repeat": 1,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "A",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "D",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "F",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "G",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "E",
+    "mode": "phases",
+    "repeat": 2,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "A",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "D",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "F",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "G",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  },
+  {
+    "model": "spatial",
+    "method": "E",
+    "mode": "phases",
+    "repeat": 3,
+    "initial_equal": true,
+    "inputs_equal": true
+  }
+]

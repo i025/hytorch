@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-shapes-calibration-torch,data,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-shapes-calibration-torch,transfer,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-shapes-calibration-torch,forward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-shapes-calibration-torch,backward,96,14.575743999999998,14.575744,1878,7.063530000000007,7.06353,384,1.9960569999999995,96,3.5383139999999993,0,0,384,7.553455999999998,6.222467,99,0,0,0,0,0
+trace-shapes-calibration-torch,update,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-shapes-calibration-torch,outside_phase,0,0,0.0,6864,212.5891689999966,212.589169,981,113.56417200000014,228,4.665586000000002,51,33.486597,981,18.82798999999999,15.776429,267,224,4.778749999999997,39559144,1,0.004319
+trace-shapes-calibration-torch,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

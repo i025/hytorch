@@ -1,0 +1,34 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/conv-shape-dispatch/scripts/analyze_shapes.py",
+    "--raw",
+    "runs/conv_shape_pointwise_wait_01/attempt-01/results",
+    "--split",
+    "validation-final",
+    "--policy",
+    "docs/experiments/conv-shape-dispatch/results/pointwise-frozen-policy.json",
+    "--output",
+    "docs/experiments/conv-shape-dispatch/results/pointwise-validation-01"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-29T18:49:36.173477+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage2a-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cupy-cache",
+    "CUDA_CACHE_PATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cuda-cache",
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.997853989014402,
+  "finished_at": "2026-10-29T18:49:37.171375+00:00"
+}

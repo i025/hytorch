@@ -1,0 +1,13 @@
+{
+  "status": "FAILED",
+  "returncode": 1,
+  "gpu": {
+    "index": "6",
+    "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory": "0",
+    "utilization": "0"
+  },
+  "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_shape_measurements_wait_01/attempt-01/results",
+  "finished_at": "2026-10-29T18:35:29.042592+00:00"
+}
