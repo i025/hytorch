@@ -1,0 +1,10 @@
+{
+  "scope": "Historical stage4C D; shape estimates are not new GPU measurements",
+  "dinput_us": 258.74724999999995,
+  "dweight_us": 257.80974999999995,
+  "col2im_us": 174.12381249999999,
+  "copy_us": 18.8038125,
+  "gcol_bytes_per_step": 8481408,
+  "potential_launches_removed": 8,
+  "warning": "Copy is included in tensordot; do not add both categories"
+}

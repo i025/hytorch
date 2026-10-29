@@ -8,7 +8,8 @@ from collections import Counter
 import numpy as np
 
 _config = ContextVar("hytorch_cuda_backend", default={
-    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16})
+    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16,
+    "conv_backward": "original"})
 _counts = Counter()
 _library = None
 _dll_directories = []
@@ -27,14 +28,17 @@ def dispatch_stats(reset=False):
 
 
 @contextmanager
-def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16):
+def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="original"):
     if matmul not in ("cupy", "basic", "blocked", "shared"):
         raise ValueError("matmul must be cupy/basic/blocked/shared")
     if conv not in ("cupy", "direct", "im2col") or pool not in ("cupy", "native"):
         raise ValueError("conv must be cupy/direct/im2col; pool must be cupy/native")
     if tile not in (16, 32):
         raise ValueError("tile must be 16 or 32")
-    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile))
+    if conv_backward not in ("original", "fused"):
+        raise ValueError("conv_backward must be original/fused")
+    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile,
+                            conv_backward=conv_backward))
     try:
         yield
     finally:
@@ -240,6 +244,41 @@ def conv2d(x, w, b=None, stride=1, pad=0, variant="im2col", tile=16):
         _call("hy_conv_pack", _ptr(result), _ptr(b), _ptr(y), n, oc, oh*ow)
     _counts["conv_" + variant] += 1
     return y
+
+
+def conv2d_dinput(gy, w, input_shape, stride=1, pad=0):
+    """Gather dInput on the current stream; contiguous CUDA FP32 NCHW/OIHW only.
+
+    Stride 1/2, padding 0/1, groups=1, dilation=1. Unsupported inputs raise;
+    no implicit copies, workspace, synchronization or alternative algorithm.
+    """
+    import cupy as cp
+    from hytorch.utils import pair
+    for value in (gy, w):
+        if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+            raise TypeError("Fused dInput requires CuPy float32 arrays")
+        if value.ndim != 4 or not value.flags.c_contiguous:
+            raise ValueError("Fused dInput requires contiguous NCHW/OIHW arrays")
+        if value.device.id != cp.cuda.runtime.getDevice():
+            raise ValueError("Fused dInput arrays must belong to the current CUDA device")
+        _shape_ok(value.shape)
+    n, c, h, wi = input_shape
+    oc, wc, kh, kw = w.shape
+    sh, sw = pair(stride); ph, pw = pair(pad)
+    if sh not in (1, 2) or sw not in (1, 2) or ph not in (0, 1) or pw not in (0, 1):
+        raise ValueError("Fused dInput supports stride 1/2 and padding 0/1")
+    oh, ow = (h+2*ph-kh)//sh+1, (wi+2*pw-kw)//sw+1
+    _shape_ok(input_shape)
+    if c != wc or gy.shape != (n, oc, oh, ow):
+        raise ValueError("Fused dInput input/weight/gradient shapes do not match")
+    fn = load_library().hy_conv_dinput
+    if fn.argtypes is None:
+        fn.argtypes, fn.restype = [ct.c_void_p]*3 + [ct.c_int]*13 + [ct.c_void_p], ct.c_int
+    gx = cp.empty(input_shape, dtype=cp.float32)
+    _call("hy_conv_dinput", _ptr(gy), _ptr(w), _ptr(gx),
+          n, c, h, wi, oc, kh, kw, sh, sw, ph, pw, oh, ow)
+    _counts["conv_dinput_fused"] += 1
+    return gx
 
 
 def max_pool2d(x, kernel, stride=1, pad=0):

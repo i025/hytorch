@@ -1,0 +1,16 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/build.json,997,docs/experiments/conv-backward-fusion/results/raw/conv_backward_fusion_build_01/build.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/build.log,3376,docs/experiments/conv-backward-fusion/results/raw/conv_backward_fusion_build_01/build.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_build_01/libhytorch_cuda.so,224568,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/case0.npz,1946,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/case1.npz,9150,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/case2.npz,9030,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/case3.npz,12674,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/case4.npz,2800874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/case5.npz,1017578,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/case6.npz,343274,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/case7.npz,291050,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/samples.csv,208031,docs/experiments/conv-backward-fusion/results/raw/conv_backward_fusion_cpu_equation_01/samples.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_cpu_equation_01/summary.json,2751,docs/experiments/conv-backward-fusion/results/raw/conv_backward_fusion_cpu_equation_01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_plan_01/completion.json,44,docs/experiments/conv-backward-fusion/results/raw/conv_backward_fusion_plan_01/completion.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_backward_fusion_plan_01/planned-commands.json,61065,docs/experiments/conv-backward-fusion/results/raw/conv_backward_fusion_plan_01/planned-commands.json,Git portable record and server original

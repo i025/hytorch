@@ -1,0 +1,123 @@
+{
+  "status": "PASSED",
+  "scope": "CPU equation sample only, not full matrix or CUDA correctness",
+  "comparisons": 1884,
+  "max_abs": 3.5762786865234375e-07,
+  "failures": 0,
+  "atol": 1e-05,
+  "rtol": 0.0001,
+  "per_case": [
+    {
+      "case": 0,
+      "reference": "original_numpy",
+      "samples": 35,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": 0,
+      "reference": "pytorch_cpu",
+      "samples": 35,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": 1,
+      "reference": "original_numpy",
+      "samples": 129,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": 1,
+      "reference": "pytorch_cpu",
+      "samples": 129,
+      "max_abs": 2.9802322387695312e-08,
+      "relative_l2": 1.3346007715703977e-07
+    },
+    {
+      "case": 2,
+      "reference": "original_numpy",
+      "samples": 129,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": 2,
+      "reference": "pytorch_cpu",
+      "samples": 129,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": 3,
+      "reference": "original_numpy",
+      "samples": 129,
+      "max_abs": 7.450580596923828e-09,
+      "relative_l2": 1.803557038872194e-08
+    },
+    {
+      "case": 3,
+      "reference": "pytorch_cpu",
+      "samples": 129,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": 4,
+      "reference": "original_numpy",
+      "samples": 130,
+      "max_abs": 2.9802322387695312e-08,
+      "relative_l2": 2.5829649432350016e-08
+    },
+    {
+      "case": 4,
+      "reference": "pytorch_cpu",
+      "samples": 130,
+      "max_abs": 5.960464477539063e-08,
+      "relative_l2": 1.789006231231249e-07
+    },
+    {
+      "case": 5,
+      "reference": "original_numpy",
+      "samples": 130,
+      "max_abs": 3.725290298461914e-08,
+      "relative_l2": 5.464006305285604e-08
+    },
+    {
+      "case": 5,
+      "reference": "pytorch_cpu",
+      "samples": 130,
+      "max_abs": 3.5762786865234375e-07,
+      "relative_l2": 5.030919980176054e-07
+    },
+    {
+      "case": 6,
+      "reference": "original_numpy",
+      "samples": 130,
+      "max_abs": 5.960464477539063e-08,
+      "relative_l2": 7.015350486720891e-08
+    },
+    {
+      "case": 6,
+      "reference": "pytorch_cpu",
+      "samples": 130,
+      "max_abs": 1.1920928955078125e-07,
+      "relative_l2": 2.0299611127986536e-07
+    },
+    {
+      "case": 7,
+      "reference": "original_numpy",
+      "samples": 130,
+      "max_abs": 4.470348358154297e-08,
+      "relative_l2": 9.561225079773297e-08
+    },
+    {
+      "case": 7,
+      "reference": "pytorch_cpu",
+      "samples": 130,
+      "max_abs": 5.960464477539063e-08,
+      "relative_l2": 1.9298282635538184e-07
+    }
+  ]
+}

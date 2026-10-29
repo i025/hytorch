@@ -154,6 +154,8 @@ def main():
                    help="Opt in to native multi-tensor SGD for HyTorch CUDA FP32")
     p.add_argument("--prune-input-grad", action="store_true",
                    help="Explicitly disable HyTorch training-input gradients; keep parameter gradients")
+    p.add_argument("--conv-backward", choices=["original", "fused"], default="original",
+                   help="Opt in to native CUDA FP32 dInput; dWeight/dBias stay unchanged")
     p.add_argument("--mode", choices=["phases","throughput"], default="phases")
     p.add_argument("--interval", type=float, default=1.)
     p.add_argument("--no-monitor", action="store_true")
@@ -171,6 +173,8 @@ def main():
         p.error("--fused-sgd requires --framework hytorch --device cuda")
     if args.prune_input_grad and args.framework != "hytorch":
         p.error("--prune-input-grad is a HyTorch gradient-demand option")
+    if args.conv_backward == "fused" and (args.framework != "hytorch" or args.device != "cuda"):
+        p.error("--conv-backward fused requires --framework hytorch --device cuda")
     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
         p.error("Invalid batch/epoch/sample/step/worker/warmup value")
     if args.nvtx and args.device != "cuda":
@@ -251,8 +255,8 @@ def main():
                     python=sys.version, platform=platform.platform(), numpy=np.__version__,
                     data_fingerprint=("DISABLED" if args.no_fingerprints else
                                       "filename/label/file-size manifest" if args.data else "full array bytes"),
-                    backward_backend=("original_with_explicit_input_gradient_pruning"
-                                      if args.prune_input_grad else "original"), status="RUNNING")
+                    backward_backend=(args.conv_backward + "_with_explicit_input_gradient_pruning"
+                                      if args.prune_input_grad else args.conv_backward), status="RUNNING")
     if cp is not None:
         metadata.update(cupy=cp.__version__, gpu_name=str(cp.cuda.runtime.getDeviceProperties(args.gpu)["name"]),
                         runtime=cp.cuda.runtime.runtimeGetVersion(), physical_monitor_id=monitor_id)
@@ -266,7 +270,7 @@ def main():
     profile = StepProfiler(out/"steps.jsonl", sync, args.mode, args.nvtx)
     monitor = ResourceMonitor(out/"hardware.jsonl", monitor_id, args.interval)
     epochs = []
-    context = backend(args.matmul, args.conv, args.pool, args.tile)
+    context = backend(args.matmul, args.conv, args.pool, args.tile, conv_backward=args.conv_backward)
     with context:
         # Warmup uses same shapes; restore model, clear grads; SGD has no state.
         warm = [dataset[i] for i in range(min(args.batch, len(dataset)))]

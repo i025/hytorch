@@ -1,0 +1,21 @@
+{
+  "status": "PASSED",
+  "scope": "Source scope, syntax, documentation links, archive paths/sizes and execution plan; no content hashes or GPU work",
+  "modified": [
+    "README.md",
+    "benchmarks/bench_cuda_training.py",
+    "hytorch/backends/cuda/runtime.py",
+    "hytorch/functions_conv.py",
+    "scripts/build_cuda.py"
+  ],
+  "new_files": 58,
+  "local_links": 57,
+  "parsed": {
+    "python": 14,
+    "json": 20,
+    "xml": 2
+  },
+  "raw_index_files": 15,
+  "planned_gpu_commands": 64,
+  "package_bytes": 744468
+}

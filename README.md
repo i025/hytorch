@@ -111,6 +111,8 @@ python examples/finetune_imagenet.py --model alexnet --weights weights_imagenet/
 
 后续训练实验保留这些配置并加入新版本，在同一 GPU/窗口、相同输入和初始权重下至少重复 3 次；分别报告增量和累计收益，不跨历史窗口拼接加速比。吞吐、同步阶段和 Nsight 核时分开统计，使用 `--no-fingerprints`，保留失败及退化记录。阶段 4C 的首层梯度剪枝已验证，端到端稳定收益仍待复核。
 
+阶段 4D 新增[显式可选的 Conv2d dInput CUDA gather 原型](docs/experiments/conv-backward-fusion/README.md)：CPU 验证与 SM80 编译完成，因 GPU 全部被占用，GPU 正确性、性能及 Nsight 均为 **NOT_RUN**。该原型默认关闭；F/D、F/A、F/E 等收益等待同一窗口实测，尚不能宣称加速。
+
 第一次先回传：
 
 1. `nvidia-smi`、`nvcc --version`、CuPy 配置信息。

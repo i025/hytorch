@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python",
+    "-c",
+    "import ast; from pathlib import Path; files=list(Path(\"docs/experiments/conv-backward-fusion/scripts\").glob(\"*.py\")); [ast.parse(p.read_text(), filename=str(p)) for p in files]; print(\"Syntax parsed:\",len(files)); import torch; x=torch.ones((1,2,5,5)); w=torch.ones((3,2,3,3)); gy=torch.ones((1,3,3,3)); print(\"CPU-only ATen schema smoke:\",[tuple(v.shape) for v in torch.ops.aten.convolution_backward(gy,x,w,[3],[1,1],[0,0],[1,1],False,[0,0],1,[True,True,True])])"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-10-29T15:25:43.474832+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage2a-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cupy-cache",
+    "CUDA_CACHE_PATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cuda-cache",
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 1.71908331499435,
+  "finished_at": "2026-10-29T15:25:45.193961+00:00"
+}

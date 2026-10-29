@@ -1,0 +1,5 @@
+source,layer,input_shape,weight_shape,stride,pad,dinput_gpu_us,dweight_gpu_us,dinput_kernels_per_step,dweight_kernels_per_step,gcol_bytes,valid_fma_count,fused_output_bytes,naive_operand_read_bytes,copy_gpu_us,col2im_gpu_us,tensordot_gpu_us
+"stage4C D trace; historical, not stage4D",conv2,"(4, 24, 31, 98)","(36, 24, 5, 5)",2,0,125.57174999999998,131.04168749999997,3.0,5.0,6316800,56851200,1166592,454809600,5.2799375,94.825875,30.745874999999995
+"stage4C D trace; historical, not stage4D",conv3,"(4, 36, 14, 47)","(48, 36, 5, 5)",2,0,68.08987499999999,60.13993750000001,3.0,5.0,1584000,19008000,379008,152064000,4.636,46.52993750000001,21.559937499999997
+"stage4C D trace; historical, not stage4D",conv4,"(4, 48, 5, 22)","(64, 48, 3, 3)",1,0,33.3098125,38.108125,3.0,5.0,414720,6635520,84480,53084160,4.567937500000001,16.3520625,16.957749999999997
+"stage4C D trace; historical, not stage4D",conv5,"(4, 64, 3, 20)","(64, 64, 3, 3)",1,0,31.7758125,28.520000000000003,3.0,4.0,165888,2654208,61440,21233664,4.3199375,16.4159375,15.359874999999999

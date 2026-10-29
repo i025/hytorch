@@ -1,0 +1,35 @@
+{
+  "implementation": "EXPERIMENTAL",
+  "host_regression": "PASSED",
+  "host_tests_initial": 54,
+  "host_tests_followup": 7,
+  "host_tests_unique": 55,
+  "host_tests_note": "Follow-up repeats 6 initial cases and adds 1 instrumentation test",
+  "cuda_build": "PASSED_SM80",
+  "host_library_load": "PASSED",
+  "cpu_equation_samples": "PASSED_NOT_CUDA",
+  "gpu_correctness": "NOT_RUN",
+  "gpu_tests_collected": 92,
+  "microbenchmark": "NOT_RUN",
+  "training_A_B_C_D_F_E": "NOT_RUN",
+  "nsight": "NOT_RUN",
+  "gpu_selected": null,
+  "reason": "All eight A100s have existing compute clients; no idle device at recorded checks",
+  "speedups": {
+    "B/A": null,
+    "C/B": null,
+    "D/C": null,
+    "F/D": null,
+    "F/A": null,
+    "F/E": null
+  },
+  "unavailable_figures": [
+    "backward-latency",
+    "kernel-counts",
+    "per-layer-speedup",
+    "training-throughput",
+    "cumulative-speedup",
+    "incremental-gains",
+    "gpu-timeline"
+  ]
+}

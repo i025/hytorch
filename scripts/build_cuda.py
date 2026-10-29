@@ -21,7 +21,8 @@ def build_command(nvcc, output, arch):
     if os.name != "nt":
         command += ["-Xcompiler", "-fPIC"]
     return command + [str(ROOT / "hytorch/backends/cuda/kernels.cu"),
-                      str(ROOT / "hytorch/backends/cuda/fused_sgd.cu"), "-o", str(output)]
+                      str(ROOT / "hytorch/backends/cuda/fused_sgd.cu"),
+                      str(ROOT / "hytorch/backends/cuda/conv_dinput.cu"), "-o", str(output)]
 
 
 def main():
@@ -29,6 +30,7 @@ def main():
     p.add_argument("--arch", help="SM compute capability without dot; auto-detect if omitted")
     p.add_argument("--device", type=int, default=0)
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--resource-usage", action="store_true", help="Include nvcc/ptxas resource report")
     p.add_argument("--output", type=Path,
                    help="Directory for the library, build.log and build.json; defaults to the CUDA build directory")
     args = p.parse_args()
@@ -42,6 +44,8 @@ def main():
     output = output_dir.resolve() / ("hytorch_cuda.dll" if os.name == "nt" else "libhytorch_cuda.so")
     nvcc = shutil.which("nvcc")
     command = build_command(nvcc or "nvcc", output, arch)
+    if args.resource_usage:
+        command.insert(1, "--resource-usage")
     print(json.dumps(command, indent=2))
     if args.dry_run:
         return

@@ -1,0 +1,157 @@
+{
+  "timestamp_utc": "2026-10-29T15:27:22.057964+00:00",
+  "gpus": [
+    {
+      "index": "0",
+      "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memory.used": "30792",
+      "utilization.gpu": "99"
+    },
+    {
+      "index": "1",
+      "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memory.used": "30796",
+      "utilization.gpu": "99"
+    },
+    {
+      "index": "2",
+      "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memory.used": "30794",
+      "utilization.gpu": "99"
+    },
+    {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memory.used": "30792",
+      "utilization.gpu": "99"
+    },
+    {
+      "index": "4",
+      "uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memory.used": "11588",
+      "utilization.gpu": "100"
+    },
+    {
+      "index": "5",
+      "uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memory.used": "16116",
+      "utilization.gpu": "100"
+    },
+    {
+      "index": "6",
+      "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memory.used": "3424",
+      "utilization.gpu": "76"
+    },
+    {
+      "index": "7",
+      "uuid": "GPU-34a1ad0c-b19e-9660-0977-c4620b3cc451",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memory.used": "25704",
+      "utilization.gpu": "87"
+    }
+  ],
+  "compute_processes": [
+    {
+      "gpu_uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+      "pid": "1919613",
+      "used_memory": "30784"
+    },
+    {
+      "gpu_uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+      "pid": "1919643",
+      "used_memory": "30788"
+    },
+    {
+      "gpu_uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+      "pid": "1919667",
+      "used_memory": "30786"
+    },
+    {
+      "gpu_uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "pid": "1919693",
+      "used_memory": "30784"
+    },
+    {
+      "gpu_uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "pid": "1853608",
+      "used_memory": "3402"
+    },
+    {
+      "gpu_uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "pid": "1860575",
+      "used_memory": "2060"
+    },
+    {
+      "gpu_uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "pid": "1904072",
+      "used_memory": "1546"
+    },
+    {
+      "gpu_uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "pid": "1908678",
+      "used_memory": "1466"
+    },
+    {
+      "gpu_uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "pid": "1923628",
+      "used_memory": "1502"
+    },
+    {
+      "gpu_uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "pid": "1924067",
+      "used_memory": "1576"
+    },
+    {
+      "gpu_uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "pid": "1833827",
+      "used_memory": "4968"
+    },
+    {
+      "gpu_uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "pid": "1901893",
+      "used_memory": "2810"
+    },
+    {
+      "gpu_uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "pid": "1902529",
+      "used_memory": "1842"
+    },
+    {
+      "gpu_uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "pid": "1902943",
+      "used_memory": "2414"
+    },
+    {
+      "gpu_uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "pid": "1904470",
+      "used_memory": "1744"
+    },
+    {
+      "gpu_uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "pid": "1906062",
+      "used_memory": "2302"
+    },
+    {
+      "gpu_uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+      "pid": "1909393",
+      "used_memory": "3416"
+    },
+    {
+      "gpu_uuid": "GPU-34a1ad0c-b19e-9660-0977-c4620b3cc451",
+      "pid": "1896775",
+      "used_memory": "25696"
+    }
+  ],
+  "idle_candidates": [],
+  "selected_gpu": null,
+  "status": "NOT_RUN",
+  "reason": "No device without existing compute clients"
+}
