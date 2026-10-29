@@ -1,0 +1,14 @@
+{
+  "status": "PASSED",
+  "compile_only": true,
+  "gpu_used": false,
+  "original_output_directory": "/tmp/hytorch_sgd_ptx_2uuycodl",
+  "metadata_bytes": 1544,
+  "ptx_local_memory_declared": false,
+  "registers": 12,
+  "stack_bytes": 0,
+  "spill_store_bytes": 0,
+  "spill_load_bytes": 0,
+  "constant_bank_0_bytes": 1896,
+  "constant_bank_2_bytes": 8
+}

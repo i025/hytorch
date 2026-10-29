@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.000744870360904315, "train_wall_s": 0.13285613083280623, "samples": 64, "train_samples_per_sec": 481.7240995866519}
+Generating '/tmp/nsys-report-1aa7.qdstrm'
+[1/1] [0%                          ] trace-training-baseline.nsys-rep[1/1] [0%                          ] trace-training-baseline.nsys-rep[1/1] [===23%                      ] trace-training-baseline.nsys-rep[1/1] [==========47%               ] trace-training-baseline.nsys-rep[1/1] [=====================89%    ] trace-training-baseline.nsys-rep[1/1] [========================100%] trace-training-baseline.nsys-rep[1/1] [========================100%] trace-training-baseline.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/trace-training-baseline.nsys-rep

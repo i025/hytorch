@@ -1,6 +1,7 @@
 from hytorch import cuda
 from hytorch.core import Parameter
 import math
+import numpy as np
 
 
 # =============================================================================
@@ -84,9 +85,38 @@ class FreezeParam:
 # =============================================================================
 # 随机梯度下降法
 class SGD(Optimizer):
-    def __init__(self, lr=0.01):
+    """SGD; fused=True opts into contiguous CUDA FP32 multi-tensor updates.
+
+    CPU parameters retain the original loop. Mixed CPU/CUDA parameter sets and
+    unsupported CUDA arrays raise an error instead of silently changing backend.
+    """
+    def __init__(self, lr=0.01, fused=False):
         super().__init__()
         self.lr = lr
+        self.fused = fused
+
+    def update(self):
+        if not self.fused:
+            return super().update()
+
+        params = [p for p in self.target.params() if p.grad is not None]
+        for hook in self.hooks:
+            hook(params)
+        params = [p for p in params if p.grad is not None]
+        if not params:
+            return
+
+        modules = [cuda.get_array_module(p.data) for p in params]
+        if all(module is np for module in modules):
+            for param in params:
+                self.update_one(param)
+            return
+        if any(module is np for module in modules):
+            raise ValueError("Fused SGD requires all parameters on CPU or all on CUDA")
+
+        from hytorch.backends.cuda.runtime import multi_tensor_sgd
+        multi_tensor_sgd([p.data for p in params],
+                         [p.grad.data for p in params], self.lr)
 
     def update_one(self, param):  # 更新权重和偏移
         param.data -= self.lr * param.grad.data

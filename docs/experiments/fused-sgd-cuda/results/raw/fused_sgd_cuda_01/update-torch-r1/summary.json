@@ -1,0 +1,53 @@
+{
+  "status": "PASSED",
+  "method": "torch",
+  "instrumentation": "NONE",
+  "per_repeat": [
+    {
+      "method": "torch",
+      "repeat": 1,
+      "mode": "sync_wall",
+      "updates": 100,
+      "batch_wall_s": 0.010064516,
+      "dispatch_counts": {},
+      "count": 100,
+      "mean_us": 91.98419000000001,
+      "std_us": 49.45557202966838,
+      "median_us": 85.355,
+      "p95_us": 103.30824999999999
+    },
+    {
+      "method": "torch",
+      "repeat": 1,
+      "mode": "host_submission",
+      "updates": 100,
+      "batch_wall_s": 0.007533614,
+      "dispatch_counts": {},
+      "count": 100,
+      "mean_us": 72.04066,
+      "std_us": 6.335652556570298,
+      "median_us": 70.14699999999999,
+      "p95_us": 82.0076
+    }
+  ],
+  "aggregate": {
+    "sync_wall": {
+      "count": 100,
+      "mean_us": 91.98419000000001,
+      "std_us": 49.45557202966838,
+      "median_us": 85.355,
+      "p95_us": 103.30824999999999
+    },
+    "host_submission": {
+      "count": 100,
+      "mean_us": 72.04066,
+      "std_us": 6.335652556570298,
+      "median_us": 70.14699999999999,
+      "p95_us": 82.0076
+    }
+  },
+  "numerical_checks": 32,
+  "max_abs": 3.725290298461914e-07,
+  "max_rel_nonzero": 0.0001883660090542241,
+  "gradients_unchanged": true
+}

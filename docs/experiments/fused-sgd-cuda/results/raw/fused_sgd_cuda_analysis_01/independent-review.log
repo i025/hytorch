@@ -1,0 +1,62 @@
+{
+  "status": "PASSED",
+  "scope": "CPU verification of recorded GPU artifacts; no GPU work launched",
+  "trace_checks": [
+    {
+      "trace": "trace-training-baseline",
+      "phase_kernel_count": 2368,
+      "update_ranges": 16,
+      "kernels_per_update": 32,
+      "cross_thread_api_phase_attributions": 0
+    },
+    {
+      "trace": "trace-training-fused",
+      "phase_kernel_count": 1872,
+      "update_ranges": 16,
+      "kernels_per_update": 1,
+      "cross_thread_api_phase_attributions": 0
+    },
+    {
+      "trace": "trace-training-torch",
+      "phase_kernel_count": 1504,
+      "update_ranges": 16,
+      "kernels_per_update": 1,
+      "cross_thread_api_phase_attributions": 1040
+    },
+    {
+      "trace": "trace-update-baseline",
+      "phase_kernel_count": 6400,
+      "update_ranges": 200,
+      "kernels_per_update": 32,
+      "cross_thread_api_phase_attributions": 0
+    },
+    {
+      "trace": "trace-update-fused",
+      "phase_kernel_count": 200,
+      "update_ranges": 200,
+      "kernels_per_update": 1,
+      "cross_thread_api_phase_attributions": 0
+    },
+    {
+      "trace": "trace-update-torch",
+      "phase_kernel_count": 200,
+      "update_ranges": 200,
+      "kernels_per_update": 1,
+      "cross_thread_api_phase_attributions": 0
+    }
+  ],
+  "fresh_gradient_storage_checks": [
+    {
+      "tensor": 0,
+      "updates": 10,
+      "distinct_gradient_pointers": 10
+    },
+    {
+      "tensor": 1,
+      "updates": 10,
+      "distinct_gradient_pointers": 10
+    }
+  ],
+  "metadata_count_rule": "Four nested/subranges per fused update; none in baseline or Torch updates",
+  "limitations": "Checks establish internal attribution consistency, not absence of Nsight overhead or general performance significance."
+}

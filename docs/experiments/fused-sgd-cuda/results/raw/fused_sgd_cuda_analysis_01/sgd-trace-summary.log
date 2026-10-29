@@ -1,0 +1,84 @@
+{
+  "status": "OFFLINE_ANALYSIS_COMPLETE",
+  "traces": [
+    {
+      "trace": "trace-training-baseline",
+      "workload": "training",
+      "method": "baseline",
+      "whole_trace_kernel_count": 3848,
+      "measured_phase_kernel_count": 2368,
+      "unmatched_kernel_api_count": 0,
+      "cross_thread_phase_kernel_count": 0,
+      "measured_envelope_ms": 132.246857,
+      "kernel_memcpy_interval_coverage_fraction": 0.1944164616328084
+    },
+    {
+      "trace": "trace-training-fused",
+      "workload": "training",
+      "method": "fused",
+      "whole_trace_kernel_count": 3042,
+      "measured_phase_kernel_count": 1872,
+      "unmatched_kernel_api_count": 0,
+      "cross_thread_phase_kernel_count": 0,
+      "measured_envelope_ms": 141.723813,
+      "kernel_memcpy_interval_coverage_fraction": 0.16930300908570672
+    },
+    {
+      "trace": "trace-training-torch",
+      "workload": "training",
+      "method": "torch",
+      "whole_trace_kernel_count": 2444,
+      "measured_phase_kernel_count": 1504,
+      "unmatched_kernel_api_count": 0,
+      "cross_thread_phase_kernel_count": 1040,
+      "measured_envelope_ms": 75.598456,
+      "kernel_memcpy_interval_coverage_fraction": 0.3728319927592172
+    },
+    {
+      "trace": "trace-update-baseline",
+      "workload": "update",
+      "method": "baseline",
+      "whole_trace_kernel_count": 6720,
+      "measured_phase_kernel_count": 6400,
+      "unmatched_kernel_api_count": 0,
+      "cross_thread_phase_kernel_count": 0,
+      "measured_envelope_ms": 139.505152,
+      "kernel_memcpy_interval_coverage_fraction": 0.16443113154702702
+    },
+    {
+      "trace": "trace-update-fused",
+      "workload": "update",
+      "method": "fused",
+      "whole_trace_kernel_count": 210,
+      "measured_phase_kernel_count": 200,
+      "unmatched_kernel_api_count": 0,
+      "cross_thread_phase_kernel_count": 0,
+      "measured_envelope_ms": 48.357376,
+      "kernel_memcpy_interval_coverage_fraction": 0.045065410497045995
+    },
+    {
+      "trace": "trace-update-torch",
+      "workload": "update",
+      "method": "torch",
+      "whole_trace_kernel_count": 210,
+      "measured_phase_kernel_count": 200,
+      "unmatched_kernel_api_count": 0,
+      "cross_thread_phase_kernel_count": 0,
+      "measured_envelope_ms": 48.552702,
+      "kernel_memcpy_interval_coverage_fraction": 0.11385535247863239
+    }
+  ],
+  "update_ranges": 648,
+  "training_steps": 48,
+  "attribution": "GPU correlation ID -> submitting CUDA API -> enclosing same-thread NVTX; explicitly flagged PyTorch worker API timestamps may select a unique phase window. Never match GPU time overlap.",
+  "units": "All *_us fields are microseconds. std is sample standard deviation; p95 uses NumPy percentile.",
+  "scopes": "Whole-trace counts include warmup/setup; measured phase counts exclude warmup/setup. Update averages separately group sync_wall, host_submission and training.",
+  "timing_caveats": [
+    "Host NVTX time and CUDA API time are not GPU kernel execution time.",
+    "Nested native_runtime/native_submit/ctypes_submit inclusive times overlap and must not be added.",
+    "Zero explicit CUDA memcpy events does not make descriptor transport free: CUDA launch argument transport is included in submission and cannot be separated here.",
+    "Kernel+Memcpy envelope coverage is not GPU/SM utilization.",
+    "A gap within a submitted update's kernel span may include unrelated GPU work; it is not proof of whole-device idle time.",
+    "Nsight figures are instrumented observations and must not be used as uninstrumented throughput."
+  ]
+}

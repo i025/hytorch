@@ -1,0 +1,38 @@
+Stage 4B CPU analysis execution and visual review record
+Executed command:
+.venv/bin/python docs/experiments/fused-sgd-cuda/scripts/analyze_fused_results.py --raw runs/fused_sgd_cuda_01 --trace-analysis runs/fused_sgd_cuda_analysis_01 --output docs/experiments/fused-sgd-cuda/results --figures docs/experiments/fused-sgd-cuda/figures
+Observed tool return code: 0
+Analyzer stdout was the JSON persisted at results/analysis-summary.json; it is reproduced below from that artifact, not a terminal screenshot.
+{
+  "status": "PASSED",
+  "raw_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01",
+  "trace_analysis_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_analysis_01",
+  "throughput_mean": {
+    "baseline": 645.5137347784738,
+    "fused": 696.609154660746,
+    "torch": 1463.5306327452972
+  },
+  "fused_throughput_speedup_vs_baseline": 1.0791546595051258,
+  "torch_throughput_speedup_vs_fused": 2.1009351125424813,
+  "counting": "3 independent process runs per method/mode; 256 measured training steps each; microbench >=100 updates",
+  "timing": "Throughput=total samples/epoch training wall; phase runs synchronized separately; trace GPU kernel sum excludes host gaps",
+  "figures": [
+    "docs/experiments/fused-sgd-cuda/figures/kernel-launches.png",
+    "docs/experiments/fused-sgd-cuda/figures/training-loss.png",
+    "docs/experiments/fused-sgd-cuda/figures/training-phase-timing.png",
+    "docs/experiments/fused-sgd-cuda/figures/training-throughput.png",
+    "docs/experiments/fused-sgd-cuda/figures/update-timing.png",
+    "docs/experiments/fused-sgd-cuda/figures/update-trace-timeline.png"
+  ]
+}
+Independent review: all six PNG files were opened and inspected; labels, units, source annotations and numerical values match the underlying CSV/JSON. The phase legend overlays part of a bar but does not conceal labels or change represented values.
+Timing scope check: uninstrumented throughput and instrumented trace envelope must not be mixed.
+Instrumented training envelope baseline_ms=132.246857
+Instrumented training envelope fused_ms=141.723813
+Instrumented training envelope change_pct=7.166110571535178
+This trace is slower for fused despite shorter Update host windows. No claim of whole-trace/whole-step improvement is supported by these representative traces. The cause of the regression has not been isolated; do not assert instrumentation overhead as the sole cause.
+Uninstrumented three-repeat throughput ratio fused/baseline=1.0791546595051258
+Timeline selection: chronological update 9 of 16. In the Torch trace the correlated update kernel executes after its host update range; attribution uses CUDA API correlation ID. This is not evidence that the intervening GPU was idle.
+No GPU experiment was run by this CPU analysis/review task; no hashes were computed.
+
+Visual layout refinement: original six PNG drafts preserved under runs/fused_sgd_cuda_01/figure-review-01/. Moved phase legend into added empty axis headroom and regenerated six final figures using analyze_fused_results.make_plots, after re-reading identical source arrays. No measurement values or existing CSV/JSON were overwritten.

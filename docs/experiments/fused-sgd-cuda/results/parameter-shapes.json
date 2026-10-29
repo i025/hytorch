@@ -1,0 +1,173 @@
+{
+  "source": "CPU DonkeyNet(dropout_rate=0.) + bench_cuda_training.initialize(shape=(3,66,200), seed=42)",
+  "gpu_used": false,
+  "fingerprints_computed": false,
+  "parameters": [
+    {
+      "parameter": "conv1/W",
+      "shape": [
+        24,
+        3,
+        5,
+        5
+      ],
+      "elements": 1800,
+      "bytes": 7200,
+      "blocks_256": 8
+    },
+    {
+      "parameter": "conv1/b",
+      "shape": [
+        24
+      ],
+      "elements": 24,
+      "bytes": 96,
+      "blocks_256": 1
+    },
+    {
+      "parameter": "conv2/W",
+      "shape": [
+        36,
+        24,
+        5,
+        5
+      ],
+      "elements": 21600,
+      "bytes": 86400,
+      "blocks_256": 85
+    },
+    {
+      "parameter": "conv2/b",
+      "shape": [
+        36
+      ],
+      "elements": 36,
+      "bytes": 144,
+      "blocks_256": 1
+    },
+    {
+      "parameter": "conv3/W",
+      "shape": [
+        48,
+        36,
+        5,
+        5
+      ],
+      "elements": 43200,
+      "bytes": 172800,
+      "blocks_256": 169
+    },
+    {
+      "parameter": "conv3/b",
+      "shape": [
+        48
+      ],
+      "elements": 48,
+      "bytes": 192,
+      "blocks_256": 1
+    },
+    {
+      "parameter": "conv4/W",
+      "shape": [
+        64,
+        48,
+        3,
+        3
+      ],
+      "elements": 27648,
+      "bytes": 110592,
+      "blocks_256": 108
+    },
+    {
+      "parameter": "conv4/b",
+      "shape": [
+        64
+      ],
+      "elements": 64,
+      "bytes": 256,
+      "blocks_256": 1
+    },
+    {
+      "parameter": "conv5/W",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "elements": 36864,
+      "bytes": 147456,
+      "blocks_256": 144
+    },
+    {
+      "parameter": "conv5/b",
+      "shape": [
+        64
+      ],
+      "elements": 64,
+      "bytes": 256,
+      "blocks_256": 1
+    },
+    {
+      "parameter": "fc1/W",
+      "shape": [
+        1152,
+        100
+      ],
+      "elements": 115200,
+      "bytes": 460800,
+      "blocks_256": 450
+    },
+    {
+      "parameter": "fc1/b",
+      "shape": [
+        100
+      ],
+      "elements": 100,
+      "bytes": 400,
+      "blocks_256": 1
+    },
+    {
+      "parameter": "fc2/W",
+      "shape": [
+        100,
+        50
+      ],
+      "elements": 5000,
+      "bytes": 20000,
+      "blocks_256": 20
+    },
+    {
+      "parameter": "fc2/b",
+      "shape": [
+        50
+      ],
+      "elements": 50,
+      "bytes": 200,
+      "blocks_256": 1
+    },
+    {
+      "parameter": "fc3/W",
+      "shape": [
+        50,
+        1
+      ],
+      "elements": 50,
+      "bytes": 200,
+      "blocks_256": 1
+    },
+    {
+      "parameter": "fc3/b",
+      "shape": [
+        1
+      ],
+      "elements": 1,
+      "bytes": 4,
+      "blocks_256": 1
+    }
+  ],
+  "tensor_count": 16,
+  "total_elements": 251749,
+  "total_bytes": 1006996,
+  "blocks_256": 993
+}

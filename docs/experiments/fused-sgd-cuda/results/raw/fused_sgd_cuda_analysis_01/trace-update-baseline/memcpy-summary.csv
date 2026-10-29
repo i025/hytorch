@@ -1,0 +1,4 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-update-baseline,outside_phase,unlabeled:outside_phase,Host-to-Device,96,0.5480079999999998,5.708416666666665,28.641,6041976
+trace-update-baseline,outside_phase,unlabeled:outside_phase,Device-to-Host,64,0.410436,6.4130625000000006,30.688,4027984
+trace-update-baseline,outside_phase,unlabeled:outside_phase,Device-to-Device,64,0.21229200000000006,3.317062500000001,4.4799999999999995,4027984

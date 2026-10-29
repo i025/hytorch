@@ -1,0 +1,53 @@
+{
+  "status": "PASSED",
+  "method": "baseline",
+  "instrumentation": "NVTX host ranges enabled",
+  "per_repeat": [
+    {
+      "method": "baseline",
+      "repeat": 1,
+      "mode": "sync_wall",
+      "updates": 100,
+      "batch_wall_s": 0.060691431,
+      "dispatch_counts": {},
+      "count": 100,
+      "mean_us": 586.2105500000001,
+      "std_us": 26.110376860270573,
+      "median_us": 577.414,
+      "p95_us": 618.4632
+    },
+    {
+      "method": "baseline",
+      "repeat": 1,
+      "mode": "host_submission",
+      "updates": 100,
+      "batch_wall_s": 0.059107277,
+      "dispatch_counts": {},
+      "count": 100,
+      "mean_us": 573.8627499999999,
+      "std_us": 23.37174402122003,
+      "median_us": 567.7760000000001,
+      "p95_us": 603.316
+    }
+  ],
+  "aggregate": {
+    "sync_wall": {
+      "count": 100,
+      "mean_us": 586.2105500000001,
+      "std_us": 26.110376860270573,
+      "median_us": 577.414,
+      "p95_us": 618.4632
+    },
+    "host_submission": {
+      "count": 100,
+      "mean_us": 573.8627499999999,
+      "std_us": 23.37174402122003,
+      "median_us": 567.7760000000001,
+      "p95_us": 603.316
+    }
+  },
+  "numerical_checks": 32,
+  "max_abs": 0.0,
+  "max_rel_nonzero": 0.0,
+  "gradients_unchanged": true
+}

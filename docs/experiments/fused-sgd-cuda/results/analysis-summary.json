@@ -1,0 +1,22 @@
+{
+  "status": "PASSED",
+  "raw_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01",
+  "trace_analysis_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_analysis_01",
+  "throughput_mean": {
+    "baseline": 645.5137347784738,
+    "fused": 696.609154660746,
+    "torch": 1463.5306327452972
+  },
+  "fused_throughput_speedup_vs_baseline": 1.0791546595051258,
+  "torch_throughput_speedup_vs_fused": 2.1009351125424813,
+  "counting": "3 independent process runs per method/mode; 256 measured training steps each; microbench >=100 updates",
+  "timing": "Throughput=total samples/epoch training wall; phase runs synchronized separately; trace GPU kernel sum excludes host gaps",
+  "figures": [
+    "docs/experiments/fused-sgd-cuda/figures/kernel-launches.png",
+    "docs/experiments/fused-sgd-cuda/figures/training-loss.png",
+    "docs/experiments/fused-sgd-cuda/figures/training-phase-timing.png",
+    "docs/experiments/fused-sgd-cuda/figures/training-throughput.png",
+    "docs/experiments/fused-sgd-cuda/figures/update-timing.png",
+    "docs/experiments/fused-sgd-cuda/figures/update-trace-timeline.png"
+  ]
+}

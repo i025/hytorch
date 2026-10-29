@@ -1,0 +1,103 @@
+{
+  "method": "baseline",
+  "gpu": 0,
+  "warmup": 5,
+  "updates": 100,
+  "repeats": 1,
+  "seed": 42,
+  "lr": 0.001,
+  "nvtx": false,
+  "output": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/update-baseline-r3",
+  "started_at": "2026-10-29T13:39:07.660492+00:00",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+  "numpy": "1.24.4",
+  "cupy": "12.3.0",
+  "cuda_visible_devices": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+  "runtime_version": 12020,
+  "gpu_name": "b'NVIDIA A100-PCIE-40GB'",
+  "physical_pci_bus": "0000:41:00.0",
+  "optimizer": "SGD; no momentum, dampening, weight decay, or nesterov",
+  "torch_foreach": null,
+  "dtype": "float32",
+  "tensor_count": 16,
+  "elements": 251749,
+  "parameter_shapes": {
+    "conv1/W": [
+      24,
+      3,
+      5,
+      5
+    ],
+    "conv1/b": [
+      24
+    ],
+    "conv2/W": [
+      36,
+      24,
+      5,
+      5
+    ],
+    "conv2/b": [
+      36
+    ],
+    "conv3/W": [
+      48,
+      36,
+      5,
+      5
+    ],
+    "conv3/b": [
+      48
+    ],
+    "conv4/W": [
+      64,
+      48,
+      3,
+      3
+    ],
+    "conv4/b": [
+      64
+    ],
+    "conv5/W": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "conv5/b": [
+      64
+    ],
+    "fc1/W": [
+      1152,
+      100
+    ],
+    "fc1/b": [
+      100
+    ],
+    "fc2/W": [
+      100,
+      50
+    ],
+    "fc2/b": [
+      50
+    ],
+    "fc3/W": [
+      50,
+      1
+    ],
+    "fc3/b": [
+      1
+    ]
+  },
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "reference": "CPU FP32 separate multiply and subtract, rounded each update",
+  "modes": {
+    "sync_wall": "sync before timer; update; sync; stop timer: full host-to-completion wall",
+    "host_submission": "update host call only; no per-update synchronization; batch sync after loop"
+  },
+  "pure_gpu_kernel_time": "NOT_MEASURED_BY_TIMER; use Nsight CUDA API correlation analysis",
+  "instrumentation": "NONE",
+  "gradient_policy": "fixed identical gradients each update; actual training gradients change separately"
+}

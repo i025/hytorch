@@ -1,0 +1,12 @@
+{
+  "status": "FAILED",
+  "checked_document_links": 87,
+  "parsed_json_files": 97,
+  "indexed_original_files": 533,
+  "issues": [
+    "missing link docs/experiments/fused-sgd-cuda/README.md ../../../../hytorch/backends/cuda/fused_sgd.cu",
+    "missing link docs/experiments/fused-sgd-cuda/README.md ../../../../hytorch/backends/cuda/runtime.py",
+    "missing link docs/experiments/fused-sgd-cuda/README.md ../../../../hytorch/optimizers.py"
+  ],
+  "note": "Path/size/index checks only; no content hashes. Original successful compiler logs can be empty."
+}

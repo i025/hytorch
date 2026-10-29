@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.0007448701135217561, "train_wall_s": 0.07667160988785326, "samples": 64, "train_samples_per_sec": 834.7287880561281}
+Generating '/tmp/nsys-report-e170.qdstrm'
+[1/1] [0%                          ] trace-training-torch.nsys-rep[1/1] [0%                          ] trace-training-torch.nsys-rep[1/1] [===22%                      ] trace-training-torch.nsys-rep[1/1] [=========45%                ] trace-training-torch.nsys-rep[1/1] [======================90%   ] trace-training-torch.nsys-rep[1/1] [========================100%] trace-training-torch.nsys-rep[1/1] [========================100%] trace-training-torch.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/trace-training-torch.nsys-rep

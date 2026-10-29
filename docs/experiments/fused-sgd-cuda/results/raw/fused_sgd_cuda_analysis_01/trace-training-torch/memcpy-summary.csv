@@ -1,0 +1,5 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+trace-training-torch,transfer,unlabeled:transfer,Host-to-Device,32,0.6098290000000001,19.057156250000002,36.288000000000004,10137856
+trace-training-torch,outside_phase,unlabeled:outside_phase,Device-to-Host,48,0.32259400000000005,6.720708333333334,53.121,2014056
+trace-training-torch,outside_phase,unlabeled:outside_phase,Host-to-Device,18,0.12953800000000001,7.196555555555556,35.649,1640612
+trace-training-torch,outside_phase,unlabeled:outside_phase,Device-to-Device,32,0.10857300000000002,3.3929062500000007,4.4799999999999995,2013992

@@ -1,0 +1,80 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 256,
+    "measured_step_total_s": 0.678717109374702,
+    "mean_step_s": 0.0026512387084949296,
+    "samples_per_sec": 1508.728726381165,
+    "mode": "phases",
+    "phase_fraction": {
+      "data": 0.027135788514294407,
+      "transfer": 0.049673060638958974,
+      "forward": 0.23528639739474902,
+      "backward": 0.5999877814848263,
+      "update": 0.06077722025173021,
+      "other": 0.027139751715441068
+    }
+  },
+  "hardware": {
+    "sample_count": 0,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": null,
+    "gpu_utilization_pct_max": null,
+    "gpu_memory_used_mib_mean": null,
+    "gpu_memory_used_mib_max": null,
+    "gpu_memory_total_mib_mean": null,
+    "gpu_memory_total_mib_max": null,
+    "gpu_temperature_c_mean": null,
+    "gpu_temperature_c_max": null,
+    "gpu_power_w_mean": null,
+    "gpu_power_w_max": null,
+    "cpu_utilization_pct_mean": null,
+    "cpu_utilization_pct_max": null,
+    "process_rss_mib_mean": null,
+    "process_rss_mib_max": null,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266055820309703,
+      "train_wall_s": 0.2109437440522015,
+      "samples": 256,
+      "train_samples_per_sec": 1213.5937055172803
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.00048736776489022304,
+      "train_wall_s": 0.18227274785749614,
+      "samples": 256,
+      "train_samples_per_sec": 1404.488619440494
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126571223529027,
+      "train_wall_s": 0.17968361708335578,
+      "samples": 256,
+      "train_samples_per_sec": 1424.7264394796816
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.00033147416127121687,
+      "train_wall_s": 0.17365711298771203,
+      "samples": 256,
+      "train_samples_per_sec": 1474.169388144294
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Largest measured phase: backward",
+      "fraction": 0.5999877814848263,
+      "next_action": "Profile backward kernels; forward replacement alone has limited scope"
+    }
+  ],
+  "final_state_sha256": null
+}

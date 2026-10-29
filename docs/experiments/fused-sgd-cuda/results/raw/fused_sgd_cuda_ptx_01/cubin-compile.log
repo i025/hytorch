@@ -1,0 +1,5 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z23multi_tensor_sgd_kernelN45_GLOBAL__N__bec79437_12_fused_sgd_cu_ac6ed77111SgdMetadataE' for 'sm_80'
+ptxas info    : Function properties for _Z23multi_tensor_sgd_kernelN45_GLOBAL__N__bec79437_12_fused_sgd_cu_ac6ed77111SgdMetadataE
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, 1896 bytes cmem[0], 8 bytes cmem[2]

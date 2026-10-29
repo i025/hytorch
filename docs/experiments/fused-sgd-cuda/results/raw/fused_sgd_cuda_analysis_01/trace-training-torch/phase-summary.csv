@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-training-torch,data,16,2.304765,2.304765,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-training-torch,transfer,16,6.596123,6.596123,64,5.536903000000001,5.536903,0,0,32,0.895702,0,0,0,0,0.0,0,32,0.6098290000000001,10137856,0,0
+trace-training-torch,forward,16,19.377573,19.377573,594,4.5786190000000015,4.578619,432,3.879214999999999,0,0,1,0.433364,432,6.099811000000007,6.099811,336,0,0,0,0,0
+trace-training-torch,backward,16,33.858754,33.858754,2464,10.310919999999982,10.31092,1056,8.26493099999999,0,0,0,0,1056,24.793329,21.103707,368,0,0,0,64,0.13917100000000004
+trace-training-torch,update,16,3.3532640000000007,3.353264,16,0.321405,0.321405,16,0.321405,0,0,0,0,16,0.502117,0.502117,0,0,0,0,0,0
+trace-training-torch,outside_phase,0,0,0.0,3836,377.03194000000025,377.03194,940,295.7188699999998,100,4.180575000000001,20,30.900910999999994,940,19.575732999999993,17.323752,440,98,0.5607049999999999,5668660,42,0.09683600000000002
+trace-training-torch,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

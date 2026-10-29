@@ -1,0 +1,57 @@
+{
+  "status": "PASSED",
+  "method": "fused",
+  "instrumentation": "NONE",
+  "per_repeat": [
+    {
+      "method": "fused",
+      "repeat": 1,
+      "mode": "sync_wall",
+      "updates": 100,
+      "batch_wall_s": 0.011788953,
+      "dispatch_counts": {
+        "sgd_fused": 100
+      },
+      "count": 100,
+      "mean_us": 113.46225,
+      "std_us": 75.8865400909626,
+      "median_us": 96.2755,
+      "p95_us": 125.4364499999999
+    },
+    {
+      "method": "fused",
+      "repeat": 1,
+      "mode": "host_submission",
+      "updates": 100,
+      "batch_wall_s": 0.008727986,
+      "dispatch_counts": {
+        "sgd_fused": 100
+      },
+      "count": 100,
+      "mean_us": 84.95101999999999,
+      "std_us": 9.37143017553615,
+      "median_us": 82.054,
+      "p95_us": 94.7615
+    }
+  ],
+  "aggregate": {
+    "sync_wall": {
+      "count": 100,
+      "mean_us": 113.46225,
+      "std_us": 75.8865400909626,
+      "median_us": 96.2755,
+      "p95_us": 125.4364499999999
+    },
+    "host_submission": {
+      "count": 100,
+      "mean_us": 84.95101999999999,
+      "std_us": 9.37143017553615,
+      "median_us": 82.054,
+      "p95_us": 94.7615
+    }
+  },
+  "numerical_checks": 32,
+  "max_abs": 0.0,
+  "max_rel_nonzero": 0.0,
+  "gradients_unchanged": true
+}

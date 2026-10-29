@@ -1,0 +1,23 @@
+{
+  "label": "trace-update-fused",
+  "input": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/trace-update-fused.sqlite",
+  "training_envelope_start_ns": 2166682554,
+  "training_envelope_end_ns": 2215039930,
+  "training_envelope_ms": 48.357376,
+  "whole_trace_kernel_count": 210,
+  "training_envelope_kernel_count": 205,
+  "training_phase_submitted_kernel_count": 200,
+  "activity_covered_ms": 2.179245,
+  "activity_coverage_fraction": 0.045065410497045995,
+  "coverage_definition": "Kernel + Memcpy interval union clipped to training NVTX envelope; not GPU/SM utilization; excludes Memset for consistency with historical definition",
+  "unmatched_kernel_api_count": 0,
+  "kernels_with_multiple_api_candidates": 0,
+  "kernel_cross_thread_phase_attributions": 0,
+  "exclusive_kernel_count_check": 210,
+  "operator_nvtx_range_count": 1040,
+  "attribution": "CUDA correlation -> submitting API -> same-thread nested NVTX; worker API phase may use unique main-thread phase window, explicitly tagged. Innermost non-phase NVTX gets exclusive attribution; all operator ancestors get inclusive attribution.",
+  "timing_caveat": "Host API/NVTX elapsed time is not GPU execution time. Inclusive operator totals overlap; only exclusive GPU attribution sums without duplicate events. Per-op host self time excludes nested same-thread NVTX intervals, not arbitrary Python or profiler overhead.",
+  "api_count_caveat": "Runtime and Driver API rows are both retained. Nested API wrappers can make API sums/counts exceed API interval union/unique GPU events; kernel count comes from CUPTI GPU activity rows.",
+  "privacy": "Published global process/thread identifiers replaced with stable labels. Original values remain in server SQLite.",
+  "output_status": "OFFLINE_ANALYSIS_COMPLETE"
+}

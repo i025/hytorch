@@ -1,0 +1,1 @@
+/usr/local/cuda-12.2/bin/nvcc -O3 -std=c++14 -lineinfo --ptx -arch=compute_80 hytorch/backends/cuda/fused_sgd.cu -o /tmp/hytorch_sgd_ptx_2uuycodl/fused_sgd.ptx

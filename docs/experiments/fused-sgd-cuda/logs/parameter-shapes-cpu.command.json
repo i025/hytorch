@@ -1,0 +1,17 @@
+{
+  "working_directory": "/home/xymo/projects/hytorch",
+  "argv": [
+    ".venv/bin/python",
+    "-"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4"
+  },
+  "purpose": "CPU-only shape query via existing initialize; no hashes",
+  "result": "results/parameter-shapes.json",
+  "stdout_note": "Initialization emitted existing missing-scipy/SVHN warning, then the parameter-shapes JSON; command succeeded.",
+  "gpu_used": false,
+  "stdin": "from pathlib import Path\nimport importlib.util, json\nroot=Path.cwd()\nspec=importlib.util.spec_from_file_location('training',root/'benchmarks/bench_cuda_training.py')\nmodule=importlib.util.module_from_spec(spec)\nspec.loader.exec_module(module)\nfrom donkeycar_hy.model import DonkeyNet\nmodel=DonkeyNet(dropout_rate=0.)\nstate=module.initialize(model,(3,66,200),42)\nrows=[{'parameter':name,'shape':list(value.shape),'elements':int(value.size),'bytes':int(value.nbytes),'blocks_256':int((value.size+255)//256)} for name,value in state.items()]\nresult={'source':'CPU DonkeyNet(dropout_rate=0.) + bench_cuda_training.initialize(shape=(3,66,200), seed=42)','gpu_used':False,'fingerprints_computed':False,'parameters':rows,'tensor_count':len(rows),'total_elements':sum(row['elements'] for row in rows),'total_bytes':sum(row['bytes'] for row in rows),'blocks_256':sum(row['blocks_256'] for row in rows)}\ndest=root/'docs/experiments/fused-sgd-cuda/results/parameter-shapes.json'\ndest.parent.mkdir(exist_ok=True)\nwith dest.open('x') as stream:\n    json.dump(result,stream,indent=2)\n    stream.write('\\n')\nprint(json.dumps(result,indent=2))\n"
+}

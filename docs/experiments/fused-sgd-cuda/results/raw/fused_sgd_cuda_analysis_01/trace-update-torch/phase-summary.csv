@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-update-torch,data,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-update-torch,transfer,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-update-torch,forward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-update-torch,backward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-update-torch,update,200,22.589142,22.589142,300,2.797269000000002,2.797269,200,2.3465890000000003,100,0.4506800000000001,0,0,200,4.809797000000005,4.809797,0,0,0,0,0,0
+trace-update-torch,outside_phase,0,0,0.0,511,41.84202900000002,41.842029,10,23.513148000000005,266,1.8811430000000007,2,4.638176,10,0.24649800000000002,0.246498,0,224,1.2693210000000001,14097944,0,0
+trace-update-torch,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

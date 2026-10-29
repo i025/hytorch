@@ -20,7 +20,8 @@ def build_command(nvcc, output, arch):
                f"-gencode=arch=compute_{arch},code=compute_{arch}"]
     if os.name != "nt":
         command += ["-Xcompiler", "-fPIC"]
-    return command + [str(ROOT / "hytorch/backends/cuda/kernels.cu"), "-o", str(output)]
+    return command + [str(ROOT / "hytorch/backends/cuda/kernels.cu"),
+                      str(ROOT / "hytorch/backends/cuda/fused_sgd.cu"), "-o", str(output)]
 
 
 def main():
@@ -28,6 +29,8 @@ def main():
     p.add_argument("--arch", help="SM compute capability without dot; auto-detect if omitted")
     p.add_argument("--device", type=int, default=0)
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--output", type=Path,
+                   help="Directory for the library, build.log and build.json; defaults to the CUDA build directory")
     args = p.parse_args()
     arch = args.arch
     if arch is None:
@@ -35,7 +38,8 @@ def main():
             p.error("--dry-run requires --arch")
         import cupy as cp
         arch = cp.cuda.Device(args.device).compute_capability
-    output = ROOT / "hytorch/backends/cuda/build" / ("hytorch_cuda.dll" if os.name == "nt" else "libhytorch_cuda.so")
+    output_dir = args.output or ROOT / "hytorch/backends/cuda/build"
+    output = output_dir.resolve() / ("hytorch_cuda.dll" if os.name == "nt" else "libhytorch_cuda.so")
     nvcc = shutil.which("nvcc")
     command = build_command(nvcc or "nvcc", output, arch)
     print(json.dumps(command, indent=2))

@@ -12,6 +12,7 @@ _config = ContextVar("hytorch_cuda_backend", default={
 _counts = Counter()
 _library = None
 _dll_directories = []
+_SGD_MAX_TENSORS = 64
 
 
 def current_config():
@@ -82,6 +83,78 @@ def _call(name, *args):
 
 def _ptr(x):
     return None if x is None else x.data.ptr
+
+
+def _sgd_metadata(parameters, gradients):
+    """Refresh host descriptors; never copy or make parameter data contiguous."""
+    import cupy as cp
+    if len(parameters) != len(gradients):
+        raise ValueError("Fused SGD needs one gradient entry per parameter")
+    active = [(p, g) for p, g in zip(parameters, gradients) if g is not None]
+    count = len(active)
+    if count > _SGD_MAX_TENSORS:
+        raise ValueError(f"Fused SGD supports at most {_SGD_MAX_TENSORS} active tensors")
+    parameter_ptrs = (ct.c_uint64 * count)()
+    gradient_ptrs = (ct.c_uint64 * count)()
+    sizes = (ct.c_int64 * count)()
+    if not count:
+        return parameter_ptrs, gradient_ptrs, sizes, count
+    device = cp.cuda.runtime.getDevice()
+    ranges = []
+    for index, (parameter, gradient) in enumerate(active):
+        for value in (parameter, gradient):
+            if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+                raise TypeError("Fused SGD requires CuPy float32 parameters and gradients")
+            if value.device.id != device:
+                raise ValueError("Fused SGD arrays must belong to the current CUDA device")
+            if not value.flags.c_contiguous:
+                raise ValueError("Fused SGD requires C-contiguous arrays")
+        if parameter.shape != gradient.shape:
+            raise ValueError("Fused SGD parameter and gradient shapes must match")
+        if not 0 < parameter.size <= 2**31 - 1:
+            raise ValueError("Fused SGD arrays must have 1..INT_MAX elements")
+        parameter_ptrs[index], gradient_ptrs[index] = parameter.data.ptr, gradient.data.ptr
+        sizes[index] = parameter.size
+        ranges.extend(((parameter.data.ptr, parameter.data.ptr + parameter.nbytes, True),
+                       (gradient.data.ptr, gradient.data.ptr + gradient.nbytes, False)))
+    # Concurrent tensor updates cannot overlap another parameter or any gradient.
+    all_end = parameter_end = 0
+    for start, end, is_parameter in sorted(ranges):
+        if start < parameter_end or (is_parameter and start < all_end):
+            raise ValueError("Fused SGD parameter storage must not overlap parameters or gradients")
+        all_end = max(all_end, end)
+        if is_parameter:
+            parameter_end = end
+    return parameter_ptrs, gradient_ptrs, sizes, count
+
+
+def _submit_sgd(metadata, lr):
+    """Submit host descriptors through the CUDA ABI without synchronizing."""
+    lib = load_library()
+    if not hasattr(lib, "hy_multi_tensor_sgd"):
+        raise RuntimeError("Fused SGD CUDA symbol missing; rebuild with python scripts/build_cuda.py")
+    fn = lib.hy_multi_tensor_sgd
+    if fn.argtypes is None:
+        fn.argtypes = [ct.POINTER(ct.c_uint64), ct.POINTER(ct.c_uint64),
+                       ct.POINTER(ct.c_int64), ct.c_int, ct.c_float, ct.c_void_p]
+        fn.restype = ct.c_int
+    _call("hy_multi_tensor_sgd", *metadata, lr)
+
+
+def multi_tensor_sgd(parameters, gradients, lr):
+    """Update up to 64 CUDA FP32 tensor pairs in place on the current stream.
+
+    Missing gradients are skipped. Arrays must be C-contiguous on the current
+    device; parameter storage must not overlap other parameters or gradients.
+    Pointers are refreshed on every call. No device descriptor allocation,
+    explicit metadata copy, synchronization, or contiguous parameter packing is
+    performed: CUDA transports the small descriptor POD as launch arguments.
+    """
+    metadata = _sgd_metadata(parameters, gradients)
+    if not metadata[3]:
+        return
+    _submit_sgd(metadata, lr)
+    _counts["sgd_fused"] += 1
 
 
 def _arrays(*arrays):

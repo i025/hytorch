@@ -1,0 +1,19 @@
+[
+  "/usr/local/cuda-12.2/bin/nvcc",
+  "-O3",
+  "-std=c++14",
+  "-lineinfo",
+  "--shared",
+  "--cudart",
+  "shared",
+  "-gencode=arch=compute_80,code=sm_80",
+  "-gencode=arch=compute_80,code=compute_80",
+  "-Xcompiler",
+  "-fPIC",
+  "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/kernels.cu",
+  "/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/fused_sgd.cu",
+  "-o",
+  "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_build_01/libhytorch_cuda.so"
+]
+
+Built: /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_build_01/libhytorch_cuda.so

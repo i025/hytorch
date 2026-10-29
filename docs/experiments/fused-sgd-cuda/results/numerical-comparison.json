@@ -1,0 +1,297 @@
+{
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "reference": "same-mode same-repeat HyTorch original SGD",
+  "initial_and_inputs_all_exact": true,
+  "source_checks": [
+    {
+      "experiment": "update",
+      "method": "baseline",
+      "repeat": 1,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 0.0,
+      "path": "runs/fused_sgd_cuda_01/update-baseline-r1"
+    },
+    {
+      "experiment": "update",
+      "method": "fused",
+      "repeat": 1,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 0.0,
+      "path": "runs/fused_sgd_cuda_01/update-fused-r1"
+    },
+    {
+      "experiment": "update",
+      "method": "torch",
+      "repeat": 1,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 3.725290298461914e-07,
+      "path": "runs/fused_sgd_cuda_01/update-torch-r1"
+    },
+    {
+      "experiment": "update",
+      "method": "baseline",
+      "repeat": 2,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 0.0,
+      "path": "runs/fused_sgd_cuda_01/update-baseline-r2"
+    },
+    {
+      "experiment": "update",
+      "method": "fused",
+      "repeat": 2,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 0.0,
+      "path": "runs/fused_sgd_cuda_01/update-fused-r2"
+    },
+    {
+      "experiment": "update",
+      "method": "torch",
+      "repeat": 2,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 3.725290298461914e-07,
+      "path": "runs/fused_sgd_cuda_01/update-torch-r2"
+    },
+    {
+      "experiment": "update",
+      "method": "baseline",
+      "repeat": 3,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 0.0,
+      "path": "runs/fused_sgd_cuda_01/update-baseline-r3"
+    },
+    {
+      "experiment": "update",
+      "method": "fused",
+      "repeat": 3,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 0.0,
+      "path": "runs/fused_sgd_cuda_01/update-fused-r3"
+    },
+    {
+      "experiment": "update",
+      "method": "torch",
+      "repeat": 3,
+      "initial_exact": true,
+      "gradients_exact": true,
+      "gradients_unchanged": true,
+      "standalone_status": "PASSED",
+      "reference_max_abs": 3.725290298461914e-07,
+      "path": "runs/fused_sgd_cuda_01/update-torch-r3"
+    },
+    {
+      "experiment": "training",
+      "method": "baseline",
+      "repeat": 1,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-baseline-r1"
+    },
+    {
+      "experiment": "training",
+      "method": "fused",
+      "repeat": 1,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-fused-r1"
+    },
+    {
+      "experiment": "training",
+      "method": "torch",
+      "repeat": 1,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-torch-r1"
+    },
+    {
+      "experiment": "training",
+      "method": "baseline",
+      "repeat": 2,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-baseline-r2"
+    },
+    {
+      "experiment": "training",
+      "method": "fused",
+      "repeat": 2,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-fused-r2"
+    },
+    {
+      "experiment": "training",
+      "method": "torch",
+      "repeat": 2,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-torch-r2"
+    },
+    {
+      "experiment": "training",
+      "method": "baseline",
+      "repeat": 3,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-baseline-r3"
+    },
+    {
+      "experiment": "training",
+      "method": "fused",
+      "repeat": 3,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-fused-r3"
+    },
+    {
+      "experiment": "training",
+      "method": "torch",
+      "repeat": 3,
+      "mode": "throughput",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-throughput-torch-r3"
+    },
+    {
+      "experiment": "training",
+      "method": "baseline",
+      "repeat": 1,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-baseline-r1"
+    },
+    {
+      "experiment": "training",
+      "method": "fused",
+      "repeat": 1,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-fused-r1"
+    },
+    {
+      "experiment": "training",
+      "method": "torch",
+      "repeat": 1,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-torch-r1"
+    },
+    {
+      "experiment": "training",
+      "method": "baseline",
+      "repeat": 2,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-baseline-r2"
+    },
+    {
+      "experiment": "training",
+      "method": "fused",
+      "repeat": 2,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-fused-r2"
+    },
+    {
+      "experiment": "training",
+      "method": "torch",
+      "repeat": 2,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-torch-r2"
+    },
+    {
+      "experiment": "training",
+      "method": "baseline",
+      "repeat": 3,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-baseline-r3"
+    },
+    {
+      "experiment": "training",
+      "method": "fused",
+      "repeat": 3,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-fused-r3"
+    },
+    {
+      "experiment": "training",
+      "method": "torch",
+      "repeat": 3,
+      "mode": "phases",
+      "initial_exact": true,
+      "inputs_exact": true,
+      "status": "COMPLETED",
+      "path": "runs/fused_sgd_cuda_01/training-phases-torch-r3"
+    }
+  ],
+  "standalone_all_passed": true,
+  "standalone_reference_all_passed": true,
+  "training_all_passed": true,
+  "training_losses_all_finite": true,
+  "standalone_max_abs": 3.725290298461914e-07,
+  "training_max_abs": 2.9802322387695312e-08,
+  "training_failed_rows": [],
+  "standalone_failed_rows": []
+}

@@ -1,0 +1,53 @@
+{
+  "status": "PASSED",
+  "method": "baseline",
+  "instrumentation": "NONE",
+  "per_repeat": [
+    {
+      "method": "baseline",
+      "repeat": 1,
+      "mode": "sync_wall",
+      "updates": 100,
+      "batch_wall_s": 0.040627186,
+      "dispatch_counts": {},
+      "count": 100,
+      "mean_us": 399.8774900000001,
+      "std_us": 140.16148511422153,
+      "median_us": 381.561,
+      "p95_us": 412.67755
+    },
+    {
+      "method": "baseline",
+      "repeat": 1,
+      "mode": "host_submission",
+      "updates": 100,
+      "batch_wall_s": 0.037876893,
+      "dispatch_counts": {},
+      "count": 100,
+      "mean_us": 374.6690900000001,
+      "std_us": 22.90606347192151,
+      "median_us": 370.4155,
+      "p95_us": 387.0268
+    }
+  ],
+  "aggregate": {
+    "sync_wall": {
+      "count": 100,
+      "mean_us": 399.8774900000001,
+      "std_us": 140.16148511422153,
+      "median_us": 381.561,
+      "p95_us": 412.67755
+    },
+    "host_submission": {
+      "count": 100,
+      "mean_us": 374.6690900000001,
+      "std_us": 22.90606347192151,
+      "median_us": 370.4155,
+      "p95_us": 387.0268
+    }
+  },
+  "numerical_checks": 32,
+  "max_abs": 0.0,
+  "max_rel_nonzero": 0.0,
+  "gradients_unchanged": true
+}

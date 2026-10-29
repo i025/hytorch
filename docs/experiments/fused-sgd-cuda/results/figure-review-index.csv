@@ -1,0 +1,7 @@
+server_path,bytes,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/figure-review-01/kernel-launches.png,104761,server original figure draft; final figure in report/figures
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/figure-review-01/training-loss.png,271182,server original figure draft; final figure in report/figures
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/figure-review-01/training-phase-timing.png,73667,server original figure draft; final figure in report/figures
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/figure-review-01/training-throughput.png,69487,server original figure draft; final figure in report/figures
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/figure-review-01/update-timing.png,89954,server original figure draft; final figure in report/figures
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/fused_sgd_cuda_01/figure-review-01/update-trace-timeline.png,123869,server original figure draft; final figure in report/figures

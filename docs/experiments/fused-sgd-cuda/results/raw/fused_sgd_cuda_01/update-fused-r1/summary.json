@@ -1,0 +1,57 @@
+{
+  "status": "PASSED",
+  "method": "fused",
+  "instrumentation": "NONE",
+  "per_repeat": [
+    {
+      "method": "fused",
+      "repeat": 1,
+      "mode": "sync_wall",
+      "updates": 100,
+      "batch_wall_s": 0.011092346,
+      "dispatch_counts": {
+        "sgd_fused": 100
+      },
+      "count": 100,
+      "mean_us": 106.20129000000001,
+      "std_us": 30.400001241126706,
+      "median_us": 93.971,
+      "p95_us": 169.58995000000002
+    },
+    {
+      "method": "fused",
+      "repeat": 1,
+      "mode": "host_submission",
+      "updates": 100,
+      "batch_wall_s": 0.008488957,
+      "dispatch_counts": {
+        "sgd_fused": 100
+      },
+      "count": 100,
+      "mean_us": 82.42768,
+      "std_us": 7.184992802594401,
+      "median_us": 80.451,
+      "p95_us": 92.10765
+    }
+  ],
+  "aggregate": {
+    "sync_wall": {
+      "count": 100,
+      "mean_us": 106.20129000000001,
+      "std_us": 30.400001241126706,
+      "median_us": 93.971,
+      "p95_us": 169.58995000000002
+    },
+    "host_submission": {
+      "count": 100,
+      "mean_us": 82.42768,
+      "std_us": 7.184992802594401,
+      "median_us": 80.451,
+      "p95_us": 92.10765
+    }
+  },
+  "numerical_checks": 32,
+  "max_abs": 0.0,
+  "max_rel_nonzero": 0.0,
+  "gradients_unchanged": true
+}

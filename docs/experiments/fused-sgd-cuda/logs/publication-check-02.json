@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "checked_document_links": 87,
+  "parsed_json_files": 98,
+  "indexed_original_files": 533,
+  "issues": [],
+  "note": "Path/size/index checks only; no content hashes. Original successful compiler logs can be empty."
+}

@@ -150,6 +150,8 @@ def main():
     p.add_argument("--warmup", type=int, default=2)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--lr", type=float, default=.001)
+    p.add_argument("--fused-sgd", action="store_true",
+                   help="Opt in to native multi-tensor SGD for HyTorch CUDA FP32")
     p.add_argument("--mode", choices=["phases","throughput"], default="phases")
     p.add_argument("--interval", type=float, default=1.)
     p.add_argument("--no-monitor", action="store_true")
@@ -163,6 +165,8 @@ def main():
     native = args.matmul != "cupy" or args.conv != "cupy" or args.pool != "cupy"
     if native and (args.device != "cuda" or args.framework != "hytorch"):
         p.error("Native backend requires --framework hytorch --device cuda")
+    if args.fused_sgd and (args.framework != "hytorch" or args.device != "cuda"):
+        p.error("--fused-sgd requires --framework hytorch --device cuda")
     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
         p.error("Invalid batch/epoch/sample/step/worker/warmup value")
     if args.nvtx and args.device != "cuda":
@@ -201,13 +205,13 @@ def main():
         cp.cuda.Device(args.gpu).use()
         monitor_id = args.monitor_id or cp.cuda.Device(args.gpu).pci_bus_id
         sync = cp.cuda.get_current_stream().synchronize
-        if native:
+        if native or args.fused_sgd:
             load_library()
     if args.framework == "hytorch":
         model = hy
         if cp is not None:
             model.to_gpu()
-        optimizer = SGD(args.lr).setup(model)
+        optimizer = SGD(args.lr, fused=args.fused_sgd).setup(model)
         convert = lambda x: cp.asarray(x) if cp is not None else x
         forward = lambda x,t: F.mean_square_error(model(x), t)
         backward = lambda loss: (model.cleargrads(), loss.backward())

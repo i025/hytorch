@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-update-baseline,data,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-update-baseline,transfer,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-update-baseline,forward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-update-baseline,backward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-update-baseline,update,200,117.77671199999995,117.776712,6500,30.043413999999935,30.043414,6400,29.39339699999992,100,0.650017,0,0,6400,21.89590199999968,21.895902,6400,0,0,0,0,0
+trace-update-baseline,outside_phase,0,0,0.0,1335,15.28184500000001,15.281845,320,1.5201420000000014,106,0.272329,42,4.842966,320,1.0992459999999997,1.099246,320,224,1.170736,14097944,0,0
+trace-update-baseline,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
