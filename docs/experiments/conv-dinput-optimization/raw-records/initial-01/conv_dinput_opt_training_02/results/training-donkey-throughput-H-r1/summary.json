@@ -1,0 +1,72 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 256,
+    "measured_step_total_s": 1.3235377660021186,
+    "mean_step_s": 0.005170069398445776,
+    "samples_per_sec": 773.6840053254369,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 0,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": null,
+    "gpu_utilization_pct_max": null,
+    "gpu_memory_used_mib_mean": null,
+    "gpu_memory_used_mib_max": null,
+    "gpu_memory_total_mib_mean": null,
+    "gpu_memory_total_mib_max": null,
+    "gpu_temperature_c_mean": null,
+    "gpu_temperature_c_max": null,
+    "gpu_power_w_mean": null,
+    "gpu_power_w_max": null,
+    "cpu_utilization_pct_mean": null,
+    "cpu_utilization_pct_max": null,
+    "process_rss_mib_mean": null,
+    "process_rss_mib_max": null,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266056702519563,
+      "train_wall_s": 0.34361739130690694,
+      "samples": 256,
+      "train_samples_per_sec": 745.0146775933987
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.00048736785026903817,
+      "train_wall_s": 0.3468458508141339,
+      "samples": 256,
+      "train_samples_per_sec": 738.0800416066793
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126561790363667,
+      "train_wall_s": 0.34038102393969893,
+      "samples": 256,
+      "train_samples_per_sec": 752.0983309732105
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0003314742027100692,
+      "train_wall_s": 0.34735035290941596,
+      "samples": 256,
+      "train_samples_per_sec": 737.0080319646636
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 2048,
+    "conv_im2col": 1280,
+    "conv_dinput_fused_opt": 1024,
+    "sgd_fused": 256
+  },
+  "bottleneck_hypotheses": [],
+  "final_state_sha256": null
+}

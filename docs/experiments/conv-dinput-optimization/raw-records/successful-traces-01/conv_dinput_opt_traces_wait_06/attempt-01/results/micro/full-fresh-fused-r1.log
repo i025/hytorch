@@ -1,0 +1,29 @@
+警告: 未找到scipy，无法加载SVHN数据集
+o00 fused full complete
+o01 fused full complete
+o02 fused full complete
+o03 fused full complete
+o04 fused full complete
+o05 fused full complete
+o06 fused full complete
+o07 fused full complete
+o08 fused full complete
+o09 fused full complete
+o10 fused full complete
+o11 fused full complete
+o12 fused full complete
+o13 fused full complete
+o14 fused full complete
+o15 fused full complete
+o16 fused full complete
+o17 fused full complete
+o18 fused full complete
+o19 fused full complete
+o20 fused full complete
+o21 fused full complete
+o22 fused full complete
+o23 fused full complete
+Generating '/tmp/nsys-report-4442.qdstrm'
+[1/1] [0%                          ] full-fresh-fused-r1.nsys-rep[1/1] [0%                          ] full-fresh-fused-r1.nsys-rep[1/1] [=====29%                    ] full-fresh-fused-r1.nsys-rep[1/1] [=====30%                    ] full-fresh-fused-r1.nsys-rep[1/1] [==============62%           ] full-fresh-fused-r1.nsys-rep[1/1] [=======================94%  ] full-fresh-fused-r1.nsys-rep[1/1] [========================100%] full-fresh-fused-r1.nsys-rep[1/1] [========================100%] full-fresh-fused-r1.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06/attempt-01/results/micro/full-fresh-fused-r1.nsys-rep

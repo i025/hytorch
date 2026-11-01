@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/conv-dinput-optimization/scripts/diagnose_forward_reference.py",
+    "--inputs",
+    "runs/conv_dinput_opt_correctness_wait_01/attempt-01/results/shape-correctness",
+    "--output",
+    "{output}"
+  ],
+  "seconds": 300.0,
+  "idle_memory_mib": 4.0,
+  "started_at": "2026-11-01T16:49:35.907961+00:00"
+}

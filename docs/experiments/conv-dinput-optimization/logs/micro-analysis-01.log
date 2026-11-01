@@ -1,0 +1,9 @@
+{
+  "status": "PASSED",
+  "cases": 124,
+  "numeric_comparisons": 4464,
+  "max_abs": 4.76837158203125e-07,
+  "full_wall_faster": 41,
+  "full_wall_slower": 83,
+  "scope": "Full dInput host synchronized wall; pure kernel times come from separate Nsight activity records"
+}

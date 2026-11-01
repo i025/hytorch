@@ -1,0 +1,2 @@
+Starting on physical GPU 1 GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5
+{"status": "COMPLETED", "returncode": 0, "gpu": {"index": "1", "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5", "name": "NVIDIA A100-PCIE-40GB", "memory": "0", "utilization": "0"}, "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06/attempt-01/results", "finished_at": "2026-11-01T17:51:48.358486+00:00"}

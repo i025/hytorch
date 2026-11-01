@@ -1,0 +1,29 @@
+警告: 未找到scipy，无法加载SVHN数据集
+o00 fused_opt full complete
+o01 fused_opt full complete
+o02 fused_opt full complete
+o03 fused_opt full complete
+o04 fused_opt full complete
+o05 fused_opt full complete
+o06 fused_opt full complete
+o07 fused_opt full complete
+o08 fused_opt full complete
+o09 fused_opt full complete
+o10 fused_opt full complete
+o11 fused_opt full complete
+o12 fused_opt full complete
+o13 fused_opt full complete
+o14 fused_opt full complete
+o15 fused_opt full complete
+o16 fused_opt full complete
+o17 fused_opt full complete
+o18 fused_opt full complete
+o19 fused_opt full complete
+o20 fused_opt full complete
+o21 fused_opt full complete
+o22 fused_opt full complete
+o23 fused_opt full complete
+Generating '/tmp/nsys-report-99cc.qdstrm'
+[1/1] [0%                          ] full-fresh-fused_opt-r1.nsys-rep[1/1] [0%                          ] full-fresh-fused_opt-r1.nsys-rep[1/1] [=====29%                    ] full-fresh-fused_opt-r1.nsys-rep[1/1] [=====30%                    ] full-fresh-fused_opt-r1.nsys-rep[1/1] [==============62%           ] full-fresh-fused_opt-r1.nsys-rep[1/1] [=======================94%  ] full-fresh-fused_opt-r1.nsys-rep[1/1] [========================100%] full-fresh-fused_opt-r1.nsys-rep[1/1] [========================100%] full-fresh-fused_opt-r1.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06/attempt-01/results/micro/full-fresh-fused_opt-r1.nsys-rep

@@ -1,0 +1,9 @@
+{
+  "frozen_at": "2026-11-01T17:04:43.829284+00:00",
+  "reason": "First matched window has large process variation, e.g. Donkey D CV 23.97%; analysis overlapped its early throughput jobs. Causation not established.",
+  "action": "Repeat all A/D/F/H/E models, throughput and phases, 3x256 unchanged after Nsight; no concurrent CPU analysis in second window",
+  "first_raw": "runs/conv_dinput_opt_training_01/results",
+  "second_raw": "runs/conv_dinput_opt_training_02/results",
+  "reporting": "Keep both complete windows separate; no selecting per-method winners or mixing windows; no third repeat planned",
+  "kernel_or_training_configuration_changed": false
+}

@@ -1,0 +1,3 @@
+nvidia-smi whole-card samples at approximately 1.2-second intervals, not allocator/process peaks.
+A subprocess with zero overlapping samples has empty hardware fields; no interpolation.
+External flags reflect the guard at that time; see report for exiting-client attribution caveats.

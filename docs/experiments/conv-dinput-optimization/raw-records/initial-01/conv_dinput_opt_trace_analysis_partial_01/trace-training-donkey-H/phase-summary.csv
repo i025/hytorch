@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+trace-training-donkey-H,data,16,2.645932,2.645932,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+trace-training-donkey-H,transfer,16,3.883072,3.883072,246,0.7907770000000006,0.790777,0,0,0,0,0,0,0,0,0.0,0,32,1.039454,10137856,0,0
+trace-training-donkey-H,forward,16,56.003538,56.003538,624,5.944419000000003,5.944419,624,5.944419000000003,0,0,0,0,624,9.024881999999987,9.024882,462,0,0,0,0,0
+trace-training-donkey-H,backward,16,95.69188700000001,95.691887,1744,10.588385000000017,10.588385,1056,9.891155000000007,0,0,0,0,1056,20.893285000000013,20.893285,784,0,0,0,0,0
+trace-training-donkey-H,update,16,2.4286470000000002,2.428647,16,0.175908,0.175908,16,0.175908,0,0,0,0,16,0.16572599999999998,0.165726,1,0,0,0,0,0
+trace-training-donkey-H,outside_phase,0,0,0.0,2744,73.97553199999997,73.975532,1060,19.75675100000002,38,0.258401,40,28.657115999999995,1060,18.75811000000002,18.75811,779,82,0.6890510000000001,4661664,0,0
+trace-training-donkey-H,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

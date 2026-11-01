@@ -1,0 +1,13 @@
+{
+  "status": "INTERRUPTED",
+  "returncode": 75,
+  "gpu": {
+    "index": "0",
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory": "0",
+    "utilization": "0"
+  },
+  "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_02/attempt-01/results",
+  "finished_at": "2026-11-01T16:50:36.361373+00:00"
+}

@@ -1,0 +1,2495 @@
+.......................F...............................................F [ 16%]
+............................FFFFFFFFFFFFFFFFFFFFFFFF.................... [ 32%]
+...F...............................................F.................... [ 48%]
+........FFFFFFFFFFFFFFFFFFFFFFFF........................................ [ 64%]
+........................................................................ [ 80%]
+........................................................................ [ 96%]
+..............                                                           [100%]
+=================================== FAILURES ===================================
+_______________________ test_shape_gradients[False-c23] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'c23', 'pad': 0, 'shape': (1, 64, 13, 17), 'split': 'calibration', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-c23]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_conv_shape_dispatch_gpu.py:100: in full_gradients
+    compare(key+'_'+name+'_torch',actual,target.detach().cpu().numpy())
+tests/test_conv_shape_dispatch_gpu.py:54: in compare
+    np.testing.assert_allclose(a,b,atol=atol,rtol=rtol,err_msg=name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x7f8622ba7160>, array([[[[-5.74633256e-02,  3.28678280e-01, -1.7905168...95815e-01, -3.79355967e-01, ...,
+           6.11314356e-01,  1.60043776e-01, -6.58467710e-01]]]],
+      dtype=float32))
+kwds = {'equal_nan': True, 'err_msg': 'test_shape_gradients[False-c23]_forward_torch', 'header': 'Not equal to tolerance rtol=0.0001, atol=1e-05', 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=0.0001, atol=1e-05
+E           test_shape_gradients[False-c23]_forward_torch
+E           Mismatched elements: 4144 / 7488 (55.3%)
+E           Max absolute difference: 0.00508195
+E           Max relative difference: 4.9129477
+E            x: array([[[[-5.746333e-02,  3.286783e-01, -1.790517e-01, ...,
+E                     -5.141839e-01, -1.831346e-01,  8.451493e-02],
+E                    [-7.812508e-01,  1.560599e-01, -2.511552e-01, ...,...
+E            y: array([[[[-5.670843e-02,  3.282836e-01, -1.788553e-01, ...,
+E                     -5.146354e-01, -1.830574e-01,  8.451328e-02],
+E                    [-7.811130e-01,  1.560659e-01, -2.511273e-01, ...,...
+
+/usr/lib/python3.8/contextlib.py:75: AssertionError
+_______________________ test_shape_gradients[False-v19] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'v19', 'pad': 0, 'shape': (8, 64, 9, 17), 'split': 'validation-2', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-v19]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_conv_shape_dispatch_gpu.py:100: in full_gradients
+    compare(key+'_'+name+'_torch',actual,target.detach().cpu().numpy())
+tests/test_conv_shape_dispatch_gpu.py:54: in compare
+    np.testing.assert_allclose(a,b,atol=atol,rtol=rtol,err_msg=name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x7f85e0891160>, array([[[[-2.97186375e-01,  6.62936270e-01, -2.0284262...16033e-03, -8.52298960e-02, ...,
+           5.38197979e-02,  4.06840146e-02, -7.31634647e-02]]]],
+      dtype=float32))
+kwds = {'equal_nan': True, 'err_msg': 'test_shape_gradients[False-v19]_forward_torch', 'header': 'Not equal to tolerance rtol=0.0001, atol=1e-05', 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=0.0001, atol=1e-05
+E           test_shape_gradients[False-v19]_forward_torch
+E           Mismatched elements: 14691 / 33280 (44.1%)
+E           Max absolute difference: 0.00712429
+E           Max relative difference: 13.975806
+E            x: array([[[[-2.971864e-01,  6.629363e-01, -2.028426e-01, ...,
+E                     -4.102498e-02, -1.918956e-01, -2.367031e-01],
+E                    [-2.526482e-01, -2.784536e-01,  1.777095e-01, ...,...
+E            y: array([[[[-2.970482e-01,  6.628188e-01, -2.026479e-01, ...,
+E                     -4.110880e-02, -1.919680e-01, -2.367519e-01],
+E                    [-2.527613e-01, -2.784336e-01,  1.776393e-01, ...,...
+
+/usr/lib/python3.8/contextlib.py:75: AssertionError
+_______________________ test_shape_gradients[False-o00] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o00', 'pad': (0, 0), 'shape': (1, 3, 5, 13), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o00]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o00', 'pad': (0, 0), 'shape': (1, 3, 5, 13), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o00]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o01] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o01', 'pad': (0, 0), 'shape': (4, 16, 9, 21), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o01]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o01', 'pad': (0, 0), 'shape': (4, 16, 9, 21), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o01]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o02] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o02', 'pad': (0, 0), 'shape': (16, 32, 7, 9), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o02]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o02', 'pad': (0, 0), 'shape': (16, 32, 7, 9), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o02]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o03] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o03', 'pad': (1, 1), 'shape': (1, 64, 19, 23), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o03]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o03', 'pad': (1, 1), 'shape': (1, 64, 19, 23), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o03]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o04] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o04', 'pad': (1, 1), 'shape': (4, 3, 17, 29), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o04]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o04', 'pad': (1, 1), 'shape': (4, 3, 17, 29), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o04]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o05] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o05', 'pad': (0, 0), 'shape': (16, 16, 11, 19), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o05]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o05', 'pad': (0, 0), 'shape': (16, 16, 11, 19), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o05]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o06] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o06', 'pad': (0, 0), 'shape': (1, 32, 29, 41), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o06]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o06', 'pad': (0, 0), 'shape': (1, 32, 29, 41), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o06]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o07] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o07', 'pad': (1, 1), 'shape': (4, 64, 13, 23), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o07]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o07', 'pad': (1, 1), 'shape': (4, 64, 13, 23), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o07]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o08] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o08', 'pad': (1, 1), 'shape': (16, 3, 9, 21), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o08]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o08', 'pad': (1, 1), 'shape': (16, 3, 9, 21), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o08]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o09] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o09', 'pad': (0, 0), 'shape': (1, 16, 23, 39), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o09]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o09', 'pad': (0, 0), 'shape': (1, 16, 23, 39), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o09]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o10] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o10', 'pad': (0, 0), 'shape': (4, 32, 17, 25), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o10]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o10', 'pad': (0, 0), 'shape': (4, 32, 17, 25), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o10]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o11] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o11', 'pad': (1, 1), 'shape': (16, 64, 7, 19), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o11]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o11', 'pad': (1, 1), 'shape': (16, 64, 7, 19), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o11]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o12] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o12', 'pad': (0, 0), 'shape': (2, 8, 11, 23), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o12]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o12', 'pad': (0, 0), 'shape': (2, 8, 11, 23), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o12]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o13] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o13', 'pad': (1, 1), 'shape': (8, 24, 9, 25), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o13]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o13', 'pad': (1, 1), 'shape': (8, 24, 9, 25), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o13]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o14] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o14', 'pad': (1, 1), 'shape': (1, 48, 15, 29), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o14]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o14', 'pad': (1, 1), 'shape': (1, 48, 15, 29), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o14]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o15] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o15', 'pad': (0, 0), 'shape': (4, 8, 21, 35), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o15]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o15', 'pad': (0, 0), 'shape': (4, 8, 21, 35), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o15]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o16] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o16', 'pad': (0, 0), 'shape': (16, 24, 9, 15), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o16]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o16', 'pad': (0, 0), 'shape': (16, 24, 9, 15), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o16]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o17] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o17', 'pad': (1, 1), 'shape': (2, 64, 19, 31), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o17]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o17', 'pad': (1, 1), 'shape': (2, 64, 19, 31), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o17]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o18] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o18', 'pad': (0, 1), 'shape': (1, 3, 13, 27), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o18]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o18', 'pad': (0, 1), 'shape': (1, 3, 13, 27), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o18]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o19] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o19', 'pad': (1, 0), 'shape': (4, 16, 15, 23), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o19]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o19', 'pad': (1, 0), 'shape': (4, 16, 15, 23), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o19]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o20] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o20', 'pad': (0, 1), 'shape': (16, 32, 7, 17), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o20]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o20', 'pad': (0, 1), 'shape': (16, 32, 7, 17), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o20]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o21] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o21', 'pad': (1, 0), 'shape': (1, 64, 17, 33), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o21]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o21', 'pad': (1, 0), 'shape': (1, 64, 17, 33), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o21]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o22] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o22', 'pad': (0, 0), 'shape': (4, 3, 7, 13), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o22]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o22', 'pad': (0, 0), 'shape': (4, 3, 7, 13), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o22]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+_______________________ test_shape_gradients[False-o23] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o23', 'pad': (1, 1), 'shape': (16, 16, 9, 17), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o23]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o23', 'pad': (1, 1), 'shape': (16, 16, 9, 17), 'split': 'fresh', ...}
+nondefault = False
+request = <FixtureRequest for <Function test_shape_gradients[False-o23]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-c23] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'c23', 'pad': 0, 'shape': (1, 64, 13, 17), 'split': 'calibration', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-c23]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_conv_shape_dispatch_gpu.py:100: in full_gradients
+    compare(key+'_'+name+'_torch',actual,target.detach().cpu().numpy())
+tests/test_conv_shape_dispatch_gpu.py:54: in compare
+    np.testing.assert_allclose(a,b,atol=atol,rtol=rtol,err_msg=name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x7f85e07de0d0>, array([[[[-5.74633256e-02,  3.28678280e-01, -1.7905168...95815e-01, -3.79355967e-01, ...,
+           6.11314356e-01,  1.60043776e-01, -6.58467710e-01]]]],
+      dtype=float32))
+kwds = {'equal_nan': True, 'err_msg': 'test_shape_gradients[True-c23]_forward_torch', 'header': 'Not equal to tolerance rtol=0.0001, atol=1e-05', 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=0.0001, atol=1e-05
+E           test_shape_gradients[True-c23]_forward_torch
+E           Mismatched elements: 4144 / 7488 (55.3%)
+E           Max absolute difference: 0.00508195
+E           Max relative difference: 4.9129477
+E            x: array([[[[-5.746333e-02,  3.286783e-01, -1.790517e-01, ...,
+E                     -5.141839e-01, -1.831346e-01,  8.451493e-02],
+E                    [-7.812508e-01,  1.560599e-01, -2.511552e-01, ...,...
+E            y: array([[[[-5.670843e-02,  3.282836e-01, -1.788553e-01, ...,
+E                     -5.146354e-01, -1.830574e-01,  8.451328e-02],
+E                    [-7.811130e-01,  1.560659e-01, -2.511273e-01, ...,...
+
+/usr/lib/python3.8/contextlib.py:75: AssertionError
+________________________ test_shape_gradients[True-v19] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'v19', 'pad': 0, 'shape': (8, 64, 9, 17), 'split': 'validation-2', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-v19]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_conv_shape_dispatch_gpu.py:100: in full_gradients
+    compare(key+'_'+name+'_torch',actual,target.detach().cpu().numpy())
+tests/test_conv_shape_dispatch_gpu.py:54: in compare
+    np.testing.assert_allclose(a,b,atol=atol,rtol=rtol,err_msg=name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x7f85e07b5160>, array([[[[-2.97186375e-01,  6.62936270e-01, -2.0284262...16033e-03, -8.52298960e-02, ...,
+           5.38197979e-02,  4.06840146e-02, -7.31634647e-02]]]],
+      dtype=float32))
+kwds = {'equal_nan': True, 'err_msg': 'test_shape_gradients[True-v19]_forward_torch', 'header': 'Not equal to tolerance rtol=0.0001, atol=1e-05', 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=0.0001, atol=1e-05
+E           test_shape_gradients[True-v19]_forward_torch
+E           Mismatched elements: 14691 / 33280 (44.1%)
+E           Max absolute difference: 0.00712429
+E           Max relative difference: 13.975806
+E            x: array([[[[-2.971864e-01,  6.629363e-01, -2.028426e-01, ...,
+E                     -4.102498e-02, -1.918956e-01, -2.367031e-01],
+E                    [-2.526482e-01, -2.784536e-01,  1.777095e-01, ...,...
+E            y: array([[[[-2.970482e-01,  6.628188e-01, -2.026479e-01, ...,
+E                     -4.110880e-02, -1.919680e-01, -2.367519e-01],
+E                    [-2.527613e-01, -2.784336e-01,  1.776393e-01, ...,...
+
+/usr/lib/python3.8/contextlib.py:75: AssertionError
+________________________ test_shape_gradients[True-o00] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o00', 'pad': (0, 0), 'shape': (1, 3, 5, 13), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o00]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o00', 'pad': (0, 0), 'shape': (1, 3, 5, 13), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o00]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o01] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o01', 'pad': (0, 0), 'shape': (4, 16, 9, 21), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o01]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o01', 'pad': (0, 0), 'shape': (4, 16, 9, 21), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o01]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o02] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o02', 'pad': (0, 0), 'shape': (16, 32, 7, 9), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o02]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o02', 'pad': (0, 0), 'shape': (16, 32, 7, 9), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o02]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o03] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o03', 'pad': (1, 1), 'shape': (1, 64, 19, 23), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o03]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o03', 'pad': (1, 1), 'shape': (1, 64, 19, 23), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o03]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o04] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o04', 'pad': (1, 1), 'shape': (4, 3, 17, 29), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o04]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o04', 'pad': (1, 1), 'shape': (4, 3, 17, 29), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o04]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o05] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o05', 'pad': (0, 0), 'shape': (16, 16, 11, 19), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o05]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o05', 'pad': (0, 0), 'shape': (16, 16, 11, 19), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o05]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o06] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o06', 'pad': (0, 0), 'shape': (1, 32, 29, 41), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o06]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o06', 'pad': (0, 0), 'shape': (1, 32, 29, 41), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o06]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o07] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o07', 'pad': (1, 1), 'shape': (4, 64, 13, 23), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o07]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o07', 'pad': (1, 1), 'shape': (4, 64, 13, 23), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o07]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o08] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o08', 'pad': (1, 1), 'shape': (16, 3, 9, 21), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o08]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o08', 'pad': (1, 1), 'shape': (16, 3, 9, 21), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o08]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o09] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o09', 'pad': (0, 0), 'shape': (1, 16, 23, 39), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o09]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o09', 'pad': (0, 0), 'shape': (1, 16, 23, 39), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o09]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o10] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o10', 'pad': (0, 0), 'shape': (4, 32, 17, 25), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o10]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o10', 'pad': (0, 0), 'shape': (4, 32, 17, 25), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o10]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o11] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o11', 'pad': (1, 1), 'shape': (16, 64, 7, 19), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o11]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o11', 'pad': (1, 1), 'shape': (16, 64, 7, 19), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o11]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o12] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o12', 'pad': (0, 0), 'shape': (2, 8, 11, 23), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o12]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o12', 'pad': (0, 0), 'shape': (2, 8, 11, 23), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o12]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o13] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o13', 'pad': (1, 1), 'shape': (8, 24, 9, 25), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o13]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o13', 'pad': (1, 1), 'shape': (8, 24, 9, 25), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o13]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o14] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o14', 'pad': (1, 1), 'shape': (1, 48, 15, 29), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o14]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o14', 'pad': (1, 1), 'shape': (1, 48, 15, 29), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o14]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o15] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o15', 'pad': (0, 0), 'shape': (4, 8, 21, 35), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o15]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o15', 'pad': (0, 0), 'shape': (4, 8, 21, 35), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o15]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o16] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o16', 'pad': (0, 0), 'shape': (16, 24, 9, 15), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o16]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o16', 'pad': (0, 0), 'shape': (16, 24, 9, 15), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o16]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o17] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o17', 'pad': (1, 1), 'shape': (2, 64, 19, 31), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o17]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o17', 'pad': (1, 1), 'shape': (2, 64, 19, 31), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o17]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o18] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o18', 'pad': (0, 1), 'shape': (1, 3, 13, 27), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o18]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o18', 'pad': (0, 1), 'shape': (1, 3, 13, 27), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o18]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o19] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o19', 'pad': (1, 0), 'shape': (4, 16, 15, 23), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o19]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o19', 'pad': (1, 0), 'shape': (4, 16, 15, 23), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o19]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o20] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o20', 'pad': (0, 1), 'shape': (16, 32, 7, 17), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o20]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o20', 'pad': (0, 1), 'shape': (16, 32, 7, 17), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o20]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o21] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o21', 'pad': (1, 0), 'shape': (1, 64, 17, 33), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o21]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o21', 'pad': (1, 0), 'shape': (1, 64, 17, 33), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o21]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o22] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o22', 'pad': (0, 0), 'shape': (4, 3, 7, 13), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o22]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o22', 'pad': (0, 0), 'shape': (4, 3, 7, 13), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o22]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+________________________ test_shape_gradients[True-o23] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o23', 'pad': (1, 1), 'shape': (16, 16, 9, 17), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o23]>>
+
+    @pytest.mark.parametrize('case',shapes.cases('history')+shapes.cases('fresh'),ids=lambda r:r['case'])
+    @pytest.mark.parametrize('nondefault',[False,True])
+    def test_shape_gradients(device,case,nondefault,request):
+        # Save exact producer inputs before execution so type/launch errors also
+        # leave reproducible inputs, not only the comparisons that finished.
+        from hytorch.utils import pair
+        n,ci,h,w=case['shape'];co,_,kh,kw=case['weight_shape']
+        sh,sw=pair(case['stride']);ph,pw=pair(case['pad'])
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=case['shape']).astype(np.float32)*.1
+        weight=rng.normal(size=case['weight_shape']).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+        dy=rng.normal(size=(n,co,(h+2*ph-kh)//sh+1,(w+2*pw-kw)//sw+1)).astype(np.float32)*.1
+        if os.environ.get('HYTORCH_SHAPE_TEST_OUTPUT'):
+            out=Path(os.environ['HYTORCH_SHAPE_TEST_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
+            np.savez(out/(request.node.name+'-inputs.npz'),input=a,weight=weight,bias=bias,dy=dy)
+>       full_gradients(device,case,nondefault,request,('original','fused_opt'))
+
+tests/test_conv_dinput_opt_gpu.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+case = {'case': 'o23', 'pad': (1, 1), 'shape': (16, 16, 9, 17), 'split': 'fresh', ...}
+nondefault = True
+request = <FixtureRequest for <Function test_shape_gradients[True-o23]>>
+modes = ('original', 'fused_opt')
+
+    def full_gradients(device,case,nondefault,request,modes):
+        cp,torch=device
+        shape,wshape=case['shape'],case['weight_shape'];s,pad=case['stride'],case['pad']
+        n,ci,h,w=shape;co,_,kh,kw=wshape
+        rng=np.random.default_rng(42)
+        a=rng.normal(size=shape).astype(np.float32)*.1
+        weight=rng.normal(size=wshape).astype(np.float32)*.1
+        bias=rng.normal(size=co).astype(np.float32)*.1
+>       dy=rng.normal(size=(n,co,(h+2*pad-kh)//s+1,(w+2*pad-kw)//s+1)).astype(np.float32)*.1
+E       TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+tests/test_conv_shape_dispatch_gpu.py:80: TypeError
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_01/attempt-01/results/gpu-tests.xml -
+=========================== short test summary info ============================
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-c23] - A...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-v19] - A...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o00] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o01] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o02] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o03] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o04] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o05] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o06] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o07] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o08] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o09] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o10] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o11] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o12] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o13] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o14] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o15] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o16] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o17] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o18] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o19] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o20] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o21] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o22] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[False-o23] - T...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-c23] - As...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-v19] - As...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o00] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o01] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o02] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o03] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o04] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o05] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o06] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o07] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o08] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o09] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o10] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o11] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o12] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o13] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o14] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o15] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o16] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o17] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o18] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o19] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o20] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o21] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o22] - Ty...
+FAILED tests/test_conv_dinput_opt_gpu.py::test_shape_gradients[True-o23] - Ty...
+52 failed, 394 passed in 15.94s

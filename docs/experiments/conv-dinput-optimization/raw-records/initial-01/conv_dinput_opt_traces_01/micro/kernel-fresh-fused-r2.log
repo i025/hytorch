@@ -1,0 +1,29 @@
+警告: 未找到scipy，无法加载SVHN数据集
+o00 fused kernel complete
+o01 fused kernel complete
+o02 fused kernel complete
+o03 fused kernel complete
+o04 fused kernel complete
+o05 fused kernel complete
+o06 fused kernel complete
+o07 fused kernel complete
+o08 fused kernel complete
+o09 fused kernel complete
+o10 fused kernel complete
+o11 fused kernel complete
+o12 fused kernel complete
+o13 fused kernel complete
+o14 fused kernel complete
+o15 fused kernel complete
+o16 fused kernel complete
+o17 fused kernel complete
+o18 fused kernel complete
+o19 fused kernel complete
+o20 fused kernel complete
+o21 fused kernel complete
+o22 fused kernel complete
+o23 fused kernel complete
+Generating '/tmp/nsys-report-cc5c.qdstrm'
+[1/1] [0%                          ] kernel-fresh-fused-r2.nsys-rep[1/1] [0%                          ] kernel-fresh-fused-r2.nsys-rep[1/1] [==18%                       ] kernel-fresh-fused-r2.nsys-rep[1/1] [=======37%                  ] kernel-fresh-fused-r2.nsys-rep[1/1] [=====================88%    ] kernel-fresh-fused-r2.nsys-rep[1/1] [======================91%   ] kernel-fresh-fused-r2.nsys-rep[1/1] [========================100%] kernel-fresh-fused-r2.nsys-rep[1/1] [========================100%] kernel-fresh-fused-r2.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_01/micro/kernel-fresh-fused-r2.nsys-rep

@@ -1,0 +1,617 @@
+{
+  "split": "fresh",
+  "method": "original",
+  "scope": "full",
+  "repeat": 1,
+  "warmup": 5,
+  "iterations": 3,
+  "nvtx": true,
+  "output": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06/attempt-01/results/micro/full-fresh-original-r1",
+  "cases": [
+    {
+      "case": "o00",
+      "split": "fresh",
+      "shape": [
+        1,
+        3,
+        5,
+        13
+      ],
+      "weight_shape": [
+        17,
+        3,
+        1,
+        1
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 3315.0
+    },
+    {
+      "case": "o01",
+      "split": "fresh",
+      "shape": [
+        4,
+        16,
+        9,
+        21
+      ],
+      "weight_shape": [
+        31,
+        16,
+        1,
+        1
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 374976.0
+    },
+    {
+      "case": "o02",
+      "split": "fresh",
+      "shape": [
+        16,
+        32,
+        7,
+        9
+      ],
+      "weight_shape": [
+        65,
+        32,
+        1,
+        1
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 2096640.0
+    },
+    {
+      "case": "o03",
+      "split": "fresh",
+      "shape": [
+        1,
+        64,
+        19,
+        23
+      ],
+      "weight_shape": [
+        32,
+        64,
+        1,
+        1
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 223744.0
+    },
+    {
+      "case": "o04",
+      "split": "fresh",
+      "shape": [
+        4,
+        3,
+        17,
+        29
+      ],
+      "weight_shape": [
+        64,
+        3,
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 3407616.0
+    },
+    {
+      "case": "o05",
+      "split": "fresh",
+      "shape": [
+        16,
+        16,
+        11,
+        19
+      ],
+      "weight_shape": [
+        16,
+        16,
+        3,
+        3
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 1926144.0
+    },
+    {
+      "case": "o06",
+      "split": "fresh",
+      "shape": [
+        1,
+        32,
+        29,
+        41
+      ],
+      "weight_shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 21915648.0
+    },
+    {
+      "case": "o07",
+      "split": "fresh",
+      "shape": [
+        4,
+        64,
+        13,
+        23
+      ],
+      "weight_shape": [
+        32,
+        64,
+        3,
+        3
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 5511168.0
+    },
+    {
+      "case": "o08",
+      "split": "fresh",
+      "shape": [
+        16,
+        3,
+        9,
+        21
+      ],
+      "weight_shape": [
+        32,
+        3,
+        5,
+        5
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 7257600.0
+    },
+    {
+      "case": "o09",
+      "split": "fresh",
+      "shape": [
+        1,
+        16,
+        23,
+        39
+      ],
+      "weight_shape": [
+        64,
+        16,
+        5,
+        5
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 5740800.0
+    },
+    {
+      "case": "o10",
+      "split": "fresh",
+      "shape": [
+        4,
+        32,
+        17,
+        25
+      ],
+      "weight_shape": [
+        16,
+        32,
+        5,
+        5
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 21760000.0
+    },
+    {
+      "case": "o11",
+      "split": "fresh",
+      "shape": [
+        16,
+        64,
+        7,
+        19
+      ],
+      "weight_shape": [
+        64,
+        64,
+        5,
+        5
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 54476800.0
+    },
+    {
+      "case": "o12",
+      "split": "fresh",
+      "shape": [
+        2,
+        8,
+        11,
+        23
+      ],
+      "weight_shape": [
+        3,
+        8,
+        1,
+        1
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 12144.0
+    },
+    {
+      "case": "o13",
+      "split": "fresh",
+      "shape": [
+        8,
+        24,
+        9,
+        25
+      ],
+      "weight_shape": [
+        7,
+        24,
+        3,
+        3
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 680400.0
+    },
+    {
+      "case": "o14",
+      "split": "fresh",
+      "shape": [
+        1,
+        48,
+        15,
+        29
+      ],
+      "weight_shape": [
+        33,
+        48,
+        5,
+        5
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 17226000.0
+    },
+    {
+      "case": "o15",
+      "split": "fresh",
+      "shape": [
+        4,
+        8,
+        21,
+        35
+      ],
+      "weight_shape": [
+        63,
+        8,
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 13335840.0
+    },
+    {
+      "case": "o16",
+      "split": "fresh",
+      "shape": [
+        16,
+        24,
+        9,
+        15
+      ],
+      "weight_shape": [
+        19,
+        24,
+        1,
+        1
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 246240.0
+    },
+    {
+      "case": "o17",
+      "split": "fresh",
+      "shape": [
+        2,
+        64,
+        19,
+        31
+      ],
+      "weight_shape": [
+        47,
+        64,
+        5,
+        5
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 22146400.0
+    },
+    {
+      "case": "o18",
+      "split": "fresh",
+      "shape": [
+        1,
+        3,
+        13,
+        27
+      ],
+      "weight_shape": [
+        16,
+        3,
+        2,
+        3
+      ],
+      "stride": [
+        1,
+        2
+      ],
+      "pad": [
+        0,
+        1
+      ],
+      "work": 50544.0
+    },
+    {
+      "case": "o19",
+      "split": "fresh",
+      "shape": [
+        4,
+        16,
+        15,
+        23
+      ],
+      "weight_shape": [
+        32,
+        16,
+        3,
+        5
+      ],
+      "stride": [
+        2,
+        1
+      ],
+      "pad": [
+        1,
+        0
+      ],
+      "work": 5299200.0
+    },
+    {
+      "case": "o20",
+      "split": "fresh",
+      "shape": [
+        16,
+        32,
+        7,
+        17
+      ],
+      "weight_shape": [
+        64,
+        32,
+        5,
+        3
+      ],
+      "stride": [
+        1,
+        2
+      ],
+      "pad": [
+        0,
+        1
+      ],
+      "work": 29245440.0
+    },
+    {
+      "case": "o21",
+      "split": "fresh",
+      "shape": [
+        1,
+        64,
+        17,
+        33
+      ],
+      "weight_shape": [
+        17,
+        64,
+        3,
+        1
+      ],
+      "stride": [
+        2,
+        1
+      ],
+      "pad": [
+        1,
+        0
+      ],
+      "work": 915552.0
+    },
+    {
+      "case": "o22",
+      "split": "fresh",
+      "shape": [
+        4,
+        3,
+        7,
+        13
+      ],
+      "weight_shape": [
+        1,
+        3,
+        1,
+        1
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "work": 1092.0
+    },
+    {
+      "case": "o23",
+      "split": "fresh",
+      "shape": [
+        16,
+        16,
+        9,
+        17
+      ],
+      "weight_shape": [
+        2,
+        16,
+        3,
+        3
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        1,
+        1
+      ],
+      "work": 176256.0
+    }
+  ],
+  "event_scope": "Stream span including host launch gaps, NOT pure kernel execution",
+  "kernel_time_scope": "Nsight CUPTI duration in separate trace",
+  "dtype": "float32",
+  "tf32": false,
+  "memory_scope": "Independent untimed call; CuPy pool requests / Torch allocator deltas"
+}

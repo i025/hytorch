@@ -1,0 +1,13 @@
+{
+  "status": "PASSED",
+  "numerical_passed": true,
+  "kernel_repeats": 3,
+  "required_kernel_repeats": 3,
+  "traces": 26,
+  "unmatched_kernel_api_count": 0,
+  "pure_kernel_faster": 98,
+  "pure_kernel_slower": 26,
+  "pure_kernel_separated_5pct": 83,
+  "trace_max_abs": 4.1443854570388794e-08,
+  "scope": "Nsight instrumented CUPTI activity; never substitute for uninstrumented training throughput"
+}

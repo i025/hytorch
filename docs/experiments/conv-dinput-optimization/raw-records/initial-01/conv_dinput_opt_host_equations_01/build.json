@@ -1,0 +1,34 @@
+[
+  {
+    "command": [
+      "g++",
+      "-O2",
+      "-std=c++14",
+      "-ffp-contract=off",
+      "-fPIC",
+      "-shared",
+      "runs/conv_dinput_opt_host_equations_01/fused.cpp",
+      "-o",
+      "runs/conv_dinput_opt_host_equations_01/fused.so"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "g++",
+      "-O2",
+      "-std=c++14",
+      "-ffp-contract=off",
+      "-fPIC",
+      "-shared",
+      "runs/conv_dinput_opt_host_equations_01/fused_opt.cpp",
+      "-o",
+      "runs/conv_dinput_opt_host_equations_01/fused_opt.so"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+full-history-torch-r1,data,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+full-history-torch-r1,transfer,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+full-history-torch-r1,forward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+full-history-torch-r1,backward,300,40.44331300000001,40.443313,5316,20.073074999999974,20.073075,1050,6.023751999999996,300,9.274019000000012,0,0,1050,18.84640299999995,16.346873,317,0,0,0,0,0
+full-history-torch-r1,update,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+full-history-torch-r1,outside_phase,0,0,0.0,16564,286.20182799999645,286.201828,3638,125.69463300000022,604,15.183284999999998,59,37.034645999999995,3638,58.32071200000011,53.016423,1400,700,27.621859000000008,86957272,1,0.003552
+full-history-torch-r1,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

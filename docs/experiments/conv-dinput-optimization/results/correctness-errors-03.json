@@ -1,0 +1,33 @@
+{
+  "scope": "All recorded comparisons, not a replacement for pytest assertions",
+  "groups": [
+    {
+      "source": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03/results/legacy-correctness/comparisons.csv",
+      "comparisons": 533,
+      "max_abs": 2.980232238769531e-07,
+      "mismatches": 0,
+      "all_finite": true
+    },
+    {
+      "source": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03/results/pruning-correctness/comparisons.csv",
+      "comparisons": 439,
+      "max_abs": 9.5367431640625e-07,
+      "mismatches": 0,
+      "all_finite": true
+    },
+    {
+      "source": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03/results/sgd-correctness/correctness.csv",
+      "comparisons": 303,
+      "max_abs": 4.172325134277344e-07,
+      "mismatches": 0,
+      "all_finite": true
+    },
+    {
+      "source": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03/results/shape-correctness/comparisons.csv",
+      "comparisons": 6204,
+      "max_abs": 6.103515625e-05,
+      "mismatches": 0,
+      "all_finite": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETED",
+  "passed": 446,
+  "failed": 0,
+  "skipped": 0,
+  "scope": "Actual A100 GPU execution",
+  "physical_gpu": 2,
+  "logical_gpu": 0,
+  "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+  "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03",
+  "finished_at": "2026-11-01T16:52:27.143430+00:00"
+}

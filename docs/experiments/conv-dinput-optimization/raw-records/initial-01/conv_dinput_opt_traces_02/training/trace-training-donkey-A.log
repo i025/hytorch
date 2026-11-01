@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.0007448709047821467, "train_wall_s": 0.18533841706812382, "samples": 64, "train_samples_per_sec": 345.31426895955343}
+Generating '/tmp/nsys-report-c419.qdstrm'
+[1/1] [0%                          ] trace-training-donkey-A.nsys-rep[1/1] [0%                          ] trace-training-donkey-A.nsys-rep[1/1] [14%                         ] trace-training-donkey-A.nsys-rep[1/1] [=====29%                    ] trace-training-donkey-A.nsys-rep[1/1] [==================78%       ] trace-training-donkey-A.nsys-rep[1/1] [===================79%      ] trace-training-donkey-A.nsys-rep[1/1] [====================85%     ] trace-training-donkey-A.nsys-rep[1/1] [========================100%] trace-training-donkey-A.nsys-rep[1/1] [========================100%] trace-training-donkey-A.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_02/training/trace-training-donkey-A.nsys-rep

@@ -1,0 +1,3 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+kernel-fresh-fused-r2,outside_phase,unlabeled:outside_phase,Host-to-Device,96,2.140556,22.297458333333335,253.122,8350616
+kernel-fresh-fused-r2,outside_phase,unlabeled:outside_phase,Device-to-Host,72,1.1300520000000003,15.695166666666672,88.032,10075776

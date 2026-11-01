@@ -36,8 +36,8 @@ def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="
         raise ValueError("conv must be cupy/direct/im2col; pool must be cupy/native")
     if tile not in (16, 32):
         raise ValueError("tile must be 16 or 32")
-    if conv_backward not in ("original", "fused", "auto"):
-        raise ValueError("conv_backward must be original/fused/auto")
+    if conv_backward not in ("original", "fused", "fused_opt", "auto"):
+        raise ValueError("conv_backward must be original/fused/fused_opt/auto")
     token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile,
                             conv_backward=conv_backward))
     try:
@@ -263,7 +263,7 @@ def conv_dinput_dispatch(x, w, gy, stride=1, pad=0, *, create_graph=False):
     return mode, reason
 
 
-def conv2d_dinput(gy, w, input_shape, stride=1, pad=0):
+def conv2d_dinput(gy, w, input_shape, stride=1, pad=0, *, variant="fused"):
     """Gather dInput on the current stream; contiguous CUDA FP32 NCHW/OIHW only.
 
     Stride 1/2, padding 0/1, groups=1, dilation=1. Unsupported inputs raise;
@@ -288,14 +288,20 @@ def conv2d_dinput(gy, w, input_shape, stride=1, pad=0):
     _shape_ok(input_shape)
     if c != wc or gy.shape != (n, oc, oh, ow):
         raise ValueError("Fused dInput input/weight/gradient shapes do not match")
-    fn = load_library().hy_conv_dinput
+    name = {"fused": "hy_conv_dinput", "fused_opt": "hy_conv_dinput_opt"}[variant]
+    fn = getattr(load_library(), name)
     if fn.argtypes is None:
         fn.argtypes, fn.restype = [ct.c_void_p]*3 + [ct.c_int]*13 + [ct.c_void_p], ct.c_int
     gx = cp.empty(input_shape, dtype=cp.float32)
-    _call("hy_conv_dinput", _ptr(gy), _ptr(w), _ptr(gx),
+    _call(name, _ptr(gy), _ptr(w), _ptr(gx),
           n, c, h, wi, oc, kh, kw, sh, sw, ph, pw, oh, ow)
-    _counts["conv_dinput_fused"] += 1
+    _counts["conv_dinput_" + variant] += 1
     return gx
+
+
+def conv2d_dinput_opt(gy, w, input_shape, stride=1, pad=0):
+    """Explicit four-chain gather; same layout, stream and ABI contract."""
+    return conv2d_dinput(gy, w, input_shape, stride, pad, variant="fused_opt")
 
 
 def max_pool2d(x, kernel, stride=1, pad=0):

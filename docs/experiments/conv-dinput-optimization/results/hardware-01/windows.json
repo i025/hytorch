@@ -1,0 +1,206 @@
+[
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03/guard/gpu-load.jsonl",
+    "samples": 15,
+    "external_samples": 0,
+    "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "physical_gpu": "2",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T16:52:08.169041+00:00",
+    "completion": {
+      "returncode": 0,
+      "external_load_interruption": false,
+      "finished_at": "2026-11-01T16:52:27.143430+00:00"
+    },
+    "sampled_peak_card_memory_mib": 1380.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_01",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_01/attempt-01/guard/gpu-load.jsonl",
+    "samples": 14,
+    "external_samples": 0,
+    "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "physical_gpu": "2",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T16:47:29.905931+00:00",
+    "completion": {
+      "returncode": 1,
+      "external_load_interruption": false,
+      "finished_at": "2026-11-01T16:47:47.381768+00:00"
+    },
+    "sampled_peak_card_memory_mib": 1203.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_02",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_02/attempt-01/guard/gpu-load.jsonl",
+    "samples": 7,
+    "external_samples": 1,
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "physical_gpu": "0",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T16:50:28.225716+00:00",
+    "completion": {
+      "returncode": -15,
+      "external_load_interruption": true,
+      "finished_at": "2026-11-01T16:50:36.350222+00:00"
+    },
+    "sampled_peak_card_memory_mib": 953.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_forward_diagnosis_01",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_forward_diagnosis_01/attempt-01/guard/gpu-load.jsonl",
+    "samples": 3,
+    "external_samples": 0,
+    "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "physical_gpu": "2",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T16:49:37.650563+00:00",
+    "completion": {
+      "returncode": 0,
+      "external_load_interruption": false,
+      "finished_at": "2026-11-01T16:49:41.450236+00:00"
+    },
+    "sampled_peak_card_memory_mib": 435.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_micro_01",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_micro_01/guard/gpu-load.jsonl",
+    "samples": 104,
+    "external_samples": 0,
+    "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "physical_gpu": "2",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T16:53:18.370064+00:00",
+    "completion": {
+      "returncode": 0,
+      "external_load_interruption": false,
+      "finished_at": "2026-11-01T16:55:32.222262+00:00"
+    },
+    "sampled_peak_card_memory_mib": 519.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_01",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_01/guard/gpu-load.jsonl",
+    "samples": 208,
+    "external_samples": 1,
+    "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "physical_gpu": "2",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T17:02:24.055539+00:00",
+    "completion": {
+      "returncode": -15,
+      "external_load_interruption": true,
+      "finished_at": "2026-11-01T17:07:04.630938+00:00"
+    },
+    "sampled_peak_card_memory_mib": 530.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_02",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_02/guard/gpu-load.jsonl",
+    "samples": 106,
+    "external_samples": 1,
+    "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "physical_gpu": "2",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T17:14:52.618217+00:00",
+    "completion": {
+      "returncode": -15,
+      "external_load_interruption": true,
+      "finished_at": "2026-11-01T17:17:13.770665+00:00"
+    },
+    "sampled_peak_card_memory_mib": 2680.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_05",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_05/guard/gpu-load.jsonl",
+    "samples": 54,
+    "external_samples": 1,
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "physical_gpu": "0",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T17:34:21.960216+00:00",
+    "completion": {
+      "returncode": -15,
+      "external_load_interruption": true,
+      "finished_at": "2026-11-01T17:35:33.121586+00:00"
+    },
+    "sampled_peak_card_memory_mib": 2470.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_03",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_03/attempt-01/guard/gpu-load.jsonl",
+    "samples": 6,
+    "external_samples": 1,
+    "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+    "physical_gpu": "6",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T17:25:33.421711+00:00",
+    "completion": {
+      "returncode": -15,
+      "external_load_interruption": true,
+      "finished_at": "2026-11-01T17:25:40.451011+00:00"
+    },
+    "sampled_peak_card_memory_mib": 908.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_04",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_04/attempt-01/guard/gpu-load.jsonl",
+    "samples": 32,
+    "external_samples": 1,
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "physical_gpu": "0",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T17:30:21.051000+00:00",
+    "completion": {
+      "returncode": -15,
+      "external_load_interruption": true,
+      "finished_at": "2026-11-01T17:31:06.066546+00:00"
+    },
+    "sampled_peak_card_memory_mib": 478.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06/attempt-01/guard/gpu-load.jsonl",
+    "samples": 67,
+    "external_samples": 0,
+    "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+    "physical_gpu": "1",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T17:46:44.665679+00:00",
+    "completion": null,
+    "sampled_peak_card_memory_mib": 508.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_training_01",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_training_01/guard/gpu-load.jsonl",
+    "samples": 185,
+    "external_samples": 0,
+    "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "physical_gpu": "2",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T16:56:16.934640+00:00",
+    "completion": {
+      "returncode": 0,
+      "external_load_interruption": false,
+      "finished_at": "2026-11-01T17:00:21.686398+00:00"
+    },
+    "sampled_peak_card_memory_mib": 569.0
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_training_02",
+    "monitor": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_training_02/guard/gpu-load.jsonl",
+    "samples": 160,
+    "external_samples": 0,
+    "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "physical_gpu": "2",
+    "logical_gpu": 0,
+    "started_at": "2026-11-01T17:11:02.451186+00:00",
+    "completion": {
+      "returncode": 0,
+      "external_load_interruption": false,
+      "finished_at": "2026-11-01T17:14:27.490937+00:00"
+    },
+    "sampled_peak_card_memory_mib": 569.0
+  }
+]

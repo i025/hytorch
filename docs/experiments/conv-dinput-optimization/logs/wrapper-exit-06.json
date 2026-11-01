@@ -1,0 +1,25 @@
+{
+  "scope": "Observed outer command session status, separate from inner capture completion",
+  "session_id": 90155,
+  "outer_exit_code": 143,
+  "outer_log": "logs/traces-wait-06.log",
+  "outer_command_metadata_present": false,
+  "reason": "Not established; no synthetic successful outer metadata was created",
+  "inner_capture_status": "COMPLETED",
+  "inner_guard_returncode": 0,
+  "inner_external_load_interruption": false,
+  "inner_training_commands_completed": 12,
+  "inner_micro_commands_completed": 40,
+  "raw_root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06",
+  "evidence": [
+    "completion.json",
+    "config.json",
+    "attempt-01/guard/launch.json",
+    "attempt-01/guard/completion.json",
+    "attempt-01/guard/terminal.log",
+    "attempt-01/results/training/commands.json",
+    "attempt-01/results/training/completion.json",
+    "attempt-01/results/micro/commands.json",
+    "attempt-01/results/micro/completion.json"
+  ]
+}

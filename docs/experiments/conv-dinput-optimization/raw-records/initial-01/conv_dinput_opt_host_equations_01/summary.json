@@ -1,0 +1,9 @@
+{
+  "status": "PASSED",
+  "cases": 124,
+  "comparisons": 32076,
+  "max_abs": 6.556510925292969e-07,
+  "atol": 1e-05,
+  "rtol": 0.0001,
+  "scope": "Sampled CPU compilation of actual CUDA bodies; NOT CUDA execution or full-tensor GPU validation"
+}

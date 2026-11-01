@@ -1,0 +1,154 @@
+{
+  "profiles": {
+    "status": "PARTIAL",
+    "numerical_passed": true,
+    "kernel_repeats": 2,
+    "required_kernel_repeats": 3,
+    "traces": 22,
+    "unmatched_kernel_api_count": 0,
+    "pure_kernel_faster": 98,
+    "pure_kernel_slower": 26,
+    "pure_kernel_separated_5pct": 86,
+    "trace_max_abs": 4.1443854570388794e-08,
+    "scope": "Nsight instrumented CUPTI activity; never substitute for uninstrumented training throughput"
+  },
+  "training_windows": {
+    "training-01": {
+      "status": "PASSED",
+      "gpu_uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+      "training_processes": 60,
+      "steps": 15360,
+      "comparisons": 1248,
+      "max_abs": 4.190951585769653e-08
+    },
+    "training-02": {
+      "status": "PASSED",
+      "gpu_uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+      "training_processes": 60,
+      "steps": 15360,
+      "comparisons": 1248,
+      "max_abs": 4.190951585769653e-08
+    }
+  },
+  "shape_distributions": [
+    {
+      "split": "history",
+      "metric": "gpu_old_over_opt",
+      "faster": 79,
+      "slower": 21,
+      "count": 100,
+      "mean": 1.1276786868674296,
+      "std": 0.18704574513262762,
+      "median": 1.1635719555615112,
+      "p95": 1.394380861415972,
+      "minimum": 0.6582506662242975,
+      "maximum": 1.43433773233186
+    },
+    {
+      "split": "history",
+      "metric": "wall_old_over_opt",
+      "faster": 28,
+      "slower": 72,
+      "count": 100,
+      "mean": 0.9413326390966975,
+      "std": 0.09893980939887734,
+      "median": 0.9713213607738378,
+      "p95": 1.0443728088617616,
+      "minimum": 0.661011303036938,
+      "maximum": 1.165248237648828
+    },
+    {
+      "split": "history",
+      "metric": "wall_cupy_over_opt",
+      "faster": 80,
+      "slower": 20,
+      "count": 100,
+      "mean": 1.4730453209181635,
+      "std": 0.49574994800307853,
+      "median": 1.5385803320173643,
+      "p95": 2.153138378958873,
+      "minimum": 0.4043785740520721,
+      "maximum": 2.804153034174286
+    },
+    {
+      "split": "fresh",
+      "metric": "gpu_old_over_opt",
+      "faster": 19,
+      "slower": 5,
+      "count": 24,
+      "mean": 1.1160633672286768,
+      "std": 0.18414162642657605,
+      "median": 1.1543622026770985,
+      "p95": 1.3525178392880581,
+      "minimum": 0.688429720445323,
+      "maximum": 1.407052895374214
+    },
+    {
+      "split": "fresh",
+      "metric": "wall_old_over_opt",
+      "faster": 13,
+      "slower": 11,
+      "count": 24,
+      "mean": 0.9780249767802044,
+      "std": 0.10319616834176792,
+      "median": 1.003309806685313,
+      "p95": 1.0688621896872577,
+      "minimum": 0.6684355678847164,
+      "maximum": 1.085173672382693
+    },
+    {
+      "split": "fresh",
+      "metric": "wall_cupy_over_opt",
+      "faster": 18,
+      "slower": 6,
+      "count": 24,
+      "mean": 1.4924579983399795,
+      "std": 0.5771260642631888,
+      "median": 1.5190249690093167,
+      "p95": 2.2062630926103215,
+      "minimum": 0.46025021701664365,
+      "maximum": 2.40457318212483
+    },
+    {
+      "split": "all",
+      "metric": "gpu_old_over_opt",
+      "faster": 98,
+      "slower": 26,
+      "count": 124,
+      "mean": 1.1254305604857353,
+      "std": 0.1857991621470801,
+      "median": 1.1598638731673874,
+      "p95": 1.392539019653103,
+      "minimum": 0.6582506662242975,
+      "maximum": 1.43433773233186
+    },
+    {
+      "split": "all",
+      "metric": "wall_old_over_opt",
+      "faster": 41,
+      "slower": 83,
+      "count": 124,
+      "mean": 0.9484343818741506,
+      "std": 0.10041032838105056,
+      "median": 0.9801843990185614,
+      "p95": 1.058367061075526,
+      "minimum": 0.661011303036938,
+      "maximum": 1.165248237648828
+    },
+    {
+      "split": "all",
+      "metric": "wall_cupy_over_opt",
+      "faster": 98,
+      "slower": 26,
+      "count": 124,
+      "mean": 1.4768026133223857,
+      "std": 0.5100537223203255,
+      "median": 1.5385803320173643,
+      "p95": 2.190941532166156,
+      "minimum": 0.4043785740520721,
+      "maximum": 2.804153034174286
+    }
+  ],
+  "timing_scope": "Each CSV scope is independent; trace gaps are between kernels attributed to this run, not SM idle or utilization",
+  "raw_profiles": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/conv-dinput-optimization/results/profiles-partial-01"
+}

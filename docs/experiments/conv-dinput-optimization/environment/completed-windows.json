@@ -1,0 +1,128 @@
+[
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_01",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_01/attempt-01/guard/gpu-load.jsonl",
+        "samples": 14,
+        "external_samples": 0,
+        "first": "2026-11-01T16:47:30.146265+00:00",
+        "last": "2026-11-01T16:47:46.380200+00:00",
+        "max_memory_mib": 1203.0,
+        "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683"
+      }
+    ]
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_forward_diagnosis_01",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_forward_diagnosis_01/attempt-01/guard/gpu-load.jsonl",
+        "samples": 3,
+        "external_samples": 0,
+        "first": "2026-11-01T16:49:37.900112+00:00",
+        "last": "2026-11-01T16:49:40.448680+00:00",
+        "max_memory_mib": 435.0,
+        "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683"
+      }
+    ]
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_02",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_wait_02/attempt-01/guard/gpu-load.jsonl",
+        "samples": 7,
+        "external_samples": 1,
+        "first": "2026-11-01T16:50:28.485555+00:00",
+        "last": "2026-11-01T16:50:36.102148+00:00",
+        "max_memory_mib": 953.0,
+        "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359"
+      }
+    ]
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_correctness_03/guard/gpu-load.jsonl",
+        "samples": 15,
+        "external_samples": 0,
+        "first": "2026-11-01T16:52:08.451659+00:00",
+        "last": "2026-11-01T16:52:26.141873+00:00",
+        "max_memory_mib": 1380.0,
+        "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683"
+      }
+    ]
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_micro_01",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_micro_01/guard/gpu-load.jsonl",
+        "samples": 104,
+        "external_samples": 0,
+        "first": "2026-11-01T16:53:18.594771+00:00",
+        "last": "2026-11-01T16:55:31.220700+00:00",
+        "max_memory_mib": 519.0,
+        "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683"
+      }
+    ]
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_training_01",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_training_01/guard/gpu-load.jsonl",
+        "samples": 185,
+        "external_samples": 0,
+        "first": "2026-11-01T16:56:17.165817+00:00",
+        "last": "2026-11-01T17:00:20.684669+00:00",
+        "max_memory_mib": 569.0,
+        "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683"
+      }
+    ]
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_training_02",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_training_02/guard/gpu-load.jsonl",
+        "samples": 160,
+        "external_samples": 0,
+        "first": "2026-11-01T17:11:02.695749+00:00",
+        "last": "2026-11-01T17:14:26.489040+00:00",
+        "max_memory_mib": 569.0,
+        "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683"
+      }
+    ]
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_01",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_01/guard/gpu-load.jsonl",
+        "samples": 208,
+        "external_samples": 1,
+        "first": "2026-11-01T17:02:24.378788+00:00",
+        "last": "2026-11-01T17:07:04.628568+00:00",
+        "max_memory_mib": 530.0,
+        "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683"
+      }
+    ]
+  },
+  {
+    "root": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_02",
+    "monitors": [
+      {
+        "path": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_02/guard/gpu-load.jsonl",
+        "samples": 106,
+        "external_samples": 1,
+        "first": "2026-11-01T17:14:52.871921+00:00",
+        "last": "2026-11-01T17:17:13.768360+00:00",
+        "max_memory_mib": 2680.0,
+        "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683"
+      }
+    ]
+  }
+]

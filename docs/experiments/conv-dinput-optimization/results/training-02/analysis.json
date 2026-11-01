@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "gpu_uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+  "training_processes": 60,
+  "steps": 15360,
+  "comparisons": 1248,
+  "max_abs": 4.190951585769653e-08
+}

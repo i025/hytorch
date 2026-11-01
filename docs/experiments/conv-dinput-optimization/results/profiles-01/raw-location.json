@@ -1,0 +1,5 @@
+{
+  "micro": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06/attempt-01/results/micro",
+  "training": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06/attempt-01/results/training",
+  "analysis": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_trace_analysis_01"
+}

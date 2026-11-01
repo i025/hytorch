@@ -1,0 +1,24 @@
+{
+  "command": [
+    "env",
+    "HYTORCH_CUDA_LIBRARY=/home/xymo/projects/hytorch/runs/conv_dinput_opt_build_01/libhytorch_cuda.so",
+    "python",
+    "docs/experiments/conv-dinput-optimization/scripts/run_micro.py",
+    "--correctness",
+    "docs/experiments/conv-dinput-optimization/results/gpu-correctness-03.json",
+    "--output",
+    "runs/conv_dinput_opt_micro_01/results"
+  ],
+  "physical_gpu": "2",
+  "logical_gpu": 0,
+  "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+  "started_at": "2026-11-01T16:53:18.370064+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4"
+  }
+}

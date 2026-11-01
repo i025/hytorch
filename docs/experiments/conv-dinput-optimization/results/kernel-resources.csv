@@ -1,0 +1,3 @@
+kernel,registers,threads_per_block,shared_bytes,local_bytes,stack_bytes,spill_store_bytes,spill_load_bytes,constant0_bytes,arch,source
+old_gather,40,256,0,0,0,0,0,428,sm_80,logs/resources-01.log
+four_chain_gather,48,256,0,0,0,0,0,428,sm_80,logs/resources-01.log

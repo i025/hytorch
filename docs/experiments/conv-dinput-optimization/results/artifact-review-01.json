@@ -1,0 +1,14 @@
+{
+  "status": "PASSED",
+  "host_passed": 67,
+  "gpu_passed": 446,
+  "full_nsys_traces": 26,
+  "pure_kernel_repeats": 3,
+  "server_original_files": 29313,
+  "portable_raw_files": 2127,
+  "final_figures": 12,
+  "auxiliary_figures": 12,
+  "missing_document_links": [],
+  "binary_artifacts_uploaded": false,
+  "scope": "Metadata/index/numerical artifact review; no hashes or new GPU work"
+}

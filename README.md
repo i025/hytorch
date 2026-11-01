@@ -115,6 +115,8 @@ python examples/finetune_imagenet.py --model alexnet --weights weights_imagenet/
 
 阶段 4E 的[通用 Shape-Aware 调度实验](docs/experiments/conv-shape-dispatch/README.md)已完成：100种卷积形状、最终188项GPU回归和两个CNN的匹配测量；仅小型1×1规则通过全新24形状验证，较宽规则失败记录完整保留。Auto默认关闭；本轮DonkeyNet G/D吞吐−5.81%，独立CNN−0.52%，没有证实端到端增量收益。相对当前代码复现的无Native基线G/A分别+0.67%/+6.77%，不可归为Auto独立贡献。详见[完整原始数据与23份Nsight索引](docs/experiments/conv-shape-dispatch/data-index.md)，等待人工审查后再决定后续工作。
 
+阶段 4F 的[通用 Gather 四路累加实验](docs/experiments/conv-dinput-optimization/README.md)保留旧Kernel，新增显式 `fused_opt`，默认和Auto均不变。主机67项、GPU446项通过，124形状完成三重复完整操作及纯Kernel对照，26份Nsight归因通过。新方案纯Kernel98形状加速、26退化，完整dInput墙钟41加速、83退化；第二匹配窗口DonkeyNet/SpatialNet H/F吞吐−0.51%/+0.27%，未证实稳定训练增益。H/A累计+12.90%/+12.10%包含已有优化，不能归为4F独立贡献。普通测量在GPU2，完整Nsight在独立GPU1窗口，各自配对统计。两轮训练、失败、负结果、图及服务器原始记录见[数据索引](docs/experiments/conv-dinput-optimization/data-index.md)，完成提交后等待人工审查。
+
 第一次先回传：
 
 1. `nvidia-smi`、`nvcc --version`、CuPy 配置信息。

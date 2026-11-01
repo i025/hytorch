@@ -1,0 +1,29 @@
+警告: 未找到scipy，无法加载SVHN数据集
+o00 original full complete
+o01 original full complete
+o02 original full complete
+o03 original full complete
+o04 original full complete
+o05 original full complete
+o06 original full complete
+o07 original full complete
+o08 original full complete
+o09 original full complete
+o10 original full complete
+o11 original full complete
+o12 original full complete
+o13 original full complete
+o14 original full complete
+o15 original full complete
+o16 original full complete
+o17 original full complete
+o18 original full complete
+o19 original full complete
+o20 original full complete
+o21 original full complete
+o22 original full complete
+o23 original full complete
+Generating '/tmp/nsys-report-3bd2.qdstrm'
+[1/1] [0%                          ] full-fresh-original-r1.nsys-rep[1/1] [0%                          ] full-fresh-original-r1.nsys-rep[1/1] [=====30%                    ] full-fresh-original-r1.nsys-rep[1/1] [=====31%                    ] full-fresh-original-r1.nsys-rep[1/1] [==============62%           ] full-fresh-original-r1.nsys-rep[1/1] [=======================94%  ] full-fresh-original-r1.nsys-rep[1/1] [========================100%] full-fresh-original-r1.nsys-rep[1/1] [========================100%] full-fresh-original-r1.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_01/micro/full-fresh-original-r1.nsys-rep

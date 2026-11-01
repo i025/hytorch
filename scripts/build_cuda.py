@@ -22,7 +22,8 @@ def build_command(nvcc, output, arch):
         command += ["-Xcompiler", "-fPIC"]
     return command + [str(ROOT / "hytorch/backends/cuda/kernels.cu"),
                       str(ROOT / "hytorch/backends/cuda/fused_sgd.cu"),
-                      str(ROOT / "hytorch/backends/cuda/conv_dinput.cu"), "-o", str(output)]
+                      str(ROOT / "hytorch/backends/cuda/conv_dinput.cu"),
+                      str(ROOT / "hytorch/backends/cuda/conv_dinput_opt.cu"), "-o", str(output)]
 
 
 def main():

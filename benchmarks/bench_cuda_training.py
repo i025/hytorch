@@ -181,7 +181,7 @@ def main():
                    help="Opt in to native multi-tensor SGD for HyTorch CUDA FP32")
     p.add_argument("--prune-input-grad", action="store_true",
                    help="Explicitly disable HyTorch training-input gradients; keep parameter gradients")
-    p.add_argument("--conv-backward", choices=["original", "fused", "auto"], default="original",
+    p.add_argument("--conv-backward", choices=["original", "fused", "fused_opt", "auto"], default="original",
                    help="Explicit fused or conservative shape auto; default original, dWeight/dBias unchanged")
     p.add_argument("--mode", choices=["phases","throughput"], default="phases")
     p.add_argument("--interval", type=float, default=1.)
@@ -201,7 +201,7 @@ def main():
     if args.prune_input_grad and args.framework != "hytorch":
         p.error("--prune-input-grad is a HyTorch gradient-demand option")
     if args.conv_backward != "original" and (args.framework != "hytorch" or args.device != "cuda"):
-        p.error("--conv-backward fused/auto requires --framework hytorch --device cuda")
+        p.error("--conv-backward fused/fused_opt/auto requires --framework hytorch --device cuda")
     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
         p.error("Invalid batch/epoch/sample/step/worker/warmup value")
     if args.nvtx and args.device != "cuda":

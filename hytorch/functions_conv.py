@@ -72,13 +72,14 @@ class Conv2d(Function):
         # ==== gx ====
         gx = None
         if x.requires_grad:
-            from hytorch.backends.cuda.runtime import current_config, conv2d_dinput, conv_dinput_dispatch
+            from hytorch.backends.cuda.runtime import current_config, conv2d_dinput, conv2d_dinput_opt, conv_dinput_dispatch
             mode = current_config()["conv_backward"]
             if mode == "auto":
                 mode, _ = conv_dinput_dispatch(x.data, W.data, gy.data, self.stride, self.pad,
                                                create_graph=Config.enable_backprop)
-            if mode == "fused" and not Config.enable_backprop:
-                gx = Variable(conv2d_dinput(gy.data, W.data, x.shape, self.stride, self.pad))
+            if mode in ("fused", "fused_opt") and not Config.enable_backprop:
+                native = conv2d_dinput_opt if mode == "fused_opt" else conv2d_dinput
+                gx = Variable(native(gy.data, W.data, x.shape, self.stride, self.pad))
             else:  # Keep the differentiable path when creating a higher-order graph.
                 gx = deconv2d(gy, W, b=None, stride=self.stride, pad=self.pad,
                               outsize=(x.shape[2], x.shape[3]))

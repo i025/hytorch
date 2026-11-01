@@ -1,0 +1,3 @@
+label,phase,exclusive_operator,name,count,total_ms,mean_us,max_us,bytes
+full-history-fused_opt-r1,outside_phase,unlabeled:outside_phase,Device-to-Host,300,12.524613,41.74871,960.99,54390936
+full-history-fused_opt-r1,outside_phase,unlabeled:outside_phase,Host-to-Device,400,5.048597999999997,12.62149499999999,279.488,32566336

@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.0443654814735055, "train_wall_s": 0.08513575932011008, "samples": 64, "train_samples_per_sec": 751.7405202126674}
+Generating '/tmp/nsys-report-e1b4.qdstrm'
+[1/1] [0%                          ] trace-training-spatial-F.nsys-rep[1/1] [0%                          ] trace-training-spatial-F.nsys-rep[1/1] [=======37%                  ] trace-training-spatial-F.nsys-rep[1/1] [========42%                 ] trace-training-spatial-F.nsys-rep[1/1] [===============65%          ] trace-training-spatial-F.nsys-rep[1/1] [=====================88%    ] trace-training-spatial-F.nsys-rep[1/1] [========================100%] trace-training-spatial-F.nsys-rep[1/1] [========================100%] trace-training-spatial-F.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_traces_wait_06/attempt-01/results/training/trace-training-spatial-F.nsys-rep

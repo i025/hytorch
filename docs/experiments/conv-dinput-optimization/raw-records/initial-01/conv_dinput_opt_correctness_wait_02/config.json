@@ -1,0 +1,27 @@
+{
+  "command": [
+    "env",
+    "HYTORCH_REQUIRE_CUDA=1",
+    "HYTORCH_PRUNING_DEVICE=cuda",
+    "HYTORCH_CUDA_LIBRARY=/home/xymo/projects/hytorch/runs/conv_dinput_opt_build_01/libhytorch_cuda.so",
+    "HYTORCH_SHAPE_TEST_OUTPUT={output}/shape-correctness",
+    "HYTORCH_CONV_TEST_OUTPUT={output}/legacy-correctness",
+    "HYTORCH_SGD_TEST_OUTPUT={output}/sgd-correctness",
+    "HYTORCH_PRUNING_TEST_OUTPUT={output}/pruning-correctness",
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_conv_dinput_opt_gpu.py",
+    "tests/test_conv_shape_dispatch_gpu.py",
+    "tests/test_conv_backward_fusion_gpu.py",
+    "tests/test_conv_dinput_pruning.py",
+    "tests/test_fused_sgd_gpu.py",
+    "tests/test_cuda_device.py",
+    "-q",
+    "-ra",
+    "--junitxml={output}/gpu-tests.xml"
+  ],
+  "seconds": 600.0,
+  "idle_memory_mib": 4.0,
+  "started_at": "2026-11-01T16:50:26.417579+00:00"
+}

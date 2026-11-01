@@ -1,0 +1,3 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.04436548217199743, "train_wall_s": 0.09751395881175995, "samples": 64, "train_samples_per_sec": 656.3162933785204}
+Generating '/tmp/nsys-report-fa5e.qdstrm'

@@ -1,0 +1,8 @@
+label,phase,nvtx_count,host_nvtx_sum_ms,host_nvtx_union_ms,cuda_api_count,cuda_api_sum_ms,cuda_api_union_ms,launch_api_count,launch_api_ms,sync_api_count,sync_api_ms,allocation_api_count,allocation_api_ms,gpu_kernel_count,gpu_kernel_sum_ms,gpu_kernel_union_ms,gpu_kernel_under_10us_count,gpu_memcpy_count,gpu_memcpy_sum_ms,gpu_memcpy_bytes,gpu_memset_count,gpu_memset_sum_ms
+kernel-history-fused_opt-r3,data,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+kernel-history-fused_opt-r3,transfer,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+kernel-history-fused_opt-r3,forward,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+kernel-history-fused_opt-r3,backward,3000,263.57958099999996,263.579581,12000,230.26585900000114,230.265859,3000,16.82956900000001,3000,197.66217400000005,0,0,3000,183.20661299999944,183.206613,420,0,0,0,0,0
+kernel-history-fused_opt-r3,update,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0
+kernel-history-fused_opt-r3,outside_phase,0,0,0.0,18194,166.24250699999718,166.242507,2138,13.773244999999973,504,41.77929600000001,59,41.83222900000003,2138,55.46921000000009,55.46921,996,700,28.704261999999993,86957272,0,0
+kernel-history-fused_opt-r3,unmatched,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0.0,0,0,0,0,0,0

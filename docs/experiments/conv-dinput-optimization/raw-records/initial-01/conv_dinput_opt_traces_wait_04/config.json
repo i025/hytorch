@@ -1,0 +1,13 @@
+{
+  "command": [
+    "env",
+    "HYTORCH_CUDA_LIBRARY=/home/xymo/projects/hytorch/runs/conv_dinput_opt_build_01/libhytorch_cuda.so",
+    "bash",
+    "-ec",
+    "python docs/experiments/conv-dinput-optimization/scripts/run_training.py --traces --output {output}/training --gpu-uuid {gpu} --library /home/xymo/projects/hytorch/runs/conv_dinput_opt_build_01/libhytorch_cuda.so --correctness docs/experiments/conv-dinput-optimization/results/gpu-correctness-03.json\npython docs/experiments/conv-dinput-optimization/scripts/run_micro.py --traces --output {output}/micro --correctness docs/experiments/conv-dinput-optimization/results/gpu-correctness-03.json"
+  ],
+  "seconds": 900.0,
+  "idle_memory_mib": 4.0,
+  "idle_samples": 2,
+  "started_at": "2026-11-01T17:29:58.971446+00:00"
+}

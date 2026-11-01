@@ -1,0 +1,2 @@
+Starting on physical GPU 2 GPU-158426a4-6684-7863-8cbe-ed6595f97683
+{"status": "COMPLETED", "returncode": 0, "gpu": {"index": "2", "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683", "name": "NVIDIA A100-PCIE-40GB", "memory": "0", "utilization": "0"}, "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dinput_opt_forward_diagnosis_01/attempt-01/results", "finished_at": "2026-11-01T16:49:41.461276+00:00"}
