@@ -1,0 +1,30 @@
+{
+  "command": [
+    "/home/xymo/projects/hytorch/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_udacity_dataset.py",
+    "--junitxml=docs/experiments/udacity-stage-a/tests-isolated.xml"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/Documents/Codex/2026-10-30/hytorch-a100-udacity-behavioral-cloning-hytorch/work/hytorch-udacity",
+  "started_at": "2026-11-01T16:41:44.185305+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": "/home/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 9.807963244616985,
+  "finished_at": "2026-11-01T16:41:53.993315+00:00"
+}

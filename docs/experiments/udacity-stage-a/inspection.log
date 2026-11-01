@@ -1,0 +1,177 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{
+  "dataset": {
+    "count": 8036,
+    "first_timestamp": "2016-12-01T13:30:48.287000",
+    "last_timestamp": "2016-12-01T13:46:38.947000",
+    "steering_min": -0.9426954,
+    "steering_max": 1.0,
+    "steering_mean": 0.0040696440648332515,
+    "steering_std": 0.12883205581793244,
+    "zero_fraction": 0.5426829268292683
+  },
+  "zero_count": 4361,
+  "valid_center_paths": 8036,
+  "csv_sha256": "df567887f7dc8567f9f3580a56245e4d26a3635b3c1a5aa5744621e83d1690b5",
+  "preprocess": {
+    "color": "RGB",
+    "crop_top": 40,
+    "crop_bottom": 0,
+    "resize_width_height": [
+      200,
+      66
+    ],
+    "interpolation": "Pillow bilinear",
+    "normalization": "x/127.5-1",
+    "output": "C-contiguous CHW numpy.float32"
+  },
+  "samples": [
+    {
+      "source_index": 0,
+      "csv_line": 2,
+      "timestamp": "2016-12-01T13:30:48.287000",
+      "filename": "center_2016_12_01_13_30_48_287.jpg",
+      "raw_size_width_height": [
+        320,
+        160
+      ],
+      "raw_mode": "RGB",
+      "image_shape": [
+        3,
+        66,
+        200
+      ],
+      "image_dtype": "float32",
+      "c_contiguous": true,
+      "finite": true,
+      "image_min": -1.0,
+      "image_max": 1.0,
+      "label_shape": [
+        1
+      ],
+      "label_dtype": "float32",
+      "steering": 0.0
+    },
+    {
+      "source_index": 4018,
+      "csv_line": 4020,
+      "timestamp": "2016-12-01T13:39:25.499000",
+      "filename": "center_2016_12_01_13_39_25_499.jpg",
+      "raw_size_width_height": [
+        320,
+        160
+      ],
+      "raw_mode": "RGB",
+      "image_shape": [
+        3,
+        66,
+        200
+      ],
+      "image_dtype": "float32",
+      "c_contiguous": true,
+      "finite": true,
+      "image_min": -0.9921568632125854,
+      "image_max": 1.0,
+      "label_shape": [
+        1
+      ],
+      "label_dtype": "float32",
+      "steering": 0.0
+    },
+    {
+      "source_index": 8035,
+      "csv_line": 8037,
+      "timestamp": "2016-12-01T13:46:38.947000",
+      "filename": "center_2016_12_01_13_46_38_947.jpg",
+      "raw_size_width_height": [
+        320,
+        160
+      ],
+      "raw_mode": "RGB",
+      "image_shape": [
+        3,
+        66,
+        200
+      ],
+      "image_dtype": "float32",
+      "c_contiguous": true,
+      "finite": true,
+      "image_min": -1.0,
+      "image_max": 1.0,
+      "label_shape": [
+        1
+      ],
+      "label_dtype": "float32",
+      "steering": 0.0
+    }
+  ],
+  "batch": {
+    "image_shape": [
+      4,
+      3,
+      66,
+      200
+    ],
+    "label_shape": [
+      4,
+      1
+    ],
+    "image_dtype": "float32",
+    "label_dtype": "float32"
+  },
+  "splits": {
+    "train": {
+      "count": 7213,
+      "first_timestamp": "2016-12-01T13:30:48.287000",
+      "last_timestamp": "2016-12-01T13:45:18.267000",
+      "steering_min": -0.9426954,
+      "steering_max": 1.0,
+      "steering_mean": 0.00911625479148759,
+      "steering_std": 0.1272950272057994,
+      "zero_fraction": 0.5404131429363649
+    },
+    "validation": {
+      "count": 804,
+      "first_timestamp": "2016-12-01T13:45:20.292000",
+      "last_timestamp": "2016-12-01T13:46:38.947000",
+      "steering_min": -0.5344751,
+      "steering_max": 0.4540697,
+      "steering_mean": -0.03806209278109453,
+      "steering_std": 0.13277305532536673,
+      "zero_fraction": 0.5708955223880597
+    },
+    "excluded": {
+      "count": 19,
+      "first_timestamp": "2016-12-01T13:45:18.369000",
+      "last_timestamp": "2016-12-01T13:45:20.191000",
+      "steering_min": -0.373071,
+      "steering_max": 0.0904655,
+      "steering_mean": -0.12894544789473686,
+      "steering_std": 0.14123183845734755,
+      "zero_fraction": 0.21052631578947367
+    }
+  },
+  "split_source_index_ranges_inclusive": {
+    "train": [
+      0,
+      7212
+    ],
+    "validation": [
+      7232,
+      8035
+    ],
+    "excluded": [
+      7213,
+      7231
+    ]
+  },
+  "gap_seconds_requested": 2.0,
+  "actual_train_validation_gap_seconds": 2.025,
+  "no_gap_split_counts": {
+    "train": 7232,
+    "validation": 804,
+    "excluded": 0
+  },
+  "hytorch_source": "/srv/lab-disks/disk2/users/xymo/Documents/Codex/2026-10-30/hytorch-a100-udacity-behavioral-cloning-hytorch/work/hytorch-udacity/hytorch/__init__.py",
+  "torch_imported_after_dataloader": false
+}

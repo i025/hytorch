@@ -1,0 +1,38 @@
+{
+  "base_commit": "d26667f160bf3af772ad24685f73049f6267a11a",
+  "branch": "feat/udacity-dataset",
+  "staged_paths_before_this_record": [
+    "docs/experiments/udacity-stage-a/README.md",
+    "docs/experiments/udacity-stage-a/environment.json",
+    "docs/experiments/udacity-stage-a/inspection.json",
+    "docs/experiments/udacity-stage-a/inspection.log",
+    "docs/experiments/udacity-stage-a/inspection.log.command.json",
+    "docs/experiments/udacity-stage-a/split-indices.json",
+    "docs/experiments/udacity-stage-a/tests-isolated.log",
+    "docs/experiments/udacity-stage-a/tests-isolated.log.command.json",
+    "docs/experiments/udacity-stage-a/tests-isolated.xml",
+    "docs/experiments/udacity-stage-a/tests.log",
+    "docs/experiments/udacity-stage-a/tests.log.command.json",
+    "docs/experiments/udacity-stage-a/tests.xml",
+    "donkeycar_hy/preprocess.py",
+    "donkeycar_hy/udacity_dataset.py",
+    "tests/test_udacity_dataset.py"
+  ],
+  "all_staged_changes_are_additions": true,
+  "scope_allowlist_passed": true,
+  "cached_whitespace_check_returncode": 0,
+  "protected_existing_sources_diff_returncode": 0,
+  "new_data_modules_have_no_framework_or_opencv_imports": true,
+  "acceptance_tests": {
+    "tests": 44,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "manifest_disjoint_and_complete": true,
+  "source_sha256": {
+    "donkeycar_hy/preprocess.py": "820abad2d25672d47127158f9700d5bc04620df3333f5a7b43d39e409f1b3aee",
+    "donkeycar_hy/udacity_dataset.py": "35b6fbb77a7ede23f996f91cb730959d2afe6b2b327df8c2c760265633c2016f",
+    "tests/test_udacity_dataset.py": "dc13206b36d5c3fc775d7d0d56229eab0dc7e193977e168f1157d6611b3981b0"
+  }
+}

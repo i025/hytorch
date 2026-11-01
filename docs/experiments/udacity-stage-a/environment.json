@@ -1,0 +1,22 @@
+{
+  "recorded_at_utc": "2026-11-01T16:42:45.813893+00:00",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "executable": "/home/xymo/projects/hytorch/.venv/bin/python",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+  "packages": {
+    "numpy": "1.24.4",
+    "Pillow": "10.4.0",
+    "pytest": "8.3.5"
+  },
+  "cwd": "/srv/lab-disks/disk2/users/xymo/Documents/Codex/2026-10-30/hytorch-a100-udacity-behavioral-cloning-hytorch/work/hytorch-udacity",
+  "branch": "feat/udacity-dataset",
+  "base_commit": "d26667f160bf3af772ad24685f73049f6267a11a",
+  "initial_shared_checkout_branch": "experiment/conv-backward-shape-dispatch",
+  "initial_shared_checkout_head": "e2d60c26cdb28facd4a41dd3b443c3148e397b66",
+  "dataset": "/srv/lab-disks/disk2/users/xymo/datasets/udacity/data",
+  "CUDA_VISIBLE_DEVICES": "",
+  "torch_imported_for_dataset": false,
+  "hytorch_imported_for_dataset": false,
+  "preprocess_source": "/srv/lab-disks/disk2/users/xymo/Documents/Codex/2026-10-30/hytorch-a100-udacity-behavioral-cloning-hytorch/work/hytorch-udacity/donkeycar_hy/preprocess.py",
+  "gpu_or_model_training_executed": false
+}
