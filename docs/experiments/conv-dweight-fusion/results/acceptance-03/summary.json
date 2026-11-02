@@ -1,0 +1,44 @@
+{
+  "status": "PASSED",
+  "trace_count": 17,
+  "unmatched_kernel_api_count": 0,
+  "window": {
+    "status": "COMPLETED",
+    "physical_gpu": "0",
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "logical_gpu": 0,
+    "started_at": "2026-11-02T04:43:59.662666+00:00",
+    "device_switches": 0,
+    "cuda_pci_bus_id": "0000:01:00.0",
+    "initial_memory": [
+      41855287296,
+      42298834944
+    ],
+    "context_policy": "Controller keeps its initialized context alive across all child processes; no GPU busy loop or reservation",
+    "finished_gpu_work_at": "2026-11-02T04:51:14.814521+00:00",
+    "reset_status": 0,
+    "released_at": "2026-11-02T04:51:14.983436+00:00",
+    "context_released": true,
+    "completed_commands": 76,
+    "planned_commands": 76
+  },
+  "micro": {
+    "status": "PASSED",
+    "cases": 132,
+    "numeric_comparisons": 2376,
+    "max_abs": 1.58846378326416e-05,
+    "kernel_faster": 99,
+    "kernel_slower": 33,
+    "wall_faster": 129,
+    "wall_slower": 3,
+    "scopes": "Nsight CUPTI vs ordinary synchronized wall, separate processes in one physical GPU window"
+  },
+  "training": {
+    "status": "PASSED",
+    "gpu_uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "training_processes": 48,
+    "steps": 12288,
+    "comparisons": 780,
+    "max_abs": 4.889443516731262e-08
+  }
+}

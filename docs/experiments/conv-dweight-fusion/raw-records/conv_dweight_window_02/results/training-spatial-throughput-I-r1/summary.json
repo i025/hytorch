@@ -1,0 +1,73 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 256,
+    "measured_step_total_s": 0.6313901077955961,
+    "mean_step_s": 0.0024663676085765474,
+    "samples_per_sec": 1621.8182504872343,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 0,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": null,
+    "gpu_utilization_pct_max": null,
+    "gpu_memory_used_mib_mean": null,
+    "gpu_memory_used_mib_max": null,
+    "gpu_memory_total_mib_mean": null,
+    "gpu_memory_total_mib_max": null,
+    "gpu_temperature_c_mean": null,
+    "gpu_temperature_c_max": null,
+    "gpu_power_w_mean": null,
+    "gpu_power_w_max": null,
+    "cpu_utilization_pct_mean": null,
+    "cpu_utilization_pct_max": null,
+    "process_rss_mib_mean": null,
+    "process_rss_mib_max": null,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.034201644361019135,
+      "train_wall_s": 0.1700893477536738,
+      "samples": 256,
+      "train_samples_per_sec": 1505.0913145410107
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.01653197057021316,
+      "train_wall_s": 0.16868932079523802,
+      "samples": 256,
+      "train_samples_per_sec": 1517.5827301524514
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.008231500258261804,
+      "train_wall_s": 0.16890687821432948,
+      "samples": 256,
+      "train_samples_per_sec": 1515.6280354382977
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.00431971674606757,
+      "train_wall_s": 0.1691616838797927,
+      "samples": 256,
+      "train_samples_per_sec": 1513.345068035118
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 1024,
+    "conv_im2col": 768,
+    "conv_dinput_fused": 512,
+    "conv_dweight_fused": 768,
+    "sgd_fused": 256
+  },
+  "bottleneck_hypotheses": [],
+  "final_state_sha256": null
+}

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "bash",
+    "-ec",
+    "python docs/experiments/conv-dweight-fusion/scripts/history.py\npython docs/experiments/conv-dweight-fusion/scripts/run_window.py --output runs/conv_dweight_window_01/results --gpu-uuid SELECT_AT_LAUNCH --physical-gpu SELECT_AT_LAUNCH --library runs/conv_dweight_build_01/libhytorch_cuda.so --plan docs/experiments/conv-dweight-fusion/results/gpu-plan.json\npython -m pytest tests/test_conv_dweight_gpu.py --collect-only -q\npython -m compileall -q docs/experiments/conv-dweight-fusion/scripts tests/test_conv_dweight_host.py tests/test_conv_dweight_gpu.py"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-02T04:37:55.361584+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage2a-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cupy-cache",
+    "CUDA_CACHE_PATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cuda-cache",
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 1.2212222698144615,
+  "finished_at": "2026-11-02T04:37:56.582859+00:00"
+}

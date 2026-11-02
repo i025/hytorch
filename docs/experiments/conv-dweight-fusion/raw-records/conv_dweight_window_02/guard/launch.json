@@ -1,0 +1,26 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/conv-dweight-fusion/scripts/run_window.py",
+    "--output",
+    "runs/conv_dweight_window_02/results",
+    "--gpu-uuid",
+    "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "--physical-gpu",
+    "0",
+    "--library",
+    "runs/conv_dweight_build_01/libhytorch_cuda.so"
+  ],
+  "physical_gpu": "0",
+  "logical_gpu": 0,
+  "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "started_at": "2026-11-02T04:43:58.886065+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUPY_TF32": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4"
+  }
+}

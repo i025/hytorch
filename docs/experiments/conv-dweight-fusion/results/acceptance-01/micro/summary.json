@@ -1,0 +1,11 @@
+{
+  "status": "PASSED",
+  "cases": 132,
+  "numeric_comparisons": 2376,
+  "max_abs": 1.58846378326416e-05,
+  "kernel_faster": 99,
+  "kernel_slower": 33,
+  "wall_faster": 129,
+  "wall_slower": 3,
+  "scopes": "Nsight CUPTI vs ordinary synchronized wall, separate processes in one physical GPU window"
+}

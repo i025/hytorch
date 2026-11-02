@@ -1,0 +1,137 @@
+警告: 未找到scipy，无法加载SVHN数据集
+c00 torch complete
+c01 torch complete
+c02 torch complete
+c03 torch complete
+c04 torch complete
+c05 torch complete
+c06 torch complete
+c07 torch complete
+c08 torch complete
+c09 torch complete
+c10 torch complete
+c11 torch complete
+c12 torch complete
+c13 torch complete
+c14 torch complete
+c15 torch complete
+c16 torch complete
+c17 torch complete
+c18 torch complete
+c19 torch complete
+c20 torch complete
+c21 torch complete
+c22 torch complete
+c23 torch complete
+c24 torch complete
+c25 torch complete
+c26 torch complete
+c27 torch complete
+c28 torch complete
+c29 torch complete
+c30 torch complete
+c31 torch complete
+h00 torch complete
+h01 torch complete
+h02 torch complete
+h03 torch complete
+h04 torch complete
+h05 torch complete
+h06 torch complete
+h07 torch complete
+h08 torch complete
+h09 torch complete
+h10 torch complete
+h11 torch complete
+h12 torch complete
+h13 torch complete
+h14 torch complete
+h15 torch complete
+h16 torch complete
+h17 torch complete
+h18 torch complete
+h19 torch complete
+v00 torch complete
+v01 torch complete
+v02 torch complete
+v03 torch complete
+v04 torch complete
+v05 torch complete
+v06 torch complete
+v07 torch complete
+v08 torch complete
+v09 torch complete
+v10 torch complete
+v11 torch complete
+v12 torch complete
+v13 torch complete
+v14 torch complete
+v15 torch complete
+v16 torch complete
+v17 torch complete
+v18 torch complete
+v19 torch complete
+v20 torch complete
+v21 torch complete
+v22 torch complete
+v23 torch complete
+p00 torch complete
+p01 torch complete
+p02 torch complete
+p03 torch complete
+p04 torch complete
+p05 torch complete
+p06 torch complete
+p07 torch complete
+p08 torch complete
+p09 torch complete
+p10 torch complete
+p11 torch complete
+p12 torch complete
+p13 torch complete
+p14 torch complete
+p15 torch complete
+p16 torch complete
+p17 torch complete
+p18 torch complete
+p19 torch complete
+p20 torch complete
+p21 torch complete
+p22 torch complete
+p23 torch complete
+o00 torch complete
+o01 torch complete
+o02 torch complete
+o03 torch complete
+o04 torch complete
+o05 torch complete
+o06 torch complete
+o07 torch complete
+o08 torch complete
+o09 torch complete
+o10 torch complete
+o11 torch complete
+o12 torch complete
+o13 torch complete
+o14 torch complete
+o15 torch complete
+o16 torch complete
+o17 torch complete
+o18 torch complete
+o19 torch complete
+o20 torch complete
+o21 torch complete
+o22 torch complete
+o23 torch complete
+n00 torch complete
+n01 torch complete
+n02 torch complete
+n03 torch complete
+n04 torch complete
+n05 torch complete
+n06 torch complete
+n07 torch complete
+Generating '/tmp/nsys-report-3d50.qdstrm'
+[1/1] [0%                          ] trace-micro-torch-r3.nsys-rep[1/1] [0%                          ] trace-micro-torch-r3.nsys-rep[1/1] [8%                          ] trace-micro-torch-r3.nsys-rep[1/1] [=16%                        ] trace-micro-torch-r3.nsys-rep[1/1] [11%                         ] trace-micro-torch-r3.nsys-rep[1/1] [8%                          ] trace-micro-torch-r3.nsys-rep[1/1] [7%                          ] trace-micro-torch-r3.nsys-rep[1/1] [===23%                      ] trace-micro-torch-r3.nsys-rep[1/1] [=======39%                  ] trace-micro-torch-r3.nsys-rep[1/1] [============56%             ] trace-micro-torch-r3.nsys-rep[1/1] [=================72%        ] trace-micro-torch-r3.nsys-rep[1/1] [=====================87%    ] trace-micro-torch-r3.nsys-rep[1/1] [=====================89%    ] trace-micro-torch-r3.nsys-rep[1/1] [========================100%] trace-micro-torch-r3.nsys-rep[1/1] [========================100%] trace-micro-torch-r3.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dweight_window_02/results/trace-micro-torch-r3.nsys-rep

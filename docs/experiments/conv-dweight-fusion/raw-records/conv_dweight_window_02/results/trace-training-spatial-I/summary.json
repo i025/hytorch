@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 16,
+    "measured_step_total_s": 0.07477783318608999,
+    "mean_step_s": 0.0046736145741306245,
+    "samples_per_sec": 855.8686080236026,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 0,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 1.0,
+    "gpu_utilization_pct_mean": null,
+    "gpu_utilization_pct_max": null,
+    "gpu_memory_used_mib_mean": null,
+    "gpu_memory_used_mib_max": null,
+    "gpu_memory_total_mib_mean": null,
+    "gpu_memory_total_mib_max": null,
+    "gpu_temperature_c_mean": null,
+    "gpu_temperature_c_max": null,
+    "gpu_power_w_mean": null,
+    "gpu_power_w_max": null,
+    "cpu_utilization_pct_mean": null,
+    "cpu_utilization_pct_max": null,
+    "process_rss_mib_mean": null,
+    "process_rss_mib_max": null,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.044365482637658715,
+      "train_wall_s": 0.07839271379634738,
+      "samples": 64,
+      "train_samples_per_sec": 816.4024040073735
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 64,
+    "conv_im2col": 48,
+    "conv_dinput_fused": 32,
+    "conv_dweight_fused": 48,
+    "sgd_fused": 16
+  },
+  "bottleneck_hypotheses": [],
+  "final_state_sha256": null
+}

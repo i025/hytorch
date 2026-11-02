@@ -1,0 +1,20 @@
+{
+  "status": "PREPARED",
+  "host_tests": 75,
+  "cpu_arithmetic": {
+    "status": "PASSED",
+    "cases": 132,
+    "comparisons": 33066,
+    "max_abs": 1.3113021850585938e-05,
+    "scope": "CPU arithmetic model samples, not GPU execution or full-tensor GPU acceptance"
+  },
+  "gpu_tasks": 76,
+  "nsys_captures": 17,
+  "planned_new_gpu_tests": 277,
+  "planned_regression_gpu_tests": 446,
+  "historical_cpu_parser_calls": 3000,
+  "historical_parser_max_us_difference": 5.684341886080802e-14,
+  "gpu_status": "NOT_RUN",
+  "gpu_selection": "Not performed during preparation",
+  "no_runtime_tuning": true
+}

@@ -1,0 +1,118 @@
+{
+  "checked_at": "2026-11-02T04:40:18.298761+00:00",
+  "gpus": [
+    {
+      "index": "0",
+      "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "pci.bus_id": "00000000:01:00.0",
+      "memory.total": "40960",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "driver_version": "535.247.01"
+    },
+    {
+      "index": "1",
+      "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "pci.bus_id": "00000000:25:00.0",
+      "memory.total": "40960",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "driver_version": "535.247.01"
+    },
+    {
+      "index": "2",
+      "uuid": "GPU-158426a4-6684-7863-8cbe-ed6595f97683",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "pci.bus_id": "00000000:41:00.0",
+      "memory.total": "40960",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "driver_version": "535.247.01"
+    },
+    {
+      "index": "3",
+      "uuid": "GPU-6deac1db-e8b2-558c-0285-ff9639a06a43",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "pci.bus_id": "00000000:61:00.0",
+      "memory.total": "40960",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "driver_version": "535.247.01"
+    },
+    {
+      "index": "4",
+      "uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "pci.bus_id": "00000000:81:00.0",
+      "memory.total": "40960",
+      "memory.used": "1933",
+      "utilization.gpu": "71",
+      "driver_version": "535.247.01"
+    },
+    {
+      "index": "5",
+      "uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "pci.bus_id": "00000000:A1:00.0",
+      "memory.total": "40960",
+      "memory.used": "1933",
+      "utilization.gpu": "71",
+      "driver_version": "535.247.01"
+    },
+    {
+      "index": "6",
+      "uuid": "GPU-d40fdd6f-33be-8ccc-fc58-f4daf39a4b82",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "pci.bus_id": "00000000:C1:00.0",
+      "memory.total": "40960",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "driver_version": "535.247.01"
+    },
+    {
+      "index": "7",
+      "uuid": "GPU-34a1ad0c-b19e-9660-0977-c4620b3cc451",
+      "name": "NVIDIA A100-PCIE-40GB",
+      "pci.bus_id": "00000000:E1:00.0",
+      "memory.total": "40960",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "driver_version": "535.247.01"
+    }
+  ],
+  "processes": [
+    {
+      "uuid": "GPU-8e4b68a7-67f5-a7db-b0cc-e9502427345b",
+      "pid": "540857",
+      "name": "/home/ringochen/environments/wpdp-py311/bin/python",
+      "memory_mib": "1924"
+    },
+    {
+      "uuid": "GPU-a33323b7-f2ac-2735-70f3-fd1de1ce547a",
+      "pid": "540856",
+      "name": "/home/ringochen/environments/wpdp-py311/bin/python",
+      "memory_mib": "1924"
+    }
+  ],
+  "scheduler_commands": {
+    "srun": null,
+    "qsub": null
+  },
+  "scheduler_environment": {
+    "SLURM_JOB_ID": null,
+    "PBS_JOBID": null
+  },
+  "selected": {
+    "index": "0",
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "name": "NVIDIA A100-PCIE-40GB",
+    "pci.bus_id": "00000000:01:00.0",
+    "memory.total": "40960",
+    "memory.used": "0",
+    "utilization.gpu": "0",
+    "driver_version": "535.247.01"
+  },
+  "rule": "One selection after preparation; no compute clients, <=4 MiB and zero sampled utilization; guard checks twice again before context creation"
+}

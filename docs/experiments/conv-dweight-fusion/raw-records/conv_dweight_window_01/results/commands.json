@@ -1,0 +1,19 @@
+[
+  {
+    "name": "correctness-new",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_conv_dweight_gpu.py",
+      "-q",
+      "-ra",
+      "--junitxml=runs/conv_dweight_window_01/results/correctness-new.xml"
+    ],
+    "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dweight_build_01/libhytorch_cuda.so",
+    "started_at": "2026-11-02T04:40:36.918549+00:00",
+    "returncode": 1,
+    "finished_at": "2026-11-02T04:40:48.587927+00:00"
+  }
+]

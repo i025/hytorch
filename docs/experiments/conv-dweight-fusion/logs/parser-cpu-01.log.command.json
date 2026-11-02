@@ -1,0 +1,32 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/conv-dweight-fusion/scripts/analyze_micro_trace.py",
+    "--input",
+    "runs/conv_dinput_opt_traces_wait_06/attempt-01/results/micro/kernel-history-fused-r1.sqlite",
+    "--output",
+    "runs/conv_dweight_parser_cpu_01",
+    "--expected-cases",
+    "100"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-02T04:33:14.285053+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage2a-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cupy-cache",
+    "CUDA_CACHE_PATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cuda-cache",
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.7274128361605108,
+  "finished_at": "2026-11-02T04:33:15.012517+00:00"
+}

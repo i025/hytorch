@@ -1,0 +1,16 @@
+START correctness-new
+Traceback (most recent call last):
+  File "docs/experiments/conv-dweight-fusion/scripts/run_window.py", line 95, in main
+    (a.output/'commands.json').write_text(json.dumps(records,indent=2)+'\n');done.check_returncode()
+  File "/usr/lib/python3.8/subprocess.py", line 448, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python', '-m', 'pytest', 'tests/test_conv_dweight_gpu.py', '-q', '-ra', '--junitxml=runs/conv_dweight_window_01/results/correctness-new.xml']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "docs/experiments/conv-dweight-fusion/scripts/run_window.py", line 114, in <module>
+    if __name__=='__main__':main()
+  File "docs/experiments/conv-dweight-fusion/scripts/run_window.py", line 107, in main
+    cp.get_default_memory_pool().free_all_blocks();cp.cuda.runtime.deviceReset()
+AttributeError: module 'cupy_backends.cuda.api.runtime' has no attribute 'deviceReset'

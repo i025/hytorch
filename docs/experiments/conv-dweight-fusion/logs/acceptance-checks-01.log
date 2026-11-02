@@ -1,0 +1,71 @@
+{
+  "gpu_tests": [
+    {
+      "suite": "correctness-new",
+      "total": 277,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "correctness-regression",
+      "total": 446,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "numerical": [
+    {
+      "scope": "all",
+      "comparisons": 3831,
+      "max_abs": 6.103515625e-05,
+      "max_relative_l2": 2.064102775805413e-06,
+      "mismatches": 0
+    },
+    {
+      "scope": "dWeight",
+      "comparisons": 528,
+      "max_abs": 1.430511474609375e-06,
+      "max_relative_l2": 6.484867473606198e-07,
+      "mismatches": 0
+    },
+    {
+      "scope": "dInput",
+      "comparisons": 528,
+      "max_abs": 3.5762786865234375e-07,
+      "max_relative_l2": 1.7726908040548624e-07,
+      "mismatches": 0
+    },
+    {
+      "scope": "dBias",
+      "comparisons": 528,
+      "max_abs": 6.103515625e-05,
+      "max_relative_l2": 8.753020271532392e-08,
+      "mismatches": 0
+    }
+  ],
+  "memory": [
+    {
+      "method": "original",
+      "maximum_measured_peak_bytes": 18628608,
+      "maximum_temporary_bytes": 18619392
+    },
+    {
+      "method": "fused",
+      "maximum_measured_peak_bytes": 2457600,
+      "maximum_temporary_bytes": 2048000
+    },
+    {
+      "method": "torch",
+      "maximum_measured_peak_bytes": 18948608,
+      "maximum_temporary_bytes": 18874880
+    }
+  ],
+  "logical_workspace": {
+    "smaller_than_old_col": 129,
+    "equal_to_old_col": 0,
+    "larger_than_old_col": 3,
+    "max_new_over_old": 2.1333333333333333
+  }
+}

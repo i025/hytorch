@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "docs/experiments/conv-dweight-fusion/scripts/postprocess.py", line 89, in <module>
+    if __name__=='__main__':main()
+  File "docs/experiments/conv-dweight-fusion/scripts/postprocess.py", line 43, in main
+    run('micro-summary',[sys.executable,str(HERE/'analyze_micro.py'),'--raw',str(a.raw),'--analysis',str(a.analysis),'--output',str(a.output/'micro')])
+  File "docs/experiments/conv-dweight-fusion/scripts/postprocess.py", line 26, in run
+    with (a.analysis/(name+'.log')).open('x') as f:done=subprocess.run(command,cwd=ROOT,stdout=f,stderr=subprocess.STDOUT)
+  File "/usr/lib/python3.8/pathlib.py", line 1222, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.8/pathlib.py", line 1078, in _opener
+    return self._accessor.open(self, flags, mode)
+FileExistsError: [Errno 17] File exists: 'runs/conv_dweight_analysis_01/micro-summary.log'

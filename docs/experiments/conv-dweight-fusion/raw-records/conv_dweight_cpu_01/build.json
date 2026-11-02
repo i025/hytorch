@@ -1,0 +1,16 @@
+{
+  "command": [
+    "g++",
+    "-O2",
+    "-std=c++14",
+    "-ffp-contract=off",
+    "-fPIC",
+    "-shared",
+    "runs/conv_dweight_cpu_01/arithmetic.cpp",
+    "-o",
+    "runs/conv_dweight_cpu_01/arithmetic.so"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}

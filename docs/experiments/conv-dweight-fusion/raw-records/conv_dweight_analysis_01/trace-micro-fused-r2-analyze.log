@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "input": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dweight_analysis_01/trace-micro-fused-r2.sqlite",
+  "cases": 132,
+  "calls": 3960,
+  "unmatched_kernel_api_count": 0,
+  "scope": "CUPTI durations via API correlation and same-thread micro NVTX; not Event spans or throughput"
+}

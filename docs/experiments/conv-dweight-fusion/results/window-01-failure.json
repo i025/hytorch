@@ -1,0 +1,23 @@
+{
+  "status": "FAILED",
+  "physical_gpu": 0,
+  "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "started_at": "2026-11-02T04:40:36.917819+00:00",
+  "guard_finished_at": "2026-11-02T04:40:50.033992+00:00",
+  "gpu_tests": {"passed": 276, "failed": 1, "skipped": 0},
+  "failure": "Geometry contract test passed a non-contiguous cropped gy, so the layout check correctly fired before the expected geometry check",
+  "cleanup_failure": "CuPy 12.3 runtime module has no deviceReset attribute; cleanup raised AttributeError before window.json was written",
+  "fixes": [
+    "Make the deliberately wrong-geometry test tensor contiguous before invoking the contract check",
+    "Bind the actual cudaDeviceReset symbol from the configured toolkit libcudart with ctypes; check return status and record release"
+  ],
+  "production_kernel_modified_for_fix": false,
+  "numerical_tolerances_changed": false,
+  "post_fix_cpu_tests_passed": 76,
+  "explicit_release_timestamp": null,
+  "first_monitor_sample_without_own_gpu_processes": "2026-11-02T04:40:49.032436+00:00",
+  "remaining_gpu_stages": "NOT_RUN in this failed window",
+  "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dweight_window_01",
+  "supplement_authorization": "User explicitly approved: 允许一次 GPU0 完整补测",
+  "next_window": "conv_dweight_window_02; same GPU0, no other GPU selection"
+}

@@ -10,7 +10,7 @@ from .conv_dispatch import select_conv_dinput
 
 _config = ContextVar("hytorch_cuda_backend", default={
     "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16,
-    "conv_backward": "original"})
+    "conv_backward": "original", "conv_dweight": "original"})
 _counts = Counter()
 _library = None
 _dll_directories = []
@@ -29,7 +29,7 @@ def dispatch_stats(reset=False):
 
 
 @contextmanager
-def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="original"):
+def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="original", conv_dweight="original"):
     if matmul not in ("cupy", "basic", "blocked", "shared"):
         raise ValueError("matmul must be cupy/basic/blocked/shared")
     if conv not in ("cupy", "direct", "im2col") or pool not in ("cupy", "native"):
@@ -38,8 +38,10 @@ def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="
         raise ValueError("tile must be 16 or 32")
     if conv_backward not in ("original", "fused", "fused_opt", "auto"):
         raise ValueError("conv_backward must be original/fused/fused_opt/auto")
+    if conv_dweight not in ("original", "fused"):
+        raise ValueError("conv_dweight must be original/fused")
     token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile,
-                            conv_backward=conv_backward))
+                            conv_backward=conv_backward, conv_dweight=conv_dweight))
     try:
         yield
     finally:
@@ -261,6 +263,35 @@ def conv_dinput_dispatch(x, w, gy, stride=1, pad=0, *, create_graph=False):
     _counts["conv_dinput_auto_" + mode] += 1
     _counts["conv_dinput_auto_reason_" + reason] += 1
     return mode, reason
+
+
+def conv2d_dweight(x, gy, kernel, stride=1, pad=0):
+    """Split-K implicit GEMM; contiguous FP32 NCHW, groups=1/dilation=1."""
+    import cupy as cp
+    for value in (x, gy):
+        if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+            raise TypeError("Fused dWeight requires CuPy float32 arrays")
+        if value.ndim != 4 or not value.flags.c_contiguous:
+            raise ValueError("Fused dWeight requires contiguous NCHW arrays")
+        if value.device.id != cp.cuda.runtime.getDevice():
+            raise ValueError("Fused dWeight arrays must belong to the current CUDA device")
+        _shape_ok(value.shape)
+    n, c, h, w, kh, kw, sh, sw, ph, pw, oh, ow = _geometry(x, kernel, stride, pad)
+    oc = gy.shape[1]
+    if gy.shape != (n, oc, oh, ow):
+        raise ValueError("Fused dWeight input/gradient geometry does not match")
+    shape = (oc, c, kh, kw)
+    splits = (n*oh*ow+127)//128
+    _shape_ok((splits, *shape))
+    fn = load_library().hy_conv_dweight
+    if fn.argtypes is None:
+        fn.argtypes, fn.restype = [ct.c_void_p]*4 + [ct.c_int]*13 + [ct.c_void_p], ct.c_int
+    partial = cp.empty((splits, *shape), dtype=cp.float32)
+    result = cp.empty(shape, dtype=cp.float32)
+    _call("hy_conv_dweight", _ptr(x), _ptr(gy), _ptr(partial), _ptr(result),
+          n, c, h, w, oc, kh, kw, sh, sw, ph, pw, oh, ow)
+    _counts["conv_dweight_fused"] += 1
+    return result
 
 
 def conv2d_dinput(gy, w, input_shape, stride=1, pad=0, *, variant="fused"):

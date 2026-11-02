@@ -183,6 +183,8 @@ def main():
                    help="Explicitly disable HyTorch training-input gradients; keep parameter gradients")
     p.add_argument("--conv-backward", choices=["original", "fused", "fused_opt", "auto"], default="original",
                    help="Explicit fused or conservative shape auto; default original, dWeight/dBias unchanged")
+    p.add_argument("--conv-dweight", choices=["original", "fused"], default="original",
+                   help="Opt in to split-K implicit GEMM weight gradients")
     p.add_argument("--mode", choices=["phases","throughput"], default="phases")
     p.add_argument("--interval", type=float, default=1.)
     p.add_argument("--no-monitor", action="store_true")
@@ -202,6 +204,8 @@ def main():
         p.error("--prune-input-grad is a HyTorch gradient-demand option")
     if args.conv_backward != "original" and (args.framework != "hytorch" or args.device != "cuda"):
         p.error("--conv-backward fused/fused_opt/auto requires --framework hytorch --device cuda")
+    if args.conv_dweight != "original" and (args.framework != "hytorch" or args.device != "cuda"):
+        p.error("--conv-dweight fused requires --framework hytorch --device cuda")
     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
         p.error("Invalid batch/epoch/sample/step/worker/warmup value")
     if args.nvtx and args.device != "cuda":
@@ -299,7 +303,8 @@ def main():
     profile = StepProfiler(out/"steps.jsonl", sync, args.mode, args.nvtx)
     monitor = ResourceMonitor(out/"hardware.jsonl", monitor_id, args.interval)
     epochs = []
-    context = backend(args.matmul, args.conv, args.pool, args.tile, conv_backward=args.conv_backward)
+    context = backend(args.matmul, args.conv, args.pool, args.tile,
+                      conv_backward=args.conv_backward, conv_dweight=args.conv_dweight)
     with context:
         # Warmup uses same shapes; restore model, clear grads; SGD has no state.
         warm = [dataset[i] for i in range(min(args.batch, len(dataset)))]

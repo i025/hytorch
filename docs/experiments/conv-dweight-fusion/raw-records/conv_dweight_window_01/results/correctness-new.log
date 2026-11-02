@@ -1,0 +1,71 @@
+........................................................................ [ 25%]
+........................................................................ [ 51%]
+........................................................................ [ 77%]
+............................................................F            [100%]
+=================================== FAILURES ===================================
+_______________________ test_dweight_contract[geometry] ________________________
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+kind = 'geometry'
+
+    @pytest.mark.parametrize('kind',['dtype','layout','geometry'])
+    def test_dweight_contract(device,kind):
+        cp,_=device;x=cp.zeros((1,3,7,9),cp.float32);gy=cp.zeros((1,5,5,7),cp.float32)
+        if kind=='dtype':
+            with pytest.raises(TypeError,match='float32'):conv2d_dweight(x.astype(cp.float64),gy,3)
+        elif kind=='layout':
+            with pytest.raises(ValueError,match='contiguous'):conv2d_dweight(x[:,:,:,::-1],gy,3)
+        else:
+>           with pytest.raises(ValueError,match='geometry'):conv2d_dweight(x,gy[:,:,:-1,:],3)
+
+tests/test_conv_dweight_gpu.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = array([[[[0., 0., 0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0....., 0.],
+         [0., 0., 0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0., 0., 0.]]]], dtype=float32)
+gy = array([[[[0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+ ...., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.]]]], dtype=float32)
+kernel = 3, stride = 1, pad = 0
+
+    def conv2d_dweight(x, gy, kernel, stride=1, pad=0):
+        """Split-K implicit GEMM; contiguous FP32 NCHW, groups=1/dilation=1."""
+        import cupy as cp
+        for value in (x, gy):
+            if not isinstance(value, cp.ndarray) or value.dtype != cp.float32:
+                raise TypeError("Fused dWeight requires CuPy float32 arrays")
+            if value.ndim != 4 or not value.flags.c_contiguous:
+>               raise ValueError("Fused dWeight requires contiguous NCHW arrays")
+E               ValueError: Fused dWeight requires contiguous NCHW arrays
+
+hytorch/backends/cuda/runtime.py:275: ValueError
+
+During handling of the above exception, another exception occurred:
+
+device = (<module 'cupy' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__...e 'torch' from '/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/torch/__init__.py'>)
+kind = 'geometry'
+
+    @pytest.mark.parametrize('kind',['dtype','layout','geometry'])
+    def test_dweight_contract(device,kind):
+        cp,_=device;x=cp.zeros((1,3,7,9),cp.float32);gy=cp.zeros((1,5,5,7),cp.float32)
+        if kind=='dtype':
+            with pytest.raises(TypeError,match='float32'):conv2d_dweight(x.astype(cp.float64),gy,3)
+        elif kind=='layout':
+            with pytest.raises(ValueError,match='contiguous'):conv2d_dweight(x[:,:,:,::-1],gy,3)
+        else:
+>           with pytest.raises(ValueError,match='geometry'):conv2d_dweight(x,gy[:,:,:-1,:],3)
+E           AssertionError: Regex pattern did not match.
+E            Regex: 'geometry'
+E            Input: 'Fused dWeight requires contiguous NCHW arrays'
+
+tests/test_conv_dweight_gpu.py:137: AssertionError
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dweight_window_01/results/correctness-new.xml -
+=========================== short test summary info ============================
+FAILED tests/test_conv_dweight_gpu.py::test_dweight_contract[geometry] - Asse...
+1 failed, 276 passed in 10.76s

@@ -156,6 +156,9 @@ class Conv2DGradW(Function):
         self.pad = conv2d.pad
 
     def forward(self, x, gy):
+        from hytorch.backends.cuda.runtime import current_config, conv2d_dweight
+        if current_config()["conv_dweight"] == "fused" and not Config.enable_backprop:
+            return conv2d_dweight(x, gy, self.kernel_size, self.stride, self.pad)
         xp = cuda.get_array_module(x)
 
         if xp is np:

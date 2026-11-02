@@ -1,0 +1,7 @@
+{
+  "status": "PASSED",
+  "cases": 132,
+  "comparisons": 33066,
+  "max_abs": 1.3113021850585938e-05,
+  "scope": "CPU arithmetic model samples, not GPU execution or full-tensor GPU acceptance"
+}

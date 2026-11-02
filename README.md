@@ -117,6 +117,8 @@ python examples/finetune_imagenet.py --model alexnet --weights weights_imagenet/
 
 阶段 4F 的[通用 Gather 四路累加实验](docs/experiments/conv-dinput-optimization/README.md)保留旧Kernel，新增显式 `fused_opt`，默认和Auto均不变。主机67项、GPU446项通过，124形状完成三重复完整操作及纯Kernel对照，26份Nsight归因通过。新方案纯Kernel98形状加速、26退化，完整dInput墙钟41加速、83退化；第二匹配窗口DonkeyNet/SpatialNet H/F吞吐−0.51%/+0.27%，未证实稳定训练增益。H/A累计+12.90%/+12.10%包含已有优化，不能归为4F独立贡献。普通测量在GPU2，完整Nsight在独立GPU1窗口，各自配对统计。两轮训练、失败、负结果、图及服务器原始记录见[数据索引](docs/experiments/conv-dinput-optimization/data-index.md)，完成提交后等待人工审查。
 
+阶段 4G 的[通用 dWeight Split-K Implicit GEMM](docs/experiments/conv-dweight-fusion/README.md)已完成：CPU76项、新GPU277项及既有GPU446项通过，132形状、48组匹配训练和17份Nsight全部保留。显式 `conv_dweight="fused"` 默认关闭，不改变dInput或SGD。GPU0完整补测窗口中，DonkeyNet/SpatialNet I/F吞吐+10.64%/+9.17%，相对当前代码复现的无Native基线I/A累计+23.77%/+24.34%，分别为PyTorch吞吐69.17%/56.75%。纯dWeight核时99形状加速、33退化，完整墙钟129加速、3退化，仍保留为可选后端；首次窗口失败、用户批准的同卡补测、离线归因修正及全部原始数据见[索引](docs/experiments/conv-dweight-fusion/data-index.md)。GPU已统一释放，等待人工审查，不进入4H。
+
 第一次先回传：
 
 1. `nvidia-smi`、`nvcc --version`、CuPy 配置信息。

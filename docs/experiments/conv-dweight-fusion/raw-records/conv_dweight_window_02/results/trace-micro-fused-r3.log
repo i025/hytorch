@@ -1,0 +1,137 @@
+警告: 未找到scipy，无法加载SVHN数据集
+c00 fused complete
+c01 fused complete
+c02 fused complete
+c03 fused complete
+c04 fused complete
+c05 fused complete
+c06 fused complete
+c07 fused complete
+c08 fused complete
+c09 fused complete
+c10 fused complete
+c11 fused complete
+c12 fused complete
+c13 fused complete
+c14 fused complete
+c15 fused complete
+c16 fused complete
+c17 fused complete
+c18 fused complete
+c19 fused complete
+c20 fused complete
+c21 fused complete
+c22 fused complete
+c23 fused complete
+c24 fused complete
+c25 fused complete
+c26 fused complete
+c27 fused complete
+c28 fused complete
+c29 fused complete
+c30 fused complete
+c31 fused complete
+h00 fused complete
+h01 fused complete
+h02 fused complete
+h03 fused complete
+h04 fused complete
+h05 fused complete
+h06 fused complete
+h07 fused complete
+h08 fused complete
+h09 fused complete
+h10 fused complete
+h11 fused complete
+h12 fused complete
+h13 fused complete
+h14 fused complete
+h15 fused complete
+h16 fused complete
+h17 fused complete
+h18 fused complete
+h19 fused complete
+v00 fused complete
+v01 fused complete
+v02 fused complete
+v03 fused complete
+v04 fused complete
+v05 fused complete
+v06 fused complete
+v07 fused complete
+v08 fused complete
+v09 fused complete
+v10 fused complete
+v11 fused complete
+v12 fused complete
+v13 fused complete
+v14 fused complete
+v15 fused complete
+v16 fused complete
+v17 fused complete
+v18 fused complete
+v19 fused complete
+v20 fused complete
+v21 fused complete
+v22 fused complete
+v23 fused complete
+p00 fused complete
+p01 fused complete
+p02 fused complete
+p03 fused complete
+p04 fused complete
+p05 fused complete
+p06 fused complete
+p07 fused complete
+p08 fused complete
+p09 fused complete
+p10 fused complete
+p11 fused complete
+p12 fused complete
+p13 fused complete
+p14 fused complete
+p15 fused complete
+p16 fused complete
+p17 fused complete
+p18 fused complete
+p19 fused complete
+p20 fused complete
+p21 fused complete
+p22 fused complete
+p23 fused complete
+o00 fused complete
+o01 fused complete
+o02 fused complete
+o03 fused complete
+o04 fused complete
+o05 fused complete
+o06 fused complete
+o07 fused complete
+o08 fused complete
+o09 fused complete
+o10 fused complete
+o11 fused complete
+o12 fused complete
+o13 fused complete
+o14 fused complete
+o15 fused complete
+o16 fused complete
+o17 fused complete
+o18 fused complete
+o19 fused complete
+o20 fused complete
+o21 fused complete
+o22 fused complete
+o23 fused complete
+n00 fused complete
+n01 fused complete
+n02 fused complete
+n03 fused complete
+n04 fused complete
+n05 fused complete
+n06 fused complete
+n07 fused complete
+Generating '/tmp/nsys-report-cd12.qdstrm'
+[1/1] [0%                          ] trace-micro-fused-r3.nsys-rep[1/1] [0%                          ] trace-micro-fused-r3.nsys-rep[1/1] [8%                          ] trace-micro-fused-r3.nsys-rep[1/1] [=16%                        ] trace-micro-fused-r3.nsys-rep[1/1] [11%                         ] trace-micro-fused-r3.nsys-rep[1/1] [8%                          ] trace-micro-fused-r3.nsys-rep[1/1] [====26%                     ] trace-micro-fused-r3.nsys-rep[1/1] [=========46%                ] trace-micro-fused-r3.nsys-rep[1/1] [===============66%          ] trace-micro-fused-r3.nsys-rep[1/1] [====================85%     ] trace-micro-fused-r3.nsys-rep[1/1] [=====================87%    ] trace-micro-fused-r3.nsys-rep[1/1] [========================100%] trace-micro-fused-r3.nsys-rep[1/1] [========================100%] trace-micro-fused-r3.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dweight_window_02/results/trace-micro-fused-r3.nsys-rep
