@@ -10,7 +10,7 @@ from .conv_dispatch import select_conv_dinput
 
 _config = ContextVar("hytorch_cuda_backend", default={
     "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16,
-    "conv_backward": "original", "conv_dweight": "original"})
+    "conv_backward": "original", "conv_dweight": "original", "relu_backward": "original"})
 _counts = Counter()
 _library = None
 _dll_directories = []
@@ -29,7 +29,7 @@ def dispatch_stats(reset=False):
 
 
 @contextmanager
-def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="original", conv_dweight="original"):
+def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="original", conv_dweight="original", relu_backward="original"):
     if matmul not in ("cupy", "basic", "blocked", "shared"):
         raise ValueError("matmul must be cupy/basic/blocked/shared")
     if conv not in ("cupy", "direct", "im2col") or pool not in ("cupy", "native"):
@@ -40,8 +40,11 @@ def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="
         raise ValueError("conv_backward must be original/fused/fused_opt/auto")
     if conv_dweight not in ("original", "fused"):
         raise ValueError("conv_dweight must be original/fused")
+    if relu_backward not in ("original", "fused"):
+        raise ValueError("relu_backward must be original/fused")
     token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile,
-                            conv_backward=conv_backward, conv_dweight=conv_dweight))
+                            conv_backward=conv_backward, conv_dweight=conv_dweight,
+                            relu_backward=relu_backward))
     try:
         yield
     finally:
@@ -350,10 +353,25 @@ def max_pool2d(x, kernel, stride=1, pad=0):
 def selected(op, x):
     """CPU / non-FP32 paths retain existing semantics, with visible counters."""
     mode = _config.get()[op]
-    if mode == "cupy":
+    if mode in ("cupy", "original"):
         return None
     from hytorch import cuda
     if cuda.get_array_module(x) is np or x.dtype != np.float32:
         _counts[op + "_fallback_cpu_or_dtype"] += 1
         return None
     return mode
+
+
+def relu_backward(x, gy):
+    """FP32 gradient on the current stream; materialize noncontiguous inputs explicitly."""
+    import cupy as cp
+    x, gy = _arrays(x, gy)
+    if x.shape != gy.shape:
+        raise ValueError("ReLU input and gradient shapes must match")
+    result = cp.empty_like(x)
+    fn = load_library().hy_relu_backward
+    if fn.argtypes is None:
+        fn.argtypes, fn.restype = [ct.c_void_p]*3 + [ct.c_int, ct.c_void_p], ct.c_int
+    _call("hy_relu_backward", _ptr(x), _ptr(gy), _ptr(result), x.size)
+    _counts["relu_backward_fused"] += 1
+    return result

@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETED",
+  "steps": 1600,
+  "wall_s": 211.72509486414492,
+  "loss_errors": [
+    {
+      "method": "A",
+      "reference": "E",
+      "mismatches": 361,
+      "first_bad_step": 391,
+      "max_abs": 1.5623867511749268e-05
+    },
+    {
+      "method": "A",
+      "reference": "FP64",
+      "mismatches": 386,
+      "first_bad_step": 391,
+      "max_abs": 1.6539541451858486e-05
+    },
+    {
+      "method": "E",
+      "reference": "FP64",
+      "mismatches": 452,
+      "first_bad_step": 441,
+      "max_abs": 2.5621799199508632e-05
+    }
+  ],
+  "local_comparisons": 612,
+  "local_failed_groups": 0,
+  "scope": "CPU-only trajectory; different FP32 BLAS/torch CPU reductions, independent FP64 trajectory; no GPU inference"
+}

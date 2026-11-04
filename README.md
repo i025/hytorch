@@ -146,3 +146,5 @@ python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/tes
 文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布；验证记录描述的是本机已做的检查。当前 A100 实测、失败与权限限制统一以最新实验报告为准，历史实现文档不代表最新验收状态。
 
 阶段 4H 的[GPU1共享环境真实Udacity实验](docs/experiments/udacity-real-training/README.md)已执行完毕，但**长期验收未全部通过**：8036条真实记录固定时间划分，CPU82项、三步GPU816组及36组256步对照通过；四版本各三epoch训练完成，长期严格数值比对119组失败，验证仍差于初始模型/零预测。共享条件下含I/O I/F平均+2.99%、I/A累计+16.00%、I/E为77.76%，波动接近增量，未证明稳定加速。47项正式任务固定同GPU1窗口，原任务持续可见，应用延迟不可测，不承诺零影响。首次正常任务退出导致中断、用户批准补测、全部负结果、原始数据与图见[索引](docs/experiments/udacity-real-training/data-index.md)。本轮未修改Kernel，推送后等待人工审查。
+
+[六小时自主优化研究](docs/experiments/autonomous-optimization-6h/README.md)正在进行：CPU-only1600步也出现长期严格Loss超差，但612组同状态单步比较全部通过，支持FP32迭代漂移解释。已准备默认关闭的Native ReLU反向和既定顺序预取两个原型；当前GPU结果以新报告的实际执行状态为准，不将编译或测试收集称为GPU通过。

@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "comparisons": 12,
+  "cached_samples": 6330,
+  "cache_wall_s": 8.091272418387234,
+  "cache_scope": "CPU-only diagnostic replay; not used for I/O throughput",
+  "optimizer": {
+    "name": "SGD",
+    "learning_rate": 0.001,
+    "momentum": 0,
+    "weight_decay": 0,
+    "state": "stateless"
+  },
+  "original_protocol": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01/protocol.json",
+  "start_utc": "2026-11-04T17:44:41.249633+00:00"
+}

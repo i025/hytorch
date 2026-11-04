@@ -9,14 +9,15 @@ from hytorch import cuda
 
 
 # =============================================================================
-# Sync DataLoader (original implementation, unchanged)
+# Sync DataLoader
 # =============================================================================
 class _SyncDataLoader:
-    def __init__(self, dataset, batch_size, shuffle=True, gpu=False):
+    def __init__(self, dataset, batch_size, shuffle=True, gpu=False, indices=None):
         self.dataset = dataset
         self.batch_size = batch_size
         self.shuffle = shuffle
-        self.data_size = len(dataset)
+        self.indices = np.arange(len(dataset)) if indices is None else np.asarray(indices)
+        self.data_size = len(self.indices)
         self.max_iter = math.ceil(self.data_size / self.batch_size)
         self.gpu = gpu
         self.reset()
@@ -24,9 +25,9 @@ class _SyncDataLoader:
     def reset(self):
         self.iteration = 0
         if self.shuffle:
-            self.index = np.random.permutation(len(self.dataset))
+            self.index = np.random.permutation(self.indices)
         else:
-            self.index = np.arange(len(self.dataset))
+            self.index = self.indices
 
     def __iter__(self):
         return self
@@ -95,14 +96,15 @@ class _DatasetWorker(threading.Thread):
 
 class AsyncDataLoader:
     def __init__(self, dataset, batch_size, shuffle=True,
-                 num_workers=2, prefetch_factor=2, gpu=False):
+                 num_workers=2, prefetch_factor=2, gpu=False, indices=None):
         self.dataset = dataset
         self.batch_size = batch_size
         self.shuffle = shuffle
         self.num_workers = num_workers
         self.prefetch_factor = prefetch_factor
         self.gpu = gpu
-        self.data_size = len(dataset)
+        self.indices = np.arange(len(dataset)) if indices is None else np.asarray(indices)
+        self.data_size = len(self.indices)
         self.max_iter = math.ceil(self.data_size / self.batch_size)
 
         self._index_queue: queue.Queue = None
@@ -165,9 +167,9 @@ class AsyncDataLoader:
 
     def _start_epoch(self):
         if self.shuffle:
-            index = np.random.permutation(self.data_size)
+            index = np.random.permutation(self.indices)
         else:
-            index = np.arange(self.data_size)
+            index = self.indices
 
         self._index_queue = queue.Queue()
         self._result_queue = queue.Queue(maxsize=self.prefetch_factor * self.num_workers)
@@ -216,15 +218,16 @@ class DataLoader:
     Drop-in replacement for the original DataLoader.
     num_workers=0 (default): synchronous, identical to the original behavior.
     num_workers>0: async producer-consumer with background threads.
+    indices=None (default): full dataset; otherwise load the supplied sample order.
     """
 
     def __init__(self, dataset, batch_size, shuffle=True, gpu=False,
-                 num_workers=0, prefetch_factor=2):
+                 num_workers=0, prefetch_factor=2, indices=None):
         if num_workers == 0:
-            self._impl = _SyncDataLoader(dataset, batch_size, shuffle, gpu)
+            self._impl = _SyncDataLoader(dataset, batch_size, shuffle, gpu, indices)
         else:
             self._impl = AsyncDataLoader(
-                dataset, batch_size, shuffle, num_workers, prefetch_factor, gpu
+                dataset, batch_size, shuffle, num_workers, prefetch_factor, gpu, indices
             )
 
     # --- iterator protocol ---

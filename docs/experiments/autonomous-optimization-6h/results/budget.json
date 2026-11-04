@@ -1,0 +1,8 @@
+{
+  "started_at_utc": "2026-11-04T17:36:35Z",
+  "deadline_utc": "2026-11-04T23:36:35Z",
+  "gpu_cutoff_utc": "2026-11-04T23:06:35Z",
+  "budget_seconds": 21600,
+  "baseline": "b7446c6046c084b4a28d826b605df4a8761a7152",
+  "branch": "experiment/hytorch-autonomous-optimization"
+}

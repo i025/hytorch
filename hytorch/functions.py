@@ -381,6 +381,9 @@ class ReLU(Function):
 
     def backward(self, gy):
         x, = self.inputs
+        from hytorch.backends.cuda.runtime import selected, relu_backward
+        if not hytorch.Config.enable_backprop and selected("relu_backward", x.data) is not None:
+            return hytorch.Variable(relu_backward(x.data, gy.data))
         mask = x.data > 0
         gx = gy * mask
         return gx
