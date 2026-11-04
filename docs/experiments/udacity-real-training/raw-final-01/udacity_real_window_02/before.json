@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-11-04T07:27:53.829386+00:00",
+  "gpu": {
+    "index": "1",
+    "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory.total": "40960",
+    "memory.used": "25001",
+    "utilization.gpu": "0",
+    "temperature.gpu": "29",
+    "power.draw": "45.10",
+    "clocks.sm": "765",
+    "clocks.mem": "1215",
+    "driver_version": "535.247.01"
+  },
+  "processes": [
+    {
+      "pid": 2216423,
+      "name": "/srv/lab-disks/disk2/users/xymo/Documents/Codex/2026-11-03/files-mentioned-by-the-user-20261103/work/isaac-python311-v1/bin/python",
+      "memory_mib": "24990"
+    }
+  ]
+}

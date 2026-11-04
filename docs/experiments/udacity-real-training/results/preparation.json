@@ -1,0 +1,16 @@
+{
+  "status": "PREPARED",
+  "gpu": "NOT_RUN",
+  "baseline": "a5a50159f6217f10eee8028b31503a444212b1ac",
+  "host_tests_passed": 82,
+  "cpu_real_comparisons": 408,
+  "cpu_real_status": "PASSED",
+  "gpu_jobs": 47,
+  "gpu_policy": "Physical GPU1 only; shared authorization; no reset/MPS/MIG/clock/power changes",
+  "estimated_process_memory_mib": 2048,
+  "minimum_initial_free_mib": 3072,
+  "stop_policy": "free memory <1GiB, original GPU process disappears, sustained whole-device utilization >=95% for 15s, or monitoring/child failure",
+  "library": "runs/conv_dweight_build_01/libhytorch_cuda.so",
+  "library_bytes": 307528,
+  "kernels": "UNCHANGED; reusing stage4G SM80 binary; CPU ABI and symbol check passed"
+}

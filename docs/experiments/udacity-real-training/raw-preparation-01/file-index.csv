@@ -1,0 +1,38 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01/dataset.json,982,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_prepared_01/dataset.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01/manifest.csv,742306,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_prepared_01/manifest.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01/preprocess-times.csv,28270,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_prepared_01/preprocess-times.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01/protocol.json,314576,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_prepared_01/protocol.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01/throughput-inputs.npz,162214624,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/errors.csv,26444,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_cpu_correctness_01/errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/inputs.npz,1901674,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/step-0-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/step-0-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/step-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/step-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/step-2-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/step-2-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_cpu_correctness_01/summary.json,165,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_cpu_correctness_01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/after.json,643,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/after.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/before.json,758,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/before.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/commands.json,1519,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/commands.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/errors.csv,58869,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/correctness-real/errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/inputs.npz,1901674,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-0-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-0-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-0-F.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-0-I.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-1-F.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-1-I.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-2-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-2-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-2-F.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/step-2-I.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real/summary.json,166,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/correctness-real/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/correctness-real.log,217,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/correctness-real.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/resources.jsonl,9607,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/resources.jsonl,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/smoke-A.log,0,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/smoke-A.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/window-start.json,400,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/window-start.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_01/window.json,693,docs/experiments/udacity-real-training/raw-preparation-01/udacity_real_window_01/window.json,Git portable record and server original

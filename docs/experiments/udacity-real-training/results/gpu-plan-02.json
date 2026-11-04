@@ -1,0 +1,810 @@
+[
+  {
+    "name": "correctness-real",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/check_correctness.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--output",
+      "runs/udacity_real_window_02/correctness-real"
+    ]
+  },
+  {
+    "name": "smoke-A",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "smoke",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/smoke-A"
+    ]
+  },
+  {
+    "name": "smoke-F",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "smoke",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/smoke-F"
+    ]
+  },
+  {
+    "name": "smoke-I",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "smoke",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/smoke-I"
+    ]
+  },
+  {
+    "name": "smoke-E",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "smoke",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/smoke-E"
+    ]
+  },
+  {
+    "name": "compute-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-A-r1"
+    ]
+  },
+  {
+    "name": "compute-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-F-r1"
+    ]
+  },
+  {
+    "name": "compute-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-I-r1"
+    ]
+  },
+  {
+    "name": "compute-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-E-r1"
+    ]
+  },
+  {
+    "name": "compute-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-F-r2"
+    ]
+  },
+  {
+    "name": "compute-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-I-r2"
+    ]
+  },
+  {
+    "name": "compute-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-E-r2"
+    ]
+  },
+  {
+    "name": "compute-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-A-r2"
+    ]
+  },
+  {
+    "name": "compute-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-I-r3"
+    ]
+  },
+  {
+    "name": "compute-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-E-r3"
+    ]
+  },
+  {
+    "name": "compute-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-A-r3"
+    ]
+  },
+  {
+    "name": "compute-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "compute",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/compute-F-r3"
+    ]
+  },
+  {
+    "name": "io-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-A-r1"
+    ]
+  },
+  {
+    "name": "io-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-F-r1"
+    ]
+  },
+  {
+    "name": "io-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-I-r1"
+    ]
+  },
+  {
+    "name": "io-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-E-r1"
+    ]
+  },
+  {
+    "name": "io-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-F-r2"
+    ]
+  },
+  {
+    "name": "io-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-I-r2"
+    ]
+  },
+  {
+    "name": "io-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-E-r2"
+    ]
+  },
+  {
+    "name": "io-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-A-r2"
+    ]
+  },
+  {
+    "name": "io-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-I-r3"
+    ]
+  },
+  {
+    "name": "io-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-E-r3"
+    ]
+  },
+  {
+    "name": "io-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-A-r3"
+    ]
+  },
+  {
+    "name": "io-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "io",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/io-F-r3"
+    ]
+  },
+  {
+    "name": "phases-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-A-r1"
+    ]
+  },
+  {
+    "name": "phases-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-F-r1"
+    ]
+  },
+  {
+    "name": "phases-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-I-r1"
+    ]
+  },
+  {
+    "name": "phases-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-E-r1"
+    ]
+  },
+  {
+    "name": "phases-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-F-r2"
+    ]
+  },
+  {
+    "name": "phases-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-I-r2"
+    ]
+  },
+  {
+    "name": "phases-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-E-r2"
+    ]
+  },
+  {
+    "name": "phases-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-A-r2"
+    ]
+  },
+  {
+    "name": "phases-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-I-r3"
+    ]
+  },
+  {
+    "name": "phases-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-E-r3"
+    ]
+  },
+  {
+    "name": "phases-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-A-r3"
+    ]
+  },
+  {
+    "name": "phases-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "phases",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/phases-F-r3"
+    ]
+  },
+  {
+    "name": "train-F",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "train",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/train-F"
+    ]
+  },
+  {
+    "name": "train-I",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "train",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/train-I"
+    ]
+  },
+  {
+    "name": "train-E",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "E",
+      "--task",
+      "train",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/train-E"
+    ]
+  },
+  {
+    "name": "train-A",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "train",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/train-A"
+    ]
+  },
+  {
+    "name": "trace-F",
+    "method": "F",
+    "command": [
+      "nsys",
+      "profile",
+      "--trace=cuda,nvtx",
+      "--sample=none",
+      "--cpuctxsw=none",
+      "-o",
+      "runs/udacity_real_window_02/trace-F",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "F",
+      "--task",
+      "trace",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/trace-F"
+    ]
+  },
+  {
+    "name": "trace-I",
+    "method": "I",
+    "command": [
+      "nsys",
+      "profile",
+      "--trace=cuda,nvtx",
+      "--sample=none",
+      "--cpuctxsw=none",
+      "-o",
+      "runs/udacity_real_window_02/trace-I",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "I",
+      "--task",
+      "trace",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_02/trace-I"
+    ]
+  }
+]

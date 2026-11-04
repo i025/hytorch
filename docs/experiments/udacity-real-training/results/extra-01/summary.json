@@ -1,0 +1,17 @@
+{
+  "resource_samples": 290,
+  "max_gpu_memory_mib": 25721,
+  "max_gpu_utilization_pct": 64,
+  "max_temperature_c": 30,
+  "max_power_w": 70.39,
+  "sm_clock_min_mhz": 765,
+  "sm_clock_max_mhz": 1410,
+  "max_own_memory_mib": 714,
+  "original_memory_mib": [
+    24990
+  ],
+  "original_sm_available_samples": 0,
+  "measured_epochs_without_resource_sample": 7,
+  "original_latency": "NOT_AVAILABLE; no zero-impact assertion",
+  "gpu_restarted_for_analysis": false
+}

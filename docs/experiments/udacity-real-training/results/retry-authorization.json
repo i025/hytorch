@@ -1,0 +1,8 @@
+{
+  "previous_window": "udacity_real_window_01",
+  "original_pid": 2975119,
+  "user_confirmation": "原任务正常结束，允许同 GPU1 重新完整补测",
+  "fixed_physical_gpu": 1,
+  "next_window": "udacity_real_window_02",
+  "protocol": "From the first correctness job through all 47 jobs, with the same unchanged prepared data and CUDA kernel"
+}

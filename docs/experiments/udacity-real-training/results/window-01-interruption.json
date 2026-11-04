@@ -1,0 +1,28 @@
+{
+  "status": "INTERRUPTED_BY_RESOURCE_POLICY",
+  "physical_gpu": 1,
+  "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+  "correctness": {
+    "status": "PASSED",
+    "device": "cuda",
+    "comparisons": 816,
+    "max_abs": 3.166496753692627e-08,
+    "input_kind": "UDACITY_REAL_RGB",
+    "no_fingerprints": true
+  },
+  "baseline_original_pids": [
+    2216423,
+    2975119
+  ],
+  "first_missing_observation": "2026-11-04T07:20:59.059083+00:00",
+  "missing_pid": 2975119,
+  "remaining_pid": 2216423,
+  "max_whole_card_memory_mib": 33110,
+  "max_whole_card_utilization_pct": 9,
+  "stop_reason": "Original process disappeared; no causal attribution is possible",
+  "own_smoke": "Stopped by own monitor SIGTERM, not a numerical failure",
+  "formal_training": "NOT_RUN",
+  "nsight": "NOT_RUN",
+  "release": "All own GPU children exited; no GPU Reset",
+  "user_clarification": "Requested before any new GPU work"
+}

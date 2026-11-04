@@ -1,0 +1,95 @@
+{
+  "status": "FAIL_UNDER_EXISTING_TOLERANCE",
+  "root_cause": "UNRESOLVED: trajectory logs and final weights do not identify the first differing backward operation",
+  "unchanged_tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "pairs": [
+    {
+      "actual": "A",
+      "reference": "F",
+      "steps": 4749,
+      "loss_mismatches": 2356,
+      "max_loss_abs": 6.326660513877869e-05,
+      "first_bad_global_step": 1024,
+      "first_bad_epoch": 1,
+      "first_bad_epoch_step": 1024,
+      "first_bad_actual": 0.024567201733589172,
+      "first_bad_reference": 0.024568520486354828,
+      "first_bad_delta": 1.3187527656555176e-06,
+      "original_csv_rows": "[2121, 1902, 6070, 512]"
+    },
+    {
+      "actual": "A",
+      "reference": "I",
+      "steps": 4749,
+      "loss_mismatches": 2219,
+      "max_loss_abs": 6.793439388275146e-05,
+      "first_bad_global_step": 1024,
+      "first_bad_epoch": 1,
+      "first_bad_epoch_step": 1024,
+      "first_bad_actual": 0.024567201733589172,
+      "first_bad_reference": 0.024568552151322365,
+      "first_bad_delta": 1.3504177331924438e-06,
+      "original_csv_rows": "[2121, 1902, 6070, 512]"
+    },
+    {
+      "actual": "A",
+      "reference": "E",
+      "steps": 4749,
+      "loss_mismatches": 2585,
+      "max_loss_abs": 0.00016295909881591797,
+      "first_bad_global_step": 959,
+      "first_bad_epoch": 1,
+      "first_bad_epoch_step": 959,
+      "first_bad_actual": 0.012403844855725765,
+      "first_bad_reference": 0.012401537969708443,
+      "first_bad_delta": 2.3068860173225403e-06,
+      "original_csv_rows": "[4024, 2452, 881, 5923]"
+    },
+    {
+      "actual": "F",
+      "reference": "I",
+      "steps": 4749,
+      "loss_mismatches": 1919,
+      "max_loss_abs": 8.922070264816284e-05,
+      "first_bad_global_step": 1422,
+      "first_bad_epoch": 1,
+      "first_bad_epoch_step": 1422,
+      "first_bad_actual": 0.006052149459719658,
+      "first_bad_reference": 0.006050759460777044,
+      "first_bad_delta": 1.3899989426136017e-06,
+      "original_csv_rows": "[3682, 6317, 4282, 4947]"
+    },
+    {
+      "actual": "F",
+      "reference": "E",
+      "steps": 4749,
+      "loss_mismatches": 2645,
+      "max_loss_abs": 0.00016251206398010254,
+      "first_bad_global_step": 863,
+      "first_bad_epoch": 1,
+      "first_bad_epoch_step": 863,
+      "first_bad_actual": 0.016038689762353897,
+      "first_bad_reference": 0.016039865091443062,
+      "first_bad_delta": 1.1753290891647339e-06,
+      "original_csv_rows": "[294, 893, 5709, 2707]"
+    },
+    {
+      "actual": "I",
+      "reference": "E",
+      "steps": 4749,
+      "loss_mismatches": 2680,
+      "max_loss_abs": 0.00016611814498901367,
+      "first_bad_global_step": 863,
+      "first_bad_epoch": 1,
+      "first_bad_epoch_step": 863,
+      "first_bad_actual": 0.016038689762353897,
+      "first_bad_reference": 0.016039865091443062,
+      "first_bad_delta": 1.1753290891647339e-06,
+      "original_csv_rows": "[294, 893, 5709, 2707]"
+    }
+  ],
+  "limits": "No per-step activation/gradient checkpoints; no claim that this is a CUDA bug or solely FP32 rounding"
+}

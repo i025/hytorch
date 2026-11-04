@@ -1,0 +1,2 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.01754335051445821, "train_wall_s": 1.5914265508763492, "samples": 1024, "samples_per_sec": 643.4478546534963, "timing_scope": "JPEG read+RGB preprocess+H2D+model+logging", "phase_mode": "throughput", "started_at_unix": 1793777391.0556378, "finished_at_unix": 1793777392.6470659, "cupy_pool_used_bytes": 0, "cupy_pool_reserved_bytes": 0, "torch_peak_allocated_bytes": 32517632}

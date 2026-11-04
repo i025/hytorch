@@ -1,0 +1,51 @@
+{
+  "status": "COMPLETED",
+  "resource_condition": "SHARED_GPU",
+  "window": {
+    "status": "COMPLETED",
+    "resource_condition": "SHARED_GPU",
+    "physical_gpu": 1,
+    "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+    "logical_gpu": 0,
+    "started_at": "2026-11-04T07:27:53.830203+00:00",
+    "device_switches": 0,
+    "gpu_reset_called": false,
+    "estimated_process_budget_mib": 2048,
+    "original_task_latency": "NOT_AVAILABLE; resource observations do not establish zero impact",
+    "finished_at": "2026-11-04T07:34:29.857723+00:00",
+    "stop_reason": null,
+    "completed_jobs": 47,
+    "planned_jobs": 47,
+    "release": "All own GPU child processes exited; parent never creates a CUDA context; no GPU reset",
+    "monitor_joined": true
+  },
+  "correctness": {
+    "status": "PASSED",
+    "device": "cuda",
+    "comparisons": 816,
+    "max_abs": 3.166496753692627e-08,
+    "input_kind": "UDACITY_REAL_RGB",
+    "no_fingerprints": true
+  },
+  "parameter_loss_comparisons": 1530,
+  "numerical_passed": false,
+  "failed_numerical_comparisons": 119,
+  "max_numerical_abs": 0.00016611814498901367,
+  "original_pids": [
+    2216423
+  ],
+  "resource_samples": 290,
+  "observed_original_missing_samples": 0,
+  "max_own_sampled_memory_mib": 714,
+  "original_latency": "NOT_AVAILABLE",
+  "trace_count": 2,
+  "numerical_failures_by_task": {
+    "compute": 0,
+    "io": 0,
+    "phases": 0,
+    "train": 119
+  },
+  "prepared": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01",
+  "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_02",
+  "analysis": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_analysis_01"
+}

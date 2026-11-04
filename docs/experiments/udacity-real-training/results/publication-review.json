@@ -1,0 +1,13 @@
+{
+  "status": "PASSED_DOCUMENT_AND_ARCHIVE_REVIEW",
+  "experimental_acceptance": "FAIL_LONG_RUN_NUMERICAL_AND_NO_VALIDATION_IMPROVEMENT",
+  "gpu_jobs": 47,
+  "steps": 28276,
+  "validation_predictions": 25728,
+  "dweight_trace_calls": 160,
+  "long_failed_comparisons": 119,
+  "gpu_resource_released": true,
+  "gpu_reset": false,
+  "all_report_links_resolve": true,
+  "large_server_binaries_in_publication": false
+}

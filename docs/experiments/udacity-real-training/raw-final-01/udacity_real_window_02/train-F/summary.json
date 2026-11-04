@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETED",
+  "resource_condition": "SHARED_GPU",
+  "dispatch_counts": {
+    "gemm_shared": 50856,
+    "conv_im2col": 31785,
+    "conv_dinput_fused": 18996,
+    "sgd_fused": 4749
+  },
+  "parameter_update_max_abs": 0.015773192048072815,
+  "parameter_update_l2": 0.07790641486644745,
+  "steps": 4749,
+  "cupy_pool_reserved_bytes": 26584064,
+  "torch_peak_allocated_bytes": null,
+  "torch_peak_reserved_bytes": null
+}

@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETED",
+  "resource_condition": "SHARED_GPU",
+  "dispatch_counts": {},
+  "parameter_update_max_abs": 0.0007771535310894251,
+  "parameter_update_l2": 0.0011224175104871392,
+  "steps": 8,
+  "cupy_pool_reserved_bytes": 0,
+  "torch_peak_allocated_bytes": 32517632,
+  "torch_peak_reserved_bytes": 48234496
+}

@@ -1,0 +1,17 @@
+{
+  "execution": "COMPLETED",
+  "acceptance": "FAILED_LONG_RUN_NUMERICAL_AND_NO_GENERALIZATION_IMPROVEMENT",
+  "resource_condition": "SHARED_GPU",
+  "physical_gpu": 1,
+  "short_cpu_tests": 82,
+  "short_cpu_comparisons": 408,
+  "short_gpu_comparisons": 816,
+  "formal_jobs_completed": 47,
+  "long_numerical_failed_comparisons": 119,
+  "long_root_cause": "UNRESOLVED",
+  "input_data": "UDACITY_REAL_CENTER",
+  "original_task_latency": "NOT_AVAILABLE",
+  "gpu_work_ended": "2026-11-04T07:34:29.857723+00:00",
+  "gpu_reset_called": false,
+  "device_switches": 0
+}

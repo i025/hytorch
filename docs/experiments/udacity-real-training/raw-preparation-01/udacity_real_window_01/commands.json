@@ -1,0 +1,43 @@
+[
+  {
+    "name": "correctness-real",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/check_correctness.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--output",
+      "runs/udacity_real_window_01/correctness-real"
+    ],
+    "started_at": "2026-11-04T07:20:50.759117+00:00",
+    "cuda_visible_devices": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+    "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/conv_dweight_build_01/libhytorch_cuda.so",
+    "pid": 2987764,
+    "returncode": 0,
+    "finished_at": "2026-11-04T07:20:58.261675+00:00"
+  },
+  {
+    "name": "smoke-A",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py",
+      "--method",
+      "A",
+      "--task",
+      "smoke",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/udacity_real_window_01/smoke-A"
+    ],
+    "started_at": "2026-11-04T07:20:58.262682+00:00",
+    "cuda_visible_devices": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+    "library": "runs/udacity_real_window_01/absent_native_library.so",
+    "pid": 2987937,
+    "returncode": -15,
+    "finished_at": "2026-11-04T07:20:59.200944+00:00"
+  }
+]

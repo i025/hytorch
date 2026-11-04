@@ -1,0 +1,9 @@
+START correctness-real
+START smoke-A
+{"status": "FAILED", "resource_condition": "SHARED_GPU", "physical_gpu": 1, "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5", "logical_gpu": 0, "started_at": "2026-11-04T07:20:46.754301+00:00", "device_switches": 0, "gpu_reset_called": false, "estimated_process_budget_mib": 2048, "original_task_latency": "NOT_AVAILABLE; resource observations do not establish zero impact", "finished_at": "2026-11-04T07:20:59.201778+00:00", "stop_reason": "ORIGINAL_PROCESS_DISAPPEARED; causality unknown", "completed_jobs": 1, "planned_jobs": 47, "release": "All own GPU child processes exited; parent never creates a CUDA context; no GPU reset", "monitor_joined": true}
+Traceback (most recent call last):
+  File "docs/experiments/udacity-real-training/scripts/run_window.py", line 148, in <module>
+    if __name__=='__main__':main()
+  File "docs/experiments/udacity-real-training/scripts/run_window.py", line 133, in main
+    if returncode:raise subprocess.CalledProcessError(returncode,job['command'])
+subprocess.CalledProcessError: Command '['/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python', '/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/train.py', '--method', 'A', '--task', 'smoke', '--prepared', 'runs/udacity_real_prepared_01', '--no-fingerprints', '--output', 'runs/udacity_real_window_01/smoke-A']' died with <Signals.SIGTERM: 15>.

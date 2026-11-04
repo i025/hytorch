@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "train_loss": 0.010798771245390526, "train_wall_s": 0.19712650403380394, "samples": 64, "samples_per_sec": 324.6646122686022, "timing_scope": "JPEG read+RGB preprocess+H2D+model+logging", "phase_mode": "throughput", "started_at_unix": 1793777654.6927762, "finished_at_unix": 1793777654.8899124, "cupy_pool_used_bytes": 6720512, "cupy_pool_reserved_bytes": 26584064, "torch_peak_allocated_bytes": null}
+Generating '/tmp/nsys-report-1cd4.qdstrm'
+[1/1] [0%                          ] trace-F.nsys-rep[1/1] [0%                          ] trace-F.nsys-rep[1/1] [=17%                        ] trace-F.nsys-rep[1/1] [======34%                   ] trace-F.nsys-rep[1/1] [===================79%      ] trace-F.nsys-rep[1/1] [=====================86%    ] trace-F.nsys-rep[1/1] [========================100%] trace-F.nsys-rep[1/1] [========================100%] trace-F.nsys-rep
+Generated:
+    /srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_02/trace-F.nsys-rep

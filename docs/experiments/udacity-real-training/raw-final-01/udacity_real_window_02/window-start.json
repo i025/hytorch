@@ -1,0 +1,12 @@
+{
+  "status": "RUNNING",
+  "resource_condition": "SHARED_GPU",
+  "physical_gpu": 1,
+  "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+  "logical_gpu": 0,
+  "started_at": "2026-11-04T07:27:53.830203+00:00",
+  "device_switches": 0,
+  "gpu_reset_called": false,
+  "estimated_process_budget_mib": 2048,
+  "original_task_latency": "NOT_AVAILABLE; resource observations do not establish zero impact"
+}

@@ -1,0 +1,127 @@
+{
+  "summary": {
+    "status": "COMPLETED",
+    "resource_condition": "SHARED_GPU",
+    "window": {
+      "status": "COMPLETED",
+      "resource_condition": "SHARED_GPU",
+      "physical_gpu": 1,
+      "uuid": "GPU-c6683db1-d2aa-97b9-c1b4-e497bd7ff0c5",
+      "logical_gpu": 0,
+      "started_at": "2026-11-04T07:27:53.830203+00:00",
+      "device_switches": 0,
+      "gpu_reset_called": false,
+      "estimated_process_budget_mib": 2048,
+      "original_task_latency": "NOT_AVAILABLE; resource observations do not establish zero impact",
+      "finished_at": "2026-11-04T07:34:29.857723+00:00",
+      "stop_reason": null,
+      "completed_jobs": 47,
+      "planned_jobs": 47,
+      "release": "All own GPU child processes exited; parent never creates a CUDA context; no GPU reset",
+      "monitor_joined": true
+    },
+    "correctness": {
+      "status": "PASSED",
+      "device": "cuda",
+      "comparisons": 816,
+      "max_abs": 3.166496753692627e-08,
+      "input_kind": "UDACITY_REAL_RGB",
+      "no_fingerprints": true
+    },
+    "parameter_loss_comparisons": 1530,
+    "numerical_passed": false,
+    "failed_numerical_comparisons": 119,
+    "max_numerical_abs": 0.00016611814498901367,
+    "original_pids": [
+      2216423
+    ],
+    "resource_samples": 290,
+    "observed_original_missing_samples": 0,
+    "max_own_sampled_memory_mib": 714,
+    "original_latency": "NOT_AVAILABLE",
+    "trace_count": 2,
+    "numerical_failures_by_task": {
+      "compute": 0,
+      "io": 0,
+      "phases": 0,
+      "train": 119
+    },
+    "prepared": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01",
+    "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_window_02",
+    "analysis": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_analysis_01"
+  },
+  "gains": [
+    {
+      "task": "compute",
+      "comparison": "F/A",
+      "throughput_ratio": 1.2117333440428077,
+      "throughput_gain_pct": 21.173334404280773,
+      "wall_speedup": 1.2304262610693026,
+      "wall_reduction_pct": 18.727352329838165,
+      "resource_condition": "SHARED_GPU"
+    },
+    {
+      "task": "compute",
+      "comparison": "I/F",
+      "throughput_ratio": 1.0555270388095352,
+      "throughput_gain_pct": 5.5527038809535245,
+      "wall_speedup": 1.0402416354914727,
+      "wall_reduction_pct": 3.868489216206017,
+      "resource_condition": "SHARED_GPU"
+    },
+    {
+      "task": "compute",
+      "comparison": "I/A",
+      "throughput_ratio": 1.2790173084642804,
+      "throughput_gain_pct": 27.90173084642804,
+      "wall_speedup": 1.2799406261663893,
+      "wall_reduction_pct": 21.871375940683492,
+      "resource_condition": "SHARED_GPU"
+    },
+    {
+      "task": "compute",
+      "comparison": "I/E",
+      "throughput_ratio": 0.4988571372314084,
+      "throughput_gain_pct": -50.11428627685917,
+      "wall_speedup": 0.49179465664396943,
+      "wall_reduction_pct": -103.33689813225067,
+      "resource_condition": "SHARED_GPU"
+    },
+    {
+      "task": "io",
+      "comparison": "F/A",
+      "throughput_ratio": 1.1263310068782437,
+      "throughput_gain_pct": 12.633100687824372,
+      "wall_speedup": 1.125932207841273,
+      "wall_reduction_pct": 11.184706056390404,
+      "resource_condition": "SHARED_GPU"
+    },
+    {
+      "task": "io",
+      "comparison": "I/F",
+      "throughput_ratio": 1.029892803586026,
+      "throughput_gain_pct": 2.9892803586025973,
+      "wall_speedup": 1.0301929654526762,
+      "wall_reduction_pct": 2.9308067969003426,
+      "resource_condition": "SHARED_GPU"
+    },
+    {
+      "task": "io",
+      "comparison": "I/A",
+      "throughput_ratio": 1.160000198439706,
+      "throughput_gain_pct": 16.00001984397059,
+      "wall_speedup": 1.1599274400946802,
+      "wall_reduction_pct": 13.787710727976743,
+      "resource_condition": "SHARED_GPU"
+    },
+    {
+      "task": "io",
+      "comparison": "I/E",
+      "throughput_ratio": 0.7776061457681985,
+      "throughput_gain_pct": -22.239385423180146,
+      "wall_speedup": 0.7773599078616854,
+      "wall_reduction_pct": -28.640542159003225,
+      "resource_condition": "SHARED_GPU"
+    }
+  ]
+}

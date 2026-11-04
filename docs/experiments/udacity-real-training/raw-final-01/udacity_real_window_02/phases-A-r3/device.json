@@ -1,0 +1,7 @@
+{
+  "cupy": "12.3.0",
+  "runtime": 12020,
+  "logical_device": 0,
+  "pci_bus_id": "0000:25:00.0",
+  "gpu_name": "b'NVIDIA A100-PCIE-40GB'"
+}

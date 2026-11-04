@@ -1,0 +1,37 @@
+{
+  "status": "PASSED",
+  "csv": "/srv/lab-disks/disk2/users/xymo/datasets/udacity/data/driving_log.csv",
+  "rows": 8036,
+  "actual_jpeg_files": 24108,
+  "missing": [],
+  "image_modes": {
+    "RGB": 24108
+  },
+  "image_sizes": {
+    "(320, 160)": 24108
+  },
+  "unique_center_files": 8036,
+  "steering_min": -0.9426953792572021,
+  "steering_max": 1.0,
+  "steering_mean": 0.004069642163813114,
+  "steering_std": 0.12883205711841583,
+  "zero_ratio": 0.5426829268292683,
+  "train": 6330,
+  "validation": 1608,
+  "purged": 98,
+  "gap_seconds": 10,
+  "actual_boundary_gap_seconds": 10.037,
+  "preprocessing": {
+    "color": "RGB",
+    "crop_top": 70,
+    "crop_bottom": 25,
+    "width": 200,
+    "height": 66,
+    "resize": "PIL bilinear",
+    "normalization": "pixel/127.5-1",
+    "layout": "contiguous float32 CHW",
+    "camera": "center",
+    "augmentation": "none"
+  },
+  "provenance": "Existing downloaded Udacity sample; no external provenance or checksum verification performed"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "device": "cpu",
+  "comparisons": 408,
+  "max_abs": 5.029141902923584e-08,
+  "input_kind": "UDACITY_REAL_RGB",
+  "no_fingerprints": true
+}
