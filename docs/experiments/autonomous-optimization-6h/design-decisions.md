@@ -4,7 +4,7 @@
 
 Stage 4H retained final weights, exact row orders and every loss, but no intermediate states.
 Collect 1600 updates from each original A/F/I/E implementation, including the first partial
-batch and the next epoch. Repeat I independently. At 18 selected positions preserve the
+batch and the next epoch. Repeat I and E independently. At 18 selected positions preserve the
 entire pre-step state, batch, predictions, loss, gradients and updated state. Replay the
 same F and I state at ten positions on all four backends. Stateless SGD has no momentum
 buffer; checkpoint metadata records lr=.001, momentum=0, weight_decay=0.

@@ -1,0 +1,8 @@
+phase,operation,host_exclusive_us,kernel_us,kernel_count,launch_api_us,scope
+backward,Native dInput,336.8544999999999,574.9023125,4.0,43.476687500000004,"Historical 4H shared GPU1, exclusive attribution, 16steps; not current formal measurement"
+backward,Native dWeight,485.832625,301.13843749999995,10.0,84.25693750000003,"Historical 4H shared GPU1, exclusive attribution, 16steps; not current formal measurement"
+forward,other,2187.0668125000007,556.3981875000002,39.0,335.24906250000004,"Historical 4H shared GPU1, exclusive attribution, 16steps; not current formal measurement"
+backward,other,1701.02725,111.434125,16.0,151.38762499999999,"Historical 4H shared GPU1, exclusive attribution, 16steps; not current formal measurement"
+backward,ReLU backward,772.3275624999999,60.1181875,14.0,117.3894375,"Historical 4H shared GPU1, exclusive attribution, 16steps; not current formal measurement"
+backward,MSE backward,187.52749999999997,12.394000000000002,4.0,27.15124999999999,"Historical 4H shared GPU1, exclusive attribution, 16steps; not current formal measurement"
+backward,Tanh backward,163.37575,11.9360625,4.0,27.9525,"Historical 4H shared GPU1, exclusive attribution, 16steps; not current formal measurement"

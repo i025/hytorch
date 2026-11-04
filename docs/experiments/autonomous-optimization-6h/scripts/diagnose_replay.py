@@ -77,8 +77,8 @@ def main():
         optimizer=dict(name='SGD', lr=.001, momentum=0, weight_decay=0, hidden_state=None),
         original_protocol=str((args.prepared / 'protocol.json').resolve()),
         tf32=False, dropout=0, no_fingerprints=True))
-    # Repeat I independently from initial state to check determinism.
-    for run in ('A', 'F', 'I', 'E', 'I-repeat'):
+    # Repeat I and E independently from initial state to check determinism.
+    for run in ('A', 'F', 'I', 'E', 'I-repeat', 'E-repeat'):
         method = run[0]
         engine = engines[method]
         engine.load_state(canonical)
@@ -120,8 +120,8 @@ def main():
     write_csv(args.output / 'trajectories.csv', trajectories)
     write_csv(args.output / 'history-reproduction.csv', historical)
     for step in checkpoints:
-        values = {m: dict(np.load(args.output / m / f'result-{step}.npz')) for m in ('A', 'F', 'I', 'E', 'I-repeat')}
-        for method, reference in (('A', 'E'), ('F', 'E'), ('I', 'E'), ('F', 'I'), ('I-repeat', 'I')):
+        values = {m: dict(np.load(args.output / m / f'result-{step}.npz')) for m in ('A', 'F', 'I', 'E', 'I-repeat', 'E-repeat')}
+        for method, reference in (('A', 'E'), ('F', 'E'), ('I', 'E'), ('F', 'I'), ('I-repeat', 'I'), ('E-repeat', 'E')):
             for name, value in values[method].items():
                 checkpoint_errors.append(compare(value, values[reference][name], name,
                     step=step, method=method, reference=reference, scope='free-trajectory'))
@@ -206,7 +206,8 @@ def main():
         for node, values in enumerate(operands):
             np.savez(args.output / f'dweight-operands-{step}-{node}.npz', **values)
     deterministic = [r for r in checkpoint_errors if r['method'] == 'I-repeat']
-    repeat_losses = {run: np.array([r['loss'] for r in trajectories if r['run'] == run]) for run in ('I', 'I-repeat')}
+    torch_deterministic = [r for r in checkpoint_errors if r['method'] == 'E-repeat']
+    repeat_losses = {run: np.array([r['loss'] for r in trajectories if r['run'] == run]) for run in ('I', 'I-repeat', 'E', 'E-repeat')}
     summary = dict(status='COMPLETED', started_at=started,
         finished_at=datetime.now(timezone.utc).isoformat(),
         free_trajectory_comparisons=len(checkpoint_errors), replay_comparisons=len(replay_errors),
@@ -216,6 +217,9 @@ def main():
         repeat_bitwise_identical=all(r['bitwise_equal'] for r in deterministic),
         repeat_all_losses_equal=bool(np.array_equal(repeat_losses['I'], repeat_losses['I-repeat'])),
         repeat_loss_max_abs=float(abs(repeat_losses['I'] - repeat_losses['I-repeat']).max()),
+        torch_repeat_bitwise_identical=all(r['bitwise_equal'] for r in torch_deterministic),
+        torch_repeat_all_losses_equal=bool(np.array_equal(repeat_losses['E'], repeat_losses['E-repeat'])),
+        torch_repeat_loss_max_abs=float(abs(repeat_losses['E'] - repeat_losses['E-repeat']).max()),
         repeat_compared_groups=len(deterministic),
         evidence_scope='Sampled common states; not a proof for every step or every possible input')
     write_json(args.output / 'summary.json', summary)

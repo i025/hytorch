@@ -17,6 +17,8 @@ New GPU work should stop by 23:06:35 to leave approximately 30 minutes for archi
 | 18:12 | Stage commit | `1dcfa82`, CPU data/plots and opt-in prototypes; credentials still pending |
 | 18:18 | Generic model setup recheck | Avoid constructing a discarded GPU DonkeyNet for SpatialNet;1530 saved CPU arrays reproduce exactly |
 | 18:20 | CPU loading profile | Decode and resize are substantial measured CPU costs; no third optimization introduced |
+| 18:22 | Final full CPU regression | 103 passed /0 failed /0 skipped; seeded default shuffle also preserved |
+| 18:30 | CPU-only dynamic loading check | ABI1 and new native ReLU symbol load with CUDA_VISIBLE_DEVICES=''; GPU correctness still NOT_RUN |
 
 This host has no managed-cloud environment status tool or `/etc/codex/network-policy.json`.
 No managed-cloud credential readiness is inferred from their absence.

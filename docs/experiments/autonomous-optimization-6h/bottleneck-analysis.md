@@ -18,6 +18,13 @@ measured Python-exclusive cost. Seven ReLU gradients each create a mask then
 multiply, producing 14 launches and temporary boolean arrays. Their host submission
 and autograd objects make them a small, generic fusion candidate.
 
+The retained exclusive-attribution [historical hotspot CSV](results/historical-evidence-01/hotspots.csv)
+puts the seven ReLU gradients together at772.328us host range,60.118us GPU kernel
+sum,14 launches/step. Launch API time is117.389us, a separate host quantity.
+Native dInput is574.902us GPU and native dWeight301.138us GPU. None of these
+historical numbers is used to calculate new prototype speedups or whole-device
+utilization.
+
 ## New CPU preprocessing results
 
 Same1024 real images/labels, three independently constructed loaders, rotated order,

@@ -12,6 +12,11 @@ HyTorch's squared-error sum divided by batch length equals PyTorch mean MSE.
 SGD is lr=.001 with no momentum, decay or hooks. There are 16 parameter arrays,
 251749 scalar parameters. No optimizer buffers need to be reconstructed.
 
+`layers.py::Linear.forward` calls `linear_simple`, which uses MatMul plus broadcast
+bias addition. `functions.py::MatMul.backward` deliberately constructs
+`MatMul(native=False)` for both derivatives; these remain CuPy dot/cuBLAS even
+when native forward GEMM is enabled. This experiment does not change that choice.
+
 A uses original CuPy forward/backward and ordinary SGD. F selects shared GEMM,
 im2col forward, tile16, original native dInput gather, Fused SGD and explicit
 first-input pruning. I adds Split-K dWeight. PyTorch uses matching architecture,
