@@ -34,6 +34,13 @@ Two workers were selected before GPU timing as a smaller, less variable configur
 The first slower serial result is retained. CPU throughput is not a training speedup
 and is not compared numerically with old shared-GPU phase timings.
 
+A separate serial cProfile run of1024 images takes .985s including observer overhead:
+JPEG decoder self time .308s, native resize self time .219s. Those exclusive times
+are directly measured CPU costs; cumulative PIL.convert/load totals overlap them
+and must not be added as independent costs. Raw call statistics and binary pstats
+remain in `runs/autonomous_optimization_01/loading-profile/`. This is an offline
+diagnostic, not an extra formal throughput repeat.
+
 ## Scope and rejected directions
 
 No third optimization: do not rewrite another convolution or GEMM kernel based on

@@ -13,6 +13,8 @@ Server root: `/home/xymo/projects/hytorch/runs/autonomous_optimization_01/`
 | `cpu-trajectory/` | Three1600-step loss series, 18 common-state replay records, parameter differences and checkpoint/final NPZ |
 | `sgd-rounding/` | Same-parameter/gradient isolated SGD scalar data and sampled libm.fmaf checks |
 | `quality-analysis/` | Unchanged historical held-out labels/predictions, moments/MSE decomposition/bins |
+| `cpu-engine-recheck/` | Generic model initialization avoids a discarded model;1530 saved CPU arrays match the first diagnosis exactly |
+| `loading-profile/` | Serial CPU preprocessing cProfile, CSV, text and server-only pstats |
 | `availability.jsonl` | Initial all-card observations, no CUDA allocation |
 | `gpu-window/` | Interrupted17:54:57–17:55:02 GPU0 window; first job SIGTERM on new external process, no completed jobs |
 | `availability-retry.jsonl`, `gpu-controller-retry.log*` | Continuing same-GPU0 observation; no memory reservation |
@@ -23,6 +25,9 @@ in [cpu-raw-01/file-index.csv](results/cpu-raw-01/file-index.csv),87 files/19 po
 records. All arrays remain on server. Read the summary's scope: CPU comparisons do
 not become GPU results. First interrupted raw records and final complete GPU/raw
 index are added after the corresponding processes finish, preserving old records.
+
+[cpu-additional-01/file-index.csv](results/cpu-additional-01/file-index.csv) adds52
+server files/6 portable records for initialization recheck and loading profile.
 
 Historical sources are linked, never overwritten:
 

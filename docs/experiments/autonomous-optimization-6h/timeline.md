@@ -13,6 +13,10 @@ New GPU work should stop by 23:06:35 to leave approximately 30 minutes for archi
 | 17:54:57–17:55:02 | First observed-idle GPU0 window | Another user's new PID3427844 appeared; monitor stopped only our PID3428466. Zero completed jobs, no performance claims. Full failure logs retained |
 | 17:55 | Common-state CPU/FP64 check | 510 CPU-backend and 1020 FP64 comparisons pass; this does not replace CUDA replay |
 | 17:58 | Resource-conflict handling | Preserve first window; wait for sustained idle on the same GPU0 UUID, no device switch or memory reservation |
+| 18:00 | CPU-only1600-step trajectories finish | A/E361 strict Loss failures, first391;612 same-state one-step groups all pass |
+| 18:12 | Stage commit | `1dcfa82`, CPU data/plots and opt-in prototypes; credentials still pending |
+| 18:18 | Generic model setup recheck | Avoid constructing a discarded GPU DonkeyNet for SpatialNet;1530 saved CPU arrays reproduce exactly |
+| 18:20 | CPU loading profile | Decode and resize are substantial measured CPU costs; no third optimization introduced |
 
 This host has no managed-cloud environment status tool or `/etc/codex/network-policy.json`.
 No managed-cloud credential readiness is inferred from their absence.

@@ -9,7 +9,7 @@
 | 项目 | 状态与证据 |
 |---|---|
 | 源码/历史性能分析 | 完成，见[source-analysis](source-analysis.md)、[bottleneck-analysis](bottleneck-analysis.md) |
-| CPU回归 | 101 passed，0 failed，0 skipped（78项主集合+23项额外契约） |
+| CPU回归 | 103 passed，0 failed，0 skipped（最终完整主机集合，保留此前各次输出） |
 | CPU共同状态及FP64参考 | 510+1020组全部通过 |
 | CPU1600步漂移/共同状态重放 | 长轨迹出现严格失败，612组同状态一步全部通过；保留负结果 |
 | 预取CPU原型 | 12次真实图像对照逐元素一致；吞吐数据见下文 |
@@ -97,6 +97,7 @@ GPU0 UUID：`GPU-f099fdbd-adf2-6157-3462-4145bc2a8359`，映射逻辑0。
 
 - [命令](commands.md)、[时间线](timeline.md)、[完整数据索引](data-index.md)。
 - [CPU原始记录及服务器NPZ索引](results/cpu-raw-01/file-index.csv)。
+- [CPU初始化复查与加载Profiling索引](results/cpu-additional-01/file-index.csv)：初始化整理后1530个已保存数组精确复现；加载cProfile单独记录。
 - 服务器根目录：`/home/xymo/projects/hytorch/runs/autonomous_optimization_01/`。
 - 原图、完整NPZ参数/梯度/输入、动态库、Nsight二进制均不上传GitHub。
 - 下列均为真实数据可视化，不是终端截图：

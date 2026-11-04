@@ -26,11 +26,10 @@ python docs/experiments/a100-stage1/run_logged.py --log runs/autonomous_optimiza
 python docs/experiments/a100-stage1/run_logged.py --log runs/autonomous_optimization_01/quality-analysis.log -- python docs/experiments/autonomous-optimization-6h/scripts/analyze_quality.py --output runs/autonomous_optimization_01/quality-analysis
 ```
 
-Final CPU collections (101 passed total, no skipped):
+Final CPU collection (`host-final-02.log`:103 passed,0 failed,0 skipped):
 
 ```bash
-python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/test_gemm_blocked_packed.py tests/test_fused_sgd_host.py tests/test_conv_dinput_pruning.py tests/test_conv_dweight_host.py tests/test_conv_dinput_opt_host.py tests/test_udacity_dataset.py tests/test_udacity_experiment.py tests/test_dataloader_indices.py tests/test_relu_backward_host.py -q -ra
-python -m pytest tests/test_conv_backward_fusion_host.py tests/test_conv_shape_dispatch.py -q -ra
+python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/test_gemm_blocked_packed.py tests/test_fused_sgd_host.py tests/test_conv_dinput_pruning.py tests/test_conv_dweight_host.py tests/test_conv_dinput_opt_host.py tests/test_udacity_dataset.py tests/test_udacity_experiment.py tests/test_dataloader_indices.py tests/test_relu_backward_host.py tests/test_conv_backward_fusion_host.py tests/test_conv_shape_dispatch.py -q -ra
 python -m compileall -q hytorch/backends/cuda/runtime.py hytorch/functions.py hytorch/dataloaders.py docs/experiments/autonomous-optimization-6h/scripts
 ```
 

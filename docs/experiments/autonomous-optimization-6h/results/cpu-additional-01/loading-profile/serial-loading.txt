@@ -1,0 +1,306 @@
+         435014 function calls (434983 primitive calls) in 0.985 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.985    0.985 {built-in method builtins.sum}
+      257    0.001    0.000    0.985    0.004 docs/experiments/autonomous-optimization-6h/scripts/profile_loading.py:22(<genexpr>)
+      257    0.002    0.000    0.984    0.004 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:35(__next__)
+      256    0.002    0.000    0.973    0.004 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:42(<listcomp>)
+     1024    0.004    0.000    0.971    0.001 /srv/lab-disks/disk2/users/xymo/projects/hytorch/donkeycar_hy/udacity_dataset.py:41(__getitem__)
+     1024    0.035    0.000    0.966    0.001 /srv/lab-disks/disk2/users/xymo/projects/hytorch/donkeycar_hy/udacity_dataset.py:14(preprocess_udacity)
+     1024    0.004    0.000    0.379    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:940(convert)
+     2048    0.015    0.000    0.360    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:177(load)
+     1024    0.308    0.000    0.308    0.000 {method 'decode' of 'ImagingDecoder' objects}
+     1024    0.007    0.000    0.246    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3375(open)
+     1024    0.005    0.000    0.228    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:2222(resize)
+     1024    0.219    0.000    0.219    0.000 {method 'resize' of 'ImagingCore' objects}
+     1024    0.008    0.000    0.106    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3448(_open_core)
+     1024    0.002    0.000    0.100    0.000 /usr/lib/python3.8/posixpath.py:387(realpath)
+     1024    0.003    0.000    0.090    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:828(jpeg_factory)
+     1024    0.014    0.000    0.086    0.000 /usr/lib/python3.8/posixpath.py:396(_joinrealpath)
+     1024    0.004    0.000    0.086    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:109(__init__)
+     1024    0.018    0.000    0.078    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:331(_open)
+    10240    0.007    0.000    0.044    0.000 /usr/lib/python3.8/posixpath.py:164(islink)
+     1025    0.013    0.000    0.041    0.000 {built-in method numpy.asarray}
+    10240    0.036    0.000    0.036    0.000 {built-in method posix.lstat}
+     1024    0.002    0.000    0.028    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:732(__array_interface__)
+    10240    0.016    0.000    0.024    0.000 /usr/lib/python3.8/posixpath.py:71(join)
+     2048    0.009    0.000    0.023    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:224(DQT)
+     1024    0.006    0.000    0.022    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:772(tobytes)
+    38918    0.019    0.000    0.019    0.000 {method 'read' of '_io.BufferedReader' objects}
+     1024    0.001    0.000    0.018    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:1265(copy)
+     1024    0.002    0.000    0.016    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:1278(crop)
+     1024    0.015    0.000    0.015    0.000 {built-in method numpy.ascontiguousarray}
+     1024    0.013    0.000    0.013    0.000 {built-in method io.open}
+     1024    0.001    0.000    0.012    0.000 /usr/lib/python3.8/posixpath.py:372(abspath)
+     2048    0.011    0.000    0.011    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:244(<listcomp>)
+     5120    0.005    0.000    0.011    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:58(Skip)
+     1024    0.011    0.000    0.011    0.000 {method 'copy' of 'ImagingCore' objects}
+     1024    0.004    0.000    0.011    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:1304(_crop)
+    23552    0.006    0.000    0.010    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/_binary.py:90(i16be)
+     1024    0.002    0.000    0.010    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:316(load_prepare)
+     1024    0.001    0.000    0.009    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:384(load_read)
+     1024    0.006    0.000    0.009    0.000 /usr/lib/python3.8/posixpath.py:334(normpath)
+     3072    0.006    0.000    0.009    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:571(_new)
+     1024    0.006    0.000    0.009    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:176(SOF)
+     1024    0.005    0.000    0.009    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:63(APP)
+      512    0.009    0.000    0.009    0.000 {built-in method numpy.array}
+     1024    0.008    0.000    0.008    0.000 {method 'encode' of 'ImagingEncoder' objects}
+     1024    0.008    0.000    0.008    0.000 {built-in method PIL._imaging.new}
+    16403    0.002    0.000    0.007    0.000 {built-in method posix.fspath}
+     9216    0.005    0.000    0.007    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:583(_safe_read)
+    24798    0.005    0.000    0.007    0.000 {built-in method builtins.isinstance}
+     7168    0.004    0.000    0.006    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:885(load)
+     1024    0.001    0.000    0.005    0.000 /usr/lib/python3.8/pathlib.py:728(__fspath__)
+     2048    0.001    0.000    0.005    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/_util.py:9(is_path)
+    12288    0.003    0.000    0.005    0.000 /usr/lib/python3.8/posixpath.py:41(_get_sep)
+     1024    0.005    0.000    0.005    0.000 {method 'crop' of 'ImagingCore' objects}
+     1024    0.002    0.000    0.005    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:424(_getdecoder)
+    24576    0.004    0.000    0.004    0.000 {built-in method _struct.unpack_from}
+     1024    0.002    0.000    0.004    0.000 /usr/lib/python3.8/pathlib.py:718(__str__)
+     1024    0.003    0.000    0.004    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:449(_getencoder)
+     1024    0.004    0.000    0.004    0.000 {method 'close' of '_io.BufferedReader' objects}
+     1024    0.003    0.000    0.004    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:254(_conv_type_shape)
+     1024    0.000    0.000    0.004    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:348(preinit)
+     2048    0.002    0.000    0.004    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3354(_decompression_bomb_check)
+     4096    0.003    0.000    0.003    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:543(__init__)
+     2048    0.002    0.000    0.003    0.000 /usr/lib/python3.8/posixpath.py:60(isabs)
+     10/5    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:1017(_handle_fromlist)
+     14/4    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+      6/4    0.000    0.000    0.003    0.001 {built-in method builtins.__import__}
+      7/4    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:986(_find_and_load)
+      7/4    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:956(_find_and_load_unlocked)
+      7/4    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:650(_load_unlocked)
+      6/4    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap_external>:842(exec_module)
+     1024    0.001    0.000    0.003    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:598(__exit__)
+    14361    0.002    0.000    0.002    0.000 {method 'startswith' of 'str' objects}
+    10240    0.002    0.000    0.002    0.000 {method 'partition' of 'str' objects}
+     1024    0.002    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:253(<listcomp>)
+     2048    0.001    0.000    0.002    0.000 /usr/lib/python3.8/abc.py:96(__instancecheck__)
+     1024    0.001    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/BmpImagePlugin.py:56(_dib_accept)
+    19757    0.002    0.000    0.002    0.000 {built-in method builtins.len}
+     1024    0.002    0.000    0.002    0.000 /usr/lib/python3.8/pathlib.py:701(_format_parsed_parts)
+    13312    0.002    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:567(mode)
+     3072    0.002    0.000    0.002    0.000 {method 'seek' of '_io.BufferedReader' objects}
+      7/4    0.000    0.000    0.002    0.000 {built-in method builtins.exec}
+     2102    0.002    0.000    0.002    0.000 {built-in method builtins.hasattr}
+    14336    0.002    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:563(size)
+    15381    0.002    0.000    0.002    0.000 {method 'append' of 'list' objects}
+     3072    0.001    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:555(width)
+     5132    0.002    0.000    0.002    0.000 {built-in method builtins.max}
+    10253    0.002    0.000    0.002    0.000 {method 'endswith' of 'str' objects}
+     1024    0.000    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:501(_getmp)
+     4154    0.001    0.000    0.001    0.000 {built-in method builtins.getattr}
+     1024    0.001    0.000    0.001    0.000 {built-in method PIL._imaging.jpeg_decoder}
+     6144    0.001    0.000    0.001    0.000 {method 'pixel_access' of 'ImagingCore' objects}
+     3072    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:559(height)
+        1    0.000    0.000    0.001    0.001 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/GifImagePlugin.py:26(<module>)
+    10240    0.001    0.000    0.001    0.000 {built-in method _stat.S_ISLNK}
+     2048    0.001    0.000    0.001    0.000 {built-in method _abc._abc_instancecheck}
+     1024    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/_binary.py:60(i32le)
+     1024    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:511(_getmp)
+        6    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:914(get_code)
+     1024    0.001    0.000    0.001    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+     1024    0.001    0.000    0.001    0.000 {method 'copy' of 'numpy.ndarray' objects}
+     1024    0.001    0.000    0.001    0.000 {method 'sort' of 'list' objects}
+     2098    0.001    0.000    0.001    0.000 {method 'join' of 'str' objects}
+     1024    0.001    0.000    0.001    0.000 {method 'setimage' of 'ImagingEncoder' objects}
+       11    0.000    0.000    0.001    0.000 {built-in method builtins.__build_class__}
+     1024    0.001    0.000    0.001    0.000 {built-in method PIL._imaging.raw_encoder}
+     1024    0.001    0.000    0.001    0.000 {method 'split' of 'str' objects}
+     1024    0.001    0.000    0.001    0.000 {method 'setimage' of 'ImagingDecoder' objects}
+     3072    0.001    0.000    0.001    0.000 {method 'copy' of 'dict' objects}
+     1024    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/PngImagePlugin.py:717(_accept)
+     5148    0.001    0.000    0.001    0.000 {method 'upper' of 'str' objects}
+     2048    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:318(_accept)
+     1024    0.000    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:590(_close_fp)
+        6    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:638(_compile_bytecode)
+        6    0.001    0.000    0.001    0.000 {built-in method marshal.loads}
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:472(_read_dpi_from_exif)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/GifImagePlugin.py:69(_accept)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:890(_find_spec)
+     1024    0.000    0.000    0.000    0.000 {method 'cleanup' of 'ImagingDecoder' objects}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:549(module_from_spec)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageMath.py:17(<module>)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/BmpImagePlugin.py:52(_accept)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:256(<lambda>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:1615(__new__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:1591(_make_nmtuple)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1399(find_spec)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1367(_get_spec)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:34(<module>)
+     2048    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1498(find_spec)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1034(get_data)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:89(_tilesort)
+     1024    0.000    0.000    0.000    0.000 {built-in method builtins.divmod}
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:324(load_end)
+     1024    0.000    0.000    0.000    0.000 {method 'join' of 'bytes' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/collections/__init__.py:313(namedtuple)
+      256    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:45(<listcomp>)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1164(create_module)
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.create_dynamic}
+      256    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:46(<listcomp>)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:587(__enter__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:157(__new__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:477(_init_module_attrs)
+       20    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:135(_path_stat)
+       20    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:120(_type_check)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/BmpImagePlugin.py:25(<module>)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:354(cache_from_source)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:1593(<listcomp>)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:496(__init__)
+        6    0.000    0.000    0.000    0.000 {built-in method io.open_code}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:255(inner)
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.compile}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:347(__getitem__)
+       13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:376(cached)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/PpmImagePlugin.py:16(<module>)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:484(_get_cached)
+       37    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:121(_path_join)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:224(__init__)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:15(__init__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:154(_path_isfile)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:659(__init__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:145(_path_is_mode_type)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1493(_get_spec)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:75(__setitem__)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/GifImagePlugin.py:54(LoadingStrategy)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:127(_path_split)
+       37    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:123(<listcomp>)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1075(path_stats)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:200(<setcomp>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:143(__prepare__)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/typing_extensions.py:3424(_collect_type_vars)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegPresets.py:1(<module>)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:689(spec_from_file_location)
+       34    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:389(parent)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+        5    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x908780}
+       67    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:553(_classify_pyc)
+        5    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:358(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageMath.py:27(_Operand)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/abc.py:100(__subclasscheck__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:532(_get_mixins_)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+       46    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:417(__setattr__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+       18    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:79(_unpack_uint32)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:586(_validate_timestamp_pyc)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:762(__setattr__)
+        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:543(_find_data_type)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+       28    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:867(__exit__)
+       12    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3669(register_extension)
+        1    0.000    0.000    0.000    0.000 {built-in method math.ceil}
+        5    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3607(register_open)
+       28    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:863(__enter__)
+        2    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3680(register_extensions)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:579(_find_new_)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/typing_extensions.py:3389(_has_generic_or_protocol_as_origin)
+       12    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+       24    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:129(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageMode.py:37(getmode)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/GifImagePlugin.py:78(GifImageFile)
+       86    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:22(_is_dunder)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/BmpImagePlugin.py:63(BmpImageFile)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/os.py:1073(__subclasshook__)
+       14    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:219(_remove_dups_flatten)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:516(_check_name_wrapper)
+        4    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/typing_extensions.py:3411(_is_unpacked_typevartuple)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:522(_check_for_existing_members)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:646(_is_dunder)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:800(find_spec)
+        7    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/_distutils_hack/__init__.py:102(find_spec)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:33(_is_sunder)
+       42    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:720(__hash__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:342(__init__)
+       42    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/PpmImagePlugin.py:161(PpmPlainDecoder)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/_collections_abc.py:72(_check_methods)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        4    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/typing_extensions.py:1529(get_origin)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:175(_path_isabs)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1172(exec_module)
+        6    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1330(_path_importer_cache)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:12(_is_descriptor)
+        5    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3627(register_mime)
+       21    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.repr}
+        5    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3642(register_save)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+       18    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+       14    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/BmpImagePlugin.py:301(BmpRleDecoder)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/functools.py:932(__init__)
+        9    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:370(__getattr__)
+       12    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1004(__init__)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:327(JpegImageFile)
+        2    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:25(reset)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:234(__iter__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:68(__init__)
+        4    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/typing_extensions.py:173(_should_collect_from_parameters)
+        7    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        8    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:711(__eq__)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/PpmImagePlugin.py:57(PpmImageFile)
+       12    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 {method 'items' of 'mappingproxy' objects}
+        1    0.000    0.000    0.000    0.000 <string>:1(__new__)
+        6    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:397(has_location)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/collections/__init__.py:385(<genexpr>)
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.vars}
+        3    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3701(register_decoder)
+        5    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:669(<genexpr>)
+        4    0.000    0.000    0.000    0.000 {built-in method sys.intern}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:725(find_spec)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:324(__eq__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:68(_relax_case)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:223(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/GifImagePlugin.py:610(_Frame)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:175(<dictcomp>)
+        3    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1029(get_filename)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3655(register_save_all)
+        4    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:839(create_module)
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:329(__hash__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/functools.py:938(__set_name__)
+        5    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1153(__init__)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/PpmImagePlugin.py:298(PpmDecoder)
+        1    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/BmpImagePlugin.py:377(DibImageFile)
+        4    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:1594(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'mro' of 'type' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
+        1    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/typing_extensions.py:3462(<listcomp>)
+        3    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:32(__iter__)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        1    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+
+

@@ -1,0 +1,53 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/cpu-replay-errors.csv,89748,docs/experiments/autonomous-optimization-6h/results/cpu-additional-01/cpu-engine-recheck/cpu-replay-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/fp64-network-errors.csv,176270,docs/experiments/autonomous-optimization-6h/results/cpu-additional-01/cpu-engine-recheck/fp64-network-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/summary.json,466,docs/experiments/autonomous-optimization-6h/results/cpu-additional-01/cpu-engine-recheck/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile/serial-loading.csv,31517,docs/experiments/autonomous-optimization-6h/results/cpu-additional-01/loading-profile/serial-loading.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile/serial-loading.pstats,40772,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile/serial-loading.txt,33616,docs/experiments/autonomous-optimization-6h/results/cpu-additional-01/loading-profile/serial-loading.txt,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile/summary.json,173,docs/experiments/autonomous-optimization-6h/results/cpu-additional-01/loading-profile/summary.json,Git portable record and server original

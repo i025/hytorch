@@ -13,6 +13,7 @@ from engine import Engine as PreviousEngine, CONFIGS
 from benchmarks.bench_cuda_training import initialize, torch_model
 from benchmarks.bench_cuda_training import SpatialNet
 from donkeycar_hy.udacity_dataset import UdacityDataset
+from donkeycar_hy.model import DonkeyNet
 import hytorch
 import hytorch.functions as F
 from hytorch import cuda
@@ -24,18 +25,31 @@ class Engine(PreviousEngine):
     def __init__(self, method, model='donkey', device='cuda'):
         # P: prefetch only; R: ReLU gradient only; J: both prototypes.
         self.native_relu = method in ('R', 'J')
-        super().__init__('I' if method in ('P', 'R', 'J') else method, device)
-        if model == 'spatial':
-            hy = SpatialNet()
-            self.initial = initialize(hy, (3, 66, 200), 42)
-            if self.method == 'E':
-                self.model = torch_model('spatial', self.initial).to('cuda:0' if self.cp is not None else 'cpu')
-                self.optimizer = self.torch.optim.SGD(self.model.parameters(), lr=.001)
-            else:
-                self.model = hy
-                if self.cp is not None:
-                    self.model.to_gpu()
-                self.optimizer = SGD(.001, fused=self.method in 'FI').setup(self.model)
+        self.method = 'I' if method in ('P', 'R', 'J') else method
+        self.device = device
+        hy = SpatialNet() if model == 'spatial' else DonkeyNet(dropout_rate=0.)
+        self.initial = initialize(hy, (3, 66, 200), 42)
+        self.cp = None
+        if device == 'cuda':
+            import cupy as cp
+            cp.cuda.Device(0).use()
+            self.cp = cp
+        if self.method == 'E':
+            import torch
+            self.torch = torch
+            torch.set_num_threads(4)
+            torch.manual_seed(42)
+            torch.backends.cuda.matmul.allow_tf32 = False
+            torch.backends.cudnn.allow_tf32 = False
+            torch.backends.cudnn.benchmark = False
+            torch.backends.cudnn.deterministic = True
+            self.model = torch_model(model, self.initial).to('cuda:0' if self.cp is not None else 'cpu')
+            self.optimizer = torch.optim.SGD(self.model.parameters(), lr=.001)
+        else:
+            self.model = hy
+            if self.cp is not None:
+                self.model.to_gpu()
+            self.optimizer = SGD(.001, fused=self.method in 'FI').setup(self.model)
 
     def context(self):
         return backend(**dict(CONFIGS[self.method], relu_backward='fused' if self.native_relu else 'original'))

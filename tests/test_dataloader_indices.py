@@ -44,3 +44,12 @@ def test_shuffle_only_selected_indices(workers):
     values = list(DataLoader(Dataset(), 2, num_workers=workers, indices=[8, 1, 5, 8]))
     np.testing.assert_array_equal(np.sort(np.concatenate([x for x, _ in values]).ravel()),
                                   [1, 5, 8, 8])
+
+
+@pytest.mark.parametrize('workers', [0, 2])
+def test_default_shuffle_preserves_seeded_order(workers):
+    np.random.seed(42)
+    expected = np.random.permutation(13)
+    np.random.seed(42)
+    values = list(DataLoader(Dataset(), 4, num_workers=workers))
+    np.testing.assert_array_equal(np.concatenate([x for x, _ in values]).ravel(), expected)

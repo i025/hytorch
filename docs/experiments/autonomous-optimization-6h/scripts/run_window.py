@@ -72,26 +72,42 @@ class Monitor:
     def __init__(self, output, uuid):
         self.output, self.uuid = output, uuid
         self.active, self.job, self.reason = None, 'preflight', None
+        self.own_pids = set()
         self.stop = threading.Event()
 
     def run(self):
         with (self.output / 'resources.jsonl').open('x') as stream:
             while not self.stop.is_set():
-                row = prior.sample(self.uuid)
-                own = []
+                try:
+                    row = prior.sample(self.uuid)
+                except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
+                    self.reason = 'GPU monitor failed: ' + str(error)
+                    if self.active is not None and self.active.poll() is None:
+                        os.killpg(self.active.pid, signal.SIGTERM)
+                    return
+                own = self.own_pids.copy()
                 if self.active is not None:
                     import psutil
-                    own = [self.active.pid]
+                    own.add(self.active.pid)
                     try:
-                        own += [p.pid for p in psutil.Process(self.active.pid).children(recursive=True)]
+                        process = psutil.Process(self.active.pid)
+                        own.update(p.pid for p in process.children(recursive=True))
+                        row['active_process_rss_mib'] = process.memory_info().rss / 1024**2
+                        row['active_process_threads'] = process.num_threads()
                     except psutil.NoSuchProcess:
                         pass  # The short-lived active child exited between samples.
+                self.own_pids.update(own)
                 unexpected = [p['pid'] for p in row['processes'] if p['pid'] not in own]
-                row.update(job=self.job, own_pids=own, unexpected_gpu_pids=unexpected)
+                row.update(job=self.job, own_gpu_pids=[p['pid'] for p in row['processes'] if p['pid'] in own],
+                           unexpected_gpu_pids=unexpected)
+                memory = [p['memory_mib'] for p in row['processes'] if p['pid'] in own]
+                row['own_gpu_memory_mib'] = sum(int(v) for v in memory) if all(v.isdigit() for v in memory) else None
                 if unexpected:
                     self.reason = 'New external GPU process; stop our work to avoid contention'
                 if int(row['gpu']['memory.total']) - int(row['gpu']['memory.used']) < 1024:
                     self.reason = 'Less than 1GiB free memory'
+                if datetime.now(timezone.utc) >= datetime(2026, 11, 4, 23, 6, 35, tzinfo=timezone.utc):
+                    self.reason = 'GPU budget cutoff reached'
                 row['stop_reason'] = self.reason
                 stream.write(json.dumps(row) + '\n')
                 stream.flush()
@@ -157,6 +173,7 @@ def main():
                 monitor.active = subprocess.Popen(job['command'], cwd=ROOT, env=local,
                     stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
                 row['pid'] = monitor.active.pid
+                monitor.own_pids.add(monitor.active.pid)
                 (args.output / 'commands.json').write_text(json.dumps(records, indent=2) + '\n')
                 code = monitor.active.wait()
             monitor.active = None

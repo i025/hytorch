@@ -66,6 +66,9 @@ def main():
         torch_cudnn_tf32=torch.backends.cudnn.allow_tf32,
         cudnn_deterministic=torch.backends.cudnn.deterministic))
     canonical = engines['A'].initial
+    old_initial = np.load(ROOT / 'runs/udacity_real_window_02/train-I/initial_weights.npz')
+    for key in canonical:
+        np.testing.assert_array_equal(canonical[key], old_initial[key])
     for engine in engines.values():
         for key in canonical:
             np.testing.assert_array_equal(engine.initial[key], canonical[key])
@@ -203,6 +206,7 @@ def main():
         for node, values in enumerate(operands):
             np.savez(args.output / f'dweight-operands-{step}-{node}.npz', **values)
     deterministic = [r for r in checkpoint_errors if r['method'] == 'I-repeat']
+    repeat_losses = {run: np.array([r['loss'] for r in trajectories if r['run'] == run]) for run in ('I', 'I-repeat')}
     summary = dict(status='COMPLETED', started_at=started,
         finished_at=datetime.now(timezone.utc).isoformat(),
         free_trajectory_comparisons=len(checkpoint_errors), replay_comparisons=len(replay_errors),
@@ -210,6 +214,8 @@ def main():
         replay_failed_elements=sum(r['mismatches'] for r in replay_errors),
         replay_max_abs=max(r['max_abs'] for r in replay_errors),
         repeat_bitwise_identical=all(r['bitwise_equal'] for r in deterministic),
+        repeat_all_losses_equal=bool(np.array_equal(repeat_losses['I'], repeat_losses['I-repeat'])),
+        repeat_loss_max_abs=float(abs(repeat_losses['I'] - repeat_losses['I-repeat']).max()),
         repeat_compared_groups=len(deterministic),
         evidence_scope='Sampled common states; not a proof for every step or every possible input')
     write_json(args.output / 'summary.json', summary)
