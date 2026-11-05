@@ -1,0 +1,3 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-calls-01/calls.csv,10307,docs/experiments/gpu0-autonomous-7h/benchmarks/cpu-calls-01/cpu-calls-01/calls.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-calls-01/summary.json,319,docs/experiments/gpu0-autonomous-7h/benchmarks/cpu-calls-01/cpu-calls-01/summary.json,Git portable record and server original

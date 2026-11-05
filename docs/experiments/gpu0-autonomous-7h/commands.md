@@ -65,6 +65,7 @@ ReLU trace每shape共30范围，expected-cases=12。
 ```bash
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/summarize.py --schedule runs/gpu0_autonomous_7h_01/schedule.json --label cpu-review-01
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/summarize.py --schedule runs/gpu0_autonomous_7h_01/schedule.json --label monitor-review-01
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/analyze_cpu_calls.py --input runs/gpu0_autonomous_7h_01/cpu-profile-01/profile-functions.csv --output runs/gpu0_autonomous_7h_01/cpu-calls-01
 ```
 
 旧阶段性文件是当时采样的快照；最终汇总使用新的独立 label，不覆盖上述数据。

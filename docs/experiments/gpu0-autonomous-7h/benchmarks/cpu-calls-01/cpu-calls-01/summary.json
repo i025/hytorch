@@ -1,0 +1,7 @@
+{
+  "status": "ANALYZED",
+  "rows": 44,
+  "gpu": "NOT_RUN",
+  "source": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-profile-01/profile-functions.csv",
+  "limitation": "Call counts are from CPU graphs. Profiled self times are not uninstrumented timings or Python-exclusive costs."
+}

@@ -68,3 +68,25 @@ Update16，另外920在所选训练phase以外（含初始化/预热等）。与
 它仍不能证明GPU地址、同步或stream正确。GPU任务与上述CPU模型实验是分开的状态。
 首次记录中的`gpu_priority_pause_s=0.0433`实为slot检查加等待总耗时，当时GPU窗口未启动，实际GPU优先暂停为0；
 后续脚本字段已明确改名，保留原记录，不重写数值。没有继续追求长期逐位一致或放宽阈值。
+
+## Function / Variable 与类型判断的实测调用量
+
+从同一份已保存的 CPU cProfile 导出逐函数调用次数和 self time，
+不把互相嵌套的 cumulative time 相加。原始调用表见
+[calls.csv](benchmarks/cpu-calls-01/cpu-calls-01/calls.csv)。
+
+| CPU 工作负载 | Function.__call__/step | Variable.__init__/step | as_variable/step | np.isscalar/step | ready 入队/step |
+|---|---:|---:|---:|---:|---:|
+| DonkeyNet | 66 | 83 | 122 | 82 | 21 |
+| SpatialNet | 41 | 53 | 75 | 54 | 12 |
+| 分支32 | 260 | 326 | 487 | 454 | 128 |
+| 分支256 | 2052 | 2566 | 3847 | 3590 | 1024 |
+
+调用量包括 Forward 与 Backward 创建的临时 Variable/Function，不等于 GPU Kernel Launch 数。
+例如 DonkeyNet 的 Variable.__init__ self time 为75.057µs/step，np.isscalar 为113.042µs/step，
+但 Function.__call__ 的 self time 也可能包含数组释放、GC 或未单独记录的 C 调用。
+这些都是带 cProfile 插桩的 CPU 记录，不能当作未插桩延迟，更不能直接当作 GPU 训练主机开销。
+
+CPU CNN 中排序和 generation key 合计仅占 profile self time 约0.0168%/0.0117%，
+而256分支图为37.6508%。这与独立拓扑补测的宽队列收益、短链无明显收益一致。
+说明函数包装/类型判断值得继续量化，但本轮不以此推导未经实测的 GPU 加速，也不再开发第二个原型。
