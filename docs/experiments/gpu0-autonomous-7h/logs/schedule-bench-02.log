@@ -1,0 +1,2 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{'status': 'PASS', 'comparisons': 188, 'unequal': 0, 'gpu': 'NOT_RUN', 'scope': 'CPU matched initial states; exact equality; five alternating timing repeats', 'finished_utc': '2026-11-05T16:38:54.785915+00:00'}

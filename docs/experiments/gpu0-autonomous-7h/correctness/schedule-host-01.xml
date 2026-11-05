@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="14" time="1.170" timestamp="2026-11-05T16:34:33.807091+00:00" hostname="root"><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[False-1]" time="0.004" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[False-2]" time="0.003" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[False-7]" time="0.005" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[False-32]" time="0.017" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[False-256]" time="0.176" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[True-1]" time="0.002" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[True-2]" time="0.003" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[True-7]" time="0.006" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[True-32]" time="0.020" /><testcase classname="tests.test_backward_schedule" name="test_order_and_higher_derivatives[True-256]" time="0.168" /><testcase classname="tests.test_backward_schedule" name="test_leaves_and_no_gradient_receipt[list]" time="0.002"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 2 / 2 (100%)&#10;Max absolute difference: 4.76837159e-08&#10;Max relative difference: 2.64909533e-08&#10; x: array([0.9, 1.8], dtype=float32)&#10; y: array([0.9, 1.8])">mode = 'list'
+
+    @pytest.mark.parametrize('mode',['list','heap'])
+    def test_leaves_and_no_gradient_receipt(mode):
+        with hytorch.using_config('backward_schedule',mode):
+            leaf=hytorch.Variable(np.array(2,np.float32));leaf.backward()
+            assert leaf.grad.data==1
+            x=hytorch.Variable(np.array([1.,2.],np.float32))
+            target=hytorch.Variable(np.array([.1,.2],np.float32),requires_grad=False)
+            F.mean_square_error(x,target).backward()
+            assert target.grad is None
+&gt;           np.testing.assert_array_equal(x.grad.data,[.9,1.8])
+
+tests/test_backward_schedule.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (&lt;built-in function eq&gt;, array([0.9, 1.8], dtype=float32), [0.9, 1.8])
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+&gt;           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference: 4.76837159e-08
+E           Max relative difference: 2.64909533e-08
+E            x: array([0.9, 1.8], dtype=float32)
+E            y: array([0.9, 1.8])
+
+/usr/lib/python3.8/contextlib.py:75: AssertionError</failure></testcase><testcase classname="tests.test_backward_schedule" name="test_leaves_and_no_gradient_receipt[heap]" time="0.001"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 2 / 2 (100%)&#10;Max absolute difference: 4.76837159e-08&#10;Max relative difference: 2.64909533e-08&#10; x: array([0.9, 1.8], dtype=float32)&#10; y: array([0.9, 1.8])">mode = 'heap'
+
+    @pytest.mark.parametrize('mode',['list','heap'])
+    def test_leaves_and_no_gradient_receipt(mode):
+        with hytorch.using_config('backward_schedule',mode):
+            leaf=hytorch.Variable(np.array(2,np.float32));leaf.backward()
+            assert leaf.grad.data==1
+            x=hytorch.Variable(np.array([1.,2.],np.float32))
+            target=hytorch.Variable(np.array([.1,.2],np.float32),requires_grad=False)
+            F.mean_square_error(x,target).backward()
+            assert target.grad is None
+&gt;           np.testing.assert_array_equal(x.grad.data,[.9,1.8])
+
+tests/test_backward_schedule.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (&lt;built-in function eq&gt;, array([0.9, 1.8], dtype=float32), [0.9, 1.8])
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+&gt;           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference: 4.76837159e-08
+E           Max relative difference: 2.64909533e-08
+E            x: array([0.9, 1.8], dtype=float32)
+E            y: array([0.9, 1.8])
+
+/usr/lib/python3.8/contextlib.py:75: AssertionError</failure></testcase><testcase classname="tests.test_backward_schedule" name="test_exception_restores_backprop_context[list]" time="0.001" /><testcase classname="tests.test_backward_schedule" name="test_exception_restores_backprop_context[heap]" time="0.001" /></testsuite></testsuites>

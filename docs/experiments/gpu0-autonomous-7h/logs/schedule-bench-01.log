@@ -1,0 +1,13 @@
+警告: 未找到scipy，无法加载SVHN数据集
+Traceback (most recent call last):
+  File "docs/experiments/gpu0-autonomous-7h/scripts/bench_schedule.py", line 93, in <module>
+    if __name__=='__main__':main()
+  File "docs/experiments/gpu0-autonomous-7h/scripts/bench_schedule.py", line 83, in main
+    write_csv(a.output/'timings.csv',timings)
+  File "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/common.py", line 80, in write_csv
+    with Path(path).open('x', newline='') as stream:
+  File "/usr/lib/python3.8/pathlib.py", line 1222, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.8/pathlib.py", line 1078, in _opener
+    return self._accessor.open(self, flags, mode)
+FileExistsError: [Errno 17] File exists: 'runs/gpu0_autonomous_7h_01/schedule-bench-01/timings.csv'

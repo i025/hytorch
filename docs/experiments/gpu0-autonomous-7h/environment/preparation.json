@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "2026-11-05T16:47:41.150086+00:00",
+  "packages": {
+    "numpy": "1.24.4",
+    "cupy-cuda12x": "12.3.0",
+    "torch": "2.4.1+cu121",
+    "pytest": "8.3.5"
+  },
+  "cpu_affinity": "0-3 for experiment children",
+  "blas_threads": 1,
+  "watch_session": "hytorch-gpu0-7h",
+  "watch_pid": 17169,
+  "scheduler_commands": "No squeue/qstat/bjobs found; user explicitly permits idle GPU0; no lease",
+  "initial_gpu_process": 13632
+}

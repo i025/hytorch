@@ -1,0 +1,15 @@
+{
+  "start_utc": "2026-11-05T16:18:50+00:00",
+  "deadline_utc": "2026-11-05T23:18:50+00:00",
+  "gpu_cutoff_utc": "2026-11-05T22:48:50+00:00",
+  "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "physical_gpu": 0,
+  "interval_s": 60,
+  "idle_memory_mib": 128,
+  "idle_utilization_pct": 2,
+  "idle_samples": 3,
+  "base_commit": "c00a8d380d473781880ed8f14d1bc0818e10f52d",
+  "authorization": "User explicitly authorizes idle physical GPU0; never another GPU",
+  "report": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/gpu0-autonomous-7h",
+  "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01"
+}

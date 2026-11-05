@@ -1,0 +1,29 @@
+{
+  "status": "PREPARED",
+  "gpu": "NOT_RUN",
+  "prepared": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/udacity_real_prepared_01",
+  "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/build-01/libhytorch_cuda.so",
+  "regression_tests": [
+    "tests/test_conv_dweight_gpu.py",
+    "tests/test_conv_dinput_opt_gpu.py",
+    "tests/test_conv_shape_dispatch_gpu.py",
+    "tests/test_conv_backward_fusion_gpu.py",
+    "tests/test_fused_sgd_gpu.py",
+    "tests/test_conv_dinput_pruning.py",
+    "tests/test_cuda_device.py"
+  ],
+  "trigger": "Three idle samples, one fixed GPU0 UUID; prepared automatically without user review files",
+  "sum_policy": "Retain failures; only correct configurations benchmarked; real-data numerical eligibility gates S/J",
+  "sequence": [
+    "sum-tests",
+    "sum-diagnosis",
+    "relu-tests",
+    "gpu-regression",
+    "training-check",
+    "sum/relu-micro",
+    "compute/io/phases 3 repeats 256 steps",
+    "Nsight",
+    "one optional prototype"
+  ],
+  "gpu_cutoff_utc": "2026-11-05T22:48:50+00:00"
+}

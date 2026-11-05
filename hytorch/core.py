@@ -1,6 +1,7 @@
 import numpy as np
 import weakref
 import contextlib
+import heapq
 import hytorch
 # import hytorch.cuda 会和cuda重复导入
 
@@ -10,6 +11,7 @@ import hytorch
 # =============================================================================
 class Config:
     enable_backprop = True     # 有的时候不需要反向传播，只需要正向传递，这时候修改配置configuration
+    backward_schedule = 'list'  # Explicit experimental alternative: heap.
     train = True               # 在使用dropout的情况下，需要区分训练阶段和测试阶段
 
 
@@ -138,17 +140,24 @@ class Variable:
             self.grad = Variable(xp.ones_like(self.data))    # 计算高阶导数，Variable类只修改一处，将grad也变为Variable，可以构建计算图
         funcs = []
         seen_set = set()
+        use_heap = Config.backward_schedule == 'heap'
+        serial = 0
 
         def add_func(f):
+            nonlocal serial
             if f is not None and f not in seen_set:
-                funcs.append(f)
                 seen_set.add(f)
-                funcs.sort(key=lambda x: x.generation)
+                if use_heap:
+                    serial += 1
+                    heapq.heappush(funcs, (-f.generation, -serial, f))
+                else:
+                    funcs.append(f)
+                    funcs.sort(key=lambda x: x.generation)
 
         add_func(self.creator)
 
         while funcs:
-            f = funcs.pop()
+            f = heapq.heappop(funcs)[2] if use_heap else funcs.pop()
             gys = [output().grad for output in f.outputs]     # output是weak连接，要用（）
             # create_backprop为True时，反向传播时Function里面才设置辈分和连接，结束后恢复False
             with using_config('enable_backprop', create_graph):

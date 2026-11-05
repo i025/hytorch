@@ -1,0 +1,18 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-profile-01/branches256.pstats,12009,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-profile-01/branches32.pstats,12009,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-profile-01/donkey.pstats,26354,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-profile-01/profile-functions.csv,76375,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/cpu-profile-01/profile-functions.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-profile-01/spatial.pstats,27385,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-profile-01/summary.json,172,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/cpu-profile-01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-profile-01/timings.csv,680,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/cpu-profile-01/timings.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-bench-01/donkey-numerical.npz,12139138,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-bench-01/timings.csv,108,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/schedule-bench-01/timings.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-bench-02/correctness.csv,21209,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/schedule-bench-02/correctness.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-bench-02/donkey-numerical.npz,12139138,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-bench-02/spatial-numerical.npz,325762,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-bench-02/summary.json,225,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/schedule-bench-02/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-bench-02/timings.csv,2973,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/schedule-bench-02/timings.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/build-01/build.json,1375,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/build-01/build.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/build-01/build.log,5024,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-01/build-01/build.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/build-01/libhytorch_cuda.so,361728,,server original only
