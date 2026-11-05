@@ -1,11 +1,12 @@
 """Separate GPU allocation instrumentation; never part of operator timing."""
 import argparse
+import csv
 import json
 from pathlib import Path
 
 import numpy as np
 from cupy.cuda.memory_hook import MemoryHook
-from common import write_csv, write_json
+from common import write_json
 from cases import CASES
 from hytorch.backends.cuda import backend
 from hytorch.backends.cuda import runtime
@@ -93,11 +94,20 @@ def main():
                                      cupy_total_requested_bytes=trace.requested_total,
                                      cupy_extra_rounded_peak_bytes=trace.peak,
                                      cupy_extra_rounded_live_bytes=trace.live,
+                                     cupy_transient_over_return_live_bytes=trace.peak-trace.live,
+                                     output_bytes=value.numel()*value.element_size() if method == 'torch' else
+                                         (value.data.nbytes if a.operator == 'relu' else value.nbytes),
                                      cupy_pool_used_before=used, cupy_pool_used_after=pool.used_bytes(),
                                      cupy_pool_reserved_before=reserved, cupy_pool_reserved_after=pool.total_bytes(),
                                      torch_extra_peak_bytes=torch.cuda.max_memory_allocated()-torch_before if method == 'torch' else None))
+                    path = a.output / 'allocations.csv'
+                    exists = path.exists()
+                    with path.open('a', newline='') as file:
+                        writer = csv.DictWriter(file, fieldnames=list(rows[-1]), lineterminator='\n')
+                        if not exists:
+                            writer.writeheader()
+                        writer.writerow(rows[-1])
                     del value
-    write_csv(a.output / 'allocations.csv', rows)
     write_json(a.output / 'summary.json', dict(status='MEASURED', gpu='EXECUTED', records=len(rows),
                scope='Separate instrumented allocation run, never included in operator latency or training throughput',
                cupy_scope='Peak concurrently live rounded pool allocations created inside the call, including returned output',
