@@ -165,9 +165,10 @@ def main():
         fig,ax=plt.subplots(figsize=(12,4));width=.8/len(methods)
         for i,method in enumerate(methods):
             selected={r['case']:r for r in records if r['method']==method}
-            ax.bar(np.arange(len(cases))+(i-(len(methods)-1)/2)*width,
-                [selected[c]['full_sync_wall_us'] for c in cases],width,
-                yerr=[selected[c]['full_sync_wall_sd_us'] or 0 for c in cases],label=method)
+            present=[(index,c) for index,c in enumerate(cases) if c in selected]
+            ax.bar(np.array([index for index,c in present])+(i-(len(methods)-1)/2)*width,
+                [selected[c]['full_sync_wall_us'] for index,c in present],width,
+                yerr=[selected[c]['full_sync_wall_sd_us'] or 0 for index,c in present],label=method)
         ax.set_xticks(range(len(cases)),cases);ax.set_yscale('log');ax.set_ylabel('Full synchronized operator wall µs (log)')
         ax.set_xlabel('Predeclared case index');ax.legend(fontsize=8)
         ax.set_title(name+' / uninstrumented 3 repeats; no claim from kernel time alone')
@@ -229,7 +230,7 @@ def main():
 不是把任务预算直接当实测时长。最大采样间隔{monitor['max_gap_s']}秒，最高连续空闲计数{monitor['max_idle_streak']}。
 物理GPU0 / `{config['uuid']}`，未切卡。
 
-CPU回归210通过，0失败，0跳过；heap调度CPU188项逐元素一致；CPU Sum算术模型训练结果见JSON。
+CPU最终回归：{summary['cpu_regression']}；heap调度CPU188项逐元素一致；CPU Sum算术模型训练结果见JSON。
 CPU合成图收益不当作GPU或自动驾驶训练收益。原始失败和修正记录保留。
 
 GPU Sum：{suites['sum-tests']}。
