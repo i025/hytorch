@@ -1,0 +1,113 @@
+         295436 function calls in 0.823 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      257    0.001    0.000    0.823    0.003 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:35(__next__)
+      256    0.002    0.000    0.814    0.003 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:42(<listcomp>)
+     1024    0.009    0.000    0.812    0.001 /srv/lab-disks/disk2/users/xymo/projects/hytorch/donkeycar_hy/udacity_dataset.py:42(__getitem__)
+     1024    0.029    0.000    0.782    0.001 /srv/lab-disks/disk2/users/xymo/projects/hytorch/donkeycar_hy/udacity_dataset.py:14(preprocess_udacity)
+     1024    0.002    0.000    0.384    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:940(convert)
+     2048    0.012    0.000    0.368    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:177(load)
+     1024    0.330    0.000    0.330    0.000 {method 'decode' of 'ImagingDecoder' objects}
+     1024    0.005    0.000    0.202    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:2222(resize)
+     1024    0.193    0.000    0.193    0.000 {method 'resize' of 'ImagingCore' objects}
+     1024    0.005    0.000    0.104    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3375(open)
+     1024    0.007    0.000    0.089    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3448(_open_core)
+     1024    0.002    0.000    0.076    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:828(jpeg_factory)
+     1024    0.004    0.000    0.073    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:109(__init__)
+     1024    0.016    0.000    0.066    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:331(_open)
+     1025    0.011    0.000    0.034    0.000 {built-in method numpy.asarray}
+     1024    0.002    0.000    0.022    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:732(__array_interface__)
+     1024    0.001    0.000    0.020    0.000 /usr/lib/python3.8/pathlib.py:1214(open)
+     2048    0.007    0.000    0.020    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:224(DQT)
+     1024    0.008    0.000    0.018    0.000 {built-in method io.open}
+     1024    0.005    0.000    0.017    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:772(tobytes)
+    38912    0.016    0.000    0.016    0.000 {method 'read' of '_io.BufferedReader' objects}
+     1024    0.001    0.000    0.015    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:1265(copy)
+     1024    0.013    0.000    0.013    0.000 {built-in method numpy.ascontiguousarray}
+     1024    0.002    0.000    0.013    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:1278(crop)
+     1024    0.001    0.000    0.010    0.000 /usr/lib/python3.8/pathlib.py:1076(_opener)
+     5120    0.004    0.000    0.010    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:58(Skip)
+     2048    0.009    0.000    0.009    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:244(<listcomp>)
+     1024    0.009    0.000    0.009    0.000 {method 'copy' of 'ImagingCore' objects}
+     1024    0.008    0.000    0.009    0.000 {built-in method posix.open}
+     1024    0.003    0.000    0.009    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:1304(_crop)
+    23552    0.005    0.000    0.009    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/_binary.py:90(i16be)
+     1024    0.002    0.000    0.008    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:316(load_prepare)
+      512    0.008    0.000    0.008    0.000 {built-in method numpy.array}
+     3072    0.005    0.000    0.008    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:571(_new)
+     1024    0.005    0.000    0.008    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:176(SOF)
+     1024    0.001    0.000    0.007    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:384(load_read)
+     1024    0.005    0.000    0.007    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:63(APP)
+     9216    0.005    0.000    0.006    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:583(_safe_read)
+     1024    0.006    0.000    0.006    0.000 {built-in method PIL._imaging.new}
+     1024    0.006    0.000    0.006    0.000 {method 'encode' of 'ImagingEncoder' objects}
+     7168    0.004    0.000    0.005    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:885(load)
+     1024    0.004    0.000    0.004    0.000 {method 'crop' of 'ImagingCore' objects}
+    10240    0.002    0.000    0.004    0.000 {built-in method builtins.isinstance}
+     2048    0.001    0.000    0.004    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/_util.py:9(is_path)
+    24576    0.004    0.000    0.004    0.000 {built-in method _struct.unpack_from}
+     1024    0.002    0.000    0.004    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:424(_getdecoder)
+     1024    0.002    0.000    0.003    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:449(_getencoder)
+     1024    0.002    0.000    0.003    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:254(_conv_type_shape)
+     4096    0.003    0.000    0.003    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:543(__init__)
+     2048    0.002    0.000    0.003    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:3354(_decompression_bomb_check)
+    13312    0.002    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:567(mode)
+     3072    0.002    0.000    0.002    0.000 {method 'seek' of '_io.BufferedReader' objects}
+    14336    0.002    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:563(size)
+     1024    0.001    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:253(<listcomp>)
+     1024    0.001    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/BmpImagePlugin.py:56(_dib_accept)
+     2048    0.001    0.000    0.002    0.000 /usr/lib/python3.8/pathlib.py:728(__fspath__)
+     3072    0.001    0.000    0.002    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:555(width)
+    18433    0.002    0.000    0.002    0.000 {built-in method builtins.len}
+     2048    0.001    0.000    0.002    0.000 /usr/lib/python3.8/abc.py:96(__instancecheck__)
+     5120    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+     1024    0.000    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:501(_getmp)
+     3072    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:559(height)
+     1024    0.001    0.000    0.001    0.000 {built-in method PIL._imaging.jpeg_decoder}
+     1024    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:598(__exit__)
+     6144    0.001    0.000    0.001    0.000 {method 'pixel_access' of 'ImagingCore' objects}
+     3072    0.001    0.000    0.001    0.000 {built-in method builtins.getattr}
+     2048    0.001    0.000    0.001    0.000 {built-in method _abc._abc_instancecheck}
+     1024    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:511(_getmp)
+     1024    0.000    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/_binary.py:60(i32le)
+     1024    0.001    0.000    0.001    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+     1024    0.001    0.000    0.001    0.000 {method 'sort' of 'list' objects}
+     1024    0.001    0.000    0.001    0.000 {method 'copy' of 'numpy.ndarray' objects}
+     3072    0.001    0.000    0.001    0.000 {method 'copy' of 'dict' objects}
+     1024    0.001    0.000    0.001    0.000 {built-in method PIL._imaging.raw_encoder}
+     1024    0.001    0.000    0.001    0.000 {method 'setimage' of 'ImagingEncoder' objects}
+     1024    0.001    0.000    0.001    0.000 {method 'setimage' of 'ImagingDecoder' objects}
+     1024    0.001    0.000    0.001    0.000 /usr/lib/python3.8/typing.py:255(inner)
+     5120    0.001    0.000    0.001    0.000 {method 'upper' of 'str' objects}
+     1024    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/PngImagePlugin.py:717(_accept)
+     2048    0.001    0.000    0.001    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:318(_accept)
+     5120    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+     2048    0.000    0.000    0.000    0.000 /usr/lib/python3.8/pathlib.py:718(__str__)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/JpegImagePlugin.py:472(_read_dpi_from_exif)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/GifImagePlugin.py:69(_accept)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/BmpImagePlugin.py:52(_accept)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:256(<lambda>)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:348(preinit)
+     1024    0.000    0.000    0.000    0.000 {method 'cleanup' of 'ImagingDecoder' objects}
+     2048    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+     1024    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:89(_tilesort)
+     1024    0.000    0.000    0.000    0.000 {built-in method builtins.divmod}
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/ImageFile.py:324(load_end)
+      256    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:45(<listcomp>)
+     1024    0.000    0.000    0.000    0.000 {method 'join' of 'bytes' objects}
+      256    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:46(<listcomp>)
+     1024    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/PIL/Image.py:587(__enter__)
+     1024    0.000    0.000    0.000    0.000 /usr/lib/python3.8/typing.py:1149(cast)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:245(__init__)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:15(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method math.ceil}
+        2    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:25(reset)
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:255(__iter__)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 /srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/dataloaders.py:32(__iter__)
+
+

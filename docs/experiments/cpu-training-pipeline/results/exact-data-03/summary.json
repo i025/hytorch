@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "configurations": 40,
+  "image_presentations": 40960,
+  "comparison": "direct array equality, no hashes",
+  "gpu": "NOT_RUN"
+}

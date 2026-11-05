@@ -1,0 +1,37 @@
+警告: 未找到scipy，无法加载SVHN数据集
+1-repaired-w0-p2: 1155.8 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-repaired-w2-p2: 1857.13 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-stream-w4-p2: 2916.47 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-repaired-w4-p2: 2362.02 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-stream-w2-p2: 2111.37 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-stream-w0-p2: 1260.81 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-stream-w0-p2: 1260.1 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-repaired-w0-p2: 1189.78 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-repaired-w2-p2: 1890.27 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-repaired-w4-p2: 2500.79 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-stream-w4-p2: 3155.23 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-stream-w2-p2: 2182.57 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-stream-w2-p2: 2275.4 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-repaired-w2-p2: 2049.25 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-repaired-w0-p2: 1274.62 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-stream-w0-p2: 1270.09 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-stream-w4-p2: 2320.66 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-repaired-w4-p2: 2370.22 images/s
+警告: 未找到scipy，无法加载SVHN数据集

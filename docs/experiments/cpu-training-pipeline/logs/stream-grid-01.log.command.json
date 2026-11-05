@@ -1,0 +1,40 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/cpu-training-pipeline/scripts/bench_loader.py",
+    "--prepared",
+    "runs/udacity_real_prepared_01",
+    "--baseline",
+    "runs/cpu_pipeline_01/baseline_dataloaders.py",
+    "--baseline-dataset",
+    "runs/cpu_pipeline_01/baseline_udacity_dataset.py",
+    "--variants",
+    "repaired",
+    "stream",
+    "--narrow",
+    "--repeats",
+    "5",
+    "--output",
+    "runs/cpu_pipeline_01/stream-grid-01"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T07:58:54.103168+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null,
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 48.9316948549822,
+  "finished_at": "2026-11-05T07:59:43.034916+00:00"
+}

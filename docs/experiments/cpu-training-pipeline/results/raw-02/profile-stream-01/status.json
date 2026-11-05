@@ -1,0 +1,6 @@
+{
+  "status": "COMPLETED",
+  "gpu": "NOT_RUN",
+  "stage_scope": "Explicit file read into bytes then PIL decode, hot cache; original lazy file path profiled separately",
+  "diagnostic_only": true
+}

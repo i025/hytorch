@@ -148,3 +148,5 @@ python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/tes
 阶段 4H 的[GPU1共享环境真实Udacity实验](docs/experiments/udacity-real-training/README.md)已执行完毕，但**长期验收未全部通过**：8036条真实记录固定时间划分，CPU82项、三步GPU816组及36组256步对照通过；四版本各三epoch训练完成，长期严格数值比对119组失败，验证仍差于初始模型/零预测。共享条件下含I/O I/F平均+2.99%、I/A累计+16.00%、I/E为77.76%，波动接近增量，未证明稳定加速。47项正式任务固定同GPU1窗口，原任务持续可见，应用延迟不可测，不承诺零影响。首次正常任务退出导致中断、用户批准补测、全部负结果、原始数据与图见[索引](docs/experiments/udacity-real-training/data-index.md)。本轮未修改Kernel，推送后等待人工审查。
 
 [自主优化研究记录](docs/experiments/autonomous-optimization-6h/README.md)已归档、推送，研究为部分完成并停止：CPU103项通过；CPU-only1600步也出现长期严格Loss超差，但612组同状态单步比较全部通过，支持FP32迭代漂移解释。默认关闭的Native ReLU反向和既定顺序预取已准备，GPU因资源检查中断而全部NOT_RUN，不能宣称训练加速。交付未在原六小时墙钟预算内完成，监测空档、历史凭据阻碍及后续发布记录均在报告中保留。恢复凭据后仅完成发布，未重启实验。
+
+[CPU数据流水线专项](docs/experiments/cpu-training-pipeline/README.md)已完成CPU验收：124项主机回归、40组真实图像配置逐元素校验通过。修复异步结果队列已满时Worker无法关闭的问题；新增默认关闭的`UdacityDataset(open_stream=True)`，2线程匹配CPU加载平均+13.33%且三次均更快，4线程波动较大。归一化候选无稳定收益，未集成。已有异步加载收益与本轮修改分开统计；GPU训练/Nsight均NOT_RUN，统一后续对照入口已准备。

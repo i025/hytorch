@@ -1,0 +1,38 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/cpu-training-pipeline/scripts/future_training.py",
+    "--method",
+    "E-prefetch",
+    "--model",
+    "spatial",
+    "--task",
+    "io",
+    "--prepared",
+    "runs/udacity_real_prepared_01",
+    "--output",
+    "docs/experiments/cpu-training-pipeline/results/future-dry-run-01",
+    "--no-fingerprints",
+    "--plan"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T07:53:59.341999+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null,
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.39643653435632586,
+  "finished_at": "2026-11-05T07:53:59.738489+00:00"
+}

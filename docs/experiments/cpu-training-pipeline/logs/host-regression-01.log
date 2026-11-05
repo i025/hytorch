@@ -1,0 +1,36 @@
+........................................................F............... [ 58%]
+...................................................                      [100%]
+=================================== FAILURES ===================================
+_________________________ test_controller_reset_symbol _________________________
+
+    def test_controller_reset_symbol():
+        import importlib.util
+        from pathlib import Path
+        path=Path(__file__).resolve().parents[1]/'docs/experiments/conv-dweight-fusion/scripts/run_window.py'
+        spec=importlib.util.spec_from_file_location('weight_window',path)
+        window=importlib.util.module_from_spec(spec);spec.loader.exec_module(window)
+        # Resolve the real toolkit symbol on CPU; do not call it or create a context.
+>       assert window.reset_function().argtypes==[]
+
+tests/test_conv_dweight_host.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+docs/experiments/conv-dweight-fusion/scripts/run_window.py:23: in reset_function
+    fn=ct.CDLL(str(Path(os.environ['CUDA_PATH'])/'lib64/libcudart.so')).cudaDeviceReset
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = environ({'MKL_NUM_THREADS': '1', 'OMP_NUM_THREADS': '1', 'OPENBLAS_NUM_THREADS': '1', 'PYTHONPATH': '.', 'CUDA_VISIBLE...TEST_VERSION': '8.3.5', 'PYTEST_CURRENT_TEST': 'tests/test_conv_dweight_host.py::test_controller_reset_symbol (call)'})
+key = 'CUDA_PATH'
+
+    def __getitem__(self, key):
+        try:
+            value = self._data[self.encodekey(key)]
+        except KeyError:
+            # raise KeyError with the original key value
+>           raise KeyError(key) from None
+E           KeyError: 'CUDA_PATH'
+
+/usr/lib/python3.8/os.py:675: KeyError
+- generated xml file: /srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/cpu-training-pipeline/results/host-regression-01.xml -
+=========================== short test summary info ============================
+FAILED tests/test_conv_dweight_host.py::test_controller_reset_symbol - KeyErr...
+1 failed, 122 passed in 5.69s

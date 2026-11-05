@@ -1,0 +1,7 @@
+{
+  "status": "INTERRUPTED",
+  "reason": "Diagnostic script read the full NPZ reference again inside each batch comparison; stopped and changed to one-time loading. No array mismatch observed or PASS claimed.",
+  "exit_code": 130,
+  "production_code_changed": false,
+  "rerun": "exact-data-02"
+}

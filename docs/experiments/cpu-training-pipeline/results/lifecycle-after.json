@@ -1,0 +1,10 @@
+{
+  "before": {
+    "result_queue": 2,
+    "alive": 2
+  },
+  "shutdown_s": 0.00010775914415717125,
+  "alive_after_shutdown": 0,
+  "retained_worker_references": 0,
+  "status": "PASS"
+}

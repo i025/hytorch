@@ -1,0 +1,10 @@
+Prototype used for stream-grid-01 before the public opt-in interface was added:
+
+class StreamDataset(UdacityDataset):
+    def __getitem__(self, index):
+        with self.paths[index].open('rb') as stream:
+            value = preprocess_udacity(stream)
+        return value, self.labels[index:index+1].copy()
+
+The integrated stream-integrated-01 uses UdacityDataset(open_stream=True).
+Both paths use the unchanged preprocess_udacity function and exact array comparison.

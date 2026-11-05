@@ -71,26 +71,36 @@ class _WorkerError:
 
 
 class _DatasetWorker(threading.Thread):
-    def __init__(self, dataset, index_queue: queue.Queue, result_queue: queue.Queue):
+    def __init__(self, dataset, index_queue: queue.Queue, result_queue: queue.Queue,
+                 stop_event: threading.Event):
         super().__init__(daemon=True)
         self.dataset = dataset
         self.index_queue = index_queue
         self.result_queue = result_queue
+        self.stop_event = stop_event
+
+    def _put_result(self, item):
+        while not self.stop_event.is_set():
+            try:
+                self.result_queue.put(item, timeout=.05)
+                return
+            except queue.Full:
+                continue
 
     def run(self):
-        while True:
+        while not self.stop_event.is_set():
             task = self.index_queue.get()
             if task is _SENTINEL:
-                self.result_queue.put(_SENTINEL)
+                self._put_result(_SENTINEL)
                 return
             seq, batch_index = task
             try:
                 batch = [self.dataset[i] for i in batch_index]
                 x = np.array([b[0] for b in batch])
                 t = np.array([b[1] for b in batch])
-                self.result_queue.put((seq, x, t))
+                self._put_result((seq, x, t))
             except Exception as exc:
-                self.result_queue.put(_WorkerError(exc, traceback.format_exc()))
+                self._put_result(_WorkerError(exc, traceback.format_exc()))
                 return
 
 
@@ -127,11 +137,15 @@ class AsyncDataLoader:
         return self
 
     def __next__(self):
+        if not self._started or self._next_seq >= self.max_iter:
+            self._shutdown_workers()
+            raise StopIteration
         # Emit batches in original sequence order using a pending buffer.
         while self._next_seq not in self._pending:
             try:
                 item = self._result_queue.get(timeout=60)
             except queue.Empty:
+                self._shutdown_workers()
                 raise RuntimeError(
                     "DataLoader worker timed out after 60s — possible deadlock."
                 )
@@ -175,6 +189,7 @@ class AsyncDataLoader:
         self._result_queue = queue.Queue(maxsize=self.prefetch_factor * self.num_workers)
         self._next_seq = 0
         self._pending = {}
+        self._stop_event = threading.Event()
 
         for i in range(self.max_iter):
             batch_index = index[i * self.batch_size:(i + 1) * self.batch_size]
@@ -183,7 +198,8 @@ class AsyncDataLoader:
         self._workers = []
         for _ in range(self.num_workers):
             self._index_queue.put(_SENTINEL)
-            w = _DatasetWorker(self.dataset, self._index_queue, self._result_queue)
+            w = _DatasetWorker(self.dataset, self._index_queue, self._result_queue,
+                               self._stop_event)
             w.start()
             self._workers.append(w)
 
@@ -193,18 +209,22 @@ class AsyncDataLoader:
     def _shutdown_workers(self):
         if not self._started:
             return
-        # drain index_queue so workers don't block on put
+        self._stop_event.set()
+        # Release workers already blocked on the bounded result queue.
         try:
             while True:
-                self._index_queue.get_nowait()
+                self._result_queue.get_nowait()
         except queue.Empty:
             pass
-        for _ in self._workers:
-            self._index_queue.put(_SENTINEL)
         for w in self._workers:
-            w.join(timeout=5.0)
+            w.join()
         self._workers = []
+        self._pending.clear()
+        self._index_queue = self._result_queue = None
         self._started = False
+
+    def close(self):
+        self._shutdown_workers()
 
     def __del__(self):
         self._shutdown_workers()
@@ -219,6 +239,7 @@ class DataLoader:
     num_workers=0 (default): synchronous, identical to the original behavior.
     num_workers>0: async producer-consumer with background threads.
     indices=None (default): full dataset; otherwise load the supplied sample order.
+    Use as a context manager, or call close(), when stopping an epoch early.
     """
 
     def __init__(self, dataset, batch_size, shuffle=True, gpu=False,
@@ -239,6 +260,16 @@ class DataLoader:
 
     def next(self):
         return self._impl.next()
+
+    def close(self):
+        if isinstance(self._impl, AsyncDataLoader):
+            self._impl.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.close()
 
     # --- device control ---
     def to_gpu(self):

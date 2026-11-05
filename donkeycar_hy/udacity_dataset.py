@@ -21,8 +21,9 @@ def preprocess_udacity(path):
 
 
 class UdacityDataset:
-    def __init__(self, csv_path):
+    def __init__(self, csv_path, open_stream=False):
         self.csv_path = Path(csv_path)
+        self.open_stream = open_stream
         with self.csv_path.open(newline='') as stream:
             self.records = list(csv.DictReader(stream))
         self.paths = [self.image_path(r['center']) for r in self.records]
@@ -39,7 +40,12 @@ class UdacityDataset:
         return len(self.records)
 
     def __getitem__(self, index):
-        return preprocess_udacity(self.paths[index]), self.labels[index:index+1].copy()
+        if self.open_stream:
+            with self.paths[index].open('rb') as stream:
+                value = preprocess_udacity(stream)
+        else:
+            value = preprocess_udacity(self.paths[index])
+        return value, self.labels[index:index+1].copy()
 
     def split_indices(self, train_fraction=.8, gap_seconds=10):
         order = np.argsort(self.times, kind='stable')

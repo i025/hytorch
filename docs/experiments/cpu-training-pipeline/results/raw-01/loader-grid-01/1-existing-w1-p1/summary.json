@@ -1,0 +1,27 @@
+{
+  "variant": "existing",
+  "repeat": 1,
+  "workers": 1,
+  "prefetch_factor": 1,
+  "samples": 1024,
+  "batches": 256,
+  "wall_s": 0.8418257427401841,
+  "images_per_s": 1216.4037615039306,
+  "cpu_s": 0.8462525390000001,
+  "process_cpu_pct": 100.52585660369645,
+  "startup_ms": 1.0759709402918816,
+  "shutdown_ms": 0.03445427864789963,
+  "mean_next_ms": 3.2820105752762174,
+  "p95_next_ms": 4.595389240421355,
+  "peak_rss_mib": 228.3671875,
+  "started_at_utc": "2026-11-05T07:42:32.037559+00:00",
+  "ended_at_utc": "2026-11-05T07:42:32.881288+00:00",
+  "affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "cuda_visible_devices": "",
+  "scope": "CPU hot-cache streaming, no simulated training consumer, no image retention, includes worker startup/exhaustion; no CUDA"
+}

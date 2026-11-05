@@ -54,3 +54,23 @@ def test_portable_paths_and_missing_file(tmp_path):
     assert ds.image_path('/old/IMG/x.jpg')==tmp_path/'IMG/x.jpg'
     ds.paths[0].unlink()
     with pytest.raises(FileNotFoundError):ds[0]
+
+
+def test_explicit_stream_keeps_pixels_and_closes_file(tmp_path, monkeypatch):
+    original = make_data(tmp_path)
+    expected = original[7]
+    dataset = UdacityDataset(original.csv_path, open_stream=True)
+    opened = []
+    image_open = Image.open
+
+    def record_open(stream, *args, **kwargs):
+        opened.append(stream)
+        return image_open(stream, *args, **kwargs)
+
+    monkeypatch.setattr(Image, 'open', record_open)
+    for _ in range(3):
+        actual = dataset[7]
+        for value, reference in zip(actual, expected):
+            np.testing.assert_array_equal(value, reference)
+    assert all(stream.closed for stream in opened)
+    assert original.open_stream is False

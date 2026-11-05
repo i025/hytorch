@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETED_CPU_ONLY",
+  "finalized_at_utc": "2026-11-05T10:28:48.970840+00:00",
+  "baseline_commit": "9909e546d9314e342663d75c4a10d1f46b4b7351",
+  "branch": "experiment/cpu-training-pipeline",
+  "gpu": "NOT_RUN",
+  "cuda_device_calls": false,
+  "cuda_kernels_modified": false,
+  "gpu_runtime_modified": false,
+  "optimizers_modified": false,
+  "cpu_tests": {
+    "tests": 124,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "exact_real_configurations": 40,
+  "independent_performance_runs": 138,
+  "future_jobs_prepared": 126,
+  "future_gpu_jobs_executed": 0,
+  "lifecycle_fix": "All worker threads joined; full result queue can be cancelled",
+  "retained_cpu_optimization": "UdacityDataset(open_stream=True), default False",
+  "rejected_candidate": "In-place normalization, inconsistent throughput",
+  "all_cpu_experiment_children_completed": true,
+  "publication_evidence": "Server-only runs/cpu_pipeline_publication_01/"
+}

@@ -1,0 +1,2 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"status": "OBSERVED", "result_queue_capacity": 2, "pending_after_first_batch": 99, "samples": 100, "note": "Existing head-of-line buffering is not a strict total memory bound; not changed in this lifecycle fix"}

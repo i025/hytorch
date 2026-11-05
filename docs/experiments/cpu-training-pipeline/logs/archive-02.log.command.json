@@ -1,0 +1,31 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/fused-sgd-cuda/scripts/archive_results.py",
+    "--destination",
+    "docs/experiments/cpu-training-pipeline/results/raw-02",
+    "runs/cpu_pipeline_01/stream-grid-01",
+    "runs/cpu_pipeline_01/stream-integrated-01",
+    "runs/cpu_pipeline_01/profile-stream-01"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T08:05:35.114801+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null,
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.07599001936614513,
+  "finished_at": "2026-11-05T08:05:35.190843+00:00"
+}
