@@ -1,0 +1,6 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/graph-shapes-01/correctness.csv,500,docs/experiments/gpu0-autonomous-7h/correctness/graph-topologies-01/graph-shapes-01/correctness.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/graph-shapes-01/numerical.npz,411686,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/graph-shapes-01/summary.csv,1557,docs/experiments/gpu0-autonomous-7h/correctness/graph-topologies-01/graph-shapes-01/summary.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/graph-shapes-01/summary.json,248,docs/experiments/gpu0-autonomous-7h/correctness/graph-topologies-01/graph-shapes-01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/graph-shapes-01/timings.csv,8659,docs/experiments/gpu0-autonomous-7h/correctness/graph-topologies-01/graph-shapes-01/timings.csv,Git portable record and server original

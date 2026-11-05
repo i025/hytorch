@@ -1,0 +1,30 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/gpu0-autonomous-7h/scripts/bench_graph_shapes.py",
+    "--output",
+    "runs/gpu0_autonomous_7h_01/graph-shapes-01",
+    "--schedule",
+    "runs/gpu0_autonomous_7h_01/schedule.json"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T19:00:01.659272+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null,
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 112.1381577719003,
+  "finished_at": "2026-11-05T19:01:53.797486+00:00"
+}

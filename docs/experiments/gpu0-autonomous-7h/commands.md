@@ -61,3 +61,12 @@ ReLU trace每shape共30范围，expected-cases=12。
 事件span包含可能的提交空隙，不是纯Kernel时间；纯Kernel时间来自相关联CUPTI duration。
 
 收尾执行正常Git commit/push到本分支，不force、不合并、不启动下一轮。
+
+## CPU 拓扑补测
+
+继续使用 CUDA_VISIBLE_DEVICES=''、BLAS 单线程和 CPU 0–3 affinity；遇本轮 GPU 窗口自动暂停新的 CPU 计时组。
+
+```bash
+.venv/bin/python docs/experiments/a100-stage1/run_logged.py --log docs/experiments/gpu0-autonomous-7h/logs/graph-shapes-01.log -- .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/bench_graph_shapes.py --output runs/gpu0_autonomous_7h_01/graph-shapes-01 --schedule runs/gpu0_autonomous_7h_01/schedule.json
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/plot_graph_shapes.py --input runs/gpu0_autonomous_7h_01/graph-shapes-01/summary.csv --output docs/experiments/gpu0-autonomous-7h/figures/cpu-graph-topologies-01
+```

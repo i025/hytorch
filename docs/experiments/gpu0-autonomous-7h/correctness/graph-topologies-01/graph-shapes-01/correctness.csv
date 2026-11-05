@@ -1,0 +1,13 @@
+case,kind,width,elements,functions,max_ready_functions,loss_equal,gradient_equal
+0,chain,256,128,514,1,True,True
+1,residual,128,128,386,2,True,True
+2,tree,64,128,193,64,True,True
+3,tree,256,128,769,256,True,True
+4,fanout,64,128,193,64,True,True
+5,fanout,256,128,769,256,True,True
+6,chain,256,8192,514,1,True,True
+7,residual,128,8192,386,2,True,True
+8,tree,64,8192,193,64,True,True
+9,tree,256,8192,769,256,True,True
+10,fanout,64,8192,193,64,True,True
+11,fanout,256,8192,769,256,True,True
