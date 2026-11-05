@@ -1,0 +1,10 @@
+{
+  "status": "MEASURED",
+  "gpu": "NOT_RUN",
+  "measurements": 36,
+  "repeats": 3,
+  "warmup": 2,
+  "finished_utc": "2026-11-05T19:55:41.710890+00:00",
+  "scope": "CPU allocations tracked during backward only; graph built before tracing",
+  "limitation": "Not process RSS, not GPU memory, not total historical allocations; profiler overhead excluded from performance claims"
+}

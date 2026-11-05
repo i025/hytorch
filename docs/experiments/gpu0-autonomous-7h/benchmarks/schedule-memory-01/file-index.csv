@@ -1,0 +1,7 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-memory-01/measure_schedule_memory.py,2534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-memory-01/memory.csv,1691,docs/experiments/gpu0-autonomous-7h/benchmarks/schedule-memory-01/schedule-memory-01/memory.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-memory-01/protocol-note.txt,195,docs/experiments/gpu0-autonomous-7h/benchmarks/schedule-memory-01/schedule-memory-01/protocol-note.txt,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-memory-01/summary.json,363,docs/experiments/gpu0-autonomous-7h/benchmarks/schedule-memory-01/schedule-memory-01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-memory-02/memory.csv,1691,docs/experiments/gpu0-autonomous-7h/benchmarks/schedule-memory-01/schedule-memory-02/memory.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/schedule-memory-02/summary.json,378,docs/experiments/gpu0-autonomous-7h/benchmarks/schedule-memory-01/schedule-memory-02/summary.json,Git portable record and server original

@@ -118,6 +118,7 @@ heap调度在CNN/Transformer的188项比较逐元素一致，保持generation优
 独立拓扑补测12组、24项Loss/输入梯度比较逐元素一致：宽64/256的树形与扇出图CPU吞吐提高约10%–55%，
 ready frontier仅1–2的链式/残差图变化约-1.53%到+1.22%，不能宣称稳定收益。
 这说明收益取决于待调度队列宽度；图节点数本身不足以预测收益。详见[拓扑研究](graph-topologies.md)。
+独立CPU tracemalloc预热后36次记录中，宽度256的树形/扇出图峰值增加约22.3–22.8KiB；不是GPU显存。
 原生Sum的CPU算术模型真实图像三步训练156项、逐归约192项比较通过；仍不是GPU验收。
 256step CPU Sum算术诊断：{summary['cpu_sum_trajectory']}。
 其CPU长轨迹和共同状态比较不作为CUDA执行或加速证据。

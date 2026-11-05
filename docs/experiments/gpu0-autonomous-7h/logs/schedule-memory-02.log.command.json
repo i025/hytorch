@@ -1,0 +1,32 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/gpu0-autonomous-7h/scripts/measure_schedule_memory.py",
+    "--output",
+    "runs/gpu0_autonomous_7h_01/schedule-memory-02",
+    "--schedule",
+    "runs/gpu0_autonomous_7h_01/schedule.json",
+    "--warmup",
+    "2"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T19:55:34.082191+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null,
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 7.738946749828756,
+  "finished_at": "2026-11-05T19:55:41.821204+00:00"
+}
