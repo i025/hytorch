@@ -96,10 +96,14 @@ def main():
         state['gates']['sum_unexpected_tests']=unexpected;save()
         if sum_ok:
             run('sum-micro',[sys.executable,HERE/'bench_sum.py','--run-gpu','--eligibility',out/'sum-diagnosis/summary.json','--output',out/'sum-micro'])
+            run('sum-memory',[sys.executable,HERE/'operator_memory.py','--run-gpu','--operator','sum',
+                '--eligibility',out/'sum-diagnosis/summary.json','--output',out/'sum-memory'],soft=True)
         relu_ok=pytest('relu-tests',['tests/test_relu_backward_gpu.py'],soft=True)==0
         state['gates']['relu_correctness']=relu_ok;save()
         if relu_ok:
             run('relu-micro',[sys.executable,ROOT/'docs/experiments/autonomous-optimization-6h/scripts/bench_relu.py','--output',out/'relu-micro'])
+            run('relu-memory',[sys.executable,HERE/'operator_memory.py','--run-gpu','--operator','relu',
+                '--output',out/'relu-memory'],soft=True)
         pytest('gpu-regression',plan['regression_tests'])
         check=[sys.executable,HERE/'check_training.py','--run-gpu','--prepared',plan['prepared'],'--output',out/'training-check']
         if sum_ok:check.append('--sum-enabled')

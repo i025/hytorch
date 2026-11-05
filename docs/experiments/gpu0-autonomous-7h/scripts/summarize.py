@@ -170,6 +170,12 @@ def main():
                 event_span_us=event,event_span_sd_us=event_sd,
                 scope='Uninstrumented full operation; CUDA Event span is not pure kernel time'))
     write_csv(out/'operator-timing-summary.csv',operator)
+    allocations=[]
+    for name in ('sum','relu'):
+        path=gpu/(name+'-memory/allocations.csv')
+        if path.exists():
+            allocations.extend(dict(operator=name,**r) for r in csv.DictReader(path.open()))
+    write_csv(out/'operator-allocation-records.csv',allocations)
     for name in ('sum','relu'):
         records=[r for r in operator if r['operator']==name]
         if not records:continue
@@ -224,6 +230,7 @@ def main():
     summary=dict(status='FINAL' if a.final else 'INTERMEDIATE',monitor=monitor,window=window,gpu_tests=suites,
         cpu_regression=tests(report/'correctness/regression-final-01.xml' if (report/'correctness/regression-final-01.xml').exists() else report/'correctness/regression-01.xml'),
         cpu_report_status_checks=tests(report/'correctness/report-status-01.xml'),
+        cpu_allocation_hook_checks=tests(report/'correctness/operator-memory-host-02.xml'),
         cpu_schedule=json.loads((raw/'schedule-bench-02/summary.json').read_text()),
         cpu_sum_model=json.loads((raw/'cpu-sum-training-01/summary.json').read_text()) if (raw/'cpu-sum-training-01/summary.json').exists() else dict(status='NOT_RUN'),
         cpu_sum_trajectory=json.loads((raw/'cpu-sum-trajectory-01/summary.json').read_text()) if (raw/'cpu-sum-trajectory-01/summary.json').exists()
@@ -232,6 +239,7 @@ def main():
             scope='Actual initial arrays and config equality, no hashes',runs=len(training)),
         training_completed_runs=len([r for r in training if not r['instrumented']]),
         operator_groups=len(operator),profiled_kernel_groups=len(profiled),
+        operator_allocation_records=len(allocations),
         strict_training_trajectory_status='NOT_RUN' if not trajectory else 'FAIL' if any(r['loss_failed_steps'] for r in trajectory) else 'PASS',
         strict_training_trajectory_failures=sum(r['loss_failed_steps'] for r in trajectory),
         source_config=config,finished_utc=datetime.now(timezone.utc).isoformat())

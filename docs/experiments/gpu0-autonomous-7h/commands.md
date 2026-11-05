@@ -42,6 +42,11 @@ CPU检查、源码提交就绪后由代理原子改名激活；不是用户审�
 
 Sum测试原始失败不修改：普通输入/实现资格、强消去误差分别记录。
 只有符合本轮数值资格的shape进入Sum微基准；ReLU独立验收；基线数值失败停止训练性能实验。
+各算子正式微基准之后，独立运行`operator_memory.py`，不将MemoryHook/内存峰值统计插入计时循环。
+Sum只测eligible_cases，ReLU复用12组形状。每组5次预热、3次分配测量。
+记录CuPy调用中新增分配的同时存活峰值（池取整字节）、总请求量、分配次数和池快照，Torch记录自身allocator峰值差。
+这是包含返回输出的调用分配量，排除原已存在的输入，不冒充物理设备/进程的精确显存峰值。
+若内存插桩出错，保留非零返回码和日志，不替换为空间为0的成功记录；OOM仍停止整个GPU窗口。
 正常吞吐与Nsight命令不同，插桩数据不混算。GPU控制器固定NVIDIA_TF32_OVERRIDE=0。
 
 ## 公平协议
@@ -68,7 +73,10 @@ ReLU trace每shape共30范围，expected-cases=12。
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/summarize.py --schedule runs/gpu0_autonomous_7h_01/schedule.json --label monitor-review-01
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/analyze_cpu_calls.py --input runs/gpu0_autonomous_7h_01/cpu-profile-01/profile-functions.csv --output runs/gpu0_autonomous_7h_01/cpu-calls-01
 .venv/bin/python docs/experiments/a100-stage1/run_logged.py --log docs/experiments/gpu0-autonomous-7h/logs/report-status-01.log -- .venv/bin/python -m pytest tests/test_gpu0_report_status.py -q -ra --junitxml=docs/experiments/gpu0-autonomous-7h/correctness/report-status-01.xml
+.venv/bin/python docs/experiments/a100-stage1/run_logged.py --log docs/experiments/gpu0-autonomous-7h/logs/operator-memory-host-02.log -- .venv/bin/python -m pytest tests/test_operator_allocation_trace.py -q -ra --junitxml=docs/experiments/gpu0-autonomous-7h/correctness/operator-memory-host-02.xml
 ```
+
+首轮`operator-memory-host-01`为2项回调测试，后增钩子上下文清理检查，共3项；两轮日志保留，不重复相加。
 
 旧阶段性文件是当时采样的快照；最终汇总使用新的独立 label，不覆盖上述数据。
 

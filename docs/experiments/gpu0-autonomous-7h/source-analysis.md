@@ -42,6 +42,8 @@ Pinned staging、独立传输stream和双缓冲需要明确生命周期/事件�
 
 Sum纯CPU轴规划和ctypes绑定的主机开销尚需与完整算子/核时交叉测量。减少launch不能保证端到端收益。
 Softmax前向原数组sum、BatchNorm原数组mean/var不会因F.sum开关自动被替换；报告不能扩大覆盖范围。
+Sum/ReLU另备独立内存分配跟踪，不参与延迟计时。CPU只验证了MemoryHook回调和上下文清理，
+真实显存数据仍需GPU；不能把调用结束时的used_bytes差值当作含临时张量的峰值。
 
 CPU主机微测130份重复记录：plan_sum跨24形状平均7.54µs/调用（4.02–13.65µs），
 backend上下文约3.48µs；纯主机ABI版本函数约0.135µs，**不是CUDA提交耗时**。
