@@ -115,7 +115,7 @@ def main():
                     ref=initials[model]
                     exact=set(arrays.files)==set(ref) and all(arrays[k].dtype==ref[k].dtype==np.float32 and np.array_equal(arrays[k],ref[k]) for k in arrays.files)
                     same=all(conf[k]==protocols[model][k] for k in ('indices','batch','dtype','seed','lr','dropout','tf32'))
-                    if not exact or not same:initial_errors.append(dict(run=directory.name,weights_equal=exact,protocol_equal=same))
+                    if not exact or not same:initial_errors.append(dict(run=directory.name,model=model,weights_equal=exact,protocol_equal=same))
     write_csv(out/'training-runs.csv',training)
     groups=[]
     def group_key(r):
@@ -132,6 +132,7 @@ def main():
     write_csv(out/'training-summary.csv',groups)
     ratios=[]
     for model in ('donkey','spatial'):
+        if any(r['model']==model for r in initial_errors):continue
         for task in ('compute','io','phases'):
             complete=[r for r in groups if r['model']==model and r['task']==task and not r['optional'] and r['status']=='COMPLETE']
             assert len({r['method'] for r in complete})==len(complete),'Do not pool different variants under one method label'
@@ -157,6 +158,8 @@ def main():
         path=gpu/(name+'-micro')/filename
         if not path.exists():continue
         records=list(csv.DictReader(path.open()))
+        config_path=path.parent/'config.json'
+        expected_samples=json.loads(config_path.read_text()).get('iterations',30) if config_path.exists() else 30
         for case,method in sorted({(r['case'],r[method_key]) for r in records}):
             selected=[r for r in records if r['case']==case and r[method_key]==method]
             repeat_means=[];event_means=[]
@@ -168,6 +171,7 @@ def main():
             operator.append(dict(operator=name,case=case,method=method,repeats=len(repeat_means),
                 samples=len(selected),full_sync_wall_us=wall,full_sync_wall_sd_us=sd,
                 event_span_us=event,event_span_sd_us=event_sd,
+                status='COMPLETE' if len(repeat_means)==3 and len(selected)==3*expected_samples else 'PARTIAL',
                 scope='Uninstrumented full operation; CUDA Event span is not pure kernel time'))
     write_csv(out/'operator-timing-summary.csv',operator)
     allocations=[]
@@ -189,7 +193,7 @@ def main():
                 yerr=[selected[c]['full_sync_wall_sd_us'] or 0 for index,c in present],label=method)
         ax.set_xticks(range(len(cases)),cases);ax.set_yscale('log');ax.set_ylabel('Full synchronized operator wall µs (log)')
         ax.set_xlabel('Predeclared case index');ax.legend(fontsize=8)
-        ax.set_title(name+' / uninstrumented 3 repeats; no claim from kernel time alone')
+        ax.set_title(name+' / uninstrumented samples; repeat counts and COMPLETE/PARTIAL in CSV')
         fig.tight_layout();fig.savefig(figures/(name+'-full-operation.png'),dpi=150);plt.close(fig)
     profiled=[]
     for name in ('sum','relu'):
