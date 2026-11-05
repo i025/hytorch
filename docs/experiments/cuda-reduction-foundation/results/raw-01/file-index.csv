@@ -1,0 +1,340 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/build-01/build.json,1371,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/build-01/build.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/build-01/build.log,5024,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/build-01/build.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/build-01/libhytorch_cuda.so,361728,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/check-host-01/comparisons.csv,42745,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/check-host-01/comparisons.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/check-host-01/donkey-values.npz,18210124,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/check-host-01/spatial-values.npz,489388,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/check-host-01/summary.json,229,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/check-host-01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-01/comparisons.csv,26806,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/cpu-reference-01/comparisons.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-01/failure-c23-cancellation-False-numpy_fp32.npz,4195066,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-01/failure-c23-cancellation-True-numpy_fp32.npz,4195066,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-01/failure-c8-cancellation-False-fp64.npz,262906,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-01/failure-c8-cancellation-True-fp64.npz,262906,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-01/summary.json,298,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/cpu-reference-01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-0-cancellation-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-0-cancellation-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-0-integer-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-0-integer-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-0-random-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-0-random-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-1-cancellation-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-1-cancellation-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-1-integer-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-1-integer-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-1-random-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-1-random-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-10-cancellation-False.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-10-cancellation-True.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-10-integer-False.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-10-integer-True.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-10-random-False.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-10-random-True.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-11-cancellation-False.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-11-cancellation-True.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-11-integer-False.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-11-integer-True.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-11-random-False.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-11-random-True.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-12-cancellation-False.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-12-cancellation-True.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-12-integer-False.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-12-integer-True.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-12-random-False.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-12-random-True.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-13-cancellation-False.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-13-cancellation-True.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-13-integer-False.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-13-integer-True.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-13-random-False.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-13-random-True.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-14-cancellation-False.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-14-cancellation-True.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-14-integer-False.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-14-integer-True.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-14-random-False.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-14-random-True.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-15-cancellation-False.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-15-cancellation-True.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-15-integer-False.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-15-integer-True.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-15-random-False.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-15-random-True.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-16-cancellation-False.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-16-cancellation-True.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-16-integer-False.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-16-integer-True.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-16-random-False.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-16-random-True.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-17-cancellation-False.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-17-cancellation-True.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-17-integer-False.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-17-integer-True.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-17-random-False.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-17-random-True.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-18-cancellation-False.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-18-cancellation-True.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-18-integer-False.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-18-integer-True.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-18-random-False.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-18-random-True.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-19-cancellation-False.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-19-cancellation-True.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-19-integer-False.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-19-integer-True.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-19-random-False.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-19-random-True.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-2-cancellation-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-2-cancellation-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-2-integer-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-2-integer-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-2-random-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-2-random-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-20-cancellation-False.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-20-cancellation-True.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-20-integer-False.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-20-integer-True.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-20-random-False.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-20-random-True.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-21-cancellation-False.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-21-cancellation-True.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-21-integer-False.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-21-integer-True.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-21-random-False.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-21-random-True.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-22-cancellation-False.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-22-cancellation-True.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-22-integer-False.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-22-integer-True.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-22-random-False.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-22-random-True.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-23-cancellation-False.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-23-cancellation-True.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-23-integer-False.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-23-integer-True.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-23-random-False.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-23-random-True.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-3-cancellation-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-3-cancellation-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-3-integer-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-3-integer-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-3-random-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-3-random-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-4-cancellation-False.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-4-cancellation-True.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-4-integer-False.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-4-integer-True.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-4-random-False.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-4-random-True.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-5-cancellation-False.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-5-cancellation-True.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-5-integer-False.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-5-integer-True.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-5-random-False.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-5-random-True.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-6-cancellation-False.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-6-cancellation-True.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-6-integer-False.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-6-integer-True.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-6-random-False.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-6-random-True.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-7-cancellation-False.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-7-cancellation-True.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-7-integer-False.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-7-integer-True.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-7-random-False.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-7-random-True.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-8-cancellation-False.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-8-cancellation-True.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-8-integer-False.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-8-integer-True.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-8-random-False.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-8-random-True.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-9-cancellation-False.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-9-cancellation-True.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-9-integer-False.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-9-integer-True.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-9-random-False.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/case-9-random-True.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/comparisons.csv,26806,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/cpu-reference-02/comparisons.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/failure-c23-cancellation-False-numpy_fp32.npz,4195066,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/failure-c23-cancellation-True-numpy_fp32.npz,4195066,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/failure-c8-cancellation-False-fp64.npz,262906,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/failure-c8-cancellation-True-fp64.npz,262906,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-02/summary.json,298,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/cpu-reference-02/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-0-cancellation-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-0-cancellation-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-0-integer-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-0-integer-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-0-random-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-0-random-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-1-cancellation-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-1-cancellation-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-1-integer-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-1-integer-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-1-random-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-1-random-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-10-cancellation-False.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-10-cancellation-True.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-10-integer-False.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-10-integer-True.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-10-random-False.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-10-random-True.npz,2170,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-11-cancellation-False.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-11-cancellation-True.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-11-integer-False.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-11-integer-True.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-11-random-False.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-11-random-True.npz,2002,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-12-cancellation-False.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-12-cancellation-True.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-12-integer-False.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-12-integer-True.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-12-random-False.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-12-random-True.npz,4690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-13-cancellation-False.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-13-cancellation-True.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-13-integer-False.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-13-integer-True.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-13-random-False.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-13-random-True.npz,3634,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-14-cancellation-False.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-14-cancellation-True.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-14-integer-False.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-14-integer-True.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-14-random-False.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-14-random-True.npz,3442,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-15-cancellation-False.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-15-cancellation-True.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-15-integer-False.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-15-integer-True.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-15-random-False.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-15-random-True.npz,3838,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-16-cancellation-False.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-16-cancellation-True.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-16-integer-False.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-16-integer-True.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-16-random-False.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-16-random-True.npz,1167874,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-17-cancellation-False.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-17-cancellation-True.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-17-integer-False.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-17-integer-True.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-17-random-False.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-17-random-True.npz,42722,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-18-cancellation-False.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-18-cancellation-True.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-18-integer-False.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-18-integer-True.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-18-random-False.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-18-random-True.npz,8386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-19-cancellation-False.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-19-cancellation-True.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-19-integer-False.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-19-integer-True.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-19-random-False.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-19-random-True.npz,19042,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-2-cancellation-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-2-cancellation-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-2-integer-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-2-integer-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-2-random-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-2-random-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-20-cancellation-False.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-20-cancellation-True.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-20-integer-False.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-20-integer-True.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-20-random-False.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-20-random-True.npz,4534,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-21-cancellation-False.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-21-cancellation-True.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-21-integer-False.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-21-integer-True.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-21-random-False.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-21-random-True.npz,1954,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-22-cancellation-False.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-22-cancellation-True.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-22-integer-False.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-22-integer-True.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-22-random-False.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-22-random-True.npz,99394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-23-cancellation-False.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-23-cancellation-True.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-23-integer-False.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-23-integer-True.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-23-random-False.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-23-random-True.npz,4195314,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-3-cancellation-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-3-cancellation-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-3-integer-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-3-integer-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-3-random-False.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-3-random-True.npz,1010,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-4-cancellation-False.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-4-cancellation-True.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-4-integer-False.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-4-integer-True.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-4-random-False.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-4-random-True.npz,2034,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-5-cancellation-False.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-5-cancellation-True.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-5-integer-False.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-5-integer-True.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-5-random-False.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-5-random-True.npz,17386,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-6-cancellation-False.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-6-cancellation-True.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-6-integer-False.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-6-integer-True.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-6-random-False.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-6-random-True.npz,17390,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-7-cancellation-False.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-7-cancellation-True.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-7-integer-False.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-7-integer-True.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-7-random-False.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-7-random-True.npz,17394,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-8-cancellation-False.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-8-cancellation-True.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-8-integer-False.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-8-integer-True.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-8-random-False.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-8-random-True.npz,263154,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-9-cancellation-False.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-9-cancellation-True.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-9-integer-False.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-9-integer-True.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-9-random-False.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/case-9-random-True.npz,2842,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/comparisons.csv,26806,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/cpu-reference-03/comparisons.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/failure-c23-cancellation-False-numpy_fp32.npz,4195066,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/failure-c23-cancellation-True-numpy_fp32.npz,4195066,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/failure-c8-cancellation-False-fp64.npz,262906,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/failure-c8-cancellation-True-fp64.npz,262906,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/cpu-reference-03/summary.json,298,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/cpu-reference-03/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/gpu-plan-01/plan.json,91211,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/gpu-plan-01/plan.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/micro-plan-01/config.json,3272,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/micro-plan-01/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-A/config.json,11255,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-A/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-A/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-A/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-E/config.json,11255,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-E/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-E/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-E/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-I/config.json,11255,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-I/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-I/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-I/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-R/config.json,11252,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-R/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-R/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-R/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-S/config.json,11253,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-S/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-S/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-S/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-SR/config.json,11252,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-SR/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/donkey-SR/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/donkey-SR/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-A/config.json,11256,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-A/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-A/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-A/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-E/config.json,11256,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-E/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-E/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-E/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-I/config.json,11256,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-I/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-I/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-I/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-R/config.json,11253,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-R/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-R/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-R/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-S/config.json,11254,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-S/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-S/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-S/status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-SR/config.json,11253,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-SR/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/cuda_reduction_01/training-plans-01/spatial-SR/status.json,47,docs/experiments/cuda-reduction-foundation/results/raw-01/cuda_reduction_01/training-plans-01/spatial-SR/status.json,Git portable record and server original

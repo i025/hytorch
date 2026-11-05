@@ -1,0 +1,30 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_reduction_gpu.py",
+    "--collect-only",
+    "-q"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T15:11:07.609406+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null,
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.9531758758239448,
+  "finished_at": "2026-11-05T15:11:08.562636+00:00"
+}

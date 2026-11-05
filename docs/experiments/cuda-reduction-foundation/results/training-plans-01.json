@@ -1,0 +1,210 @@
+{
+  "status": "PASS",
+  "plans": [
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "A",
+        "--model",
+        "donkey",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/donkey-A"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "I",
+        "--model",
+        "donkey",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/donkey-I"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "S",
+        "--model",
+        "donkey",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/donkey-S"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "R",
+        "--model",
+        "donkey",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/donkey-R"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "SR",
+        "--model",
+        "donkey",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/donkey-SR"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "E",
+        "--model",
+        "donkey",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/donkey-E"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "A",
+        "--model",
+        "spatial",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/spatial-A"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "I",
+        "--model",
+        "spatial",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/spatial-I"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "S",
+        "--model",
+        "spatial",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/spatial-S"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "R",
+        "--model",
+        "spatial",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/spatial-R"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "SR",
+        "--model",
+        "spatial",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/spatial-SR"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+        "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+        "--plan",
+        "--method",
+        "E",
+        "--model",
+        "spatial",
+        "--no-fingerprints",
+        "--prepared",
+        "runs/udacity_real_prepared_01",
+        "--output",
+        "runs/cuda_reduction_01/training-plans-01/spatial-E"
+      ],
+      "returncode": 0
+    }
+  ],
+  "gpu": "NOT_RUN"
+}

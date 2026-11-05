@@ -25,7 +25,8 @@ def build_command(nvcc, output, arch):
                       str(ROOT / "hytorch/backends/cuda/conv_dinput.cu"),
                       str(ROOT / "hytorch/backends/cuda/conv_dinput_opt.cu"),
                       str(ROOT / "hytorch/backends/cuda/conv_dweight.cu"),
-                      str(ROOT / "hytorch/backends/cuda/relu_backward.cu"), "-o", str(output)]
+                      str(ROOT / "hytorch/backends/cuda/relu_backward.cu"),
+                      str(ROOT / "hytorch/backends/cuda/reduction.cu"), "-o", str(output)]
 
 
 def main():

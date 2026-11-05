@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-11-05T15:14:57.605355+00:00",
+  "os": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "threads": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "packages": {
+    "numpy": "1.24.4",
+    "cupy-cuda12x": "12.3.0",
+    "torch": "2.4.1+cu121",
+    "pytest": "8.3.5",
+    "matplotlib": "3.7.5",
+    "pillow": "10.4.0"
+  },
+  "gpu": "NOT_RUN: no nvidia-smi/device query/context allocation in this stage",
+  "base_commit": "4530176dfdbd320bbd73c18293fabd391def86e4",
+  "static_syntax": {
+    "status": "PASS",
+    "files": [
+      "docs/experiments/cuda-reduction-foundation/scripts/gpu_plan.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/future_training.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/gpu_training_check.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/gpu_micro.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/run_gpu_plan.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/training_config_reduction.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/cases.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/cpu_check.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/training_common.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/reference.py",
+      "docs/experiments/cuda-reduction-foundation/scripts/check_host.py",
+      "tests/test_reduction_host.py",
+      "tests/test_reduction_gpu.py",
+      "hytorch/backends/cuda/reduction.py"
+    ]
+  }
+}

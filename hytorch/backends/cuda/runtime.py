@@ -7,10 +7,11 @@ from contextvars import ContextVar
 from collections import Counter
 import numpy as np
 from .conv_dispatch import select_conv_dinput
+from .reduction import MAX_DIMS, SumLayout, plan_sum
 
 _config = ContextVar("hytorch_cuda_backend", default={
     "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16,
-    "conv_backward": "original", "conv_dweight": "original", "relu_backward": "original"})
+    "conv_backward": "original", "conv_dweight": "original", "relu_backward": "original", "reduction": "original"})
 _counts = Counter()
 _library = None
 _dll_directories = []
@@ -29,7 +30,7 @@ def dispatch_stats(reset=False):
 
 
 @contextmanager
-def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="original", conv_dweight="original", relu_backward="original"):
+def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="original", conv_dweight="original", relu_backward="original", reduction="original"):
     if matmul not in ("cupy", "basic", "blocked", "shared"):
         raise ValueError("matmul must be cupy/basic/blocked/shared")
     if conv not in ("cupy", "direct", "im2col") or pool not in ("cupy", "native"):
@@ -42,9 +43,11 @@ def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, *, conv_backward="
         raise ValueError("conv_dweight must be original/fused")
     if relu_backward not in ("original", "fused"):
         raise ValueError("relu_backward must be original/fused")
+    if reduction not in ("original", "native"):
+        raise ValueError("reduction must be original/native")
     token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile,
                             conv_backward=conv_backward, conv_dweight=conv_dweight,
-                            relu_backward=relu_backward))
+                            relu_backward=relu_backward, reduction=reduction))
     try:
         yield
     finally:
@@ -374,4 +377,30 @@ def relu_backward(x, gy):
         fn.argtypes, fn.restype = [ct.c_void_p]*3 + [ct.c_int, ct.c_void_p], ct.c_int
     _call("hy_relu_backward", _ptr(x), _ptr(gy), _ptr(result), x.size)
     _counts["relu_backward_fused"] += 1
+    return result
+
+
+def sum_array(x, axis=None, keepdims=False):
+    """Keep original semantics unless explicitly selecting a supported native sum."""
+    if selected("reduction", x) is not None:
+        if x.size and x.ndim <= MAX_DIMS:
+            return reduce_sum(x, axis, keepdims)
+        _counts["reduction_original_empty_or_rank"] += 1
+    return x.sum(axis=axis, keepdims=keepdims)
+
+
+def reduce_sum(x, axis=None, keepdims=False):
+    """FP32 sum, arbitrary axes within rank 8; layout preparation is explicit."""
+    import cupy as cp
+    x, = _arrays(x)
+    layout, shape, parts = plan_sum(x.shape, axis, keepdims)
+    result = cp.empty(shape, dtype=cp.float32)
+    workspace = cp.empty((layout.outputs, parts), dtype=cp.float32) if parts > 1 else None
+    fn = load_library().hy_reduce_sum
+    if fn.argtypes is None:
+        fn.argtypes = [ct.c_void_p]*3 + [SumLayout, ct.c_int, ct.c_void_p]
+        fn.restype = ct.c_int
+    _call("hy_reduce_sum", _ptr(x), _ptr(result), _ptr(workspace), layout, parts)
+    _counts["sum_native"] += 1
+    _counts["sum_native_launches"] += 2 if parts > 1 else 1
     return result

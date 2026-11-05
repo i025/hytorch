@@ -200,7 +200,8 @@ class Sum(Function):
 
     def forward(self, x):
         self.x_shape = x.shape
-        y = x.sum(axis=self.axis, keepdims=self.keepdims)
+        from hytorch.backends.cuda.runtime import sum_array
+        y = sum_array(x, axis=self.axis, keepdims=self.keepdims)
         return y
 
     def backward(self, gy):
@@ -475,7 +476,8 @@ class MeanSquareError(Function):
     def forward(self, x0, x1):
         diff = x0 - x1
         xp = cuda.get_array_module(diff)
-        y = (diff**2).sum()/xp.array(len(diff), dtype=diff.dtype)
+        from hytorch.backends.cuda.runtime import sum_array
+        y = sum_array(diff**2)/xp.array(len(diff), dtype=diff.dtype)
         return y
 
     def backward(self, gy):

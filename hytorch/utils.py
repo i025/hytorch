@@ -119,7 +119,8 @@ def sum_to(x, shape):
     lead_axis = tuple(range(lead))
 
     axis = tuple([i + lead for i, sx in enumerate(shape) if sx == 1])
-    y = x.sum(lead_axis + axis, keepdims=True)
+    from hytorch.backends.cuda.runtime import sum_array
+    y = sum_array(x, lead_axis + axis, keepdims=True)
     if lead > 0:
         y = y.squeeze(lead_axis)
     return y

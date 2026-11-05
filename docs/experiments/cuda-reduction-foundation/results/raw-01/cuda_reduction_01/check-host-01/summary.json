@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "comparisons": 312,
+  "failed": 0,
+  "library_load": "PASS",
+  "symbol": "hy_reduce_sum",
+  "gpu": "NOT_RUN",
+  "scope": "CPU original/native-selection fallback vs CPU PyTorch, not native GPU execution"
+}

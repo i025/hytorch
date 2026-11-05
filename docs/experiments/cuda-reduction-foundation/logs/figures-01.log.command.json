@@ -1,0 +1,30 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/cuda-reduction-foundation/scripts/plot_cpu.py",
+    "--input",
+    "runs/cuda_reduction_01/cpu-reference-03",
+    "--output",
+    "docs/experiments/cuda-reduction-foundation/figures/cpu-01"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T15:20:47.558244+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": "/tmp/hytorch-reduction-matplotlib",
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 1.9546830710023642,
+  "finished_at": "2026-11-05T15:20:49.512979+00:00"
+}

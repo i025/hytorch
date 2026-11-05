@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "parsed_files": 15,
+  "local_markdown_links": "PASS",
+  "gpu": "NOT_RUN",
+  "future_commands": 123,
+  "gpu_tests": "Collected only; no fixture/device execution",
+  "no_existing_cuda_source_changes": true
+}
