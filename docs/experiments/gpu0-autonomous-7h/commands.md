@@ -4,7 +4,7 @@
 实验Python命令前加：
 
 ```bash
-CUDA_VISIBLE_DEVICES='' OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. \
+CUDA_VISIBLE_DEVICES='' CUDA_PATH=/usr/local/cuda-12.2 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. \
  taskset -c 0-3 nice -n 10 .venv/bin/python ...
 ```
 
@@ -22,7 +22,10 @@ CUDA_VISIBLE_DEVICES='' OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/analyze_phases.py --input runs/udacity_real_analysis_01/trace-I.sqlite --output runs/gpu0_autonomous_7h_01/historical-I-phase-02
 ```
 
-完整最终213项主机集合的实际argv见`logs/regression-final-01.log.command.json`，不是GPU结果；此前210项及定向测试日志保留。
+先前213项集合的实际argv见`logs/regression-final-01.log.command.json`，不是GPU结果。
+最终合并219项的实际argv/环境见`logs/regression-final-03.log.command.json`，包括新增6项CPU归档/分配回调测试。
+`regression-final-02`漏设CUDA_PATH，218通过/1失败；`03`恢复既有12.2路径后219通过/0失败/0跳过。
+此前210/213项及所有定向、失败日志均保留，不重复相加。
 初次schedule-host-01和schedule-bench-01失败记录保留。
 
 ## 持续监控与自动触发
@@ -72,6 +75,7 @@ ReLU trace每shape共30范围，expected-cases=12。
 ```bash
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/summarize.py --schedule runs/gpu0_autonomous_7h_01/schedule.json --label cpu-review-01
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/summarize.py --schedule runs/gpu0_autonomous_7h_01/schedule.json --label monitor-review-01
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/summarize.py --schedule runs/gpu0_autonomous_7h_01/schedule.json --label closeout-review-01
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/analyze_cpu_calls.py --input runs/gpu0_autonomous_7h_01/cpu-profile-01/profile-functions.csv --output runs/gpu0_autonomous_7h_01/cpu-calls-01
 .venv/bin/python docs/experiments/a100-stage1/run_logged.py --log docs/experiments/gpu0-autonomous-7h/logs/report-status-01.log -- .venv/bin/python -m pytest tests/test_gpu0_report_status.py -q -ra --junitxml=docs/experiments/gpu0-autonomous-7h/correctness/report-status-01.xml
 .venv/bin/python docs/experiments/a100-stage1/run_logged.py --log docs/experiments/gpu0-autonomous-7h/logs/operator-memory-host-02.log -- .venv/bin/python -m pytest tests/test_operator_allocation_trace.py -q -ra --junitxml=docs/experiments/gpu0-autonomous-7h/correctness/operator-memory-host-02.xml

@@ -110,12 +110,14 @@ Sum超差样本即使能由FP32顺序解释，也保留FAIL；完整CuPy/PyTorch
 
 ## CPU研究与唯一新原型
 
-最终主机集合：{summary['cpu_regression']}。此前210项及定向集合各次记录均保留，不能相加重复计数。
-另有CPU归档状态测试：{summary['cpu_report_status_checks']}，验证未启动/被中断/失败与跳过的区分。
-算子内存跟踪回调/注册生命周期CPU测试：{summary['cpu_allocation_hook_checks']}；不代表GPU已执行。
+最终主机集合：{summary['cpu_regression']}，来源`{summary['cpu_regression_file']}`。
+此前210/213项及定向集合各次记录均保留，不能相加重复计数。
+归档状态预检：{summary['cpu_report_status_checks']}；内存回调/注册生命周期预检：{summary['cpu_allocation_hook_checks']}。
+这些预检已纳入最终合并集合，不重复计数，不代表GPU已执行。
 heap调度在CNN/Transformer的188项比较逐元素一致，保持generation优先级和相同LIFO平局顺序；默认list。
 五次交替CPU计时中，256分支合成图吞吐均值约提高52.17%，CNN只变化0.3%–1.3%，不宣称稳定CNN收益。
 该批前段与回归共享CPU，微小差异不能作为收益证据。初始测试参考dtype和CSV脚本失败保留，生产数学没有因此改变。
+后期合并回归有一次因命令漏设CUDA_PATH而218通过/1失败；补齐既有12.2路径后重跑，失败与重跑日志均保留。
 独立拓扑补测12组、24项Loss/输入梯度比较逐元素一致：宽64/256的树形与扇出图CPU吞吐提高约10%–55%，
 ready frontier仅1–2的链式/残差图变化约-1.53%到+1.22%，不能宣称稳定收益。
 这说明收益取决于待调度队列宽度；图节点数本身不足以预测收益。详见[拓扑研究](graph-topologies.md)。

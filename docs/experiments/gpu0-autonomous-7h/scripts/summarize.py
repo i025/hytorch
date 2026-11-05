@@ -227,8 +227,10 @@ def main():
                 first_loss_failed_step=int(np.flatnonzero(mask)[0]+1) if mask.any() else None,
                 atol=1e-6,rtol=1e-5,scope='Independent training trajectory, not common-state single step'))
     write_csv(out/'training-trajectory-errors.csv',trajectory)
+    cpu_xml=sorted((report/'correctness').glob('regression-final-*.xml'))
+    cpu_path=cpu_xml[-1] if cpu_xml else report/'correctness/regression-01.xml'
     summary=dict(status='FINAL' if a.final else 'INTERMEDIATE',monitor=monitor,window=window,gpu_tests=suites,
-        cpu_regression=tests(report/'correctness/regression-final-01.xml' if (report/'correctness/regression-final-01.xml').exists() else report/'correctness/regression-01.xml'),
+        cpu_regression=tests(cpu_path),cpu_regression_file=str(cpu_path),
         cpu_report_status_checks=tests(report/'correctness/report-status-01.xml'),
         cpu_allocation_hook_checks=tests(report/'correctness/operator-memory-host-02.xml'),
         cpu_schedule=json.loads((raw/'schedule-bench-02/summary.json').read_text()),

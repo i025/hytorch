@@ -1,0 +1,156 @@
+{
+  "status": "INTERMEDIATE",
+  "monitor": {
+    "samples": 253,
+    "first_utc": "2026-11-05T16:21:27.501674+00:00",
+    "last_utc": "2026-11-05T20:33:45.727411+00:00",
+    "observed_seconds": 15138.225737,
+    "max_gap_s": 60.100097,
+    "max_idle_streak": 1,
+    "idle_samples": 2,
+    "qualified_samples": 0,
+    "qualified_before_gpu_cutoff": 0,
+    "occupied_zero_utilization_samples": 86,
+    "distinct_compute_pids": [
+      13632,
+      49008,
+      58074,
+      67969,
+      77698,
+      86738,
+      94142,
+      101896,
+      113562,
+      121696,
+      130230,
+      136571,
+      144300,
+      152815,
+      160766,
+      169159,
+      178393,
+      189700,
+      197811,
+      206790,
+      216572,
+      225367,
+      233324,
+      240499,
+      248786,
+      255846,
+      264441,
+      271777,
+      278367,
+      284600,
+      291224,
+      297471
+    ],
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "physical_gpu": 0
+  },
+  "window": {
+    "status": "NOT_RUN",
+    "reason": "No qualified idle GPU0 window launched"
+  },
+  "gpu_tests": {
+    "sum-tests": {
+      "status": "NOT_RUN"
+    },
+    "relu-tests": {
+      "status": "NOT_RUN"
+    },
+    "gpu-regression": {
+      "status": "NOT_RUN"
+    },
+    "schedule-gpu-tests": {
+      "status": "NOT_RUN"
+    }
+  },
+  "cpu_regression": {
+    "status": "PASS",
+    "passed": 219,
+    "tests": 219,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "cpu_regression_file": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/gpu0-autonomous-7h/correctness/regression-final-03.xml",
+  "cpu_report_status_checks": {
+    "status": "PASS",
+    "passed": 3,
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "cpu_allocation_hook_checks": {
+    "status": "PASS",
+    "passed": 3,
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "cpu_schedule": {
+    "status": "PASS",
+    "comparisons": 188,
+    "unequal": 0,
+    "gpu": "NOT_RUN",
+    "scope": "CPU matched initial states; exact equality; five alternating timing repeats",
+    "finished_utc": "2026-11-05T16:38:54.785915+00:00"
+  },
+  "cpu_sum_model": {
+    "status": "PASS",
+    "training_comparisons": 156,
+    "training_failed": 0,
+    "reduction_comparisons": 192,
+    "reduction_failed": 0,
+    "gpu": "NOT_RUN",
+    "scope": "CPU execution with FP32 lane/tree simulation only; no native device call",
+    "finished_utc": "2026-11-05T16:57:57.977040+00:00"
+  },
+  "cpu_sum_trajectory": {
+    "status": "DIAGNOSIS_COMPLETED",
+    "gpu": "NOT_RUN",
+    "steps_per_model_per_mode": 256,
+    "trajectory_failed": 0,
+    "replay_failed": 0,
+    "trajectory_comparisons": 812,
+    "replay_comparisons": 312,
+    "gpu_priority_pause_s": 0.04330804059281945,
+    "first_loss_failure": {
+      "donkey": null,
+      "spatial": null
+    },
+    "finished_utc": "2026-11-05T17:44:00.076716+00:00",
+    "scope": "CPU mathematical simulation of existing Sum; not a CUDA execution or performance benchmark"
+  },
+  "protocol_check": {
+    "status": "NOT_RUN",
+    "errors": [],
+    "scope": "Actual initial arrays and config equality, no hashes",
+    "runs": 0
+  },
+  "training_completed_runs": 0,
+  "operator_groups": 0,
+  "profiled_kernel_groups": 0,
+  "operator_allocation_records": 0,
+  "strict_training_trajectory_status": "NOT_RUN",
+  "strict_training_trajectory_failures": 0,
+  "source_config": {
+    "start_utc": "2026-11-05T16:18:50+00:00",
+    "deadline_utc": "2026-11-05T23:18:50+00:00",
+    "gpu_cutoff_utc": "2026-11-05T22:48:50+00:00",
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "physical_gpu": 0,
+    "interval_s": 60,
+    "idle_memory_mib": 128,
+    "idle_utilization_pct": 2,
+    "idle_samples": 3,
+    "base_commit": "c00a8d380d473781880ed8f14d1bc0818e10f52d",
+    "authorization": "User explicitly authorizes idle physical GPU0; never another GPU",
+    "report": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/gpu0-autonomous-7h",
+    "raw": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01"
+  },
+  "finished_utc": "2026-11-05T20:34:23.019299+00:00"
+}
