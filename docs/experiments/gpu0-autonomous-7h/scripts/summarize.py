@@ -32,6 +32,13 @@ def tests(path):
         passed=values['tests']-values['failures']-values['errors']-values['skipped'],**values)
 
 
+def gpu_tests(path,window,name):
+    value=tests(path)
+    if value['status']=='NOT_RUN' and any(v['name']==name for v in window.get('commands',[])):
+        return dict(status='PARTIAL',reason='Task started but no complete JUnit XML was saved; inspect its original log')
+    return value
+
+
 def mean_sd(values):
     return statistics.mean(values),statistics.stdev(values) if len(values)>1 else None
 
@@ -79,7 +86,7 @@ def main():
     window_path=raw/'gpu-window-01/window.json'
     window=json.loads(window_path.read_text()) if window_path.exists() else dict(status='NOT_RUN',reason='No qualified idle GPU0 window launched')
     gpu=raw/'gpu-window-01'
-    suites={name:tests(gpu/(name+'.xml')) for name in ('sum-tests','relu-tests','gpu-regression','schedule-gpu-tests')}
+    suites={name:gpu_tests(gpu/(name+'.xml'),window,name) for name in ('sum-tests','relu-tests','gpu-regression','schedule-gpu-tests')}
     training=[];initials={};protocols={};initial_errors=[]
     if gpu.exists():
         for path in sorted(gpu.glob('*/summary.json')):
@@ -216,6 +223,7 @@ def main():
     write_csv(out/'training-trajectory-errors.csv',trajectory)
     summary=dict(status='FINAL' if a.final else 'INTERMEDIATE',monitor=monitor,window=window,gpu_tests=suites,
         cpu_regression=tests(report/'correctness/regression-final-01.xml' if (report/'correctness/regression-final-01.xml').exists() else report/'correctness/regression-01.xml'),
+        cpu_report_status_checks=tests(report/'correctness/report-status-01.xml'),
         cpu_schedule=json.loads((raw/'schedule-bench-02/summary.json').read_text()),
         cpu_sum_model=json.loads((raw/'cpu-sum-training-01/summary.json').read_text()) if (raw/'cpu-sum-training-01/summary.json').exists() else dict(status='NOT_RUN'),
         cpu_sum_trajectory=json.loads((raw/'cpu-sum-trajectory-01/summary.json').read_text()) if (raw/'cpu-sum-trajectory-01/summary.json').exists()

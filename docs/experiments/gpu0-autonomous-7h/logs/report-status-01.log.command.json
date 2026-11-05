@@ -1,0 +1,31 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_gpu0_report_status.py",
+    "-q",
+    "-ra",
+    "--junitxml=docs/experiments/gpu0-autonomous-7h/correctness/report-status-01.xml"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T19:50:43.719595+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": "/tmp/hytorch-gpu0-7h-mpl",
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.7606308520771563,
+  "finished_at": "2026-11-05T19:50:44.480280+00:00"
+}
