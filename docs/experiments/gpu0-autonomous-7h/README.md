@@ -37,6 +37,7 @@ Sum/ReLU按实际数值资格决定S/J组成，没有正确性资格的配置不
 [CPU原始摘要](benchmarks/cpu-schedule-summary.json)。最终会补齐数据索引、图、窗口起止和完整报告。
 
 新增[独立计算图拓扑补测](graph-topologies.md)：12组、24项逐元素一致，宽图收益可以复现，链式/残差无稳定收益；均为CPU结果。
+新增[固定种子 Sum 条件数诊断](sum-conditioning.md)：320项FP64比较中普通输入全通过，强消去68项超差保留，不作为GPU正确性证据。
 
 补充[CPU原始数据索引](correctness/cpu-raw-02/file-index.csv)、
 [CPU长轨迹数值图](figures/cpu-numerical-01/cpu-sum-trajectory.png)、

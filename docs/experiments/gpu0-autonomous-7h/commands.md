@@ -69,4 +69,6 @@ ReLU trace每shape共30范围，expected-cases=12。
 ```bash
 .venv/bin/python docs/experiments/a100-stage1/run_logged.py --log docs/experiments/gpu0-autonomous-7h/logs/graph-shapes-01.log -- .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/bench_graph_shapes.py --output runs/gpu0_autonomous_7h_01/graph-shapes-01 --schedule runs/gpu0_autonomous_7h_01/schedule.json
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/plot_graph_shapes.py --input runs/gpu0_autonomous_7h_01/graph-shapes-01/summary.csv --output docs/experiments/gpu0-autonomous-7h/figures/cpu-graph-topologies-01
+.venv/bin/python docs/experiments/a100-stage1/run_logged.py --log docs/experiments/gpu0-autonomous-7h/logs/sum-conditioning-01.log -- .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/cpu_sum_conditioning.py --output runs/gpu0_autonomous_7h_01/sum-conditioning-01 --schedule runs/gpu0_autonomous_7h_01/schedule.json
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/plot_sum_conditioning.py --input runs/gpu0_autonomous_7h_01/sum-conditioning-01/samples.csv --output docs/experiments/gpu0-autonomous-7h/figures/cpu-conditioning-01
 ```

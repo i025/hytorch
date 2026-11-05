@@ -1,0 +1,47 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/config.json,544,docs/experiments/gpu0-autonomous-7h/correctness/sum-conditioning-01/sum-conditioning-01/config.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed0-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed1-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed10-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed11-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed12-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed13-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed14-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed15-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed16-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed17-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed18-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed19-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed2-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed3-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed4-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed5-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed6-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed7-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed8-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n1048577-seed9-cancellation.npz,4195322,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n4097-seed15-cancellation.npz,17402,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n4097-seed3-cancellation.npz,17402,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed0-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed1-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed10-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed11-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed12-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed13-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed14-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed15-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed16-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed17-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed18-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed19-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed2-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed3-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed4-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed5-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed6-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed7-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed8-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/failure-n65537-seed9-cancellation.npz,263162,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/samples.csv,57091,docs/experiments/gpu0-autonomous-7h/correctness/sum-conditioning-01/sum-conditioning-01/samples.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/summary.csv,1633,docs/experiments/gpu0-autonomous-7h/correctness/sum-conditioning-01/sum-conditioning-01/summary.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/sum-conditioning-01/summary.json,310,docs/experiments/gpu0-autonomous-7h/correctness/sum-conditioning-01/sum-conditioning-01/summary.json,Git portable record and server original

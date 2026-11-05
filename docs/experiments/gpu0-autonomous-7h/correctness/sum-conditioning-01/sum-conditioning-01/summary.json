@@ -1,0 +1,10 @@
+{
+  "status": "DIAGNOSIS_COMPLETED",
+  "gpu": "NOT_RUN",
+  "comparisons": 320,
+  "failures_retained": 68,
+  "ordinary_failures": 0,
+  "cancellation_failures": 68,
+  "finished_utc": "2026-11-05T19:10:20.838315+00:00",
+  "scope": "CPU full-vector samples; neither GPU correctness nor an FP32 tolerance waiver"
+}

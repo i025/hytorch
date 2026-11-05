@@ -1,0 +1,37 @@
+{
+  "sizes": [
+    1024,
+    4097,
+    65537,
+    1048577
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "input_dtype": "float32",
+  "ordinary": "default_rng(seed).standard_normal(N).astype(float32)",
+  "cancellation": "ordinary minus float32(mean computed in float64)",
+  "reference": "FP64 sum of the fixed FP32 inputs; no FP32 output rounding of reference",
+  "atol": 1e-05,
+  "rtol": 0.0001,
+  "gpu": "NOT_RUN"
+}
