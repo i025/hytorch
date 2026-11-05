@@ -28,3 +28,5 @@ New GPU work should stop by 23:06:35 to leave approximately 30 minutes for archi
 
 This host has no managed-cloud environment status tool or `/etc/codex/network-policy.json`.
 No managed-cloud credential readiness is inferred from their absence.
+
+Publication-only follow-up, recorded at 2026-11-05T02:54:13.101895+00:00 (UTC): user restored credentials; archived commit `25c910751533e84b163d9f1877ab52a7ded58333` was pushed and verified remotely. Only publication status documentation was updated. No research, monitoring or GPU task restarted; partial completion, budget overrun and GPU NOT_RUN remain unchanged.

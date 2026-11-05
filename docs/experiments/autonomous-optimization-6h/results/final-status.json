@@ -48,8 +48,24 @@
   },
   "resources_released": true,
   "release_evidence": "Only external PID3729603 visible on GPU0 at final read; no own experiment or monitor Python process found",
-  "github_push": "BLOCKED_MISSING_CREDENTIALS",
+  "github_push": "PUSHED_VERIFIED",
   "retained_source_commit": "80ead58",
   "unfinished_timing_draft": "Server-only patch retained; restored to last committed benchmark before delivery",
-  "note": "No evidence of continuous six-hour monitoring: records end at18:44; do not backfill the unobserved interval"
+  "note": "No evidence of continuous six-hour monitoring: records end at18:44; do not backfill the unobserved interval",
+  "publication": {
+    "status": "PUSHED_VERIFIED",
+    "recorded_at_utc": "2026-11-05T02:54:13.101895+00:00",
+    "record_source": "Tool outputs retained after successful push and remote verification",
+    "branch": "experiment/hytorch-autonomous-optimization",
+    "published_commit": "25c910751533e84b163d9f1877ab52a7ded58333",
+    "verified_remote_commit": "25c910751533e84b163d9f1877ab52a7ded58333",
+    "branch_url": "https://github.com/i025/hytorch/tree/experiment/hytorch-autonomous-optimization",
+    "push_command": "GIT_TERMINAL_PROMPT=0 git -c credential.interactive=false push -u origin experiment/hytorch-autonomous-optimization",
+    "push_exit_code": 0,
+    "verification_command": "GIT_TERMINAL_PROMPT=0 git -c credential.interactive=false ls-remote --heads origin refs/heads/experiment/hytorch-autonomous-optimization",
+    "verification_exit_code": 0,
+    "research_restarted": false,
+    "gpu_tasks_restarted": false,
+    "note": "Publication-only follow-up; a final documentation commit records this success. Historical failure and raw experiment records remain unchanged."
+  }
 }

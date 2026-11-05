@@ -82,4 +82,18 @@ python docs/experiments/fused-sgd-cuda/scripts/archive_results.py --destination 
 git -c credential.interactive=false push --dry-run origin HEAD:experiment/hytorch-autonomous-optimization
 ```
 
-The push check fails for missing HTTPS credentials; no remote publication is claimed.
+The original push check failed for missing HTTPS credentials; its failure records remain unchanged.
+
+## Publication-only follow-up after credential restoration
+
+No research or GPU task was restarted. The following commands successfully published
+the archived branch and verified remote commit `25c910751533e84b163d9f1877ab52a7ded58333`:
+
+```bash
+GIT_TERMINAL_PROMPT=0 git -c credential.interactive=false push -u origin experiment/hytorch-autonomous-optimization
+GIT_TERMINAL_PROMPT=0 git -c credential.interactive=false ls-remote --heads origin refs/heads/experiment/hytorch-autonomous-optimization
+```
+
+Outputs and verification metadata are retained in `logs/publication-02/`. A final
+documentation commit updates publication status only and uses the same non-force
+push and remote verification commands. GPU results remain NOT_RUN.

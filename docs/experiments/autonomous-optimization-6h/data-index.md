@@ -34,9 +34,19 @@ resource interruptions and availability samples, not a successful GPU experiment
 [cpu-additional-01/file-index.csv](results/cpu-additional-01/file-index.csv) adds52
 server files/6 portable records for initialization recheck and loading profile.
 
-Actual final Git push failure is preserved in[push.log](logs/publication-01/push.log)
+The original Git push failure is preserved in[push.log](logs/publication-01/push.log)
 and[command/status JSON](logs/publication-01/push.json), with server originals in
 `/home/xymo/projects/hytorch/runs/autonomous_publication_01/`. No token is recorded.
+
+After the user restored credentials, the archived branch was pushed successfully
+and remote commit `25c910751533e84b163d9f1877ab52a7ded58333` was verified. See
+[successful push output](logs/publication-02/push.log),
+[remote verification](logs/publication-02/remote.log) and
+[publication metadata](logs/publication-02/publication.json). Server copies are in
+`/home/xymo/projects/hytorch/runs/autonomous_publication_02/`; final documentation
+push/verification logs also stay there. No experiments were restarted. The archived
+`final-raw-01/` status remains the original pre-publication snapshot; the current
+[final-status.json](results/final-status.json) records successful publication.
 
 Historical sources are linked, never overwritten:
 

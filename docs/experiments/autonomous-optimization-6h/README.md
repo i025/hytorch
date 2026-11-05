@@ -18,7 +18,7 @@
 | 预取CPU原型 | 12次真实图像对照逐元素一致；吞吐数据见下文 |
 | Native ReLU反向原型 | 已实现、SM80编译和CPU动态库加载通过，默认关闭；GPU验收NOT_RUN |
 | GPU重放/738项测试/算子/训练/Nsight | 两次资源检查中断，0项任务完成；全部NOT_RUN，不宣称通过或加速 |
-| GitHub | 已本地分批提交；推送因缺少凭据阻塞，远程分支未发布 |
+| GitHub | 凭据恢复后已推送实验分支并核对远程提交；历史失败记录保留，未重启实验 |
 
 ## 数值结论：长期超差不是CUDA Bug的充分证据
 
@@ -143,8 +143,14 @@ SM80编译资源报告为新ReLU12寄存器、0shared、0spill，不等于实测
 3. 根据新Trace再决定是否优化剩余点算子/自动求导提交（历史ReLU、MSE、Tanh均有
    多次短Kernel），不凭历史Kernel核时直接重写第三个Kernel。
 
-本地阶段提交`1dcfa82`、`a8aa5a6`、`80ead58`保存了研究过程；最终归档提交另见
-本分支HEAD。GitHub预检多次返回`could not read Username for https://github.com`，
-没有GitHub CLI，也没有可用推送凭据。提交/推送授权已经收到，阻碍是凭据而非权限。
-恢复凭据脚本在服务器`runs/autonomous_publication_01/cache_credentials.sh`，Token
-不应发到聊天中。恢复后仅需推送已有提交，不应自动重启GPU研究或进入下一阶段。
+阶段提交`1dcfa82`、`a8aa5a6`、`80ead58`保存了研究过程，`2951e11`和`25c9107`
+保存了最终归档及凭据阻碍。此前推送因缺少HTTPS凭据失败，原始日志保留在
+[publication-01](logs/publication-01/push.log)。用户恢复凭据后，已成功推送
+`25c910751533e84b163d9f1877ab52a7ded58333`并核对远程提交；本次仅补办发布及
+状态记录，没有重启GPU、研究任务或下一阶段。成功输出及远程核对记录见
+[publication-02](logs/publication-02/publication.json)。
+
+GitHub：[实验分支](https://github.com/i025/hytorch/tree/experiment/hytorch-autonomous-optimization)、
+[完整报告](https://github.com/i025/hytorch/blob/experiment/hytorch-autonomous-optimization/docs/experiments/autonomous-optimization-6h/README.md)、
+[数据索引](https://github.com/i025/hytorch/blob/experiment/hytorch-autonomous-optimization/docs/experiments/autonomous-optimization-6h/data-index.md)。
+研究仍为部分完成，GPU验收仍为NOT_RUN；后续实验等待人工审查。
