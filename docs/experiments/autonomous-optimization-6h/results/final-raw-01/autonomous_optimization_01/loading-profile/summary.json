@@ -1,0 +1,6 @@
+{
+  "status": "COMPLETED",
+  "samples": 1024,
+  "wall_s": 0.9849624787457287,
+  "scope": "CPU serial cProfile diagnostic; not formal loader throughput and not GPU timing"
+}

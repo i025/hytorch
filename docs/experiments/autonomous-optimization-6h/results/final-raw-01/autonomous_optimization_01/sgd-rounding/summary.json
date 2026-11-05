@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETED",
+  "device": "CPU",
+  "elements": 251749,
+  "unequal": 2,
+  "max_abs": 9.313225746154785e-10,
+  "tolerance_mismatches": 0,
+  "source": "Stage 4H exact initial FP32 weights and first I gradients; identical inputs to both updates",
+  "caution": "CPU PyTorch rounding does not by itself establish CUDA PyTorch update semantics"
+}

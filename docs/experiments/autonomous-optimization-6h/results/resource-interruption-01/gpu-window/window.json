@@ -1,0 +1,16 @@
+{
+  "status": "FAILED",
+  "physical_gpu": 0,
+  "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "logical_gpu": 0,
+  "resource_condition": "OBSERVED_IDLE_GPU; no exclusive lease",
+  "started_at": "2026-11-04T17:54:57.674669+00:00",
+  "device_switches": 0,
+  "gpu_reset_called": false,
+  "parent_creates_cuda_context": false,
+  "finished_at": "2026-11-04T17:55:02.521555+00:00",
+  "completed_jobs": 0,
+  "planned_jobs": 136,
+  "stop_reason": "New external GPU process; stop our work to avoid contention",
+  "release": "All our GPU children exited; CPU controller has no CUDA context; no deviceReset"
+}

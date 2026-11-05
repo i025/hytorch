@@ -1,0 +1,11 @@
+2026-11-04T17:53:26.614171+00:00 No idle GPU; no CUDA context or memory held
+2026-11-04T17:54:11.943756+00:00 No idle GPU; no CUDA context or memory held
+SELECTED 0 GPU-f099fdbd-adf2-6157-3462-4145bc2a8359 2026-11-04T17:54:57.372535+00:00
+START numerical-replay
+{"status": "FAILED", "physical_gpu": 0, "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359", "logical_gpu": 0, "resource_condition": "OBSERVED_IDLE_GPU; no exclusive lease", "started_at": "2026-11-04T17:54:57.674669+00:00", "device_switches": 0, "gpu_reset_called": false, "parent_creates_cuda_context": false, "finished_at": "2026-11-04T17:55:02.521555+00:00", "completed_jobs": 0, "planned_jobs": 136, "stop_reason": "New external GPU process; stop our work to avoid contention", "release": "All our GPU children exited; CPU controller has no CUDA context; no deviceReset"}
+Traceback (most recent call last):
+  File "docs/experiments/autonomous-optimization-6h/scripts/run_window.py", line 185, in <module>
+    main()
+  File "docs/experiments/autonomous-optimization-6h/scripts/run_window.py", line 157, in main
+    raise subprocess.CalledProcessError(code, job['command'])
+subprocess.CalledProcessError: Command '['/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python', '/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/diagnose_replay.py', '--prepared', 'runs/udacity_real_prepared_01', '--no-fingerprints', '--cache', 'runs/autonomous_optimization_01/cpu-preparation/epoch-1-inputs.npz', '--output', 'runs/autonomous_optimization_01/gpu-window/numerical-replay']' died with <Signals.SIGTERM: 15>.

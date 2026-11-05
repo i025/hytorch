@@ -1,0 +1,199 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/availability-retry.jsonl,167430,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/availability-retry.jsonl,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/availability.jsonl,8209,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/availability.jsonl,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build/build.json,1191,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/build/build.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build/build.log,4359,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/build/build.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build/libhytorch_cuda.so,307528,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build-prototypes/build.json,1297,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/build-prototypes/build.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build-prototypes/build.log,4671,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/build-prototypes/build.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build-prototypes/libhytorch_cuda.so,320232,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build-prototypes.log,5727,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/build-prototypes.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build-prototypes.log.command.json,1128,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/build-prototypes.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build.log,5300,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/build.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build.log.command.json,1116,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/build.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/cpu-replay-errors.csv,89748,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-engine-recheck/cpu-replay-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-A-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-E-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-F-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/final-I-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/fp64-network-errors.csv,176270,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-engine-recheck/fp64-network-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/initial-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck/summary.json,466,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-engine-recheck/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck.log,361,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-engine-recheck.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-engine-recheck.log.command.json,1188,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-engine-recheck.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-preparation/epoch-1-inputs.npz,1002748696,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-preparation/loader-timing.csv,765,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-preparation/loader-timing.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-preparation/summary.json,491,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-preparation/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-preparation.log,1954,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-preparation.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-preparation.log.command.json,1179,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-preparation.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/cpu-replay-errors.csv,86749,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-state-diagnosis/cpu-replay-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-A-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-E-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-F-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/final-I-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/fp64-network-errors.csv,170136,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-state-diagnosis/fp64-network-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-1-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-1-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-1-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-1422-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-1422-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-1422-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-863-A.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-863-E.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/initial-863-FP64.npz,4036740,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis/summary.json,466,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-state-diagnosis/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis.log,361,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-state-diagnosis.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-state-diagnosis.log.command.json,1190,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-state-diagnosis.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-1.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-1023.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-1024.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-128.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-1400.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-1421.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-1422.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-1583.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-1600.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-2.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-256.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-32.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-512.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-800.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-862.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-863.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-958.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/cpu-state-959.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/final-A.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/final-E.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/final-FP64.npz,2017926,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/local-errors.csv,97297,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-trajectory/local-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/loss-errors.csv,166,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-trajectory/loss-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/losses.csv,150686,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-trajectory/losses.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/summary.json,741,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-trajectory/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory/weight-errors.csv,131291,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-trajectory/weight-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory.log,588,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-trajectory.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/cpu-trajectory.log.command.json,1269,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/cpu-trajectory.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/environment.txt,4225,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/environment.txt,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/final-status.json,2088,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/final-status.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-controller-retry.log,5110,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-controller-retry.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-controller.log,1628,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-controller.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-controller.log.command.json,1523,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-controller.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-plan-final.json,76559,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-plan-final.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-plan-publication.json,80602,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-plan-publication.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-plan.json,76008,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-plan.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-test-collection.log,51384,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-test-collection.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-test-collection.log.command.json,1353,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-test-collection.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-window/after.json,562,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-window/after.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-window/before.json,426,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-window/before.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-window/commands.json,899,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-window/commands.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-window/numerical-replay.log,0,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-window/numerical-replay.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-window/resources.jsonl,2269,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-window/resources.jsonl,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-window/window-start.json,331,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-window/window-start.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/gpu-window/window.json,605,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/gpu-window/window.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-additional.log,99,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-additional.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-additional.log.command.json,1112,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-additional.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-baseline.log,99,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-baseline.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-baseline.log.command.json,1367,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-baseline.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-final-02.log,180,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-final-02.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-final-02.log.command.json,1535,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-final-02.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-final.log,179,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-final.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-final.log.command.json,1447,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-final.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-prototypes.log,99,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-prototypes.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/host-prototypes.log.command.json,1327,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/host-prototypes.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/library-load.log,149,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/library-load.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/library-load.log.command.json,1304,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/library-load.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loader-tests.log,98,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/loader-tests.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loader-tests.log.command.json,1064,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/loader-tests.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile/serial-loading.csv,31517,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/loading-profile/serial-loading.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile/serial-loading.pstats,40772,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile/serial-loading.txt,33616,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/loading-profile/serial-loading.txt,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile/summary.json,173,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/loading-profile/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile.log,51,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/loading-profile.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/loading-profile.log.command.json,1183,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/loading-profile.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/plot-cpu.log,51,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/plot-cpu.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/plot-cpu.log.command.json,1183,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/plot-cpu.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/pre-gpu-source.diff,7506,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/python-packages.txt,975,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/python-packages.txt,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/quality-analysis/label-distribution.csv,488,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/quality-analysis/label-distribution.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/quality-analysis/prediction-moments.csv,4405,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/quality-analysis/prediction-moments.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/quality-analysis/steering-bins.csv,6090,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/quality-analysis/steering-bins.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/quality-analysis/summary.json,339,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/quality-analysis/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/quality-analysis.log,51,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/quality-analysis.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/quality-analysis.log.command.json,1129,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/quality-analysis.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/sgd-rounding/samples.csv,197880,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/sgd-rounding/samples.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/sgd-rounding/summary.csv,565,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/sgd-rounding/summary.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/sgd-rounding/summary.json,353,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/sgd-rounding/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/sgd-rounding.log,51,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/sgd-rounding.log,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/sgd-rounding.log.command.json,1130,docs/experiments/autonomous-optimization-6h/results/final-raw-01/autonomous_optimization_01/sgd-rounding.log.command.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/unfinished-epoch-timing.patch,9326,,server original only

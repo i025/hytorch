@@ -17,14 +17,19 @@ Server root: `/home/xymo/projects/hytorch/runs/autonomous_optimization_01/`
 | `loading-profile/` | Serial CPU preprocessing cProfile, CSV, text and server-only pstats |
 | `availability.jsonl` | Initial all-card observations, no CUDA allocation |
 | `gpu-window/` | Interrupted17:54:57–17:55:02 GPU0 window; first job SIGTERM on new external process, no completed jobs |
-| `availability-retry.jsonl`, `gpu-controller-retry.log*` | Continuing same-GPU0 observation; no memory reservation |
-| `gpu-window-02/` | Will exist only if sustained idle permits retry; status is not inferred from prepared commands |
+| `availability-retry.jsonl`, `gpu-controller-retry.log` | Same-GPU0 observation17:58–18:44UTC; stops after precheck failure. Outer command metadata was not finalized and is absent |
+| `gpu-window-02/` | Directory created then precheck failed; no CUDA child or numerical/performance records |
+| `unfinished-epoch-timing.patch` | Unvalidated timing draft, server only, not used in measurements; delivery restores committed benchmark |
+| `final-status.json` | PARTIAL,103 CPU tests pass, GPU/throughput/Nsight NOT_RUN, six-hour wall delivery not met, push blocked by credentials |
 
 Portable CPU raw records and every NPZ/binary's absolute server path/size are indexed
 in [cpu-raw-01/file-index.csv](results/cpu-raw-01/file-index.csv),87 files/19 portable
 records. All arrays remain on server. Read the summary's scope: CPU comparisons do
-not become GPU results. First interrupted raw records and final complete GPU/raw
-index are added after the corresponding processes finish, preserving old records.
+not become GPU results. First interrupted records are in
+[resource-interruption-01](results/resource-interruption-01/file-index.csv).
+The final archive is[final-raw-01/file-index.csv](results/final-raw-01/file-index.csv):
+198 server files,81 portable records. It includes all completed CPU logs, both
+resource interruptions and availability samples, not a successful GPU experiment.
 
 [cpu-additional-01/file-index.csv](results/cpu-additional-01/file-index.csv) adds52
 server files/6 portable records for initialization recheck and loading profile.

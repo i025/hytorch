@@ -58,6 +58,10 @@ processes on external resource conflict. The current prepared plan is generated 
 `run_window.py --plan UNIQUE.json` without touching CUDA.
 
 GPU collection-only log lists738 tests; collection is not GPU execution or PASS.
+The scripts' deadlines are intentionally bound to this finished task date. Do not
+reuse this controller as a fresh authorization or restart it after delivery.
+The retry outer wrapper's `.command.json` was not finalized; its actual command is
+recorded above and the available stdout/availability log is archived.
 
 ## CPU analysis and archival
 
@@ -68,3 +72,14 @@ python docs/experiments/fused-sgd-cuda/scripts/archive_results.py --destination 
 
 No hash/fingerprint procedure is used. Git commit IDs record versions, not a file
 integrity verification scheme. Large inputs, arrays and traces stay server-only.
+
+Final archival only, after budget expiry and with no new numerical/GPU experiment:
+
+```bash
+git diff -- docs/experiments/autonomous-optimization-6h/scripts/measure_training.py > runs/autonomous_optimization_01/unfinished-epoch-timing.patch
+git restore -- docs/experiments/autonomous-optimization-6h/scripts/measure_training.py
+python docs/experiments/fused-sgd-cuda/scripts/archive_results.py --destination docs/experiments/autonomous-optimization-6h/results/final-raw-01 runs/autonomous_optimization_01
+git -c credential.interactive=false push --dry-run origin HEAD:experiment/hytorch-autonomous-optimization
+```
+
+The push check fails for missing HTTPS credentials; no remote publication is claimed.

@@ -1,6 +1,7 @@
 # Six-hour research timeline
 
-All times UTC. Start: **2026-11-04 17:36:35**. Deadline: **2026-11-04 23:36:35**.
+Raw timeline times below are UTC. 北京时间开始：**2026-11-05 01:36:35**；截止：**07:36:35**。
+UTC start: **2026-11-04 17:36:35**. Deadline: **2026-11-04 23:36:35**.
 New GPU work should stop by 23:06:35 to leave approximately 30 minutes for archival and publication.
 
 | Time | Action | State / evidence |
@@ -19,6 +20,10 @@ New GPU work should stop by 23:06:35 to leave approximately 30 minutes for archi
 | 18:20 | CPU loading profile | Decode and resize are substantial measured CPU costs; no third optimization introduced |
 | 18:22 | Final full CPU regression | 103 passed /0 failed /0 skipped; seeded default shuffle also preserved |
 | 18:30 | CPU-only dynamic loading check | ABI1 and new native ReLU symbol load with CUDA_VISIBLE_DEVICES=''; GPU correctness still NOT_RUN |
+| 18:44:50 | Same-GPU retry stops at preflight | Idle check fails before CUDA child launch. No precheck snapshot saved, so exact field/process cause is unavailable. Monitoring ends here |
+| 18:44:50–next day02:37:53 | No new recorded monitoring or experiments | Do not claim continuous six-hour observation or infer GPU availability during this gap |
+| 2026-11-05 02:37:53 | Next observed command / recovery | 北京时间10:37:53，already past six-hour deadline. Stop new research; do not run GPU tests even if devices become idle |
+| 02:39–final archival commit | Close out only | Confirm no own GPU/monitor process, preserve unfinished timing draft server-only and restore committed code, index198 raw files, record NOT_RUN and credential-blocked push. Delivery exceeds wall budget |
 
 This host has no managed-cloud environment status tool or `/etc/codex/network-policy.json`.
 No managed-cloud credential readiness is inferred from their absence.

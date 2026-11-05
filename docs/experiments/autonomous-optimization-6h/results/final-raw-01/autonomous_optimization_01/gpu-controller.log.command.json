@@ -1,0 +1,39 @@
+{
+  "command": [
+    "python",
+    "docs/experiments/autonomous-optimization-6h/scripts/wait_for_gpu.py",
+    "--log",
+    "runs/autonomous_optimization_01/availability.jsonl",
+    "--",
+    "python",
+    "docs/experiments/autonomous-optimization-6h/scripts/run_window.py",
+    "--prepared",
+    "runs/udacity_real_prepared_01",
+    "--cache",
+    "runs/autonomous_optimization_01/cpu-preparation/epoch-1-inputs.npz",
+    "--library",
+    "runs/autonomous_optimization_01/build-prototypes/libhytorch_cuda.so",
+    "--output",
+    "runs/autonomous_optimization_01/gpu-window"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-04T17:53:26.309786+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_PATH": "/usr/local/cuda-12.2",
+    "LD_LIBRARY_PATH": "/usr/local/cuda-12.2/lib64",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "HYTORCH_GEMM_BUILD_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.hytorch_build/a100-stage2a-host",
+    "MPLCONFIGDIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.matplotlib_cache",
+    "CUPY_CACHE_DIR": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cupy-cache",
+    "CUDA_CACHE_PATH": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/cuda-cache",
+    "PYTHONPATH": null,
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 1,
+  "elapsed_s": 96.46069205505773,
+  "finished_at": "2026-11-04T17:55:02.770521+00:00"
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "numerical-replay",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/diagnose_replay.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--cache",
+      "runs/autonomous_optimization_01/cpu-preparation/epoch-1-inputs.npz",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/numerical-replay"
+    ],
+    "started_at": "2026-11-04T17:54:57.675974+00:00",
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "library": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/autonomous_optimization_01/build-prototypes/libhytorch_cuda.so",
+    "pid": 3428466,
+    "returncode": -15,
+    "finished_at": "2026-11-04T17:55:02.520826+00:00"
+  }
+]

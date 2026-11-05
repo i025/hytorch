@@ -1,0 +1,2610 @@
+[
+  {
+    "name": "numerical-replay",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/diagnose_replay.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--cache",
+      "runs/autonomous_optimization_01/cpu-preparation/epoch-1-inputs.npz",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/numerical-replay"
+    ]
+  },
+  {
+    "name": "relu-tests",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_relu_backward_gpu.py",
+      "-q",
+      "-ra",
+      "--junitxml=runs/autonomous_optimization_01/gpu-window/relu-tests.xml"
+    ]
+  },
+  {
+    "name": "gpu-regression",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_conv_dweight_gpu.py",
+      "tests/test_conv_dinput_opt_gpu.py",
+      "tests/test_conv_shape_dispatch_gpu.py",
+      "tests/test_conv_backward_fusion_gpu.py",
+      "tests/test_fused_sgd_gpu.py",
+      "tests/test_conv_dinput_pruning.py",
+      "-q",
+      "-ra",
+      "--junitxml=runs/autonomous_optimization_01/gpu-window/gpu-regression.xml"
+    ]
+  },
+  {
+    "name": "prototype-correctness",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/check_prototypes.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/prototype-correctness"
+    ]
+  },
+  {
+    "name": "long-j-correctness",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/check_long_j.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--reference",
+      "runs/autonomous_optimization_01/gpu-window/numerical-replay",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/long-j-correctness"
+    ]
+  },
+  {
+    "name": "relu-micro",
+    "method": null,
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/bench_relu.py",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/relu-micro"
+    ]
+  },
+  {
+    "name": "compute-donkey-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-A-r1"
+    ]
+  },
+  {
+    "name": "compute-donkey-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-F-r1"
+    ]
+  },
+  {
+    "name": "compute-donkey-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-I-r1"
+    ]
+  },
+  {
+    "name": "compute-donkey-P-r1",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-P-r1"
+    ]
+  },
+  {
+    "name": "compute-donkey-R-r1",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-R-r1"
+    ]
+  },
+  {
+    "name": "compute-donkey-J-r1",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-J-r1"
+    ]
+  },
+  {
+    "name": "compute-donkey-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-E-r1"
+    ]
+  },
+  {
+    "name": "compute-spatial-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-A-r1"
+    ]
+  },
+  {
+    "name": "compute-spatial-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-F-r1"
+    ]
+  },
+  {
+    "name": "compute-spatial-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-I-r1"
+    ]
+  },
+  {
+    "name": "compute-spatial-P-r1",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-P-r1"
+    ]
+  },
+  {
+    "name": "compute-spatial-R-r1",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-R-r1"
+    ]
+  },
+  {
+    "name": "compute-spatial-J-r1",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-J-r1"
+    ]
+  },
+  {
+    "name": "compute-spatial-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-E-r1"
+    ]
+  },
+  {
+    "name": "compute-donkey-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-F-r2"
+    ]
+  },
+  {
+    "name": "compute-donkey-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-I-r2"
+    ]
+  },
+  {
+    "name": "compute-donkey-P-r2",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-P-r2"
+    ]
+  },
+  {
+    "name": "compute-donkey-R-r2",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-R-r2"
+    ]
+  },
+  {
+    "name": "compute-donkey-J-r2",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-J-r2"
+    ]
+  },
+  {
+    "name": "compute-donkey-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-E-r2"
+    ]
+  },
+  {
+    "name": "compute-donkey-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-A-r2"
+    ]
+  },
+  {
+    "name": "compute-spatial-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-F-r2"
+    ]
+  },
+  {
+    "name": "compute-spatial-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-I-r2"
+    ]
+  },
+  {
+    "name": "compute-spatial-P-r2",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-P-r2"
+    ]
+  },
+  {
+    "name": "compute-spatial-R-r2",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-R-r2"
+    ]
+  },
+  {
+    "name": "compute-spatial-J-r2",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-J-r2"
+    ]
+  },
+  {
+    "name": "compute-spatial-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-E-r2"
+    ]
+  },
+  {
+    "name": "compute-spatial-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-A-r2"
+    ]
+  },
+  {
+    "name": "compute-donkey-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-I-r3"
+    ]
+  },
+  {
+    "name": "compute-donkey-P-r3",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-P-r3"
+    ]
+  },
+  {
+    "name": "compute-donkey-R-r3",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-R-r3"
+    ]
+  },
+  {
+    "name": "compute-donkey-J-r3",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-J-r3"
+    ]
+  },
+  {
+    "name": "compute-donkey-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-E-r3"
+    ]
+  },
+  {
+    "name": "compute-donkey-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-A-r3"
+    ]
+  },
+  {
+    "name": "compute-donkey-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-donkey-F-r3"
+    ]
+  },
+  {
+    "name": "compute-spatial-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-I-r3"
+    ]
+  },
+  {
+    "name": "compute-spatial-P-r3",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-P-r3"
+    ]
+  },
+  {
+    "name": "compute-spatial-R-r3",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-R-r3"
+    ]
+  },
+  {
+    "name": "compute-spatial-J-r3",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-J-r3"
+    ]
+  },
+  {
+    "name": "compute-spatial-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-E-r3"
+    ]
+  },
+  {
+    "name": "compute-spatial-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-A-r3"
+    ]
+  },
+  {
+    "name": "compute-spatial-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "compute",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/compute-spatial-F-r3"
+    ]
+  },
+  {
+    "name": "io-donkey-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-A-r1"
+    ]
+  },
+  {
+    "name": "io-donkey-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-F-r1"
+    ]
+  },
+  {
+    "name": "io-donkey-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-I-r1"
+    ]
+  },
+  {
+    "name": "io-donkey-P-r1",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-P-r1"
+    ]
+  },
+  {
+    "name": "io-donkey-R-r1",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-R-r1"
+    ]
+  },
+  {
+    "name": "io-donkey-J-r1",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-J-r1"
+    ]
+  },
+  {
+    "name": "io-donkey-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-E-r1"
+    ]
+  },
+  {
+    "name": "io-spatial-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-A-r1"
+    ]
+  },
+  {
+    "name": "io-spatial-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-F-r1"
+    ]
+  },
+  {
+    "name": "io-spatial-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-I-r1"
+    ]
+  },
+  {
+    "name": "io-spatial-P-r1",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-P-r1"
+    ]
+  },
+  {
+    "name": "io-spatial-R-r1",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-R-r1"
+    ]
+  },
+  {
+    "name": "io-spatial-J-r1",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-J-r1"
+    ]
+  },
+  {
+    "name": "io-spatial-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-E-r1"
+    ]
+  },
+  {
+    "name": "io-donkey-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-F-r2"
+    ]
+  },
+  {
+    "name": "io-donkey-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-I-r2"
+    ]
+  },
+  {
+    "name": "io-donkey-P-r2",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-P-r2"
+    ]
+  },
+  {
+    "name": "io-donkey-R-r2",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-R-r2"
+    ]
+  },
+  {
+    "name": "io-donkey-J-r2",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-J-r2"
+    ]
+  },
+  {
+    "name": "io-donkey-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-E-r2"
+    ]
+  },
+  {
+    "name": "io-donkey-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-A-r2"
+    ]
+  },
+  {
+    "name": "io-spatial-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-F-r2"
+    ]
+  },
+  {
+    "name": "io-spatial-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-I-r2"
+    ]
+  },
+  {
+    "name": "io-spatial-P-r2",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-P-r2"
+    ]
+  },
+  {
+    "name": "io-spatial-R-r2",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-R-r2"
+    ]
+  },
+  {
+    "name": "io-spatial-J-r2",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-J-r2"
+    ]
+  },
+  {
+    "name": "io-spatial-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-E-r2"
+    ]
+  },
+  {
+    "name": "io-spatial-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-A-r2"
+    ]
+  },
+  {
+    "name": "io-donkey-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-I-r3"
+    ]
+  },
+  {
+    "name": "io-donkey-P-r3",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-P-r3"
+    ]
+  },
+  {
+    "name": "io-donkey-R-r3",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-R-r3"
+    ]
+  },
+  {
+    "name": "io-donkey-J-r3",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-J-r3"
+    ]
+  },
+  {
+    "name": "io-donkey-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-E-r3"
+    ]
+  },
+  {
+    "name": "io-donkey-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-A-r3"
+    ]
+  },
+  {
+    "name": "io-donkey-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-donkey-F-r3"
+    ]
+  },
+  {
+    "name": "io-spatial-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-I-r3"
+    ]
+  },
+  {
+    "name": "io-spatial-P-r3",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-P-r3"
+    ]
+  },
+  {
+    "name": "io-spatial-R-r3",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-R-r3"
+    ]
+  },
+  {
+    "name": "io-spatial-J-r3",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-J-r3"
+    ]
+  },
+  {
+    "name": "io-spatial-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-E-r3"
+    ]
+  },
+  {
+    "name": "io-spatial-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-A-r3"
+    ]
+  },
+  {
+    "name": "io-spatial-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "io",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/io-spatial-F-r3"
+    ]
+  },
+  {
+    "name": "phases-donkey-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-A-r1"
+    ]
+  },
+  {
+    "name": "phases-donkey-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-F-r1"
+    ]
+  },
+  {
+    "name": "phases-donkey-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-I-r1"
+    ]
+  },
+  {
+    "name": "phases-donkey-P-r1",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-P-r1"
+    ]
+  },
+  {
+    "name": "phases-donkey-R-r1",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-R-r1"
+    ]
+  },
+  {
+    "name": "phases-donkey-J-r1",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-J-r1"
+    ]
+  },
+  {
+    "name": "phases-donkey-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-E-r1"
+    ]
+  },
+  {
+    "name": "phases-spatial-A-r1",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-A-r1"
+    ]
+  },
+  {
+    "name": "phases-spatial-F-r1",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-F-r1"
+    ]
+  },
+  {
+    "name": "phases-spatial-I-r1",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-I-r1"
+    ]
+  },
+  {
+    "name": "phases-spatial-P-r1",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-P-r1"
+    ]
+  },
+  {
+    "name": "phases-spatial-R-r1",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-R-r1"
+    ]
+  },
+  {
+    "name": "phases-spatial-J-r1",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-J-r1"
+    ]
+  },
+  {
+    "name": "phases-spatial-E-r1",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-E-r1"
+    ]
+  },
+  {
+    "name": "phases-donkey-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-F-r2"
+    ]
+  },
+  {
+    "name": "phases-donkey-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-I-r2"
+    ]
+  },
+  {
+    "name": "phases-donkey-P-r2",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-P-r2"
+    ]
+  },
+  {
+    "name": "phases-donkey-R-r2",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-R-r2"
+    ]
+  },
+  {
+    "name": "phases-donkey-J-r2",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-J-r2"
+    ]
+  },
+  {
+    "name": "phases-donkey-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-E-r2"
+    ]
+  },
+  {
+    "name": "phases-donkey-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-A-r2"
+    ]
+  },
+  {
+    "name": "phases-spatial-F-r2",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-F-r2"
+    ]
+  },
+  {
+    "name": "phases-spatial-I-r2",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-I-r2"
+    ]
+  },
+  {
+    "name": "phases-spatial-P-r2",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-P-r2"
+    ]
+  },
+  {
+    "name": "phases-spatial-R-r2",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-R-r2"
+    ]
+  },
+  {
+    "name": "phases-spatial-J-r2",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-J-r2"
+    ]
+  },
+  {
+    "name": "phases-spatial-E-r2",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-E-r2"
+    ]
+  },
+  {
+    "name": "phases-spatial-A-r2",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-A-r2"
+    ]
+  },
+  {
+    "name": "phases-donkey-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-I-r3"
+    ]
+  },
+  {
+    "name": "phases-donkey-P-r3",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-P-r3"
+    ]
+  },
+  {
+    "name": "phases-donkey-R-r3",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-R-r3"
+    ]
+  },
+  {
+    "name": "phases-donkey-J-r3",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-J-r3"
+    ]
+  },
+  {
+    "name": "phases-donkey-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-E-r3"
+    ]
+  },
+  {
+    "name": "phases-donkey-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-A-r3"
+    ]
+  },
+  {
+    "name": "phases-donkey-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "donkey",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-donkey-F-r3"
+    ]
+  },
+  {
+    "name": "phases-spatial-I-r3",
+    "method": "I",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-I-r3"
+    ]
+  },
+  {
+    "name": "phases-spatial-P-r3",
+    "method": "P",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "P",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-P-r3"
+    ]
+  },
+  {
+    "name": "phases-spatial-R-r3",
+    "method": "R",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "R",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-R-r3"
+    ]
+  },
+  {
+    "name": "phases-spatial-J-r3",
+    "method": "J",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-J-r3"
+    ]
+  },
+  {
+    "name": "phases-spatial-E-r3",
+    "method": "E",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "E",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-E-r3"
+    ]
+  },
+  {
+    "name": "phases-spatial-A-r3",
+    "method": "A",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "A",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-A-r3"
+    ]
+  },
+  {
+    "name": "phases-spatial-F-r3",
+    "method": "F",
+    "command": [
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "phases",
+      "--model",
+      "spatial",
+      "--method",
+      "F",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/phases-spatial-F-r3"
+    ]
+  },
+  {
+    "name": "trace-donkey-I",
+    "method": "I",
+    "command": [
+      "nsys",
+      "profile",
+      "--trace=cuda,nvtx",
+      "--sample=none",
+      "--cpuctxsw=none",
+      "-o",
+      "runs/autonomous_optimization_01/gpu-window/trace-donkey-I",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "trace",
+      "--model",
+      "donkey",
+      "--method",
+      "I",
+      "--steps",
+      "32",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/trace-donkey-I"
+    ]
+  },
+  {
+    "name": "trace-donkey-J",
+    "method": "J",
+    "command": [
+      "nsys",
+      "profile",
+      "--trace=cuda,nvtx",
+      "--sample=none",
+      "--cpuctxsw=none",
+      "-o",
+      "runs/autonomous_optimization_01/gpu-window/trace-donkey-J",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "trace",
+      "--model",
+      "donkey",
+      "--method",
+      "J",
+      "--steps",
+      "32",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/trace-donkey-J"
+    ]
+  },
+  {
+    "name": "trace-spatial-I",
+    "method": "I",
+    "command": [
+      "nsys",
+      "profile",
+      "--trace=cuda,nvtx",
+      "--sample=none",
+      "--cpuctxsw=none",
+      "-o",
+      "runs/autonomous_optimization_01/gpu-window/trace-spatial-I",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "trace",
+      "--model",
+      "spatial",
+      "--method",
+      "I",
+      "--steps",
+      "32",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/trace-spatial-I"
+    ]
+  },
+  {
+    "name": "trace-spatial-J",
+    "method": "J",
+    "command": [
+      "nsys",
+      "profile",
+      "--trace=cuda,nvtx",
+      "--sample=none",
+      "--cpuctxsw=none",
+      "-o",
+      "runs/autonomous_optimization_01/gpu-window/trace-spatial-J",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/measure_training.py",
+      "--prepared",
+      "runs/udacity_real_prepared_01",
+      "--no-fingerprints",
+      "--task",
+      "trace",
+      "--model",
+      "spatial",
+      "--method",
+      "J",
+      "--steps",
+      "32",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/trace-spatial-J"
+    ]
+  },
+  {
+    "name": "trace-relu-micro",
+    "method": null,
+    "command": [
+      "nsys",
+      "profile",
+      "--trace=cuda,nvtx",
+      "--sample=none",
+      "--cpuctxsw=none",
+      "-o",
+      "runs/autonomous_optimization_01/gpu-window/trace-relu-micro",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/bin/python",
+      "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/autonomous-optimization-6h/scripts/bench_relu.py",
+      "--trace",
+      "--output",
+      "runs/autonomous_optimization_01/gpu-window/trace-relu-micro"
+    ]
+  }
+]

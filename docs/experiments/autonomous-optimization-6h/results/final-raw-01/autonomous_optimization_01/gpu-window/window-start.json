@@ -1,0 +1,11 @@
+{
+  "status": "RUNNING",
+  "physical_gpu": 0,
+  "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "logical_gpu": 0,
+  "resource_condition": "OBSERVED_IDLE_GPU; no exclusive lease",
+  "started_at": "2026-11-04T17:54:57.674669+00:00",
+  "device_switches": 0,
+  "gpu_reset_called": false,
+  "parent_creates_cuda_context": false
+}

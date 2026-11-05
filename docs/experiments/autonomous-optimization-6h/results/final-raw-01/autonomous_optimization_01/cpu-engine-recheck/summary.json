@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETED",
+  "wall_s": 3.3259381679818034,
+  "cpu_comparisons": 510,
+  "cpu_failed_groups": 0,
+  "fp64_comparisons": 1020,
+  "fp64_failed_groups": 0,
+  "scope": "CPU-only common initial/final state; not a CUDA replay or intermediate checkpoint recovery",
+  "gpu_status": "NOT_RUN by this CPU-only command",
+  "states": [
+    "initial",
+    "final-A",
+    "final-F",
+    "final-I",
+    "final-E"
+  ],
+  "batch_steps": [
+    1,
+    863,
+    1422
+  ]
+}

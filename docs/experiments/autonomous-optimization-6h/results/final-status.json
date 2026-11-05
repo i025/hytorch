@@ -1,0 +1,55 @@
+{
+  "status": "PARTIAL",
+  "research_status": "STOPPED",
+  "started_at_utc": "2026-11-04T17:36:35Z",
+  "deadline_utc": "2026-11-04T23:36:35Z",
+  "last_monitor_record_utc": "2026-11-04T18:44:50.997215+00:00",
+  "next_observed_command_utc": "2026-11-05T02:37:53Z",
+  "finalized_at_utc": "2026-11-05T02:40:33.763016+00:00",
+  "completed_within_six_hour_wall_budget": false,
+  "new_experiments_after_deadline": false,
+  "cpu_pytest": {
+    "passed": 103,
+    "failed": 0,
+    "skipped": 0
+  },
+  "cpu_same_state_groups": 510,
+  "cpu_fp64_groups": 1020,
+  "cpu_trajectory_replay_groups": 612,
+  "cpu_trajectory_strict_loss_failures": {
+    "A_E": 361,
+    "A_FP64": 386,
+    "E_FP64": 452
+  },
+  "gpu_correctness": "NOT_RUN",
+  "gpu_regression": "738 collected; NOT_RUN",
+  "gpu_operator_performance": "NOT_RUN",
+  "gpu_training_performance": "NOT_RUN",
+  "nsight": "NOT_RUN",
+  "training_speedup_J_I": null,
+  "training_speedup_J_A": null,
+  "training_throughput_J_E": null,
+  "selected_physical_gpu": 0,
+  "selected_uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+  "cuda_logical_gpu": 0,
+  "device_switches": 0,
+  "gpu_reset": false,
+  "gpu_window_1": {
+    "start_utc": "2026-11-04T17:54:57.674669+00:00",
+    "end_utc": "2026-11-04T17:55:02.521555+00:00",
+    "completed_jobs": 0,
+    "reason": "New external PID3427844; own process stopped"
+  },
+  "gpu_attempt_2": {
+    "observed_utc": "2026-11-04T18:44:50.997215+00:00",
+    "status": "PRECHECK_FAILED",
+    "gpu_children_started": 0,
+    "reason": "Idle assertion failed; precheck snapshot was not written, exact triggering field unavailable"
+  },
+  "resources_released": true,
+  "release_evidence": "Only external PID3729603 visible on GPU0 at final read; no own experiment or monitor Python process found",
+  "github_push": "BLOCKED_MISSING_CREDENTIALS",
+  "retained_source_commit": "80ead58",
+  "unfinished_timing_draft": "Server-only patch retained; restored to last committed benchmark before delivery",
+  "note": "No evidence of continuous six-hour monitoring: records end at18:44; do not backfill the unobserved interval"
+}

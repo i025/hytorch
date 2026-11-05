@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-11-04T17:55:02.752869+00:00",
+  "gpu": {
+    "index": "0",
+    "uuid": "GPU-f099fdbd-adf2-6157-3462-4145bc2a8359",
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory.total": "40960",
+    "memory.used": "2550",
+    "utilization.gpu": "27",
+    "temperature.gpu": "36",
+    "power.draw": "48.09",
+    "clocks.sm": "840",
+    "clocks.mem": "1215",
+    "driver_version": "535.247.01"
+  },
+  "processes": [
+    {
+      "pid": 3427844,
+      "name": "/home/sunzhiyuanx/miniforge3/envs/bagel/bin/python",
+      "memory_mib": "2802"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "status": "COMPLETED",
+  "original_data_unchanged": true,
+  "source": "/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/results/acceptance-01/validation-predictions.csv",
+  "scope": "Historical held-out validation observations; no hyperparameter or split changes, no closed-loop driving claim"
+}

@@ -1,0 +1,60 @@
+2026-11-04T17:58:53.864258+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T17:59:40.438376+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:00:25.746585+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:01:11.060338+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:01:56.368264+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:02:46.968421+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:03:32.259499+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:04:22.461348+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:05:07.759469+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:05:53.071304+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:06:38.376561+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:07:23.687105+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:08:09.005288+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:08:54.298840+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:09:39.583763+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:10:24.884908+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:11:10.200665+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:11:55.487266+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:12:40.766556+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:13:26.084181+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:14:11.392739+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:15:07.340195+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:16:02.570781+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:16:58.243416+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:17:54.007162+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:18:49.736706+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:19:45.934521+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:20:41.937287+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:21:37.444978+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:22:32.909572+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:23:28.812683+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:24:25.603177+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:25:21.339273+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:26:17.494531+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:27:13.627532+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:28:09.122672+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:29:05.332058+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:30:01.498915+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:30:57.329078+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:31:53.367294+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:32:49.140371+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:33:45.384958+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:34:40.723604+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:35:36.440718+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:36:32.224440+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:37:27.493052+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:38:23.516147+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:39:19.121906+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:40:14.025017+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:41:08.863371+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:42:04.221104+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:42:59.874558+00:00 No sustained idle GPU; no CUDA context or memory held
+2026-11-04T18:43:55.443918+00:00 No sustained idle GPU; no CUDA context or memory held
+SELECTED 0 GPU-f099fdbd-adf2-6157-3462-4145bc2a8359 2026-11-04T18:44:50.997215+00:00
+Traceback (most recent call last):
+  File "docs/experiments/autonomous-optimization-6h/scripts/run_window.py", line 211, in <module>
+    main()
+  File "docs/experiments/autonomous-optimization-6h/scripts/run_window.py", line 138, in main
+    assert not baseline['processes'] and int(baseline['gpu']['memory.used']) < 500, 'An idle allocated device is required'
+AssertionError: An idle allocated device is required

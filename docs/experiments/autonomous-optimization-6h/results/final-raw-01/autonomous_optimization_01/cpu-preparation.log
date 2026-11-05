@@ -1,0 +1,13 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"repeat": 1, "workers": 0, "samples": 1024, "wall_s": 1.1056503606960177, "samples_per_sec": 926.1517351248201, "exact_pixels": true, "exact_targets": true}
+{"repeat": 1, "workers": 1, "samples": 1024, "wall_s": 0.9374784119427204, "samples_per_sec": 1092.2918191555818, "exact_pixels": true, "exact_targets": true}
+{"repeat": 1, "workers": 2, "samples": 1024, "wall_s": 0.5947493030689657, "samples_per_sec": 1721.733837628826, "exact_pixels": true, "exact_targets": true}
+{"repeat": 1, "workers": 4, "samples": 1024, "wall_s": 0.6369018503464758, "samples_per_sec": 1607.7830507839506, "exact_pixels": true, "exact_targets": true}
+{"repeat": 2, "workers": 1, "samples": 1024, "wall_s": 0.9873441639356315, "samples_per_sec": 1037.125692745532, "exact_pixels": true, "exact_targets": true}
+{"repeat": 2, "workers": 2, "samples": 1024, "wall_s": 0.6273864856921136, "samples_per_sec": 1632.1677679594172, "exact_pixels": true, "exact_targets": true}
+{"repeat": 2, "workers": 4, "samples": 1024, "wall_s": 0.5581170492805541, "samples_per_sec": 1834.7405823204947, "exact_pixels": true, "exact_targets": true}
+{"repeat": 2, "workers": 0, "samples": 1024, "wall_s": 0.8617332158610225, "samples_per_sec": 1188.3028078206833, "exact_pixels": true, "exact_targets": true}
+{"repeat": 3, "workers": 2, "samples": 1024, "wall_s": 0.6054766275919974, "samples_per_sec": 1691.229608767039, "exact_pixels": true, "exact_targets": true}
+{"repeat": 3, "workers": 4, "samples": 1024, "wall_s": 0.5447311950847507, "samples_per_sec": 1879.8262505246896, "exact_pixels": true, "exact_targets": true}
+{"repeat": 3, "workers": 0, "samples": 1024, "wall_s": 0.870749207213521, "samples_per_sec": 1175.9987738339676, "exact_pixels": true, "exact_targets": true}
+{"repeat": 3, "workers": 1, "samples": 1024, "wall_s": 0.8926641917787492, "samples_per_sec": 1147.1279003132713, "exact_pixels": true, "exact_targets": true}
