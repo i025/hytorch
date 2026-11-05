@@ -29,7 +29,7 @@ def main():
     state=dict(status='RUNNING',uuid=uuid,physical_gpu=0,logical_gpu=0,device_switches=0,
         started_utc=datetime.now(timezone.utc).isoformat(),before=before,commands=[],
         lease='Observed idle and user-authorized GPU0; no exclusive scheduler lease',gates={})
-    env=dict(os.environ,CUDA_VISIBLE_DEVICES=uuid,CUDA_DEVICE_ORDER='PCI_BUS_ID',NVIDIA_TF32_OVERRIDE='0',
+    env=dict(os.environ,CUDA_VISIBLE_DEVICES=uuid,CUDA_DEVICE_ORDER='PCI_BUS_ID',NVIDIA_TF32_OVERRIDE='0',PYTHONHASHSEED='0',
         OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',PYTHONPATH=str(ROOT),
         HYTORCH_CUDA_LIBRARY=plan['library'],HYTORCH_REQUIRE_CUDA='1',HYTORCH_PRUNING_DEVICE='cuda',
         HYTORCH_SHAPE_TEST_OUTPUT=str(out/'test-arrays'),HYTORCH_PRUNING_TEST_OUTPUT=str(out/'pruning-arrays'),

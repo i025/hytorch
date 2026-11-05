@@ -60,7 +60,7 @@ def main():
     rng = np.random.default_rng(42)
     rows = []
     errors = []
-    with (args.output/'timings.csv').open('x', newline='') as file:
+    with (args.output/'timings.csv').open('x', newline='') as file, backend(reduction='native'):
         writer = None
         for case, (shape, axis) in enumerate(CASES):
             host = rng.standard_normal(shape).astype(np.float32)
@@ -73,8 +73,7 @@ def main():
             workspace = cp.empty((layout.outputs, parts), cp.float32) if parts>1 else None
             rt.reduce_sum(x, axis)  # Bind ABI and compile library dependencies before timing.
             def full():
-                with backend(reduction='native'):
-                    return rt.sum_array(x, axis)
+                return rt.sum_array(x, axis)
             def preallocated():
                 rt._call('hy_reduce_sum', rt._ptr(x), rt._ptr(y), rt._ptr(workspace), layout, parts)
                 return y

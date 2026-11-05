@@ -1,0 +1,2 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{'status': 'COMPLETED', 'gpu': 'NOT_RUN', 'measurements': 130, 'warning': 'Host ABI version has no arguments or launch; NOT equivalent to hy_reduce_sum CUDA submission', 'finished_utc': '2026-11-05T16:51:02.719876+00:00'}
