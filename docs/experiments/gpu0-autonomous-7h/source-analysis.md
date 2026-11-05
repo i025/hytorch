@@ -76,7 +76,7 @@ CPU 长轨迹的对数误差图把实际为0的误差点显示在1e-12处；这�
 不把互相嵌套的 cumulative time 相加。原始调用表见
 [calls.csv](benchmarks/cpu-calls-01/cpu-calls-01/calls.csv)。
 
-| CPU 工作负载 | Function.__call__/step | Variable.__init__/step | as_variable/step | np.isscalar/step | ready 入队/step |
+| CPU 工作负载 | Function.__call__/step | Variable.__init__/step | as_variable/step | np.isscalar/step | add_func调用/step |
 |---|---:|---:|---:|---:|---:|
 | DonkeyNet | 66 | 83 | 122 | 82 | 21 |
 | SpatialNet | 41 | 53 | 75 | 54 | 12 |
@@ -84,6 +84,7 @@ CPU 长轨迹的对数误差图把实际为0的误差点显示在1e-12处；这�
 | 分支256 | 2052 | 2566 | 3847 | 3590 | 1024 |
 
 调用量包括 Forward 与 Backward 创建的临时 Variable/Function，不等于 GPU Kernel Launch 数。
+add_func调用包含已在seen_set中的重复检查，不等于实际入队或执行的Function数。
 例如 DonkeyNet 的 Variable.__init__ self time 为75.057µs/step，np.isscalar 为113.042µs/step，
 但 Function.__call__ 的 self time 也可能包含数组释放、GC 或未单独记录的 C 调用。
 这些都是带 cProfile 插桩的 CPU 记录，不能当作未插桩延迟，更不能直接当作 GPU 训练主机开销。

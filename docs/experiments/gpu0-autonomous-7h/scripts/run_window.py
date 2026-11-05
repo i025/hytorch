@@ -109,7 +109,9 @@ def main():
         state['gates']['training']=training;save()
         for task in ('compute','io','phases'):
             for repeat in range(3):
-                methods=['A','I','P','R','S','J','E','E-prefetch'];methods=methods[repeat:]+methods[:repeat]
+                methods=['A','I','P','R','S','J','E','E-prefetch']
+                offset=repeat*3  # Spread early/late positions across the three repeats.
+                methods=methods[offset:]+methods[:offset]
                 for model in ('donkey','spatial'):
                     for method in methods:
                         if not training['eligible'][model].get(method,False):continue

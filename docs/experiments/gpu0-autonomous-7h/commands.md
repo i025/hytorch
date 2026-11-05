@@ -49,6 +49,7 @@ Sum测试原始失败不修改：普通输入/实现资格、强消去误差分�
 复用4H `runs/udacity_real_prepared_01/protocol.json`、`throughput-inputs.npz`、真实CSV和固定indices。
 同步与2worker预取都使用同一个UdacityDataset/open_stream=True；E-prefetch获得同样的CPU预取。
 10预热重置，256step×3独立重复，轮换方法；compute/io/phases分别运行。
+八种方法按0/3/6个位置轮换，分散三次重复中的前后次序；按实际数值资格跳过的方法仍记录在gate中。
 每轮CPU/GPU原型都有独立目录，不覆盖历史。
 
 ## 离线解析

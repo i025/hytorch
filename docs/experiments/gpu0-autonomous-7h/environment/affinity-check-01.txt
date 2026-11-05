@@ -1,0 +1,3 @@
+17169 cpu_affinity=[0, 1, 2, 3]
+105111 cpu_affinity=[0, 1, 2, 3]
+113578 cpu_affinity=[0, 1, 2, 3]
