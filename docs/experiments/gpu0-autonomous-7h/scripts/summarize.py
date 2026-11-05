@@ -4,6 +4,7 @@ import csv
 from datetime import datetime,timezone,timedelta
 import json
 from pathlib import Path
+import re
 import statistics
 import xml.etree.ElementTree as ET
 
@@ -132,13 +133,87 @@ def main():
                 ax.set_ylabel('Samples/s, mean ± SD of independent runs');ax.set_title(model+' / '+task+' / uninstrumented matched GPU0')
                 fig.tight_layout();fig.savefig(figures/f'training-{model}-{task}.png',dpi=150);plt.close(fig)
     write_csv(out/'training-ratios.csv',ratios)
+    operator=[]
+    for name,filename,method_key,wall_key in [('sum','timings.csv','method','full_sync_wall_us'),
+                                            ('relu','raw.csv','mode','synchronized_host_us')]:
+        path=gpu/(name+'-micro')/filename
+        if not path.exists():continue
+        records=list(csv.DictReader(path.open()))
+        for case,method in sorted({(r['case'],r[method_key]) for r in records}):
+            selected=[r for r in records if r['case']==case and r[method_key]==method]
+            repeat_means=[];event_means=[]
+            for repeat in sorted({r['repeat'] for r in selected}):
+                rr=[r for r in selected if r['repeat']==repeat]
+                repeat_means.append(statistics.mean(float(r[wall_key]) for r in rr))
+                event_means.append(statistics.mean(float(r['event_span_us']) for r in rr))
+            wall,sd=mean_sd(repeat_means);event,event_sd=mean_sd(event_means)
+            operator.append(dict(operator=name,case=case,method=method,repeats=len(repeat_means),
+                samples=len(selected),full_sync_wall_us=wall,full_sync_wall_sd_us=sd,
+                event_span_us=event,event_span_sd_us=event_sd,
+                scope='Uninstrumented full operation; CUDA Event span is not pure kernel time'))
+    write_csv(out/'operator-timing-summary.csv',operator)
+    for name in ('sum','relu'):
+        records=[r for r in operator if r['operator']==name]
+        if not records:continue
+        cases=sorted({r['case'] for r in records},key=int);methods=sorted({r['method'] for r in records})
+        fig,ax=plt.subplots(figsize=(12,4));width=.8/len(methods)
+        for i,method in enumerate(methods):
+            selected={r['case']:r for r in records if r['method']==method}
+            ax.bar(np.arange(len(cases))+(i-(len(methods)-1)/2)*width,
+                [selected[c]['full_sync_wall_us'] for c in cases],width,
+                yerr=[selected[c]['full_sync_wall_sd_us'] or 0 for c in cases],label=method)
+        ax.set_xticks(range(len(cases)),cases);ax.set_yscale('log');ax.set_ylabel('Full synchronized operator wall µs (log)')
+        ax.set_xlabel('Predeclared case index');ax.legend(fontsize=8)
+        ax.set_title(name+' / uninstrumented 3 repeats; no claim from kernel time alone')
+        fig.tight_layout();fig.savefig(figures/(name+'-full-operation.png'),dpi=150);plt.close(fig)
+    profiled=[]
+    for name in ('sum','relu'):
+        path=gpu/'offline-traces-01'/('trace-'+name+'-analysis')/'micro-kernels.csv'
+        if not path.exists():continue
+        records=list(csv.DictReader(path.open()))
+        keys=set()
+        for r in records:
+            case=re.match(r'c(\d+)_r\d+_',r['case'])[1] if name=='sum' else r['case']
+            r['actual_case']=case;keys.add((case,r['scope']))
+        for case,scope in sorted(keys):
+            selected=[r for r in records if r['actual_case']==case and r['scope']==scope]
+            profiled.append(dict(operator=name,case=case,scope=scope,calls=len(selected),
+                gpu_kernel_us_mean=statistics.mean(float(r['kernel_us']) for r in selected),
+                kernels_per_call=statistics.mean(int(r['kernels']) for r in selected),
+                launch_api_host_us_mean=statistics.mean(float(r['launch_api_us']) for r in selected),
+                scope_note='Separate Nsight-instrumented run, not normal throughput'))
+    write_csv(out/'profiled-kernel-summary.csv',profiled)
+    # Strict trajectory comparisons are retained separately from same-state acceptance.
+    trajectory=[]
+    for row in training:
+        if row['instrumented']:continue
+        match=re.search(r'-r(\d+)$',row['run'])
+        if not match:continue
+        repeat=match[1]
+        for reference in ('I','E'):
+            target=gpu/(row['task']+'-'+row['model']+'-'+reference+'-r'+repeat)
+            if not (target/'losses.jsonl').exists():continue
+            actual=[json.loads(v)['loss'] for v in (Path(row['source'])/'losses.jsonl').read_text().splitlines()]
+            old=[json.loads(v)['loss'] for v in (target/'losses.jsonl').read_text().splitlines()]
+            if len(actual)!=len(old):continue
+            error=np.abs(np.asarray(actual)-np.asarray(old));mask=error>1e-6+1e-5*np.abs(old)
+            trajectory.append(dict(run=row['run'],reference=reference,steps=len(actual),
+                loss_max_abs=float(error.max()),loss_failed_steps=int(mask.sum()),
+                first_loss_failed_step=int(np.flatnonzero(mask)[0]+1) if mask.any() else None,
+                atol=1e-6,rtol=1e-5,scope='Independent training trajectory, not common-state single step'))
+    write_csv(out/'training-trajectory-errors.csv',trajectory)
     summary=dict(status='FINAL' if a.final else 'INTERMEDIATE',monitor=monitor,window=window,gpu_tests=suites,
         cpu_regression=tests(report/'correctness/regression-final-01.xml' if (report/'correctness/regression-final-01.xml').exists() else report/'correctness/regression-01.xml'),
         cpu_schedule=json.loads((raw/'schedule-bench-02/summary.json').read_text()),
         cpu_sum_model=json.loads((raw/'cpu-sum-training-01/summary.json').read_text()) if (raw/'cpu-sum-training-01/summary.json').exists() else dict(status='NOT_RUN'),
+        cpu_sum_trajectory=json.loads((raw/'cpu-sum-trajectory-01/summary.json').read_text()) if (raw/'cpu-sum-trajectory-01/summary.json').exists()
+            else dict(status='PARTIAL' if (raw/'cpu-sum-trajectory-01/losses.jsonl').exists() else 'NOT_RUN'),
         protocol_check=dict(status='NOT_RUN' if not training else 'PASS' if not initial_errors else 'FAIL',errors=initial_errors,
             scope='Actual initial arrays and config equality, no hashes',runs=len(training)),
         training_completed_runs=len([r for r in training if not r['instrumented']]),
+        operator_groups=len(operator),profiled_kernel_groups=len(profiled),
+        strict_training_trajectory_status='NOT_RUN' if not trajectory else 'FAIL' if any(r['loss_failed_steps'] for r in trajectory) else 'PASS',
+        strict_training_trajectory_failures=sum(r['loss_failed_steps'] for r in trajectory),
         source_config=config,finished_utc=datetime.now(timezone.utc).isoformat())
     write_json(out/'summary.json',summary)
     status=('GPU窗口未执行' if window['status']=='NOT_RUN' else 'GPU窗口状态：'+window['status'])

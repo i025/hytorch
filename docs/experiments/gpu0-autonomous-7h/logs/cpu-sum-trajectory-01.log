@@ -1,0 +1,26 @@
+警告: 未找到scipy，无法加载SVHN数据集
+donkey original 1 0.0038305013440549374
+donkey original 16 0.01806526444852352
+donkey original 64 0.030952248722314835
+donkey original 128 0.0042871893383562565
+donkey original 255 0.04920068383216858
+donkey original 256 0.27632489800453186
+donkey cpu_model 1 0.0038305013440549374
+donkey cpu_model 16 0.01806526444852352
+donkey cpu_model 64 0.030952248722314835
+donkey cpu_model 128 0.0042871893383562565
+donkey cpu_model 255 0.04920068383216858
+donkey cpu_model 256 0.27632492780685425
+spatial original 1 0.009458186104893684
+spatial original 16 0.028126465156674385
+spatial original 64 0.02289767749607563
+spatial original 128 0.007045317441225052
+spatial original 255 0.04889272153377533
+spatial original 256 0.2879658043384552
+spatial cpu_model 1 0.00945819728076458
+spatial cpu_model 16 0.028126468881964684
+spatial cpu_model 64 0.022897658869624138
+spatial cpu_model 128 0.007045320700854063
+spatial cpu_model 255 0.04889271780848503
+spatial cpu_model 256 0.2879658341407776
+{'status': 'DIAGNOSIS_COMPLETED', 'gpu': 'NOT_RUN', 'steps_per_model_per_mode': 256, 'trajectory_failed': 0, 'replay_failed': 0, 'trajectory_comparisons': 812, 'replay_comparisons': 312, 'gpu_priority_pause_s': 0.04330804059281945, 'first_loss_failure': {'donkey': None, 'spatial': None}, 'finished_utc': '2026-11-05T17:44:00.076716+00:00', 'scope': 'CPU mathematical simulation of existing Sum; not a CUDA execution or performance benchmark'}

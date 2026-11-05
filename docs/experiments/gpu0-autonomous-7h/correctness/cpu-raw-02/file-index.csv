@@ -1,0 +1,60 @@
+server_path,bytes,github_record,storage
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/host-runtime-01/summary.json,234,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/host-runtime-01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/host-runtime-01/timings.csv,9579,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/host-runtime-01/timings.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-training-01/donkey-cpu_model.npz,6068560,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-training-01/donkey-original.npz,6068560,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-training-01/spatial-cpu_model.npz,162352,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-training-01/spatial-original.npz,162352,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-training-01/sum-calls.csv,44421,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-training-01/sum-calls.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-training-01/summary.json,296,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-training-01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-training-01/training-errors.csv,21474,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-training-01/training-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-cpu_model-step1.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-cpu_model-step128.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-cpu_model-step16.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-cpu_model-step255.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-cpu_model-step256.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-cpu_model-step64.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-initial.npz,1010930,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-original-step1.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-original-step128.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-original-step16.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-original-step255.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-original-step256.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-original-step64.npz,2022732,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-replay-errors.csv,28770,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-trajectory-01/donkey-replay-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-replay0.npz,4046734,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-replay1.npz,4046734,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-replay128.npz,4046734,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-replay16.npz,4046734,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-replay255.npz,4046734,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-replay64.npz,4046734,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/donkey-trajectory-errors.csv,66532,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-trajectory-01/donkey-trajectory-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/losses.csv,77448,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-trajectory-01/losses.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/losses.jsonl,129646,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-trajectory-01/losses.jsonl,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-cpu_model-step1.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-cpu_model-step128.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-cpu_model-step16.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-cpu_model-step255.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-cpu_model-step256.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-cpu_model-step64.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-initial.npz,26690,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-original-step1.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-original-step128.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-original-step16.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-original-step255.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-original-step256.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-original-step64.npz,54060,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-replay-errors.csv,16867,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-trajectory-01/spatial-replay-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-replay0.npz,108782,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-replay1.npz,108782,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-replay128.npz,108782,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-replay16.npz,108782,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-replay255.npz,108782,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-replay64.npz,108782,,server original only
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/spatial-trajectory-errors.csv,53992,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-trajectory-01/spatial-trajectory-errors.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01/summary.json,480,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/cpu-sum-trajectory-01/summary.json,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/historical-I-phase-01/apis.csv,398658,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/historical-I-phase-01/apis.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/historical-I-phase-01/kernels.csv,170176,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/historical-I-phase-01/kernels.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/historical-I-phase-01/phase-summary.csv,392,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/historical-I-phase-01/phase-summary.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/historical-I-phase-01/ranges.csv,3072,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/historical-I-phase-01/ranges.csv,Git portable record and server original
+/srv/lab-disks/disk2/users/xymo/projects/hytorch/runs/gpu0_autonomous_7h_01/historical-I-phase-01/summary.json,174,docs/experiments/gpu0-autonomous-7h/correctness/cpu-raw-02/historical-I-phase-01/summary.json,Git portable record and server original

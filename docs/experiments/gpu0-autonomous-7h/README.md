@@ -12,11 +12,12 @@
 ## 阶段性状态
 
 - SM80离线编译完成，现有CUDA Kernel未修改。
-- CPU主机回归210 passed、0 failed、0 skipped。
+- CPU最终主机回归213 passed、0 failed、0 skipped；此前210项及定向集合记录保留，不重复相加。
 - 新调度的CNN/Transformer CPU数值比较188项逐元素一致；默认仍list。
 - 初次新增测试2项因FP64字面量参考失败，改成FP32参考后14项通过，未改容差或生产数学。
 - 初次CPU benchmark因使用只创建一次的CSV辅助函数中断，修正增量写入后完成；两份失败日志保留。
 - CPU五次交替完整step：Donkey 311.831→307.846ms，Spatial322.937→321.896ms，Transformer块3.4611→3.4470ms；变化不足以证明稳定训练收益。
+- 已有Sum的CPU FP32算术模型在两CNN的256step真实输入轨迹/检查点812项、共同状态单步312项比较中全部满足原阈值；GPU仍未验收。
 - 256分支合成图45.3951→29.8321ms（约52.17%吞吐变化），仅为CPU合成图证据。
 - Sum/ReLU GPU、正式训练、Nsight、新调度GPU：当前NOT_RUN，等待真实空闲。
 
@@ -34,3 +35,7 @@ Sum/ReLU按实际数值资格决定S/J组成，没有正确性资格的配置不
 
 [源码分析](source-analysis.md)、[候选取舍](optimization-candidates.md)、
 [CPU原始摘要](benchmarks/cpu-schedule-summary.json)。最终会补齐数据索引、图、窗口起止和完整报告。
+
+补充[CPU原始数据索引](correctness/cpu-raw-02/file-index.csv)、
+[CPU长轨迹数值图](figures/cpu-numerical-01/cpu-sum-trajectory.png)、
+[强消去条件数](figures/cpu-numerical-01/retained-conditioning.csv)。图和指标均不是本轮GPU数据。

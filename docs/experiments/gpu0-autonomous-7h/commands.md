@@ -17,9 +17,12 @@ CUDA_VISIBLE_DEVICES='' OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS
 .venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/bench_schedule.py --prepared runs/udacity_real_prepared_01 --output runs/gpu0_autonomous_7h_01/schedule-bench-02
 .venv/bin/python -m pytest tests/test_backward_schedule.py -q -ra --junitxml=docs/experiments/gpu0-autonomous-7h/correctness/schedule-host-02.xml
 .venv/bin/python -m pytest tests/test_reduction_gpu.py tests/test_relu_backward_gpu.py tests/test_backward_schedule_gpu.py --collect-only -q
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/check_sum_cpu_training.py --prepared runs/udacity_real_prepared_01 --output runs/gpu0_autonomous_7h_01/cpu-sum-training-01
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/cpu_sum_trajectory.py --prepared runs/udacity_real_prepared_01 --schedule runs/gpu0_autonomous_7h_01/schedule.json --output runs/gpu0_autonomous_7h_01/cpu-sum-trajectory-01
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/analyze_phases.py --input runs/udacity_real_analysis_01/trace-I.sqlite --output runs/gpu0_autonomous_7h_01/historical-I-phase-02
 ```
 
-完整210项主机集合的实际argv见`logs/regression-01.log.command.json`，不是GPU结果。
+完整最终213项主机集合的实际argv见`logs/regression-final-01.log.command.json`，不是GPU结果；此前210项及定向测试日志保留。
 初次schedule-host-01和schedule-bench-01失败记录保留。
 
 ## 持续监控与自动触发

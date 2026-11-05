@@ -17,3 +17,8 @@
 后续监控逐条见最终`gpu-monitor.csv`；准备阶段快照见`environment/gpu-monitor-preparation.csv`。
 若出现空闲窗口，实际起止和每项任务命令由`runs/gpu0_autonomous_7h_01/gpu-window-01/window.json`记录。
 当前GPU结果仍NOT_RUN，不能预写已完成。
+
+- 01:31：重读历史4H I SQLite，2392次Kernel全部API匹配，F/B/U次数和核时与历史CSV一致；不计作本轮GPU使用。
+- 01:38–01:44：两CNN每路径256step CPU Sum算术模型诊断完成，812项轨迹/检查点和312项同状态单步比较全部原阈值通过，未发生GPU优先暂停。
+- CPU最终回归213项通过、0失败、0跳过；非法调度参数明确报错，避免静默忽略新选项。
+- 持久CPU后处理会话等待本轮GPU窗口退出后分析，自动收尾会话于07:13:50停止本轮进程并收尾，预留最后5分钟提交推送，预算截止07:18:50不变。
