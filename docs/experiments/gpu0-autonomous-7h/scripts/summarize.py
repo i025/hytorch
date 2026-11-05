@@ -50,6 +50,11 @@ def main():
     monitor=dict(samples=len(rows),first_utc=first.isoformat(),last_utc=last.isoformat(),
         observed_seconds=(last-first).total_seconds(),max_gap_s=max(gaps) if gaps else None,
         max_idle_streak=max(int(r['idle_streak']) for r in rows),
+        idle_samples=sum(r['idle']=='True' for r in rows),
+        qualified_samples=sum(int(r['idle_streak'])>=config['idle_samples'] for r in rows),
+        qualified_before_gpu_cutoff=sum(int(r['idle_streak'])>=config['idle_samples'] and
+            datetime.fromisoformat(r['utc'])<datetime.fromisoformat(config['gpu_cutoff_utc']) for r in rows),
+        occupied_zero_utilization_samples=sum(int(r['utilization_pct'])==0 and bool(json.loads(r['foreign_processes'])) for r in rows),
         distinct_compute_pids=sorted({v['pid'] for r in rows for v in json.loads(r['processes'])}),
         uuid=config['uuid'],physical_gpu=0)
     times=[datetime.fromisoformat(r['utc']).astimezone(timezone(timedelta(hours=8))) for r in rows]

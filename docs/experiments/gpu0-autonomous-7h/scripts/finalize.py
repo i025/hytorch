@@ -89,6 +89,8 @@ def main():
 ## GPU生命周期与实验状态
 
 物理GPU0，UUID `{cfg['uuid']}`。最高连续空闲计数{monitor['max_idle_streak']}；
+满足连续空闲要求的采样{monitor['qualified_samples']}条，其中GPU截止前{monitor['qualified_before_gpu_cutoff']}条。
+利用率为0但外部计算进程仍驻留的采样{monitor['occupied_zero_utilization_samples']}条，未据此抢占。
 窗口状态 **{gpu['status']}**。所有GPU实验只允许这一个UUID，不换卡，不使用其他七张GPU。
 没有独占租约，外部任务/资源冲突即停。窗口未执行时，不适用“完成同窗口实验/释放Context”，
 因为本轮没有创建GPU计算Context；若已执行，窗口起止、子进程退出和release记录在汇总JSON与原始window.json。

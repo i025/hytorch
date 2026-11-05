@@ -60,6 +60,15 @@ ReLU trace每shape共30范围，expected-cases=12。
 解析器旧dWeight分类列不用于Sum/ReLU，按实际Kernel名称重新统计。
 事件span包含可能的提交空隙，不是纯Kernel时间；纯Kernel时间来自相关联CUPTI duration。
 
+本轮 CPU 汇总复核命令（同样使用 CUDA_VISIBLE_DEVICES=''、BLAS 单线程及 CPU 0–3）：
+
+```bash
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/summarize.py --schedule runs/gpu0_autonomous_7h_01/schedule.json --label cpu-review-01
+.venv/bin/python docs/experiments/gpu0-autonomous-7h/scripts/summarize.py --schedule runs/gpu0_autonomous_7h_01/schedule.json --label monitor-review-01
+```
+
+旧阶段性文件是当时采样的快照；最终汇总使用新的独立 label，不覆盖上述数据。
+
 收尾执行正常Git commit/push到本分支，不force、不合并、不启动下一轮。
 
 ## CPU 拓扑补测
