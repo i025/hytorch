@@ -1,0 +1,30 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/fused-sgd-cuda/scripts/archive_results.py",
+    "--destination",
+    "docs/experiments/dataloader-bounded-inflight/results/raw-01",
+    "runs/dataloader_bounded_01/benchmark-01",
+    "runs/dataloader_bounded_01/diagnostics-01"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T13:26:26.218971+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": null,
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 0.1440102863125503,
+  "finished_at": "2026-11-05T13:26:26.363033+00:00"
+}

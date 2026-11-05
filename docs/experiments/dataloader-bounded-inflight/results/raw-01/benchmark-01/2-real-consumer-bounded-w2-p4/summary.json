@@ -1,0 +1,37 @@
+{
+  "variant": "bounded",
+  "workload": "real-consumer",
+  "repeat": 2,
+  "workers": 2,
+  "prefetch_factor": 4,
+  "samples": 1024,
+  "steps": 256,
+  "image_shape": [
+    3,
+    66,
+    200
+  ],
+  "dtype": "float32",
+  "consumer_sleep_ms": 4,
+  "straggler_ms": 0,
+  "synthetic_item_sleep_ms": 0,
+  "git_version": "29fa065a5fd136221f760e764b05f8a22171696a",
+  "started_at_utc": "2026-11-05T13:19:05.673580+00:00",
+  "affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "cuda_visible_devices": "",
+  "wall_s": 1.0567665849812329,
+  "images_per_s": 968.9935455502552,
+  "process_cpu_pct": 85.83966430165934,
+  "startup_ms": 1.1234190315008163,
+  "shutdown_ms": 1.111106015741825,
+  "mean_next_ms": 0.053137388022150844,
+  "p95_next_ms": 0.030064955353736877,
+  "peak_rss_mib": 234.9453125,
+  "ended_at_utc": "2026-11-05T13:19:06.731322+00:00",
+  "scope": "CPU streaming includes worker startup/exhaustion; RSS is lifetime process high-water; cache not reset; no GPU training"
+}

@@ -1,0 +1,1 @@
+Initial metadata-only capture used system python3 and stopped with importlib.metadata.PackageNotFoundError: numpy. Partial stdout is environment/system-attempt-01.txt. Re-ran using the existing .venv interpreter as environment/system.txt; no dependency installation or experiment rerun.

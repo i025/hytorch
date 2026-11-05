@@ -150,3 +150,5 @@ python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/tes
 [自主优化研究记录](docs/experiments/autonomous-optimization-6h/README.md)已归档、推送，研究为部分完成并停止：CPU103项通过；CPU-only1600步也出现长期严格Loss超差，但612组同状态单步比较全部通过，支持FP32迭代漂移解释。默认关闭的Native ReLU反向和既定顺序预取已准备，GPU因资源检查中断而全部NOT_RUN，不能宣称训练加速。交付未在原六小时墙钟预算内完成，监测空档、历史凭据阻碍及后续发布记录均在报告中保留。恢复凭据后仅完成发布，未重启实验。
 
 [CPU数据流水线专项](docs/experiments/cpu-training-pipeline/README.md)已完成CPU验收：124项主机回归、40组真实图像配置逐元素校验通过。修复异步结果队列已满时Worker无法关闭的问题；新增默认关闭的`UdacityDataset(open_stream=True)`，2线程匹配CPU加载平均+13.33%且三次均更快，4线程波动较大。归一化候选无稳定收益，未集成。已有异步加载收益与本轮修改分开统计；GPU训练/Nsight均NOT_RUN，统一后续对照入口已准备。
+
+[AsyncDataLoader有界在途调度](docs/experiments/dataloader-bounded-inflight/README.md)已完成CPU验收：139项回归、20种真实Batch配置通过。未交付Batch共用`num_workers × prefetch_factor`预算，慢首Batch诊断的pending峰值从128降至4（2 Worker/prefetch2）；匹配峰值RSS均值291.34→215.59MiB，同时吞吐−11.75%。真实快速消费均值+1.50%不足以证明稳定加速，模拟慢消费者基本不变。完整正负结果、等待时间和内存边界见报告，本轮未使用GPU或修改其他计算功能。

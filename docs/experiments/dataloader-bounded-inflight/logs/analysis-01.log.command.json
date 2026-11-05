@@ -1,0 +1,30 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "docs/experiments/dataloader-bounded-inflight/scripts/analyze.py",
+    "--raw",
+    "runs/dataloader_bounded_01",
+    "--report",
+    "docs/experiments/dataloader-bounded-inflight"
+  ],
+  "cwd": "/srv/lab-disks/disk2/users/xymo/projects/hytorch",
+  "started_at": "2026-11-05T13:25:33.348381+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CUDA_DEVICE_ORDER": null,
+    "CUDA_PATH": null,
+    "LD_LIBRARY_PATH": null,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "HYTORCH_GEMM_BUILD_DIR": null,
+    "MPLCONFIGDIR": "/tmp/hytorch-bounded-inflight-mpl",
+    "CUPY_CACHE_DIR": null,
+    "CUDA_CACHE_PATH": null,
+    "PYTHONPATH": ".",
+    "PYTEST_ADDOPTS": null,
+    "HYTORCH_NUMERIC_AUDIT": null
+  },
+  "returncode": 0,
+  "elapsed_s": 2.6442877403460443,
+  "finished_at": "2026-11-05T13:25:35.992721+00:00"
+}

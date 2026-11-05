@@ -1,0 +1,272 @@
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-bounded-w2-p4: 443.68 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-baseline-w2-p4: 965.89 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-bounded-w2-p4: 964.42 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-baseline-w2-p4: 499.68 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-baseline-w2-p2: 500.47 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-baseline-w4-p2: 498.82 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w1-p2: 1265.34 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w2-p4: 2140.92 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w2-p1: 2268.37 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w1-p1: 1288.96 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w1-p4: 1335.34 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-bounded-w4-p1: 967.47 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-bounded-w4-p4: 958.86 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w4-p4: 2898.77 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w4-p2: 3102.33 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w2-p4: 2271.2 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-bounded-w4-p2: 472.28 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w4-p1: 3061.54 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w2-p1: 2228.53 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w4-p2: 3120.91 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-baseline-w4-p4: 961.44 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-baseline-w4-p1: 959.4 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w0-p2: 1294.96 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-bounded-w4-p2: 960.39 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-baseline-w4-p4: 498.89 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w1-p2: 1246.19 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w2-p2: 2153.42 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-baseline-w2-p1: 499.28 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w0-p2: 1436.52 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-bounded-w4-p1: 469.8 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-bounded-w2-p1: 966.55 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w1-p1: 1173.55 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-bounded-w2-p1: 439.66 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-bounded-w2-p2: 968.65 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-bounded-w2-p2: 442.85 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w2-p2: 2074.48 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-baseline-w2-p2: 968.15 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w4-p4: 2901.76 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-bounded-w4-p4: 472.79 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-baseline-w2-p1: 967.47 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-bounded-w1-p4: 1369.57 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-fast-baseline-w4-p1: 3221.99 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-real-consumer-baseline-w4-p2: 961.65 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+1-straggler-baseline-w4-p1: 500.31 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w1-p1: 1247.71 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w0-p2: 1295.2 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-baseline-w4-p1: 958.85 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-baseline-w2-p2: 967.74 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w2-p4: 2079.83 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-bounded-w2-p4: 443.71 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w2-p2: 2121.87 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w4-p4: 3154.55 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w1-p2: 1308.06 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-baseline-w2-p1: 500.07 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-baseline-w4-p2: 501.68 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-baseline-w2-p1: 971.28 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-bounded-w2-p2: 439.78 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-bounded-w4-p2: 965.87 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w4-p1: 2954.23 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w4-p1: 2784.15 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-bounded-w2-p1: 438.85 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-bounded-w2-p2: 964.27 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-baseline-w4-p4: 500.07 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-baseline-w2-p4: 500.27 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w2-p2: 2037.91 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-baseline-w4-p4: 963.97 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-bounded-w4-p1: 469.44 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-baseline-w4-p2: 963.69 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w2-p1: 2082.86 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-bounded-w2-p1: 968.98 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w1-p2: 1242.14 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-baseline-w4-p1: 499.47 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-bounded-w4-p4: 962.68 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-baseline-w2-p2: 499.2 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w4-p2: 3060.13 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-bounded-w4-p4: 472.73 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w4-p2: 2927.97 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-straggler-bounded-w4-p2: 471.24 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w1-p4: 1234.67 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w1-p4: 1214.18 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-bounded-w4-p1: 963.67 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w4-p4: 2868.61 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w0-p2: 1283.75 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-bounded-w2-p4: 968.99 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-baseline-w2-p1: 2117.46 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w2-p4: 2039.7 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-consumer-baseline-w2-p4: 967.1 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+2-real-fast-bounded-w1-p1: 1396.04 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w1-p1: 1282.77 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w4-p2: 2888.05 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-bounded-w4-p4: 961.4 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-baseline-w2-p1: 968.81 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w2-p4: 2060.77 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-baseline-w4-p4: 962.37 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-bounded-w4-p1: 469.58 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-baseline-w2-p1: 500.52 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w1-p2: 1223.28 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w2-p4: 2210.74 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-bounded-w4-p1: 966.81 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-bounded-w2-p4: 965.31 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w4-p4: 2703.44 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-bounded-w4-p2: 471.09 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-bounded-w2-p1: 967.17 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w4-p1: 3042.22 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-baseline-w4-p1: 961.91 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w0-p2: 1280.85 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w2-p2: 2122.95 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-bounded-w4-p2: 961.54 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-baseline-w2-p2: 963.17 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-bounded-w2-p1: 437.43 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-bounded-w2-p4: 441.57 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-baseline-w4-p1: 498.73 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w2-p1: 2087.25 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w1-p2: 1194.6 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-bounded-w2-p2: 439.75 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-baseline-w4-p4: 498.28 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w1-p1: 1191.79 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-baseline-w2-p2: 498.84 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w4-p2: 2904.92 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w4-p4: 2894.16 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w2-p2: 2024.85 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-baseline-w2-p4: 498.27 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-bounded-w1-p4: 1256.8 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-bounded-w4-p4: 472.42 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-bounded-w2-p2: 965.25 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w2-p1: 2217.61 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w1-p4: 1292.01 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-baseline-w2-p4: 968.4 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w0-p2: 1284.24 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-fast-baseline-w4-p1: 2872.27 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-real-consumer-baseline-w4-p2: 960.87 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+3-straggler-baseline-w4-p2: 497.48 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+scaling-128-baseline: 126.04 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+scaling-128-bounded: 122.52 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+scaling-1024-baseline: 991.16 images/s
+警告: 未找到scipy，无法加载SVHN数据集
+scaling-1024-bounded: 775.11 images/s

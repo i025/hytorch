@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETED_CPU_ONLY",
+  "finalized_at_utc": "2026-11-05T13:33:08.426748+00:00",
+  "branch": "experiment/dataloader-bounded-inflight",
+  "source_commit": "29fa065a5fd136221f760e764b05f8a22171696a",
+  "cpu_tests": {
+    "tests": 139,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "window": "num_workers * prefetch_factor",
+  "original_bound_failures": 4,
+  "matched_runs": 132,
+  "epoch_length_observations": 4,
+  "diagnostic_configurations": 36,
+  "bounded_diagnostic_assertions_passed": 18,
+  "real_data_configurations": 20,
+  "all_cpu_children_completed": true,
+  "all_diagnostic_workers_joined": true,
+  "gpu": "NOT_RUN",
+  "cuda_device_calls": false,
+  "other_production_modules_modified": false,
+  "note": "Bounded memory includes a documented throughput loss under head-of-line stalls; no default cache inflation",
+  "publication_evidence": "Server-only runs/dataloader_bounded_publication_01/"
+}
