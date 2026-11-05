@@ -91,7 +91,6 @@ class _DatasetWorker(threading.Thread):
         while not self.stop_event.is_set():
             task = self.index_queue.get()
             if task is _SENTINEL:
-                self._put_result(_SENTINEL)
                 return
             seq, batch_index = task
             try:
@@ -120,10 +119,12 @@ class AsyncDataLoader:
         self._index_queue: queue.Queue = None
         self._result_queue: queue.Queue = None
         self._workers: list = []
-        self._active_workers = 0
         self._started = False
         self._next_seq = 0          # next sequence number to emit to caller
+        self._send_seq = 0          # next batch to submit within the in-flight window
         self._pending = {}          # seq -> (x, t) buffer for out-of-order results
+        if prefetch_factor < 1:
+            raise ValueError('prefetch_factor must be positive')
 
     def to_gpu(self):
         self.gpu = True
@@ -150,13 +151,6 @@ class AsyncDataLoader:
                     "DataLoader worker timed out after 60s — possible deadlock."
                 )
 
-            if item is _SENTINEL:
-                self._active_workers -= 1
-                if self._active_workers == 0:
-                    self._started = False
-                    raise StopIteration
-                continue
-
             if isinstance(item, _WorkerError):
                 self._shutdown_workers()
                 raise RuntimeError(
@@ -168,6 +162,7 @@ class AsyncDataLoader:
 
         x_np, t_np = self._pending.pop(self._next_seq)
         self._next_seq += 1
+        self._submit_next()
 
         if self.gpu and cuda.gpu_enable:
             x = cuda.cupy.asarray(x_np)
@@ -179,6 +174,13 @@ class AsyncDataLoader:
     def next(self):
         return self.__next__()
 
+    def _submit_next(self):
+        if self._send_seq < self.max_iter:
+            i, batch_size = self._send_seq, self.batch_size
+            batch_index = self._index[i * batch_size:(i + 1) * batch_size]
+            self._index_queue.put((i, batch_index))
+            self._send_seq += 1
+
     def _start_epoch(self):
         if self.shuffle:
             index = np.random.permutation(self.indices)
@@ -188,28 +190,30 @@ class AsyncDataLoader:
         self._index_queue = queue.Queue()
         self._result_queue = queue.Queue(maxsize=self.prefetch_factor * self.num_workers)
         self._next_seq = 0
+        self._send_seq = 0
+        self._index = index
         self._pending = {}
         self._stop_event = threading.Event()
 
-        for i in range(self.max_iter):
-            batch_index = index[i * self.batch_size:(i + 1) * self.batch_size]
-            self._index_queue.put((i, batch_index))   # tagged with sequence number
+        for _ in range(min(self.max_iter, self.prefetch_factor * self.num_workers)):
+            self._submit_next()
 
         self._workers = []
         for _ in range(self.num_workers):
-            self._index_queue.put(_SENTINEL)
             w = _DatasetWorker(self.dataset, self._index_queue, self._result_queue,
                                self._stop_event)
             w.start()
             self._workers.append(w)
 
-        self._active_workers = self.num_workers
         self._started = True
 
     def _shutdown_workers(self):
         if not self._started:
             return
         self._stop_event.set()
+        # Wake workers waiting for the next consumer-driven submission.
+        for _ in self._workers:
+            self._index_queue.put(_SENTINEL)
         # Release workers already blocked on the bounded result queue.
         try:
             while True:
@@ -220,6 +224,7 @@ class AsyncDataLoader:
             w.join()
         self._workers = []
         self._pending.clear()
+        self._index = None
         self._index_queue = self._result_queue = None
         self._started = False
 
@@ -239,6 +244,7 @@ class DataLoader:
     num_workers=0 (default): synchronous, identical to the original behavior.
     num_workers>0: async producer-consumer with background threads.
     indices=None (default): full dataset; otherwise load the supplied sample order.
+    Async prefetch_factor * num_workers bounds all submitted, undelivered batches.
     Use as a context manager, or call close(), when stopping an epoch early.
     """
 

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="4" time="1.116" timestamp="2026-11-05T13:06:46.628782+00:00" hostname="root"><testcase classname="tests.test_dataloader_bounded" name="test_slow_first_batch_cannot_exhaust_epoch[2-1]" time="0.104"><failure message="assert 100 &lt;= (2 * 1)&#10; +  where 100 = len([0, 1, 2, 3, 4, 5, ...])">workers = 2, prefetch = 1
+
+    @pytest.mark.parametrize('workers,prefetch', [(2, 1), (2, 2), (4, 1), (4, 2)])
+    def test_slow_first_batch_cannot_exhaust_epoch(workers, prefetch):
+        entered, release = threading.Event(), threading.Event()
+        called = []
+        class Paused(Dataset):
+            def __getitem__(self, index):
+                called.append(index)
+                if index == 0:
+                    entered.set()
+                    assert release.wait(3)
+                return super().__getitem__(index)
+    
+        loader = AsyncDataLoader(Paused(), 1, shuffle=False, num_workers=workers,
+                                 prefetch_factor=prefetch)
+        iter(loader)
+        result = []
+        consumer = threading.Thread(target=lambda: result.append(next(loader)))
+        consumer.start()
+        try:
+            assert entered.wait(2)
+            time.sleep(.1)
+&gt;           assert len(called) &lt;= workers * prefetch
+E           assert 100 &lt;= (2 * 1)
+E            +  where 100 = len([0, 1, 2, 3, 4, 5, ...])
+
+tests/test_dataloader_bounded.py:40: AssertionError</failure></testcase><testcase classname="tests.test_dataloader_bounded" name="test_slow_first_batch_cannot_exhaust_epoch[2-2]" time="0.103"><failure message="assert 100 &lt;= (2 * 2)&#10; +  where 100 = len([0, 1, 2, 3, 4, 5, ...])">workers = 2, prefetch = 2
+
+    @pytest.mark.parametrize('workers,prefetch', [(2, 1), (2, 2), (4, 1), (4, 2)])
+    def test_slow_first_batch_cannot_exhaust_epoch(workers, prefetch):
+        entered, release = threading.Event(), threading.Event()
+        called = []
+        class Paused(Dataset):
+            def __getitem__(self, index):
+                called.append(index)
+                if index == 0:
+                    entered.set()
+                    assert release.wait(3)
+                return super().__getitem__(index)
+    
+        loader = AsyncDataLoader(Paused(), 1, shuffle=False, num_workers=workers,
+                                 prefetch_factor=prefetch)
+        iter(loader)
+        result = []
+        consumer = threading.Thread(target=lambda: result.append(next(loader)))
+        consumer.start()
+        try:
+            assert entered.wait(2)
+            time.sleep(.1)
+&gt;           assert len(called) &lt;= workers * prefetch
+E           assert 100 &lt;= (2 * 2)
+E            +  where 100 = len([0, 1, 2, 3, 4, 5, ...])
+
+tests/test_dataloader_bounded.py:40: AssertionError</failure></testcase><testcase classname="tests.test_dataloader_bounded" name="test_slow_first_batch_cannot_exhaust_epoch[4-1]" time="0.104"><failure message="assert 100 &lt;= (4 * 1)&#10; +  where 100 = len([0, 1, 2, 3, 4, 5, ...])">workers = 4, prefetch = 1
+
+    @pytest.mark.parametrize('workers,prefetch', [(2, 1), (2, 2), (4, 1), (4, 2)])
+    def test_slow_first_batch_cannot_exhaust_epoch(workers, prefetch):
+        entered, release = threading.Event(), threading.Event()
+        called = []
+        class Paused(Dataset):
+            def __getitem__(self, index):
+                called.append(index)
+                if index == 0:
+                    entered.set()
+                    assert release.wait(3)
+                return super().__getitem__(index)
+    
+        loader = AsyncDataLoader(Paused(), 1, shuffle=False, num_workers=workers,
+                                 prefetch_factor=prefetch)
+        iter(loader)
+        result = []
+        consumer = threading.Thread(target=lambda: result.append(next(loader)))
+        consumer.start()
+        try:
+            assert entered.wait(2)
+            time.sleep(.1)
+&gt;           assert len(called) &lt;= workers * prefetch
+E           assert 100 &lt;= (4 * 1)
+E            +  where 100 = len([0, 1, 2, 3, 4, 5, ...])
+
+tests/test_dataloader_bounded.py:40: AssertionError</failure></testcase><testcase classname="tests.test_dataloader_bounded" name="test_slow_first_batch_cannot_exhaust_epoch[4-2]" time="0.104"><failure message="assert 100 &lt;= (4 * 2)&#10; +  where 100 = len([0, 1, 2, 3, 4, 5, ...])">workers = 4, prefetch = 2
+
+    @pytest.mark.parametrize('workers,prefetch', [(2, 1), (2, 2), (4, 1), (4, 2)])
+    def test_slow_first_batch_cannot_exhaust_epoch(workers, prefetch):
+        entered, release = threading.Event(), threading.Event()
+        called = []
+        class Paused(Dataset):
+            def __getitem__(self, index):
+                called.append(index)
+                if index == 0:
+                    entered.set()
+                    assert release.wait(3)
+                return super().__getitem__(index)
+    
+        loader = AsyncDataLoader(Paused(), 1, shuffle=False, num_workers=workers,
+                                 prefetch_factor=prefetch)
+        iter(loader)
+        result = []
+        consumer = threading.Thread(target=lambda: result.append(next(loader)))
+        consumer.start()
+        try:
+            assert entered.wait(2)
+            time.sleep(.1)
+&gt;           assert len(called) &lt;= workers * prefetch
+E           assert 100 &lt;= (4 * 2)
+E            +  where 100 = len([0, 1, 2, 3, 4, 5, ...])
+
+tests/test_dataloader_bounded.py:40: AssertionError</failure></testcase></testsuite></testsuites>
