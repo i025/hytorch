@@ -1,0 +1,9 @@
+{
+  "monitor_pid": 17169,
+  "last_update_utc": "2026-11-05T23:12:57.838853+00:00",
+  "idle_streak": 0,
+  "window_started": false,
+  "child_pid": null,
+  "deadline_utc": "2026-11-05T23:18:50+00:00",
+  "status": "MONITORING"
+}

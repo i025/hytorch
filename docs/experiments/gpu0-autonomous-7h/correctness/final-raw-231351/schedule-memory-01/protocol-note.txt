@@ -1,0 +1,1 @@
+Initial allocation study includes cold first calls; no warmup. All original rows retained. Follow-up schedule-memory-02 adds two warmups per measured mode and case, outside tracing. No GPU used.

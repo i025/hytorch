@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "gpu": "NOT_RUN",
+  "cases": 12,
+  "comparisons": 24,
+  "unequal": 0,
+  "repeats": 5,
+  "scope": "CPU forward + backward synthetic graph; not GPU/CNN training speedup",
+  "finished_utc": "2026-11-05T19:01:53.684785+00:00"
+}

@@ -178,7 +178,7 @@ heap对普通短链CNN缺乏稳定收益证据，不改默认；额外显存/Ker
     branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip()
     assert branch=='experiment/gpu0-autonomous-7h','Do not change or publish a different branch'
     subprocess.run(['git','add','--',str(report)],cwd=ROOT,env=env,check=True)
-    subprocess.run(['git','commit','-m','Archive measured GPU0 window and seven-hour CPU research results'],cwd=ROOT,env=env,check=True)
+    subprocess.run(['git','commit','-m','Archive final GPU0 monitoring and autonomous research results'],cwd=ROOT,env=env,check=True)
     status.update(status='COMMITTED',commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip());save()
     remaining=max(1,int(datetime.fromisoformat(cfg['deadline_utc']).timestamp()-time.time())-5)
     try:

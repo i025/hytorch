@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "kernels": 2392,
+  "unmatched": 0,
+  "unmatched_copies": 0,
+  "scope": "Kernel durations via launch API; NVTX is host range, not synchronized phase wall or GPU utilization"
+}

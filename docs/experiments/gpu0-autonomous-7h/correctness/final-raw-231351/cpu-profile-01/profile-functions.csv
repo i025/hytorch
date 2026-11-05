@@ -1,0 +1,595 @@
+workload,file,line,function,primitive_calls,calls,self_s,cumulative_s,iterations
+donkey,~,0,<method 'get' of 'ContextVar' objects>,170,170,3.5299e-05,3.5299e-05,5
+donkey,~,0,<method 'encode' of 'str' objects>,50,50,2.4859e-05,2.4859e-05,5
+donkey,~,0,<method 'add' of 'set' objects>,105,105,4.4572e-05,4.4572e-05,5
+donkey,~,0,<method 'append' of 'list' objects>,105,105,3.2587000000000005e-05,3.2587000000000005e-05,5
+donkey,~,0,<method 'insert' of 'list' objects>,25,25,1.4348e-05,1.4348e-05,5
+donkey,~,0,<method 'pop' of 'list' objects>,105,105,1.9981e-05,1.9981e-05,5
+donkey,~,0,<method 'remove' of 'list' objects>,25,25,1.5368000000000003e-05,1.5368000000000003e-05,5
+donkey,~,0,<method 'sort' of 'list' objects>,105,105,6.4368e-05,9.411200000000001e-05,5
+donkey,~,0,<method 'get' of 'dict' objects>,50,50,1.1943e-05,1.1943e-05,5
+donkey,~,0,<built-in method builtins.any>,50,50,5.2809e-05,8.7717e-05,5
+donkey,~,0,<built-in method builtins.callable>,50,50,1.0972000000000001e-05,1.0972000000000001e-05,5
+donkey,~,0,<built-in method builtins.getattr>,310,310,0.000119784,0.000119784,5
+donkey,~,0,<built-in method builtins.isinstance>,4045,4045,0.000686534,0.001017266,5
+donkey,~,0,<built-in method builtins.iter>,75,75,1.7177000000000002e-05,1.7177000000000002e-05,5
+donkey,~,0,<built-in method builtins.len>,810,815,0.000132315,0.000135221,5
+donkey,~,0,<built-in method builtins.max>,105,105,4.1364000000000006e-05,4.1364000000000006e-05,5
+donkey,~,0,<built-in method builtins.next>,210,210,8.745600000000001e-05,0.00030781300000000004,5
+donkey,~,0,<built-in method builtins.setattr>,210,210,5.5702e-05,5.5702e-05,5
+donkey,~,0,<built-in method _abc._abc_instancecheck>,405,405,0.000187481,0.000187481,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,21,current_config,50,50,9.8515e-05,0.000108555,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/donkeycar_hy/model.py,56,forward,5,5,0.000119828,0.231008647,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,356,selected,120,120,0.00011366200000000001,0.00013892100000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,383,sum_array,45,45,7.7099e-05,0.001383534,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,98,update,5,5,1.7693e-05,0.001343615,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,121,update_one,80,80,0.001045116,0.001045116,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,20,<listcomp>,5,5,4.0911e-05,0.00021380000000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,19,update,5,5,5.6086000000000005e-05,0.001325922,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,27,<listcomp>,5,5,1.092e-05,1.092e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,51,__init__,25,25,5.6199e-05,8.7964e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,56,forward,25,25,0.009005737,0.22561619200000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,70,backward,25,25,0.000264433,0.30893684800000004,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,95,conv2d,25,25,5.7013000000000005e-05,0.22638301400000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,100,__init__,25,25,7.4615e-05,0.00013500600000000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,106,forward,25,25,0.000166314,0.070774375,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,146,deconv2d,25,25,6.5706e-05,0.07145114100000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,151,__init__,25,25,5.8693e-05,9.121e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,158,forward,25,25,0.000250092,0.232547311,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,392,im2col_array,50,50,0.035046062,0.09259201700000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,432,conv2d_cpu_im2col_gemm_array,25,25,0.00017470200000000002,0.21650085100000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,458,col2im_array,25,25,0.035012873,0.036105809,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cpu/gemm.py,68,_load_c_kernel,50,50,2.1167000000000002e-05,2.1167000000000002e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cpu/gemm.py,160,_gemm_call_c,50,50,0.34659929700000003,0.351386065,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cpu/gemm.py,200,cpu_gemm,50,50,0.001974258,0.35378337200000004,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cpu/gemm.py,232,gemm,50,50,5.5327e-05,0.35383869900000003,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,121,<listcomp>,15,15,7.925000000000001e-06,7.925000000000001e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,107,sum_to,15,15,0.00010759800000000001,0.00027761100000000004,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,390,get_conv_outsize,200,200,7.5726e-05,7.5726e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,394,pair,400,400,0.00027986300000000004,0.00039085700000000004,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,112,forward,15,15,2.5075000000000003e-05,0.0015493780000000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,174,forward,25,25,5.6503000000000004e-05,0.226439517,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,247,dropout,10,10,1.6349000000000002e-05,2.0597000000000003e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,273,forward,10,10,1.4309000000000001e-05,3.4906e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,48,forward,5,5,2.5538000000000002e-05,3.6659e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,53,backward,5,5,3.4663e-05,0.000374471,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,61,tanh,5,5,7.0540000000000006e-06,0.00010406400000000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,102,__init__,10,10,6.08e-06,6.08e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,105,forward,10,10,9.653e-06,4.894e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,110,backward,5,5,4.77e-06,8.3918e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,114,reshape,10,10,2.5489000000000003e-05,0.000204422,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,122,__init__,30,30,9.107000000000001e-06,9.107000000000001e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,125,forward,30,30,1.6261000000000002e-05,3.1922000000000004e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,144,transpose,30,30,4.3628e-05,0.00038106200000000005,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,197,__init__,25,25,1.6265e-05,1.6265e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,201,forward,25,25,8.168e-05,0.001257042,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,213,sum,25,25,6.3203e-05,0.001677489,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,239,__init__,15,15,6.373000000000001e-06,6.373000000000001e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,242,forward,15,15,2.5629e-05,0.00030324000000000003,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,252,sum_to,30,30,5.3401000000000006e-05,0.000554269,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,267,__init__,45,45,1.5508e-05,1.5508e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,270,forward,45,45,0.00012264600000000002,0.0019280450000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,278,backward,15,15,7.7321e-05,0.001900385,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,285,matmul,15,15,2.3016e-05,0.001094589,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,320,linear_simple,15,15,3.2572e-05,0.001524303,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,378,forward,35,35,0.0015081810000000001,0.001618146,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,383,backward,35,35,0.0009199290000000001,0.012610629,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,393,relu,35,35,4.6923000000000005e-05,0.002192573,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,476,forward,5,5,8.7908e-05,0.00016475000000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,483,backward,5,5,4.5092e-05,0.000507189,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,493,mean_square_error,5,5,7.624e-06,0.00024808400000000003,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/cuda.py,11,get_array_module,290,290,0.000291467,0.000882361,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/engine.py,52,update,5,5,2.1692000000000002e-05,0.001365307,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/engine.py,56,loss,5,5,2.765e-05,0.231323875,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/engine.py,61,backward,5,5,3.1839000000000005e-05,0.32742820100000003,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,16,using_config,210,210,0.000129299,0.00022035700000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,51,__init__,415,415,0.00037528500000000005,0.000415879,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,70,__len__,5,5,2.9060000000000002e-06,3.6570000000000003e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,73,shape,120,120,6.6753e-05,6.6753e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,89,T,30,30,2.3284000000000003e-05,0.00040434600000000003,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,94,set_creator,105,105,4.7350000000000006e-05,4.7350000000000006e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,104,cleargrad,80,80,4.9837000000000004e-05,4.9837000000000004e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,114,sum,25,25,9.2754e-05,0.0017702430000000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,146,<lambda>,105,105,2.9744000000000002e-05,2.9744000000000002e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,142,add_func,105,105,0.000178846,0.000350117,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,152,<listcomp>,105,105,4.8974e-05,4.8974e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,133,backward,5,5,0.000820189,0.32716809500000005,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,19,__setattr__,110,110,0.00017056000000000002,0.00018914500000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,29,<listcomp>,55,55,3.0624000000000004e-05,3.0624000000000004e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,181,as_array,410,410,0.00027709400000000003,0.0014349850000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,187,as_variable,610,610,0.00025996,0.00039288800000000004,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,195,<listcomp>,330,330,0.00023978,0.000621488,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,197,<listcomp>,330,330,0.000133588,0.000133588,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,201,<listcomp>,330,330,0.00043421100000000005,0.001958145,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,204,<listcomp>,105,105,5.7318e-05,5.7318e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,208,<listcomp>,330,330,0.00021262,0.00021262,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,194,__call__,330,330,0.0038873350000000004,0.5523554540000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,30,<listcomp>,55,55,2.3893000000000003e-05,2.3893000000000003e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,241,forward,15,15,7.6184e-05,7.6184e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,246,backward,15,15,3.4745e-05,0.000589014,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,25,__call__,5,55,0.000219155,0.231048141,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,254,add,15,15,3.349e-05,0.000397142,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,261,forward,55,55,0.010823242,0.010823242,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,36,params,170,420,0.00028150800000000003,0.000309808,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,275,mul,55,55,0.000147235,0.012085650000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,281,forward,5,5,1.6671e-05,1.6671e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,45,cleargrads,5,5,4.1511e-05,0.00022826700000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,288,neg,5,5,7.667000000000001e-06,7.643500000000001e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,293,forward,10,10,3.1937e-05,3.1937e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,306,sub,5,5,1.5727e-05,0.000127758,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,311,rsub,5,5,1.1173000000000001e-05,0.00011301300000000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__.py,829,get_array_module,290,290,0.000490112,0.0005480610000000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,33,_slice_at_axis,400,400,0.000192838,0.000192838,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,58,_view_roi,200,200,0.000237628,0.000237628,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,109,<genexpr>,250,250,7.6643e-05,7.6643e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,120,<genexpr>,250,250,0.00019438500000000002,0.00019438500000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,86,_pad_simple,50,50,0.0055377410000000005,0.005916593,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,129,_set_pad_area,200,200,0.0009080560000000001,0.001100894,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,454,_as_pairs,100,100,0.00042619600000000005,0.002472721,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,521,_pad_dispatcher,50,50,1.0099000000000001e-05,1.0099000000000001e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,529,pad,50,50,0.00083695,0.010786983,5
+donkey,<__array_function__ internals>,177,pad,50,50,9.7384e-05,0.011050334,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,25,_maybe_view_as_subclass,50,50,2.8911e-05,2.8911e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,345,<genexpr>,150,150,3.4908000000000005e-05,3.4908000000000005e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,340,_broadcast_to,50,50,0.000583002,0.000764992,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,363,_broadcast_to_dispatcher,50,50,1.0669e-05,1.0669e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,367,broadcast_to,50,50,5.0934000000000004e-05,0.000815926,5
+donkey,<__array_function__ internals>,177,broadcast_to,50,50,5.4458000000000006e-05,0.0009153980000000001,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/function_base.py,346,iterable,50,50,3.0853000000000004e-05,4.3034e-05,5
+donkey,~,0,<built-in method _ctypes.POINTER>,150,150,3.9596000000000005e-05,3.9596000000000005e-05,5
+donkey,/usr/lib/python3.8/ctypes/__init__.py,506,cast,150,150,0.00038423300000000005,0.00038423300000000005,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_internal.py,249,__init__,150,150,0.00023053800000000002,0.00023053800000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_internal.py,266,data_as,150,150,0.00012058400000000001,0.0005048170000000001,5
+donkey,<__array_function__ internals>,177,round_,50,50,6.4392e-05,0.000470102,5
+donkey,<__array_function__ internals>,177,ones_like,5,5,8.177e-06,9.611e-05,5
+donkey,<__array_function__ internals>,177,tensordot,25,25,2.9900000000000002e-05,0.034169245,5
+donkey,<__array_function__ internals>,177,rollaxis,25,25,2.5773000000000002e-05,0.000231474,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,946,_tensordot_dispatcher,25,25,6.116e-06,6.116e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1121,<listcomp>,25,25,2.3590000000000003e-05,2.3590000000000003e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1126,<listcomp>,25,25,1.3573e-05,1.3573e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1127,<listcomp>,25,25,1.163e-05,1.163e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1129,<listcomp>,25,25,2.4191000000000003e-05,2.4191000000000003e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1134,<listcomp>,25,25,1.1891e-05,1.1891e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1135,<listcomp>,25,25,1.0277e-05,1.0277e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,950,tensordot,25,25,0.000431028,0.034058582000000004,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1254,_rollaxis_dispatcher,25,25,5.134e-06,5.134e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1258,rollaxis,25,25,0.00012154700000000001,0.000180566,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1878,isscalar,410,410,0.000565208,0.0011555760000000002,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py,51,_wrapfunc,50,50,5.3402e-05,0.00013913,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py,3241,_around_dispatcher,100,100,1.8894000000000002e-05,1.8894000000000002e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py,3245,around,50,50,6.0054000000000005e-05,0.000199184,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py,3754,round_,50,50,7.3031e-05,0.000361394,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_methods.py,43,_amin,50,50,3.0100000000000003e-05,0.000355944,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_methods.py,47,_sum,45,45,3.1708e-05,0.0011771840000000002,5
+donkey,<__array_function__ internals>,177,around,50,50,4.5685e-05,0.00028836300000000003,5
+donkey,<__array_function__ internals>,177,result_type,50,50,5.8802000000000004e-05,0.00021019500000000002,5
+donkey,<__array_function__ internals>,177,dot,25,25,3.8058e-05,0.032357477,5
+donkey,<__array_function__ internals>,177,copyto,5,5,7.383e-06,3.0166000000000002e-05,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,215,_ones_like_dispatcher,5,5,1.491e-06,1.491e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,219,ones_like,5,5,2.163e-05,7.608300000000001e-05,5
+donkey,<__array_function__ internals>,177,empty_like,5,5,7.777e-06,2.4287000000000003e-05,5
+donkey,~,0,<method 'astype' of 'numpy.ndarray' objects>,50,50,4.8710000000000006e-05,4.8710000000000006e-05,5
+donkey,~,0,<method 'dot' of 'numpy.ndarray' objects>,45,45,0.0017914850000000002,0.0017914850000000002,5
+donkey,~,0,<method 'min' of 'numpy.ndarray' objects>,50,50,4.1622e-05,0.000397566,5
+donkey,~,0,<method 'ravel' of 'numpy.ndarray' objects>,50,50,2.4245000000000002e-05,2.4245000000000002e-05,5
+donkey,~,0,<method 'reshape' of 'numpy.ndarray' objects>,235,235,0.048928447,0.048928447,5
+donkey,~,0,<method 'round' of 'numpy.ndarray' objects>,50,50,6.8849e-05,6.8849e-05,5
+donkey,~,0,<method 'squeeze' of 'numpy.ndarray' objects>,15,15,1.1132000000000001e-05,1.1132000000000001e-05,5
+donkey,~,0,<method 'sum' of 'numpy.ndarray' objects>,45,45,7.0568e-05,0.001247752,5
+donkey,~,0,<method 'tolist' of 'numpy.ndarray' objects>,50,50,4.5567000000000006e-05,4.5567000000000006e-05,5
+donkey,~,0,<method 'transpose' of 'numpy.ndarray' objects>,255,255,0.000198196,0.000198196,5
+donkey,~,0,<built-in method numpy.array>,170,170,0.00018522000000000002,0.00018522000000000002,5
+donkey,~,0,<built-in method numpy.asarray>,150,150,0.000210485,0.000210485,5
+donkey,~,0,<built-in method numpy.ascontiguousarray>,100,100,0.003697225,0.003697225,5
+donkey,~,0,<built-in method numpy.zeros>,25,25,0.000903103,0.000903103,5
+donkey,~,0,<built-in method numpy.empty>,100,100,0.000155153,0.000155153,5
+donkey,~,0,<built-in method numpy.core._multiarray_umath.implement_array_function>,155,340,0.0328548,0.045505613,5
+donkey,~,0,<built-in method numpy.core._multiarray_umath.normalize_axis_index>,25,25,1.2922000000000001e-05,1.2922000000000001e-05,5
+donkey,~,0,<method 'reduce' of 'numpy.ufunc' objects>,145,145,0.001760793,0.001760793,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,84,empty_like,5,5,1.4510000000000002e-06,1.4510000000000002e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,668,result_type,50,50,8.869000000000001e-06,8.869000000000001e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,740,dot,25,25,7.418000000000001e-06,7.418000000000001e-06,5
+donkey,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,1079,copyto,5,5,1.703e-06,1.703e-06,5
+donkey,~,0,<method 'disable' of '_lsprof.Profiler' objects>,1,1,1.232e-06,1.232e-06,5
+donkey,/usr/lib/python3.8/contextlib.py,82,__init__,105,105,0.000165577,0.000197225,5
+donkey,/usr/lib/python3.8/contextlib.py,108,__enter__,105,105,7.6538e-05,0.00023319800000000003,5
+donkey,/usr/lib/python3.8/contextlib.py,117,__exit__,105,105,0.00013738000000000002,0.000288533,5
+donkey,/usr/lib/python3.8/contextlib.py,238,helper,105,105,7.8064e-05,0.000275289,5
+donkey,/usr/lib/python3.8/os.py,670,__getitem__,50,50,0.000179531,0.00027887100000000003,5
+donkey,docs/experiments/gpu0-autonomous-7h/scripts/profile_cpu.py,35,step,5,5,4.6007e-05,0.56016339,5
+donkey,/usr/lib/python3.8/os.py,748,encode,50,50,6.654500000000001e-05,9.934000000000001e-05,5
+donkey,/usr/lib/python3.8/os.py,766,getenv,50,50,5.5176e-05,0.00042304900000000005,5
+donkey,/usr/lib/python3.8/_collections_abc.py,657,get,50,50,8.9002e-05,0.000367873,5
+donkey,/usr/lib/python3.8/abc.py,96,__instancecheck__,405,405,0.000143251,0.00033073200000000003,5
+spatial,~,0,<method 'get' of 'ContextVar' objects>,100,100,2.3420000000000003e-05,2.3420000000000003e-05,5
+spatial,~,0,<method 'encode' of 'str' objects>,30,30,3.3252e-05,3.3252e-05,5
+spatial,~,0,<method 'add' of 'set' objects>,60,60,1.0585000000000001e-05,1.0585000000000001e-05,5
+spatial,~,0,<method 'append' of 'list' objects>,60,60,2.4829000000000002e-05,2.4829000000000002e-05,5
+spatial,~,0,<method 'insert' of 'list' objects>,25,25,2.1212000000000003e-05,2.1212000000000003e-05,5
+spatial,~,0,<method 'pop' of 'list' objects>,60,60,1.3747e-05,1.3747e-05,5
+spatial,~,0,<method 'remove' of 'list' objects>,15,15,1.3067e-05,1.3067e-05,5
+spatial,~,0,<method 'sort' of 'list' objects>,60,60,5.1162e-05,7.5636e-05,5
+spatial,~,0,<method 'get' of 'dict' objects>,30,30,8.245e-06,8.245e-06,5
+spatial,~,0,<built-in method builtins.any>,35,35,5.2267000000000006e-05,8.0089e-05,5
+spatial,~,0,<built-in method builtins.callable>,30,30,1.0179e-05,1.0179e-05,5
+spatial,~,0,<built-in method builtins.getattr>,180,180,0.00010244400000000001,0.00010244400000000001,5
+spatial,~,0,<built-in method builtins.isinstance>,2505,2505,0.00047445,0.0007436630000000001,5
+spatial,~,0,<built-in method builtins.iter>,50,50,1.7016e-05,1.7016e-05,5
+spatial,~,0,<built-in method builtins.len>,500,505,9.453e-05,9.744400000000001e-05,5
+spatial,~,0,<built-in method builtins.max>,60,60,2.7258000000000002e-05,2.7258000000000002e-05,5
+spatial,~,0,<built-in method builtins.next>,120,120,5.711600000000001e-05,0.00021461,5
+spatial,~,0,<built-in method builtins.setattr>,120,120,5.0638000000000005e-05,5.0638000000000005e-05,5
+spatial,~,0,<built-in method builtins.sorted>,5,5,9.508000000000001e-06,9.508000000000001e-06,5
+spatial,~,0,<built-in method _abc._abc_instancecheck>,260,260,0.000167767,0.000167767,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,21,current_config,30,30,8.5171e-05,9.14e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,356,selected,70,70,8.1693e-05,9.888400000000001e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,383,sum_array,35,35,7.097e-05,0.005189609,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/donkeycar_hy/../benchmarks/bench_cuda_training.py,44,forward,5,5,0.000121589,0.24037365400000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,98,update,5,5,2.4868000000000003e-05,0.000498865,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,121,update_one,40,40,0.00030674500000000003,0.00030674500000000003,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,20,<listcomp>,5,5,2.4196e-05,0.00011968200000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,19,update,5,5,4.1149e-05,0.00047399700000000004,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/optimizers.py,27,<listcomp>,5,5,6.421e-06,6.421e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,51,__init__,15,15,4.835e-05,7.1035e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,56,forward,15,15,0.006728886000000001,0.231828951,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,70,backward,15,15,0.00022228900000000003,0.36471467700000004,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,95,conv2d,15,15,4.7778e-05,0.232448912,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,100,__init__,15,15,7.2771e-05,0.00010947700000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,106,forward,15,15,0.000128915,0.08452983400000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,146,deconv2d,15,15,5.1586000000000004e-05,0.08501679300000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,151,__init__,15,15,5.0204e-05,6.125500000000001e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,158,forward,15,15,0.00021195600000000002,0.260826047,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,392,im2col_array,30,30,0.037363789,0.119660791,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,432,conv2d_cpu_im2col_gemm_array,15,15,0.000148276,0.22501721000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions_conv.py,458,col2im_array,15,15,0.040437607,0.041588135000000005,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cpu/gemm.py,68,_load_c_kernel,30,30,2.3076e-05,2.3076e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cpu/gemm.py,160,_gemm_call_c,30,30,0.325571421,0.351758632,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cpu/gemm.py,200,cpu_gemm,30,30,0.007020589000000001,0.359248876,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cpu/gemm.py,232,gemm,30,30,6.0849000000000006e-05,0.359309725,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,121,<listcomp>,10,10,4.527e-06,4.527e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,107,sum_to,10,10,7.5383e-05,0.00018008800000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,150,<listcomp>,5,5,2.7050000000000004e-06,2.7050000000000004e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,129,reshape_sum_backward,5,5,3.3114e-05,0.00015931700000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,390,get_conv_outsize,120,120,5.3281e-05,5.3281e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,394,pair,240,240,0.00015659700000000002,0.00022529300000000003,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,112,forward,5,5,1.2962e-05,0.000317272,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,174,forward,15,15,4.7897000000000006e-05,0.23249680900000003,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,48,forward,5,5,2.6419000000000002e-05,3.6848000000000004e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,53,backward,5,5,3.2284000000000005e-05,0.00033256400000000004,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,61,tanh,5,5,8.426e-06,0.00010753200000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,102,__init__,5,5,2.808e-06,2.808e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,105,forward,5,5,3.926e-06,1.0640000000000001e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,114,reshape,5,5,1.9050000000000002e-05,8.8404e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,122,__init__,10,10,3.945e-06,3.945e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,125,forward,10,10,6.088e-06,1.1629e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,144,transpose,10,10,2.0522e-05,0.000133046,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,197,__init__,20,20,2.2943e-05,2.2943e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,201,forward,20,20,8.693600000000001e-05,0.0051453900000000006,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,207,backward,5,5,1.4579e-05,0.000368751,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,213,sum,20,20,7.0432e-05,0.005540191000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,218,__init__,5,5,3.0250000000000003e-06,3.0250000000000003e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,221,forward,5,5,1.2785e-05,0.00012132600000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,232,broadcast_to,5,5,1.4465000000000001e-05,0.00019485500000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,239,__init__,10,10,5.298e-06,5.298e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,242,forward,10,10,2.1569e-05,0.00020165700000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,252,sum_to,20,20,3.5924000000000004e-05,0.000358023,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,267,__init__,15,15,6.883000000000001e-06,6.883000000000001e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,270,forward,15,15,4.089e-05,0.000173415,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,278,backward,5,5,3.4173e-05,0.000376394,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,285,matmul,5,5,1.1972000000000002e-05,0.00015763500000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,320,linear_simple,5,5,1.6091000000000002e-05,0.00030431,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,378,forward,15,15,0.004827584,0.004901354,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,383,backward,15,15,0.0019386870000000001,0.03375073,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,393,relu,15,15,2.9256000000000002e-05,0.00520284,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,476,forward,5,5,9.4486e-05,0.000154418,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,483,backward,5,5,4.1329000000000004e-05,0.000442929,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,493,mean_square_error,5,5,8.967e-06,0.00023669400000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/cuda.py,11,get_array_module,200,200,0.00019023100000000002,0.0005874960000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/engine.py,52,update,5,5,1.677e-05,0.0005156350000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/engine.py,56,loss,5,5,2.9983e-05,0.240688003,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/docs/experiments/udacity-real-training/scripts/engine.py,61,backward,5,5,3.5176e-05,0.40251642000000004,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,16,using_config,120,120,8.541000000000001e-05,0.00015749400000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,51,__init__,265,265,0.00023906300000000003,0.000265825,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,70,__len__,5,5,2.9140000000000004e-06,3.7260000000000004e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,73,shape,90,90,3.8860000000000004e-05,3.8860000000000004e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,89,T,10,10,1.0312e-05,0.000143358,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,94,set_creator,60,60,2.9028e-05,2.9028e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,104,cleargrad,40,40,4.0086e-05,4.0086e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,107,reshape,5,5,1.2837000000000001e-05,0.000102844,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,114,sum,15,15,9.3755e-05,0.003945035,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,146,<lambda>,60,60,2.4474000000000003e-05,2.4474000000000003e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,142,add_func,60,60,0.000124556,0.00023560600000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,152,<listcomp>,60,60,3.0867e-05,3.0867e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,133,backward,5,5,0.000799598,0.40232758700000004,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,19,__setattr__,50,50,0.000126451,0.000136091,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,29,<listcomp>,25,25,1.9025e-05,1.9025e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,181,as_array,270,270,0.000203314,0.001006247,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,187,as_variable,375,375,0.000132416,0.00021763200000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,195,<listcomp>,205,205,0.00015008100000000002,0.000363725,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,197,<listcomp>,205,205,8.6242e-05,8.6242e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,201,<listcomp>,205,205,0.00031755300000000004,0.0013559610000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,204,<listcomp>,60,60,4.2721e-05,4.2721e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,208,<listcomp>,205,205,0.00015369600000000001,0.00015369600000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,194,__call__,205,205,0.015298454000000001,0.636917002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,30,<listcomp>,25,25,1.182e-05,1.182e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,241,forward,5,5,2.9046000000000003e-05,2.9046000000000003e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,246,backward,5,5,1.4426e-05,0.000225171,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,25,__call__,5,25,0.0001451,0.24042132600000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,254,add,5,5,1.3185000000000002e-05,0.000130584,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,261,forward,50,50,0.031459063,0.031459063,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,266,backward,5,5,1.7221e-05,0.00035323200000000004,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,36,params,90,210,0.000164021,0.00018056200000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,275,mul,50,50,0.000143707,0.032521575000000004,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,281,forward,5,5,1.4115000000000001e-05,1.4115000000000001e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/layers.py,45,cleargrads,5,5,2.8495e-05,0.000153657,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,288,neg,5,5,7.0030000000000005e-06,6.8027e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,293,forward,10,10,2.7881000000000003e-05,2.7881000000000003e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,306,sub,5,5,1.5309000000000002e-05,0.00011903300000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,311,rsub,5,5,1.0642e-05,0.00010512700000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__.py,829,get_array_module,200,200,0.000326788,0.000368497,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,33,_slice_at_axis,240,240,0.00012139500000000001,0.00012139500000000001,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,58,_view_roi,120,120,0.000156544,0.000156544,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,109,<genexpr>,150,150,4.8888000000000004e-05,4.8888000000000004e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,120,<genexpr>,150,150,6.483900000000001e-05,6.483900000000001e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,86,_pad_simple,30,30,0.021539191000000003,0.02174997,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,129,_set_pad_area,120,120,0.0010795380000000001,0.0012009330000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,454,_as_pairs,60,60,0.000351723,0.00212982,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,521,_pad_dispatcher,30,30,7.717e-06,7.717e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/arraypad.py,529,pad,30,30,0.0006986500000000001,0.026163047000000002,5
+spatial,<__array_function__ internals>,177,pad,30,30,6.7493e-05,0.026348048000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,25,_maybe_view_as_subclass,35,35,2.3290000000000002e-05,2.3290000000000002e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,345,<genexpr>,115,115,2.7822000000000002e-05,2.7822000000000002e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,340,_broadcast_to,35,35,0.0005815670000000001,0.00074268,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,363,_broadcast_to_dispatcher,35,35,8.658e-06,8.658e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,367,broadcast_to,35,35,4.6151000000000006e-05,0.000788831,5
+spatial,<__array_function__ internals>,177,broadcast_to,35,35,4.3664e-05,0.000869328,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/function_base.py,346,iterable,35,35,2.7036e-05,3.832e-05,5
+spatial,~,0,<built-in method _ctypes.POINTER>,90,90,3.4848e-05,3.4848e-05,5
+spatial,/usr/lib/python3.8/ctypes/__init__.py,506,cast,90,90,0.00034507600000000004,0.00034507600000000004,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_internal.py,249,__init__,90,90,0.00019824300000000002,0.00019824300000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_internal.py,266,data_as,90,90,8.984800000000001e-05,0.00043492400000000005,5
+spatial,<__array_function__ internals>,177,round_,30,30,4.6757e-05,0.000403583,5
+spatial,<__array_function__ internals>,177,ones_like,5,5,8.185e-06,9.4115e-05,5
+spatial,<__array_function__ internals>,177,tensordot,15,15,2.3596000000000002e-05,0.042542617000000005,5
+spatial,<__array_function__ internals>,177,rollaxis,15,15,2.1774000000000002e-05,0.00020805000000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,946,_tensordot_dispatcher,15,15,4.559e-06,4.559e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1121,<listcomp>,15,15,1.7702e-05,1.7702e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1126,<listcomp>,15,15,9.205e-06,9.205e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1127,<listcomp>,15,15,7.625000000000001e-06,7.625000000000001e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1129,<listcomp>,15,15,1.0784e-05,1.0784e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1134,<listcomp>,15,15,7.2900000000000005e-06,7.2900000000000005e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1135,<listcomp>,15,15,5.510000000000001e-06,5.510000000000001e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,950,tensordot,15,15,0.00034696,0.042457821,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1254,_rollaxis_dispatcher,15,15,4.204e-06,4.204e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1258,rollaxis,15,15,0.00011741300000000001,0.000166801,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1878,isscalar,270,270,0.00033374800000000003,0.000795208,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py,51,_wrapfunc,30,30,4.6313e-05,0.000138695,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py,3241,_around_dispatcher,60,60,1.2579000000000001e-05,1.2579000000000001e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py,3245,around,30,30,5.3559e-05,0.00019225400000000002,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py,3754,round_,30,30,6.403700000000001e-05,0.00032201200000000005,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_methods.py,43,_amin,30,30,2.4996000000000003e-05,0.000326641,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_methods.py,47,_sum,35,35,2.9004000000000002e-05,0.004986063000000001,5
+spatial,<__array_function__ internals>,177,around,30,30,3.1984000000000004e-05,0.000257975,5
+spatial,<__array_function__ internals>,177,result_type,30,30,5.4926e-05,0.00019397000000000001,5
+spatial,<__array_function__ internals>,177,dot,15,15,2.9527e-05,0.039831445,5
+spatial,<__array_function__ internals>,177,copyto,5,5,7.215e-06,3.2241000000000005e-05,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,215,_ones_like_dispatcher,5,5,1.4230000000000002e-06,1.4230000000000002e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,219,ones_like,5,5,2.2482000000000003e-05,7.8638e-05,5
+spatial,<__array_function__ internals>,177,empty_like,5,5,8.265000000000001e-06,2.3915e-05,5
+spatial,~,0,<method 'astype' of 'numpy.ndarray' objects>,30,30,4.3392e-05,4.3392e-05,5
+spatial,~,0,<method 'dot' of 'numpy.ndarray' objects>,15,15,0.00012825800000000002,0.00012825800000000002,5
+spatial,~,0,<method 'min' of 'numpy.ndarray' objects>,30,30,3.7859000000000005e-05,0.0003645,5
+spatial,~,0,<method 'ravel' of 'numpy.ndarray' objects>,30,30,2.3005e-05,2.3005e-05,5
+spatial,~,0,<method 'reshape' of 'numpy.ndarray' objects>,140,140,0.06404604,0.06404604,5
+spatial,~,0,<method 'round' of 'numpy.ndarray' objects>,30,30,7.765200000000001e-05,7.765200000000001e-05,5
+spatial,~,0,<method 'squeeze' of 'numpy.ndarray' objects>,10,10,1.0851e-05,1.0851e-05,5
+spatial,~,0,<method 'sum' of 'numpy.ndarray' objects>,35,35,7.710300000000001e-05,0.005063166,5
+spatial,~,0,<method 'tolist' of 'numpy.ndarray' objects>,30,30,4.4462e-05,4.4462e-05,5
+spatial,~,0,<method 'transpose' of 'numpy.ndarray' objects>,145,145,0.000122981,0.000122981,5
+spatial,~,0,<built-in method numpy.array>,120,120,0.000166259,0.000166259,5
+spatial,~,0,<built-in method numpy.asarray>,90,90,0.000217593,0.000217593,5
+spatial,~,0,<built-in method numpy.ascontiguousarray>,60,60,0.025217187000000002,0.025217187000000002,5
+spatial,~,0,<built-in method numpy.zeros>,15,15,0.001034173,0.001034173,5
+spatial,~,0,<built-in method numpy.empty>,60,60,0.000140607,0.000140607,5
+spatial,~,0,<built-in method numpy.core._multiarray_umath.implement_array_function>,100,215,0.040240011,0.069277718,5
+spatial,~,0,<built-in method numpy.core._multiarray_umath.normalize_axis_index>,15,15,1.1692000000000001e-05,1.1692000000000001e-05,5
+spatial,~,0,<method 'reduce' of 'numpy.ufunc' objects>,95,95,0.005473948,0.005473948,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,84,empty_like,5,5,1.4930000000000001e-06,1.4930000000000001e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,668,result_type,30,30,5.454000000000001e-06,5.454000000000001e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,740,dot,15,15,4.717e-06,4.717e-06,5
+spatial,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,1079,copyto,5,5,1.6820000000000002e-06,1.6820000000000002e-06,5
+spatial,~,0,<method 'disable' of '_lsprof.Profiler' objects>,1,1,9.72e-07,9.72e-07,5
+spatial,/usr/lib/python3.8/contextlib.py,82,__init__,60,60,0.000107008,0.00013186800000000002,5
+spatial,/usr/lib/python3.8/contextlib.py,108,__enter__,60,60,5.4432e-05,0.000155963,5
+spatial,/usr/lib/python3.8/contextlib.py,117,__exit__,60,60,0.00010658000000000001,0.000219659,5
+spatial,/usr/lib/python3.8/contextlib.py,238,helper,60,60,5.6681e-05,0.00018854900000000001,5
+spatial,/usr/lib/python3.8/os.py,670,__getitem__,30,30,0.00019842400000000002,0.00030354000000000004,5
+spatial,docs/experiments/gpu0-autonomous-7h/scripts/profile_cpu.py,35,step,5,5,3.8784e-05,0.643758842,5
+spatial,/usr/lib/python3.8/os.py,748,encode,30,30,6.5411e-05,0.000105116,5
+spatial,/usr/lib/python3.8/os.py,766,getenv,30,30,6.480800000000001e-05,0.00046965500000000003,5
+spatial,/usr/lib/python3.8/_collections_abc.py,657,get,30,30,0.00010130700000000001,0.000404847,5
+spatial,/usr/lib/python3.8/abc.py,96,__instancecheck__,260,260,0.000101446,0.000269213,5
+branches32,~,0,<method 'get' of 'ContextVar' objects>,1650,1650,0.00020712,0.00020712,50
+branches32,~,0,<method 'add' of 'set' objects>,4850,4850,0.0007607860000000001,0.0007607860000000001,50
+branches32,~,0,<method 'append' of 'list' objects>,4850,4850,0.000540682,0.000540682,50
+branches32,~,0,<method 'pop' of 'list' objects>,4850,4850,0.000590014,0.000590014,50
+branches32,~,0,<method 'sort' of 'list' objects>,4850,4850,0.015706714,0.02755847,50
+branches32,~,0,<built-in method builtins.any>,50,50,4.5276000000000005e-05,7.8441e-05,50
+branches32,~,0,<built-in method builtins.getattr>,9700,9700,0.002109798,0.002109798,50
+branches32,~,0,<built-in method builtins.isinstance>,128300,128300,0.019270604,0.030042307,50
+branches32,~,0,<built-in method builtins.iter>,50,50,9.449e-06,9.449e-06,50
+branches32,~,0,<built-in method builtins.len>,14700,14700,0.0017130630000000001,0.0017130630000000001,50
+branches32,~,0,<built-in method builtins.max>,4850,4850,0.001185662,0.001185662,50
+branches32,~,0,<built-in method builtins.next>,9700,9700,0.0027931830000000003,0.009940024,50
+branches32,~,0,<built-in method builtins.setattr>,9700,9700,0.001628911,0.001628911,50
+branches32,~,0,<built-in method _abc._abc_instancecheck>,21050,21050,0.00534011,0.00534011,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,356,selected,1650,1650,0.000901919,0.001109039,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,383,sum_array,1650,1650,0.001501984,0.008714366000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,121,<listcomp>,1600,1600,0.000287621,0.000287621,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,107,sum_to,1600,1600,0.005998763000000001,0.015442581,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,129,reshape_sum_backward,50,50,9.122600000000001e-05,0.00029531100000000003,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,48,forward,1600,1600,0.003173122,0.006013271000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,53,backward,1600,1600,0.005716909,0.093277117,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,61,tanh,1600,1600,0.0012078500000000001,0.023711933,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,114,reshape,50,50,4.5114e-05,7.6765e-05,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,197,__init__,50,50,2.4819e-05,2.4819e-05,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,201,forward,50,50,0.00015304400000000002,0.0006251610000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,207,backward,50,50,8.520500000000001e-05,0.0020723620000000003,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,213,sum,50,50,7.8429e-05,0.0012882680000000002,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,218,__init__,50,50,1.9066e-05,1.9066e-05,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,221,forward,50,50,9.5328e-05,0.000988203,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,232,broadcast_to,50,50,0.000102588,0.001691846,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,239,__init__,1600,1600,0.000421965,0.000421965,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,242,forward,1600,1600,0.0014719280000000002,0.016914509,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,252,sum_to,3200,3200,0.003735996,0.037561717,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/cuda.py,11,get_array_module,13000,13000,0.008872775000000001,0.024151921,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,16,using_config,9700,9700,0.0042157290000000005,0.007146841,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,51,__init__,16300,16300,0.010869152,0.012301282,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,73,shape,3350,3350,0.0008709980000000001,0.0008709980000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,94,set_creator,4850,4850,0.001428341,0.001428341,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,107,reshape,50,50,8.9802e-05,0.000177293,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,146,<lambda>,104050,104050,0.011851756000000001,0.011851756000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,142,add_func,6400,6400,0.005169335000000001,0.034029273,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,152,<listcomp>,4850,4850,0.001826902,0.001826902,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,133,backward,50,50,0.025764623,0.25225425700000004,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,181,as_array,22700,22700,0.010542745000000001,0.051033840000000004,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,187,as_variable,24350,24350,0.007345043000000001,0.011696686000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,195,<listcomp>,13000,13000,0.007752210000000001,0.018771611,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,197,<listcomp>,13000,13000,0.004230129,0.004230129,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,201,<listcomp>,13000,13000,0.011675328,0.051647888,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,204,<listcomp>,4850,4850,0.00160297,0.00160297,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,208,<listcomp>,13000,13000,0.005615537,0.005615537,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,194,__call__,13000,13000,0.043880273000000004,0.17210533800000002,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,241,forward,4750,4750,0.006852094,0.006852094,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,246,backward,3150,3150,0.0026550410000000003,0.040216758000000005,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,254,add,4750,4750,0.007380621,0.08373677800000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,261,forward,3350,3350,0.006221887000000001,0.006221887000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,266,backward,50,50,7.8324e-05,0.001744913,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,275,mul,3350,3350,0.005810234,0.057167571,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,293,forward,1600,1600,0.002987926,0.002987926,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,311,rsub,1600,1600,0.0029480310000000003,0.029055169000000002,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__.py,829,get_array_module,13000,13000,0.011450471,0.013634881000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,25,_maybe_view_as_subclass,50,50,2.593e-05,2.593e-05,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,345,<genexpr>,150,150,3.3165000000000005e-05,3.3165000000000005e-05,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,340,_broadcast_to,50,50,0.00048464000000000005,0.0006520780000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,363,_broadcast_to_dispatcher,50,50,8.617e-06,8.617e-06,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,367,broadcast_to,50,50,4.3291e-05,0.000695369,50
+branches32,<__array_function__ internals>,177,broadcast_to,50,50,4.9809000000000004e-05,0.0007852200000000001,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/function_base.py,346,iterable,50,50,2.8342e-05,3.7791000000000005e-05,50
+branches32,<__array_function__ internals>,177,ones_like,50,50,6.2339e-05,0.000592486,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1878,isscalar,22700,22700,0.019317048,0.039866609000000004,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_methods.py,47,_sum,1650,1650,0.000679619,0.0048840210000000005,50
+branches32,<__array_function__ internals>,177,copyto,50,50,4.8995e-05,0.000183477,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,215,_ones_like_dispatcher,50,50,1.0558000000000001e-05,1.0558000000000001e-05,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,219,ones_like,50,50,0.000113431,0.000470163,50
+branches32,<__array_function__ internals>,177,empty_like,50,50,6.1201e-05,0.000173255,50
+branches32,~,0,<method 'reshape' of 'numpy.ndarray' objects>,50,50,5.5867000000000006e-05,5.5867000000000006e-05,50
+branches32,~,0,<method 'squeeze' of 'numpy.ndarray' objects>,1600,1600,0.000701745,0.000701745,50
+branches32,~,0,<method 'sum' of 'numpy.ndarray' objects>,1650,1650,0.0012193220000000001,0.006103343000000001,50
+branches32,~,0,<built-in method numpy.array>,3300,3300,0.0016100670000000002,0.0016100670000000002,50
+branches32,~,0,<built-in method numpy.arange>,50,50,0.000139431,0.000139431,50
+branches32,~,0,<built-in method numpy.core._multiarray_umath.implement_array_function>,100,200,0.00030727,0.001246383,50
+branches32,~,0,<method 'reduce' of 'numpy.ufunc' objects>,1650,1650,0.004204402,0.004204402,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,84,empty_like,50,50,8.633e-06,8.633e-06,50
+branches32,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,1079,copyto,50,50,1.1484e-05,1.1484e-05,50
+branches32,~,0,<method 'disable' of '_lsprof.Profiler' objects>,1,1,2.1e-07,2.1e-07,50
+branches32,/usr/lib/python3.8/contextlib.py,82,__init__,4850,4850,0.004911122,0.005718719000000001,50
+branches32,/usr/lib/python3.8/contextlib.py,108,__enter__,4850,4850,0.00259456,0.008352499000000001,50
+branches32,/usr/lib/python3.8/contextlib.py,117,__exit__,4850,4850,0.003475974,0.007658059,50
+branches32,/usr/lib/python3.8/contextlib.py,238,helper,4850,4850,0.00249314,0.008211859,50
+branches32,docs/experiments/gpu0-autonomous-7h/scripts/profile_cpu.py,15,branch_loss,50,50,0.001255706,0.086845318,50
+branches32,docs/experiments/gpu0-autonomous-7h/scripts/profile_cpu.py,35,step,50,50,0.00029718400000000003,0.33939675900000005,50
+branches32,/usr/lib/python3.8/abc.py,96,__instancecheck__,21050,21050,0.005431593,0.010771703,50
+branches32,docs/experiments/gpu0-autonomous-7h/scripts/profile_cpu.py,18,<listcomp>,50,50,0.002709749,0.055927323,50
+branches256,~,0,<method 'get' of 'ContextVar' objects>,12850,12850,0.001541452,0.001541452,50
+branches256,~,0,<method 'add' of 'set' objects>,38450,38450,0.004053416000000001,0.004053416000000001,50
+branches256,~,0,<method 'append' of 'list' objects>,38450,38450,0.003936013,0.003936013,50
+branches256,~,0,<method 'pop' of 'list' objects>,38450,38450,0.003993944,0.003993944,50
+branches256,~,0,<method 'sort' of 'list' objects>,38450,38450,0.8643820210000001,1.533468856,50
+branches256,~,0,<built-in method builtins.any>,50,50,5.2108e-05,8.819800000000001e-05,50
+branches256,~,0,<built-in method builtins.getattr>,76900,76900,0.012958911,0.012958911,50
+branches256,~,0,<built-in method builtins.isinstance>,1013100,1013100,0.149407538,0.236286725,50
+branches256,~,0,<built-in method builtins.iter>,50,50,1.1343000000000001e-05,1.1343000000000001e-05,50
+branches256,~,0,<built-in method builtins.len>,115500,115500,0.013454911000000002,0.013454911000000002,50
+branches256,~,0,<built-in method builtins.max>,38450,38450,0.009022072,0.009022072,50
+branches256,~,0,<built-in method builtins.next>,76900,76900,0.021533583000000002,0.07644835800000001,50
+branches256,~,0,<built-in method builtins.setattr>,76900,76900,0.012943644,0.012943644,50
+branches256,~,0,<built-in method _abc._abc_instancecheck>,166650,166650,0.042820956,0.042820956,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,356,selected,12850,12850,0.006493348,0.0080348,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/backends/cuda/runtime.py,383,sum_array,12850,12850,0.009982242,0.064732236,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,121,<listcomp>,12800,12800,0.002418735,0.002418735,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,107,sum_to,12800,12800,0.045343579,0.118744704,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/utils.py,129,reshape_sum_backward,50,50,9.811100000000001e-05,0.000312002,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,48,forward,12800,12800,0.02426154,0.046716769000000005,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,53,backward,12800,12800,0.046567513000000005,0.757270039,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,61,tanh,12800,12800,0.009007778000000001,0.25378399700000004,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,114,reshape,50,50,4.8100000000000004e-05,7.8909e-05,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,197,__init__,50,50,3.4687e-05,3.4687e-05,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,201,forward,50,50,0.00020855500000000003,0.00082992,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,207,backward,50,50,9.329000000000001e-05,0.00232812,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,213,sum,50,50,9.384000000000001e-05,0.0015713160000000001,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,218,__init__,50,50,2.4867e-05,2.4867e-05,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,221,forward,50,50,0.000108461,0.001181549,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,232,broadcast_to,50,50,0.00011515000000000001,0.0019228280000000001,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,239,__init__,12800,12800,0.0032958370000000002,0.0032958370000000002,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,242,forward,12800,12800,0.011358513,0.13010321700000002,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/functions.py,252,sum_to,25600,25600,0.029160988000000002,0.296442511,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/cuda.py,11,get_array_module,102600,102600,0.06976834700000001,0.19052943400000003,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,16,using_config,76900,76900,0.035304015,0.054914775000000006,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,51,__init__,128300,128300,0.091019735,0.101891493,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,73,shape,25750,25750,0.006768049000000001,0.006768049000000001,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,94,set_creator,38450,38450,0.01071966,0.01071966,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,107,reshape,50,50,9.7985e-05,0.00018762000000000002,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,146,<lambda>,6566450,6566450,0.669086835,0.669086835,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,142,add_func,51200,51200,0.041471854,1.5829301390000001,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,152,<listcomp>,38450,38450,0.014373728,0.014373728,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,133,backward,50,50,0.199475813,3.292395502,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,181,as_array,179500,179500,0.082891727,0.40005401100000004,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,187,as_variable,192350,192350,0.057544961000000006,0.095697639,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,195,<listcomp>,102600,102600,0.061726305,0.152508044,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,197,<listcomp>,102600,102600,0.033772893000000005,0.033772893000000005,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,201,<listcomp>,102600,102600,0.150065319,0.465609673,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,204,<listcomp>,38450,38450,0.057681263,0.057681263,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,208,<listcomp>,102600,102600,0.046253963,0.046253963,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,194,__call__,102600,102600,0.351527945,1.459671713,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,241,forward,38350,38350,0.053798739000000005,0.053798739000000005,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,246,backward,25550,25550,0.020471578,0.316914089,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,254,add,38350,38350,0.059005833,0.7128329720000001,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,261,forward,25750,25750,0.050316365,0.050316365,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,266,backward,50,50,8.279e-05,0.001791155,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,275,mul,25750,25750,0.043958531,0.441848878,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,293,forward,12800,12800,0.025129643,0.025129643,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/hytorch/core.py,311,rsub,12800,12800,0.023427073000000003,0.235850474,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/cupy/__init__.py,829,get_array_module,102600,102600,0.091251647,0.108137965,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,25,_maybe_view_as_subclass,50,50,2.7268e-05,2.7268e-05,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,345,<genexpr>,150,150,3.609e-05,3.609e-05,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,340,_broadcast_to,50,50,0.0006267320000000001,0.0008129840000000001,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,363,_broadcast_to_dispatcher,50,50,1.0004000000000001e-05,1.0004000000000001e-05,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/stride_tricks.py,367,broadcast_to,50,50,5.1462e-05,0.000864446,50
+branches256,<__array_function__ internals>,177,broadcast_to,50,50,5.3196000000000004e-05,0.00096215,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/lib/function_base.py,346,iterable,50,50,3.0048e-05,4.1391000000000004e-05,50
+branches256,<__array_function__ internals>,177,ones_like,50,50,6.909300000000001e-05,0.0007228720000000001,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,1878,isscalar,179500,179500,0.149574646,0.312735168,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/_methods.py,47,_sum,12850,12850,0.004968037000000001,0.037693242,50
+branches256,<__array_function__ internals>,177,copyto,50,50,5.704e-05,0.00022993000000000002,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,215,_ones_like_dispatcher,50,50,1.0924e-05,1.0924e-05,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/numeric.py,219,ones_like,50,50,0.000136148,0.0005868500000000001,50
+branches256,<__array_function__ internals>,177,empty_like,50,50,6.641600000000001e-05,0.00022077200000000002,50
+branches256,~,0,<method 'reshape' of 'numpy.ndarray' objects>,50,50,6.972900000000001e-05,6.972900000000001e-05,50
+branches256,~,0,<method 'squeeze' of 'numpy.ndarray' objects>,12800,12800,0.005223005,0.005223005,50
+branches256,~,0,<method 'sum' of 'numpy.ndarray' objects>,12850,12850,0.009021952,0.046715194,50
+branches256,~,0,<built-in method numpy.array>,25700,25700,0.013419612000000001,0.013419612000000001,50
+branches256,~,0,<built-in method numpy.arange>,50,50,0.000197099,0.000197099,50
+branches256,~,0,<built-in method numpy.core._multiarray_umath.implement_array_function>,100,200,0.000396502,0.001541805,50
+branches256,~,0,<method 'reduce' of 'numpy.ufunc' objects>,12850,12850,0.032725205,0.032725205,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,84,empty_like,50,50,9.324000000000001e-06,9.324000000000001e-06,50
+branches256,/srv/lab-disks/disk2/users/xymo/projects/hytorch/.venv/lib/python3.8/site-packages/numpy/core/multiarray.py,1079,copyto,50,50,1.1929e-05,1.1929e-05,50
+branches256,~,0,<method 'disable' of '_lsprof.Profiler' objects>,1,1,2.51e-07,2.51e-07,50
+branches256,/usr/lib/python3.8/contextlib.py,82,__init__,38450,38450,0.039109715,0.045401510000000006,50
+branches256,/usr/lib/python3.8/contextlib.py,108,__enter__,38450,38450,0.020531128000000003,0.063552,50
+branches256,/usr/lib/python3.8/contextlib.py,117,__exit__,38450,38450,0.026934732000000003,0.060362218,50
+branches256,/usr/lib/python3.8/contextlib.py,238,helper,38450,38450,0.020051366,0.06545287600000001,50
+branches256,docs/experiments/gpu0-autonomous-7h/scripts/profile_cpu.py,15,branch_loss,50,50,0.005851475,0.7798384150000001,50
+branches256,docs/experiments/gpu0-autonomous-7h/scripts/profile_cpu.py,35,step,50,50,0.0006406690000000001,4.072874586,50
+branches256,/usr/lib/python3.8/abc.py,96,__instancecheck__,166650,166650,0.044058231,0.08687918700000001,50
+branches256,docs/experiments/gpu0-autonomous-7h/scripts/profile_cpu.py,18,<listcomp>,50,50,0.023086167,0.518417217,50

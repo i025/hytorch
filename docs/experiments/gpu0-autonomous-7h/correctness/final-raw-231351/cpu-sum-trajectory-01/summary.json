@@ -1,0 +1,16 @@
+{
+  "status": "DIAGNOSIS_COMPLETED",
+  "gpu": "NOT_RUN",
+  "steps_per_model_per_mode": 256,
+  "trajectory_failed": 0,
+  "replay_failed": 0,
+  "trajectory_comparisons": 812,
+  "replay_comparisons": 312,
+  "gpu_priority_pause_s": 0.04330804059281945,
+  "first_loss_failure": {
+    "donkey": null,
+    "spatial": null
+  },
+  "finished_utc": "2026-11-05T17:44:00.076716+00:00",
+  "scope": "CPU mathematical simulation of existing Sum; not a CUDA execution or performance benchmark"
+}

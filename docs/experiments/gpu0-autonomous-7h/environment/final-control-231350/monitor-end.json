@@ -1,0 +1,8 @@
+{
+  "stopped_utc": "2026-11-05T23:13:50.150049+00:00",
+  "our_stopped_pids": [
+    17169
+  ],
+  "reason": "Reserve final five minutes for CPU archival and Git publication; GPU work cutoff was thirty minutes before deadline",
+  "gpu_context": "No context held by monitor/finalizer; GPU children closed before CPU reporting"
+}

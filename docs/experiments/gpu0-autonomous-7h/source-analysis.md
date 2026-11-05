@@ -20,6 +20,10 @@
 DonkeyNet排序自耗时仅64.368µs/5步；SpatialNet51.162µs/5步。不能据此声称CNN应有52%加速。
 Function创建、isscalar/get_array_module、计算图操作也有开销，但本轮不同时重写它们。
 
+ReLU已有原型源码使用`__fmul_rn(gy, x>0 ? 1.f : 0.f)`，显式保留旧mask乘法语义，
+不是在非激活位置直接写常量0。已有GPU计划包含NaN/Inf/有符号零、非默认stream和高阶路径检查；
+此处仅确认源码机制，没有把编译或CPU阅读当作这些GPU测试已通过。
+
 ## 一个通用调度原型
 
 `using_config('backward_schedule','heap')`显式启用，默认list。

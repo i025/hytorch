@@ -1,0 +1,6 @@
+{
+  "status": "COMPLETED",
+  "scope": "CPU model or synthetic branched graph; not GPU training",
+  "finished_utc": "2026-11-05T16:26:54.476176+00:00",
+  "gpu": "NOT_RUN"
+}

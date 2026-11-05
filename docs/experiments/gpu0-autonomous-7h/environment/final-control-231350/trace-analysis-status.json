@@ -1,0 +1,5 @@
+{
+  "status": "NOT_RUN",
+  "reason": "No completed/closed GPU window before CPU analysis cutoff",
+  "timestamp": "2026-11-05T23:09:02.736856+00:00"
+}
