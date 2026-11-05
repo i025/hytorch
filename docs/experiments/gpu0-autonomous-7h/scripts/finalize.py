@@ -108,7 +108,7 @@ Sum超差样本即使能由FP32顺序解释，也保留FAIL；完整CuPy/PyTorch
 
 ## CPU研究与唯一新原型
 
-主机回归210 passed、0 failed、0 skipped；另有相位归因2项CPU测试通过。
+最终主机集合：{summary['cpu_regression']}。此前210项及定向集合各次记录均保留，不能相加重复计数。
 heap调度在CNN/Transformer的188项比较逐元素一致，保持generation优先级和相同LIFO平局顺序；默认list。
 五次交替CPU计时中，256分支合成图吞吐均值约提高52.17%，CNN只变化0.3%–1.3%，不宣称稳定CNN收益。
 该批前段与回归共享CPU，微小差异不能作为收益证据。初始测试参考dtype和CSV脚本失败保留，生产数学没有因此改变。

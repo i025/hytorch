@@ -133,7 +133,7 @@ def main():
                 fig.tight_layout();fig.savefig(figures/f'training-{model}-{task}.png',dpi=150);plt.close(fig)
     write_csv(out/'training-ratios.csv',ratios)
     summary=dict(status='FINAL' if a.final else 'INTERMEDIATE',monitor=monitor,window=window,gpu_tests=suites,
-        cpu_regression=tests(report/'correctness/regression-01.xml'),
+        cpu_regression=tests(report/'correctness/regression-final-01.xml' if (report/'correctness/regression-final-01.xml').exists() else report/'correctness/regression-01.xml'),
         cpu_schedule=json.loads((raw/'schedule-bench-02/summary.json').read_text()),
         cpu_sum_model=json.loads((raw/'cpu-sum-training-01/summary.json').read_text()) if (raw/'cpu-sum-training-01/summary.json').exists() else dict(status='NOT_RUN'),
         protocol_check=dict(status='NOT_RUN' if not training else 'PASS' if not initial_errors else 'FAIL',errors=initial_errors,

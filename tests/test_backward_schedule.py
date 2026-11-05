@@ -67,3 +67,9 @@ def test_exception_restores_backprop_context(mode):
         with pytest.raises(RuntimeError,match='intentional failure'):Broken()(x).backward()
     assert Config.enable_backprop
     assert Config.backward_schedule=='list'
+
+
+def test_invalid_schedule_is_not_silently_ignored():
+    x=hytorch.Variable(np.ones(3,np.float32))
+    with hytorch.using_config('backward_schedule','unknown'):
+        with pytest.raises(ValueError,match='list/heap'):F.sum(x).backward()

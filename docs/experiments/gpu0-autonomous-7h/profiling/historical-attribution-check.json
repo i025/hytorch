@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "Historical 4H GPU trace reanalyzed on CPU; NOT new 7h GPU execution",
+  "phases": [
+    {
+      "phase": "forward",
+      "kernels": 624,
+      "kernel_us": 8902.370999999992,
+      "old_new_abs_delta_us": 1.8189894035458565e-12
+    },
+    {
+      "phase": "backward",
+      "kernels": 832,
+      "kernel_us": 17150.770000000004,
+      "old_new_abs_delta_us": 7.275957614183426e-12
+    },
+    {
+      "phase": "update",
+      "kernels": 16,
+      "kernel_us": 149.50299999999996,
+      "old_new_abs_delta_us": 5.684341886080802e-14
+    }
+  ]
+}

@@ -140,6 +140,8 @@ class Variable:
             self.grad = Variable(xp.ones_like(self.data))    # 计算高阶导数，Variable类只修改一处，将grad也变为Variable，可以构建计算图
         funcs = []
         seen_set = set()
+        if Config.backward_schedule not in ('list', 'heap'):
+            raise ValueError('backward_schedule must be list/heap')
         use_heap = Config.backward_schedule == 'heap'
         serial = 0
 

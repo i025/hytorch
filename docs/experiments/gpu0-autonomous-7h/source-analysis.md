@@ -47,3 +47,15 @@ CPU主机微测130份重复记录：plan_sum跨24形状平均7.54µs/调用（4.
 backend上下文约3.48µs；纯主机ABI版本函数约0.135µs，**不是CUDA提交耗时**。
 因此本轮Sum基准将backend上下文放在整个测量循环外，符合训练一次配置、多次调用的实际用法，
 避免只给native路径额外计入每调用配置成本。历史准备脚本保留，不修改旧数据。
+
+## 离线历史Trace交叉验证
+
+本轮CPU重读4H `runs/udacity_real_analysis_01/trace-I.sqlite`（历史GPU1共享窗口），
+不是本轮GPU0计算。新归因器得到2392个Kernel，全部匹配API；其中Forward624、Backward832、
+Update16，另外920在所选训练phase以外（含初始化/预热等）。与历史CSV逐项核时匹配，
+这份Trace不是4A更早的2664次Trace，不能混用计数。
+16步的Backward累计17150.770µs（1071.923µs/step），主机NVTX累计67591.847µs；
+两种口径不能相减冒充Python独占时间。
+原转移表记录32次Memcpy、10137856字节，即每Batch633616字节（图像633600+标签16），
+和Batch4 FP32协议相符；这是历史Trace字节核查，不是本轮H2D性能或GPU利用率。
+两个CPU合成测试还验证：GPU执行晚于NVTX退出时仍按API归属正确phase，未匹配API明确报出。
