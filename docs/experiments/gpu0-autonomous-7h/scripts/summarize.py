@@ -101,22 +101,28 @@ def main():
                     protocols[model]=conf
                 else:
                     ref=initials[model]
-                    exact=set(arrays.files)==set(ref) and all(np.array_equal(arrays[k],ref[k]) for k in arrays.files)
+                    exact=set(arrays.files)==set(ref) and all(arrays[k].dtype==ref[k].dtype==np.float32 and np.array_equal(arrays[k],ref[k]) for k in arrays.files)
                     same=all(conf[k]==protocols[model][k] for k in ('indices','batch','dtype','seed','lr','dropout','tf32'))
                     if not exact or not same:initial_errors.append(dict(run=directory.name,weights_equal=exact,protocol_equal=same))
     write_csv(out/'training-runs.csv',training)
     groups=[]
-    keys=sorted({(r['model'],r['task'],r['method'],r['schedule'],r['run'].startswith('schedule-')) for r in training if not r['instrumented']})
-    for model,task,method,schedule,optional in keys:
-        rr=[r for r in training if not r['instrumented'] and (r['model'],r['task'],r['method'],r['schedule'],r['run'].startswith('schedule-'))==(model,task,method,schedule,optional)]
+    def group_key(r):
+        return (r['model'],r['task'],r['method'],r['schedule'],r['run'].startswith('schedule-'),r['workers'],r['sum_native'],r['relu_native'])
+    keys=sorted({group_key(r) for r in training if not r['instrumented']})
+    for key in keys:
+        model,task,method,schedule,optional,workers,sum_native,relu_native=key
+        rr=[r for r in training if not r['instrumented'] and group_key(r)==key]
         wall,wall_sd=mean_sd([r['wall_s'] for r in rr]);speed,speed_sd=mean_sd([r['samples_per_sec'] for r in rr])
-        groups.append(dict(model=model,task=task,method=method,schedule=schedule,optional=optional,repeats=len(rr),
+        groups.append(dict(model=model,task=task,method=method,schedule=schedule,optional=optional,workers=workers,
+            sum_native=sum_native,relu_native=relu_native,repeats=len(rr),
             status='COMPLETE' if len(rr)>=3 else 'PARTIAL',wall_s_mean=wall,wall_s_sd=wall_sd,
             samples_per_sec_mean=speed,samples_per_sec_sd=speed_sd))
     write_csv(out/'training-summary.csv',groups)
     ratios=[]
     for model in ('donkey','spatial'):
         for task in ('compute','io','phases'):
+            complete=[r for r in groups if r['model']==model and r['task']==task and not r['optional'] and r['status']=='COMPLETE']
+            assert len({r['method'] for r in complete})==len(complete),'Do not pool different variants under one method label'
             selected={r['method']:r for r in groups if r['model']==model and r['task']==task and not r['optional'] and r['status']=='COMPLETE'}
             for new,base in (('I','A'),('P','I'),('R','I'),('S','I'),('J','I'),('J','A'),('J','E'),('J','E-prefetch'),('E-prefetch','E')):
                 if new not in selected or base not in selected:continue
