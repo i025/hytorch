@@ -24,6 +24,7 @@ New GPU work should stop by 23:06:35 to leave approximately 30 minutes for archi
 | 18:44:50–next day02:37:53 | No new recorded monitoring or experiments | Do not claim continuous six-hour observation or infer GPU availability during this gap |
 | 2026-11-05 02:37:53 | Next observed command / recovery | 北京时间10:37:53，already past six-hour deadline. Stop new research; do not run GPU tests even if devices become idle |
 | 02:39–final archival commit | Close out only | Confirm no own GPU/monitor process, preserve unfinished timing draft server-only and restore committed code, index198 raw files, record NOT_RUN and credential-blocked push. Delivery exceeds wall budget |
+| After archival commit2951e11 | Actual non-force push attempted | Exit128, missing HTTPS username credentials. Full output saved under logs/publication-01; no remote publication claimed |
 
 This host has no managed-cloud environment status tool or `/etc/codex/network-policy.json`.
 No managed-cloud credential readiness is inferred from their absence.

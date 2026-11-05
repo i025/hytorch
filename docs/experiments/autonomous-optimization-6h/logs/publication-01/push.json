@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED_MISSING_CREDENTIALS",
+  "command": [
+    "git",
+    "-c",
+    "credential.interactive=false",
+    "push",
+    "-u",
+    "origin",
+    "experiment/hytorch-autonomous-optimization"
+  ],
+  "cwd": "/home/xymo/projects/hytorch",
+  "environment": {
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "attempted_commit": "2951e114f72b982b20f3c627fdd75a053336a2a0",
+  "returncode": 128,
+  "stdout_stderr": "fatal: could not read Username for 'https://github.com': terminal prompts disabled\n",
+  "remote_publication_succeeded": false,
+  "no_force_push": true
+}

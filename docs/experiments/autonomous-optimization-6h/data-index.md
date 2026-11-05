@@ -34,6 +34,10 @@ resource interruptions and availability samples, not a successful GPU experiment
 [cpu-additional-01/file-index.csv](results/cpu-additional-01/file-index.csv) adds52
 server files/6 portable records for initialization recheck and loading profile.
 
+Actual final Git push failure is preserved in[push.log](logs/publication-01/push.log)
+and[command/status JSON](logs/publication-01/push.json), with server originals in
+`/home/xymo/projects/hytorch/runs/autonomous_publication_01/`. No token is recorded.
+
 Historical sources are linked, never overwritten:
 
 - `/home/xymo/projects/hytorch/runs/udacity_real_prepared_01/` — original protocol,
