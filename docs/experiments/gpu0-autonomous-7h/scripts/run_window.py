@@ -26,7 +26,7 @@ def main():
     uuid=config['uuid'];before=snapshot(uuid)
     assert not before['processes'] and before['memory_used_mib']<=config['idle_memory_mib']
     assert before['utilization_pct']<=config['idle_utilization_pct']
-    state=dict(status='RUNNING',uuid=uuid,physical_gpu=0,logical_gpu=0,device_switches=0,
+    state=dict(status='RUNNING',controller_pid=os.getpid(),uuid=uuid,physical_gpu=0,logical_gpu=0,device_switches=0,
         started_utc=datetime.now(timezone.utc).isoformat(),before=before,commands=[],
         lease='Observed idle and user-authorized GPU0; no exclusive scheduler lease',gates={})
     env=dict(os.environ,CUDA_VISIBLE_DEVICES=uuid,CUDA_DEVICE_ORDER='PCI_BUS_ID',NVIDIA_TF32_OVERRIDE='0',PYTHONHASHSEED='0',
@@ -36,7 +36,8 @@ def main():
         HYTORCH_SGD_TEST_OUTPUT=str(out/'sgd-arrays'),HYTORCH_CONV_TEST_OUTPUT=str(out/'legacy-arrays'),
         HYTORCH_REDUCTION_FAILURE_INPUTS=str(ROOT/'runs/cuda_reduction_01/cpu-reference-01'))
     def save():
-        (out/'window.json').write_text(json.dumps(state,indent=2)+'\n')
+        path=out/'window.tmp';path.write_text(json.dumps(state,indent=2)+'\n')
+        path.replace(out/'window.json')
     own=set();active=None
     def run(name,command,soft=False,method=None,min_remaining=180):
         nonlocal active
@@ -82,14 +83,23 @@ def main():
         code=run('sum-diagnosis',[sys.executable,HERE/'diagnose_sum.py','--run-gpu','--output',out/'sum-diagnosis'],soft=True)
         summary=json.loads((out/'sum-diagnosis/summary.json').read_text()) if (out/'sum-diagnosis/summary.json').exists() else {}
         tests=ET.parse(out/'sum-tests.xml').getroot().findall('.//testcase')
-        unexpected=[t.attrib['name'] for t in tests if any(t.find(k) is not None for k in ('failure','error','skipped'))
-            and not t.attrib['name'].startswith('test_retained_cancellation_inputs')]
+        unexpected=[]
+        for test in tests:
+            failure=test.find('failure')
+            known_rounding=(test.attrib['name'].startswith('test_retained_cancellation_inputs')
+                and failure is not None and 'Not equal to tolerance' in (failure.text or ''))
+            if test.find('error') is not None or test.find('skipped') is not None or (failure is not None and not known_rounding):
+                unexpected.append(test.attrib['name'])
         sum_ok=code==0 and not unexpected and summary.get('ordinary_inputs_pass',False)
         state['gates']['sum_implementation_and_ordinary_inputs']=sum_ok
         state['gates']['sum_general_correctness']=summary.get('status','NOT_RUN')
         state['gates']['sum_unexpected_tests']=unexpected;save()
+        if sum_ok:
+            run('sum-micro',[sys.executable,HERE/'bench_sum.py','--run-gpu','--eligibility',out/'sum-diagnosis/summary.json','--output',out/'sum-micro'])
         relu_ok=pytest('relu-tests',['tests/test_relu_backward_gpu.py'],soft=True)==0
         state['gates']['relu_correctness']=relu_ok;save()
+        if relu_ok:
+            run('relu-micro',[sys.executable,ROOT/'docs/experiments/autonomous-optimization-6h/scripts/bench_relu.py','--output',out/'relu-micro'])
         pytest('gpu-regression',plan['regression_tests'])
         check=[sys.executable,HERE/'check_training.py','--run-gpu','--prepared',plan['prepared'],'--output',out/'training-check']
         if sum_ok:check.append('--sum-enabled')
@@ -97,10 +107,6 @@ def main():
         run('training-check',check,min_remaining=600)
         training=json.loads((out/'training-check/summary.json').read_text())
         state['gates']['training']=training;save()
-        if sum_ok:
-            run('sum-micro',[sys.executable,HERE/'bench_sum.py','--run-gpu','--eligibility',out/'sum-diagnosis/summary.json','--output',out/'sum-micro'])
-        if relu_ok:
-            run('relu-micro',[sys.executable,ROOT/'docs/experiments/autonomous-optimization-6h/scripts/bench_relu.py','--output',out/'relu-micro'])
         for task in ('compute','io','phases'):
             for repeat in range(3):
                 methods=['A','I','P','R','S','J','E','E-prefetch'];methods=methods[repeat:]+methods[:repeat]
@@ -122,13 +128,13 @@ def main():
             run('trace-relu',['nsys','profile','--trace=cuda,nvtx,osrt','--sample=none','--cpuctxsw=none',
                 '-o',out/'trace-relu',sys.executable,ROOT/'docs/experiments/autonomous-optimization-6h/scripts/bench_relu.py',
                 '--trace','--output',out/'trace-relu-data'],min_remaining=600)
-        for model in ('donkey','spatial'):
-            for method in ('I','J','E-prefetch'):
+        for model,task,method in [(m,t,v) for m in ('donkey','spatial') for t,methods in
+            [('compute',('I','J','E-prefetch')),('io',('I','P','J','E','E-prefetch'))] for v in methods]:
                 if not training['eligible'][model].get(method,False):continue
-                name='trace-'+model+'-'+method
+                name='trace-'+task+'-'+model+'-'+method
                 command=['nsys','profile','--trace=cuda,nvtx,osrt','--sample=none','--cpuctxsw=none','-o',out/name,
                     sys.executable,HERE/'measure_training.py','--run-gpu','--nvtx','--no-fingerprints','--method',method,
-                    '--model',model,'--task','compute','--steps','16','--prepared',plan['prepared'],'--output',out/(name+'-data')]
+                    '--model',model,'--task',task,'--steps','16','--prepared',plan['prepared'],'--output',out/(name+'-data')]
                 if sum_ok:command.append('--sum-enabled')
                 if not relu_ok:command.append('--relu-disabled')
                 run(name,command,min_remaining=600)

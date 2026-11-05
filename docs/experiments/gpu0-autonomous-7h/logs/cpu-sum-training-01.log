@@ -1,0 +1,2 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{'status': 'PASS', 'training_comparisons': 156, 'training_failed': 0, 'reduction_comparisons': 192, 'reduction_failed': 0, 'gpu': 'NOT_RUN', 'scope': 'CPU execution with FP32 lane/tree simulation only; no native device call', 'finished_utc': '2026-11-05T16:57:57.977040+00:00'}
