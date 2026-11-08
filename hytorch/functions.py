@@ -382,6 +382,12 @@ class ReLU(Function):
 
     def backward(self, gy):
         x, = self.inputs
+        from hytorch.backends.cuda import runtime as rt
+        if not hytorch.Config.enable_backprop and rt.selected("relu_backward", x.data) == "fused":
+            if (cuda.get_array_module(x.data) is not np and x.dtype == np.float32
+                    and gy.dtype == np.float32 and x.size):
+                return hytorch.Variable(rt.relu_backward(x.data, gy.data))
+            rt._counts["relu_backward_fallback_cpu_or_dtype"] += 1
         mask = x.data > 0
         gx = gy * mask
         return gx

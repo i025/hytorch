@@ -2,7 +2,11 @@
 
 供队友在 NVIDIA GPU 上编译、验证和运行课程实验的源码包。
 
-**当前状态：2026-11-08 已完成 A100 上的 FP32 backward 修复、shape-aware GEMM dispatch、Col2im/dWeight 与框架调用优化，以及可选 GPU 训练监控。最新完整回归为 347 passed、2 个已有 CPU skip；GPU 测试实际执行。各轮性能与数值限制分别记录，不能将单算子加速等同于端到端加速。真实数据训练和迁移学习尚未验收。详见 [实验结果索引](docs/实验结果索引.md)。**
+**当前状态：2026-11-08 已完成 A100 上的 FP32 backward 修复、shape-aware GEMM dispatch、Col2im/dWeight 与框架调用优化，以及可选 GPU 训练监控。最新完整回归为 402 passed、2 个已有 CPU skip；GPU 测试实际执行。各轮性能与数值限制分别记录，不能将单算子加速等同于端到端加速。真实数据训练和迁移学习尚未验收。详见 [实验结果索引](docs/实验结果索引.md)。**
+
+## 可选的训练 Backward 优化
+
+已从 `experiment/gpu0-autonomous-7h` 选择性移植并实测 ReLU backward 融合与显式输入梯度跳过。相对本分支修改前提交，10 对 A100 DonkeyNet 合成训练平均耗时下降 **4.31%**，loss、参数梯度与权重逐位一致。默认保持兼容；不需要输入梯度时可加 `--relu-backward fused --no-input-grad`。heap 调度仅为宽图提供可选接口，未默认启用。见 [完整对比报告与复现命令](runs/a100_20261108/branch_candidate_review/REPORT.md)。
 
 ## 队友第一次运行：只做这四步
 

@@ -1,0 +1,3 @@
+source,steps,kernels_per_step,kernel_us_per_step
+original,20,142.0,1332.092500000001
+candidate,20,132.0,1253.042200000004

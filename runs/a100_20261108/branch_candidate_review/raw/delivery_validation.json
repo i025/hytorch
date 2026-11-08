@@ -1,0 +1,9 @@
+{
+  "comparisons": 2538,
+  "bitwise_equal": true,
+  "exact_original_pairs": 10,
+  "full_tests_passed": 402,
+  "existing_cpu_skips": 2,
+  "memcheck_errors": 0,
+  "racecheck_errors": 0
+}

@@ -70,8 +70,10 @@ class Conv2d(Function):
     def backward(self, gy):
         x, W, b = self.inputs
         # ==== gx ====
-        gx = deconv2d(gy, W, b=None, stride=self.stride, pad=self.pad,
-                      outsize=(x.shape[2], x.shape[3]))
+        gx = None
+        if x.requires_grad:
+            gx = deconv2d(gy, W, b=None, stride=self.stride, pad=self.pad,
+                          outsize=(x.shape[2], x.shape[3]))
         # ==== gW ====
         gW = Conv2DGradW(self)(x, gy)
         # ==== gb ====
@@ -171,8 +173,10 @@ class Conv2DGradW(Function):
         gW = gys  # Incoming cotangent, not the weak reference to our output.
 
         xh, xw = x.shape[2:]
-        gx = deconv2d(gy, gW, stride=self.stride, pad=self.pad,
-                      outsize=(xh, xw))
+        gx = None
+        if x.requires_grad:
+            gx = deconv2d(gy, gW, stride=self.stride, pad=self.pad,
+                          outsize=(xh, xw))
         ggy = conv2d(x, gW, stride=self.stride, pad=self.pad)
         return gx, ggy
 

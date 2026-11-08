@@ -1,0 +1,31 @@
+$ git status --short
+ M README.md
+ M benchmarks/bench_cuda_training.py
+ M "docs/\345\256\236\351\252\214\347\273\223\346\236\234\347\264\242\345\274\225.md"
+ M hytorch/backends/cuda/kernels.cu
+ M hytorch/backends/cuda/runtime.py
+ M hytorch/core.py
+ M hytorch/functions.py
+ M hytorch/functions_conv.py
+?? hytorch/backends/cuda/relu_backward.cu
+?? tests/test_backward_schedule.py
+?? tests/test_conv_dinput_pruning.py
+?? tests/test_relu_fusion.py
+
+$ git rev-parse HEAD
+4317bf55b22e362c9106fe40ec37ec3b62f2327d
+
+$ /usr/local/cuda/bin/nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2024 NVIDIA Corporation
+Built on Tue_Feb_27_16:19:38_PST_2024
+Cuda compilation tools, release 12.4, V12.4.99
+Build cuda_12.4.r12.4/compiler.33961263_0
+
+$ /usr/local/cuda/bin/compute-sanitizer --version
+NVIDIA (R) Compute Sanitizer
+Copyright (c) 2020-2024 NVIDIA Corporation
+Version 2024.1.0.0 (build 33961263) (public-release)
+
+$ /opt/nvidia/nsight-systems/2025.1.3/bin/nsys --version
+NVIDIA Nsight Systems version 2025.1.3.140-251335620677v0

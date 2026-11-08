@@ -1,0 +1,68 @@
+source,phase,kernel,calls,calls_per_step,total_us,us_per_step
+original,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",100,5.0,2224.6459999999984,111.23229999999992
+original,forward,cupy_copy__float32_float32,100,5.0,491.8090000000001,24.590450000000004
+original,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",160,8.0,6614.712000000005,330.73560000000026
+original,forward,"conv_pack(const float *, const float *, float *, int, int, int)",100,5.0,667.9699999999999,33.3985
+original,forward,cupy_maximum__float_float32_float32,140,7.0,606.8499999999999,30.342499999999994
+original,forward,cupy_add__float32_float32_float32,60,3.0,233.761,11.68805
+original,forward,cupy_tanh__float32_float32,20,1.0,63.906,3.1953
+original,loss,cupy_subtract__float32_float32_float32,20,1.0,62.65600000000001,3.1328000000000005
+original,loss,cupy_square__float32_float32,20,1.0,62.465,3.12325
+original,loss,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",20,1.0,72.09600000000002,3.604800000000001
+original,loss,cupy_true_divide__float32_float_float32,20,1.0,65.02400000000002,3.2512000000000008
+original,backward,cupy_fill,60,3.0,151.61600000000004,7.580800000000002
+original,backward,cupy_subtract__float32_float32_float32,40,2.0,128.96000000000006,6.448000000000003
+original,backward,cupy_multiply__float32_float32_float32,80,4.0,259.937,12.99685
+original,backward,cupy_negative__float32_float32,20,1.0,60.99200000000001,3.0496000000000008
+original,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",20,1.0,62.784,3.1391999999999998
+original,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",20,1.0,67.136,3.3568
+original,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",20,1.0,102.52900000000001,5.12645
+original,backward,cupy_greater__float32_float_bool,140,7.0,598.979,29.948950000000004
+original,backward,cupy_multiply__float32_bool_float32,140,7.0,641.7610000000002,32.08805000000001
+original,backward,cupy_sum,140,7.0,1326.4010000000003,66.32005000000001
+original,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",40,2.0,314.529,15.72645
+original,backward,ampere_sgemm_32x128_nt,60,3.0,649.3150000000002,32.46575000000001
+original,backward,cupy_copy__float32_float32,200,10.0,1014.6580000000012,50.73290000000006
+original,backward,ampere_sgemm_32x32_sliced1x4_nt,40,2.0,470.5299999999999,23.526499999999995
+original,backward,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",100,5.0,1724.7439999999992,86.23719999999996
+original,backward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",100,5.0,2230.9849999999997,111.54924999999999
+original,backward,ampere_sgemm_32x32_sliced1x4_nn,60,3.0,904.4500000000004,45.22250000000002
+original,backward,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",80,4.0,563.0430000000001,28.152150000000006
+original,backward,ampere_sgemm_64x32_sliced1x4_nn,20,1.0,355.073,17.75365
+original,backward,ampere_sgemm_128x32_nt,40,2.0,834.4670000000001,41.72335
+original,backward,ampere_sgemm_128x32_sliced1x4_nn,20,1.0,715.7459999999999,35.787299999999995
+original,optimizer,cupy_multiply__float_float32_float32,320,16.0,1135.6530000000002,56.78265000000001
+original,optimizer,cupy_subtract__float32_float32_float32,320,16.0,1161.6669999999992,58.08334999999996
+candidate,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",100,5.0,2222.9170000000004,111.14585000000002
+candidate,forward,cupy_copy__float32_float32,100,5.0,494.11400000000003,24.7057
+candidate,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",160,8.0,6600.124000000004,330.0062000000002
+candidate,forward,"conv_pack(const float *, const float *, float *, int, int, int)",100,5.0,664.6440000000001,33.232200000000006
+candidate,forward,cupy_maximum__float_float32_float32,140,7.0,606.6289999999997,30.331449999999982
+candidate,forward,cupy_add__float32_float32_float32,60,3.0,232.80000000000004,11.640000000000002
+candidate,forward,cupy_tanh__float32_float32,20,1.0,63.45600000000001,3.1728000000000005
+candidate,loss,cupy_subtract__float32_float32_float32,20,1.0,63.55200000000001,3.1776000000000004
+candidate,loss,cupy_square__float32_float32,20,1.0,61.53600000000001,3.0768000000000004
+candidate,loss,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",20,1.0,71.00800000000001,3.5504000000000007
+candidate,loss,cupy_true_divide__float32_float_float32,20,1.0,63.456,3.1728
+candidate,backward,cupy_fill,60,3.0,152.96100000000004,7.648050000000002
+candidate,backward,cupy_subtract__float32_float32_float32,40,2.0,129.47200000000007,6.473600000000003
+candidate,backward,cupy_multiply__float32_float32_float32,80,4.0,261.7280000000001,13.086400000000006
+candidate,backward,cupy_negative__float32_float32,20,1.0,60.44800000000001,3.0224
+candidate,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",20,1.0,63.456,3.1728
+candidate,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",20,1.0,67.875,3.39375
+candidate,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",20,1.0,101.21600000000001,5.0608
+candidate,backward,"relu_backward_kernel(const float *, const float *, float *, int)",140,7.0,549.859,27.49295
+candidate,backward,cupy_sum,140,7.0,1327.3290000000002,66.36645000000001
+candidate,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",40,2.0,313.216,15.6608
+candidate,backward,ampere_sgemm_32x128_nt,60,3.0,649.4399999999998,32.471999999999994
+candidate,backward,cupy_copy__float32_float32,180,9.0,880.0969999999999,44.00484999999999
+candidate,backward,ampere_sgemm_32x32_sliced1x4_nt,40,2.0,470.0189999999999,23.500949999999996
+candidate,backward,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",80,4.0,1312.0329999999994,65.60164999999998
+candidate,backward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",100,5.0,2232.098,111.6049
+candidate,backward,ampere_sgemm_32x32_sliced1x4_nn,60,3.0,903.7439999999998,45.18719999999999
+candidate,backward,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",80,4.0,562.401,28.12005
+candidate,backward,ampere_sgemm_64x32_sliced1x4_nn,20,1.0,356.41600000000005,17.820800000000002
+candidate,backward,ampere_sgemm_128x32_nt,20,1.0,511.6159999999999,25.580799999999993
+candidate,backward,ampere_sgemm_128x32_sliced1x4_nn,20,1.0,716.454,35.8227
+candidate,optimizer,cupy_multiply__float_float32_float32,320,16.0,1142.3749999999998,57.11874999999999
+candidate,optimizer,cupy_subtract__float32_float32_float32,320,16.0,1152.3550000000002,57.617750000000015

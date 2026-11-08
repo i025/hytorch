@@ -1,0 +1,13 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-3d3b.qdstrm'
+[1/1] [0%                          ] candidate.nsys-repProcessing events...
+[1/1] [0%                          ] candidate.nsys-rep[1/1] [====27%                     ] candidate.nsys-rep[1/1] [=====31%                    ] candidate.nsys-rep[1/1] [======35%                   ] candidate.nsys-rep[1/1] [==============63%           ] candidate.nsys-rep[1/1] [======================92%   ] candidate.nsys-rep[1/1] [========================100%] candidate.nsys-rep[1/1] [========================100%] candidate.nsys-rep
+警告: 未找到scipy，无法加载SVHN数据集
+{"model": "donkey", "mode": "relu_prune", "repeat": 0, "steps": 20, "wall_s": 0.088358019, "samples_per_s": 905.4073518782716, "loss": 0.0007724096649326384, "weights_sha256": "bec568ae004af25362458806ae69c2e35b4276a5af508e966d762fde354e9d77", "gradients_sha256": "9db57a503389b8bd909cc30bafafb46507427464a7658c203a814b130d70dd73", "losses_sha256": "14c7ba1a06060929a4442e69b49d5d886a7e21c7ba7c7d2efa825c0cc1bb3023", "pool_reserved_end_bytes": 21134336, "dispatch_json": "{\"col2im_native\": 80, \"conv_im2col\": 100, \"dweight_packed\": 100, \"gemm_shared\": 160, \"relu_backward_fused\": 140}"}
+Generated:
+	/home/xieminhui_pubuse/hytorch/runs/a100_20261108/branch_candidate_review/traces/candidate.nsys-rep

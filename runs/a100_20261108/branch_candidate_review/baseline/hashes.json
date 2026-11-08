@@ -1,0 +1,10 @@
+{
+  "hytorch/core.py": "826eb77ba4b5f2d0fa6cf4a2cd667e53eede00d5f1d8dc7a996fc9b5a454bc53",
+  "hytorch/functions.py": "b07918e6318aef94b57c69051bcfff58b41deaf756959c528c9f9bb8f94a56d8",
+  "hytorch/functions_conv.py": "38d52b2a84b50f27c29d10db65b24ee195193dd7be70f8ba338fb7b27d25b407",
+  "hytorch/backends/cuda/runtime.py": "6402dae745c39d26697c1c25ddc6c38c46ca0c1e54fb6a4cd46ba667fd0206dc",
+  "hytorch/backends/cuda/kernels.cu": "7d89c71136dfc543c14e75133344c0d2c3bebfffcbca2940d6d2fa2033e8fcf6",
+  "hytorch/backends/cuda/build/libhytorch_cuda.so": "ead6af170bc71039542c6c2d992ce5b41d88875df5e969a9ae1ec7779b4e4ab2",
+  "benchmarks/bench_cuda_training.py": "66801d38628a43125dc3bd3b68b40344e855f57589d07b1cea6b3cd294936116",
+  "scripts/build_cuda.py": "b4b8f7708114897775331820c42a1000ca504c189cb708cdc0d4b43ae16647d4"
+}

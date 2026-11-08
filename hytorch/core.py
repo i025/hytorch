@@ -1,6 +1,7 @@
 import numpy as np
 import weakref
 import contextlib
+import heapq
 import hytorch
 # import hytorch.cuda 会和cuda重复导入
 
@@ -9,6 +10,7 @@ import hytorch
 # Config
 # =============================================================================
 class Config:
+    backward_schedule = "list"  # Opt-in heap preserves generation/LIFO order.
     compact_function = False  # Opt-in single-output packaging; graph semantics unchanged.
     enable_backprop = True     # 有的时候不需要反向传播，只需要正向传递，这时候修改配置configuration
     train = True               # 在使用dropout的情况下，需要区分训练阶段和测试阶段
@@ -43,7 +45,10 @@ except ImportError:
 
 
 class Variable:
-    def __init__(self, data, name=None):
+    """requires_grad=False stops receipt/traversal; outputs still default to True."""
+    def __init__(self, data, name=None, *, requires_grad=True):
+        if type(requires_grad) is not bool:
+            raise TypeError("requires_grad must be bool")
         if data is not None:
             if not isinstance(data, array_types):      # 加入GPU，将ndarray改为array_types
                 raise TypeError('{} is not supported'.format(type(data)))
@@ -51,6 +56,7 @@ class Variable:
         self.data = data  # data的类型是ndarray/cparray，属性有shape,nidm,size,dtype,itemsize等
         self.name = name  # 命名变量
         self.grad = None
+        self.requires_grad = requires_grad
         self.creator = None
         self.generation = 0
 
@@ -125,22 +131,32 @@ class Variable:
             x.backward()
 
     def backward(self, retain_grad=False, create_graph=False):  # 不保留不必要的grad, 默认不要反向传播的计算图
+        if not self.requires_grad:
+            raise RuntimeError("backward requires requires_grad=True on its output")
+        if Config.backward_schedule not in ("list", "heap"):
+            raise ValueError("backward_schedule must be list/heap")
         if self.grad is None:
             xp = hytorch.cuda.get_array_module(self.data)
-            self.grad = Variable(xp.ones_like(self.data))    # 计算高阶导数，Variable类只修改一处，将grad也变为Variable，可以构建计算图
+            self.grad = Variable(xp.ones_like(self.data))
         funcs = []
         seen_set = set()
+        use_heap = Config.backward_schedule == "heap"
+        serial = 0
 
         def add_func(f):
-            if f not in seen_set:
-                funcs.append(f)
+            nonlocal serial
+            if f is not None and f not in seen_set:
                 seen_set.add(f)
-                funcs.sort(key=lambda x: x.generation)
+                if use_heap:
+                    serial += 1
+                    heapq.heappush(funcs, (-f.generation, -serial, f))
+                else:
+                    funcs.append(f)
+                    funcs.sort(key=lambda x: x.generation)
 
         add_func(self.creator)
-
         while funcs:
-            f = funcs.pop()
+            f = heapq.heappop(funcs)[2] if use_heap else funcs.pop()
             gys = [output().grad for output in f.outputs]     # output是weak连接，要用（）
             # create_backprop为True时，反向传播时Function里面才设置辈分和连接，结束后恢复False
             with using_config('enable_backprop', create_graph):
@@ -149,6 +165,8 @@ class Variable:
                     gxs = (gxs,)
 
                 for x, gx in zip(f.inputs, gxs):
+                    if gx is None or not x.requires_grad:
+                        continue
                     if x.grad is None:
                         x.grad = gx
                     else:

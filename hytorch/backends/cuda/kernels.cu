@@ -313,3 +313,6 @@ API int hy_sgd_multi(const SgdTensor* tensors, int64_t count, float lr, void* st
     }
     return 0;
 }
+
+// Optional activation gradient extension; existing kernels are unchanged.
+#include "relu_backward.cu"

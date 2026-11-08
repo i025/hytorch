@@ -11,7 +11,7 @@ import struct
 import numpy as np
 
 _config = ContextVar("hytorch_cuda_backend", default={
-    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16, "col2im": "cupy", "dweight": "cupy", "metadata_cache": False})
+    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16, "col2im": "cupy", "dweight": "cupy", "metadata_cache": False, "relu_backward": "original"})
 _counts = Counter()
 _library = None
 _dll_directories = []
@@ -29,7 +29,9 @@ def dispatch_stats(reset=False):
 
 
 @contextmanager
-def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, col2im="cupy", dweight="cupy", metadata_cache=False):
+def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, col2im="cupy", dweight="cupy", metadata_cache=False, relu_backward="original"):
+    if relu_backward not in ("original", "fused"):
+        raise ValueError("relu_backward must be original/fused")
     if matmul not in ("cupy", "basic", "blocked", "shared"):
         raise ValueError("matmul must be cupy/basic/blocked/shared")
     if conv not in ("cupy", "direct", "im2col") or pool not in ("cupy", "native"):
@@ -42,7 +44,7 @@ def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, col2im="cupy", dwe
         raise ValueError("tile must be 16 or 32")
     if type(metadata_cache) is not bool:
         raise ValueError("metadata_cache must be bool")
-    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile, col2im=col2im, dweight=dweight, metadata_cache=metadata_cache))
+    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile, col2im=col2im, dweight=dweight, metadata_cache=metadata_cache, relu_backward=relu_backward))
     try:
         yield
     finally:
@@ -73,11 +75,12 @@ def load_library():
             "hy_pool": [p]*3 + [i]*12 + [p],
             "hy_col2im": [p]*2 + [ct.c_int64]*18 + [p],
             "hy_col2im_fast": [p, p, ct.c_char_p, p],
+            "hy_relu_backward": [p]*3 + [i, p],
             "hy_sgd_multi": [p, ct.c_int64, ct.c_float, p],
         }
         for name, args in signatures.items():
             # Optional extension preserves loading older ABI-1 libraries.
-            if name in ("hy_col2im", "hy_col2im_fast", "hy_sgd_multi") and not hasattr(lib, name):
+            if name in ("hy_col2im", "hy_col2im_fast", "hy_sgd_multi", "hy_relu_backward") and not hasattr(lib, name):
                 continue
             fn = getattr(lib, name)
             fn.argtypes, fn.restype = args, ct.c_char_p if name == "hy_cuda_error" else i
@@ -213,7 +216,7 @@ def max_pool2d(x, kernel, stride=1, pad=0):
 def selected(op, x):
     """CPU / non-FP32 paths retain existing semantics, with visible counters."""
     mode = _config.get()[op]
-    if mode == "cupy":
+    if mode in ("cupy", "original"):
         return None
     from hytorch import cuda
     if cuda.get_array_module(x) is np or x.dtype != np.float32:
@@ -362,3 +365,15 @@ def sgd_multi(params, lr):
     # Rejected by exact subnormal acceptance: CuPy 14.2 uses FTZ; this kernel must not.
     # Preserve ordered legacy semantics until a compatible policy is explicitly chosen.
     return False
+
+
+def relu_backward(x, gy):
+    """Fused FP32 mask multiply, preserving caller stream and nonfinite semantics."""
+    import cupy as cp
+    x, gy = _arrays(x, gy)
+    if x.shape != gy.shape:
+        raise ValueError("ReLU input and gradient shapes must match")
+    result = cp.empty_like(x)
+    _call("hy_relu_backward", _ptr(x), _ptr(gy), _ptr(result), x.size)
+    _counts["relu_backward_fused"] += 1
+    return result

@@ -1,0 +1,18 @@
+{
+  "baseline": "4317bf5",
+  "source": "d58c581",
+  "existing_kernel_bytes_unchanged": true,
+  "new_kernel_suffix": "\n// Optional activation gradient extension; existing kernels are unchanged.\n#include \"relu_backward.cu\"\n",
+  "sha256": {
+    "hytorch/core.py": "c1c871b5ef3cd912f01ed8e8fc59c92fd76288c891c04d0d539b992c33113498",
+    "hytorch/functions.py": "02aa0b588672ae3e8fd3fcc6ac22541f4ea0aa2d352013f7b5b2c1bef429ffc0",
+    "hytorch/functions_conv.py": "d40be84be7d4ae129af6fafb102675b6a9e84481fad235ab4757f82da9fbf7a4",
+    "hytorch/backends/cuda/runtime.py": "2d25cdef3a771cc17ed1322eea478c79f26e86261761046a9a572ccc2d7ba64d",
+    "hytorch/backends/cuda/kernels.cu": "d2e1b825b4bb6f5964c5d8f4cbf42f8ccbeb179da655375b51299081883c3818",
+    "hytorch/backends/cuda/relu_backward.cu": "97e541ac44500ac43ce7ad678ad14ba972fcf144e04b269caeeedd1bcd3a6735",
+    "benchmarks/bench_cuda_training.py": "020f9f8f9bc89cdcba8a4853fe5dcfeffad35949c1c52a7e4736f0d9fdbfd8e3",
+    "tests/test_backward_schedule.py": "ac657b23b50e22b8f71096eb09024d807e648209eae102bc2b5760b70c557ddb",
+    "tests/test_conv_dinput_pruning.py": "66c623f529963c865414dc9d0ed8c325cad1cfe9f048c8d867e6cbd51ed7030c",
+    "tests/test_relu_fusion.py": "822dd22f8fa15882971d22cb6e55b3ec9e0bfd8834543bdd99316e1c5a418d85"
+  }
+}

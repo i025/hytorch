@@ -1,0 +1,4008 @@
+--- a/hytorch/core.py
++++ b/hytorch/core.py
+@@ -1,377 +1,395 @@
+-import numpy as np
+-import weakref
+-import contextlib
+-import hytorch
+-# import hytorch.cuda 会和cuda重复导入
+-
+-
+-# =============================================================================
+-# Config
+-# =============================================================================
+-class Config:
+-    compact_function = False  # Opt-in single-output packaging; graph semantics unchanged.
+-    enable_backprop = True     # 有的时候不需要反向传播，只需要正向传递，这时候修改配置configuration
+-    train = True               # 在使用dropout的情况下，需要区分训练阶段和测试阶段
+-
+-
+-@contextlib.contextmanager       # 包装成上下文管理器
+-def using_config(name, value):
+-    old_value = getattr(Config, name)  # 把 Config 类（或对象）里当前 name 对应的值保存起来，以便以后恢复。
+-    setattr(Config, name, value)    # 把同一属性改成新值 value，进入「临时模式」
+-    try:
+-        yield                       # 交出执行权，with 语句体就在这行开始执行。
+-    finally:
+-        setattr(Config, name, old_value)  # 无论 with 体内是否抛异常，都保证把属性恢复成旧值。
+-
+-
+-def test_mode():
+-    return using_config('train', False)
+-
+-
+-def no_grad():
+-    return using_config('enable_backprop', False)
+-
+-
+-# =============================================================================
+-# Variable / Function
+-# =============================================================================
+-try:
+-    import cupy
+-    array_types = (np.ndarray, cupy.ndarray)
+-except ImportError:
+-    array_types = (np.ndarray)
+-
+-
+-class Variable:
+-    def __init__(self, data, name=None):
+-        if data is not None:
+-            if not isinstance(data, array_types):      # 加入GPU，将ndarray改为array_types
+-                raise TypeError('{} is not supported'.format(type(data)))
+-                # def的function用了as_array,Function中as_variable传入的是array
+-        self.data = data  # data的类型是ndarray/cparray，属性有shape,nidm,size,dtype,itemsize等
+-        self.name = name  # 命名变量
+-        self.grad = None
+-        self.creator = None
+-        self.generation = 0
+-
+-    def __repr__(self):
+-        if self.data is None:
+-            return 'variable(None)'
+-        p = str(self.data).replace('\n',
+-                                   '\n' + ' ' * 9)  # ndarray变成字符串，自带换行：把换行替换成换行加 9 空格，让数组的每一行（除首行）向右缩进，variable是9个字母
+-        return 'variable(' + p + ')'
+-
+-    def __len__(self):  # 对ndarray使用len，会返回第一个维度的元素数量
+-        return len(self.data)
+-
+-    @property  # shape方法可以作为实例变量被访问，即用x.shape替代x.shape()
+-    def shape(self):
+-        return self.data.shape
+-
+-    @property
+-    def ndim(self):  # 维度
+-        return self.data.ndim
+-
+-    @property
+-    def size(self):  # 元素数
+-        return self.data.size
+-
+-    @property
+-    def dtype(self):  # 数据类型
+-        return self.data.dtype
+-
+-    @property
+-    def T(self):
+-        # from hytorch.functions import transpose     ?为什么前面的import dezero不行,此时的__init__里面还没有functions
+-        return hytorch.functions.transpose(self)
+-
+-    def set_creator(self, func):
+-        self.creator = func
+-        self.generation = func.generation + 1
+-
+-    '''类内定义实现运算符重载
+-    def __mul__(self,other):
+-        return mul(self,other)
+-    def __rmul__......
+-    '''
+-
+-    def cleargrad(self):
+-        self.grad = None
+-
+-    def reshape(self, *shape):   # 实现从Variable对象中调用reshape
+-        # 个 if 是为了让你可以像 NumPy 一样，既可以直接传多个参数，也可以传一个元组/列表，
+-        if len(shape) == 1 and isinstance(shape[0], (tuple, list)):
+-            shape = shape[0]
+-        # from hytorch.functions import reshape
+-        return hytorch.functions.reshape(self, shape)
+-
+-    def sum(self, axis=None, keepdims=False):   # 实现从Variable对象中调用sum
+-        from hytorch.functions import sum         # ?
+-        return sum(self, axis, keepdims)
+-
+-    def to_cpu(self):   # 实现数据从gpu传输到cpu
+-        if self.data is not None:
+-            self.data = hytorch.cuda.as_numpy(self.data)
+-
+-    def to_gpu(self):   # 实现数据从cpu传输到gpu
+-        if self.data is not None:
+-            self.data = hytorch.cuda.as_cupy(self.data)
+-
+-    def backward1(self):
+-        f = self.creator
+-        if f is not None:
+-            x = f.input
+-            x.grad = f.backward(self.grad)
+-            x.backward()
+-
+-    def backward(self, retain_grad=False, create_graph=False):  # 不保留不必要的grad, 默认不要反向传播的计算图
+-        if self.grad is None:
+-            xp = hytorch.cuda.get_array_module(self.data)
+-            self.grad = Variable(xp.ones_like(self.data))    # 计算高阶导数，Variable类只修改一处，将grad也变为Variable，可以构建计算图
+-        funcs = []
+-        seen_set = set()
+-
+-        def add_func(f):
+-            if f not in seen_set:
+-                funcs.append(f)
+-                seen_set.add(f)
+-                funcs.sort(key=lambda x: x.generation)
+-
+-        add_func(self.creator)
+-
+-        while funcs:
+-            f = funcs.pop()
+-            gys = [output().grad for output in f.outputs]     # output是weak连接，要用（）
+-            # create_backprop为True时，反向传播时Function里面才设置辈分和连接，结束后恢复False
+-            with using_config('enable_backprop', create_graph):
+-                gxs = f.backward(*gys)
+-                if not isinstance(gxs, tuple):
+-                    gxs = (gxs,)
+-
+-                for x, gx in zip(f.inputs, gxs):
+-                    if x.grad is None:
+-                        x.grad = gx
+-                    else:
+-                        x.grad = gx + x.grad  # 不能用+=，gx 和 x.grad 指向同一块内存，导致 += 变成“自己加自己
+-
+-                    if x.creator is not None:
+-                        add_func(x.creator)
+-
+-            if not retain_grad:
+-                for y in f.outputs:
+-                    y().grad = None  # y是weakref
+-
+-    __array_priority__ = 200  # 解决左项为ndarray的问题，Variable的优先级高于ndarray，此时调用rmul或radd
+-
+-
+-class Parameter(Variable):   # 实现参数的自动化管理,类Variable
+-    pass
+-
+-
+-def as_array(x, array_module=np):    # cpu->gpu
+-    if np.isscalar(x):
+-        return array_module.array(x)
+-    return x
+-
+-
+-def as_variable(obj):
+-    if isinstance(obj, Variable):
+-        return obj
+-    return Variable(obj)
+-
+-
+-class Function:
+-    def __call__(self, *inputs):
+-        inputs = [as_variable(x) for x in inputs]  # Variable和ndarray一起使用
+-
+-        xs = [x.data for x in inputs]
+-        ys = self.forward(*xs)
+-        if Config.compact_function and not isinstance(ys, tuple):
+-            # Keep the Variable, input ownership and weak output edge. Only
+-            # eliminate temporary containers and scalar detection for ndarrays.
+-            output = Variable(ys if isinstance(ys, array_types) else as_array(ys))
+-            if Config.enable_backprop:
+-                self.generation = max([x.generation for x in inputs])
+-                output.set_creator(self)
+-            self.inputs = inputs
+-            self.outputs = [weakref.ref(output)]
+-            return output
+-        if not isinstance(ys, tuple):
+-            ys = (ys,)
+-        outputs = [Variable(as_array(y)) for y in ys]
+-
+-        if Config.enable_backprop:  # 需要反向传播：设置“辈分” ,默认为True
+-            self.generation = max([x.generation for x in inputs])  # generation要在set_creator前面
+-            for output in outputs:  # 设置“连接”
+-                output.set_creator(self)
+-        self.inputs = inputs
+-        self.outputs = [weakref.ref(output) for output in outputs]
+-
+-        return outputs if len(outputs) > 1 else outputs[0]
+-
+-    def forward(self, x):            # forward用的是ndarray，可以自动广播
+-        raise NotImplementedError()
+-
+-    def backward(self, gy):           # 如果进行了广播，反向传播要手动sum_to
+-        raise NotImplementedError()
+-
+-
+-'''
+-class Exp(Function):
+-    def forward(self, x):
+-        y = np.exp(x)
+-        return y
+-
+-    def backward(self, gy):
+-        x = self.inputs[0]
+-        gx = np.exp(x.data)*gy
+-        return gx
+-
+-
+-def exp(x):
+-    f = Exp()
+-    return f(x)
+-'''
+-
+-
+-# =============================================================================
+-# 四則演算
+-# =============================================================================
+-class Add(Function):
+-    def forward(self, x0, x1):
+-        self.x0_shape, self.x1_shape = x0.shape, x1.shape
+-        y = x0+x1
+-        return y
+-
+-    def backward(self, gy):
+-        gx0, gx1 = gy, gy
+-        if self.x0_shape != self.x1_shape:
+-            gx0 = hytorch.functions.sum_to(gx0, self.x0_shape)     # 如果在正向传播中进行了广播，此时应该进行广播的反向传播
+-            gx1 = hytorch.functions.sum_to(gx1, self.x1_shape)
+-        return gx0, gx1
+-
+-
+-def add(x0, x1):
+-    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
+-    # 实现Variable和int，float混用的问题,后者先变成array，重复array和Variable混用的问题，在Function里面变成Variable
+-    return Add()(x0, x1)
+-
+-
+-class Mul(Function):
+-    def forward(self, x0, x1):
+-        self.x0_shape, self.x1_shape = x0.shape, x1.shape
+-        y = x0*x1
+-        return y
+-
+-    def backward(self, gy):
+-        x0, x1 = self.inputs
+-        gx0, gx1 = x1*gy, x0*gy
+-        if self.x0_shape != self.x1_shape:
+-            gx0 = hytorch.functions.sum_to(gx0, self.x0_shape)     # 如果在正向传播中进行了广播，此时应该进行广播的反向传播
+-            gx1 = hytorch.functions.sum_to(gx1, self.x1_shape)
+-        return gx0, gx1
+-
+-
+-def mul(x0, x1):
+-    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
+-    return Mul()(x0, x1)
+-
+-
+-class Neg(Function):
+-    def forward(self, x):
+-        return -x
+-
+-    def backward(self, gy):
+-        return -gy
+-
+-
+-def neg(x):
+-    return Neg()(x)      # 式子中只有一个量，那么一定是Variable
+-
+-
+-class Sub(Function):
+-    def forward(self, x0, x1):
+-        self.x0_shape, self.x1_shape = x0.shape, x1.shape
+-        y = x0-x1
+-        return y
+-
+-    def backward(self, gy):
+-        gx0, gx1 = gy, -gy
+-        if self.x0_shape != self.x1_shape:
+-            gx0 = hytorch.functions.sum_to(gx0, self.x0_shape)     # 如果在正向传播中进行了广播，此时应该进行广播的反向传播
+-            gx1 = hytorch.functions.sum_to(gx1, self.x1_shape)
+-        return gx0, gx1
+-
+-
+-def sub(x0, x1):
+-    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
+-    return Sub()(x0, x1)
+-
+-
+-def rsub(x0, x1):         # 如2.0-x，x->self(x0),2.0->other(x1)
+-    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
+-    return Sub()(x1, x0)  # 非对称的，不回退，想支持 scalar - var 就必须自己写 __rsub__。
+-
+-
+-class Div(Function):
+-    def forward(self, x0, x1):
+-        self.x0_shape, self.x1_shape = x0.shape, x1.shape
+-        y = x0/x1
+-        return y
+-
+-    def backward(self, gy):
+-        x0, x1 = self.inputs
+-        gx0 = gy/x1
+-        gx1 = gy*(-x0/x1**2)
+-        if self.x0_shape != self.x1_shape:
+-            gx0 = hytorch.functions.sum_to(gx0, self.x0_shape)     # 如果在正向传播中进行了广播，此时应该进行广播的反向传播
+-            gx1 = hytorch.functions.sum_to(gx1, self.x1_shape)
+-        return gx0, gx1
+-
+-
+-def div(x0, x1):
+-    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
+-    return Div()(x0, x1)
+-
+-
+-def rdiv(x0, x1):
+-    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
+-    return Div()(x1, x0)
+-
+-
+-class Pow(Function):
+-    def __init__(self, c):
+-        self.c = c
+-
+-    def forward(self, x):
+-        y = x**self.c
+-        return y
+-
+-    def backward(self, gy):
+-        x = self.inputs[0]
+-        c = self.c
+-        gx = c*x**(c-1)*gy
+-        return gx
+-
+-
+-def pow(x, c):
+-    return Pow(c)(x)
+-
+-
+-def setup_variable():
+-    Variable.__radd__ = add
+-    Variable.__add__ = add  # 类外赋值实现运算符重载,radd解决int或float在运算符左边的问题，即在self位置上
+-    Variable.__rmul__ = mul
+-    Variable.__mul__ = mul  # 类外赋值实现运算符重载,rmul解决int或float在运算符左边的问题，即在self位置上
+-    Variable.__neg__ = neg
+-    Variable.__rsub__ = rsub
+-    Variable.__sub__ = sub
+-    Variable.__truediv__ = div
+-    Variable.__rtruediv__ = rdiv
+-    Variable.__pow__ = pow
+-    Variable.__getitem__ = hytorch.functions.get_item
+-
+-    Variable.matmul = hytorch.functions.matmul
+-    Variable.dot = hytorch.functions.matmul
+-    Variable.max = hytorch.functions.max
+-    Variable.min = hytorch.functions.min
++import numpy as np
++import weakref
++import contextlib
++import heapq
++import hytorch
++# import hytorch.cuda 会和cuda重复导入
++
++
++# =============================================================================
++# Config
++# =============================================================================
++class Config:
++    backward_schedule = "list"  # Opt-in heap preserves generation/LIFO order.
++    compact_function = False  # Opt-in single-output packaging; graph semantics unchanged.
++    enable_backprop = True     # 有的时候不需要反向传播，只需要正向传递，这时候修改配置configuration
++    train = True               # 在使用dropout的情况下，需要区分训练阶段和测试阶段
++
++
++@contextlib.contextmanager       # 包装成上下文管理器
++def using_config(name, value):
++    old_value = getattr(Config, name)  # 把 Config 类（或对象）里当前 name 对应的值保存起来，以便以后恢复。
++    setattr(Config, name, value)    # 把同一属性改成新值 value，进入「临时模式」
++    try:
++        yield                       # 交出执行权，with 语句体就在这行开始执行。
++    finally:
++        setattr(Config, name, old_value)  # 无论 with 体内是否抛异常，都保证把属性恢复成旧值。
++
++
++def test_mode():
++    return using_config('train', False)
++
++
++def no_grad():
++    return using_config('enable_backprop', False)
++
++
++# =============================================================================
++# Variable / Function
++# =============================================================================
++try:
++    import cupy
++    array_types = (np.ndarray, cupy.ndarray)
++except ImportError:
++    array_types = (np.ndarray)
++
++
++class Variable:
++    """requires_grad=False stops receipt/traversal; outputs still default to True."""
++    def __init__(self, data, name=None, *, requires_grad=True):
++        if type(requires_grad) is not bool:
++            raise TypeError("requires_grad must be bool")
++        if data is not None:
++            if not isinstance(data, array_types):      # 加入GPU，将ndarray改为array_types
++                raise TypeError('{} is not supported'.format(type(data)))
++                # def的function用了as_array,Function中as_variable传入的是array
++        self.data = data  # data的类型是ndarray/cparray，属性有shape,nidm,size,dtype,itemsize等
++        self.name = name  # 命名变量
++        self.grad = None
++        self.requires_grad = requires_grad
++        self.creator = None
++        self.generation = 0
++
++    def __repr__(self):
++        if self.data is None:
++            return 'variable(None)'
++        p = str(self.data).replace('\n',
++                                   '\n' + ' ' * 9)  # ndarray变成字符串，自带换行：把换行替换成换行加 9 空格，让数组的每一行（除首行）向右缩进，variable是9个字母
++        return 'variable(' + p + ')'
++
++    def __len__(self):  # 对ndarray使用len，会返回第一个维度的元素数量
++        return len(self.data)
++
++    @property  # shape方法可以作为实例变量被访问，即用x.shape替代x.shape()
++    def shape(self):
++        return self.data.shape
++
++    @property
++    def ndim(self):  # 维度
++        return self.data.ndim
++
++    @property
++    def size(self):  # 元素数
++        return self.data.size
++
++    @property
++    def dtype(self):  # 数据类型
++        return self.data.dtype
++
++    @property
++    def T(self):
++        # from hytorch.functions import transpose     ?为什么前面的import dezero不行,此时的__init__里面还没有functions
++        return hytorch.functions.transpose(self)
++
++    def set_creator(self, func):
++        self.creator = func
++        self.generation = func.generation + 1
++
++    '''类内定义实现运算符重载
++    def __mul__(self,other):
++        return mul(self,other)
++    def __rmul__......
++    '''
++
++    def cleargrad(self):
++        self.grad = None
++
++    def reshape(self, *shape):   # 实现从Variable对象中调用reshape
++        # 个 if 是为了让你可以像 NumPy 一样，既可以直接传多个参数，也可以传一个元组/列表，
++        if len(shape) == 1 and isinstance(shape[0], (tuple, list)):
++            shape = shape[0]
++        # from hytorch.functions import reshape
++        return hytorch.functions.reshape(self, shape)
++
++    def sum(self, axis=None, keepdims=False):   # 实现从Variable对象中调用sum
++        from hytorch.functions import sum         # ?
++        return sum(self, axis, keepdims)
++
++    def to_cpu(self):   # 实现数据从gpu传输到cpu
++        if self.data is not None:
++            self.data = hytorch.cuda.as_numpy(self.data)
++
++    def to_gpu(self):   # 实现数据从cpu传输到gpu
++        if self.data is not None:
++            self.data = hytorch.cuda.as_cupy(self.data)
++
++    def backward1(self):
++        f = self.creator
++        if f is not None:
++            x = f.input
++            x.grad = f.backward(self.grad)
++            x.backward()
++
++    def backward(self, retain_grad=False, create_graph=False):  # 不保留不必要的grad, 默认不要反向传播的计算图
++        if not self.requires_grad:
++            raise RuntimeError("backward requires requires_grad=True on its output")
++        if Config.backward_schedule not in ("list", "heap"):
++            raise ValueError("backward_schedule must be list/heap")
++        if self.grad is None:
++            xp = hytorch.cuda.get_array_module(self.data)
++            self.grad = Variable(xp.ones_like(self.data))
++        funcs = []
++        seen_set = set()
++        use_heap = Config.backward_schedule == "heap"
++        serial = 0
++
++        def add_func(f):
++            nonlocal serial
++            if f is not None and f not in seen_set:
++                seen_set.add(f)
++                if use_heap:
++                    serial += 1
++                    heapq.heappush(funcs, (-f.generation, -serial, f))
++                else:
++                    funcs.append(f)
++                    funcs.sort(key=lambda x: x.generation)
++
++        add_func(self.creator)
++        while funcs:
++            f = heapq.heappop(funcs)[2] if use_heap else funcs.pop()
++            gys = [output().grad for output in f.outputs]     # output是weak连接，要用（）
++            # create_backprop为True时，反向传播时Function里面才设置辈分和连接，结束后恢复False
++            with using_config('enable_backprop', create_graph):
++                gxs = f.backward(*gys)
++                if not isinstance(gxs, tuple):
++                    gxs = (gxs,)
++
++                for x, gx in zip(f.inputs, gxs):
++                    if gx is None or not x.requires_grad:
++                        continue
++                    if x.grad is None:
++                        x.grad = gx
++                    else:
++                        x.grad = gx + x.grad  # 不能用+=，gx 和 x.grad 指向同一块内存，导致 += 变成“自己加自己
++
++                    if x.creator is not None:
++                        add_func(x.creator)
++
++            if not retain_grad:
++                for y in f.outputs:
++                    y().grad = None  # y是weakref
++
++    __array_priority__ = 200  # 解决左项为ndarray的问题，Variable的优先级高于ndarray，此时调用rmul或radd
++
++
++class Parameter(Variable):   # 实现参数的自动化管理,类Variable
++    pass
++
++
++def as_array(x, array_module=np):    # cpu->gpu
++    if np.isscalar(x):
++        return array_module.array(x)
++    return x
++
++
++def as_variable(obj):
++    if isinstance(obj, Variable):
++        return obj
++    return Variable(obj)
++
++
++class Function:
++    def __call__(self, *inputs):
++        inputs = [as_variable(x) for x in inputs]  # Variable和ndarray一起使用
++
++        xs = [x.data for x in inputs]
++        ys = self.forward(*xs)
++        if Config.compact_function and not isinstance(ys, tuple):
++            # Keep the Variable, input ownership and weak output edge. Only
++            # eliminate temporary containers and scalar detection for ndarrays.
++            output = Variable(ys if isinstance(ys, array_types) else as_array(ys))
++            if Config.enable_backprop:
++                self.generation = max([x.generation for x in inputs])
++                output.set_creator(self)
++            self.inputs = inputs
++            self.outputs = [weakref.ref(output)]
++            return output
++        if not isinstance(ys, tuple):
++            ys = (ys,)
++        outputs = [Variable(as_array(y)) for y in ys]
++
++        if Config.enable_backprop:  # 需要反向传播：设置“辈分” ,默认为True
++            self.generation = max([x.generation for x in inputs])  # generation要在set_creator前面
++            for output in outputs:  # 设置“连接”
++                output.set_creator(self)
++        self.inputs = inputs
++        self.outputs = [weakref.ref(output) for output in outputs]
++
++        return outputs if len(outputs) > 1 else outputs[0]
++
++    def forward(self, x):            # forward用的是ndarray，可以自动广播
++        raise NotImplementedError()
++
++    def backward(self, gy):           # 如果进行了广播，反向传播要手动sum_to
++        raise NotImplementedError()
++
++
++'''
++class Exp(Function):
++    def forward(self, x):
++        y = np.exp(x)
++        return y
++
++    def backward(self, gy):
++        x = self.inputs[0]
++        gx = np.exp(x.data)*gy
++        return gx
++
++
++def exp(x):
++    f = Exp()
++    return f(x)
++'''
++
++
++# =============================================================================
++# 四則演算
++# =============================================================================
++class Add(Function):
++    def forward(self, x0, x1):
++        self.x0_shape, self.x1_shape = x0.shape, x1.shape
++        y = x0+x1
++        return y
++
++    def backward(self, gy):
++        gx0, gx1 = gy, gy
++        if self.x0_shape != self.x1_shape:
++            gx0 = hytorch.functions.sum_to(gx0, self.x0_shape)     # 如果在正向传播中进行了广播，此时应该进行广播的反向传播
++            gx1 = hytorch.functions.sum_to(gx1, self.x1_shape)
++        return gx0, gx1
++
++
++def add(x0, x1):
++    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
++    # 实现Variable和int，float混用的问题,后者先变成array，重复array和Variable混用的问题，在Function里面变成Variable
++    return Add()(x0, x1)
++
++
++class Mul(Function):
++    def forward(self, x0, x1):
++        self.x0_shape, self.x1_shape = x0.shape, x1.shape
++        y = x0*x1
++        return y
++
++    def backward(self, gy):
++        x0, x1 = self.inputs
++        gx0, gx1 = x1*gy, x0*gy
++        if self.x0_shape != self.x1_shape:
++            gx0 = hytorch.functions.sum_to(gx0, self.x0_shape)     # 如果在正向传播中进行了广播，此时应该进行广播的反向传播
++            gx1 = hytorch.functions.sum_to(gx1, self.x1_shape)
++        return gx0, gx1
++
++
++def mul(x0, x1):
++    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
++    return Mul()(x0, x1)
++
++
++class Neg(Function):
++    def forward(self, x):
++        return -x
++
++    def backward(self, gy):
++        return -gy
++
++
++def neg(x):
++    return Neg()(x)      # 式子中只有一个量，那么一定是Variable
++
++
++class Sub(Function):
++    def forward(self, x0, x1):
++        self.x0_shape, self.x1_shape = x0.shape, x1.shape
++        y = x0-x1
++        return y
++
++    def backward(self, gy):
++        gx0, gx1 = gy, -gy
++        if self.x0_shape != self.x1_shape:
++            gx0 = hytorch.functions.sum_to(gx0, self.x0_shape)     # 如果在正向传播中进行了广播，此时应该进行广播的反向传播
++            gx1 = hytorch.functions.sum_to(gx1, self.x1_shape)
++        return gx0, gx1
++
++
++def sub(x0, x1):
++    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
++    return Sub()(x0, x1)
++
++
++def rsub(x0, x1):         # 如2.0-x，x->self(x0),2.0->other(x1)
++    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
++    return Sub()(x1, x0)  # 非对称的，不回退，想支持 scalar - var 就必须自己写 __rsub__。
++
++
++class Div(Function):
++    def forward(self, x0, x1):
++        self.x0_shape, self.x1_shape = x0.shape, x1.shape
++        y = x0/x1
++        return y
++
++    def backward(self, gy):
++        x0, x1 = self.inputs
++        gx0 = gy/x1
++        gx1 = gy*(-x0/x1**2)
++        if self.x0_shape != self.x1_shape:
++            gx0 = hytorch.functions.sum_to(gx0, self.x0_shape)     # 如果在正向传播中进行了广播，此时应该进行广播的反向传播
++            gx1 = hytorch.functions.sum_to(gx1, self.x1_shape)
++        return gx0, gx1
++
++
++def div(x0, x1):
++    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
++    return Div()(x0, x1)
++
++
++def rdiv(x0, x1):
++    x1 = as_array(x1, hytorch.cuda.get_array_module(x0.data))
++    return Div()(x1, x0)
++
++
++class Pow(Function):
++    def __init__(self, c):
++        self.c = c
++
++    def forward(self, x):
++        y = x**self.c
++        return y
++
++    def backward(self, gy):
++        x = self.inputs[0]
++        c = self.c
++        gx = c*x**(c-1)*gy
++        return gx
++
++
++def pow(x, c):
++    return Pow(c)(x)
++
++
++def setup_variable():
++    Variable.__radd__ = add
++    Variable.__add__ = add  # 类外赋值实现运算符重载,radd解决int或float在运算符左边的问题，即在self位置上
++    Variable.__rmul__ = mul
++    Variable.__mul__ = mul  # 类外赋值实现运算符重载,rmul解决int或float在运算符左边的问题，即在self位置上
++    Variable.__neg__ = neg
++    Variable.__rsub__ = rsub
++    Variable.__sub__ = sub
++    Variable.__truediv__ = div
++    Variable.__rtruediv__ = rdiv
++    Variable.__pow__ = pow
++    Variable.__getitem__ = hytorch.functions.get_item
++
++    Variable.matmul = hytorch.functions.matmul
++    Variable.dot = hytorch.functions.matmul
++    Variable.max = hytorch.functions.max
++    Variable.min = hytorch.functions.min
+--- a/hytorch/functions.py
++++ b/hytorch/functions.py
+@@ -1,505 +1,511 @@
+-import numpy as np
+-from numpy import transpose
+-
+-import hytorch
+-from hytorch import cuda
+-from hytorch.core import Function
+-from hytorch import as_variable
+-from hytorch import utils
+-from hytorch import as_array
+-
+-
+-# =============================================================================
+-# Basic functions: sin / cos / tanh / exp / log
+-# =============================================================================
+-class Sin(Function):
+-    def forward(self, x):   # 变量是ndarray实例，用的是Variable.data->gpu化，用get_array_module获取数据类型
+-        xp = cuda.get_array_module(x)
+-        y = xp.sin(x)
+-        return y
+-
+-    def backward(self, gy):  # 变量是Variable实例
+-        x = self.inputs[0]  # 取出 Variable
+-        gx = gy * cos(x)  # 用cos(x) ,构建计算图 NumPy 只认识 ndarray
+-        return gx
+-
+-
+-def sin(x):
+-    return Sin()(x)
+-
+-
+-class Cos(Function):
+-    def forward(self, x):   # 变量是ndarray实例，用的是Variable.data->gpu化，用get_array_module获取数据类型
+-        xp = cuda.get_array_module(x)
+-        y = xp.cos(x)
+-        return y
+-
+-    def backward(self, gy):  # 变量是Variable实例
+-        x = self.inputs[0]
+-        gx = -gy*sin(x)     # 构建计算图
+-        return gx
+-
+-
+-def cos(x):
+-    return Cos()(x)
+-
+-
+-class Tanh(Function):
+-    def forward(self, x):   # 变量是ndarray实例，用的是Variable.data->gpu化，用get_array_module获取数据类型
+-        xp = cuda.get_array_module(x)
+-        y = xp.tanh(x)
+-        return y
+-
+-    def backward(self, gy):
+-        y = self.outputs[0]()       # weakref()
++import numpy as np
++from numpy import transpose
++
++import hytorch
++from hytorch import cuda
++from hytorch.core import Function
++from hytorch import as_variable
++from hytorch import utils
++from hytorch import as_array
++
++
++# =============================================================================
++# Basic functions: sin / cos / tanh / exp / log
++# =============================================================================
++class Sin(Function):
++    def forward(self, x):   # 变量是ndarray实例，用的是Variable.data->gpu化，用get_array_module获取数据类型
++        xp = cuda.get_array_module(x)
++        y = xp.sin(x)
++        return y
++
++    def backward(self, gy):  # 变量是Variable实例
++        x = self.inputs[0]  # 取出 Variable
++        gx = gy * cos(x)  # 用cos(x) ,构建计算图 NumPy 只认识 ndarray
++        return gx
++
++
++def sin(x):
++    return Sin()(x)
++
++
++class Cos(Function):
++    def forward(self, x):   # 变量是ndarray实例，用的是Variable.data->gpu化，用get_array_module获取数据类型
++        xp = cuda.get_array_module(x)
++        y = xp.cos(x)
++        return y
++
++    def backward(self, gy):  # 变量是Variable实例
++        x = self.inputs[0]
++        gx = -gy*sin(x)     # 构建计算图
++        return gx
++
++
++def cos(x):
++    return Cos()(x)
++
++
++class Tanh(Function):
++    def forward(self, x):   # 变量是ndarray实例，用的是Variable.data->gpu化，用get_array_module获取数据类型
++        xp = cuda.get_array_module(x)
++        y = xp.tanh(x)
++        return y
++
++    def backward(self, gy):
++        y = self.outputs[0]()       # weakref()
+         # Internal constants follow the tensor dtype; explicit FP64 stays FP64.
+         xp = cuda.get_array_module(y.data)
+         one = xp.array(1, dtype=y.dtype)
+         gx = gy*(one - y*y)
+-        return gx
+-
+-
+-def tanh(x):
+-    return Tanh()(x)
+-
+-
+-class Exp(Function):
+-    def forward(self, x):
+-        xp = cuda.get_array_module(x)
+-        y = xp.exp(x)
+-        return y
+-
+-    def backward(self, gy):
+-        y = self.outputs[0]()  # weakref
+-        gx = gy * y
+-        return gx
+-
+-
+-def exp(x):
+-    return Exp()(x)
+-
+-
+-class Log(Function):
+-    def forward(self, x):           # 变量是ndarray实例，用的是Variable.data->gpu化，用get_array_module获取数据类型
+-        xp = cuda.get_array_module(x)
+-        y = xp.log(x)
+-
+-        return y
+-
+-    def backward(self, gy):
+-        x, = self.inputs
+-        gx = gy / x
+-        return gx
+-
+-
+-def log(x):
+-    return Log()(x)
+-
+-
+-# =============================================================================
+-# Tensor operations: reshape / transpose / get_item / expand_dims / flatten
+-# =============================================================================
+-class Reshape(Function):
+-    def __init__(self, shape):
+-        self.shape = shape
+-
+-    def forward(self, x):
+-        self.x_shape = x.shape
+-        y = x.reshape(self.shape)
+-        return y
+-
+-    def backward(self, gy):
+-        return reshape(gy, self.x_shape)
+-
+-
+-def reshape(x, shape):
+-    if x.shape == shape:
+-        return as_variable(x)
+-    return Reshape(shape)(x)
+-
+-
+-# 矩阵的转置
+-class Transpose(Function):
+-    def __init__(self, axes=None):
+-        self.axes = axes
+-
+-    def forward(self, x):
+-        y = x.transpose(self.axes)
+-        return y
+-
+-    def backward(self, gy):
+-        if self.axes is None:
+-            return transpose(gy)
+-
+-        axes_len = len(self.axes)
+-        inv_axes = tuple(np.argsort([ax % axes_len for ax in self.axes]))
+-        '''先把所有轴索引转成非负数，再求逆映射，防止负数轴索引导致排序错误。
+-        axes = [2, 0, 1]
+-        原始轴顺序：0, 1, 2
+-        转置后轴顺序：2, 0, 1
+-        逆映射是：[1, 2, 0]
+-        '''
+-        return transpose(gy, inv_axes)
+-
+-
+-def transpose(x, axes=None):
+-    return Transpose(axes)(x)
+-
+-
+-class GetItem(Function):
+-    def __init__(self, slices):
+-        self.slices = slices
+-
+-    def forward(self, x):
+-        y = x[self.slices]
+-        return y
+-
+-    def backward(self, gy):
+-        x, = self.inputs
+-        f = GetItemGrad(self.slices, x.shape)
+-        return f(gy)
+-
+-
+-class GetItemGrad(Function):
+-    def __init__(self, slices, in_shape):
+-        self.slices = slices
+-        self.in_shape = in_shape
+-
+-    def forward(self, gy):
+-        xp = cuda.get_array_module(gy)
+-        gx = xp.zeros(self.in_shape, dtype=gy.dtype)
+-        if xp is np:
+-            np.add.at(gx, self.slices, gy)
+-        else:
+-            gx.scatter_add(self.slices, gy)   # ?
+-
+-        return gx
+-
+-    def backward(self, ggx):
+-        return get_item(ggx, self.slices)
+-
+-
+-def get_item(x, slices):
+-    f = GetItem(slices)
+-    return f(x)
+-
+-
+-
+-
+-def flatten(x):
+-    """Flattens the input. Does not affect the batch size."""
+-    return reshape(x, (x.shape[0], -1))
+-
+-
+-# =============================================================================
+-# sum / sum_to / broadcast_to / average / matmul / linear
+-# =============================================================================
+-class Sum(Function):
+-    def __init__(self, axis, keepdims):   # axis=0,行相加，axis=1， 列相加。keepdims=False，y为标量，反之保留轴的数量
+-        self.axis = axis
+-        self.keepdims = keepdims
+-
+-    def forward(self, x):
+-        self.x_shape = x.shape
+-        y = x.sum(axis=self.axis, keepdims=self.keepdims)
+-        return y
+-
+-    def backward(self, gy):
+-        gy = utils.reshape_sum_backward(gy, self.x_shape, self.axis, self.keepdims)
+-        gx = broadcast_to(gy, self.x_shape)    # 广播机制，使x.shape = gx.shape
+-        return gx
+-
+-
+-def sum(x, axis=None, keepdims=False):
+-    return Sum(axis, keepdims)(x)
+-
+-
+-class BroadcastTo(Function):
+-    def __init__(self, shape):
+-        self.shape = shape
+-
+-    def forward(self, x):
+-        self.x_shape = x.shape
+-        xp = cuda.get_array_module(x)
+-        y = xp.broadcast_to(x, self.shape)
+-        return y
+-
+-    def backward(self, gy):
+-        gx = sum_to(gy, self.x_shape)    # broadcast_to的反向传播是sum_to
+-        return gx
+-
+-
+-def broadcast_to(x, shape):
+-    if x.shape == shape:
+-        return as_variable(x)
+-    return BroadcastTo(shape)(x)
+-
+-
+-class SumTo(Function):
+-    def __init__(self, shape):
+-        self.shape = shape
+-
+-    def forward(self, x):
+-        self.x_shape = x.shape
+-        y = utils.sum_to(x, self.shape)
+-        return y
+-
+-    def backward(self, gy):
+-        gx = broadcast_to(gy, self.x_shape)     # sum_to的反向传播是broadcast_to,两者相互依赖
+-        return gx
+-
+-
+-def sum_to(x, shape):
+-    if x.shape == shape:
+-        return as_variable(x)
+-    return SumTo(shape)(x)
+-
+-
+-def average(x, axis=None, keepdims=False):
+-    x = as_variable(x)
+-    y = sum(x, axis, keepdims)
+-    return y * (y.data.size / x.data.size)
+-
+-mean = average
+-
+-
+-class MatMul(Function):
+-    def __init__(self, native=True):
+-        self.native = native
+-
+-    def forward(self, x, w):
+-        from hytorch.backends.cuda.runtime import selected, gemm, current_config
+-        mode = selected("matmul", x) if self.native else None
+-        if mode is not None:
+-            return gemm(x, w, variant=mode, tile=current_config()["tile"])
+-        y = x.dot(w)   # 矩阵的乘法运算，其中包括：向量内积、多维矩阵乘法、矩阵与向量的乘法。
+-        return y
+-
+-    def backward(self, gy):
+-        x, w = self.inputs
+-        gx = MatMul(native=False)(gy, w.T)
+-        gw = MatMul(native=False)(x.T, gy)    # Preserve existing backward backend.
+-        return gx, gw
+-
+-
+-def matmul(x, w):
+-    return MatMul()(x, w)
+-
+-
+-# =============================
+-# Batch MatMul (BMM): (B,M,K) @ (B,K,N) -> (B,M,N)
+-# =============================
+-def _swap_last2_axes(ndim):
+-    # (..., i, j) -> (..., j, i)
+-    axes = list(range(ndim))
+-    axes[-1], axes[-2] = axes[-2], axes[-1]
+-    return tuple(axes)
+-
+-class BatchMatMul(Function):
+-    def forward(self, x, w):
+-        # x: (B,M,K), w: (B,K,N)  (不支持广播；Transformer 里我们会显式 reshape 成同 batch)
+-        xp = cuda.get_array_module(x)
+-        y = xp.matmul(x, w)  # 关键：matmul 才是 batch 语义
+-        return y
+-
+-    def backward(self, gy):
+-        x, w = self.inputs
+-
+-        # 转置只交换最后两维（不能用 .T，因为 .T 会反转所有维度）
+-        wT = transpose(w, _swap_last2_axes(w.ndim))
+-        xT = transpose(x, _swap_last2_axes(x.ndim))
+-
+-        gx = bmm(gy, wT)
+-        gw = bmm(xT, gy)
+-        return gx, gw
+-
+-def bmm(x, w):
+-    return BatchMatMul()(x, w)
+-
+-
+-def linear_simple(x, W, b=None):
+-    t = matmul(x, W)
+-    if b is None:
+-        return t
+-    y = b + t
+-    t.data = None       # matmul的反向传播并不需要t的值，引用次数变成0，被python解释器删除
+-    return y
+-
+-
+-class Linear(Function):
+-    def forward(self, x, W, b):
+-        from hytorch.backends.cuda.runtime import selected, gemm, current_config
+-        mode = selected("matmul", x)
+-        y = (x.dot(W) if mode is None else
+-             gemm(x, W, variant=mode, tile=current_config()["tile"]))
+-        if b is not None:
+-            y += b
+-        return y
+-
+-    def backward(self, gy):
+-        x, W, b = self.inputs
+-        gb = None if b.data is None else sum_to(gy, b.shape)
+-        gx = MatMul(native=False)(gy, W.T)
+-        gW = MatMul(native=False)(x.T, gy)
+-        return gx, gW, gb
+-
+-
+-def linear(x, W, b=None):
+-    return Linear()(x, W, b)
+-
+-
+-# =============================================================================
+-# activation function: sigmoid / relu / softmax / log_softmax / leaky_relu
+-# =============================================================================
+-
+-def sigmoid_simple(x):
+-    x = as_variable(x)
+-    return 1/(1 + exp(-x))
+-
+-
+-class Sigmoid(Function):
+-    def forward(self, x):
+-        xp = cuda.get_array_module(x)
+-        # y = 1 / (1 + xp.exp(-x))
+-        y = xp.tanh(x * 0.5) * 0.5 + 0.5  # Better implementation
+-        return y
+-
+-    def backward(self, gy):
+-        y = self.outputs[0]()
+-        gx = gy * y * (1 - y)
+-        return gx
+-
+-
+-def sigmoid(x):
+-    return Sigmoid()(x)
+-
+-
+-class ReLU(Function):
+-    def forward(self, x):
+-        xp = cuda.get_array_module(x)
+-        y = xp.maximum(0.0, x)
+-        return y
+-
+-    def backward(self, gy):
+-        x, = self.inputs
+-        mask = x.data > 0
+-        gx = gy * mask
+-        return gx
+-
+-
+-def relu(x):
+-    return ReLU()(x)
+-
+-
+-# 多分类
+-def softmax_simple(x, axis=1):
+-    x = as_variable(x)
+-    y = exp(x)
+-    sum_y = sum(y, axis=axis, keepdims=True)
+-    return y / sum_y
+-
+-
+-class Softmax(Function):
+-    def __init__(self, axis=1):
+-        self.axis = axis
+-
+-    def forward(self, x):
+-        xp = cuda.get_array_module(x)
+-        y = x - x.max(axis=self.axis, keepdims=True)
+-        y = xp.exp(y)
+-        y /= y.sum(axis=self.axis, keepdims=True)
+-        return y
+-
+-    def backward(self, gy):
+-        y = self.outputs[0]()
+-        gx = y * gy
+-        sumdx = gx.sum(axis=self.axis, keepdims=True)
+-        gx -= y * sumdx
+-        return gx
+-
+-
+-def softmax(x, axis=1):
+-    return Softmax(axis)(x)
+-
+-class LogSoftmax(Function):
+-    def __init__(self, axis=1):
+-        self.axis = axis
+-
+-    def forward(self, x):
+-        log_z = utils.logsumexp(x, self.axis)
+-        y = x - log_z
+-        return y
+-
+-    def backward(self, gy):
+-        y = self.outputs[0]()
+-        gx = gy - exp(y) * gy.sum(axis=self.axis, keepdims=True)
+-        return gx
+-
+-
+-def log_softmax(x, axis=1):
+-    return LogSoftmax(axis)(x)
+-
+-
+-class LeakyReLU(Function):
+-    def __init__(self, slope):
+-        self.slope = slope
+-
+-    def forward(self, x):
+-        y = x.copy()
+-        y[x <= 0] *= self.slope
+-        return y
+-
+-    def backward(self, gy):
+-        x, = self.inputs
+-        mask = (x.data > 0).astype(gy.dtype)
+-        mask[mask <= 0] = self.slope
+-        gx = gy * mask
+-        return gx
+-
+-
+-def leaky_relu(x, slope=0.2):
+-    return LeakyReLU(slope)(x)
+-
+-
+-# =============================================================================
+-# loss function: mean_squared_error / softmax_cross_entropy / sigmoid_cross_entropy / binary_cross_entropy
+-# =============================================================================
+-def mean_square_error_simple(x0, x1):
+-    diff = as_variable(x0) - as_variable(x1)   # 不是继承Function的函数，手动Variable
+-    return sum(diff**2)/len(diff)
+-
+-
+-class MeanSquareError(Function):
+-    def forward(self, x0, x1):
+-        diff = x0 - x1
+-        y = (diff**2).sum()/len(diff)
+-        return y
+-
+-    def backward(self, gy):
+-        x0, x1 = self.inputs
+-        diff = x0 - x1
++        return gx
++
++
++def tanh(x):
++    return Tanh()(x)
++
++
++class Exp(Function):
++    def forward(self, x):
++        xp = cuda.get_array_module(x)
++        y = xp.exp(x)
++        return y
++
++    def backward(self, gy):
++        y = self.outputs[0]()  # weakref
++        gx = gy * y
++        return gx
++
++
++def exp(x):
++    return Exp()(x)
++
++
++class Log(Function):
++    def forward(self, x):           # 变量是ndarray实例，用的是Variable.data->gpu化，用get_array_module获取数据类型
++        xp = cuda.get_array_module(x)
++        y = xp.log(x)
++
++        return y
++
++    def backward(self, gy):
++        x, = self.inputs
++        gx = gy / x
++        return gx
++
++
++def log(x):
++    return Log()(x)
++
++
++# =============================================================================
++# Tensor operations: reshape / transpose / get_item / expand_dims / flatten
++# =============================================================================
++class Reshape(Function):
++    def __init__(self, shape):
++        self.shape = shape
++
++    def forward(self, x):
++        self.x_shape = x.shape
++        y = x.reshape(self.shape)
++        return y
++
++    def backward(self, gy):
++        return reshape(gy, self.x_shape)
++
++
++def reshape(x, shape):
++    if x.shape == shape:
++        return as_variable(x)
++    return Reshape(shape)(x)
++
++
++# 矩阵的转置
++class Transpose(Function):
++    def __init__(self, axes=None):
++        self.axes = axes
++
++    def forward(self, x):
++        y = x.transpose(self.axes)
++        return y
++
++    def backward(self, gy):
++        if self.axes is None:
++            return transpose(gy)
++
++        axes_len = len(self.axes)
++        inv_axes = tuple(np.argsort([ax % axes_len for ax in self.axes]))
++        '''先把所有轴索引转成非负数，再求逆映射，防止负数轴索引导致排序错误。
++        axes = [2, 0, 1]
++        原始轴顺序：0, 1, 2
++        转置后轴顺序：2, 0, 1
++        逆映射是：[1, 2, 0]
++        '''
++        return transpose(gy, inv_axes)
++
++
++def transpose(x, axes=None):
++    return Transpose(axes)(x)
++
++
++class GetItem(Function):
++    def __init__(self, slices):
++        self.slices = slices
++
++    def forward(self, x):
++        y = x[self.slices]
++        return y
++
++    def backward(self, gy):
++        x, = self.inputs
++        f = GetItemGrad(self.slices, x.shape)
++        return f(gy)
++
++
++class GetItemGrad(Function):
++    def __init__(self, slices, in_shape):
++        self.slices = slices
++        self.in_shape = in_shape
++
++    def forward(self, gy):
++        xp = cuda.get_array_module(gy)
++        gx = xp.zeros(self.in_shape, dtype=gy.dtype)
++        if xp is np:
++            np.add.at(gx, self.slices, gy)
++        else:
++            gx.scatter_add(self.slices, gy)   # ?
++
++        return gx
++
++    def backward(self, ggx):
++        return get_item(ggx, self.slices)
++
++
++def get_item(x, slices):
++    f = GetItem(slices)
++    return f(x)
++
++
++
++
++def flatten(x):
++    """Flattens the input. Does not affect the batch size."""
++    return reshape(x, (x.shape[0], -1))
++
++
++# =============================================================================
++# sum / sum_to / broadcast_to / average / matmul / linear
++# =============================================================================
++class Sum(Function):
++    def __init__(self, axis, keepdims):   # axis=0,行相加，axis=1， 列相加。keepdims=False，y为标量，反之保留轴的数量
++        self.axis = axis
++        self.keepdims = keepdims
++
++    def forward(self, x):
++        self.x_shape = x.shape
++        y = x.sum(axis=self.axis, keepdims=self.keepdims)
++        return y
++
++    def backward(self, gy):
++        gy = utils.reshape_sum_backward(gy, self.x_shape, self.axis, self.keepdims)
++        gx = broadcast_to(gy, self.x_shape)    # 广播机制，使x.shape = gx.shape
++        return gx
++
++
++def sum(x, axis=None, keepdims=False):
++    return Sum(axis, keepdims)(x)
++
++
++class BroadcastTo(Function):
++    def __init__(self, shape):
++        self.shape = shape
++
++    def forward(self, x):
++        self.x_shape = x.shape
++        xp = cuda.get_array_module(x)
++        y = xp.broadcast_to(x, self.shape)
++        return y
++
++    def backward(self, gy):
++        gx = sum_to(gy, self.x_shape)    # broadcast_to的反向传播是sum_to
++        return gx
++
++
++def broadcast_to(x, shape):
++    if x.shape == shape:
++        return as_variable(x)
++    return BroadcastTo(shape)(x)
++
++
++class SumTo(Function):
++    def __init__(self, shape):
++        self.shape = shape
++
++    def forward(self, x):
++        self.x_shape = x.shape
++        y = utils.sum_to(x, self.shape)
++        return y
++
++    def backward(self, gy):
++        gx = broadcast_to(gy, self.x_shape)     # sum_to的反向传播是broadcast_to,两者相互依赖
++        return gx
++
++
++def sum_to(x, shape):
++    if x.shape == shape:
++        return as_variable(x)
++    return SumTo(shape)(x)
++
++
++def average(x, axis=None, keepdims=False):
++    x = as_variable(x)
++    y = sum(x, axis, keepdims)
++    return y * (y.data.size / x.data.size)
++
++mean = average
++
++
++class MatMul(Function):
++    def __init__(self, native=True):
++        self.native = native
++
++    def forward(self, x, w):
++        from hytorch.backends.cuda.runtime import selected, gemm, current_config
++        mode = selected("matmul", x) if self.native else None
++        if mode is not None:
++            return gemm(x, w, variant=mode, tile=current_config()["tile"])
++        y = x.dot(w)   # 矩阵的乘法运算，其中包括：向量内积、多维矩阵乘法、矩阵与向量的乘法。
++        return y
++
++    def backward(self, gy):
++        x, w = self.inputs
++        gx = MatMul(native=False)(gy, w.T)
++        gw = MatMul(native=False)(x.T, gy)    # Preserve existing backward backend.
++        return gx, gw
++
++
++def matmul(x, w):
++    return MatMul()(x, w)
++
++
++# =============================
++# Batch MatMul (BMM): (B,M,K) @ (B,K,N) -> (B,M,N)
++# =============================
++def _swap_last2_axes(ndim):
++    # (..., i, j) -> (..., j, i)
++    axes = list(range(ndim))
++    axes[-1], axes[-2] = axes[-2], axes[-1]
++    return tuple(axes)
++
++class BatchMatMul(Function):
++    def forward(self, x, w):
++        # x: (B,M,K), w: (B,K,N)  (不支持广播；Transformer 里我们会显式 reshape 成同 batch)
++        xp = cuda.get_array_module(x)
++        y = xp.matmul(x, w)  # 关键：matmul 才是 batch 语义
++        return y
++
++    def backward(self, gy):
++        x, w = self.inputs
++
++        # 转置只交换最后两维（不能用 .T，因为 .T 会反转所有维度）
++        wT = transpose(w, _swap_last2_axes(w.ndim))
++        xT = transpose(x, _swap_last2_axes(x.ndim))
++
++        gx = bmm(gy, wT)
++        gw = bmm(xT, gy)
++        return gx, gw
++
++def bmm(x, w):
++    return BatchMatMul()(x, w)
++
++
++def linear_simple(x, W, b=None):
++    t = matmul(x, W)
++    if b is None:
++        return t
++    y = b + t
++    t.data = None       # matmul的反向传播并不需要t的值，引用次数变成0，被python解释器删除
++    return y
++
++
++class Linear(Function):
++    def forward(self, x, W, b):
++        from hytorch.backends.cuda.runtime import selected, gemm, current_config
++        mode = selected("matmul", x)
++        y = (x.dot(W) if mode is None else
++             gemm(x, W, variant=mode, tile=current_config()["tile"]))
++        if b is not None:
++            y += b
++        return y
++
++    def backward(self, gy):
++        x, W, b = self.inputs
++        gb = None if b.data is None else sum_to(gy, b.shape)
++        gx = MatMul(native=False)(gy, W.T)
++        gW = MatMul(native=False)(x.T, gy)
++        return gx, gW, gb
++
++
++def linear(x, W, b=None):
++    return Linear()(x, W, b)
++
++
++# =============================================================================
++# activation function: sigmoid / relu / softmax / log_softmax / leaky_relu
++# =============================================================================
++
++def sigmoid_simple(x):
++    x = as_variable(x)
++    return 1/(1 + exp(-x))
++
++
++class Sigmoid(Function):
++    def forward(self, x):
++        xp = cuda.get_array_module(x)
++        # y = 1 / (1 + xp.exp(-x))
++        y = xp.tanh(x * 0.5) * 0.5 + 0.5  # Better implementation
++        return y
++
++    def backward(self, gy):
++        y = self.outputs[0]()
++        gx = gy * y * (1 - y)
++        return gx
++
++
++def sigmoid(x):
++    return Sigmoid()(x)
++
++
++class ReLU(Function):
++    def forward(self, x):
++        xp = cuda.get_array_module(x)
++        y = xp.maximum(0.0, x)
++        return y
++
++    def backward(self, gy):
++        x, = self.inputs
++        from hytorch.backends.cuda import runtime as rt
++        if not hytorch.Config.enable_backprop and rt.selected("relu_backward", x.data) == "fused":
++            if (cuda.get_array_module(x.data) is not np and x.dtype == np.float32
++                    and gy.dtype == np.float32 and x.size):
++                return hytorch.Variable(rt.relu_backward(x.data, gy.data))
++            rt._counts["relu_backward_fallback_cpu_or_dtype"] += 1
++        mask = x.data > 0
++        gx = gy * mask
++        return gx
++
++
++def relu(x):
++    return ReLU()(x)
++
++
++# 多分类
++def softmax_simple(x, axis=1):
++    x = as_variable(x)
++    y = exp(x)
++    sum_y = sum(y, axis=axis, keepdims=True)
++    return y / sum_y
++
++
++class Softmax(Function):
++    def __init__(self, axis=1):
++        self.axis = axis
++
++    def forward(self, x):
++        xp = cuda.get_array_module(x)
++        y = x - x.max(axis=self.axis, keepdims=True)
++        y = xp.exp(y)
++        y /= y.sum(axis=self.axis, keepdims=True)
++        return y
++
++    def backward(self, gy):
++        y = self.outputs[0]()
++        gx = y * gy
++        sumdx = gx.sum(axis=self.axis, keepdims=True)
++        gx -= y * sumdx
++        return gx
++
++
++def softmax(x, axis=1):
++    return Softmax(axis)(x)
++
++class LogSoftmax(Function):
++    def __init__(self, axis=1):
++        self.axis = axis
++
++    def forward(self, x):
++        log_z = utils.logsumexp(x, self.axis)
++        y = x - log_z
++        return y
++
++    def backward(self, gy):
++        y = self.outputs[0]()
++        gx = gy - exp(y) * gy.sum(axis=self.axis, keepdims=True)
++        return gx
++
++
++def log_softmax(x, axis=1):
++    return LogSoftmax(axis)(x)
++
++
++class LeakyReLU(Function):
++    def __init__(self, slope):
++        self.slope = slope
++
++    def forward(self, x):
++        y = x.copy()
++        y[x <= 0] *= self.slope
++        return y
++
++    def backward(self, gy):
++        x, = self.inputs
++        mask = (x.data > 0).astype(gy.dtype)
++        mask[mask <= 0] = self.slope
++        gx = gy * mask
++        return gx
++
++
++def leaky_relu(x, slope=0.2):
++    return LeakyReLU(slope)(x)
++
++
++# =============================================================================
++# loss function: mean_squared_error / softmax_cross_entropy / sigmoid_cross_entropy / binary_cross_entropy
++# =============================================================================
++def mean_square_error_simple(x0, x1):
++    diff = as_variable(x0) - as_variable(x1)   # 不是继承Function的函数，手动Variable
++    return sum(diff**2)/len(diff)
++
++
++class MeanSquareError(Function):
++    def forward(self, x0, x1):
++        diff = x0 - x1
++        y = (diff**2).sum()/len(diff)
++        return y
++
++    def backward(self, gy):
++        x0, x1 = self.inputs
++        diff = x0 - x1
+         # Avoid a Python float becoming a strong FP64 zero-dimensional array.
+         xp = cuda.get_array_module(diff.data)
+         scale = xp.array(2. / len(diff), dtype=xp.result_type(diff.dtype, gy.dtype))
+         gx0 = gy * diff * scale
+-        gx1 = -gx0
+-        return gx0, gx1
+-
+-
+-def mean_square_error(x0, x1):
+-    return MeanSquareError()(x0, x1)
+-
+-
+-# softmax和交叉熵混合
++        gx1 = -gx0
++        return gx0, gx1
++
++
++def mean_square_error(x0, x1):
++    return MeanSquareError()(x0, x1)
++
++
++# softmax和交叉熵混合
+ def softmax_cross_entropy_simple(x, t):
+     x, t = as_variable(x), as_variable(t)
+     N = x.shape[0]
+ 
+     p = softmax_simple(x)
+-    p = clip(p, 1e-15, 1.0)  # 防止log0的现象，p>max,返回max，p<min,返回min，中间就返回自己
+-    log_p = log(p)
+-    # print(log_p.shape)
+-    tlog_p = log_p[np.arange(N), t.data]  # np.arange(N) → array([0, 1, …, N-1]) ,不是array
++    p = clip(p, 1e-15, 1.0)  # 防止log0的现象，p>max,返回max，p<min,返回min，中间就返回自己
++    log_p = log(p)
++    # print(log_p.shape)
++    tlog_p = log_p[np.arange(N), t.data]  # np.arange(N) → array([0, 1, …, N-1]) ,不是array
+     y = -1*sum(tlog_p) / N
+     return y
+ 
+@@ -515,268 +521,268 @@
+         raise ValueError(f"soft labels must have shape {x.shape}, got {t.shape}")
+     log_p = log_softmax(x, axis=1)
+     return -sum(t * log_p) / x.shape[0]
+-
+-
+-class SoftmaxCrossEntropy(Function):
+-    def forward(self, x, t):
+-        N = x.shape[0]
+-        log_z = utils.logsumexp(x, axis=1)
+-        log_p = x - log_z
+-        log_p = log_p[np.arange(N), t.ravel()]
+-        y = -log_p.sum() / np.float32(N)
+-        return y
+-
+-    def backward(self, gy):
+-        x, t = self.inputs
+-        N, CLS_NUM = x.shape
+-
+-        gy *= 1/N
+-        y = softmax(x)
+-        # convert to one-hot
+-        xp = cuda.get_array_module(t.data)
+-        t_onehot = xp.eye(CLS_NUM, dtype=t.dtype)[t.data]
+-        y = (y - t_onehot) * gy
+-        return y
+-
+-
+-def softmax_cross_entropy(x, t):
+-    return SoftmaxCrossEntropy()(x, t)
+-
+-
+-def sigmoid_cross_entropy(x, t):
+-    if x.ndim != t.ndim:
+-        t = t.reshape(*x.shape)
+-    x, t = as_variable(x), as_variable(t)
+-    N = len(x)
+-    p = sigmoid(x)
+-    p = clip(p, 1e-15, 1.0)
+-    tlog_p = t * log(p) + (1 - t) * log(1 - p)
+-    y = -1 * sum(tlog_p) / N
+-    return y
+-
+-
+-def binary_cross_entropy(p, t):
+-    if p.ndim != t.ndim:
+-        t = t.reshape(*p.shape)
+-    N = len(t)
+-    p = clip(p, 1e-15, 0.999)
+-    tlog_p = t * log(p) + (1 - t) * log(1 - p)
+-    y = -1 * sum(tlog_p) / N
+-    return y
+-
+-
+-# =============================================================================
+-# accuracy / dropout / batch_norm / embed_id，这里的batch_norm暂时不用管
+-# =============================================================================
+-# 评估精度的函数，用的是ndarray，不能对其求导
+-def accuracy(y, t):
+-    y, t = as_variable(y), as_variable(t)
+-
+-    pred = y.data.argmax(axis=1).reshape(t.shape)
+-    result = (pred == t.data)
+-    acc = result.mean()
+-    return as_variable(as_array(acc))
+-
+-
+-# Inverted Dropout,训练时以概率 dropout_ratio 随机将输入元素置 0，并放大幸存值 1/(1-r) 倍，保持期望值不变；测试时直接原样返回。
+-def dropout(x, dropout_ratio=0.5):
+-    x = as_variable(x)
+-
+-    if hytorch.Config.train:
+-        xp = cuda.get_array_module(x)
+-        mask = xp.random.rand(*x.shape) > dropout_ratio
+-        scale = xp.array(1.0 - dropout_ratio).astype(x.dtype)
+-        y = x * mask / scale
+-        return y
+-    else:
+-        return x
+-
+-
+-def embed_id(x, W):
+-    return W[x]
+-
+-
+-class BatchNorm(Function):
+-    def __init__(self, mean, var, decay, eps):
+-        self.avg_mean = mean
+-        self.avg_var = var
+-        self.decay = decay
+-        self.eps = eps
+-        self.inv_std = None
+-
+-    def forward(self, x, gamma, beta):
+-        assert x.ndim == 2 or x.ndim == 4
+-
+-        x_ndim = x.ndim
+-        if x_ndim == 4:
+-            N, C, H, W = x.shape
+-            # (N, C, H, W) -> (N*H*W, C)
+-            x = x.transpose(0, 2, 3, 1).reshape(-1, C)
+-
+-        xp = cuda.get_array_module(x)
+-
+-        if hytorch.Config.train:
+-            mean = x.mean(axis=0)
+-            var = x.var(axis=0)
+-            inv_std = 1 / xp.sqrt(var + self.eps)
+-            xc = (x - mean) * inv_std
+-
+-            m = x.size // gamma.size
+-            s = m - 1. if m - 1. > 1. else 1.
+-            adjust = m / s  # unbiased estimation
+-            self.avg_mean *= self.decay
+-            self.avg_mean += (1 - self.decay) * mean
+-            self.avg_var *= self.decay
+-            self.avg_var += (1 - self.decay) * adjust * var
+-            self.inv_std = inv_std
+-        else:
+-            inv_std = 1 / xp.sqrt(self.avg_var + self.eps)
+-            xc = (x - self.avg_mean) * inv_std
+-        y = gamma * xc + beta
+-
+-        if x_ndim == 4:
+-            # (N*H*W, C) -> (N, C, H, W)
+-            y = y.reshape(N, H, W, C).transpose(0, 3, 1, 2)
+-        return y
+-
+-    def backward(self, gy):
+-        gy_ndim = gy.ndim
+-        if gy_ndim == 4:
+-            N, C, H, W = gy.shape
+-            gy = gy.transpose(0, 2, 3, 1).reshape(-1, C)
+-
+-        x, gamma, beta = self.inputs
+-        batch_size = len(gy)
+-
+-        if x.ndim == 4:
+-            N, C, H, W = x.shape
+-            x = x.transpose(0, 2, 3, 1).reshape(-1, C)
+-        mean = x.sum(axis=0) / batch_size
+-        xc = (x - mean) * self.inv_std
+-
+-        gbeta = sum(gy, axis=0)
+-        ggamma = sum(xc * gy, axis=0)
+-        gx = gy - gbeta / batch_size - xc * ggamma / batch_size
+-        gx *= gamma * self.inv_std
+-
+-        if gy_ndim == 4:
+-            gx = gx.reshape(N, H, W, C).transpose(0, 3, 1, 2)
+-        return gx, ggamma, gbeta
+-
+-
+-def batch_norm(x, gamma, beta, mean, var, decay=0.9, eps=2e-5):
+-    return BatchNorm(mean, var, decay, eps)(x, gamma, beta)
+-
+-
+-# =============================================================================
+-# max / min / clip
+-# =============================================================================
+-class Max(Function):
+-    def __init__(self, axis=None, keepdims=False):
+-        self.axis = axis
+-        self.keepdims = keepdims
+-
+-    def forward(self, x):
+-        y = x.max(axis=self.axis, keepdims=self.keepdims)
+-        return y
+-
+-    def backward(self, gy):
+-        x = self.inputs[0]
+-        y = self.outputs[0]()  # weakref
+-
+-        shape = utils.max_backward_shape(x, self.axis)
+-        gy = reshape(gy, shape)
+-        y = reshape(y, shape)
+-        cond = (x.data == y.data)
+-        gy = broadcast_to(gy, cond.shape)
+-        return gy * cond
+-
+-
+-class Min(Max):
+-    def forward(self, x):
+-        y = x.min(axis=self.axis, keepdims=self.keepdims)
+-        return y
+-
+-
+-def max(x, axis=None, keepdims=False):
+-    return Max(axis, keepdims)(x)
+-
+-
+-def min(x, axis=None, keepdims=False):
+-    return Min(axis, keepdims)(x)
+-
+-
+-class Clip(Function):
+-    def __init__(self, x_min, x_max):
+-        self.x_min = x_min
+-        self.x_max = x_max
+-
+-    def forward(self, x):
+-        xp = cuda.get_array_module(x)
+-        y = xp.clip(x, self.x_min, self.x_max)
+-        return y
+-
+-    def backward(self, gy):
+-        x, = self.inputs
+-        mask = (x.data >= self.x_min) * (x.data <= self.x_max)
+-        gx = gy * mask
+-        return gx
+-
+-
+-def clip(x, x_min, x_max):
+-    return Clip(x_min, x_max)(x)
+-
+-
+-class Concat(Function):
+-    def __init__(self, axis=0):
+-        self.axis = axis
+-
+-    def forward(self, *xs):
+-        # 将多个 Variable 的 data 提取出来
+-        xp = cuda.get_array_module(xs[0].data)
+-        xs_data = [x.data for x in xs]
+-        y = xp.concatenate(xs_data, axis=self.axis)
+-        return y
+-
+-    def backward(self, gy):
+-        xs = self.inputs
+-        axis = self.axis
+-
+-        # 计算每个输入在 axis 维度上的大小
+-        sizes = np.array([x.shape[axis] for x in xs], dtype=np.int32)
+-        indices = np.cumsum(sizes)
+-
+-        gxs = []
+-        start = 0
+-        for i, x in enumerate(xs):
+-            end = indices[i]
+-            slices = [slice(None)] * gy.ndim
+-            slices[axis] = slice(start, end)
+-            gx = gy[tuple(slices)]
+-            gxs.append(gx)
+-            start = end
+-
+-        return tuple(gxs)
+-
+-def concat(xs, axis=0):
+-    if not isinstance(xs, (list, tuple)):
+-        xs = [xs]
+-    return Concat(axis)(*xs)
+-# =============================================================================
+-# conv2d / col2im / im2col / basic_math
+-# =============================================================================
+-from hytorch.functions_conv import conv2d
+-from hytorch.functions_conv import deconv2d
+-from hytorch.functions_conv import conv2d_simple
+-from hytorch.functions_conv import im2col
+-from hytorch.functions_conv import col2im
+-from hytorch.functions_conv import pooling_simple
+-from hytorch.functions_conv import pooling
+-from hytorch.functions_conv import average_pooling
+-from hytorch.core import add
+-from hytorch.core import sub
+-from hytorch.core import rsub
+-from hytorch.core import mul
+-from hytorch.core import div
+-from hytorch.core import neg
+-from hytorch.core import pow
++
++
++class SoftmaxCrossEntropy(Function):
++    def forward(self, x, t):
++        N = x.shape[0]
++        log_z = utils.logsumexp(x, axis=1)
++        log_p = x - log_z
++        log_p = log_p[np.arange(N), t.ravel()]
++        y = -log_p.sum() / np.float32(N)
++        return y
++
++    def backward(self, gy):
++        x, t = self.inputs
++        N, CLS_NUM = x.shape
++
++        gy *= 1/N
++        y = softmax(x)
++        # convert to one-hot
++        xp = cuda.get_array_module(t.data)
++        t_onehot = xp.eye(CLS_NUM, dtype=t.dtype)[t.data]
++        y = (y - t_onehot) * gy
++        return y
++
++
++def softmax_cross_entropy(x, t):
++    return SoftmaxCrossEntropy()(x, t)
++
++
++def sigmoid_cross_entropy(x, t):
++    if x.ndim != t.ndim:
++        t = t.reshape(*x.shape)
++    x, t = as_variable(x), as_variable(t)
++    N = len(x)
++    p = sigmoid(x)
++    p = clip(p, 1e-15, 1.0)
++    tlog_p = t * log(p) + (1 - t) * log(1 - p)
++    y = -1 * sum(tlog_p) / N
++    return y
++
++
++def binary_cross_entropy(p, t):
++    if p.ndim != t.ndim:
++        t = t.reshape(*p.shape)
++    N = len(t)
++    p = clip(p, 1e-15, 0.999)
++    tlog_p = t * log(p) + (1 - t) * log(1 - p)
++    y = -1 * sum(tlog_p) / N
++    return y
++
++
++# =============================================================================
++# accuracy / dropout / batch_norm / embed_id，这里的batch_norm暂时不用管
++# =============================================================================
++# 评估精度的函数，用的是ndarray，不能对其求导
++def accuracy(y, t):
++    y, t = as_variable(y), as_variable(t)
++
++    pred = y.data.argmax(axis=1).reshape(t.shape)
++    result = (pred == t.data)
++    acc = result.mean()
++    return as_variable(as_array(acc))
++
++
++# Inverted Dropout,训练时以概率 dropout_ratio 随机将输入元素置 0，并放大幸存值 1/(1-r) 倍，保持期望值不变；测试时直接原样返回。
++def dropout(x, dropout_ratio=0.5):
++    x = as_variable(x)
++
++    if hytorch.Config.train:
++        xp = cuda.get_array_module(x)
++        mask = xp.random.rand(*x.shape) > dropout_ratio
++        scale = xp.array(1.0 - dropout_ratio).astype(x.dtype)
++        y = x * mask / scale
++        return y
++    else:
++        return x
++
++
++def embed_id(x, W):
++    return W[x]
++
++
++class BatchNorm(Function):
++    def __init__(self, mean, var, decay, eps):
++        self.avg_mean = mean
++        self.avg_var = var
++        self.decay = decay
++        self.eps = eps
++        self.inv_std = None
++
++    def forward(self, x, gamma, beta):
++        assert x.ndim == 2 or x.ndim == 4
++
++        x_ndim = x.ndim
++        if x_ndim == 4:
++            N, C, H, W = x.shape
++            # (N, C, H, W) -> (N*H*W, C)
++            x = x.transpose(0, 2, 3, 1).reshape(-1, C)
++
++        xp = cuda.get_array_module(x)
++
++        if hytorch.Config.train:
++            mean = x.mean(axis=0)
++            var = x.var(axis=0)
++            inv_std = 1 / xp.sqrt(var + self.eps)
++            xc = (x - mean) * inv_std
++
++            m = x.size // gamma.size
++            s = m - 1. if m - 1. > 1. else 1.
++            adjust = m / s  # unbiased estimation
++            self.avg_mean *= self.decay
++            self.avg_mean += (1 - self.decay) * mean
++            self.avg_var *= self.decay
++            self.avg_var += (1 - self.decay) * adjust * var
++            self.inv_std = inv_std
++        else:
++            inv_std = 1 / xp.sqrt(self.avg_var + self.eps)
++            xc = (x - self.avg_mean) * inv_std
++        y = gamma * xc + beta
++
++        if x_ndim == 4:
++            # (N*H*W, C) -> (N, C, H, W)
++            y = y.reshape(N, H, W, C).transpose(0, 3, 1, 2)
++        return y
++
++    def backward(self, gy):
++        gy_ndim = gy.ndim
++        if gy_ndim == 4:
++            N, C, H, W = gy.shape
++            gy = gy.transpose(0, 2, 3, 1).reshape(-1, C)
++
++        x, gamma, beta = self.inputs
++        batch_size = len(gy)
++
++        if x.ndim == 4:
++            N, C, H, W = x.shape
++            x = x.transpose(0, 2, 3, 1).reshape(-1, C)
++        mean = x.sum(axis=0) / batch_size
++        xc = (x - mean) * self.inv_std
++
++        gbeta = sum(gy, axis=0)
++        ggamma = sum(xc * gy, axis=0)
++        gx = gy - gbeta / batch_size - xc * ggamma / batch_size
++        gx *= gamma * self.inv_std
++
++        if gy_ndim == 4:
++            gx = gx.reshape(N, H, W, C).transpose(0, 3, 1, 2)
++        return gx, ggamma, gbeta
++
++
++def batch_norm(x, gamma, beta, mean, var, decay=0.9, eps=2e-5):
++    return BatchNorm(mean, var, decay, eps)(x, gamma, beta)
++
++
++# =============================================================================
++# max / min / clip
++# =============================================================================
++class Max(Function):
++    def __init__(self, axis=None, keepdims=False):
++        self.axis = axis
++        self.keepdims = keepdims
++
++    def forward(self, x):
++        y = x.max(axis=self.axis, keepdims=self.keepdims)
++        return y
++
++    def backward(self, gy):
++        x = self.inputs[0]
++        y = self.outputs[0]()  # weakref
++
++        shape = utils.max_backward_shape(x, self.axis)
++        gy = reshape(gy, shape)
++        y = reshape(y, shape)
++        cond = (x.data == y.data)
++        gy = broadcast_to(gy, cond.shape)
++        return gy * cond
++
++
++class Min(Max):
++    def forward(self, x):
++        y = x.min(axis=self.axis, keepdims=self.keepdims)
++        return y
++
++
++def max(x, axis=None, keepdims=False):
++    return Max(axis, keepdims)(x)
++
++
++def min(x, axis=None, keepdims=False):
++    return Min(axis, keepdims)(x)
++
++
++class Clip(Function):
++    def __init__(self, x_min, x_max):
++        self.x_min = x_min
++        self.x_max = x_max
++
++    def forward(self, x):
++        xp = cuda.get_array_module(x)
++        y = xp.clip(x, self.x_min, self.x_max)
++        return y
++
++    def backward(self, gy):
++        x, = self.inputs
++        mask = (x.data >= self.x_min) * (x.data <= self.x_max)
++        gx = gy * mask
++        return gx
++
++
++def clip(x, x_min, x_max):
++    return Clip(x_min, x_max)(x)
++
++
++class Concat(Function):
++    def __init__(self, axis=0):
++        self.axis = axis
++
++    def forward(self, *xs):
++        # 将多个 Variable 的 data 提取出来
++        xp = cuda.get_array_module(xs[0].data)
++        xs_data = [x.data for x in xs]
++        y = xp.concatenate(xs_data, axis=self.axis)
++        return y
++
++    def backward(self, gy):
++        xs = self.inputs
++        axis = self.axis
++
++        # 计算每个输入在 axis 维度上的大小
++        sizes = np.array([x.shape[axis] for x in xs], dtype=np.int32)
++        indices = np.cumsum(sizes)
++
++        gxs = []
++        start = 0
++        for i, x in enumerate(xs):
++            end = indices[i]
++            slices = [slice(None)] * gy.ndim
++            slices[axis] = slice(start, end)
++            gx = gy[tuple(slices)]
++            gxs.append(gx)
++            start = end
++
++        return tuple(gxs)
++
++def concat(xs, axis=0):
++    if not isinstance(xs, (list, tuple)):
++        xs = [xs]
++    return Concat(axis)(*xs)
++# =============================================================================
++# conv2d / col2im / im2col / basic_math
++# =============================================================================
++from hytorch.functions_conv import conv2d
++from hytorch.functions_conv import deconv2d
++from hytorch.functions_conv import conv2d_simple
++from hytorch.functions_conv import im2col
++from hytorch.functions_conv import col2im
++from hytorch.functions_conv import pooling_simple
++from hytorch.functions_conv import pooling
++from hytorch.functions_conv import average_pooling
++from hytorch.core import add
++from hytorch.core import sub
++from hytorch.core import rsub
++from hytorch.core import mul
++from hytorch.core import div
++from hytorch.core import neg
++from hytorch.core import pow
+--- a/hytorch/functions_conv.py
++++ b/hytorch/functions_conv.py
+@@ -4,55 +4,55 @@
+ from hytorch.utils import pair, get_conv_outsize, get_deconv_outsize
+ from hytorch.functions import linear, broadcast_to, sum
+ from hytorch.backends.cpu.gemm import gemm as cpu_gemm
+-
+-
+-# =============================================================================
+-# [simple version] conv2d_simple / pooling_simple
+-# =============================================================================
+-def conv2d_simple(x, W, b=None, stride=1, pad=0):
+-    x, W = as_variable(x), as_variable(W)
+-
+-    Weight = W
+-    N, C, H, W = x.shape
+-    OC, C, KH, KW = Weight.shape
+-    SH, SW = pair(stride)
+-    PH, PW = pair(pad)
+-    OH = get_conv_outsize(H, KH, SH, PH)
+-    OW = get_conv_outsize(W, KW, SW, PW)
+-
+-    col = im2col(x, (KH, KW), stride, pad, to_matrix=True)
+-    Weight = Weight.reshape(OC, -1).transpose()
+-    t = linear(col, Weight, b)
+-    y = t.reshape(N, OH, OW, OC).transpose(0, 3, 1, 2)
+-    return y
+-
+-
+-def pooling_simple(x, kernel_size, stride=1, pad=0):
+-    x = as_variable(x)
+-
+-    N, C, H, W = x.shape
+-    KH, KW = pair(kernel_size)
+-    PH, PW = pair(pad)
+-    SH, SW = pair(stride)
+-    OH = get_conv_outsize(H, KH, SH, PH)
+-    OW = get_conv_outsize(W, KW, SW, PW)
+-
+-    col = im2col(x, kernel_size, stride, pad, to_matrix=True)
+-    col = col.reshape(-1, KH * KW)
+-    y = col.max(axis=1)
+-    y = y.reshape(N, OH, OW, C).transpose(0, 3, 1, 2)
+-    return y
+-
+-
+-# =============================================================================
+-#  conv2d / deconv2d
+-# =============================================================================
++
++
++# =============================================================================
++# [simple version] conv2d_simple / pooling_simple
++# =============================================================================
++def conv2d_simple(x, W, b=None, stride=1, pad=0):
++    x, W = as_variable(x), as_variable(W)
++
++    Weight = W
++    N, C, H, W = x.shape
++    OC, C, KH, KW = Weight.shape
++    SH, SW = pair(stride)
++    PH, PW = pair(pad)
++    OH = get_conv_outsize(H, KH, SH, PH)
++    OW = get_conv_outsize(W, KW, SW, PW)
++
++    col = im2col(x, (KH, KW), stride, pad, to_matrix=True)
++    Weight = Weight.reshape(OC, -1).transpose()
++    t = linear(col, Weight, b)
++    y = t.reshape(N, OH, OW, OC).transpose(0, 3, 1, 2)
++    return y
++
++
++def pooling_simple(x, kernel_size, stride=1, pad=0):
++    x = as_variable(x)
++
++    N, C, H, W = x.shape
++    KH, KW = pair(kernel_size)
++    PH, PW = pair(pad)
++    SH, SW = pair(stride)
++    OH = get_conv_outsize(H, KH, SH, PH)
++    OW = get_conv_outsize(W, KW, SW, PW)
++
++    col = im2col(x, kernel_size, stride, pad, to_matrix=True)
++    col = col.reshape(-1, KH * KW)
++    y = col.max(axis=1)
++    y = y.reshape(N, OH, OW, C).transpose(0, 3, 1, 2)
++    return y
++
++
++# =============================================================================
++#  conv2d / deconv2d
++# =============================================================================
+ class Conv2d(Function):
+-    def __init__(self, stride=1, pad=0):
+-        super().__init__()
+-        self.stride = pair(stride)
+-        self.pad = pair(pad)
+-
++    def __init__(self, stride=1, pad=0):
++        super().__init__()
++        self.stride = pair(stride)
++        self.pad = pair(pad)
++
+     def forward(self, x, W, b):
+         xp = cuda.get_array_module(x)
+ 
+@@ -66,84 +66,86 @@
+             return conv2d_cpu_im2col_gemm_array(x, W, b, self.stride, self.pad)
+ 
+         return conv2d_cpu_tensordot_array(x, W, b, self.stride, self.pad, xp=xp)
+-
+-    def backward(self, gy):
+-        x, W, b = self.inputs
+-        # ==== gx ====
+-        gx = deconv2d(gy, W, b=None, stride=self.stride, pad=self.pad,
+-                      outsize=(x.shape[2], x.shape[3]))
+-        # ==== gW ====
+-        gW = Conv2DGradW(self)(x, gy)
+-        # ==== gb ====
+-        gb = None
+-        if b.data is not None:
+-            gb = gy.sum(axis=(0, 2, 3))
+-        return gx, gW, gb
+-
+-
+-def conv2d(x, W, b=None, stride=1, pad=0):
+-    return Conv2d(stride, pad)(x, W, b)
+-
+-
+-class Deconv2d(Function):
+-    def __init__(self, stride=1, pad=0, outsize=None):
+-        super().__init__()
+-        self.stride = pair(stride)
+-        self.pad = pair(pad)
+-        self.outsize = outsize
+-
+-    def forward(self, x, W, b):
+-        xp = cuda.get_array_module(x)
+-
+-        Weight = W
+-        SH, SW = self.stride
+-        PH, PW = self.pad
+-        C, OC, KH, KW = Weight.shape
+-        N, C, H, W = x.shape
+-        if self.outsize is None:
+-            out_h = get_deconv_outsize(H, KH, SH, PH)
+-            out_w = get_deconv_outsize(W, KW, SW, PW)
+-        else:
+-            out_h, out_w = pair(self.outsize)
+-        img_shape = (N, OC, out_h, out_w)
+-
+-        gcol = xp.tensordot(Weight, x, (0, 1))
+-        gcol = xp.rollaxis(gcol, 3)
+-        y = col2im_array(gcol, img_shape, (KH, KW), self.stride, self.pad,
+-                         to_matrix=False)
+-        # b, k, h, w
+-        if b is not None:
+-            self.no_bias = True
+-            y += b.reshape((1, b.size, 1, 1))
+-        return y
+-
+-    def backward(self, gy):
+-        x, W, b = self.inputs
+-
+-        # ==== gx ====
+-        gx = conv2d(gy, W, b=None, stride=self.stride, pad=self.pad)
+-        # ==== gW ====
+-        f = Conv2DGradW(self)
+-        gW = f(gy, x)
+-        # ==== gb ====
+-        gb = None
+-        if b.data is not None:
+-            gb = gy.sum(axis=(0, 2, 3))
+-        return gx, gW, gb
+-
+-
+-def deconv2d(x, W, b=None, stride=1, pad=0, outsize=None):
+-    return Deconv2d(stride, pad, outsize)(x, W, b)
+-
+-
++
++    def backward(self, gy):
++        x, W, b = self.inputs
++        # ==== gx ====
++        gx = None
++        if x.requires_grad:
++            gx = deconv2d(gy, W, b=None, stride=self.stride, pad=self.pad,
++                          outsize=(x.shape[2], x.shape[3]))
++        # ==== gW ====
++        gW = Conv2DGradW(self)(x, gy)
++        # ==== gb ====
++        gb = None
++        if b.data is not None:
++            gb = gy.sum(axis=(0, 2, 3))
++        return gx, gW, gb
++
++
++def conv2d(x, W, b=None, stride=1, pad=0):
++    return Conv2d(stride, pad)(x, W, b)
++
++
++class Deconv2d(Function):
++    def __init__(self, stride=1, pad=0, outsize=None):
++        super().__init__()
++        self.stride = pair(stride)
++        self.pad = pair(pad)
++        self.outsize = outsize
++
++    def forward(self, x, W, b):
++        xp = cuda.get_array_module(x)
++
++        Weight = W
++        SH, SW = self.stride
++        PH, PW = self.pad
++        C, OC, KH, KW = Weight.shape
++        N, C, H, W = x.shape
++        if self.outsize is None:
++            out_h = get_deconv_outsize(H, KH, SH, PH)
++            out_w = get_deconv_outsize(W, KW, SW, PW)
++        else:
++            out_h, out_w = pair(self.outsize)
++        img_shape = (N, OC, out_h, out_w)
++
++        gcol = xp.tensordot(Weight, x, (0, 1))
++        gcol = xp.rollaxis(gcol, 3)
++        y = col2im_array(gcol, img_shape, (KH, KW), self.stride, self.pad,
++                         to_matrix=False)
++        # b, k, h, w
++        if b is not None:
++            self.no_bias = True
++            y += b.reshape((1, b.size, 1, 1))
++        return y
++
++    def backward(self, gy):
++        x, W, b = self.inputs
++
++        # ==== gx ====
++        gx = conv2d(gy, W, b=None, stride=self.stride, pad=self.pad)
++        # ==== gW ====
++        f = Conv2DGradW(self)
++        gW = f(gy, x)
++        # ==== gb ====
++        gb = None
++        if b.data is not None:
++            gb = gy.sum(axis=(0, 2, 3))
++        return gx, gW, gb
++
++
++def deconv2d(x, W, b=None, stride=1, pad=0, outsize=None):
++    return Deconv2d(stride, pad, outsize)(x, W, b)
++
++
+ class Conv2DGradW(Function):
+-    def __init__(self, conv2d):
+-        W = conv2d.inputs[1]
+-        kh, kw = W.shape[2:]
+-        self.kernel_size = (kh, kw)
+-        self.stride = conv2d.stride
+-        self.pad = conv2d.pad
+-
++    def __init__(self, conv2d):
++        W = conv2d.inputs[1]
++        kh, kw = W.shape[2:]
++        self.kernel_size = (kh, kw)
++        self.stride = conv2d.stride
++        self.pad = conv2d.pad
++
+     def forward(self, x, gy):
+         xp = cuda.get_array_module(x)
+ 
+@@ -165,246 +167,248 @@
+                            to_matrix=False)
+         gW = xp.tensordot(gy, col, ((0, 2, 3), (0, 4, 5)))
+         return gW
+-
+-    def backward(self, gys):
+-        x, gy = self.inputs
++
++    def backward(self, gys):
++        x, gy = self.inputs
+         gW = gys  # Incoming cotangent, not the weak reference to our output.
+-
+-        xh, xw = x.shape[2:]
+-        gx = deconv2d(gy, gW, stride=self.stride, pad=self.pad,
+-                      outsize=(xh, xw))
+-        ggy = conv2d(x, gW, stride=self.stride, pad=self.pad)
+-        return gx, ggy
+-
+-
+-# =============================================================================
+-#  pooling(max-pooling) / average_pooling
+-# =============================================================================
+-class Pooling(Function):
+-    def __init__(self, kernel_size, stride=1, pad=0):
+-        super().__init__()
+-        self.kernel_size = kernel_size
+-        self.stride = stride
+-        self.pad = pad
+-
+-    def forward(self, x):
++
++        xh, xw = x.shape[2:]
++        gx = None
++        if x.requires_grad:
++            gx = deconv2d(gy, gW, stride=self.stride, pad=self.pad,
++                          outsize=(xh, xw))
++        ggy = conv2d(x, gW, stride=self.stride, pad=self.pad)
++        return gx, ggy
++
++
++# =============================================================================
++#  pooling(max-pooling) / average_pooling
++# =============================================================================
++class Pooling(Function):
++    def __init__(self, kernel_size, stride=1, pad=0):
++        super().__init__()
++        self.kernel_size = kernel_size
++        self.stride = stride
++        self.pad = pad
++
++    def forward(self, x):
+         from hytorch.backends.cuda.runtime import selected, max_pool2d
+         if selected("pool", x) is not None:
+             y, self.indexes = max_pool2d(x, self.kernel_size, self.stride, self.pad)
+             return y
+-        col = im2col_array(x, self.kernel_size, self.stride, self.pad,
+-                           to_matrix=False)
+-
+-        N, C, KH, KW, OH, OW = col.shape
+-        col = col.reshape(N, C, KH * KW, OH, OW)
+-        self.indexes = col.argmax(axis=2)
+-        y = col.max(axis=2)
+-        return y
+-
+-    def backward(self, gy):
+-        return Pooling2DGrad(self)(gy)
+-
+-def pooling(x, kernel_size, stride=1, pad=0):
+-    return Pooling(kernel_size, stride, pad)(x)
+-
+-class Pooling2DGrad(Function):
+-    def __init__(self, mpool2d):
+-        self.mpool2d = mpool2d
+-        self.kernel_size = mpool2d.kernel_size
+-        self.stride = mpool2d.stride
+-        self.pad = mpool2d.pad
+-        self.input_shape = mpool2d.inputs[0].shape
+-        self.dtype = mpool2d.inputs[0].dtype
+-        self.indexes = mpool2d.indexes
+-
+-    def forward(self, gy):
+-        xp = cuda.get_array_module(gy)
+-
+-        N, C, OH, OW = gy.shape
+-        N, C, H, W = self.input_shape
+-        KH, KW = pair(self.kernel_size)
+-
+-        gcol = xp.zeros((N * C * OH * OW * KH * KW), dtype=self.dtype)
+-
+-        indexes = (self.indexes.ravel()
+-                   + xp.arange(0, self.indexes.size * KH * KW, KH * KW))
+-
+-        gcol[indexes] = gy.ravel()
+-        gcol = gcol.reshape(N, C, OH, OW, KH, KW)
+-        gcol = xp.swapaxes(gcol, 2, 4)
+-        gcol = xp.swapaxes(gcol, 3, 5)
+-
+-        gx = col2im_array(gcol, (N, C, H, W), self.kernel_size, self.stride,
+-                          self.pad, to_matrix=False)
+-        return gx
+-
+-    def backward(self, ggx):
+-        f = Pooling2DWithIndexes(self.mpool2d)
+-        return f(ggx)
+-
+-
+-class Pooling2DWithIndexes(Function):
+-    def __init__(self, mpool2d):
+-        self.kernel_size = mpool2d.kernel_size
+-        self.stride = mpool2d.stride
+-        self.pad = mpool2d.pad
+-        self.input_shape = mpool2d.inputs[0].shape
+-        self.dtype = mpool2d.inputs[0].dtype
+-        self.indexes = mpool2d.indexes
+-
+-    def forward(self, x):
+-        col = im2col_array(x, self.kernel_size, self.stride, self.pad,
+-                           to_matrix=False)
+-        N, C, KH, KW, OH, OW = col.shape
+-        col = col.reshape(N, C, KH * KW, OH, OW)
+-        col = col.transpose(0, 1, 3, 4, 2).reshape(-1, KH * KW)
+-        indexes = self.indexes.ravel()
+-        col = col[np.arange(len(indexes)), indexes]
+-        return col.reshape(N, C, OH, OW)
+-
+-
+-def pooling(x, kernel_size, stride=1, pad=0):
+-    return Pooling(kernel_size, stride, pad)(x)
+-
+-
+-class AveragePooling(Function):
+-    def __init__(self, kernel_size, stride=1, pad=0):
+-        super().__init__()
+-        self.kernel_size = kernel_size
+-        self.stride = stride
+-        self.pad = pad
+-        self.input_shape = None
+-
+-    def forward(self, x):
+-        self.input_shape = x.shape
+-        col = im2col_array(x, self.kernel_size, self.stride, self.pad,
+-                           to_matrix=False)
+-        y = col.mean(axis=(2, 3))
+-        return y
+-
+-    def backward(self, gy):
+-        # TODO(Koki): This is simple implementation
+-        N, C, OH, OW = gy.shape
+-        KW, KH = pair(self.kernel_size)
+-        gy /= (KW * KH)
+-        gcol = broadcast_to(gy.reshape(-1), (KH, KW, N * C * OH * OW))
+-        gcol = gcol.reshape(KH, KW, N, C, OH, OW).transpose(2, 3, 0, 1, 4, 5)
+-        gx = col2im(gcol, self.input_shape, self.kernel_size, self.stride,
+-                    self.pad, to_matrix=False)
+-        return gx
+-
+-
+-def average_pooling(x, kernel_size, stride=1, pad=0):
+-    return AveragePooling(kernel_size, stride, pad)(x)
+-
+-
+-# =============================================================================
+-#  im2col / col2im
+-# =============================================================================
+-class Im2col(Function):
+-    def __init__(self, kernel_size, stride, pad, to_matrix):
+-        super().__init__()
+-        self.input_shape = None
+-        self.kernel_size = kernel_size
+-        self.stride = stride
+-        self.pad = pad
+-        self.to_matrix = to_matrix
+-
+-    def forward(self, x):
+-        self.input_shape = x.shape
+-        y = im2col_array(x, self.kernel_size, self.stride, self.pad,
+-                         self.to_matrix)
+-        return y
+-
+-    def backward(self, gy):
+-        gx = col2im(gy, self.input_shape, self.kernel_size, self.stride,
+-                    self.pad, self.to_matrix)
+-        return gx
+-
+-
+-def im2col(x, kernel_size, stride=1, pad=0, to_matrix=True):
+-    """Extract patches from an image based on the filter.
+-
+-    Args:
+-        x (`dezero.Variable` or `ndarray`): Input variable of shape
+-            `(N, C, H, W)`
+-        kernel_size (int or (int, int)): Size of kernel.
+-        stride (int or (int, int)): Stride of kernel.
+-        pad (int or (int, int)): Spatial padding width for input arrays.
+-        to_matrix (bool): If True the `col` will be reshaped to 2d array whose
+-            shape is `(N*OH*OW, C*KH*KW)`
+-
+-    Returns:
+-        `dezero.Variable`: Output variable. If the `to_matrix` is False, the
+-            output shape is `(N, C, KH, KW, OH, OW)`, otherwise
+-            `(N*OH*OW, C*KH*KW)`.
+-
+-    Notation:
+-    - `N` is the batch size.
+-    - `C` is the number of the input channels.
+-    - `H` and `W` are the height and width of the input image, respectively.
+-    - `KH` and `KW` are the height and width of the filters, respectively.
+-    - `SH` and `SW` are the strides of the filter.
+-    - `PH` and `PW` are the spatial padding sizes.
+-    - `OH` and `OW` are the height and width of the output, respectively.
+-    """
+-    y = Im2col(kernel_size, stride, pad, to_matrix)(x)
+-    return y
+-
+-
+-class Col2im(Function):
+-    def __init__(self, input_shape, kernel_size, stride, pad, to_matrix):
+-        super().__init__()
+-        self.input_shape = input_shape
+-        self.kernel_size = kernel_size
+-        self.stride = stride
+-        self.pad = pad
+-        self.to_matrix = to_matrix
+-
+-    def forward(self, x):
+-        y = col2im_array(x, self.input_shape, self.kernel_size, self.stride,
+-                         self.pad, self.to_matrix)
+-        return y
+-
+-    def backward(self, gy):
+-        gx = im2col(gy, self.kernel_size, self.stride, self.pad,
+-                    self.to_matrix)
+-        return gx
+-
+-
+-def col2im(x, input_shape, kernel_size, stride=1, pad=0, to_matrix=True):
+-    return Col2im(input_shape, kernel_size, stride, pad, to_matrix)(x)
+-
+-
+-# =============================================================================
+-#  numpy im2col
+-# =============================================================================
++        col = im2col_array(x, self.kernel_size, self.stride, self.pad,
++                           to_matrix=False)
++
++        N, C, KH, KW, OH, OW = col.shape
++        col = col.reshape(N, C, KH * KW, OH, OW)
++        self.indexes = col.argmax(axis=2)
++        y = col.max(axis=2)
++        return y
++
++    def backward(self, gy):
++        return Pooling2DGrad(self)(gy)
++
++def pooling(x, kernel_size, stride=1, pad=0):
++    return Pooling(kernel_size, stride, pad)(x)
++
++class Pooling2DGrad(Function):
++    def __init__(self, mpool2d):
++        self.mpool2d = mpool2d
++        self.kernel_size = mpool2d.kernel_size
++        self.stride = mpool2d.stride
++        self.pad = mpool2d.pad
++        self.input_shape = mpool2d.inputs[0].shape
++        self.dtype = mpool2d.inputs[0].dtype
++        self.indexes = mpool2d.indexes
++
++    def forward(self, gy):
++        xp = cuda.get_array_module(gy)
++
++        N, C, OH, OW = gy.shape
++        N, C, H, W = self.input_shape
++        KH, KW = pair(self.kernel_size)
++
++        gcol = xp.zeros((N * C * OH * OW * KH * KW), dtype=self.dtype)
++
++        indexes = (self.indexes.ravel()
++                   + xp.arange(0, self.indexes.size * KH * KW, KH * KW))
++
++        gcol[indexes] = gy.ravel()
++        gcol = gcol.reshape(N, C, OH, OW, KH, KW)
++        gcol = xp.swapaxes(gcol, 2, 4)
++        gcol = xp.swapaxes(gcol, 3, 5)
++
++        gx = col2im_array(gcol, (N, C, H, W), self.kernel_size, self.stride,
++                          self.pad, to_matrix=False)
++        return gx
++
++    def backward(self, ggx):
++        f = Pooling2DWithIndexes(self.mpool2d)
++        return f(ggx)
++
++
++class Pooling2DWithIndexes(Function):
++    def __init__(self, mpool2d):
++        self.kernel_size = mpool2d.kernel_size
++        self.stride = mpool2d.stride
++        self.pad = mpool2d.pad
++        self.input_shape = mpool2d.inputs[0].shape
++        self.dtype = mpool2d.inputs[0].dtype
++        self.indexes = mpool2d.indexes
++
++    def forward(self, x):
++        col = im2col_array(x, self.kernel_size, self.stride, self.pad,
++                           to_matrix=False)
++        N, C, KH, KW, OH, OW = col.shape
++        col = col.reshape(N, C, KH * KW, OH, OW)
++        col = col.transpose(0, 1, 3, 4, 2).reshape(-1, KH * KW)
++        indexes = self.indexes.ravel()
++        col = col[np.arange(len(indexes)), indexes]
++        return col.reshape(N, C, OH, OW)
++
++
++def pooling(x, kernel_size, stride=1, pad=0):
++    return Pooling(kernel_size, stride, pad)(x)
++
++
++class AveragePooling(Function):
++    def __init__(self, kernel_size, stride=1, pad=0):
++        super().__init__()
++        self.kernel_size = kernel_size
++        self.stride = stride
++        self.pad = pad
++        self.input_shape = None
++
++    def forward(self, x):
++        self.input_shape = x.shape
++        col = im2col_array(x, self.kernel_size, self.stride, self.pad,
++                           to_matrix=False)
++        y = col.mean(axis=(2, 3))
++        return y
++
++    def backward(self, gy):
++        # TODO(Koki): This is simple implementation
++        N, C, OH, OW = gy.shape
++        KW, KH = pair(self.kernel_size)
++        gy /= (KW * KH)
++        gcol = broadcast_to(gy.reshape(-1), (KH, KW, N * C * OH * OW))
++        gcol = gcol.reshape(KH, KW, N, C, OH, OW).transpose(2, 3, 0, 1, 4, 5)
++        gx = col2im(gcol, self.input_shape, self.kernel_size, self.stride,
++                    self.pad, to_matrix=False)
++        return gx
++
++
++def average_pooling(x, kernel_size, stride=1, pad=0):
++    return AveragePooling(kernel_size, stride, pad)(x)
++
++
++# =============================================================================
++#  im2col / col2im
++# =============================================================================
++class Im2col(Function):
++    def __init__(self, kernel_size, stride, pad, to_matrix):
++        super().__init__()
++        self.input_shape = None
++        self.kernel_size = kernel_size
++        self.stride = stride
++        self.pad = pad
++        self.to_matrix = to_matrix
++
++    def forward(self, x):
++        self.input_shape = x.shape
++        y = im2col_array(x, self.kernel_size, self.stride, self.pad,
++                         self.to_matrix)
++        return y
++
++    def backward(self, gy):
++        gx = col2im(gy, self.input_shape, self.kernel_size, self.stride,
++                    self.pad, self.to_matrix)
++        return gx
++
++
++def im2col(x, kernel_size, stride=1, pad=0, to_matrix=True):
++    """Extract patches from an image based on the filter.
++
++    Args:
++        x (`dezero.Variable` or `ndarray`): Input variable of shape
++            `(N, C, H, W)`
++        kernel_size (int or (int, int)): Size of kernel.
++        stride (int or (int, int)): Stride of kernel.
++        pad (int or (int, int)): Spatial padding width for input arrays.
++        to_matrix (bool): If True the `col` will be reshaped to 2d array whose
++            shape is `(N*OH*OW, C*KH*KW)`
++
++    Returns:
++        `dezero.Variable`: Output variable. If the `to_matrix` is False, the
++            output shape is `(N, C, KH, KW, OH, OW)`, otherwise
++            `(N*OH*OW, C*KH*KW)`.
++
++    Notation:
++    - `N` is the batch size.
++    - `C` is the number of the input channels.
++    - `H` and `W` are the height and width of the input image, respectively.
++    - `KH` and `KW` are the height and width of the filters, respectively.
++    - `SH` and `SW` are the strides of the filter.
++    - `PH` and `PW` are the spatial padding sizes.
++    - `OH` and `OW` are the height and width of the output, respectively.
++    """
++    y = Im2col(kernel_size, stride, pad, to_matrix)(x)
++    return y
++
++
++class Col2im(Function):
++    def __init__(self, input_shape, kernel_size, stride, pad, to_matrix):
++        super().__init__()
++        self.input_shape = input_shape
++        self.kernel_size = kernel_size
++        self.stride = stride
++        self.pad = pad
++        self.to_matrix = to_matrix
++
++    def forward(self, x):
++        y = col2im_array(x, self.input_shape, self.kernel_size, self.stride,
++                         self.pad, self.to_matrix)
++        return y
++
++    def backward(self, gy):
++        gx = im2col(gy, self.kernel_size, self.stride, self.pad,
++                    self.to_matrix)
++        return gx
++
++
++def col2im(x, input_shape, kernel_size, stride=1, pad=0, to_matrix=True):
++    return Col2im(input_shape, kernel_size, stride, pad, to_matrix)(x)
++
++
++# =============================================================================
++#  numpy im2col
++# =============================================================================
+ def im2col_array(img, kernel_size, stride, pad, to_matrix=True):
+-    N, C, H, W = img.shape
+-    KH, KW = pair(kernel_size)
+-    SH, SW = pair(stride)
+-    PH, PW = pair(pad)
+-    OH = get_conv_outsize(H, KH, SH, PH)
+-    OW = get_conv_outsize(W, KW, SW, PW)
+-
+-    xp = cuda.get_array_module(img)
+-    if xp != np:
+-        col = _im2col_gpu(img, kernel_size, stride, pad)
+-    else:
+-        img = np.pad(img,
+-                     ((0, 0), (0, 0), (PH, PH + SH - 1), (PW, PW + SW - 1)),
+-                     mode='constant', constant_values=(0,))
+-        col = np.ndarray((N, C, KH, KW, OH, OW), dtype=img.dtype)
+-
+-        for j in range(KH):
+-            j_lim = j + SH * OH
+-            for i in range(KW):
+-                i_lim = i + SW * OW
+-                col[:, :, j, i, :, :] = img[:, :, j:j_lim:SH, i:i_lim:SW]
+-
+-    if to_matrix:
+-        col = col.transpose((0, 4, 5, 1, 2, 3)).reshape((N * OH * OW, -1))
+-
++    N, C, H, W = img.shape
++    KH, KW = pair(kernel_size)
++    SH, SW = pair(stride)
++    PH, PW = pair(pad)
++    OH = get_conv_outsize(H, KH, SH, PH)
++    OW = get_conv_outsize(W, KW, SW, PW)
++
++    xp = cuda.get_array_module(img)
++    if xp != np:
++        col = _im2col_gpu(img, kernel_size, stride, pad)
++    else:
++        img = np.pad(img,
++                     ((0, 0), (0, 0), (PH, PH + SH - 1), (PW, PW + SW - 1)),
++                     mode='constant', constant_values=(0,))
++        col = np.ndarray((N, C, KH, KW, OH, OW), dtype=img.dtype)
++
++        for j in range(KH):
++            j_lim = j + SH * OH
++            for i in range(KW):
++                i_lim = i + SW * OW
++                col[:, :, j, i, :, :] = img[:, :, j:j_lim:SH, i:i_lim:SW]
++
++    if to_matrix:
++        col = col.transpose((0, 4, 5, 1, 2, 3)).reshape((N * OH * OW, -1))
++
+     return col
+ 
+ 
+@@ -443,20 +447,20 @@
+     y_matrix = cpu_gemm(col, W_matrix, bias=b)
+     y = y_matrix.reshape(N, OH, OW, OC).transpose(0, 3, 1, 2)
+     return y
+-
+-
+-def col2im_array(col, img_shape, kernel_size, stride, pad, to_matrix=True):
+-    N, C, H, W = img_shape
+-    KH, KW = pair(kernel_size)
+-    SH, SW = pair(stride)
+-    PH, PW = pair(pad)
+-    OH = get_conv_outsize(H, KH, SH, PH)
+-    OW = get_conv_outsize(W, KW, SW, PW)
+-
+-    if to_matrix:
+-        col = col.reshape(N, OH, OW, C, KH, KW).transpose(0, 3, 4, 5, 1, 2)
+-
+-    xp = cuda.get_array_module(col)
++
++
++def col2im_array(col, img_shape, kernel_size, stride, pad, to_matrix=True):
++    N, C, H, W = img_shape
++    KH, KW = pair(kernel_size)
++    SH, SW = pair(stride)
++    PH, PW = pair(pad)
++    OH = get_conv_outsize(H, KH, SH, PH)
++    OW = get_conv_outsize(W, KW, SW, PW)
++
++    if to_matrix:
++        col = col.reshape(N, OH, OW, C, KH, KW).transpose(0, 3, 4, 5, 1, 2)
++
++    xp = cuda.get_array_module(col)
+     if xp != np:
+         from hytorch.backends.cuda.runtime import selected, col2im as native_col2im, _counts
+         if selected("col2im", col) == "native":
+@@ -464,159 +468,159 @@
+                 return native_col2im(col, img_shape, (SH, SW), (PH, PW))
+             except NotImplementedError:
+                 _counts["col2im_fallback_unsupported"] += 1
+-        img = _col2im_gpu(col, SH, SW, PH, PW, H, W)
+-        return img
+-    else:
+-        img = np.zeros((N, C, H + 2 * PH + SH - 1, W + 2 * PW + SW - 1),
+-                       dtype=col.dtype)
+-        for j in range(KH):
+-            j_lim = j + SH * OH
+-            for i in range(KW):
+-                i_lim = i + SW * OW
+-                img[:, :, j:j_lim:SH, i:i_lim:SW] += col[:, :, j, i, :, :]
+-        return img[:, :, PH:H + PH, PW:W + PW]
+-
+-
+-def _im2col_gpu(img, kernel_size, stride, pad):
+-    """im2col function for GPU.
+-    This code is ported from Chainer:
+-    https://github.com/chainer/chainer/blob/v6.4.0/chainer/utils/conv.py
+-    """
+-    n, c, h, w = img.shape
+-    kh, kw = pair(kernel_size)
+-    sy, sx = pair(stride)
+-    ph, pw = pair(pad)
+-    out_h = get_conv_outsize(h, kh, sy, ph)
+-    out_w = get_conv_outsize(w, kw, sx, pw)
+-    dy, dx = 1, 1
+-    col = cuda.cupy.empty((n, c, kh, kw, out_h, out_w), dtype=img.dtype)
+-
+-    cuda.cupy.ElementwiseKernel(
+-        'raw T img, int32 h, int32 w, int32 out_h, int32 out_w,'
+-        'int32 kh, int32 kw, int32 sy, int32 sx, int32 ph, int32 pw,'
+-        'int32 dy, int32 dx',
+-        'T col',
+-        '''
+-           int c0 = i / (kh * kw * out_h * out_w);
+-           int ky = i / (kw * out_h * out_w) % kh;
+-           int kx = i / (out_h * out_w) % kw;
+-           int out_y = i / out_w % out_h;
+-           int out_x = i % out_w;
+-           int in_y = ky * dy + out_y * sy - ph;
+-           int in_x = kx * dx + out_x * sx - pw;
+-           if (in_y >= 0 && in_y < h && in_x >= 0 && in_x < w) {
+-             col = img[in_x + w * (in_y + h * c0)];
+-           } else {
+-             col = 0;
+-           }
+-        ''',
+-        'im2col')(img.reduced_view(),
+-                  h, w, out_h, out_w, kh, kw, sy, sx, ph, pw, dy, dx, col)
+-
+-    return col
+-
+-
+-def _col2im_gpu(col, sy, sx, ph, pw, h, w):
+-    """col2im function for GPU.
+-    This code is ported from Chainer:
+-    https://github.com/chainer/chainer/blob/v6.4.0/chainer/utils/conv.py
+-    """
+-    n, c, kh, kw, out_h, out_w = col.shape
+-    dx, dy = 1, 1
+-    img = cuda.cupy.empty((n, c, h, w), dtype=col.dtype)
+-
+-    cuda.cupy.ElementwiseKernel(
+-        'raw T col, int32 h, int32 w, int32 out_h, int32 out_w,'
+-        'int32 kh, int32 kw, int32 sy, int32 sx, int32 ph, int32 pw,'
+-        'int32 dx, int32 dy',
+-        'T img',
+-        '''
+-           int c0 = i / (h * w);
+-           int y  = i / w % h;
+-           int x  = i % w;
+-           T val = 0;
+-           for (int ky = 0; ky < kh; ++ky) {
+-             int out_y = (y + ph - ky * dy);
+-             if (0 > out_y || out_y >= out_h * sy) continue;
+-             if (out_y % sy != 0) continue;
+-             out_y /= sy;
+-             for (int kx = 0; kx < kw; ++kx) {
+-               int out_x = (x + pw - kx * dx);
+-               if (0 > out_x || out_x >= out_w * sx) continue;
+-               if (out_x % sx != 0) continue;
+-               out_x /= sx;
+-               int k = out_y + out_h * (kx + kw * (ky + kh * c0));
+-               val = val + col[out_x + out_w * k];
+-             }
+-           }
+-           img = val;
+-        ''',
+-        'col2im')(col.reduced_view(),
+-                  h, w, out_h, out_w, kh, kw, sy, sx, ph, pw, dx, dy, img)
+-    return img
+-
+-
+-# =========================================================
+-# Batch Normalization (for Conv2d feature maps)
+-# =========================================================
+-
+-
+-class BatchNorm(Function):
+-    def __init__(self, mean, var, eps=1e-5):
+-        self.mean = mean
+-        self.var = var
+-        self.eps = eps
+-        self.std = None
+-
+-    def forward(self, x):
+-        xp = cuda.get_array_module(x)
+-        mean = xp.asarray(self.mean)
+-        var = xp.asarray(self.var)
+-        self.std = xp.sqrt(var + self.eps)         # ndarray
+-        y = (x - mean) / self.std
+-        return y                                    # ndarray
+-
+-    def backward(self, gy):
+-        # ---- 全部用 Variable 运算，且对 (N,H,W) 维聚合 ----
+-        x = self.inputs[0]                         # Variable
+-        axes = (0, 2, 3)                            # sum over N,H,W，保留C
+-        N_HW = x.shape[0] * x.shape[2] * x.shape[3] # 标量
+-
+-        # 把前向保存的均值/标准差包成常量 Variable（与 x 同设备）
+-        xp = cuda.get_array_module(x.data)
+-        mean = as_variable(xp.asarray(self.mean))  # shape=(1,C,1,1)
+-        std = as_variable(xp.asarray(self.std))   # shape=(1,C,1,1)
+-
+-        x_mu = x - mean
+-        std_inv = 1.0 / std
+-
+-        # 关键：用 hytorch.functions.sum，对 Variable 求和
+-        sum_gy = sum(gy, axis=axes, keepdims=True)
+-        sum_gy_xmu = sum(gy * x_mu, axis=axes, keepdims=True)
+-
+-        # BN conv 版的梯度公式（Variable 版）
+-        gx = (1.0 / N_HW) * std_inv * (
+-                N_HW * gy
+-              - sum_gy
+-              - x_mu * (std_inv ** 2) * sum_gy_xmu
+-        )
+-        return gx
+-
+-
+-def batch_norm(x, gamma, beta, running_mean, running_var, eps=1e-5, momentum=0.9):
+-    xp = cuda.get_array_module(x.data)
+-
+-    if Config.train:
+-        mean = x.data.mean(axis=(0, 2, 3), keepdims=True)  # 与 x 同设备
+-        var = x.data.var(axis=(0, 2, 3), keepdims=True)  # 与 x 同设备
+-
+-        # 原地更新滑动均值方差（与 x 同设备，且与 running_mean/var 同设备）
+-        running_mean[...] = momentum * running_mean + (1 - momentum) * mean
+-        running_var[...] = momentum * running_var + (1 - momentum) * var
+-    else:
+-        mean = running_mean
+-        var = running_var
+-
+-    y = BatchNorm(mean, var, eps)(x)  # -> Variable
+-    return gamma * y + beta  # 线性变换
+-
++        img = _col2im_gpu(col, SH, SW, PH, PW, H, W)
++        return img
++    else:
++        img = np.zeros((N, C, H + 2 * PH + SH - 1, W + 2 * PW + SW - 1),
++                       dtype=col.dtype)
++        for j in range(KH):
++            j_lim = j + SH * OH
++            for i in range(KW):
++                i_lim = i + SW * OW
++                img[:, :, j:j_lim:SH, i:i_lim:SW] += col[:, :, j, i, :, :]
++        return img[:, :, PH:H + PH, PW:W + PW]
++
++
++def _im2col_gpu(img, kernel_size, stride, pad):
++    """im2col function for GPU.
++    This code is ported from Chainer:
++    https://github.com/chainer/chainer/blob/v6.4.0/chainer/utils/conv.py
++    """
++    n, c, h, w = img.shape
++    kh, kw = pair(kernel_size)
++    sy, sx = pair(stride)
++    ph, pw = pair(pad)
++    out_h = get_conv_outsize(h, kh, sy, ph)
++    out_w = get_conv_outsize(w, kw, sx, pw)
++    dy, dx = 1, 1
++    col = cuda.cupy.empty((n, c, kh, kw, out_h, out_w), dtype=img.dtype)
++
++    cuda.cupy.ElementwiseKernel(
++        'raw T img, int32 h, int32 w, int32 out_h, int32 out_w,'
++        'int32 kh, int32 kw, int32 sy, int32 sx, int32 ph, int32 pw,'
++        'int32 dy, int32 dx',
++        'T col',
++        '''
++           int c0 = i / (kh * kw * out_h * out_w);
++           int ky = i / (kw * out_h * out_w) % kh;
++           int kx = i / (out_h * out_w) % kw;
++           int out_y = i / out_w % out_h;
++           int out_x = i % out_w;
++           int in_y = ky * dy + out_y * sy - ph;
++           int in_x = kx * dx + out_x * sx - pw;
++           if (in_y >= 0 && in_y < h && in_x >= 0 && in_x < w) {
++             col = img[in_x + w * (in_y + h * c0)];
++           } else {
++             col = 0;
++           }
++        ''',
++        'im2col')(img.reduced_view(),
++                  h, w, out_h, out_w, kh, kw, sy, sx, ph, pw, dy, dx, col)
++
++    return col
++
++
++def _col2im_gpu(col, sy, sx, ph, pw, h, w):
++    """col2im function for GPU.
++    This code is ported from Chainer:
++    https://github.com/chainer/chainer/blob/v6.4.0/chainer/utils/conv.py
++    """
++    n, c, kh, kw, out_h, out_w = col.shape
++    dx, dy = 1, 1
++    img = cuda.cupy.empty((n, c, h, w), dtype=col.dtype)
++
++    cuda.cupy.ElementwiseKernel(
++        'raw T col, int32 h, int32 w, int32 out_h, int32 out_w,'
++        'int32 kh, int32 kw, int32 sy, int32 sx, int32 ph, int32 pw,'
++        'int32 dx, int32 dy',
++        'T img',
++        '''
++           int c0 = i / (h * w);
++           int y  = i / w % h;
++           int x  = i % w;
++           T val = 0;
++           for (int ky = 0; ky < kh; ++ky) {
++             int out_y = (y + ph - ky * dy);
++             if (0 > out_y || out_y >= out_h * sy) continue;
++             if (out_y % sy != 0) continue;
++             out_y /= sy;
++             for (int kx = 0; kx < kw; ++kx) {
++               int out_x = (x + pw - kx * dx);
++               if (0 > out_x || out_x >= out_w * sx) continue;
++               if (out_x % sx != 0) continue;
++               out_x /= sx;
++               int k = out_y + out_h * (kx + kw * (ky + kh * c0));
++               val = val + col[out_x + out_w * k];
++             }
++           }
++           img = val;
++        ''',
++        'col2im')(col.reduced_view(),
++                  h, w, out_h, out_w, kh, kw, sy, sx, ph, pw, dx, dy, img)
++    return img
++
++
++# =========================================================
++# Batch Normalization (for Conv2d feature maps)
++# =========================================================
++
++
++class BatchNorm(Function):
++    def __init__(self, mean, var, eps=1e-5):
++        self.mean = mean
++        self.var = var
++        self.eps = eps
++        self.std = None
++
++    def forward(self, x):
++        xp = cuda.get_array_module(x)
++        mean = xp.asarray(self.mean)
++        var = xp.asarray(self.var)
++        self.std = xp.sqrt(var + self.eps)         # ndarray
++        y = (x - mean) / self.std
++        return y                                    # ndarray
++
++    def backward(self, gy):
++        # ---- 全部用 Variable 运算，且对 (N,H,W) 维聚合 ----
++        x = self.inputs[0]                         # Variable
++        axes = (0, 2, 3)                            # sum over N,H,W，保留C
++        N_HW = x.shape[0] * x.shape[2] * x.shape[3] # 标量
++
++        # 把前向保存的均值/标准差包成常量 Variable（与 x 同设备）
++        xp = cuda.get_array_module(x.data)
++        mean = as_variable(xp.asarray(self.mean))  # shape=(1,C,1,1)
++        std = as_variable(xp.asarray(self.std))   # shape=(1,C,1,1)
++
++        x_mu = x - mean
++        std_inv = 1.0 / std
++
++        # 关键：用 hytorch.functions.sum，对 Variable 求和
++        sum_gy = sum(gy, axis=axes, keepdims=True)
++        sum_gy_xmu = sum(gy * x_mu, axis=axes, keepdims=True)
++
++        # BN conv 版的梯度公式（Variable 版）
++        gx = (1.0 / N_HW) * std_inv * (
++                N_HW * gy
++              - sum_gy
++              - x_mu * (std_inv ** 2) * sum_gy_xmu
++        )
++        return gx
++
++
++def batch_norm(x, gamma, beta, running_mean, running_var, eps=1e-5, momentum=0.9):
++    xp = cuda.get_array_module(x.data)
++
++    if Config.train:
++        mean = x.data.mean(axis=(0, 2, 3), keepdims=True)  # 与 x 同设备
++        var = x.data.var(axis=(0, 2, 3), keepdims=True)  # 与 x 同设备
++
++        # 原地更新滑动均值方差（与 x 同设备，且与 running_mean/var 同设备）
++        running_mean[...] = momentum * running_mean + (1 - momentum) * mean
++        running_var[...] = momentum * running_var + (1 - momentum) * var
++    else:
++        mean = running_mean
++        var = running_var
++
++    y = BatchNorm(mean, var, eps)(x)  # -> Variable
++    return gamma * y + beta  # 线性变换
++
+--- a/hytorch/backends/cuda/runtime.py
++++ b/hytorch/backends/cuda/runtime.py
+@@ -11,7 +11,7 @@
+ import numpy as np
+ 
+ _config = ContextVar("hytorch_cuda_backend", default={
+-    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16, "col2im": "cupy", "dweight": "cupy", "metadata_cache": False})
++    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16, "col2im": "cupy", "dweight": "cupy", "metadata_cache": False, "relu_backward": "original"})
+ _counts = Counter()
+ _library = None
+ _dll_directories = []
+@@ -29,7 +29,9 @@
+ 
+ 
+ @contextmanager
+-def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, col2im="cupy", dweight="cupy", metadata_cache=False):
++def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, col2im="cupy", dweight="cupy", metadata_cache=False, relu_backward="original"):
++    if relu_backward not in ("original", "fused"):
++        raise ValueError("relu_backward must be original/fused")
+     if matmul not in ("cupy", "basic", "blocked", "shared"):
+         raise ValueError("matmul must be cupy/basic/blocked/shared")
+     if conv not in ("cupy", "direct", "im2col") or pool not in ("cupy", "native"):
+@@ -42,7 +44,7 @@
+         raise ValueError("tile must be 16 or 32")
+     if type(metadata_cache) is not bool:
+         raise ValueError("metadata_cache must be bool")
+-    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile, col2im=col2im, dweight=dweight, metadata_cache=metadata_cache))
++    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile, col2im=col2im, dweight=dweight, metadata_cache=metadata_cache, relu_backward=relu_backward))
+     try:
+         yield
+     finally:
+@@ -73,11 +75,12 @@
+             "hy_pool": [p]*3 + [i]*12 + [p],
+             "hy_col2im": [p]*2 + [ct.c_int64]*18 + [p],
+             "hy_col2im_fast": [p, p, ct.c_char_p, p],
++            "hy_relu_backward": [p]*3 + [i, p],
+             "hy_sgd_multi": [p, ct.c_int64, ct.c_float, p],
+         }
+         for name, args in signatures.items():
+             # Optional extension preserves loading older ABI-1 libraries.
+-            if name in ("hy_col2im", "hy_col2im_fast", "hy_sgd_multi") and not hasattr(lib, name):
++            if name in ("hy_col2im", "hy_col2im_fast", "hy_sgd_multi", "hy_relu_backward") and not hasattr(lib, name):
+                 continue
+             fn = getattr(lib, name)
+             fn.argtypes, fn.restype = args, ct.c_char_p if name == "hy_cuda_error" else i
+@@ -213,7 +216,7 @@
+ def selected(op, x):
+     """CPU / non-FP32 paths retain existing semantics, with visible counters."""
+     mode = _config.get()[op]
+-    if mode == "cupy":
++    if mode in ("cupy", "original"):
+         return None
+     from hytorch import cuda
+     if cuda.get_array_module(x) is np or x.dtype != np.float32:
+@@ -362,3 +365,15 @@
+     # Rejected by exact subnormal acceptance: CuPy 14.2 uses FTZ; this kernel must not.
+     # Preserve ordered legacy semantics until a compatible policy is explicitly chosen.
+     return False
++
++
++def relu_backward(x, gy):
++    """Fused FP32 mask multiply, preserving caller stream and nonfinite semantics."""
++    import cupy as cp
++    x, gy = _arrays(x, gy)
++    if x.shape != gy.shape:
++        raise ValueError("ReLU input and gradient shapes must match")
++    result = cp.empty_like(x)
++    _call("hy_relu_backward", _ptr(x), _ptr(gy), _ptr(result), x.size)
++    _counts["relu_backward_fused"] += 1
++    return result
+--- a/hytorch/backends/cuda/kernels.cu
++++ b/hytorch/backends/cuda/kernels.cu
+@@ -313,3 +313,6 @@
+     }
+     return 0;
+ }
++
++// Optional activation gradient extension; existing kernels are unchanged.
++#include "relu_backward.cu"
+--- /dev/null
++++ b/hytorch/backends/cuda/relu_backward.cu
+@@ -0,0 +1,20 @@
++// Opt-in FP32 ReLU gradient: avoid the intermediate boolean mask and second launch.
++#include <cuda_runtime.h>
++#include <stdint.h>
++#ifdef _WIN32
++#define API extern "C" __declspec(dllexport)
++#else
++#define API extern "C" __attribute__((visibility("default")))
++#endif
++
++__global__ void relu_backward_kernel(const float* x, const float* gy, float* gx, int size) {
++    int64_t i = (int64_t)blockIdx.x * blockDim.x + threadIdx.x;
++    if (i < size)
++        gx[i] = __fmul_rn(gy[i], x[i] > 0 ? 1.f : 0.f);
++}
++
++API int hy_relu_backward(const float* x, const float* gy, float* gx, int size, void* stream) {
++    if (size <= 0 || !x || !gy || !gx) return (int)cudaErrorInvalidValue;
++    relu_backward_kernel<<<(size + 255LL) / 256, 256, 0, (cudaStream_t)stream>>>(x, gy, gx, size);
++    return (int)cudaGetLastError();
++}
+--- a/benchmarks/bench_cuda_training.py
++++ b/benchmarks/bench_cuda_training.py
+@@ -155,6 +155,9 @@
+     p.add_argument("--metadata-cache", action="store_true")
+     p.add_argument("--compact-function", action="store_true")
+     p.add_argument("--final-config", action="store_true", help="Select accepted Native kernels, packed dWeight, F1+O1; no fused SGD")
++    p.add_argument("--relu-backward", choices=["original", "fused"], default="original", help="Opt-in fused FP32 activation gradient")
++    p.add_argument("--no-input-grad", action="store_true", help="HyTorch: explicitly omit training data gradients; parameter gradients unchanged")
++    p.add_argument("--backward-schedule", choices=["list", "heap"], default="list", help="Heap is useful for wide graphs; benchmark for this model")
+     p.add_argument("--nvtx", action="store_true")
+     p.add_argument("--output", required=True)
+     args = p.parse_args()
+@@ -217,7 +220,8 @@
+             model.to_gpu()
+         optimizer = SGD(args.lr).setup(model)
+         convert = lambda x: cp.asarray(x) if cp is not None else x
+-        forward = lambda x,t: F.mean_square_error(model(x), t)
++        predict = lambda x: model(hytorch.Variable(x, requires_grad=False) if args.no_input_grad else x)
++        forward = lambda x,t: F.mean_square_error(predict(x), t)
+         loss_fn = F.mean_square_error
+         retain_loss = lambda loss: loss.data
+         backward = lambda loss: (model.cleargrads(), loss.backward())
+@@ -235,7 +239,8 @@
+         model = torch_model(args.model, initial).to(device)
+         optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
+         convert = lambda x: torch.from_numpy(x).to(device)
+-        forward = lambda x,t: torch.nn.functional.mse_loss(model(x), t)
++        predict = model
++        forward = lambda x,t: torch.nn.functional.mse_loss(predict(x), t)
+         loss_fn = torch.nn.functional.mse_loss
+         retain_loss = lambda loss: loss.detach()
+         backward = lambda loss: (optimizer.zero_grad(set_to_none=True), loss.backward())
+@@ -251,7 +256,7 @@
+                     optimizer="SGD, no momentum or weight decay", dropout=0., dtype="float32",
+                     python=sys.version, platform=platform.platform(), numpy=np.__version__,
+                     data_fingerprint="filename/label/file-size manifest" if args.data else "full array bytes",
+-                    backward_backend=f"dweight={args.dweight}, col2im={args.col2im}; other backward paths unchanged", status="RUNNING")
++                    backward_backend=f"dweight={args.dweight}, col2im={args.col2im}, relu={args.relu_backward}, no_input_grad={args.no_input_grad}, schedule={args.backward_schedule}", status="RUNNING")
+     if cp is not None:
+         metadata.update(cupy=cp.__version__, gpu_name=str(cp.cuda.runtime.getDeviceProperties(args.gpu)["name"]),
+                         runtime=cp.cuda.runtime.runtimeGetVersion(), physical_monitor_id=monitor_id)
+@@ -268,8 +273,8 @@
+                               mode=args.monitor_mode, allocator_peaks=args.monitor_allocator_peaks)
+     epochs = []
+     context = backend(args.matmul, args.conv, args.pool, args.tile, col2im=args.col2im,
+-                      dweight=args.dweight, metadata_cache=args.metadata_cache)
+-    with context, hytorch.core.using_config("compact_function", args.compact_function):
++                      dweight=args.dweight, metadata_cache=args.metadata_cache, relu_backward=args.relu_backward)
++    with context, hytorch.core.using_config("compact_function", args.compact_function), hytorch.core.using_config("backward_schedule", args.backward_schedule):
+         # Warmup uses same shapes; restore model, clear grads; SGD has no state.
+         warm = [dataset[i] for i in range(min(args.batch, len(dataset)))]
+         wx, wt = convert(np.stack([v[0] for v in warm])), convert(np.stack([v[1] for v in warm]))
+@@ -289,7 +294,7 @@
+                 train_started = time.perf_counter()
+                 losses, epoch_rows = monitored_epochs(
+                     dataset, args.batch, args.epochs, monitor=monitor, transfer=convert,
+-                    predict=model, loss_fn=loss_fn, backward=backward, update=update,
++                    predict=predict, loss_fn=loss_fn, backward=backward, update=update,
+                     retain_loss=retain_loss, num_workers=args.workers, steps_per_epoch=args.steps,
+                     phase_context=monitor_nvtx if args.nvtx else None)
+                 sync()
+--- /dev/null
++++ b/tests/test_backward_schedule.py
+@@ -0,0 +1,75 @@
++"""Heap scheduling preserves generation priority and legacy last-added tie order."""
++import numpy as np
++import pytest
++
++import hytorch
++import hytorch.functions as F
++from hytorch.core import Function,Config
++
++
++class Traced(Function):
++    def __init__(self,name,trace):
++        self.name,self.trace=name,trace
++
++    def forward(self,x):
++        return x*np.float32(1.125)
++
++    def backward(self,gy):
++        self.trace.append(self.name)
++        return gy*np.float32(1.125)
++
++
++def branched(mode,width,retain=False):
++    trace=[]
++    x=hytorch.Variable(np.array([.1,-.2,.3],np.float32))
++    with hytorch.using_config('backward_schedule',mode):
++        shared=Traced('shared',trace)(x)
++        branches=[Traced(str(i),trace)(shared+np.float32(i/width)) for i in range(width)]
++        result=branches[0]
++        for value in branches[1:]:result=result+value
++        F.sum(result**2).backward(retain_grad=retain,create_graph=True)
++        first=x.grad.data.copy();gradient=x.grad
++        retained=[b.grad.data.copy() if b.grad is not None else None for b in branches]
++        x.cleargrad();F.sum(gradient).backward()
++        second=x.grad.data.copy()
++    return trace,first,second,retained
++
++
++@pytest.mark.parametrize('width',[1,2,7,32,256])
++@pytest.mark.parametrize('retain',[False,True])
++def test_order_and_higher_derivatives(width,retain):
++    old,new=[branched(mode,width,retain) for mode in ('list','heap')]
++    assert old[0]==new[0]
++    for a,b in zip(old[1:3],new[1:3]):np.testing.assert_array_equal(a,b)
++    if retain:
++        for a,b in zip(old[3],new[3]):np.testing.assert_array_equal(a,b)
++
++
++@pytest.mark.parametrize('mode',['list','heap'])
++def test_leaves_and_no_gradient_receipt(mode):
++    with hytorch.using_config('backward_schedule',mode):
++        leaf=hytorch.Variable(np.array(2,np.float32));leaf.backward()
++        assert leaf.grad.data==1
++        x=hytorch.Variable(np.array([1.,2.],np.float32))
++        target=hytorch.Variable(np.array([.1,.2],np.float32),requires_grad=False)
++        F.mean_square_error(x,target).backward()
++        assert target.grad is None
++        np.testing.assert_array_equal(x.grad.data,np.array([.9,1.8],np.float32))
++
++
++@pytest.mark.parametrize('mode',['list','heap'])
++def test_exception_restores_backprop_context(mode):
++    class Broken(Function):
++        def forward(self,x):return x.copy()
++        def backward(self,gy):raise RuntimeError('intentional failure')
++    with hytorch.using_config('backward_schedule',mode):
++        x=hytorch.Variable(np.ones(3,np.float32))
++        with pytest.raises(RuntimeError,match='intentional failure'):Broken()(x).backward()
++    assert Config.enable_backprop
++    assert Config.backward_schedule=='list'
++
++
++def test_invalid_schedule_is_not_silently_ignored():
++    x=hytorch.Variable(np.ones(3,np.float32))
++    with hytorch.using_config('backward_schedule','unknown'):
++        with pytest.raises(ValueError,match='list/heap'):F.sum(x).backward()
+--- /dev/null
++++ b/tests/test_conv_dinput_pruning.py
+@@ -0,0 +1,242 @@
++"""Explicit input-gradient demand, first/higher derivatives and training parity.
++
++Run once on CPU and once with HYTORCH_PRUNING_DEVICE=cuda on an allocated GPU.
++"""
++import csv
++import os
++from pathlib import Path
++
++import numpy as np
++import pytest
++
++from hytorch import Variable
++from hytorch.core import Function
++import hytorch.functions as F
++import hytorch.functions_conv as FC
++from hytorch.optimizers import SGD
++from hytorch.backends.cuda import backend
++
++
++@pytest.fixture(scope="module")
++def device():
++    import torch
++    name = os.environ.get("HYTORCH_PRUNING_DEVICE", "cpu")
++    torch.set_num_threads(4)
++    torch.backends.cuda.matmul.allow_tf32 = False
++    torch.backends.cudnn.allow_tf32 = False
++    torch.backends.cudnn.benchmark = False
++    torch.backends.cudnn.deterministic = True
++    if name == "cuda":
++        import cupy as xp
++        xp.cuda.Device(0).use()
++    else:
++        assert name == "cpu"
++        xp = np
++    return xp, name, torch
++
++
++def compare(case, actual, expected, atol=1e-6, rtol=1e-5):
++    from hytorch.cuda import as_numpy
++    a, b = as_numpy(actual), as_numpy(expected)
++    error = np.abs(a.astype(np.float64)-b.astype(np.float64))
++    nz = b != 0
++    rel = error[nz]/np.abs(b[nz].astype(np.float64))
++    destination = os.environ.get("HYTORCH_PRUNING_TEST_OUTPUT")
++    if destination:
++        out = Path(destination)
++        out.mkdir(parents=True, exist_ok=True)
++        with (out/(case+".npz")).open("xb") as f:
++            np.savez(f, actual=a, expected=b)
++        path = out/"comparisons.csv"
++        exists = path.exists()
++        with path.open("a", newline="") as f:
++            row = dict(case=case, elements=a.size, max_abs=float(error.max()),
++                       max_rel_nonzero=float(rel.max()) if rel.size else 0.,
++                       zeros=int((~nz).sum()), atol=atol, rtol=rtol,
++                       mismatches=int((error > atol+rtol*np.abs(b)).sum()),
++                       finite=bool(np.isfinite(a).all() and np.isfinite(b).all()))
++            writer = csv.DictWriter(f, fieldnames=list(row))
++            if not exists:
++                writer.writeheader()
++            writer.writerow(row)
++    np.testing.assert_allclose(a, b, atol=atol, rtol=rtol, err_msg=case)
++
++
++def test_none_gradient_does_not_schedule_its_creator(device):
++    xp, _, _ = device
++
++    class Stop(Function):
++        def forward(self, x, w):
++            return x+w
++
++        def backward(self, gy):
++            return None, gy
++
++    x, w = Variable(xp.ones(3, xp.float32)), Variable(xp.ones(3, xp.float32))
++    intermediate = x*2
++    F.sum(Stop()(intermediate, w)).backward()
++    assert x.grad is None and intermediate.grad is None
++    compare("none_other_input", w.grad.data, np.ones(3, np.float32), 0., 0.)
++
++
++def test_leaf_and_general_higher_order(device):
++    xp, _, _ = device
++    leaf = Variable(xp.array(2., xp.float32))
++    leaf.backward()
++    compare("leaf_requested", leaf.grad.data, np.array(1., np.float32), 0., 0.)
++    constant = Variable(xp.array(2., xp.float32), requires_grad=False)
++    with pytest.raises(RuntimeError, match="requires_grad"):
++        constant.backward()
++    x = Variable(xp.array(2., xp.float32))
++    (x**3).backward(create_graph=True)
++    gx = x.grad
++    x.cleargrad()
++    gx.backward()
++    compare("cubic_second", x.grad.data, np.array(12., np.float32), 0., 0.)
++    y = constant*3
++    assert y.requires_grad  # No automatic flag inference: explicitly documented scope.
++    y.backward()
++    assert constant.grad is None
++
++
++@pytest.mark.parametrize("demand", [None, True, False], ids=["default", "requested", "pruned"])
++@pytest.mark.parametrize("bias", [False, True])
++def test_conv_input_weight_bias(device, monkeypatch, demand, bias, request):
++    xp, name, torch = device
++    rng = np.random.default_rng(42)
++    x0 = rng.normal(size=(2, 2, 7, 8)).astype(np.float32)
++    w0 = rng.normal(size=(3, 2, 3, 3)).astype(np.float32)*.1
++    b0 = rng.normal(size=3).astype(np.float32)*.1
++    x = Variable(xp.asarray(x0)) if demand is None else Variable(xp.asarray(x0), requires_grad=demand)
++    w, b = Variable(xp.asarray(w0)), Variable(xp.asarray(b0)) if bias else None
++    tx = torch.tensor(x0, device=name, requires_grad=demand is not False)
++    tw = torch.tensor(w0, device=name, requires_grad=True)
++    tb = torch.tensor(b0, device=name, requires_grad=True) if bias else None
++    calls = []
++    original = FC.deconv2d
++
++    def counted(*args, **kwargs):
++        calls.append(kwargs.get("outsize"))
++        return original(*args, **kwargs)
++
++    monkeypatch.setattr(FC, "deconv2d", counted)
++    with backend(matmul="shared" if name == "cuda" else "cupy", conv="im2col" if name == "cuda" else "cupy"):
++        y = FC.conv2d(x, w, b, stride=2, pad=1)
++        ty = torch.nn.functional.conv2d(tx, tw, tb, stride=2, padding=1)
++        F.sum(y*y).backward()
++        (ty*ty).sum().backward()
++    key = request.node.name
++    compare(key+"_forward", y.data, ty.detach().cpu().numpy())
++    compare(key+"_dWeight", w.grad.data, tw.grad.cpu().numpy(), 1e-5, 1e-4)
++    if bias:
++        compare(key+"_dBias", b.grad.data, tb.grad.cpu().numpy(), 1e-5, 1e-4)
++    if demand is False:
++        assert x.grad is None and calls == []
++    else:
++        assert calls == [(7, 8)]
++        compare(key+"_dInput", x.grad.data, tx.grad.cpu().numpy(), 1e-5, 1e-4)
++
++
++@pytest.mark.parametrize("pruned", [False, True])
++def test_two_layer_propagation(device, monkeypatch, pruned, request):
++    xp, name, torch = device
++    rng = np.random.default_rng(42)
++    arrays = [rng.normal(size=s).astype(np.float32)*.1 for s in [(2,2,8,8),(3,2,3,3),(4,3,3,3)]]
++    x, w1, w2 = [Variable(xp.asarray(a)) for a in arrays]
++    x.requires_grad = not pruned
++    tx, tw1, tw2 = [torch.tensor(a, device=name, requires_grad=True) for a in arrays]
++    tx.requires_grad_(not pruned)
++    calls = []
++    original = FC.deconv2d
++
++    def counted(*args, **kwargs):
++        calls.append(kwargs["outsize"])
++        return original(*args, **kwargs)
++
++    monkeypatch.setattr(FC, "deconv2d", counted)
++    h = FC.conv2d(x,w1)
++    y = FC.conv2d(h,w2)
++    th = torch.nn.functional.conv2d(tx,tw1)
++    th.retain_grad()
++    ty = torch.nn.functional.conv2d(th,tw2)
++    F.sum(y*y).backward(retain_grad=True)
++    (ty*ty).sum().backward()
++    assert h.requires_grad and h.grad is not None
++    assert calls == ([(6,6)] if pruned else [(6,6),(8,8)])
++    for label, a, b in [("intermediate",h.grad.data,th.grad.cpu().numpy()),
++                         ("w1",w1.grad.data,tw1.grad.cpu().numpy()),("w2",w2.grad.data,tw2.grad.cpu().numpy())]:
++        compare(request.node.name+label,a,b,1e-5,1e-4)
++    assert (x.grad is None) == pruned
++
++
++@pytest.mark.parametrize("pruned", [False, True])
++def test_conv_weight_higher_order(device, pruned, request):
++    xp, name, torch = device
++    rng = np.random.default_rng(42)
++    x0 = rng.normal(size=(1,2,4,4)).astype(np.float32)*.1
++    w0 = rng.normal(size=(2,2,2,2)).astype(np.float32)*.1
++    x, w = Variable(xp.asarray(x0),requires_grad=not pruned), Variable(xp.asarray(w0))
++    tx = torch.tensor(x0,device=name,requires_grad=not pruned)
++    tw = torch.tensor(w0,device=name,requires_grad=True)
++    y, ty = FC.conv2d(x,w), torch.nn.functional.conv2d(tx,tw)
++    F.sum(y*y).backward(create_graph=True)
++    gw = w.grad
++    tgw, = torch.autograd.grad((ty*ty).sum(),tw,create_graph=True)
++    x.cleargrad(); w.cleargrad()
++    F.sum(gw*gw).backward()
++    (tgw*tgw).sum().backward()
++    compare(request.node.name+"_second_weight",w.grad.data,tw.grad.cpu().numpy(),1e-5,1e-4)
++    if pruned:
++        assert x.grad is None
++    else:
++        compare(request.node.name+"_mixed_input",x.grad.data,tx.grad.cpu().numpy(),1e-5,1e-4)
++
++
++@pytest.mark.parametrize("fused", [False, True])
++def test_donkeynet_three_steps(device, fused, request):
++    xp, name, torch = device
++    from benchmarks.bench_cuda_training import initialize, parameters, torch_model
++    from donkeycar_hy.model import DonkeyNet
++    baseline, pruned = DonkeyNet(dropout_rate=0.), DonkeyNet(dropout_rate=0.)
++    state = initialize(baseline,(3,66,200),42)
++    initialize(pruned,(3,66,200),42)
++    if name == "cuda":
++        baseline.to_gpu(); pruned.to_gpu()
++    tm = torch_model("donkey",state).to(name)
++    opts = [SGD(.001,backend="native" if fused else "legacy").setup(m) for m in (baseline,pruned)]
++    topt = torch.optim.SGD(tm.parameters(),lr=.001,foreach=True)
++    rng = np.random.default_rng(43)
++    for step in range(3):
++        a = rng.normal(size=(4,3,66,200)).astype(np.float32)
++        t = rng.normal(size=(4,1)).astype(np.float32)
++        losses, outputs, inputs = [], [], []
++        with backend(matmul="shared" if name=="cuda" else "cupy",conv="im2col" if name=="cuda" else "cupy",pool="cupy",tile=16):
++            for i,(model,opt) in enumerate(zip((baseline,pruned),opts)):
++                x = Variable(xp.asarray(a),requires_grad=i==0)
++                model.cleargrads()
++                y = model(x)
++                loss = F.mean_square_error(y,xp.asarray(t))
++                loss.backward()
++                outputs.append(y.data); losses.append(loss.data); inputs.append(x)
++                opt.update()
++        topt.zero_grad(set_to_none=True)
++        ty = tm(torch.tensor(a,device=name))
++        tl = torch.nn.functional.mse_loss(ty,torch.tensor(t,device=name))
++        tl.backward(); topt.step()
++        key = request.node.name+f"_step{step}"
++        assert inputs[0].grad is not None and inputs[1].grad is None
++        compare(key+"_output_baseline",outputs[1],outputs[0],0.,0.)
++        compare(key+"_output_torch",outputs[1],ty.detach().cpu().numpy())
++        compare(key+"_loss_baseline",losses[1],losses[0],0.,0.)
++        compare(key+"_loss_torch",losses[1],np.array(tl.item()))
++        bp = parameters(baseline)
++        for label,p in parameters(pruned).items():
++            layer,attr = label.split("/")
++            tp = getattr(getattr(tm,layer),"weight" if attr=="W" else "bias")
++            w,g = tp.detach().cpu().numpy(),tp.grad.cpu().numpy()
++            if w.ndim==2:w,g=w.T,g.T
++            k=key+"_"+label.replace("/","_")
++            compare(k+"_weight_baseline",p.data,bp[label].data,0.,0.)
++            compare(k+"_gradient_baseline",p.grad.data,bp[label].grad.data,0.,0.)
++            compare(k+"_weight_torch",p.data,w)
++            compare(k+"_gradient_torch",p.grad.data,g,1e-5,1e-4)
+--- /dev/null
++++ b/tests/test_relu_fusion.py
+@@ -0,0 +1,103 @@
++"""Imported idea from d58c581, integrated with current optimized runtime."""
++import ctypes
++import os
++import numpy as np
++import pytest
++import torch  # Load this runtime before any CuPy device initialization.
++import hytorch as hy
++import hytorch.functions as F
++from hytorch.backends.cuda import runtime as rt
++from test_col2im_cuda import cp
++
++@pytest.mark.parametrize('dtype',[np.float32,np.float64])
++def test_cpu_and_higher_order(dtype):
++    x=hy.Variable(np.array([-2,0,3],dtype))
++    with rt.backend(relu_backward='fused'):
++        F.sum(F.relu(x)**2).backward(create_graph=True)
++        gx=x.grad;x.cleargrad();F.sum(gx).backward()
++    np.testing.assert_array_equal(x.grad.data,[0,0,2])
++    ref=hy.Variable(np.array([-2,0,3],dtype))
++    with rt.backend(relu_backward='original'):
++        F.sum(F.relu(ref)**2).backward(create_graph=True)
++        rg=ref.grad;ref.cleargrad();F.sum(rg).backward()
++    assert x.grad.dtype==ref.grad.dtype
++    np.testing.assert_array_equal(x.grad.data,ref.grad.data)
++
++def test_invalid_configuration_and_flag():
++    with pytest.raises(ValueError):
++        with rt.backend(relu_backward='bad'):pass
++    with pytest.raises(TypeError):hy.Variable(np.ones(1),requires_grad='false')
++
++@pytest.mark.parametrize('shape',[(),(1,),(257,),(3,7,11),(4,24,31,98)])
++@pytest.mark.parametrize('streamed',[False,True])
++def test_gpu_alignment(cp,shape,streamed):
++    rng=np.random.default_rng(42);a=rng.normal(size=shape).astype('f');g=rng.normal(size=shape).astype('f')
++    stream=cp.cuda.Stream(non_blocking=True) if streamed else cp.cuda.get_current_stream()
++    values=[]
++    with stream:
++        for mode in ['original','fused']:
++            x=hy.Variable(cp.asarray(a));rt.dispatch_stats(reset=True)
++            with rt.backend(relu_backward=mode):F.sum(F.relu(x)*cp.asarray(g)).backward()
++            values.append(x.grad.data)
++        assert rt.dispatch_stats()['relu_backward_fused']==1
++    stream.synchronize()
++    for v in values:np.testing.assert_array_equal(cp.asnumpy(v),g*(a>0))
++    tx=torch.tensor(a,device='cuda',requires_grad=True)
++    (torch.relu(tx)*torch.tensor(g,device='cuda')).sum().backward()
++    np.testing.assert_array_equal(cp.asnumpy(values[1]),tx.grad.cpu().numpy())
++
++@pytest.mark.parametrize('layout',['transpose','negative','broadcast','empty','fp64'])
++def test_layout_fallback(cp,layout):
++    x=cp.arange(77,dtype=cp.float32).reshape(7,11)-20
++    if layout=='transpose':x=x.T
++    if layout=='negative':x=x[::-1,::-2]
++    if layout=='broadcast':x=cp.broadcast_to(x[0],(7,11))
++    if layout=='empty':x=x[:0]
++    if layout=='fp64':x=x.astype(cp.float64)
++    g=cp.ones_like(x);rt.dispatch_stats(reset=True)
++    with rt.backend(relu_backward='fused'):
++        for _ in range(3):
++            v=hy.Variable(x);F.sum(F.relu(v)*g).backward()
++            np.testing.assert_array_equal(cp.asnumpy(v.grad.data),cp.asnumpy(g*(x>0)))
++    assert bool(rt.dispatch_stats().get('relu_backward_fused'))==(layout not in ('empty','fp64'))
++
++def test_special_values_and_validation(cp):
++    x=cp.array([-cp.inf,-1.,-0.,0.,1.,cp.inf,cp.nan,-1.,1.],cp.float32)
++    g=cp.array([cp.inf,-2.,-3.,4.,-0.,cp.nan,5.,cp.nan,cp.inf],cp.float32)
++    a,b=cp.asnumpy(rt.relu_backward(x,g)),cp.asnumpy(g*(x>0))
++    np.testing.assert_array_equal(a,b)
++    np.testing.assert_array_equal(np.signbit(a[~np.isnan(a)]),np.signbit(b[~np.isnan(b)]))
++    with pytest.raises(TypeError):rt.relu_backward(x.astype(cp.float64),g)
++    with pytest.raises(ValueError):rt.relu_backward(x,g[:2])
++    # C ABI validates invalid calls before launch.
++    assert rt.load_library().hy_relu_backward(None,None,None,0,0)!=0
++
++def test_gpu_higher_and_mixed_dtype(cp):
++    with rt.backend(relu_backward='fused'):
++        x=hy.Variable(cp.array([-2.,0.,3.],cp.float32))
++        F.sum(F.relu(x)**2).backward(create_graph=True)
++        g=x.grad;x.cleargrad();F.sum(g).backward(create_graph=True)
++        np.testing.assert_array_equal(cp.asnumpy(x.grad.data),[0,0,2])
++        x=hy.Variable(cp.array([-2.,3.],cp.float32));y=F.relu(x)
++        y.grad=hy.Variable(cp.ones(2,cp.float64));y.backward()
++        assert x.grad.dtype==cp.float64
++        np.testing.assert_array_equal(cp.asnumpy(x.grad.data),[0,1])
++
++@pytest.mark.parametrize('width',[1,32,256])
++@pytest.mark.parametrize('streamed',[False,True])
++def test_heap_gpu_graph_order(cp,width,streamed):
++    a=np.random.default_rng(42).normal(0,.1,(4,32)).astype(np.float32)
++    stream=cp.cuda.Stream(non_blocking=True) if streamed else cp.cuda.get_current_stream()
++    values=[]
++    with stream:
++        for mode in ['list','heap']:
++            with hy.using_config('backward_schedule',mode):
++                x=hy.Variable(cp.asarray(a));root=x*x
++                branches=[F.tanh(root+np.float32(i/width)) for i in range(width)]
++                y=branches[0]
++                for value in branches[1:]:y=y+value
++                F.sum(y).backward(create_graph=True)
++                first=x.grad;x.cleargrad();F.sum(first).backward()
++                values.append((first.data,x.grad.data))
++    stream.synchronize()
++    for old,new in zip(values[0],values[1]):np.testing.assert_array_equal(cp.asnumpy(old),cp.asnumpy(new))

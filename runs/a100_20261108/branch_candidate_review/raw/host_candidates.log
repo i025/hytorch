@@ -1,0 +1,59 @@
+............................FF..                                         [100%]
+=================================== FAILURES ===================================
+_______________________ test_donkeynet_three_steps[True] _______________________
+
+device = (<module 'numpy' from '/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/__init__.py'>, 'cpu', <module 'torch' from '/usr/local/lib/python3.10/dist-packages/torch/__init__.py'>)
+fused = True
+request = <FixtureRequest for <Function test_donkeynet_three_steps[True]>>
+
+    @pytest.mark.parametrize("fused", [False, True])
+    def test_donkeynet_three_steps(device, fused, request):
+        xp, name, torch = device
+        from benchmarks.bench_cuda_training import initialize, parameters, torch_model
+        from donkeycar_hy.model import DonkeyNet
+        baseline, pruned = DonkeyNet(dropout_rate=0.), DonkeyNet(dropout_rate=0.)
+        state = initialize(baseline,(3,66,200),42)
+        initialize(pruned,(3,66,200),42)
+        if name == "cuda":
+            baseline.to_gpu(); pruned.to_gpu()
+        tm = torch_model("donkey",state).to(name)
+>       opts = [SGD(.001,backend="fused" if fused else "legacy").setup(m) for m in (baseline,pruned)]
+
+tests/test_conv_dinput_pruning.py:206: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_conv_dinput_pruning.py:206: in <listcomp>
+    opts = [SGD(.001,backend="fused" if fused else "legacy").setup(m) for m in (baseline,pruned)]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hytorch.optimizers.SGD object at 0x7f2565f1b250>, lr = 0.001
+backend = 'fused'
+
+    def __init__(self, lr=0.01, backend="legacy"):
+        super().__init__()
+        self.lr = lr
+        if backend not in ("legacy", "native"):
+>           raise ValueError("SGD backend must be legacy/native")
+E           ValueError: SGD backend must be legacy/native
+
+hytorch/optimizers.py:91: ValueError
+______________________ test_cpu_and_higher_order[float32] ______________________
+
+dtype = <class 'numpy.float32'>
+
+    @pytest.mark.parametrize('dtype',[np.float32,np.float64])
+    def test_cpu_and_higher_order(dtype):
+        x=hy.Variable(np.array([-2,0,3],dtype))
+        with rt.backend(relu_backward='fused'):
+            F.sum(F.relu(x)**2).backward(create_graph=True)
+            gx=x.grad;x.cleargrad();F.sum(gx).backward()
+        np.testing.assert_array_equal(x.grad.data,[0,0,2])
+>       assert x.grad.dtype==dtype
+E       AssertionError: assert dtype('float64') == <class 'numpy.float32'>
+E        +  where dtype('float64') = variable([0. 0. 2.]).dtype
+E        +    where variable([0. 0. 2.]) = variable([-2.  0.  3.]).grad
+
+tests/test_relu_fusion.py:19: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_conv_dinput_pruning.py::test_donkeynet_three_steps[True] - ...
+FAILED tests/test_relu_fusion.py::test_cpu_and_higher_order[float32] - Assert...
+2 failed, 30 passed, 17 deselected in 3.93s

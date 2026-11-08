@@ -155,6 +155,9 @@ def main():
     p.add_argument("--metadata-cache", action="store_true")
     p.add_argument("--compact-function", action="store_true")
     p.add_argument("--final-config", action="store_true", help="Select accepted Native kernels, packed dWeight, F1+O1; no fused SGD")
+    p.add_argument("--relu-backward", choices=["original", "fused"], default="original", help="Opt-in fused FP32 activation gradient")
+    p.add_argument("--no-input-grad", action="store_true", help="HyTorch: explicitly omit training data gradients; parameter gradients unchanged")
+    p.add_argument("--backward-schedule", choices=["list", "heap"], default="list", help="Heap is useful for wide graphs; benchmark for this model")
     p.add_argument("--nvtx", action="store_true")
     p.add_argument("--output", required=True)
     args = p.parse_args()
@@ -217,7 +220,8 @@ def main():
             model.to_gpu()
         optimizer = SGD(args.lr).setup(model)
         convert = lambda x: cp.asarray(x) if cp is not None else x
-        forward = lambda x,t: F.mean_square_error(model(x), t)
+        predict = lambda x: model(hytorch.Variable(x, requires_grad=False) if args.no_input_grad else x)
+        forward = lambda x,t: F.mean_square_error(predict(x), t)
         loss_fn = F.mean_square_error
         retain_loss = lambda loss: loss.data
         backward = lambda loss: (model.cleargrads(), loss.backward())
@@ -235,7 +239,8 @@ def main():
         model = torch_model(args.model, initial).to(device)
         optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
         convert = lambda x: torch.from_numpy(x).to(device)
-        forward = lambda x,t: torch.nn.functional.mse_loss(model(x), t)
+        predict = model
+        forward = lambda x,t: torch.nn.functional.mse_loss(predict(x), t)
         loss_fn = torch.nn.functional.mse_loss
         retain_loss = lambda loss: loss.detach()
         backward = lambda loss: (optimizer.zero_grad(set_to_none=True), loss.backward())
@@ -251,7 +256,7 @@ def main():
                     optimizer="SGD, no momentum or weight decay", dropout=0., dtype="float32",
                     python=sys.version, platform=platform.platform(), numpy=np.__version__,
                     data_fingerprint="filename/label/file-size manifest" if args.data else "full array bytes",
-                    backward_backend=f"dweight={args.dweight}, col2im={args.col2im}; other backward paths unchanged", status="RUNNING")
+                    backward_backend=f"dweight={args.dweight}, col2im={args.col2im}, relu={args.relu_backward}, no_input_grad={args.no_input_grad}, schedule={args.backward_schedule}", status="RUNNING")
     if cp is not None:
         metadata.update(cupy=cp.__version__, gpu_name=str(cp.cuda.runtime.getDeviceProperties(args.gpu)["name"]),
                         runtime=cp.cuda.runtime.runtimeGetVersion(), physical_monitor_id=monitor_id)
@@ -268,8 +273,8 @@ def main():
                               mode=args.monitor_mode, allocator_peaks=args.monitor_allocator_peaks)
     epochs = []
     context = backend(args.matmul, args.conv, args.pool, args.tile, col2im=args.col2im,
-                      dweight=args.dweight, metadata_cache=args.metadata_cache)
-    with context, hytorch.core.using_config("compact_function", args.compact_function):
+                      dweight=args.dweight, metadata_cache=args.metadata_cache, relu_backward=args.relu_backward)
+    with context, hytorch.core.using_config("compact_function", args.compact_function), hytorch.core.using_config("backward_schedule", args.backward_schedule):
         # Warmup uses same shapes; restore model, clear grads; SGD has no state.
         warm = [dataset[i] for i in range(min(args.batch, len(dataset)))]
         wx, wt = convert(np.stack([v[0] for v in warm])), convert(np.stack([v[1] for v in warm]))
@@ -289,7 +294,7 @@ def main():
                 train_started = time.perf_counter()
                 losses, epoch_rows = monitored_epochs(
                     dataset, args.batch, args.epochs, monitor=monitor, transfer=convert,
-                    predict=model, loss_fn=loss_fn, backward=backward, update=update,
+                    predict=predict, loss_fn=loss_fn, backward=backward, update=update,
                     retain_loss=retain_loss, num_workers=args.workers, steps_per_epoch=args.steps,
                     phase_context=monitor_nvtx if args.nvtx else None)
                 sync()

@@ -1,0 +1,138 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "enabled": false,
+    "timing": false,
+    "resources": false,
+    "mode": "throughput",
+    "cuda_backend": "cupy",
+    "logical_cuda_index": 0,
+    "cuda_visible_devices": "1",
+    "resolved_selector": null,
+    "gpu_event_status": "NOT_STARTED",
+    "run_dir": null,
+    "steps": 0,
+    "sample_count": 0,
+    "sample_interval_s": 0.2,
+    "sampled_peaks_bytes": {
+      "gpu_used_bytes": null,
+      "process_gpu_used_bytes": null,
+      "cupy_active_bytes": null,
+      "cupy_reserved_bytes": null,
+      "torch_allocated_bytes": null,
+      "torch_reserved_bytes": null
+    },
+    "peak_kind": "sampled maxima; not instantaneous/exact device peaks",
+    "allocator_tracked_peak": null,
+    "errors": [],
+    "mean_host_iteration_s": null,
+    "mean_completed_step_wall_s": null,
+    "mean_step_gpu_interval_s": null,
+    "phase_means_cpu_s": {
+      "data_load": null,
+      "data_prepare": null,
+      "h2d": null,
+      "forward": null,
+      "loss": null,
+      "backward": null,
+      "optimizer": null
+    },
+    "phase_means_gpu_event_s": {
+      "data_load": null,
+      "data_prepare": null,
+      "h2d": null,
+      "forward": null,
+      "loss": null,
+      "backward": null,
+      "optimizer": null
+    },
+    "run_completed_wall_s": null,
+    "event_limitation": "stream intervals include idle gaps; concurrent streams may overlap; do not sum across streams"
+  },
+  "hardware": {
+    "enabled": false,
+    "timing": false,
+    "resources": false,
+    "mode": "throughput",
+    "cuda_backend": "cupy",
+    "logical_cuda_index": 0,
+    "cuda_visible_devices": "1",
+    "resolved_selector": null,
+    "gpu_event_status": "NOT_STARTED",
+    "run_dir": null,
+    "steps": 0,
+    "sample_count": 0,
+    "sample_interval_s": 0.2,
+    "sampled_peaks_bytes": {
+      "gpu_used_bytes": null,
+      "process_gpu_used_bytes": null,
+      "cupy_active_bytes": null,
+      "cupy_reserved_bytes": null,
+      "torch_allocated_bytes": null,
+      "torch_reserved_bytes": null
+    },
+    "peak_kind": "sampled maxima; not instantaneous/exact device peaks",
+    "allocator_tracked_peak": null,
+    "errors": [],
+    "mean_host_iteration_s": null,
+    "mean_completed_step_wall_s": null,
+    "mean_step_gpu_interval_s": null,
+    "phase_means_cpu_s": {
+      "data_load": null,
+      "data_prepare": null,
+      "h2d": null,
+      "forward": null,
+      "loss": null,
+      "backward": null,
+      "optimizer": null
+    },
+    "phase_means_gpu_event_s": {
+      "data_load": null,
+      "data_prepare": null,
+      "h2d": null,
+      "forward": null,
+      "loss": null,
+      "backward": null,
+      "optimizer": null
+    },
+    "run_completed_wall_s": null,
+    "event_limitation": "stream intervals include idle gaps; concurrent streams may overlap; do not sum across streams",
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "host_submission_s": 0.232639028,
+      "train_loss": 0.0007266055241643699,
+      "samples": 256,
+      "time_scope": "epoch host submission only; full completed duration in summary"
+    },
+    {
+      "epoch": 2,
+      "host_submission_s": 0.234960264,
+      "train_loss": 0.00048736777614522,
+      "samples": 256,
+      "time_scope": "epoch host submission only; full completed duration in summary"
+    },
+    {
+      "epoch": 3,
+      "host_submission_s": 0.230034625,
+      "train_loss": 0.00038126568844631947,
+      "samples": 256,
+      "time_scope": "epoch host submission only; full completed duration in summary"
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 1536,
+    "conv_im2col": 960,
+    "relu_backward_fused": 1344,
+    "col2im_native": 768,
+    "dweight_packed": 960
+  },
+  "bottleneck_hypotheses": [],
+  "completed_train_wall_s": 0.6976898428983986,
+  "completed_train_samples_per_s": 1100.7756638816948,
+  "monitor_output": null,
+  "final_state_sha256": "c7b30fb2dafcfefae80f35bf410cc657a3dc013c665a924a4c8c6fdff1bdc5fe"
+}
