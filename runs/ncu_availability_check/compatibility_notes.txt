@@ -1,0 +1,45 @@
+SOURCE /opt/nvidia/nsight-compute/2025.2.1/docs/ReleaseNotes/topics/gpu-support.html
+GPU Support
+v2025.2.1 |
+Archive
+GPU Support
+
+Yes
+NVIDIA GA100
+Yes
+NVIDIA GA10x
+Yes
+SOURCE /opt/nvidia/nsight-compute/2025.2.1/docs/ReleaseNotes/topics/system-requirements.html
+System Requirements
+v2025.2.1 |
+Archive
+System Requirements
+
+Linux and WSL
+On all Linux platforms, NVIDIA Nsight Compute requires GLIBC version 2.27 or higher.
+The NVIDIA Nsight Compute UI requires packages to be installed to enable Qt and other dependencies.
+Please refer to the
+Qt for X11 Requirements
+.
+When executing
+SOURCE /opt/nvidia/nsight-compute/2025.2.1/docs/ReleaseNotes/topics/updates-2025-2-1.html
+Updates in 2025.2.1 — NsightCompute 12.9 documentation
+Nsight Compute
+1. Release Notes
+2. Profiling Guide
+»
+Updates in 2025.2.1
+v2025.2.1 |
+Archive
+Updates in 2025.2.1
+Updates in 2025.2.1
+v2025.2.1 |
+Archive
+Updates in 2025.2.1
+
+Archive
+Updates in 2025.2.1
+
+Resolved Issues
+Updated OpenSSL to 3.0.16
+Runtime libc: ('glibc', '2.35')

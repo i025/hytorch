@@ -1,0 +1,201 @@
+{
+  "col2im_us_per_step": 232.68259999999995,
+  "total_kernel_us_per_step": 1556.4134999999974,
+  "layers": [
+    {
+      "layer": "conv5",
+      "us_per_step": 16.2913,
+      "calls_per_step": 1,
+      "input": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            3,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides_bytes": [
+            72,
+            2592,
+            864,
+            288,
+            72,
+            4
+          ],
+          "c_contiguous": false,
+          "f_contiguous": false,
+          "device": "CUDA",
+          "nbytes": 165888,
+          "ptr": 139825430659072,
+          "layout": "strided tensor"
+        },
+        1,
+        1,
+        0,
+        0,
+        3,
+        20
+      ],
+      "source": "gemm_shape_dispatch/raw/train_new_kernels.csv; layer order matched previous observed reverse convolution sequence"
+    },
+    {
+      "layer": "conv4",
+      "us_per_step": 16.262500000000003,
+      "calls_per_step": 1,
+      "input": [
+        {
+          "shape": [
+            4,
+            48,
+            3,
+            3,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides_bytes": [
+            240,
+            8640,
+            2880,
+            960,
+            80,
+            4
+          ],
+          "c_contiguous": false,
+          "f_contiguous": false,
+          "device": "CUDA",
+          "nbytes": 414720,
+          "ptr": 139825500705280,
+          "layout": "strided tensor"
+        },
+        1,
+        1,
+        0,
+        0,
+        5,
+        22
+      ],
+      "source": "gemm_shape_dispatch/raw/train_new_kernels.csv; layer order matched previous observed reverse convolution sequence"
+    },
+    {
+      "layer": "conv3",
+      "us_per_step": 46.1442,
+      "calls_per_step": 1,
+      "input": [
+        {
+          "shape": [
+            4,
+            36,
+            5,
+            5,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides_bytes": [
+            440,
+            44000,
+            8800,
+            1760,
+            88,
+            4
+          ],
+          "c_contiguous": false,
+          "f_contiguous": false,
+          "device": "CUDA",
+          "nbytes": 1584000,
+          "ptr": 139825500705280,
+          "layout": "strided tensor"
+        },
+        2,
+        2,
+        0,
+        0,
+        14,
+        47
+      ],
+      "source": "gemm_shape_dispatch/raw/train_new_kernels.csv; layer order matched previous observed reverse convolution sequence"
+    },
+    {
+      "layer": "conv2",
+      "us_per_step": 94.3107,
+      "calls_per_step": 1,
+      "input": [
+        {
+          "shape": [
+            4,
+            24,
+            5,
+            5,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides_bytes": [
+            2632,
+            263200,
+            52640,
+            10528,
+            188,
+            4
+          ],
+          "c_contiguous": false,
+          "f_contiguous": false,
+          "device": "CUDA",
+          "nbytes": 6316800,
+          "ptr": 139824784736256,
+          "layout": "strided tensor"
+        },
+        2,
+        2,
+        0,
+        0,
+        31,
+        98
+      ],
+      "source": "gemm_shape_dispatch/raw/train_new_kernels.csv; layer order matched previous observed reverse convolution sequence"
+    },
+    {
+      "layer": "conv1",
+      "us_per_step": 59.6739,
+      "calls_per_step": 1,
+      "input": [
+        {
+          "shape": [
+            4,
+            3,
+            5,
+            5,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides_bytes": [
+            12152,
+            1215200,
+            243040,
+            48608,
+            392,
+            4
+          ],
+          "c_contiguous": false,
+          "f_contiguous": false,
+          "device": "CUDA",
+          "nbytes": 3645600,
+          "ptr": 139824784736256,
+          "layout": "strided tensor"
+        },
+        2,
+        2,
+        0,
+        0,
+        66,
+        200
+      ],
+      "source": "gemm_shape_dispatch/raw/train_new_kernels.csv; layer order matched previous observed reverse convolution sequence"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+
+Fatbin elf code:
+================
+arch = sm_80
+code version = [1,7]
+host = linux
+compile_size = 64bit
+identifier = /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/kernels.cu 
+
+Resource usage:
+ Common:
+  GLOBAL:0
+
+Fatbin ptx code:
+================
+arch = sm_80
+code version = [8,4]
+host = linux
+compile_size = 64bit
+compressed
+identifier = /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/kernels.cu
+ptxasOptions =  --generate-line-info 
+
+Fatbin elf code:
+================
+arch = sm_80
+code version = [1,7]
+host = linux
+compile_size = 64bit
+identifier = /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/kernels.cu
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _Z16sgd_multi_kernel8SgdBatchf:
+  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[2]:8 CONSTANT[0]:1644 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z14col2im_stridedPKfPfllllllllllllllllll:
+  REG:38 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:512 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z11pool_kernelPKfPfPliiiiiiiiiiii:
+  REG:30 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:424 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z9conv_packPKfS0_Pfiii:
+  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z11conv_directPKfS0_S0_Pfiiiiiiiiiiiii:
+  REG:46 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:436 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z13im2col_kernelPKfPfiiiiiiiiiiii:
+  REG:23 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:416 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z11gemm_sharedILi32EEvPKfS1_Pfiii:
+  REG:32 STACK:0 SHARED:8192 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z11gemm_sharedILi16EEvPKfS1_Pfiii:
+  REG:32 STACK:0 SHARED:2048 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z12gemm_blockedILi32EEvPKfS1_Pfiii:
+  REG:32 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z12gemm_blockedILi16EEvPKfS1_Pfiii:
+  REG:32 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z13gemm_registerILi32EEvPKfS1_Pfiii:
+  REG:64 STACK:0 SHARED:16512 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z13gemm_registerILi16EEvPKfS1_Pfiii:
+  REG:64 STACK:0 SHARED:8256 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _Z10gemm_basicPKfS0_Pfiii:
+  REG:32 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0

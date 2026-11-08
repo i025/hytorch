@@ -1,0 +1,12 @@
+{
+  "torch": "2.9.1+cu128",
+  "cupy": "14.2.0",
+  "cuda_runtime": 12090,
+  "cudnn": 91002,
+  "tf32_matmul": false,
+  "tf32_cudnn": false,
+  "cudnn_enabled": true,
+  "cudnn_benchmark": false,
+  "optimizer": "torch SGD foreach=None fused=None; HyTorch legacy",
+  "gpu": "b'NVIDIA A100-PCIE-40GB'"
+}

@@ -1,0 +1,571 @@
+diff --git a/README.md b/README.md
+index 286a222..e162d35 100644
+--- a/README.md
++++ b/README.md
+@@ -2,7 +2,7 @@
+ 
+ 供队友在 NVIDIA GPU 上编译、验证和运行课程实验的源码包。
+ 
+-**当前状态：代码已在 Mac 完成主机侧检查，CUDA 编译和 GPU 正确性/性能尚未验收。不要把本仓库当作已获得加速结果的实验。**
++**当前状态：2026-11-06 已在 A100 40GB 完成 CUDA 编译、GPU 单元测试、算子与合成训练实验，并完成 shared GEMM 第一轮优化。配对测试测得 1.72–2.47 倍算子加速，但合成 DonkeyNet 未获得端到端加速；原始大矩阵 GEMM 的严格误差门限仍未通过。详见 [A100 复现与优化记录](docs/A100复现与优化记录.md)。真实数据训练和迁移学习尚未验收。**
+ 
+ ## 队友第一次运行：只做这四步
+ 
+@@ -122,7 +122,8 @@ python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/tes
+ 
+ - [完整开发与 GPU 验收指南](docs/CUDA开发与GPU验收指南.md)
+ - [Mac 上的验证记录](docs/CUDA验证记录.md)
++- [A100 算子、合成训练与优化记录](docs/A100复现与优化记录.md)
+ - [核心修改清单](docs/CUDA修改清单.json)
+-- `UPLOAD_MANIFEST.json`：本次上传文件及 SHA256，用于确认源码包内容。
++- `UPLOAD_MANIFEST.json`：原始上传源码包的文件及 SHA256，不代表后续优化版本。
+ 
+-文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布；验证记录描述的是本机已做的检查。当前仓库只声明实现状态，不包含实测 GPU 加速结论。
++Mac 文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布。A100 实测结论、范围与未通过项见新的优化记录；原始 GPU 日志和动态库保存在实验服务器，未随 Git 发布。
+diff --git a/hytorch/backends/cuda/kernels.cu b/hytorch/backends/cuda/kernels.cu
+index 771a3b8..0a61849 100644
+--- a/hytorch/backends/cuda/kernels.cu
++++ b/hytorch/backends/cuda/kernels.cu
+@@ -47,15 +47,67 @@ template<int T> __global__ void gemm_shared(const float* a, const float* b,
+     if (r<m && col<n) c[(int64_t)r*n+col]=v;
+ }
+ 
++// A 64x64 output tile with sixteen FP32 accumulators per thread. Reuse each
++// shared-memory operand across four outputs instead of loading it per FMA.
++// Keep the original kernel for small/narrow matrices to avoid wasted lanes.
++template<int K> __global__ void gemm_register(const float* a, const float* b,
++                                             float* c, int m, int n, int k) {
++    __shared__ float sa[K][65], sb[K][64];
++    int tx=threadIdx.x, ty=threadIdx.y, tid=ty*16+tx;
++    int row0=blockIdx.y*64, col0=blockIdx.x*64;
++    float acc[4][4]={};
++    for (int base=0; base<k; base+=K) {
++        for (int i=tid; i<64*K; i+=256) {
++            int r=i/K, q=i%K;
++            sa[q][r]=(row0+r<m && base+q<k)?a[(int64_t)(row0+r)*k+base+q]:0;
++            q=i/64; int col=i%64;
++            sb[q][col]=(base+q<k && col0+col<n)?b[(int64_t)(base+q)*n+col0+col]:0;
++        }
++        __syncthreads();
++        #pragma unroll
++        for (int q=0; q<K; ++q) {
++            float av[4], bv[4];
++            #pragma unroll
++            for (int i=0; i<4; ++i) {
++                av[i]=sa[q][ty+i*16];
++                bv[i]=sb[q][tx+i*16];
++            }
++            #pragma unroll
++            for (int i=0; i<4; ++i)
++                #pragma unroll
++                for (int j=0; j<4; ++j) acc[i][j]+=av[i]*bv[j];
++        }
++        __syncthreads();
++    }
++    #pragma unroll
++    for (int i=0; i<4; ++i)
++        #pragma unroll
++        for (int j=0; j<4; ++j) {
++            int r=row0+ty+i*16, col=col0+tx+j*16;
++            if (r<m && col<n) c[(int64_t)r*n+col]=acc[i][j];
++        }
++}
++
+ API int hy_cuda_abi_version() { return 1; }
+ API const char* hy_cuda_error(int code) { return cudaGetErrorString((cudaError_t)code); }
+ API int hy_gemm(const float* a, const float* b, float* c, int m, int n,
+                 int k, int variant, int tile, void* stream) {
+     if (!a || !b || !c || m<=0 || n<=0 || k<=0 || variant<0 || variant>2 ||
+         (tile!=16 && tile!=32)) return (int)cudaErrorInvalidValue;
++    // Conservative shape-only heuristic; 128 CTAs is a tuning starting point.
++    const int64_t grid_m = ((int64_t)m + 63) / 64;
++    const int64_t grid_n = ((int64_t)n + 63) / 64;
++    const int64_t register_blocks = grid_m * grid_n;
++    constexpr int64_t kMinRegisterBlocks = 128;
++    const bool use_register = variant == 2 && m >= 64 && n >= 64 && k >= 64 &&
++                              register_blocks >= kMinRegisterBlocks;
+     cudaStream_t s=(cudaStream_t)stream;
+     if (variant==0) gemm_basic<<<((int64_t)m*n+255)/256,256,0,s>>>(a,b,c,m,n,k);
+-    else {
++    else if (use_register) {
++        dim3 block(16,16), grid((n+63)/64,(m+63)/64);
++        if (tile==16) gemm_register<16><<<grid,block,0,s>>>(a,b,c,m,n,k);
++        else gemm_register<32><<<grid,block,0,s>>>(a,b,c,m,n,k);
++    } else {
+         dim3 block(tile,tile), grid((n+tile-1)/tile,(m+tile-1)/tile);
+         if (variant==1) {
+             if (tile==16) gemm_blocked<16><<<grid,block,0,s>>>(a,b,c,m,n,k);
+@@ -139,3 +191,125 @@ API int hy_pool(const float* x,float* y,int64_t* indexes,int N,int C,int H,int W
+         (x,y,indexes,N,C,H,W,KH,KW,SH,SW,PH,PW,OH,OW);
+     return (int)cudaGetLastError();
+ }
++
++// Strided FP32 col2im: one writer per NCHW output, ascending kh/kw reduction.
++__global__ void col2im_strided(const float* col, float* img,
++    int64_t n, int64_t c, int64_t h, int64_t w,
++    int64_t kh, int64_t kw, int64_t oh, int64_t ow,
++    int64_t sh, int64_t sw, int64_t ph, int64_t pw,
++    int64_t s0, int64_t s1, int64_t s2, int64_t s3, int64_t s4, int64_t s5) {
++    int64_t i = (int64_t)blockIdx.x * blockDim.x + threadIdx.x;
++    const int64_t total = n * c * h * w;
++    const int64_t step = (int64_t)gridDim.x * blockDim.x;
++    for (; i < total; i += step) {
++        const int64_t x = i % w, y = (i / w) % h;
++        const int64_t ci = (i / (w * h)) % c, ni = i / (w * h * c);
++        const int64_t ty = y + ph, tx = x + pw;
++        // 0 <= (ty-ky)/sh < oh, and ky == ty (mod sh); analogous for x.
++        int64_t ky0 = ty - (oh - 1) * sh;
++        int64_t kx0 = tx - (ow - 1) * sw;
++        ky0 = ky0 > 0 ? ky0 : 0;
++        kx0 = kx0 > 0 ? kx0 : 0;
++        const int64_t ky1 = ty < kh - 1 ? ty : kh - 1;
++        const int64_t kx1 = tx < kw - 1 ? tx : kw - 1;
++        float val = 0.0f;
++        if (ky0 <= ky1 && kx0 <= kx1) {
++            if (sh != 1) ky0 += (ty - ky0) % sh;
++            if (sw != 1) kx0 += (tx - kx0) % sw;
++            const int64_t base = ni * s0 + ci * s1;
++            // Step directly over valid congruence classes; no inner validity tests.
++            const int64_t iy0 = sh == 1 ? ty - ky0 : (ty - ky0) / sh;
++            const int64_t ix0 = sw == 1 ? tx - kx0 : (tx - kx0) / sw;
++            for (int64_t ky = ky0, iy = iy0; ky <= ky1; ky += sh, --iy) {
++                for (int64_t kx = kx0, ix = ix0; kx <= kx1; kx += sw, --ix) {
++                    val = val + col[base + ky * s2 + kx * s3 + iy * s4 + ix * s5];
++                }
++            }
++        }
++        img[i] = val;
++        if (total - i <= step) break;  // Avoid signed overflow of the grid-stride increment.
++    }
++}
++
++API int hy_col2im(const float* col, float* img,
++    int64_t n, int64_t c, int64_t h, int64_t w,
++    int64_t kh, int64_t kw, int64_t oh, int64_t ow,
++    int64_t sh, int64_t sw, int64_t ph, int64_t pw,
++    int64_t s0, int64_t s1, int64_t s2, int64_t s3, int64_t s4, int64_t s5,
++    void* stream) {
++    if (!col || !img || n <= 0 || c <= 0 || h <= 0 || w <= 0 ||
++        kh <= 0 || kw <= 0 || oh <= 0 || ow <= 0 || sh <= 0 || sw <= 0 ||
++        ph < 0 || pw < 0) return (int)cudaErrorInvalidValue;
++    // Python binding validates products/offsets; cap grid for wide-index outputs.
++    const int64_t total = n * c * h * w;
++    const int64_t needed = (total - 1) / 256 + 1;
++    const unsigned int blocks = (unsigned int)(needed < 65535 ? needed : 65535);
++    col2im_strided<<<blocks,256,0,(cudaStream_t)stream>>>(col,img,n,c,h,w,
++        kh,kw,oh,ow,sh,sw,ph,pw,s0,s1,s2,s3,s4,s5);
++    return (int)cudaGetLastError();
++}
++
++// Optional ABI-1 host binding extension. Native-endian signed 64-bit POD fields.
++// Byte input is copied to an aligned local object; the caller owns it until return.
++struct Col2imParams { int64_t v[18]; };
++static_assert(sizeof(Col2imParams) == 144, "col2im POD size");
++static_assert(alignof(Col2imParams) == alignof(int64_t), "col2im POD alignment");
++API int hy_col2im_fast(const float* col, float* img, const void* params, void* stream) {
++    if (!params) return (int)cudaErrorInvalidValue;
++    Col2imParams p;
++    memcpy(&p, params, sizeof(p));
++    return hy_col2im(col,img,p.v[0],p.v[1],p.v[2],p.v[3],p.v[4],p.v[5],
++        p.v[6],p.v[7],p.v[8],p.v[9],p.v[10],p.v[11],p.v[12],p.v[13],
++        p.v[14],p.v[15],p.v[16],p.v[17],stream);
++}
++
++// ABI extension: a private host descriptor array, no device pointer table allocation.
++struct SgdTensor { uint64_t p, g, n; };
++struct SgdBlock { uint64_t p, g, n, begin, end; };
++struct SgdBatch { SgdBlock tensors[32]; int64_t count; };
++static_assert(sizeof(SgdTensor)==24 && alignof(SgdTensor)==8, "SGD ctypes layout");
++static_assert(sizeof(SgdBatch)==1288, "SGD launch parameter layout");
++__global__ void sgd_multi_kernel(const __grid_constant__ SgdBatch batch, float lr) {
++    int t=0;
++    while (t<batch.count && blockIdx.x>=batch.tensors[t].end) ++t;
++    if (t==batch.count) return;
++    const SgdBlock& d=batch.tensors[t];
++    float* p=(float*)(uintptr_t)d.p;
++    const float* g=(const float*)(uintptr_t)d.g;
++    uint64_t i=((uint64_t)blockIdx.x-d.begin)*blockDim.x+threadIdx.x;
++    const uint64_t step=(d.end-d.begin)*blockDim.x;
++    while (i<d.n) {
++        const float delta=__fmul_rn(lr,g[i]);
++        p[i]=__fsub_rn(p[i],delta);
++        if (d.n-i<=step) break;
++        i+=step;
++    }
++}
++API int hy_sgd_multi(const SgdTensor* tensors, int64_t count, float lr, void* stream) {
++    if (count<0 || (count && !tensors)) return (int)cudaErrorInvalidValue;
++    // Validate the entire sequence before any launch, not after a partial update.
++    for (int64_t i=0;i<count;++i) {
++        const SgdTensor& d=tensors[i];
++        if (d.n>(uint64_t)INT64_MAX || (d.n && (!d.p || !d.g)) ||
++            (d.p%4) || (d.g%4)) return (int)cudaErrorInvalidValue;
++    }
++    for (int64_t offset=0;offset<count;) {
++        SgdBatch batch={};
++        batch.count=count-offset<32 ? count-offset : 32;
++        uint64_t blocks=0;
++        for (int t=0;t<batch.count;++t) {
++            const SgdTensor& d=tensors[offset+t];
++            uint64_t b=d.n ? (d.n-1)/256+1 : 0;
++            b=b<256 ? b : 256;
++            batch.tensors[t]={d.p,d.g,d.n,blocks,blocks+b};
++            blocks+=b;
++        }
++        if (blocks) {
++            sgd_multi_kernel<<<(unsigned)blocks,256,0,(cudaStream_t)stream>>>(batch,lr);
++            cudaError_t status=cudaGetLastError();
++            if (status!=cudaSuccess) return (int)status;
++        }
++        offset+=batch.count;
++    }
++    return 0;
++}
+diff --git a/hytorch/backends/cuda/runtime.py b/hytorch/backends/cuda/runtime.py
+index b1b71fe..c074eca 100644
+--- a/hytorch/backends/cuda/runtime.py
++++ b/hytorch/backends/cuda/runtime.py
+@@ -5,10 +5,13 @@ from pathlib import Path
+ from contextlib import contextmanager
+ from contextvars import ContextVar
+ from collections import Counter
++from functools import lru_cache
++import operator
++import struct
+ import numpy as np
+ 
+ _config = ContextVar("hytorch_cuda_backend", default={
+-    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16})
++    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16, "col2im": "cupy", "dweight": "cupy"})
+ _counts = Counter()
+ _library = None
+ _dll_directories = []
+@@ -26,14 +29,18 @@ def dispatch_stats(reset=False):
+ 
+ 
+ @contextmanager
+-def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16):
++def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, col2im="cupy", dweight="cupy"):
+     if matmul not in ("cupy", "basic", "blocked", "shared"):
+         raise ValueError("matmul must be cupy/basic/blocked/shared")
+     if conv not in ("cupy", "direct", "im2col") or pool not in ("cupy", "native"):
+         raise ValueError("conv must be cupy/direct/im2col; pool must be cupy/native")
++    if col2im not in ("cupy", "native"):
++        raise ValueError("col2im must be cupy/native")
++    if dweight not in ("cupy", "packed"):
++        raise ValueError("dweight must be cupy/packed")
+     if tile not in (16, 32):
+         raise ValueError("tile must be 16 or 32")
+-    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile))
++    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile, col2im=col2im, dweight=dweight))
+     try:
+         yield
+     finally:
+@@ -62,8 +69,14 @@ def load_library():
+             "hy_conv": [p]*4 + [i]*13 + [p],
+             "hy_conv_pack": [p]*3 + [i]*3 + [p],
+             "hy_pool": [p]*3 + [i]*12 + [p],
++            "hy_col2im": [p]*2 + [ct.c_int64]*18 + [p],
++            "hy_col2im_fast": [p, p, ct.c_char_p, p],
++            "hy_sgd_multi": [p, ct.c_int64, ct.c_float, p],
+         }
+         for name, args in signatures.items():
++            # Optional extension preserves loading older ABI-1 libraries.
++            if name in ("hy_col2im", "hy_col2im_fast", "hy_sgd_multi") and not hasattr(lib, name):
++                continue
+             fn = getattr(lib, name)
+             fn.argtypes, fn.restype = args, ct.c_char_p if name == "hy_cuda_error" else i
+         if lib.hy_cuda_abi_version() != 1:
+@@ -191,3 +204,145 @@ def selected(op, x):
+         _counts[op + "_fallback_cpu_or_dtype"] += 1
+         return None
+     return mode
++
++
++@lru_cache(maxsize=128)
++def _col2im_metadata(img_shape, col_shape, byte_strides, stride, pad):
++    """Bounded, value-keyed immutable metadata only; no buffers, devices or streams."""
++    n,c,h,w = img_shape
++    cn,cc,kh,kw,oh,ow = col_shape
++    sh,sw = stride
++    ph,pw = pad
++    if min(n,c,h,w,kh,kw,oh,ow,sh,sw) <= 0 or min(ph,pw) < 0:
++        raise ValueError("Invalid col2im geometry")
++    if (n,c) != (cn,cc) or oh != (h+2*ph-kh)//sh+1 or ow != (w+2*pw-kw)//sw+1:
++        raise ValueError("col shape does not match image/kernel/stride/padding")
++    if any(v % 4 for v in byte_strides):
++        raise NotImplementedError("col strides must be integral element offsets")
++    strides = tuple(v // 4 for v in byte_strides)
++    limit = 2**63-1
++    if (max(n,c,h,w,kh,kw,oh,ow,sh,sw,ph,pw) > 2**31-1 or
++        n*c*h*w > limit or sum((d-1)*abs(s) for d,s in zip(col_shape,strides)) > limit):
++        raise NotImplementedError("col2im indexing exceeds supported int64 geometry")
++    values = (n,c,h,w,kh,kw,oh,ow,sh,sw,ph,pw,*strides)
++    # bytes are immutable, CPU-only, and kept alive throughout the synchronous ABI call.
++    return values, struct.pack("=18q", *values)
++
++
++def col2im(col, img_shape, stride=1, pad=0, out=None):
++    """FP32 six-axis col view -> contiguous NCHW, preserving real signed strides.
++
++    Unsupported indexing metadata raises NotImplementedError for caller fallback.
++    This deliberately does not use _arrays(), which would pack the input view.
++    """
++    import cupy as cp
++    import operator
++    from hytorch.utils import pair
++    if not isinstance(col, cp.ndarray) or col.dtype != cp.float32:
++        raise TypeError("Native col2im requires a CuPy float32 array")
++    if col.ndim != 6 or len(img_shape) != 4:
++        raise ValueError("col2im expects (N,C,KH,KW,OH,OW) and NCHW output")
++    # Normalize every call: cache equality must never admit float geometry keys.
++    img_shape = tuple(operator.index(v) for v in img_shape)
++    stride = tuple(operator.index(v) for v in pair(stride))
++    pad = tuple(operator.index(v) for v in pair(pad))
++    if col.device.id != cp.cuda.runtime.getDevice():
++        raise ValueError("col must belong to the current CUDA device")
++    metadata, packed = _col2im_metadata(img_shape, col.shape, col.strides, stride, pad)
++    n,c,h,w = img_shape
++    if not hasattr(load_library(), "hy_col2im"):
++        raise NotImplementedError("CUDA library has no col2im extension; rebuild to enable it")
++    if out is None:
++        out = cp.empty((n,c,h,w), dtype=cp.float32)
++    elif (not isinstance(out, cp.ndarray) or out.dtype != cp.float32 or
++          out.shape != (n,c,h,w) or not out.flags.c_contiguous or out.device.id != col.device.id):
++        raise ValueError("out must be contiguous FP32 NCHW on the input device")
++    if cp.may_share_memory(col, out):
++        raise ValueError("out must not overlap col")
++    lib = load_library()
++    if hasattr(lib, "hy_col2im_fast"):
++        _call("hy_col2im_fast", _ptr(col), _ptr(out), packed)
++    else:
++        _call("hy_col2im", _ptr(col), _ptr(out), *metadata)
++    _counts["col2im_native"] += 1
++    return out
++
++
++def packed_dweight(x, gy, kernel, stride=1, pad=0):
++    """Fresh backward-only workspace; no numerical cache or dtype conversion."""
++    import cupy as cp
++    if (not isinstance(x, cp.ndarray) or not isinstance(gy, cp.ndarray) or
++            x.dtype != cp.float32 or gy.dtype != cp.float32):
++        raise NotImplementedError("packed dWeight requires FP32 x and gy")
++    device = cp.cuda.runtime.getDevice()
++    if x.device.id != device or gy.device.id != device:
++        raise NotImplementedError("packed dWeight requires the current device")
++    if x.ndim != 4 or gy.ndim != 4:
++        raise NotImplementedError("packed dWeight requires NCHW")
++    try:
++        g = _geometry(x, kernel, stride, pad)
++        if any(not isinstance(v, (int, np.integer)) or v > 2**31-1 for v in g):
++            raise ValueError("packed dWeight geometry exceeds the int32 CUDA ABI")
++        n,c,h,w,kh,kw,sh,sw,ph,pw,oh,ow = g
++        _shape_ok(x.shape)
++        _shape_ok((n*oh*ow,c*kh*kw))
++        if gy.shape[0] != n or gy.shape[2:] != (oh,ow):
++            raise ValueError("gy geometry mismatch")
++    except ValueError as exc:
++        raise NotImplementedError(str(exc)) from exc
++    x = cp.ascontiguousarray(x)
++    col = cp.empty((n*oh*ow,c*kh*kw), dtype=cp.float32)
++    _call("hy_im2col", _ptr(x), _ptr(col), *g)
++    gm = gy.transpose(1,0,2,3).reshape(gy.shape[1],-1)
++    result = (gm @ col).reshape(gy.shape[1],c,kh,kw)
++    _counts["dweight_packed"] += 1
++    return result
++
++
++class _SgdTensor(ct.Structure):
++    _fields_ = [("p",ct.c_uint64),("g",ct.c_uint64),("n",ct.c_uint64)]
++
++
++def _sgd_multi_candidate(params, lr):
++    """Return False before any update if the whole sequence needs legacy semantics."""
++    import cupy as cp
++    # Python float is weak FP32 for this verified range; explicit FP64 stays legacy.
++    if type(lr) not in (float, np.float32) or not np.isfinite(lr) or abs(lr)>np.finfo(np.float32).max:
++        return False
++    device = cp.cuda.runtime.getDevice()
++    arrays = []
++    intervals = []
++    for param in params:
++        p,g = param.data,param.grad.data
++        if (not isinstance(p,cp.ndarray) or not isinstance(g,cp.ndarray) or
++            p.dtype!=cp.float32 or g.dtype!=cp.float32 or p.shape!=g.shape or
++            not p.flags.c_contiguous or not g.flags.c_contiguous or
++            p.device.id!=device or g.device.id!=device or p.size>2**63-1):
++            return False
++        if not p.size:
++            continue
++        pp,gp,n = p.data.ptr,g.data.ptr,p.size
++        intervals.extend(((pp,pp+n*4,True),(gp,gp+n*4,False)))
++        arrays.append((pp,gp,n))
++    # All write/write and write/read overlaps force ordered fallback, even across groups.
++    write_end = read_end = -1
++    for start,end,write in sorted(intervals):
++        if start < write_end or (write and start < read_end):
++            return False
++        if write:write_end=max(write_end,end)
++        else:read_end=max(read_end,end)
++    if not arrays:
++        return True
++    lib = load_library()
++    if not hasattr(lib,"hy_sgd_multi"):
++        return False
++    descriptors = (_SgdTensor*len(arrays))(*(_SgdTensor(*v) for v in arrays))
++    _call("hy_sgd_multi", ct.cast(descriptors,ct.c_void_p), len(arrays), float(lr))
++    _counts["sgd_multi"] += 1
++    return True
++
++
++def sgd_multi(params, lr):
++    # Rejected by exact subnormal acceptance: CuPy 14.2 uses FTZ; this kernel must not.
++    # Preserve ordered legacy semantics until a compatible policy is explicitly chosen.
++    return False
+diff --git a/hytorch/functions.py b/hytorch/functions.py
+index 9433502..1080b1b 100644
+--- a/hytorch/functions.py
++++ b/hytorch/functions.py
+@@ -52,7 +52,10 @@ class Tanh(Function):
+ 
+     def backward(self, gy):
+         y = self.outputs[0]()       # weakref()
+-        gx = gy*(1 - y*y)
++        # Internal constants follow the tensor dtype; explicit FP64 stays FP64.
++        xp = cuda.get_array_module(y.data)
++        one = xp.array(1, dtype=y.dtype)
++        gx = gy*(one - y*y)
+         return gx
+ 
+ 
+@@ -475,7 +478,10 @@ class MeanSquareError(Function):
+     def backward(self, gy):
+         x0, x1 = self.inputs
+         diff = x0 - x1
+-        gx0 = gy * diff*(2./len(diff))
++        # Avoid a Python float becoming a strong FP64 zero-dimensional array.
++        xp = cuda.get_array_module(diff.data)
++        scale = xp.array(2. / len(diff), dtype=xp.result_type(diff.dtype, gy.dtype))
++        gx0 = gy * diff * scale
+         gx1 = -gx0
+         return gx0, gx1
+ 
+diff --git a/hytorch/functions_conv.py b/hytorch/functions_conv.py
+index ec86c53..3729a9f 100644
+--- a/hytorch/functions_conv.py
++++ b/hytorch/functions_conv.py
+@@ -155,6 +155,12 @@ class Conv2DGradW(Function):
+             gW_matrix = cpu_gemm(gy_matrix.transpose(1, 0), col)
+             return gW_matrix.reshape(gy.shape[1], x.shape[1], kh, kw)
+ 
++        from hytorch.backends.cuda.runtime import current_config, packed_dweight, _counts
++        if current_config().get("dweight", "cupy") == "packed":
++            try:
++                return packed_dweight(x, gy, self.kernel_size, self.stride, self.pad)
++            except NotImplementedError:
++                _counts["dweight_fallback"] += 1
+         col = im2col_array(x, self.kernel_size, self.stride, self.pad,
+                            to_matrix=False)
+         gW = xp.tensordot(gy, col, ((0, 2, 3), (0, 4, 5)))
+@@ -162,7 +168,7 @@ class Conv2DGradW(Function):
+ 
+     def backward(self, gys):
+         x, gy = self.inputs
+-        gW, = self.outputs
++        gW = gys  # Incoming cotangent, not the weak reference to our output.
+ 
+         xh, xw = x.shape[2:]
+         gx = deconv2d(gy, gW, stride=self.stride, pad=self.pad,
+@@ -451,7 +457,13 @@ def col2im_array(col, img_shape, kernel_size, stride, pad, to_matrix=True):
+         col = col.reshape(N, OH, OW, C, KH, KW).transpose(0, 3, 4, 5, 1, 2)
+ 
+     xp = cuda.get_array_module(col)
+-    if xp != np:
++    if xp != np:
++        from hytorch.backends.cuda.runtime import selected, col2im as native_col2im, _counts
++        if selected("col2im", col) == "native":
++            try:
++                return native_col2im(col, img_shape, (SH, SW), (PH, PW))
++            except NotImplementedError:
++                _counts["col2im_fallback_unsupported"] += 1
+         img = _col2im_gpu(col, SH, SW, PH, PW, H, W)
+         return img
+     else:
+diff --git a/hytorch/optimizers.py b/hytorch/optimizers.py
+index d62a9ce..d686408 100644
+--- a/hytorch/optimizers.py
++++ b/hytorch/optimizers.py
+@@ -83,15 +83,33 @@ class FreezeParam:
+ # SGD / MomentumSGD / AdaGrad / AdaDelta / Adam
+ # =============================================================================
+ # 随机梯度下降法
+-class SGD(Optimizer):
+-    def __init__(self, lr=0.01):
+-        super().__init__()
+-        self.lr = lr
+-
+-    def update_one(self, param):  # 更新权重和偏移
+-        param.data -= self.lr * param.grad.data
+-
+-
++class SGD(Optimizer):
++    def __init__(self, lr=0.01, backend="legacy"):
++        super().__init__()
++        self.lr = lr
++        if backend not in ("legacy", "native"):
++            raise ValueError("SGD backend must be legacy/native")
++        self.backend = backend
++
++    def update(self):
++        if type(self) is not SGD or self.backend != "native":
++            return super().update()
++        params = [p for p in self.target.params() if p.grad is not None]
++        for hook in self.hooks:
++            hook(params)
++        params = [p for p in params if p.grad is not None]
++        from hytorch.backends.cuda.runtime import sgd_multi
++        # Avoid importing/initializing a GPU for CPU-only models.
++        if params and cuda.get_array_module(params[0].data).__name__ == "cupy":
++            if sgd_multi(params, self.lr):
++                return
++        for param in params:
++            self.update_one(param)
++
++    def update_one(self, param):  # 更新权重和偏移
++        param.data -= self.lr * param.grad.data
++
++
+ class MomentumSGD(Optimizer):
+     def __init__(self, lr=0.01, momentum=0.9):
+         super().__init__()
+diff --git a/tests/test_cuda_device.py b/tests/test_cuda_device.py
+index ef7edb1..6cb2e46 100644
+--- a/tests/test_cuda_device.py
++++ b/tests/test_cuda_device.py
+@@ -54,6 +54,26 @@ def test_gemm_views_and_alias_rejection(cp):
+         gemm(square,square,out=square)
+ 
+ 
++@pytest.mark.parametrize("shape",[(64,64,64),(65,67,71),(127,129,193),(128,256,192)])
++@pytest.mark.parametrize("tile",[16,32])
++def test_gemm_register_tiles_and_tails(cp,shape,tile):
++    m,k,n=shape
++    rng=np.random.default_rng(93)
++    a=rng.normal(size=(m,k)).astype(np.float32)
++    b=rng.normal(size=(k,n)).astype(np.float32)
++    with cp.cuda.Stream(non_blocking=True) as stream:
++        da,db=cp.asarray(a),cp.asarray(b)
++        out=cp.full((m,n),cp.nan,dtype=cp.float32)
++        actual=gemm(da,db,"shared",tile,out=out)
++        assert actual is out
++        original=gemm(da,db,"basic",tile)
++        stream.synchronize()
++        host=cp.asnumpy(actual)
++        np.testing.assert_array_equal(host,cp.asnumpy(original))
++    np.testing.assert_allclose(host,a.astype(np.float64)@b.astype(np.float64),
++                               atol=5e-5,rtol=2e-5)
++
++
+ @pytest.mark.parametrize("variant",["direct","im2col"])
+ @pytest.mark.parametrize("bias",[False,True])
+ @pytest.mark.parametrize("stride,pad",[((1,1),(0,0)),((2,1),(1,2))])

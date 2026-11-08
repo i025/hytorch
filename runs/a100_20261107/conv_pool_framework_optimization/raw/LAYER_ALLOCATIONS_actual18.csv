@@ -1,0 +1,11 @@
+case,implementation,allocation_requests,requested_bytes,torch_incremental_peak_bytes
+tiny_actual_pool/direct,B0,0,0,
+tiny_actual_pool/direct,O1,0,0,
+tiny_actual_pool/raw,B0,2,12288,
+tiny_actual_pool/raw,O1,2,12288,
+tiny_actual_pool/forward,B0,2,12288,
+tiny_actual_pool/forward,O1,2,12288,
+tiny_actual_pool/forward,torch,2,12288,12288
+tiny_actual_pool/backward,B0,4,49152,
+tiny_actual_pool/backward,O1,4,49152,
+tiny_actual_pool/backward,torch,1,16384,16384

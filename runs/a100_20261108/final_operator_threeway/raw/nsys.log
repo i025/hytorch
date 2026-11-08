@@ -1,0 +1,130 @@
+警告: 未找到scipy，无法加载SVHN数据集
+1/122 gemm real_12152_24_75
+2/122 gemm real_2632_36_600
+3/122 gemm real_440_48_900
+4/122 gemm real_240_64_432
+5/122 gemm real_72_64_576
+6/122 gemm real_4_100_1152
+7/122 gemm real_4_50_100
+8/122 gemm real_4_1_50
+9/122 gemm real_4_50_1
+10/122 gemm real_50_1_4
+11/122 gemm real_4_100_50
+12/122 gemm real_100_50_4
+13/122 gemm real_4_1152_100
+14/122 gemm real_1152_100_4
+15/122 gemm real_576_72_64
+16/122 gemm real_64_576_72
+17/122 gemm real_432_240_64
+18/122 gemm real_64_432_240
+19/122 gemm real_900_440_48
+20/122 gemm real_48_900_440
+21/122 gemm real_600_2632_36
+22/122 gemm real_36_600_2632
+23/122 gemm real_75_12152_24
+24/122 gemm real_24_75_12152
+25/122 gemm ext_256_256_256
+26/122 gemm ext_512_512_512
+27/122 gemm ext_1024_1024_1024
+28/122 gemm ext_2048_2048_2048
+29/122 gemm ext_4096_4096_4096
+30/122 gemm ext_63_65_67
+31/122 gemm ext_65_63_129
+32/122 gemm ext_1025_127_259
+33/122 gemm ext_8192_16_75
+34/122 gemm ext_8_4096_257
+35/122 gemm ext_511_513_129
+36/122 gemm ext_1024_512_256
+37/122 im2col conv1_contiguous
+38/122 conv conv1_contiguous
+39/122 dweight conv1_contiguous
+40/122 col2im conv1_training
+41/122 col2im conv1_contiguous
+42/122 col2im conv1_negative
+43/122 im2col conv2_contiguous
+44/122 conv conv2_contiguous
+45/122 dweight conv2_contiguous
+46/122 col2im conv2_training
+47/122 col2im conv2_contiguous
+48/122 col2im conv2_negative
+49/122 im2col conv3_contiguous
+50/122 conv conv3_contiguous
+51/122 dweight conv3_contiguous
+52/122 col2im conv3_training
+53/122 col2im conv3_contiguous
+54/122 col2im conv3_negative
+55/122 im2col conv4_contiguous
+56/122 conv conv4_contiguous
+57/122 dweight conv4_contiguous
+58/122 col2im conv4_training
+59/122 col2im conv4_contiguous
+60/122 col2im conv4_negative
+61/122 im2col conv5_contiguous
+62/122 conv conv5_contiguous
+63/122 dweight conv5_contiguous
+64/122 col2im conv5_training
+65/122 col2im conv5_contiguous
+66/122 col2im conv5_negative
+67/122 im2col overlap_contiguous
+68/122 conv overlap_contiguous
+69/122 dweight overlap_contiguous
+70/122 col2im overlap_training
+71/122 col2im overlap_contiguous
+72/122 col2im overlap_negative
+73/122 im2col nonoverlap_contiguous
+74/122 conv nonoverlap_contiguous
+75/122 dweight nonoverlap_contiguous
+76/122 col2im nonoverlap_training
+77/122 col2im nonoverlap_contiguous
+78/122 col2im nonoverlap_negative
+79/122 im2col asymmetric_contiguous
+80/122 im2col asymmetric_sliced
+81/122 conv asymmetric_contiguous
+82/122 conv asymmetric_sliced
+83/122 dweight asymmetric_contiguous
+84/122 dweight asymmetric_sliced
+85/122 col2im asymmetric_training
+86/122 col2im asymmetric_contiguous
+87/122 col2im asymmetric_negative
+88/122 im2col holes_contiguous
+89/122 conv holes_contiguous
+90/122 dweight holes_contiguous
+91/122 col2im holes_training
+92/122 col2im holes_contiguous
+93/122 col2im holes_negative
+94/122 im2col narrow_contiguous
+95/122 conv narrow_contiguous
+96/122 dweight narrow_contiguous
+97/122 col2im narrow_training
+98/122 col2im narrow_contiguous
+99/122 col2im narrow_negative
+100/122 im2col tiny_contiguous
+101/122 im2col tiny_sliced
+102/122 conv tiny_contiguous
+103/122 conv tiny_sliced
+104/122 dweight tiny_contiguous
+105/122 dweight tiny_sliced
+106/122 col2im tiny_training
+107/122 col2im tiny_contiguous
+108/122 col2im tiny_negative
+109/122 im2col large_channels_contiguous
+110/122 conv large_channels_contiguous
+111/122 dweight large_channels_contiguous
+112/122 col2im large_channels_training
+113/122 col2im large_channels_contiguous
+114/122 col2im large_channels_negative
+115/122 pool_forward tiny_net_pool
+116/122 pool_backward tiny_net_pool
+117/122 pool_forward overlap_pool
+118/122 pool_backward overlap_pool
+119/122 pool_forward asym_pool
+120/122 pool_backward asym_pool
+121/122 pool_forward negative_pool
+122/122 pool_backward negative_pool
+Capture range started in the application.
+Generating '/tmp/nsys-report-69e5.qdstrm'
+Capture range ended in the application.
+[1/1] [0%                          ] operators.nsys-rep[1/1] [0%                          ] operators.nsys-rep[1/1] [0%                          ] operators.nsys-rep[1/1] [==19%                       ] operators.nsys-rep[1/1] [=======38%                  ] operators.nsys-rep[1/1] [===23%                      ] operators.nsys-rep[1/1] [=17%                        ] operators.nsys-rep[1/1] [14%                         ] operators.nsys-rep[1/1] [11%                         ] operators.nsys-rep[1/1] [10%                         ] operators.nsys-rep[1/1] [==21%                       ] operators.nsys-rep[1/1] [======34%                   ] operators.nsys-rep[1/1] [==========48%               ] operators.nsys-rep[1/1] [=============59%            ] operators.nsys-rep[1/1] [=================72%        ] operators.nsys-rep[1/1] [==================77%       ] operators.nsys-rep[1/1] [===================81%      ] operators.nsys-rep[1/1] [========================100%] operators.nsys-rep[1/1] [========================100%] operators.nsys-rep
+FINISHED
+Generated:
+    /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/traces/operators.nsys-rep

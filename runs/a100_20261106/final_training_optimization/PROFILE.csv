@@ -1,0 +1,1193 @@
+mode,repeat,scope,phase,category,name,calls,calls_per_step,total_us,us_per_step,gridX,blockX,registers
+B0,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,261.536,26.1536,3561,256,23
+B0,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,35.232,3.5232,15,128,16
+B0,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,260.033,26.003300000000003,2,16,32
+B0,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,87.936,8.793600000000001,1140,256,24
+B0,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,58.56000000000001,5.856000000000001,2279,128,18
+B0,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,420.096,42.0096,6169,256,23
+B0,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,40.96000000000001,4.096000000000001,169,128,16
+B0,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",20,2.0,1199.332,119.93320000000001,3,16,32
+B0,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,64.736,6.4736,371,256,24
+B0,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,40.065,4.0065,741,128,18
+B0,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,133.56900000000002,13.356900000000001,1547,256,23
+B0,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,44.608000000000004,4.460800000000001,338,128,16
+B0,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,44.0,4.4,83,256,24
+B0,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,35.488,3.5488,165,128,18
+B0,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,66.432,6.6432,405,256,23
+B0,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,42.976000000000006,4.297600000000001,216,128,16
+B0,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",30,3.0,659.2990000000001,65.9299,4,16,32
+B0,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,43.072,4.3072,60,256,24
+B0,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,35.328,3.5328000000000004,120,128,18
+B0,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,51.488,5.1488,162,256,23
+B0,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,43.648,4.364800000000001,288,128,16
+B0,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,40.161,4.0161,18,256,24
+B0,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,32.48,3.2479999999999998,36,128,18
+B0,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,605.664,60.5664,7,16,32
+B0,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,38.72,3.872,4,128,16
+B0,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,29.759999999999994,2.9759999999999995,4,128,18
+B0,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,29.695999999999994,2.9695999999999994,2,128,16
+B0,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,23.871999999999996,2.3871999999999995,2,128,18
+B0,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,46.4,4.64,1,16,32
+B0,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,30.719999999999995,3.0719999999999996,1,4,16
+B0,0,GPU_kernel,forward,forward,cupy_tanh__float32_float32,10,1.0,28.191999999999997,2.8191999999999995,1,4,21
+B0,0,GPU_kernel,forward,forward,cupy_subtract__float32_float32_float32,10,1.0,28.447999999999993,2.8447999999999993,1,4,22
+B0,0,GPU_kernel,forward,forward,cupy_square__float32_float32,10,1.0,28.287999999999993,2.8287999999999993,1,4,18
+B0,0,GPU_kernel,forward,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,30.751999999999995,3.0751999999999997,1,256,32
+B0,0,GPU_kernel,forward,forward,cupy_true_divide__float32_float_float32,10,1.0,28.415999999999993,2.8415999999999992,1,1,16
+B0,0,GPU_kernel,backward,backward,cupy_fill,30,3.0,64.352,6.4352,1,1,16
+B0,0,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,25.727999999999998,2.5728,1,4,22
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,57.983999999999995,5.798399999999999,1,4,16
+B0,0,GPU_kernel,backward,backward,cupy_negative__float32_float32,10,1.0,25.279999999999998,2.5279999999999996,1,4,18
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,51.456,5.1456,1,4,22
+B0,0,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,28.831999999999994,2.8831999999999995,1,4,16
+B0,0,GPU_kernel,backward,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,26.592,2.6592,1,256,32
+B0,0,GPU_kernel,backward,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,28.223999999999993,2.822399999999999,2,256,20
+B0,0,GPU_kernel,backward,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,43.554,4.3554,7,8,32
+B0,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,23.967999999999996,2.3968,2,128,18
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,26.591999999999995,2.6591999999999993,2,128,24
+B0,0,GPU_kernel,backward,backward,cupy_sum,20,2.0,62.048,6.2048000000000005,1,512,29
+B0,0,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,62.39999999999999,6.239999999999999,13,128,40
+B0,0,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,60.76800000000001,6.0768,2,256,57
+B0,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,30.399999999999995,3.0399999999999996,4,128,18
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,34.176,3.4176,4,128,24
+B0,0,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,70.62400000000001,7.062400000000001,144,128,40
+B0,0,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,70.59200000000001,7.0592000000000015,4,256,57
+B0,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,30.879999999999995,3.0879999999999996,36,128,18
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,33.474,3.3473999999999995,36,128,24
+B0,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,35.52,3.5520000000000005,36,128,16
+B0,0,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,91.67999999999999,9.168,3,128,86
+B0,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,62.208000000000006,6.2208000000000006,60,256,38
+B0,0,GPU_kernel,backward,dweight,im2col,10,1.0,51.968,5.1968000000000005,324,128,32
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,35.296,3.5296,36,128,16
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,45.664,4.5664,324,128,16
+B0,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,103.42399999999999,10.3424,18,128,86
+B0,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,50.751999999999995,5.0752,16,512,31
+B0,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,34.528,3.4528,120,128,18
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,37.729,3.7729,120,128,24
+B0,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,37.855999999999995,3.7855999999999996,120,128,16
+B0,0,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,104.224,10.4224,8,128,86
+B0,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,92.12899999999999,9.2129,83,256,38
+B0,0,GPU_kernel,backward,dweight,im2col,10,1.0,61.632000000000005,6.163200000000001,810,128,32
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,40.96,4.096,120,128,16
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,63.648,6.364800000000001,810,128,16
+B0,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,107.84,10.784,14,128,86
+B0,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,43.29600000000001,4.329600000000001,14,32,32
+B0,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,52.96000000000001,5.296000000000001,32,512,31
+B0,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,35.072,3.5072,165,128,18
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,37.792,3.7792000000000003,165,128,24
+B0,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,38.272000000000006,3.8272000000000004,165,128,16
+B0,0,GPU_kernel,backward,dinput,ampere_sgemm_32x128_nt,10,1.0,141.856,14.185599999999999,14,256,57
+B0,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,133.408,13.340799999999998,371,256,38
+B0,0,GPU_kernel,backward,dweight,im2col,10,1.0,130.59199999999998,13.059199999999999,3094,128,32
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,42.592,4.2592,165,128,16
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,112.576,11.2576,3094,128,16
+B0,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,170.752,17.075200000000002,29,128,86
+B0,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,46.368,4.6368,29,32,32
+B0,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,56.544000000000004,5.654400000000001,48,512,31
+B0,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,39.872,3.9872,741,128,18
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,42.4,4.24,741,128,24
+B0,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,44.065,4.406499999999999,741,128,16
+B0,0,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,213.184,21.3184,21,256,57
+B0,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,264.13,26.413,1140,256,38
+B0,0,GPU_kernel,backward,dweight,im2col,10,1.0,404.449,40.444900000000004,12338,128,32
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,50.592,5.0592,741,128,16
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,314.81600000000003,31.481600000000004,12338,128,16
+B0,0,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,278.944,27.8944,10,256,82
+B0,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,48.032,4.8031999999999995,19,32,32
+B0,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,95.393,9.5393,36,512,31
+B0,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,60.00000000000001,6.000000000000001,2279,128,18
+B0,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,60.544000000000004,6.0544,2279,128,24
+B0,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,61.151999999999994,6.1152,2279,128,16
+B0,0,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,137.152,13.7152,95,256,57
+B0,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,168.321,16.8321,619,256,38
+B0,0,GPU_kernel,backward,dweight,im2col,10,1.0,251.23200000000003,25.123200000000004,7121,128,32
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,66.657,6.665699999999999,2279,128,16
+B0,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,134.208,13.4208,7121,128,16
+B0,0,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,175.07200000000003,17.507200000000005,2,256,82
+B0,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,80.768,8.0768,3,32,32
+B0,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,226.59199999999996,22.659199999999995,24,512,31
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,39.873000000000005,3.9873000000000003,338,128,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,41.75999999999999,4.175999999999999,338,128,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.215999999999998,2.5216,1,48,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,26.336,2.6336,1,48,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,35.456,3.5456000000000003,169,128,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,39.68000000000001,3.968000000000001,169,128,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.279999999999998,2.5279999999999996,1,36,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,26.272,2.6271999999999998,1,36,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,39.007999999999996,3.9007999999999994,288,128,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,38.208,3.8207999999999998,288,128,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,52.31999999999999,5.231999999999999,1,64,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,54.176,5.4176,1,64,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,38.432,3.8432000000000004,216,128,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,36.480000000000004,3.6480000000000006,216,128,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,45.312,4.5312,900,128,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,45.856,4.5856,900,128,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.599999999999998,2.5599999999999996,1,100,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,27.199999999999996,2.7199999999999998,1,100,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,51.424,5.1424,1,50,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,52.57700000000001,5.257700000000002,1,50,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,28.095999999999993,2.809599999999999,1,1,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,29.823999999999995,2.9823999999999993,1,1,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,35.008,3.5008000000000004,40,128,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,35.744,3.5744,40,128,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.663999999999994,2.9663999999999993,15,128,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.687999999999995,3.0687999999999995,15,128,22
+B0,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.631999999999994,2.5631999999999993,1,24,18
+B0,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,27.359999999999996,2.7359999999999998,1,24,22
+B0,0,CPU_NVTX_elapsed,,,forward,,,,1428.6654,,,
+B0,0,CPU_NVTX_elapsed,,,backward,,,,3163.3231,,,
+B0,0,CPU_NVTX_elapsed,,,update,,,,408.8653,,,
+B0,0,CPU_NVTX_elapsed,,,dweight,,,,859.3995,,,
+B0,0,CPU_NVTX_elapsed,,,dinput,,,,614.2575,,,
+B0,0,CUDA_API_CPU_elapsed,,,cuProfilerStart,1,,,1.1438000000000001,,,
+B0,0,CUDA_API_CPU_elapsed,,,cudaEventQuery_v3020,40,,,10.0258,,,
+B0,0,CUDA_API_CPU_elapsed,,,cudaEventDestroy_v3020,20,,,3.2188000000000003,,,
+B0,0,CUDA_API_CPU_elapsed,,,cudaStreamIsCapturing_v10000,180,,,10.344799999999996,,,
+B0,0,CUDA_API_CPU_elapsed,,,cudaMemcpyAsync_v3020,20,,,20.5345,,,
+B0,0,CUDA_API_CPU_elapsed,,,cudaEventCreateWithFlags_v3020,20,,,3.8993,,,
+B0,0,CUDA_API_CPU_elapsed,,,cudaEventRecord_v3020,60,,,31.38009999999999,,,
+B0,0,CUDA_API_CPU_elapsed,,,cudaLaunchKernel_v7000,450,,,211.63900000000004,,,
+B0,0,CUDA_API_CPU_elapsed,,,cuLaunchKernel,1020,,,392.6883,,,
+B0,0,CUDA_API_CPU_elapsed,,,cuStreamGetCaptureInfo_v2,240,,,2.7580999999999984,,,
+B0,0,CUDA_API_CPU_elapsed,,,cudaStreamSynchronize_v3020,1,,,0.6343,,,
+D,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,310.62399999999997,31.062399999999997,3561,256,23
+D,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,41.568,4.1568,15,128,16
+D,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,311.616,31.1616,2,16,32
+D,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,103.456,10.345600000000001,1140,256,24
+D,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,69.441,6.944100000000001,2279,128,18
+D,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,501.85699999999997,50.1857,6169,256,23
+D,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,49.152,4.9152000000000005,169,128,16
+D,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",20,2.0,1432.067,143.2067,3,16,32
+D,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,75.83999999999999,7.583999999999999,371,256,24
+D,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,47.519999999999996,4.752,741,128,18
+D,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,158.72,15.872,1547,256,23
+D,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,52.928,5.2928,338,128,16
+D,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,52.416000000000004,5.2416,83,256,24
+D,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,42.11200000000001,4.211200000000001,165,128,18
+D,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,78.912,7.8912,405,256,23
+D,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,50.20799999999999,5.0207999999999995,216,128,16
+D,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",30,3.0,782.8489999999998,78.28489999999998,4,16,32
+D,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,51.265,5.1265,60,256,24
+D,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.632,4.1632,120,128,18
+D,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,60.992,6.0992,162,256,23
+D,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,53.825,5.3825,288,128,16
+D,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,47.90399999999999,4.790399999999999,18,256,24
+D,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,38.464,3.8464,36,128,18
+D,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,710.016,71.0016,7,16,32
+D,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,45.952,4.5952,4,128,16
+D,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,35.36,3.536,4,128,18
+D,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,34.784,3.4783999999999997,2,128,16
+D,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,28.383999999999993,2.838399999999999,2,128,18
+D,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,55.265,5.5265,1,16,32
+D,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,35.872,3.5872,1,4,16
+D,0,GPU_kernel,forward,forward,cupy_tanh__float32_float32,10,1.0,31.616999999999994,3.1616999999999993,1,4,21
+D,0,GPU_kernel,forward,forward,cupy_subtract__float32_float32_float32,10,1.0,32.704,3.2704,1,4,22
+D,0,GPU_kernel,forward,forward,cupy_square__float32_float32,10,1.0,30.911999999999995,3.0911999999999997,1,4,18
+D,0,GPU_kernel,forward,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,34.976,3.4976,1,256,32
+D,0,GPU_kernel,forward,forward,cupy_true_divide__float32_float_float32,10,1.0,30.911999999999995,3.0911999999999997,1,1,16
+D,0,GPU_kernel,backward,backward,cupy_fill,30,3.0,75.71400000000001,7.5714000000000015,1,1,16
+D,0,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,30.559999999999995,3.0559999999999996,1,4,22
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,68.70400000000002,6.870400000000002,1,4,16
+D,0,GPU_kernel,backward,backward,cupy_negative__float32_float32,10,1.0,29.887999999999995,2.9887999999999995,1,4,18
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,61.31200000000001,6.1312000000000015,1,4,22
+D,0,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,34.56,3.4560000000000004,1,4,16
+D,0,GPU_kernel,backward,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,31.583999999999996,3.1583999999999994,1,256,32
+D,0,GPU_kernel,backward,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,33.76,3.376,2,256,20
+D,0,GPU_kernel,backward,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,51.2,5.12,7,8,32
+D,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,28.671999999999993,2.8671999999999995,2,128,18
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,30.175999999999995,3.0175999999999994,2,128,24
+D,0,GPU_kernel,backward,backward,cupy_sum,20,2.0,74.913,7.4913,1,512,29
+D,0,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,71.584,7.1584,13,128,40
+D,0,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,72.417,7.2417,2,256,57
+D,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,35.87200000000001,3.5872000000000006,4,128,18
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,39.488,3.9488,4,128,24
+D,0,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,84.352,8.4352,144,128,40
+D,0,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,84.09599999999999,8.4096,4,256,57
+D,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.57600000000001,3.657600000000001,36,128,18
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,39.712,3.9712000000000005,36,128,24
+D,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,42.336000000000006,4.233600000000001,36,128,16
+D,0,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,109.856,10.9856,3,128,86
+D,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,73.98400000000001,7.3984000000000005,60,256,38
+D,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,60.353,6.0353,162,256,23
+D,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,40.065000000000005,4.006500000000001,36,128,16
+D,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,122.94399999999999,12.2944,18,128,86
+D,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,62.303999999999995,6.2303999999999995,16,512,31
+D,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.02400000000001,4.102400000000001,120,128,18
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,44.864000000000004,4.486400000000001,120,128,24
+D,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.408,4.5408,120,128,16
+D,0,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,124.672,12.4672,8,128,86
+D,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,111.42399999999999,11.142399999999999,83,256,38
+D,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,79.616,7.9616,405,256,23
+D,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,43.36,4.336,120,128,16
+D,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,127.616,12.7616,14,128,86
+D,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,50.879999999999995,5.087999999999999,14,32,32
+D,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,64.544,6.4544,32,512,31
+D,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.473,4.1472999999999995,165,128,18
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,45.088,4.5088,165,128,24
+D,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.37599999999999,4.537599999999999,165,128,16
+D,0,GPU_kernel,backward,dinput,ampere_sgemm_32x128_nt,10,1.0,167.968,16.796799999999998,14,256,57
+D,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,157.792,15.7792,371,256,38
+D,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,159.42600000000002,15.942600000000002,1547,256,23
+D,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,44.128,4.4128,165,128,16
+D,0,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nn,10,1.0,177.409,17.7409,15,256,82
+D,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,67.424,6.742400000000001,29,32,32
+D,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,68.768,6.8768,48,512,31
+D,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,47.327999999999996,4.732799999999999,741,128,18
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,50.303999999999995,5.030399999999999,741,128,24
+D,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,51.936,5.1936,741,128,16
+D,0,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,254.36800000000002,25.4368,21,256,57
+D,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,315.009,31.5009,1140,256,38
+D,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,503.459,50.3459,6169,256,23
+D,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,50.433,5.0433,741,128,16
+D,0,GPU_kernel,backward,dweight,ampere_sgemm_128x32_sliced1x4_nn,10,1.0,357.952,35.7952,5,256,134
+D,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,61.248000000000005,6.1248000000000005,19,32,32
+D,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,115.19999999999999,11.52,36,512,31
+D,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,67.36,6.736,2279,128,18
+D,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,71.104,7.1104,2279,128,24
+D,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,73.152,7.3152,2279,128,16
+D,0,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,162.592,16.2592,95,256,57
+D,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,200.83200000000002,20.0832,619,256,38
+D,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,310.59200000000004,31.059200000000004,3561,256,23
+D,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,71.52000000000001,7.152000000000001,2279,128,16
+D,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,202.913,20.2913,3,128,86
+D,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,93.184,9.3184,3,32,32
+D,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,280.35299999999995,28.035299999999996,24,512,31
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,44.608000000000004,4.460800000000001,338,128,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,46.047999999999995,4.604799999999999,338,128,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.663999999999994,2.9663999999999993,1,48,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.959999999999997,2.896,1,48,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,42.016,4.2016,169,128,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,42.112,4.2112,169,128,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.919999999999998,2.992,1,36,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.767999999999994,2.8767999999999994,1,36,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,45.792,4.5792,288,128,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,43.392,4.3392,288,128,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,56.800000000000004,5.680000000000001,1,64,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,57.888,5.7888,1,64,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,42.88,4.288,216,128,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,44.800000000000004,4.48,216,128,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,51.488,5.1488,900,128,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,50.977,5.0977,900,128,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.151999999999994,2.9151999999999996,1,100,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.687999999999995,3.0687999999999995,1,100,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,57.63199999999999,5.763199999999999,1,50,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,57.88899999999999,5.788899999999999,1,50,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.279999999999994,2.9279999999999995,1,1,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.559999999999995,3.0559999999999996,1,1,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,40.64,4.064,40,128,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,37.504000000000005,3.7504000000000004,40,128,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,37.505,3.7505,15,128,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,36.19200000000001,3.6192000000000006,15,128,22
+D,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,30.975999999999996,3.0975999999999995,1,24,18
+D,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.207999999999995,3.0207999999999995,1,24,22
+D,0,CPU_NVTX_elapsed,,,forward,,,,1437.7323,,,
+D,0,CPU_NVTX_elapsed,,,backward,,,,3002.7415,,,
+D,0,CPU_NVTX_elapsed,,,update,,,,403.2235,,,
+D,0,CPU_NVTX_elapsed,,,dweight,,,,686.845,,,
+D,0,CPU_NVTX_elapsed,,,dinput,,,,615.0773,,,
+D,0,CUDA_API_CPU_elapsed,,,cuProfilerStart,1,,,1.0255,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaEventQuery_v3020,40,,,8.9318,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaEventDestroy_v3020,20,,,2.4181999999999997,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaStreamIsCapturing_v10000,180,,,10.519000000000002,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaMemcpyAsync_v3020,20,,,22.138199999999998,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaEventCreateWithFlags_v3020,20,,,4.321599999999999,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaEventRecord_v3020,60,,,32.044700000000006,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaLaunchKernel_v7000,500,,,236.89679999999962,,,
+D,0,CUDA_API_CPU_elapsed,,,cuLaunchKernel,920,,,340.5377000000002,,,
+D,0,CUDA_API_CPU_elapsed,,,cuStreamGetCaptureInfo_v2,240,,,3.1914000000000007,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaMalloc_v3020,2,,,24.1684,,,
+D,0,CUDA_API_CPU_elapsed,,,cudaStreamSynchronize_v3020,1,,,0.6628000000000001,,,
+S,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,269.856,26.985599999999998,3561,256,23
+S,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,36.544,3.6544,15,128,16
+S,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,267.073,26.707299999999996,2,16,32
+S,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,90.624,9.0624,1140,256,24
+S,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,60.831999999999994,6.0832,2279,128,18
+S,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,434.27299999999997,43.427299999999995,6169,256,23
+S,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,42.784000000000006,4.2784,169,128,16
+S,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",20,2.0,1241.8560000000002,124.18560000000002,3,16,32
+S,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,67.232,6.7232,371,256,24
+S,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.376000000000005,4.137600000000001,741,128,18
+S,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,137.568,13.756800000000002,1547,256,23
+S,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,45.44,4.544,338,128,16
+S,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,46.016,4.6015999999999995,83,256,24
+S,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,36.481,3.6481000000000003,165,128,18
+S,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,68.672,6.8671999999999995,405,256,23
+S,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,44.192,4.4192,216,128,16
+S,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",30,3.0,679.9379999999999,67.9938,4,16,32
+S,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,44.769999999999996,4.476999999999999,60,256,24
+S,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,36.512,3.6512000000000002,120,128,18
+S,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,53.152,5.3152,162,256,23
+S,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,47.10399999999999,4.710399999999999,288,128,16
+S,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,41.408,4.1408000000000005,18,256,24
+S,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,33.6,3.3600000000000003,36,128,18
+S,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,626.5609999999999,62.656099999999995,7,16,32
+S,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,40.19199999999999,4.0192,4,128,16
+S,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,30.720999999999997,3.0721,4,128,18
+S,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,31.551999999999996,3.1552,2,128,16
+S,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,24.991999999999997,2.4991999999999996,2,128,18
+S,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,48.032,4.8031999999999995,1,16,32
+S,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,32.352,3.2352,1,4,16
+S,0,GPU_kernel,forward,forward,cupy_tanh__float32_float32,10,1.0,29.087999999999994,2.9087999999999994,1,4,21
+S,0,GPU_kernel,forward,forward,cupy_subtract__float32_float32_float32,10,1.0,28.095999999999997,2.8095999999999997,1,4,22
+S,0,GPU_kernel,forward,forward,cupy_square__float32_float32,10,1.0,28.991999999999994,2.8991999999999996,1,4,18
+S,0,GPU_kernel,forward,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,33.024,3.3024,1,256,32
+S,0,GPU_kernel,forward,forward,cupy_true_divide__float32_float_float32,10,1.0,28.927999999999997,2.8928,1,1,16
+S,0,GPU_kernel,backward,backward,cupy_fill,30,3.0,64.92799999999998,6.492799999999998,1,1,16
+S,0,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,26.242,2.6242,1,4,22
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,59.64800000000001,5.964800000000001,1,4,16
+S,0,GPU_kernel,backward,backward,cupy_negative__float32_float32,10,1.0,26.112,2.6111999999999997,1,4,18
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,52.704,5.2704,1,4,22
+S,0,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,29.343999999999994,2.9343999999999992,1,4,16
+S,0,GPU_kernel,backward,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,27.103999999999992,2.710399999999999,1,256,32
+S,0,GPU_kernel,backward,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,29.215999999999994,2.9215999999999993,2,256,20
+S,0,GPU_kernel,backward,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,44.416,4.441599999999999,7,8,32
+S,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,25.151999999999997,2.5151999999999997,2,128,18
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,26.719999999999995,2.6719999999999997,2,128,24
+S,0,GPU_kernel,backward,backward,cupy_sum,20,2.0,63.58400000000002,6.358400000000001,1,512,29
+S,0,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,64.768,6.4768,13,128,40
+S,0,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,62.88000000000001,6.288000000000001,2,256,57
+S,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,31.455999999999996,3.1455999999999995,4,128,18
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,34.208,3.4208,4,128,24
+S,0,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,73.504,7.3504000000000005,144,128,40
+S,0,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,72.89600000000002,7.289600000000002,4,256,57
+S,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,31.839999999999996,3.1839999999999997,36,128,18
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,34.592,3.4592,36,128,24
+S,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,37.376000000000005,3.7376000000000005,36,128,16
+S,0,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,95.61599999999999,9.561599999999999,3,128,86
+S,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,64.06500000000001,6.406500000000001,60,256,38
+S,0,GPU_kernel,backward,dweight,im2col,10,1.0,53.792,5.3792,324,128,32
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,36.800000000000004,3.6800000000000006,36,128,16
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,47.10399999999999,4.710399999999999,324,128,16
+S,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,106.88,10.687999999999999,18,128,86
+S,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,52.384,5.2384,16,512,31
+S,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,35.584,3.5584000000000002,120,128,18
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,38.784000000000006,3.8784000000000005,120,128,24
+S,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,38.944,3.8944,120,128,16
+S,0,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,107.65,10.765,8,128,86
+S,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,94.88,9.488,83,256,38
+S,0,GPU_kernel,backward,dweight,im2col,10,1.0,63.744,6.3744,810,128,32
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,42.528000000000006,4.252800000000001,120,128,16
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,65.472,6.547199999999999,810,128,16
+S,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,111.32799999999999,11.1328,14,128,86
+S,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,44.06399999999999,4.4064,14,32,32
+S,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,54.751999999999995,5.475199999999999,32,512,31
+S,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.224000000000004,3.6224000000000003,165,128,18
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,39.136,3.9136,165,128,24
+S,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,39.519999999999996,3.9519999999999995,165,128,16
+S,0,GPU_kernel,backward,dinput,ampere_sgemm_32x128_nt,10,1.0,145.825,14.5825,14,256,57
+S,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,137.568,13.756800000000002,371,256,38
+S,0,GPU_kernel,backward,dweight,im2col,10,1.0,135.10399999999998,13.510399999999999,3094,128,32
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,43.58400000000001,4.358400000000001,165,128,16
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,115.136,11.5136,3094,128,16
+S,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,177.66400000000002,17.7664,29,128,86
+S,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,48.12799999999999,4.812799999999999,29,32,32
+S,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,58.272000000000006,5.8272,48,512,31
+S,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.248000000000005,4.1248000000000005,741,128,18
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,43.968,4.396800000000001,741,128,24
+S,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.568,4.5568,741,128,16
+S,0,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,220.323,22.0323,21,256,57
+S,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,272.512,27.2512,1140,256,38
+S,0,GPU_kernel,backward,dweight,im2col,10,1.0,418.144,41.8144,12338,128,32
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,51.967999999999996,5.1968,741,128,16
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,325.984,32.5984,12338,128,16
+S,0,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,288.48,28.848000000000003,10,256,82
+S,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,50.464,5.0464,19,32,32
+S,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,97.37599999999999,9.737599999999999,36,512,31
+S,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,62.24000000000001,6.224000000000001,2279,128,18
+S,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,62.177,6.2177,2279,128,24
+S,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,63.264,6.3264000000000005,2279,128,16
+S,0,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,140.79999999999998,14.079999999999998,95,256,57
+S,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,173.698,17.3698,619,256,38
+S,0,GPU_kernel,backward,dweight,im2col,10,1.0,259.20000000000005,25.920000000000005,7121,128,32
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,68.768,6.8768,2279,128,16
+S,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,140.32,14.032,7121,128,16
+S,0,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,181.024,18.1024,2,256,82
+S,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,83.71199999999999,8.371199999999998,3,32,32
+S,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,235.584,23.5584,24,512,31
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,41.408,4.1408000000000005,338,128,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,44.57600000000001,4.457600000000001,338,128,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,27.519999999999996,2.752,1,48,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,26.976999999999997,2.6976999999999998,1,48,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,36.32000000000001,3.6320000000000006,169,128,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,42.209,4.2209,169,128,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,26.56,2.6559999999999997,1,36,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,26.943999999999996,2.6943999999999995,1,36,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,39.903999999999996,3.9903999999999997,288,128,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,42.976,4.2976,288,128,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,55.263999999999996,5.5264,1,64,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,54.175999999999995,5.417599999999999,1,64,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,40.480999999999995,4.0481,216,128,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,36.865,3.6865,216,128,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,46.784,4.6784,900,128,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,47.583999999999996,4.7584,900,128,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,27.231999999999992,2.7231999999999994,1,100,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.191999999999993,2.8191999999999995,1,100,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,53.568000000000005,5.356800000000001,1,50,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,54.91199999999999,5.491199999999999,1,50,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,27.391999999999996,2.7391999999999994,1,1,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.463999999999995,3.0463999999999993,1,1,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,36.76800000000001,3.676800000000001,40,128,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,37.664,3.7664,40,128,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,32.32,3.232,15,128,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,31.615999999999996,3.1615999999999995,15,128,22
+S,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,27.039999999999996,2.7039999999999997,1,24,18
+S,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.095999999999993,2.809599999999999,1,24,22
+S,0,CPU_NVTX_elapsed,,,forward,,,,1456.9045,,,
+S,0,CPU_NVTX_elapsed,,,backward,,,,3148.2832,,,
+S,0,CPU_NVTX_elapsed,,,update,,,,417.8106,,,
+S,0,CPU_NVTX_elapsed,,,dweight,,,,848.7137,,,
+S,0,CPU_NVTX_elapsed,,,dinput,,,,608.6779,,,
+S,0,CUDA_API_CPU_elapsed,,,cuProfilerStart,1,,,1.3951,,,
+S,0,CUDA_API_CPU_elapsed,,,cudaEventQuery_v3020,40,,,10.817200000000001,,,
+S,0,CUDA_API_CPU_elapsed,,,cudaEventDestroy_v3020,20,,,3.3836000000000004,,,
+S,0,CUDA_API_CPU_elapsed,,,cudaStreamIsCapturing_v10000,180,,,10.159899999999997,,,
+S,0,CUDA_API_CPU_elapsed,,,cudaMemcpyAsync_v3020,20,,,23.460999999999995,,,
+S,0,CUDA_API_CPU_elapsed,,,cudaEventCreateWithFlags_v3020,20,,,4.220000000000001,,,
+S,0,CUDA_API_CPU_elapsed,,,cudaEventRecord_v3020,60,,,34.114399999999996,,,
+S,0,CUDA_API_CPU_elapsed,,,cudaLaunchKernel_v7000,450,,,228.81139999999988,,,
+S,0,CUDA_API_CPU_elapsed,,,cuLaunchKernel,1020,,,414.8523000000002,,,
+S,0,CUDA_API_CPU_elapsed,,,cuStreamGetCaptureInfo_v2,240,,,2.7819999999999974,,,
+S,0,CUDA_API_CPU_elapsed,,,cudaStreamSynchronize_v3020,1,,,0.8119999999999999,,,
+DS,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,310.273,31.027300000000004,3561,256,23
+DS,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,41.568,4.1568,15,128,16
+DS,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,310.048,31.0048,2,16,32
+DS,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,103.937,10.393699999999999,1140,256,24
+DS,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,69.248,6.9248,2279,128,18
+DS,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,502.209,50.2209,6169,256,23
+DS,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,49.248,4.924799999999999,169,128,16
+DS,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",20,2.0,1429.7649999999999,142.9765,3,16,32
+DS,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,77.28099999999999,7.7280999999999995,371,256,24
+DS,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,47.583999999999996,4.7584,741,128,18
+DS,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,158.68800000000002,15.868800000000002,1547,256,23
+DS,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,52.96,5.296,338,128,16
+DS,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,52.928,5.2928,83,256,24
+DS,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.952,4.1952,165,128,18
+DS,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,78.78399999999999,7.878399999999999,405,256,23
+DS,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,49.92,4.992,216,128,16
+DS,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",30,3.0,782.8500000000001,78.28500000000001,4,16,32
+DS,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,51.488,5.1488,60,256,24
+DS,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.728,4.1728000000000005,120,128,18
+DS,0,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,60.768,6.0768,162,256,23
+DS,0,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,54.049,5.4049,288,128,16
+DS,0,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,47.775999999999996,4.7776,18,256,24
+DS,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,38.528000000000006,3.8528000000000007,36,128,18
+DS,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,708.226,70.8226,7,16,32
+DS,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,46.047999999999995,4.604799999999999,4,128,16
+DS,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,35.424,3.5423999999999998,4,128,18
+DS,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,35.68,3.568,2,128,16
+DS,0,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,28.511999999999993,2.8511999999999995,2,128,18
+DS,0,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,55.583999999999996,5.5584,1,16,32
+DS,0,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,35.297000000000004,3.5297000000000005,1,4,16
+DS,0,GPU_kernel,forward,forward,cupy_tanh__float32_float32,10,1.0,32.224,3.2223999999999995,1,4,21
+DS,0,GPU_kernel,forward,forward,cupy_subtract__float32_float32_float32,10,1.0,31.647999999999996,3.1647999999999996,1,4,22
+DS,0,GPU_kernel,forward,forward,cupy_square__float32_float32,10,1.0,31.583999999999996,3.1583999999999994,1,4,18
+DS,0,GPU_kernel,forward,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,36.736000000000004,3.6736000000000004,1,256,32
+DS,0,GPU_kernel,forward,forward,cupy_true_divide__float32_float_float32,10,1.0,32.672,3.2672,1,1,16
+DS,0,GPU_kernel,backward,backward,cupy_fill,30,3.0,75.87300000000002,7.587300000000002,1,1,16
+DS,0,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,30.367999999999995,3.0367999999999995,1,4,22
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,68.64000000000001,6.864000000000002,1,4,16
+DS,0,GPU_kernel,backward,backward,cupy_negative__float32_float32,10,1.0,29.823999999999995,2.9823999999999993,1,4,18
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,61.76000000000001,6.176000000000001,1,4,22
+DS,0,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,34.624,3.4624,1,4,16
+DS,0,GPU_kernel,backward,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,31.935999999999996,3.1935999999999996,1,256,32
+DS,0,GPU_kernel,backward,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,33.953,3.3953,2,256,20
+DS,0,GPU_kernel,backward,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,50.464,5.0464,7,8,32
+DS,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,28.991999999999994,2.8991999999999996,2,128,18
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,30.143999999999995,3.0143999999999993,2,128,24
+DS,0,GPU_kernel,backward,backward,cupy_sum,20,2.0,74.912,7.491200000000001,1,512,29
+DS,0,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,71.61600000000001,7.161600000000002,13,128,40
+DS,0,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,72.544,7.2543999999999995,2,256,57
+DS,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.032000000000004,3.6032,4,128,18
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,38.78399999999999,3.878399999999999,4,128,24
+DS,0,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,83.392,8.3392,144,128,40
+DS,0,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,83.96799999999999,8.396799999999999,4,256,57
+DS,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.608000000000004,3.6608000000000005,36,128,18
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,40.128,4.0128,36,128,24
+DS,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,42.623999999999995,4.2623999999999995,36,128,16
+DS,0,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,110.04800000000002,11.004800000000001,3,128,86
+DS,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,74.20800000000001,7.420800000000002,60,256,38
+DS,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,60.352000000000004,6.035200000000001,162,256,23
+DS,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,40.096000000000004,4.009600000000001,36,128,16
+DS,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,122.94399999999997,12.294399999999998,18,128,86
+DS,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,62.208,6.2208,16,512,31
+DS,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,40.992000000000004,4.099200000000001,120,128,18
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,44.51200000000001,4.451200000000001,120,128,24
+DS,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.376,4.537599999999999,120,128,16
+DS,0,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,125.18500000000002,12.518500000000001,8,128,86
+DS,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,111.52,11.152,83,256,38
+DS,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,79.232,7.9232,405,256,23
+DS,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,43.328,4.332800000000001,120,128,16
+DS,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,127.552,12.7552,14,128,86
+DS,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,50.785,5.0785,14,32,32
+DS,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,64.48100000000001,6.448100000000001,32,512,31
+DS,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.568,4.1568,165,128,18
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,44.992000000000004,4.4992,165,128,24
+DS,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.6,4.5600000000000005,165,128,16
+DS,0,GPU_kernel,backward,dinput,ampere_sgemm_32x128_nt,10,1.0,168.28900000000002,16.8289,14,256,57
+DS,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,157.79399999999998,15.779399999999999,371,256,38
+DS,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,159.07199999999997,15.907199999999998,1547,256,23
+DS,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,43.968,4.396800000000001,165,128,16
+DS,0,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nn,10,1.0,177.089,17.7089,15,256,82
+DS,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,67.52000000000001,6.752000000000001,29,32,32
+DS,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,68.80000000000001,6.880000000000001,48,512,31
+DS,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,47.455999999999996,4.7456,741,128,18
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,50.336,5.0336,741,128,24
+DS,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,52.032000000000004,5.203200000000001,741,128,16
+DS,0,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,254.91199999999998,25.4912,21,256,57
+DS,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,315.04200000000003,31.504200000000004,1140,256,38
+DS,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,503.10699999999997,50.3107,6169,256,23
+DS,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,50.592,5.0592,741,128,16
+DS,0,GPU_kernel,backward,dweight,ampere_sgemm_128x32_sliced1x4_nn,10,1.0,357.95200000000006,35.79520000000001,5,256,134
+DS,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,61.12,6.112,19,32,32
+DS,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,114.752,11.4752,36,512,31
+DS,0,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,67.616,6.7616,2279,128,18
+DS,0,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,71.04,7.104000000000001,2279,128,24
+DS,0,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,72.96000000000001,7.296000000000001,2279,128,16
+DS,0,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,162.88099999999997,16.288099999999996,95,256,57
+DS,0,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,200.224,20.022399999999998,619,256,38
+DS,0,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,310.65799999999996,31.065799999999996,3561,256,23
+DS,0,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,71.23200000000001,7.1232000000000015,2279,128,16
+DS,0,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,201.952,20.1952,3,128,86
+DS,0,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,91.713,9.171299999999999,3,32,32
+DS,0,GPU_kernel,backward,backward,cupy_sum,10,1.0,277.952,27.7952,24,512,31
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,44.64000000000001,4.464,338,128,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,45.28,4.5280000000000005,338,128,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,30.175999999999995,3.0175999999999994,1,48,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.959999999999994,2.8959999999999995,1,48,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,41.599999999999994,4.159999999999999,169,128,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,42.112,4.2112,169,128,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.504999999999995,2.9504999999999995,1,36,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.927999999999994,2.8927999999999994,1,36,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,44.416,4.441599999999999,288,128,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,43.64800000000001,4.364800000000001,288,128,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,60.545,6.0545,1,64,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,57.984,5.7984,1,64,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,42.688,4.268800000000001,216,128,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,43.808,4.3808,216,128,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,50.78399999999999,5.078399999999999,900,128,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,50.368,5.0368,900,128,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.119999999999994,2.9119999999999995,1,100,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,29.792999999999996,2.9792999999999994,1,100,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,56.961000000000006,5.6961,1,50,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,57.663999999999994,5.766399999999999,1,50,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.759999999999994,2.9759999999999995,1,1,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.655999999999995,3.0655999999999994,1,1,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,40.672,4.0672,40,128,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,37.44,3.7439999999999998,40,128,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,37.504000000000005,3.7504000000000004,15,128,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,36.288000000000004,3.6288000000000005,15,128,22
+DS,0,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,30.335999999999995,3.0335999999999994,1,24,18
+DS,0,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.015999999999995,3.0015999999999994,1,24,22
+DS,0,CPU_NVTX_elapsed,,,forward,,,,1438.8914,,,
+DS,0,CPU_NVTX_elapsed,,,backward,,,,3001.0964,,,
+DS,0,CPU_NVTX_elapsed,,,update,,,,407.9639,,,
+DS,0,CPU_NVTX_elapsed,,,dweight,,,,677.5848,,,
+DS,0,CPU_NVTX_elapsed,,,dinput,,,,616.2797,,,
+DS,0,CUDA_API_CPU_elapsed,,,cuProfilerStart,1,,,1.1054,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaEventQuery_v3020,41,,,8.7283,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaEventDestroy_v3020,21,,,2.607,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaStreamIsCapturing_v10000,180,,,10.323799999999999,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaMemcpyAsync_v3020,20,,,20.9183,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaEventCreateWithFlags_v3020,20,,,4.2455,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaEventRecord_v3020,60,,,31.97739999999998,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaLaunchKernel_v7000,500,,,239.8197999999999,,,
+DS,0,CUDA_API_CPU_elapsed,,,cuLaunchKernel,920,,,343.9915000000002,,,
+DS,0,CUDA_API_CPU_elapsed,,,cuStreamGetCaptureInfo_v2,240,,,3.1820000000000013,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaMalloc_v3020,1,,,20.2171,,,
+DS,0,CUDA_API_CPU_elapsed,,,cudaStreamSynchronize_v3020,1,,,0.6418,,,
+B0,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,311.712,31.1712,3561,256,23
+B0,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,41.696,4.1696,15,128,16
+B0,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,310.592,31.059199999999997,2,16,32
+B0,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,103.872,10.3872,1140,256,24
+B0,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,69.441,6.944100000000001,2279,128,18
+B0,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,502.27199999999993,50.227199999999996,6169,256,23
+B0,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,49.023999999999994,4.902399999999999,169,128,16
+B0,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",20,2.0,1429.7,142.97,3,16,32
+B0,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,79.19999999999999,7.919999999999999,371,256,24
+B0,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,47.61599999999999,4.7616,741,128,18
+B0,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,158.97599999999997,15.897599999999997,1547,256,23
+B0,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,52.225,5.2225,338,128,16
+B0,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,52.609,5.2609,83,256,24
+B0,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,42.016000000000005,4.201600000000001,165,128,18
+B0,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,79.136,7.9136,405,256,23
+B0,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,50.848000000000006,5.0848,216,128,16
+B0,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",30,3.0,782.2120000000001,78.22120000000001,4,16,32
+B0,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,51.744,5.1744,60,256,24
+B0,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.856,4.1856,120,128,18
+B0,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,61.024,6.1024,162,256,23
+B0,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,53.952999999999996,5.3953,288,128,16
+B0,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,47.711999999999996,4.771199999999999,18,256,24
+B0,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,38.56,3.8560000000000003,36,128,18
+B0,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,731.042,73.1042,7,16,32
+B0,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,46.07999999999999,4.607999999999999,4,128,16
+B0,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,35.168,3.5168,4,128,18
+B0,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,35.168,3.5168,2,128,16
+B0,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,28.223999999999993,2.822399999999999,2,128,18
+B0,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,55.520999999999994,5.552099999999999,1,16,32
+B0,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,36.256,3.6256,1,4,16
+B0,1,GPU_kernel,forward,forward,cupy_tanh__float32_float32,10,1.0,33.024,3.3024,1,4,21
+B0,1,GPU_kernel,forward,forward,cupy_subtract__float32_float32_float32,10,1.0,32.8,3.28,1,4,22
+B0,1,GPU_kernel,forward,forward,cupy_square__float32_float32,10,1.0,32.192,3.2192,1,4,18
+B0,1,GPU_kernel,forward,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,37.12,3.7119999999999997,1,256,32
+B0,1,GPU_kernel,forward,forward,cupy_true_divide__float32_float_float32,10,1.0,32.512,3.2512,1,1,16
+B0,1,GPU_kernel,backward,backward,cupy_fill,30,3.0,75.936,7.5936,1,1,16
+B0,1,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,30.431999999999995,3.0431999999999997,1,4,22
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,69.536,6.9536,1,4,16
+B0,1,GPU_kernel,backward,backward,cupy_negative__float32_float32,10,1.0,30.015999999999995,3.0015999999999994,1,4,18
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,61.76000000000001,6.176000000000001,1,4,22
+B0,1,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,34.432,3.4432,1,4,16
+B0,1,GPU_kernel,backward,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,32.064,3.2064,1,256,32
+B0,1,GPU_kernel,backward,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,33.632,3.3632,2,256,20
+B0,1,GPU_kernel,backward,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,51.392,5.139200000000001,7,8,32
+B0,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,28.447999999999997,2.8447999999999998,2,128,18
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,29.983999999999995,2.9983999999999993,2,128,24
+B0,1,GPU_kernel,backward,backward,cupy_sum,20,2.0,73.50400000000002,7.350400000000002,1,512,29
+B0,1,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,73.824,7.3824,13,128,40
+B0,1,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,72.608,7.260800000000001,2,256,57
+B0,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.19200000000001,3.6192000000000006,4,128,18
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,40.544000000000004,4.0544,4,128,24
+B0,1,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,84.928,8.492799999999999,144,128,40
+B0,1,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,84.0,8.4,4,256,57
+B0,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.800000000000004,3.6800000000000006,36,128,18
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,39.744,3.9744,36,128,24
+B0,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,42.111999999999995,4.2112,36,128,16
+B0,1,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,109.952,10.9952,3,128,86
+B0,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,74.11200000000001,7.411200000000001,60,256,38
+B0,1,GPU_kernel,backward,dweight,im2col,10,1.0,61.63199999999999,6.163199999999999,324,128,32
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,42.112,4.2112,36,128,16
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,54.239999999999995,5.4239999999999995,324,128,16
+B0,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,123.23200000000001,12.323200000000002,18,128,86
+B0,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,60.352000000000004,6.035200000000001,16,512,31
+B0,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,40.96,4.096,120,128,18
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,44.32000000000001,4.432,120,128,24
+B0,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.024,4.5024,120,128,16
+B0,1,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,123.96799999999999,12.396799999999999,8,128,86
+B0,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,109.184,10.9184,83,256,38
+B0,1,GPU_kernel,backward,dweight,im2col,10,1.0,73.60000000000001,7.360000000000001,810,128,32
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,47.93599999999999,4.7936,120,128,16
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,74.208,7.4208,810,128,16
+B0,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,128.096,12.8096,14,128,86
+B0,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,53.472,5.3472,14,32,32
+B0,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,63.00800000000001,6.300800000000001,32,512,31
+B0,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.696000000000005,4.169600000000001,165,128,18
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,44.83200000000001,4.483200000000001,165,128,24
+B0,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.568,4.5568,165,128,16
+B0,1,GPU_kernel,backward,dinput,ampere_sgemm_32x128_nt,10,1.0,167.936,16.7936,14,256,57
+B0,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,158.88000000000002,15.888000000000002,371,256,38
+B0,1,GPU_kernel,backward,dweight,im2col,10,1.0,155.90599999999998,15.590599999999998,3094,128,32
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,49.919999999999995,4.991999999999999,165,128,16
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,132.384,13.238399999999999,3094,128,16
+B0,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,203.84,20.384,29,128,86
+B0,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,55.424,5.5424,29,32,32
+B0,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,67.264,6.7264,48,512,31
+B0,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,47.327999999999996,4.732799999999999,741,128,18
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,50.272,5.0272,741,128,24
+B0,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,52.160000000000004,5.216,741,128,16
+B0,1,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,254.592,25.459200000000003,21,256,57
+B0,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,315.52000000000004,31.552000000000003,1140,256,38
+B0,1,GPU_kernel,backward,dweight,im2col,10,1.0,483.235,48.3235,12338,128,32
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,59.775999999999996,5.9776,741,128,16
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,371.10499999999996,37.110499999999995,12338,128,16
+B0,1,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,333.21700000000004,33.32170000000001,10,256,82
+B0,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,57.632,5.763199999999999,19,32,32
+B0,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,113.12,11.312000000000001,36,512,31
+B0,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,70.72000000000001,7.072000000000001,2279,128,18
+B0,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,71.64800000000001,7.164800000000001,2279,128,24
+B0,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,72.41600000000001,7.241600000000001,2279,128,16
+B0,1,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,163.328,16.3328,95,256,57
+B0,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,201.08899999999997,20.1089,619,256,38
+B0,1,GPU_kernel,backward,dweight,im2col,10,1.0,299.584,29.9584,7121,128,32
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,78.464,7.8464,2279,128,16
+B0,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,160.64100000000002,16.064100000000003,7121,128,16
+B0,1,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,208.962,20.8962,2,256,82
+B0,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,95.296,9.5296,3,32,32
+B0,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,271.2,27.119999999999997,24,512,31
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,47.808,4.7808,338,128,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,48.064,4.8064,338,128,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,28.543999999999997,2.8543999999999996,1,48,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.399999999999995,3.0399999999999996,1,48,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,41.888000000000005,4.1888000000000005,169,128,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,47.03999999999999,4.703999999999999,169,128,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,28.927999999999997,2.8928,1,36,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.304,3.0303999999999998,1,36,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,45.984,4.5984,288,128,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,45.312,4.5312,288,128,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,59.616,5.9616,1,64,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,61.152,6.1152,1,64,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,44.57599999999999,4.457599999999999,216,128,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,47.455999999999996,4.7456,216,128,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,52.288,5.2288,900,128,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,55.327999999999996,5.5328,900,128,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,30.175999999999995,3.0175999999999994,1,100,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.719999999999995,3.0719999999999996,1,100,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,61.40800000000001,6.1408000000000005,1,50,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,61.15200000000001,6.115200000000001,1,50,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,31.199999999999996,3.1199999999999997,1,1,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,34.72,3.472,1,1,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,41.056,4.1056,40,128,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,42.368,4.236800000000001,40,128,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,37.568,3.7567999999999997,15,128,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,36.256,3.6256,15,128,22
+B0,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.887999999999995,2.9887999999999995,1,24,18
+B0,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,31.967999999999996,3.1967999999999996,1,24,22
+B0,1,CPU_NVTX_elapsed,,,forward,,,,1367.4437,,,
+B0,1,CPU_NVTX_elapsed,,,backward,,,,3035.9899,,,
+B0,1,CPU_NVTX_elapsed,,,update,,,,399.1609,,,
+B0,1,CPU_NVTX_elapsed,,,dweight,,,,821.391,,,
+B0,1,CPU_NVTX_elapsed,,,dinput,,,,581.9216,,,
+B0,1,CUDA_API_CPU_elapsed,,,cuProfilerStart,1,,,1.1581,,,
+B0,1,CUDA_API_CPU_elapsed,,,cudaEventQuery_v3020,41,,,8.480700000000002,,,
+B0,1,CUDA_API_CPU_elapsed,,,cudaEventDestroy_v3020,21,,,2.1005,,,
+B0,1,CUDA_API_CPU_elapsed,,,cudaStreamIsCapturing_v10000,180,,,8.5837,,,
+B0,1,CUDA_API_CPU_elapsed,,,cudaMemcpyAsync_v3020,20,,,18.7662,,,
+B0,1,CUDA_API_CPU_elapsed,,,cudaEventCreateWithFlags_v3020,20,,,3.749499999999999,,,
+B0,1,CUDA_API_CPU_elapsed,,,cudaEventRecord_v3020,60,,,28.875,,,
+B0,1,CUDA_API_CPU_elapsed,,,cudaLaunchKernel_v7000,450,,,199.2976999999999,,,
+B0,1,CUDA_API_CPU_elapsed,,,cuLaunchKernel,1020,,,369.62330000000037,,,
+B0,1,CUDA_API_CPU_elapsed,,,cuStreamGetCaptureInfo_v2,240,,,2.6483000000000003,,,
+B0,1,CUDA_API_CPU_elapsed,,,cudaStreamSynchronize_v3020,1,,,0.6369,,,
+D,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,269.505,26.950499999999998,3561,256,23
+D,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,36.353,3.6353,15,128,16
+D,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,267.42400000000004,26.742400000000004,2,16,32
+D,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,90.59199999999998,9.059199999999999,1140,256,24
+D,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,60.89600000000001,6.089600000000001,2279,128,18
+D,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,434.401,43.4401,6169,256,23
+D,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,42.528000000000006,4.252800000000001,169,128,16
+D,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",20,2.0,1239.9399999999998,123.99399999999999,3,16,32
+D,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,67.13600000000001,6.713600000000001,371,256,24
+D,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.408,4.1408000000000005,741,128,18
+D,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,137.728,13.7728,1547,256,23
+D,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,45.952,4.5952,338,128,16
+D,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,45.888,4.5888,83,256,24
+D,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,36.608000000000004,3.6608000000000005,165,128,18
+D,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,68.832,6.8831999999999995,405,256,23
+D,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,43.64800000000001,4.364800000000001,216,128,16
+D,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",30,3.0,678.0190000000001,67.80190000000002,4,16,32
+D,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,44.769000000000005,4.4769000000000005,60,256,24
+D,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,36.224000000000004,3.6224000000000003,120,128,18
+D,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,53.12,5.311999999999999,162,256,23
+D,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,46.943999999999996,4.6944,288,128,16
+D,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,41.632000000000005,4.163200000000001,18,256,24
+D,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,33.472,3.3472,36,128,18
+D,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,616.48,61.648,7,16,32
+D,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,39.968,3.9968000000000004,4,128,16
+D,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,30.847999999999995,3.0847999999999995,4,128,18
+D,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,30.591999999999995,3.0591999999999997,2,128,16
+D,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,24.639999999999997,2.4639999999999995,2,128,18
+D,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,48.224,4.8224,1,16,32
+D,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,32.001,3.2001,1,4,16
+D,1,GPU_kernel,forward,forward,cupy_tanh__float32_float32,10,1.0,28.447999999999993,2.8447999999999993,1,4,21
+D,1,GPU_kernel,forward,forward,cupy_subtract__float32_float32_float32,10,1.0,28.543999999999993,2.854399999999999,1,4,22
+D,1,GPU_kernel,forward,forward,cupy_square__float32_float32,10,1.0,26.879999999999992,2.6879999999999993,1,4,18
+D,1,GPU_kernel,forward,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,30.783999999999995,3.0783999999999994,1,256,32
+D,1,GPU_kernel,forward,forward,cupy_true_divide__float32_float_float32,10,1.0,27.295999999999992,2.729599999999999,1,1,16
+D,1,GPU_kernel,backward,backward,cupy_fill,30,3.0,66.048,6.6048,1,1,16
+D,1,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,26.624,2.6624,1,4,22
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,60.09600000000002,6.009600000000002,1,4,16
+D,1,GPU_kernel,backward,backward,cupy_negative__float32_float32,10,1.0,26.272,2.6271999999999998,1,4,18
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,53.471999999999994,5.347199999999999,1,4,22
+D,1,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,30.047999999999995,3.0047999999999995,1,4,16
+D,1,GPU_kernel,backward,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,27.583999999999993,2.758399999999999,1,256,32
+D,1,GPU_kernel,backward,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,29.599999999999994,2.9599999999999995,2,256,20
+D,1,GPU_kernel,backward,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,44.00099999999999,4.400099999999999,7,8,32
+D,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,24.703999999999997,2.4703999999999997,2,128,18
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,27.007999999999996,2.7007999999999996,2,128,24
+D,1,GPU_kernel,backward,backward,cupy_sum,20,2.0,64.89600000000002,6.489600000000001,1,512,29
+D,1,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,63.84,6.384,13,128,40
+D,1,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,62.848000000000006,6.284800000000001,2,256,57
+D,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,31.327999999999996,3.1327999999999996,4,128,18
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,32.928,3.2927999999999997,4,128,24
+D,1,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,73.34400000000001,7.3344000000000005,144,128,40
+D,1,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,72.96000000000001,7.296000000000001,4,256,57
+D,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,31.743999999999996,3.1743999999999994,36,128,18
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,34.656,3.4656,36,128,24
+D,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,36.832,3.6832000000000003,36,128,16
+D,1,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,95.232,9.5232,3,128,86
+D,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,64.224,6.4224000000000006,60,256,38
+D,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,52.64,5.264,162,256,23
+D,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,34.784,3.4783999999999997,36,128,16
+D,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,106.561,10.6561,18,128,86
+D,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,54.016999999999996,5.4017,16,512,31
+D,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,35.648,3.5648000000000004,120,128,18
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,38.848,3.8848,120,128,24
+D,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,39.488,3.9488,120,128,16
+D,1,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,108.16100000000002,10.816100000000002,8,128,86
+D,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,96.79999999999998,9.679999999999998,83,256,38
+D,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,69.28,6.928,405,256,23
+D,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,37.727999999999994,3.7727999999999993,120,128,16
+D,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,110.68799999999999,11.0688,14,128,86
+D,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,44.512,4.4512,14,32,32
+D,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,56.0,5.6,32,512,31
+D,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.097,3.6097,165,128,18
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,39.2,3.9200000000000004,165,128,24
+D,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,39.519999999999996,3.9519999999999995,165,128,16
+D,1,GPU_kernel,backward,dinput,ampere_sgemm_32x128_nt,10,1.0,145.696,14.5696,14,256,57
+D,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,137.056,13.7056,371,256,38
+D,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,138.432,13.8432,1547,256,23
+D,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,38.336,3.8335999999999997,165,128,16
+D,1,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nn,10,1.0,153.60000000000002,15.360000000000003,15,256,82
+D,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,59.263999999999996,5.926399999999999,29,32,32
+D,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,59.712,5.9712000000000005,48,512,31
+D,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.056,4.1056,741,128,18
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,43.77600000000001,4.377600000000001,741,128,24
+D,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.28,4.5280000000000005,741,128,16
+D,1,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,220.352,22.0352,21,256,57
+D,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,273.28,27.327999999999996,1140,256,38
+D,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,435.041,43.5041,6169,256,23
+D,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,44.032000000000004,4.4032,741,128,16
+D,1,GPU_kernel,backward,dweight,ampere_sgemm_128x32_sliced1x4_nn,10,1.0,309.761,30.976100000000002,5,256,134
+D,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,53.184,5.3184,19,32,32
+D,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,100.15999999999998,10.015999999999998,36,512,31
+D,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,59.04,5.904,2279,128,18
+D,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,62.145,6.2145,2279,128,24
+D,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,63.68000000000001,6.368,2279,128,16
+D,1,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,141.216,14.1216,95,256,57
+D,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,173.313,17.3313,619,256,38
+D,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,268.54400000000004,26.854400000000005,3561,256,23
+D,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,62.208,6.2208,2279,128,16
+D,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,176.12800000000001,17.6128,3,128,86
+D,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,81.72800000000001,8.1728,3,32,32
+D,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,242.784,24.278399999999998,24,512,31
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,38.816,3.8816,338,128,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,39.552,3.9552,338,128,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.823999999999998,2.5824,1,48,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,24.767999999999997,2.4768,1,48,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,36.44800000000001,3.644800000000001,169,128,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,36.83200000000001,3.6832000000000007,169,128,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.695999999999998,2.5696,1,36,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,24.959999999999997,2.4959999999999996,1,36,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,40.128,4.0128,288,128,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,37.856,3.7856,288,128,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,50.496,5.0496,1,64,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,49.952,4.9952,1,64,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,37.504000000000005,3.7504000000000004,216,128,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,39.616,3.9616,216,128,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,44.384,4.4384,900,128,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,44.57599999999999,4.457599999999999,900,128,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.791999999999998,2.5791999999999997,1,100,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,26.336,2.6336,1,100,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,50.27199999999999,5.027199999999999,1,50,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,49.728,4.9728,1,50,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.343999999999998,2.5343999999999998,1,1,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,26.368,2.6368,1,1,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,35.68,3.568,40,128,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,32.672,3.2672,40,128,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,32.704,3.2704,15,128,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,31.743999999999996,3.1743999999999994,15,128,22
+D,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,26.015999999999995,2.6015999999999995,1,24,18
+D,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,26.272,2.6271999999999998,1,24,22
+D,1,CPU_NVTX_elapsed,,,forward,,,,1453.5544,,,
+D,1,CPU_NVTX_elapsed,,,backward,,,,2999.0376,,,
+D,1,CPU_NVTX_elapsed,,,update,,,,406.1857,,,
+D,1,CPU_NVTX_elapsed,,,dweight,,,,686.9532,,,
+D,1,CPU_NVTX_elapsed,,,dinput,,,,612.0063,,,
+D,1,CUDA_API_CPU_elapsed,,,cuProfilerStart,1,,,1.2644,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaEventQuery_v3020,39,,,10.072099999999999,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaEventDestroy_v3020,20,,,3.1010999999999997,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaStreamIsCapturing_v10000,180,,,10.501100000000003,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaMemcpyAsync_v3020,20,,,21.426700000000004,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaEventCreateWithFlags_v3020,20,,,3.9186,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaEventRecord_v3020,60,,,35.18999999999999,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaLaunchKernel_v7000,500,,,241.14469999999997,,,
+D,1,CUDA_API_CPU_elapsed,,,cuLaunchKernel,920,,,355.49139999999977,,,
+D,1,CUDA_API_CPU_elapsed,,,cuStreamGetCaptureInfo_v2,240,,,2.814599999999997,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaMalloc_v3020,2,,,20.8583,,,
+D,1,CUDA_API_CPU_elapsed,,,cudaStreamSynchronize_v3020,1,,,0.6845,,,
+S,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,269.857,26.9857,3561,256,23
+S,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,36.768,3.6768,15,128,16
+S,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,267.93600000000004,26.793600000000005,2,16,32
+S,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,90.816,9.0816,1140,256,24
+S,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,60.704,6.0704,2279,128,18
+S,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,434.33799999999997,43.4338,6169,256,23
+S,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,42.688,4.268800000000001,169,128,16
+S,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",20,2.0,1239.104,123.91040000000001,3,16,32
+S,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,67.392,6.739199999999999,371,256,24
+S,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.153000000000006,4.1153,741,128,18
+S,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,137.888,13.7888,1547,256,23
+S,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,46.241,4.6241,338,128,16
+S,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,45.76,4.576,83,256,24
+S,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,36.608000000000004,3.6608000000000005,165,128,18
+S,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,68.608,6.8608,405,256,23
+S,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,44.28800000000001,4.428800000000001,216,128,16
+S,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",30,3.0,681.4730000000002,68.14730000000002,4,16,32
+S,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,44.70399999999999,4.4704,60,256,24
+S,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,36.416000000000004,3.6416000000000004,120,128,18
+S,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,53.248000000000005,5.324800000000001,162,256,23
+S,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,45.215999999999994,4.521599999999999,288,128,16
+S,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,41.344,4.1344,18,256,24
+S,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,33.952,3.3952,36,128,18
+S,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,623.0079999999999,62.300799999999995,7,16,32
+S,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,39.968,3.9968000000000004,4,128,16
+S,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,30.783999999999995,3.0783999999999994,4,128,18
+S,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,31.263999999999996,3.1263999999999994,2,128,16
+S,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,24.703999999999997,2.4703999999999997,2,128,18
+S,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,48.16,4.816,1,16,32
+S,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,30.687999999999995,3.0687999999999995,1,4,16
+S,1,GPU_kernel,forward,forward,cupy_tanh__float32_float32,10,1.0,29.567999999999994,2.9567999999999994,1,4,21
+S,1,GPU_kernel,forward,forward,cupy_subtract__float32_float32_float32,10,1.0,28.319999999999997,2.832,1,4,22
+S,1,GPU_kernel,forward,forward,cupy_square__float32_float32,10,1.0,27.743999999999996,2.7743999999999995,1,4,18
+S,1,GPU_kernel,forward,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,31.583999999999996,3.1583999999999994,1,256,32
+S,1,GPU_kernel,forward,forward,cupy_true_divide__float32_float_float32,10,1.0,28.799999999999997,2.88,1,1,16
+S,1,GPU_kernel,backward,backward,cupy_fill,30,3.0,65.824,6.5824,1,1,16
+S,1,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,26.592,2.6592,1,4,22
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,60.0,6.0,1,4,16
+S,1,GPU_kernel,backward,backward,cupy_negative__float32_float32,10,1.0,26.144,2.6144,1,4,18
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,53.664,5.3664000000000005,1,4,22
+S,1,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,30.016999999999996,3.0016999999999996,1,4,16
+S,1,GPU_kernel,backward,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,27.615999999999996,2.7615999999999996,1,256,32
+S,1,GPU_kernel,backward,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,29.439999999999994,2.9439999999999995,2,256,20
+S,1,GPU_kernel,backward,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,44.256,4.4256,7,8,32
+S,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,25.151999999999997,2.5151999999999997,2,128,18
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,27.295999999999996,2.7295999999999996,2,128,24
+S,1,GPU_kernel,backward,backward,cupy_sum,20,2.0,63.48800000000001,6.348800000000001,1,512,29
+S,1,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,65.34400000000001,6.534400000000001,13,128,40
+S,1,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,62.848000000000006,6.284800000000001,2,256,57
+S,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,31.263999999999996,3.1263999999999994,4,128,18
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,34.688,3.4688000000000003,4,128,24
+S,1,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,74.208,7.4208,144,128,40
+S,1,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,73.12,7.312,4,256,57
+S,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,32.224,3.2223999999999995,36,128,18
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,34.56,3.4560000000000004,36,128,24
+S,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,37.152,3.7152000000000003,36,128,16
+S,1,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,95.10399999999998,9.510399999999999,3,128,86
+S,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,64.512,6.4512,60,256,38
+S,1,GPU_kernel,backward,dweight,im2col,10,1.0,53.727999999999994,5.3728,324,128,32
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,36.928000000000004,3.6928000000000005,36,128,16
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,48.256,4.8256,324,128,16
+S,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,107.104,10.7104,18,128,86
+S,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,52.417,5.2417,16,512,31
+S,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,35.584,3.5584000000000002,120,128,18
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,38.816,3.8816,120,128,24
+S,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,39.104,3.9104,120,128,16
+S,1,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,107.392,10.7392,8,128,86
+S,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,94.78399999999999,9.478399999999999,83,256,38
+S,1,GPU_kernel,backward,dweight,im2col,10,1.0,64.0,6.4,810,128,32
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,42.592,4.2592,120,128,16
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,65.47200000000001,6.547200000000001,810,128,16
+S,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,111.42499999999998,11.142499999999998,14,128,86
+S,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,46.175999999999995,4.6175999999999995,14,32,32
+S,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,54.752,5.4752,32,512,31
+S,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.096000000000004,3.6096000000000004,165,128,18
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,39.007999999999996,3.9007999999999994,165,128,24
+S,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,39.68000000000001,3.968000000000001,165,128,16
+S,1,GPU_kernel,backward,dinput,ampere_sgemm_32x128_nt,10,1.0,146.592,14.659200000000002,14,256,57
+S,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,138.07999999999998,13.807999999999998,371,256,38
+S,1,GPU_kernel,backward,dweight,im2col,10,1.0,135.232,13.5232,3094,128,32
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,44.128,4.4128,165,128,16
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,117.05599999999998,11.705599999999999,3094,128,16
+S,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,177.31300000000005,17.731300000000005,29,128,86
+S,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,48.64,4.864,29,32,32
+S,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,58.4,5.84,48,512,31
+S,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.120000000000005,4.112,741,128,18
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,43.80800000000001,4.380800000000001,741,128,24
+S,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.568,4.5568,741,128,16
+S,1,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,220.0,22.0,21,256,57
+S,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,274.27299999999997,27.427299999999995,1140,256,38
+S,1,GPU_kernel,backward,dweight,im2col,10,1.0,418.178,41.8178,12338,128,32
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,51.967999999999996,5.1968,741,128,16
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,324.193,32.4193,12338,128,16
+S,1,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,288.513,28.8513,10,256,82
+S,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,50.592,5.0592,19,32,32
+S,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,98.49600000000001,9.8496,36,512,31
+S,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,61.343999999999994,6.134399999999999,2279,128,18
+S,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,62.368,6.236800000000001,2279,128,24
+S,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,63.29600000000001,6.329600000000001,2279,128,16
+S,1,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,141.44,14.144,95,256,57
+S,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,175.168,17.5168,619,256,38
+S,1,GPU_kernel,backward,dweight,im2col,10,1.0,259.392,25.9392,7121,128,32
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,68.896,6.8896,2279,128,16
+S,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,139.808,13.980799999999999,7121,128,16
+S,1,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,181.12,18.112000000000002,2,256,82
+S,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,83.936,8.393600000000001,3,32,32
+S,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,236.481,23.6481,24,512,31
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,41.504,4.150399999999999,338,128,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,42.144999999999996,4.214499999999999,338,128,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.567999999999998,2.5568,1,48,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,26.879999999999995,2.6879999999999997,1,48,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,36.672000000000004,3.6672000000000002,169,128,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,41.44,4.144,169,128,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,25.695999999999998,2.5696,1,36,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.831999999999994,2.8831999999999995,1,36,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,40.096000000000004,4.009600000000001,288,128,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,40.096000000000004,4.009600000000001,288,128,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,52.544,5.2543999999999995,1,64,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,53.312,5.3312,1,64,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,40.064,4.0064,216,128,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,37.92,3.7920000000000003,216,128,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,45.599999999999994,4.56,900,128,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,46.879999999999995,4.688,900,128,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,26.048,2.6048,1,100,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.159999999999997,2.816,1,100,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,55.775999999999996,5.5775999999999994,1,50,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,54.27199999999999,5.427199999999999,1,50,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,28.671999999999997,2.8671999999999995,1,1,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.463999999999995,3.0463999999999993,1,1,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,35.87200000000001,3.5872000000000006,40,128,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,35.74400000000001,3.5744000000000007,40,128,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,32.64,3.2640000000000002,15,128,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,31.743999999999996,3.1743999999999994,15,128,22
+S,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,26.335999999999995,2.6335999999999995,1,24,18
+S,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.191999999999997,2.8191999999999995,1,24,22
+S,1,CPU_NVTX_elapsed,,,forward,,,,1424.1442,,,
+S,1,CPU_NVTX_elapsed,,,backward,,,,3163.3191,,,
+S,1,CPU_NVTX_elapsed,,,update,,,,410.8214,,,
+S,1,CPU_NVTX_elapsed,,,dweight,,,,861.5816,,,
+S,1,CPU_NVTX_elapsed,,,dinput,,,,611.3782,,,
+S,1,CUDA_API_CPU_elapsed,,,cuProfilerStart,1,,,1.8054999999999999,,,
+S,1,CUDA_API_CPU_elapsed,,,cudaEventQuery_v3020,41,,,9.5676,,,
+S,1,CUDA_API_CPU_elapsed,,,cudaEventDestroy_v3020,21,,,2.9104,,,
+S,1,CUDA_API_CPU_elapsed,,,cudaStreamIsCapturing_v10000,180,,,9.91809999999999,,,
+S,1,CUDA_API_CPU_elapsed,,,cudaMemcpyAsync_v3020,20,,,20.0906,,,
+S,1,CUDA_API_CPU_elapsed,,,cudaEventCreateWithFlags_v3020,20,,,4.2356,,,
+S,1,CUDA_API_CPU_elapsed,,,cudaEventRecord_v3020,60,,,32.0412,,,
+S,1,CUDA_API_CPU_elapsed,,,cudaLaunchKernel_v7000,450,,,212.8405000000001,,,
+S,1,CUDA_API_CPU_elapsed,,,cuLaunchKernel,1020,,,390.5473999999996,,,
+S,1,CUDA_API_CPU_elapsed,,,cuStreamGetCaptureInfo_v2,240,,,2.7178999999999998,,,
+S,1,CUDA_API_CPU_elapsed,,,cudaStreamSynchronize_v3020,1,,,0.6611,,,
+DS,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,310.528,31.0528,3561,256,23
+DS,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,41.696,4.1696,15,128,16
+DS,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,311.137,31.1137,2,16,32
+DS,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,104.352,10.4352,1140,256,24
+DS,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,69.34400000000001,6.934400000000001,2279,128,18
+DS,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,502.24099999999993,50.22409999999999,6169,256,23
+DS,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,49.184,4.9184,169,128,16
+DS,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",20,2.0,1429.251,142.9251,3,16,32
+DS,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,77.40799999999999,7.740799999999998,371,256,24
+DS,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,47.583999999999996,4.7584,741,128,18
+DS,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,158.977,15.8977,1547,256,23
+DS,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,53.089,5.3088999999999995,338,128,16
+DS,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,52.896,5.2896,83,256,24
+DS,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.856,4.1856,165,128,18
+DS,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,79.00800000000001,7.900800000000001,405,256,23
+DS,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,50.848,5.0847999999999995,216,128,16
+DS,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",30,3.0,781.1539999999999,78.1154,4,16,32
+DS,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,51.36,5.136,60,256,24
+DS,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,41.760000000000005,4.176,120,128,18
+DS,1,GPU_kernel,forward,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,60.768,6.0768,162,256,23
+DS,1,GPU_kernel,forward,forward,cupy_copy__float32_float32,10,1.0,51.903999999999996,5.1903999999999995,288,128,16
+DS,1,GPU_kernel,forward,forward,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,47.87199999999999,4.7871999999999995,18,256,24
+DS,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,38.4,3.84,36,128,18
+DS,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,709.953,70.9953,7,16,32
+DS,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,46.04899999999999,4.604899999999999,4,128,16
+DS,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,35.584,3.5584000000000002,4,128,18
+DS,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,34.176,3.4176,2,128,16
+DS,1,GPU_kernel,forward,forward,cupy_maximum__float_float32_float32,10,1.0,28.191999999999993,2.8191999999999995,2,128,18
+DS,1,GPU_kernel,forward,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,55.583999999999996,5.5584,1,16,32
+DS,1,GPU_kernel,forward,forward,cupy_add__float32_float32_float32,10,1.0,35.968,3.5968000000000004,1,4,16
+DS,1,GPU_kernel,forward,forward,cupy_tanh__float32_float32,10,1.0,33.857,3.3857,1,4,21
+DS,1,GPU_kernel,forward,forward,cupy_subtract__float32_float32_float32,10,1.0,31.968999999999994,3.1968999999999994,1,4,22
+DS,1,GPU_kernel,forward,forward,cupy_square__float32_float32,10,1.0,32.448,3.2448,1,4,18
+DS,1,GPU_kernel,forward,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,35.968,3.5968000000000004,1,256,32
+DS,1,GPU_kernel,forward,forward,cupy_true_divide__float32_float_float32,10,1.0,32.224,3.2223999999999995,1,1,16
+DS,1,GPU_kernel,backward,backward,cupy_fill,30,3.0,75.74400000000001,7.574400000000002,1,1,16
+DS,1,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,30.047999999999995,3.0047999999999995,1,4,22
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,68.51300000000002,6.851300000000002,1,4,16
+DS,1,GPU_kernel,backward,backward,cupy_negative__float32_float32,10,1.0,30.303999999999995,3.0303999999999993,1,4,18
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_float32_float32,20,2.0,61.02400000000001,6.102400000000001,1,4,22
+DS,1,GPU_kernel,backward,backward,cupy_subtract__float32_float32_float32,10,1.0,34.24,3.4240000000000004,1,4,16
+DS,1,GPU_kernel,backward,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,31.231999999999996,3.1231999999999998,1,256,32
+DS,1,GPU_kernel,backward,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,33.696,3.3695999999999997,2,256,20
+DS,1,GPU_kernel,backward,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,51.776,5.1776,7,8,32
+DS,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,28.511999999999993,2.8511999999999995,2,128,18
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,30.719999999999995,3.0719999999999996,2,128,24
+DS,1,GPU_kernel,backward,backward,cupy_sum,20,2.0,73.92000000000002,7.392000000000001,1,512,29
+DS,1,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,73.34400000000001,7.3344000000000005,13,128,40
+DS,1,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,72.32000000000001,7.232000000000001,2,256,57
+DS,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,35.968,3.5968000000000004,4,128,18
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,39.04,3.904,4,128,24
+DS,1,GPU_kernel,backward,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,84.736,8.473600000000001,144,128,40
+DS,1,GPU_kernel,backward,backward,ampere_sgemm_32x128_nt,10,1.0,83.936,8.393600000000001,4,256,57
+DS,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,36.672000000000004,3.6672000000000002,36,128,18
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,40.0,4.0,36,128,24
+DS,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,42.623999999999995,4.2623999999999995,36,128,16
+DS,1,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,109.79200000000003,10.979200000000002,3,128,86
+DS,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,74.11200000000002,7.411200000000003,60,256,38
+DS,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,60.481,6.0481,162,256,23
+DS,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,39.872,3.9872,36,128,16
+DS,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,122.688,12.2688,18,128,86
+DS,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,62.336000000000006,6.233600000000001,16,512,31
+DS,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.120000000000005,4.112,120,128,18
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,44.928,4.4928,120,128,24
+DS,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.408,4.5408,120,128,16
+DS,1,GPU_kernel,backward,dinput,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,124.64,12.464,8,128,86
+DS,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,111.58499999999998,11.158499999999998,83,256,38
+DS,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,79.32799999999999,7.9327999999999985,405,256,23
+DS,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,43.392,4.3392,120,128,16
+DS,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,128.032,12.8032,14,128,86
+DS,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,50.72,5.072,14,32,32
+DS,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,64.672,6.4672,32,512,31
+DS,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,41.536,4.1536,165,128,18
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,45.248000000000005,4.524800000000001,165,128,24
+DS,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,45.376,4.537599999999999,165,128,16
+DS,1,GPU_kernel,backward,dinput,ampere_sgemm_32x128_nt,10,1.0,167.87200000000004,16.787200000000006,14,256,57
+DS,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,157.537,15.7537,371,256,38
+DS,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,159.232,15.9232,1547,256,23
+DS,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,44.032000000000004,4.4032,165,128,16
+DS,1,GPU_kernel,backward,dweight,ampere_sgemm_64x32_sliced1x4_nn,10,1.0,177.05599999999998,17.705599999999997,15,256,82
+DS,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,66.72,6.672,29,32,32
+DS,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,68.736,6.873600000000001,48,512,31
+DS,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,47.51999999999999,4.751999999999999,741,128,18
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,50.24,5.024,741,128,24
+DS,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,51.872,5.1872,741,128,16
+DS,1,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,255.232,25.5232,21,256,57
+DS,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,316.51300000000003,31.651300000000003,1140,256,38
+DS,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,502.978,50.2978,6169,256,23
+DS,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,50.432,5.043200000000001,741,128,16
+DS,1,GPU_kernel,backward,dweight,ampere_sgemm_128x32_sliced1x4_nn,10,1.0,358.1450000000001,35.81450000000001,5,256,134
+DS,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,61.02400000000001,6.102400000000001,19,32,32
+DS,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,115.072,11.507200000000001,36,512,31
+DS,1,GPU_kernel,backward,backward,cupy_greater__float32_float_bool,10,1.0,67.68,6.768000000000001,2279,128,18
+DS,1,GPU_kernel,backward,backward,cupy_multiply__float32_bool_float32,10,1.0,71.104,7.1104,2279,128,24
+DS,1,GPU_kernel,backward,dinput,cupy_copy__float32_float32,10,1.0,73.056,7.3056,2279,128,16
+DS,1,GPU_kernel,backward,dinput,ampere_sgemm_128x32_nt,10,1.0,162.305,16.2305,95,256,57
+DS,1,GPU_kernel,backward,dinput,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,200.224,20.022399999999998,619,256,38
+DS,1,GPU_kernel,backward,dweight,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,311.457,31.145699999999998,3561,256,23
+DS,1,GPU_kernel,backward,dweight,cupy_copy__float32_float32,10,1.0,71.424,7.1424,2279,128,16
+DS,1,GPU_kernel,backward,dweight,ampere_sgemm_32x32_sliced1x4_nn,10,1.0,202.112,20.211199999999998,3,128,86
+DS,1,GPU_kernel,backward,dweight,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,92.64000000000001,9.264000000000001,3,32,32
+DS,1,GPU_kernel,backward,backward,cupy_sum,10,1.0,280.416,28.0416,24,512,31
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,44.70400000000001,4.470400000000001,338,128,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,45.407999999999994,4.540799999999999,338,128,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.697,2.9697,1,48,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,28.511999999999997,2.8511999999999995,1,48,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,41.984,4.1984,169,128,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,41.919999999999995,4.191999999999999,169,128,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,27.871999999999996,2.7871999999999995,1,36,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,29.471999999999994,2.9471999999999996,1,36,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,45.984,4.5984,288,128,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,43.264,4.3264000000000005,288,128,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,57.92,5.792,1,64,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,56.736,5.6735999999999995,1,64,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,42.656000000000006,4.265600000000001,216,128,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,42.496,4.2496,216,128,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,50.815999999999995,5.0816,900,128,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,51.29600000000001,5.129600000000001,900,128,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,29.919999999999995,2.9919999999999995,1,100,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,29.535999999999994,2.9535999999999993,1,100,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,20,2.0,58.208000000000006,5.8208,1,50,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,20,2.0,56.575999999999986,5.657599999999999,1,50,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,28.767999999999994,2.8767999999999994,1,1,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.687999999999995,3.0687999999999995,1,1,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,40.672000000000004,4.067200000000001,40,128,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,39.263999999999996,3.9263999999999997,40,128,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,37.21600000000001,3.721600000000001,15,128,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,36.032000000000004,3.6032,15,128,22
+DS,1,GPU_kernel,update,update,cupy_multiply__float_float32_float32,10,1.0,28.704999999999995,2.8704999999999994,1,24,18
+DS,1,GPU_kernel,update,update,cupy_subtract__float32_float32_float32,10,1.0,30.111999999999995,3.0111999999999997,1,24,22
+DS,1,CPU_NVTX_elapsed,,,forward,,,,1444.8358,,,
+DS,1,CPU_NVTX_elapsed,,,backward,,,,3021.8311,,,
+DS,1,CPU_NVTX_elapsed,,,update,,,,413.2354,,,
+DS,1,CPU_NVTX_elapsed,,,dweight,,,,677.8494,,,
+DS,1,CPU_NVTX_elapsed,,,dinput,,,,618.6347,,,
+DS,1,CUDA_API_CPU_elapsed,,,cuProfilerStart,1,,,1.3653,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaEventQuery_v3020,41,,,9.264600000000002,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaEventDestroy_v3020,21,,,2.5915000000000004,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaStreamIsCapturing_v10000,180,,,9.824500000000004,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaMemcpyAsync_v3020,20,,,19.061799999999998,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaEventCreateWithFlags_v3020,20,,,4.2669999999999995,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaEventRecord_v3020,60,,,32.31230000000001,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaLaunchKernel_v7000,500,,,237.13219999999993,,,
+DS,1,CUDA_API_CPU_elapsed,,,cuLaunchKernel,920,,,345.7400000000002,,,
+DS,1,CUDA_API_CPU_elapsed,,,cuStreamGetCaptureInfo_v2,240,,,2.815499999999997,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaMalloc_v3020,1,,,22.0756,,,
+DS,1,CUDA_API_CPU_elapsed,,,cudaStreamSynchronize_v3020,1,,,0.7384999999999999,,,

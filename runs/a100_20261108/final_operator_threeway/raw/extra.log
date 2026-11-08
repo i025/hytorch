@@ -1,0 +1,5 @@
+警告: 未找到scipy，无法加载SVHN数据集
+Traceback (most recent call last):
+  File "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/diagnostics/extra.py", line 2, in <module>
+    from threadpoolctl import threadpool_info
+ModuleNotFoundError: No module named 'threadpoolctl'

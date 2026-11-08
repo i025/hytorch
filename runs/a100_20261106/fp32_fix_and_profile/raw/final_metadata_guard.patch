@@ -1,0 +1,11 @@
+--- functions_gpu_tested.py
++++ functions.py
+@@ -480,7 +480,7 @@
+         diff = x0 - x1
+         # Avoid a Python float becoming a strong FP64 zero-dimensional array.
+         xp = cuda.get_array_module(diff.data)
+-        scale = xp.array(2. / len(diff), dtype=diff.dtype)
++        scale = xp.array(2. / len(diff), dtype=xp.result_type(diff.dtype, gy.dtype))
+         gx0 = gy * diff * scale
+         gx1 = -gx0
+         return gx0, gx1

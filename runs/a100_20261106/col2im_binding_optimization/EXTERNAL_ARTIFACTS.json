@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/libhytorch_cuda.so",
+    "bytes": 350216,
+    "sha256": "e4cc46d2b50346ca16d2aa572af6e994ca41b8c8ad65bfdd2453cbb14d990cc9"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/lib_native_fast.so",
+    "bytes": 350264,
+    "sha256": "f7d4867dd88bb3943f3f52b52fee0271293f20c842642f5955c43e46a963fab9"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/col2im.nsys-rep",
+    "bytes": 611430,
+    "sha256": "49da50d6a8ff8f248fe75309c997fdcb44350336150c676792a979fc6d623f94"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/col2im.sqlite",
+    "bytes": 1265664,
+    "sha256": "02129cf74f10c48c07ea11f64d6d6c189d7ccd0ff9072932cd820b32507bcf89"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_cupy.nsys-rep",
+    "bytes": 564720,
+    "sha256": "24ab8d2665ca3c989741699d195cc39b04a4797c1406f341e6d1c04e2952f623"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_cupy.sqlite",
+    "bytes": 1097728,
+    "sha256": "f4e105b2a775f75216d09b209821cf1e513575a63c56d261d36c56dd86ee5c0d"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_fast.nsys-rep",
+    "bytes": 565381,
+    "sha256": "957246abb2d8567e3d0781d70d81d49d223033b27f152f022efb8b05c3494172"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_fast.sqlite",
+    "bytes": 1097728,
+    "sha256": "fda9f42de1b08194e765421e39edac793edafcc9b53971c7d9d8b0f922d9af94"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_old.nsys-rep",
+    "bytes": 565290,
+    "sha256": "bc67753f1b19801f3c8ce2a611535332f1ccbab5fcaa1800713d68d0c2b66c06"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_old.sqlite",
+    "bytes": 1085440,
+    "sha256": "03ad019de3c95c03c42c9a9b6c055dc59d12d281d2a642a6d8bcf9946d61f058"
+  }
+]

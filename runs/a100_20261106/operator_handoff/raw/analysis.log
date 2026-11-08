@@ -1,0 +1,210 @@
+{
+  "native_trace": {
+    "steps": 10,
+    "kernel_count": 1610,
+    "kernel_us_per_step": 2036.6386000000027,
+    "step_wall_us_per_step": 15190.2501,
+    "activity_fraction_of_step_wall": 0.13683801032347717,
+    "by_category": {
+      "SGD_update": {
+        "count": 320,
+        "total_us": 1264.0770000000002,
+        "us_per_step": 126.40770000000002,
+        "pct": 6.2066829136990656
+      },
+      "activation_backward": {
+        "count": 180,
+        "total_us": 757.6659999999999,
+        "us_per_step": 75.7666,
+        "pct": 3.720178926197308
+      },
+      "conv_dBias": {
+        "count": 50,
+        "total_us": 661.8,
+        "us_per_step": 66.17999999999999,
+        "pct": 3.249471948533231
+      },
+      "conv_dInput": {
+        "count": 200,
+        "total_us": 3756.795000000002,
+        "us_per_step": 375.6795000000002,
+        "pct": 18.446056163327142
+      },
+      "conv_dWeight": {
+        "count": 270,
+        "total_us": 5388.323999999999,
+        "us_per_step": 538.8323999999999,
+        "pct": 26.45694724631062
+      },
+      "conv_forward": {
+        "count": 200,
+        "total_us": 6061.322000000003,
+        "us_per_step": 606.1322000000002,
+        "pct": 29.7614019492707
+      },
+      "linear_backward": {
+        "count": 120,
+        "total_us": 707.1079999999996,
+        "us_per_step": 70.71079999999996,
+        "pct": 3.471936552709934
+      },
+      "linear_bias_backward": {
+        "count": 30,
+        "total_us": 113.28100000000002,
+        "us_per_step": 11.328100000000003,
+        "pct": 0.5562155210060336
+      },
+      "other_backward": {
+        "count": 60,
+        "total_us": 183.61900000000009,
+        "us_per_step": 18.36190000000001,
+        "pct": 0.9015787091534052
+      },
+      "other_forward": {
+        "count": 180,
+        "total_us": 1472.3939999999996,
+        "us_per_step": 147.23939999999996,
+        "pct": 7.22953006979244
+      }
+    }
+  },
+  "native_plain": {
+    "steps": 10,
+    "kernel_count": 1610,
+    "kernel_us_per_step": 1868.3283000000042,
+    "step_wall_us_per_step": 5914.8675,
+    "activity_fraction_of_step_wall": 0.32244969139207263,
+    "by_category": {
+      "SGD_update": {
+        "count": 320,
+        "total_us": 1165.5789999999997,
+        "us_per_step": 116.55789999999998,
+        "pct": 6.238619839992773
+      },
+      "activation_backward": {
+        "count": 180,
+        "total_us": 696.6799999999997,
+        "us_per_step": 69.66799999999998,
+        "pct": 3.728894969904369
+      },
+      "conv_dBias": {
+        "count": 50,
+        "total_us": 602.536,
+        "us_per_step": 60.25359999999999,
+        "pct": 3.2250006596806275
+      },
+      "conv_dInput": {
+        "count": 200,
+        "total_us": 3440.3810000000017,
+        "us_per_step": 344.03810000000016,
+        "pct": 18.414220883984864
+      },
+      "conv_dWeight": {
+        "count": 270,
+        "total_us": 4961.247999999999,
+        "us_per_step": 496.1247999999999,
+        "pct": 26.554476533915306
+      },
+      "conv_forward": {
+        "count": 200,
+        "total_us": 5542.121000000001,
+        "us_per_step": 554.2121000000001,
+        "pct": 29.66352862074609
+      },
+      "linear_backward": {
+        "count": 120,
+        "total_us": 653.381,
+        "us_per_step": 65.3381,
+        "pct": 3.4971423384209213
+      },
+      "linear_bias_backward": {
+        "count": 30,
+        "total_us": 101.50500000000001,
+        "us_per_step": 10.150500000000001,
+        "pct": 0.5432931674802538
+      },
+      "other_backward": {
+        "count": 60,
+        "total_us": 166.56300000000002,
+        "us_per_step": 16.6563,
+        "pct": 0.8915082001380573
+      },
+      "other_forward": {
+        "count": 180,
+        "total_us": 1353.2890000000002,
+        "us_per_step": 135.32890000000003,
+        "pct": 7.243314785736517
+      }
+    }
+  },
+  "cupy_trace": {
+    "steps": 10,
+    "kernel_count": 1650,
+    "kernel_us_per_step": 1566.2261000000024,
+    "step_wall_us_per_step": 14322.978299999999,
+    "activity_fraction_of_step_wall": 0.11206623136474346,
+    "by_category": {
+      "SGD_update": {
+        "count": 320,
+        "total_us": 1172.8699999999994,
+        "us_per_step": 117.28699999999995,
+        "pct": 7.488510119962869
+      },
+      "activation_backward": {
+        "count": 180,
+        "total_us": 791.1710000000002,
+        "us_per_step": 79.11710000000002,
+        "pct": 5.051448191292426
+      },
+      "conv_dBias": {
+        "count": 50,
+        "total_us": 616.4849999999999,
+        "us_per_step": 61.64849999999999,
+        "pct": 3.9361175247941467
+      },
+      "conv_dInput": {
+        "count": 200,
+        "total_us": 3446.134000000001,
+        "us_per_step": 344.61340000000007,
+        "pct": 22.0027874647217
+      },
+      "conv_dWeight": {
+        "count": 270,
+        "total_us": 4956.7970000000005,
+        "us_per_step": 495.6797,
+        "pct": 31.64802961717975
+      },
+      "conv_forward": {
+        "count": 230,
+        "total_us": 2824.259000000002,
+        "us_per_step": 282.4259000000002,
+        "pct": 18.032256006971135
+      },
+      "linear_backward": {
+        "count": 120,
+        "total_us": 656.9639999999999,
+        "us_per_step": 65.6964,
+        "pct": 4.194566799774305
+      },
+      "linear_bias_backward": {
+        "count": 30,
+        "total_us": 103.55300000000004,
+        "us_per_step": 10.355300000000003,
+        "pct": 0.6611625230865447
+      },
+      "other_backward": {
+        "count": 60,
+        "total_us": 168.064,
+        "us_per_step": 16.8064,
+        "pct": 1.073050691723243
+      },
+      "other_forward": {
+        "count": 190,
+        "total_us": 925.9640000000004,
+        "us_per_step": 92.59640000000005,
+        "pct": 5.91207106049375
+      }
+    }
+  }
+}
+{'total_gemm_flops_per_step': 645021168, 'native_gemm_calls': 8, 'register_calls': 2, 'register_flops': 18579456, 'native_flops': 215007056, 'pool_calls': 0, 'pool_requests': 147, 'pool_requested_bytes': 124776518, 'device_allocations': 0}

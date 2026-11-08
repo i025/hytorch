@@ -1,0 +1,31 @@
+{
+  "frozen_utc": "2026-11-07T15:29:51.444389+00:00",
+  "files": {
+    "stage_a/cpu_B0.csv": "c77f01373281a5e62b78c18c97a7dfa9860828cbce1262b483e61461441c4033",
+    "stage_a/WORKLOAD.json": "db3b3c1a6fd673d027801342a81640a099dfc4294c19328600d054c8fb13bbbf",
+    "stage_a/TRAINING_HOTSPOTS.csv": "2c7c0babe64aa3c17e4ae3caf07147ef73546c77717e42e6dec9b511b1c7e171",
+    "stage_a/OTHER_OPERATORS.csv": "3d90ddf36340f1735fc58bad01e0f8fb77979d984fa3e54452d12de847566933",
+    "stage_a/TRAINING_ABLATION.csv": "af5feb858300d667dcac0b43017b54c961b26abcea0b2171635ccd360fe5a08d",
+    "stage_a/OPERATOR_RAW_a.csv": "0d405b81ea7d99596f8195d9763988bac7ccfa3b3f55dbeaa4bcd46e94f10863",
+    "stage_a/OPERATOR_ERRORS_a.csv": "2248579f0904507bf6863130bd7a118c2e80dfe33e727763b38b453428034f9b",
+    "stage_a/OPERATOR_KERNELS.csv": "e03c21f7c53bc8e19606284e3cd1d5226087c3099b12a02f8a3372cd00dd3ddc",
+    "stage_a/GEMM_COMPARISON.csv": "da948aec5d4ee39f347be33c6ffdb156373762e6f228d669ff47621f4cbdb864",
+    "stage_a/PROFILE_KERNELS.csv": "a7e40c1440ccbe01727b518c8234efc3885570859d2b327174546c674a81c3a9",
+    "stage_a/TRAINING_ERRORS.csv": "6bda75d2e3d44fdad1e22f158fbf6468cd3bb648b7802c99f828e6f972fc5a2f",
+    "stage_a/ENVIRONMENT.json": "97a34112a79fafb8af853ba3aaf63aebcb4483293316a3277257acf581e2caa4",
+    "stage_a/cpu_B0.prof": "eb8b960b0d415925429d8d2a7cb543e2d139cc4c8e9ed537bf37193d62e44a41",
+    "stage_a/OPERATOR_COMPARISON.csv": "25110b897830d15a46d483bd5ab45028b721961923c4b2c4f4212e83b3849c95",
+    "stage_a/tests.log": "a39863e50dd1275fab391f3b096071d4c511b166aa4c2b3e23d1912a3f21646e",
+    "stage_a/CONV_BACKWARD.csv": "888cf6f0cec94ba1cd6ef85434124627bdb34d6811d8661f66da5f71da3abdf9",
+    "stage_a/cpu_B0.txt": "1a737d34fab00660de4ed3f5b9ed595917c83ebefb074a4425388a84a2681450",
+    "stage_a/LOSS.csv": "e9389838fae4c7db592e4f2de607cbfe41ca0235224c7c9729dd5c975ccb1fb2",
+    "stage_a/OPERATOR_ALLOCATIONS_a.csv": "1bcb9d35fcd43f89361c15a6d99f59e067bba96e055bbd6ea3de963228f786c2",
+    "stage_a/CONV_FORWARD.csv": "dafeb023ab9f61919962a8f02adf210d441efdba000a5e5890dfe9b7b668ee55",
+    "traces/operators_a.nsys-rep": "a876cbde74ee889f4686e5926a5162ae63bd099b83e935f37316530bfe58e9c0",
+    "traces/train_torch_a.sqlite": "16bb4424e559a2035fd54e7d9d58c23233d949a337fcb9ae11573bf1e6f3b614",
+    "traces/train_torch_a.nsys-rep": "08a063568d1a653484014a7a9775f6cbaa96e2a6544051d7815c13681d270db8",
+    "traces/operators_a.sqlite": "f1bbdff12c0b26fb246a5b87bb21546a10ada13606c1e5946d6c97d0cb7ee88e",
+    "traces/train_B0_a.sqlite": "58ceb3ebe279fdf400c356230beb84e2da65e4d8b836f5b05fe30e9fac47e6da",
+    "traces/train_B0_a.nsys-rep": "40c7cc078523ca5e48479b2cd4e0a7510638b6cf04abd1207dd9841e0305392b"
+  }
+}

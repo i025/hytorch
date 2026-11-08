@@ -1,0 +1,13 @@
+{
+  "changed_preexisting_project_files": [
+    "hytorch/functions.py"
+  ],
+  "new_test": "tests/test_backward_dtype.py",
+  "cuda_source_runtime_and_library_unchanged": true,
+  "prior_user_changes_preserved": true,
+  "strict_gemm_gate_failures_retained": 4,
+  "gpu_tests_actually_executed": 55,
+  "host_final_tests": 31,
+  "final_dtype_metadata_guard_only_cpu_verified": true,
+  "no_commit_push_pr": true
+}

@@ -1,0 +1,15 @@
+COMMAND: ["/opt/nvidia/nsight-compute/2025.2.1/ncu", "--clock-control", "none", "--pipeline-boost-state", "dynamic", "--cache-control", "none", "--launch-count", "1", "--export", "/home/xieminhui_pubuse/hytorch/runs/ncu_availability_check/recheck_20261108T082100Z/basic", "--set", "basic", "/home/xieminhui_pubuse/hytorch-env/bin/python", "-c", "import torch; a=torch.ones((512,512),device=\"cuda\"); b=a+a; torch.cuda.synchronize(); print(b[0,0].item())"]
+EXIT CODE: 9
+STDOUT:
+==WARNING== Note: Running with uncontrolled GPU caches. Profiling results may be inconsistent.
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 645591 (/usr/bin/python3.10)
+
+==ERROR== Failed to open/create lock file /tmp/nsight-compute-lock. Please check that this process has write permissions on this file. See https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#faq for more details.
+
+==ERROR== InterprocessLockFailed
+==ERROR== Failed to profile "vectorized_elementwise_kernel" in process 645591
+==PROF== Trying to shutdown target application
+==ERROR== The application returned an error code (9).
+
+STDERR:

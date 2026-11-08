@@ -1,0 +1,11 @@
+{
+  "version": "2.9.1+cu128",
+  "tf32_matmul": false,
+  "tf32_cudnn": false,
+  "cudnn_enabled": true,
+  "cudnn_benchmark": false,
+  "optimizer": "SGD",
+  "foreach": null,
+  "fused": null,
+  "set_to_none": true
+}

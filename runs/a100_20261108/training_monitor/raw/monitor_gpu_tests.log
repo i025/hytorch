@@ -1,0 +1,446 @@
+.....F                                                                   [100%]
+=================================== FAILURES ===================================
+_______________________ test_torch_events_and_allocator ________________________
+
+cp = <module 'cupy' from '/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/__init__.py'>
+tmp_path = PosixPath('/tmp/pytest-of-xieminhui_pubuse/pytest-19/test_torch_events_and_allocato0')
+
+    def test_torch_events_and_allocator(cp,tmp_path):
+>       import torch
+
+tests/test_training_monitor_cuda.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    The torch package contains data structures for multi-dimensional
+    tensors and defines mathematical operations over these tensors.
+    Additionally, it provides many utilities for efficient serialization of
+    Tensors and arbitrary types, and other useful utilities.
+    
+    It has a CUDA counterpart, that enables you to run your tensor computations
+    on an NVIDIA GPU with compute capability >= 3.0.
+    """
+    
+    # mypy: allow-untyped-defs
+    
+    import builtins
+    import ctypes
+    import functools
+    import glob
+    import importlib
+    import inspect
+    import math
+    import os
+    import platform
+    import sys
+    import textwrap
+    import threading
+    from typing import (
+        Any as _Any,
+        Callable as _Callable,
+        get_origin as _get_origin,
+        Optional as _Optional,
+        overload as _overload,
+        TYPE_CHECKING,
+        TypeVar as _TypeVar,
+        Union as _Union,
+    )
+    from typing_extensions import ParamSpec as _ParamSpec, TypeIs as _TypeIs
+    
+    
+    # As a bunch of torch.packages internally still have this check
+    # we need to keep this. @todo: Remove tests that rely on this check as
+    # they are likely stale.
+    def _running_with_deploy() -> builtins.bool:
+        return False
+    
+    
+    from torch._utils import (
+        _functionalize_sync as _sync,
+        _import_dotted_name,
+        classproperty,
+    )
+    from torch._utils_internal import (
+        get_file_path,
+        prepare_multiprocessing_environment,
+        profiler_allow_cudagraph_cupti_lazy_reinit_cuda12,
+        USE_GLOBAL_DEPS,
+        USE_RTLD_GLOBAL_WITH_LIBTORCH,
+    )
+    from torch.torch_version import __version__ as __version__
+    
+    
+    if TYPE_CHECKING:
+        from torch.types import Device, IntLikeType
+    
+    
+    __all__ = [
+        "BoolStorage",
+        "BoolTensor",
+        "ByteStorage",
+        "ByteTensor",
+        "CharStorage",
+        "CharTensor",
+        "DoubleStorage",
+        "DoubleTensor",
+        "FloatStorage",
+        "FloatTensor",
+        "GradScaler",
+        "IntStorage",
+        "IntTensor",
+        "LongStorage",
+        "LongTensor",
+        "ShortStorage",
+        "ShortTensor",
+        "SymBool",
+        "SymFloat",
+        "SymInt",
+        "Tensor",
+        "TypedStorage",
+        "UntypedStorage",
+        "are_deterministic_algorithms_enabled",
+        "autocast",
+        "chunk",
+        "compile",
+        "cond",
+        "enable_grad",
+        "export",
+        "get_default_device",
+        "get_deterministic_debug_mode",
+        "get_device_module",
+        "get_float32_matmul_precision",
+        "get_rng_state",
+        "inference_mode",
+        "initial_seed",
+        "is_deterministic_algorithms_warn_only_enabled",
+        "is_storage",
+        "is_tensor",
+        "is_warn_always_enabled",
+        "load",
+        "lobpcg",
+        "manual_seed",
+        "matmul",
+        "no_grad",
+        "rand",
+        "randn",
+        "save",
+        "seed",
+        "set_default_device",
+        "set_default_tensor_type",
+        "set_deterministic_debug_mode",
+        "set_float32_matmul_precision",
+        "set_printoptions",
+        "set_rng_state",
+        "set_warn_always",
+        "split",
+        "stack",
+        "sym_float",
+        "sym_fresh_size",
+        "sym_int",
+        "sym_ite",
+        "sym_max",
+        "sym_min",
+        "sym_not",
+        "sym_sum",
+        "typename",
+        "unravel_index",
+        "use_deterministic_algorithms",
+        "vmap",
+    ]
+    
+    # Please keep this list sorted
+    assert __all__ == sorted(__all__)
+    
+    ################################################################################
+    # Load the extension module
+    ################################################################################
+    
+    # If PyTorch was built against the ROCm runtime wheels, then there will be
+    # a _rocm_init module and it will define an initialize() function which can
+    # prepare ROCm for use. See general documentation on ROCm runtime wheels:
+    # https://github.com/ROCm/TheRock/blob/main/docs/packaging/python_packaging.md
+    # Since this module is only ever added to the wheel if built for such a
+    # deployment, it is always safe to attempt.
+    try:
+        from . import _rocm_init  # type: ignore[attr-defined]
+    except ImportError:
+        pass
+    else:
+        _rocm_init.initialize()
+        del _rocm_init
+    
+    
+    if sys.platform == "win32":
+    
+        def _load_dll_libraries() -> None:
+            import sysconfig
+    
+            from torch.version import cuda as cuda_version
+    
+            pfiles_path = os.getenv("ProgramFiles", r"C:\Program Files")
+            py_dll_path = os.path.join(sys.exec_prefix, "Library", "bin")
+            th_dll_path = os.path.join(os.path.dirname(__file__), "lib")
+            usebase_path = os.path.join(
+                sysconfig.get_config_var("userbase"), "Library", "bin"
+            )
+            py_root_bin_path = os.path.join(sys.exec_prefix, "bin")
+    
+            # When users create a virtualenv that inherits the base environment,
+            # we will need to add the corresponding library directory into
+            # DLL search directories. Otherwise, it will rely on `PATH` which
+            # is dependent on user settings.
+            if sys.exec_prefix != sys.base_exec_prefix:
+                base_py_dll_path = os.path.join(sys.base_exec_prefix, "Library", "bin")
+            else:
+                base_py_dll_path = ""
+    
+            dll_paths = [
+                p
+                for p in (
+                    th_dll_path,
+                    py_dll_path,
+                    base_py_dll_path,
+                    usebase_path,
+                    py_root_bin_path,
+                )
+                if os.path.exists(p)
+            ]
+    
+            if not builtins.any(
+                os.path.exists(os.path.join(p, "nvToolsExt64_1.dll")) for p in dll_paths
+            ):
+                nvtoolsext_dll_path = os.path.join(
+                    os.getenv(
+                        "NVTOOLSEXT_PATH",
+                        os.path.join(pfiles_path, "NVIDIA Corporation", "NvToolsExt"),
+                    ),
+                    "bin",
+                    "x64",
+                )
+            else:
+                nvtoolsext_dll_path = ""
+    
+            if cuda_version and builtins.all(
+                not glob.glob(os.path.join(p, "cudart64*.dll")) for p in dll_paths
+            ):
+                cuda_version_1 = cuda_version.replace(".", "_")
+                cuda_path_var = "CUDA_PATH_V" + cuda_version_1
+                default_path = os.path.join(
+                    pfiles_path, "NVIDIA GPU Computing Toolkit", "CUDA", f"v{cuda_version}"
+                )
+                cuda_path = os.path.join(os.getenv(cuda_path_var, default_path), "bin")
+            else:
+                cuda_path = ""
+    
+            dll_paths.extend(
+                p for p in (nvtoolsext_dll_path, cuda_path) if os.path.exists(p)
+            )
+    
+            kernel32 = ctypes.WinDLL("kernel32.dll", use_last_error=True)
+            with_load_library_flags = hasattr(kernel32, "AddDllDirectory")
+            prev_error_mode = kernel32.SetErrorMode(0x0001)
+    
+            kernel32.LoadLibraryW.restype = ctypes.c_void_p
+            if with_load_library_flags:
+                kernel32.LoadLibraryExW.restype = ctypes.c_void_p
+    
+            for dll_path in dll_paths:
+                os.add_dll_directory(dll_path)
+    
+            try:
+                ctypes.CDLL("vcruntime140.dll")
+                ctypes.CDLL("msvcp140.dll")
+                if platform.machine() != "ARM64":
+                    ctypes.CDLL("vcruntime140_1.dll")
+            except OSError:
+                print(
+                    textwrap.dedent(
+                        """
+                        Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure.
+                        It can be downloaded at https://aka.ms/vs/17/release/vc_redist.x64.exe
+                        """
+                    ).strip()
+                )
+    
+            dlls = glob.glob(os.path.join(th_dll_path, "*.dll"))
+            path_patched = False
+            for dll in dlls:
+                is_loaded = False
+                if with_load_library_flags:
+                    res = kernel32.LoadLibraryExW(dll, None, 0x00001100)
+                    last_error = ctypes.get_last_error()
+                    if res is None and last_error != 126:
+                        err = ctypes.WinError(last_error)
+                        err.strerror += (
+                            f' Error loading "{dll}" or one of its dependencies.'
+                        )
+                        raise err
+                    elif res is not None:
+                        is_loaded = True
+                if not is_loaded:
+                    if not path_patched:
+                        os.environ["PATH"] = ";".join(dll_paths + [os.environ["PATH"]])
+                        path_patched = True
+                    res = kernel32.LoadLibraryW(dll)
+                    if res is None:
+                        err = ctypes.WinError(ctypes.get_last_error())
+                        err.strerror += (
+                            f' Error loading "{dll}" or one of its dependencies.'
+                        )
+                        raise err
+    
+            kernel32.SetErrorMode(prev_error_mode)
+    
+        _load_dll_libraries()
+        del _load_dll_libraries
+    
+    
+    def _get_cuda_dep_paths(path: str, lib_folder: str, lib_name: str) -> list[str]:
+        # Libraries can either be in
+        # path/nvidia/lib_folder/lib or
+        # path/nvidia/cuXX/lib (since CUDA 13.0) or
+        # path/lib_folder/lib
+        from torch.version import cuda as cuda_version
+    
+        nvidia_lib_paths = glob.glob(
+            os.path.join(path, "nvidia", lib_folder, "lib", lib_name)
+        )
+        if cuda_version is not None:
+            maj_cuda_version = cuda_version.split(".")[0]
+            nvidia_lib_paths += glob.glob(
+                os.path.join(path, "nvidia", f"cu{maj_cuda_version}", "lib", lib_name)
+            )
+        lib_paths = glob.glob(os.path.join(path, lib_folder, "lib", lib_name))
+    
+        return nvidia_lib_paths + lib_paths
+    
+    
+    def _preload_cuda_deps(lib_folder: str, lib_name: str, required: bool = True) -> None:  # type: ignore[valid-type]
+        """Preloads cuda deps if they could not be found otherwise."""
+        # Should only be called on Linux if default path resolution have failed
+        assert platform.system() == "Linux", "Should only be called on Linux"
+    
+        lib_path = None
+        for path in sys.path:
+            candidate_lib_paths = _get_cuda_dep_paths(path, lib_folder, lib_name)
+            if candidate_lib_paths:
+                lib_path = candidate_lib_paths[0]
+                break
+        if not lib_path and required:
+            raise ValueError(f"{lib_name} not found in the system path {sys.path}")
+        if lib_path:
+            ctypes.CDLL(lib_path)
+    
+    
+    # See Note [Global dependencies]
+    def _load_global_deps() -> None:
+        if platform.system() == "Windows":
+            return
+    
+        # Determine the file extension based on the platform
+        lib_ext = ".dylib" if platform.system() == "Darwin" else ".so"
+        lib_name = f"libtorch_global_deps{lib_ext}"
+        here = os.path.abspath(__file__)
+        global_deps_lib_path = os.path.join(os.path.dirname(here), "lib", lib_name)
+    
+        try:
+            ctypes.CDLL(global_deps_lib_path, mode=ctypes.RTLD_GLOBAL)
+            # Workaround slim-wheel CUDA dependency bugs in cusparse and cudnn by preloading nvjitlink
+            # and nvrtc. In CUDA-12.4+ cusparse depends on nvjitlink, but does not have rpath when
+            # shipped as wheel, which results in OS picking wrong/older version of nvjitlink library
+            # if `LD_LIBRARY_PATH` is defined, see https://github.com/pytorch/pytorch/issues/138460
+            # Similar issue exist in cudnn that dynamically loads nvrtc, unaware of its relative path.
+            # See https://github.com/pytorch/pytorch/issues/145580
+            try:
+                with open("/proc/self/maps") as f:
+                    _maps = f.read()
+    
+                # libtorch_global_deps.so always depends in cudart, check if its installed and loaded
+                if "libcudart.so" not in _maps:
+                    return
+                # If all above-mentioned conditions are met, preload nvrtc and nvjitlink
+                _preload_cuda_deps("cuda_nvrtc", "libnvrtc.so.*[0-9]")
+                _preload_cuda_deps("cuda_nvrtc", "libnvrtc-builtins.so.*[0-9]")
+                _preload_cuda_deps("nvjitlink", "libnvJitLink.so.*[0-9]")
+            except Exception:
+                pass
+    
+        except OSError as err:
+            # Can only happen for wheel with cuda libs as PYPI deps
+            # As PyTorch is not purelib, but nvidia-*-cu12 is
+            cuda_libs: dict[str, str] = {
+                "cublas": "libcublas.so.*[0-9]",
+                "cudnn": "libcudnn.so.*[0-9]",
+                "cuda_nvrtc": "libnvrtc.so.*[0-9]",
+                "cuda_runtime": "libcudart.so.*[0-9]",
+                "cuda_cupti": "libcupti.so.*[0-9]",
+                "cufft": "libcufft.so.*[0-9]",
+                "curand": "libcurand.so.*[0-9]",
+                "nvjitlink": "libnvJitLink.so.*[0-9]",
+                "cusparse": "libcusparse.so.*[0-9]",
+                "cusparselt": "libcusparseLt.so.*[0-9]",
+                "cusolver": "libcusolver.so.*[0-9]",
+                "nccl": "libnccl.so.*[0-9]",
+                "nvshmem": "libnvshmem_host.so.*[0-9]",
+                "cufile": "libcufile.so.*[0-9]",
+            }
+    
+            is_cuda_lib_err = [
+                lib for lib in cuda_libs.values() if lib.split(".")[0] in err.args[0]
+            ]
+            if not is_cuda_lib_err:
+                raise err
+            for lib_folder, lib_name in cuda_libs.items():
+                _preload_cuda_deps(lib_folder, lib_name)
+    
+            # libnvToolsExt is Optional Dependency
+            _preload_cuda_deps("nvtx", "libnvToolsExt.so.*[0-9]", required=False)
+            ctypes.CDLL(global_deps_lib_path, mode=ctypes.RTLD_GLOBAL)
+    
+    
+    if (USE_RTLD_GLOBAL_WITH_LIBTORCH or os.getenv("TORCH_USE_RTLD_GLOBAL")) and (
+        platform.system() != "Windows"
+    ):
+        # Do it the hard way.  You might want to load libtorch with RTLD_GLOBAL in a
+        # few circumstances:
+        #
+        #   1. You're in a build environment (e.g., fbcode) where
+        #      libtorch_global_deps is not available, but you still need
+        #      to get mkl to link in with RTLD_GLOBAL or it will just
+        #      not work.
+        #
+        #   2. You're trying to run PyTorch under UBSAN and you need
+        #      to ensure that only one copy of libtorch is loaded, so
+        #      vptr checks work properly
+        #
+        # If you're using this setting, you must verify that all the libraries
+        # you load consistently use the same libstdc++, or you may have
+        # mysterious segfaults.
+        #
+        old_flags = sys.getdlopenflags()
+        sys.setdlopenflags(os.RTLD_GLOBAL | os.RTLD_LAZY)
+    
+        from torch._C import *  # noqa: F403
+    
+        sys.setdlopenflags(old_flags)
+        del old_flags
+    
+    else:
+        # Easy way.  You want this most of the time, because it will prevent
+        # C++ symbols from libtorch clobbering C++ symbols from other
+        # libraries, leading to mysterious segfaults.
+        #
+        # If building in an environment where libtorch_global_deps isn't available
+        # like parts of fbsource, but where RTLD_GLOBAL causes segfaults, you will
+        # want USE_RTLD_GLOBAL_WITH_LIBTORCH = False and USE_GLOBAL_DEPS = False
+        #
+        # See Note [Global dependencies]
+        if USE_GLOBAL_DEPS:
+            _load_global_deps()
+>       from torch._C import *  # noqa: F403
+E       ImportError: /usr/local/lib/python3.10/dist-packages/torch/lib/libc10_cuda.so: undefined symbol: cudaGetDriverEntryPointByVersion, version libcudart.so.12
+
+/usr/local/lib/python3.10/dist-packages/torch/__init__.py:427: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_training_monitor_cuda.py::test_torch_events_and_allocator
+1 failed, 5 passed in 1.29s

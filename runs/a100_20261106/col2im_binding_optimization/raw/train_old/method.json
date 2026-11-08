@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "samples": 256,
+  "batch": 4,
+  "epochs": 3,
+  "steps": 192,
+  "repeats": 10,
+  "warmup": 10,
+  "lr": 0.001,
+  "initial_hash": "d57a7e5d7a0c6b5080c3876c641143a6bd4726fa739a8ef25d9c27d70f1e4109",
+  "dtype": "float32 activations/weights/gradients",
+  "timing": "includes sequential host loader, H2D, compute, final sync; no per-step sync/loss read/log; all modes same phase NVTX",
+  "only_difference": "col2im context setting, same native library/GEMM128/input/model/optimizer"
+}

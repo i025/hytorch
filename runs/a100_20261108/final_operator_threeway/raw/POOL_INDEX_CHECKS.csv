@@ -1,0 +1,5 @@
+case,index_mismatch,max_abs,relative_l2,mixed_fail_count,max_relative_floor_1e_8,atol,rtol,reference,elements
+tiny_net_pool,0,0.0,0.0,0,0.0,5e-05,2e-05,independent CPU FP64,1024
+overlap_pool,0,0.0,0.0,0,0.0,5e-05,2e-05,independent CPU FP64,16058
+asym_pool,0,0.0,0.0,0,0.0,5e-05,2e-05,independent CPU FP64,108
+negative_pool,0,0.0,0.0,0,0.0,5e-05,2e-05,independent CPU FP64,126

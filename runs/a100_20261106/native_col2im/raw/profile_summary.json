@@ -1,0 +1,178 @@
+{
+  "cupy": {
+    "steps": 10,
+    "kernel_count": 1470,
+    "kernel_us_per_step": 1456.1929999999984,
+    "phase_gpu_us": {
+      "backward": 822.7511999999999,
+      "forward": 520.0657000000002,
+      "update": 113.37609999999995
+    },
+    "category_gpu_us": {
+      "activation_backward": 69.33139999999997,
+      "linear_backward": 37.0977,
+      "linear_bias_backward": 9.900800000000004,
+      "forward": 520.0657000000002,
+      "conv_dBias": 53.63529999999999,
+      "conv_dWeight": 317.774,
+      "conv_dInput": 318.13489999999996,
+      "other_backward": 16.877099999999995,
+      "update": 113.37609999999995
+    },
+    "phase_cpu_elapsed_us": {
+      "forward": 1420.3676,
+      "final_sync": 1.2890000000000001,
+      "transfer": 201.8915,
+      "backward": 2949.5481,
+      "data": 131.86769999999999,
+      "update": 409.2308
+    },
+    "cuda_api": {
+      "cuProfilerStart": {
+        "count": 1,
+        "us_per_step": 1.4284000000000001
+      },
+      "cudaEventQuery_v3020": {
+        "count": 41,
+        "us_per_step": 9.5149
+      },
+      "cudaEventDestroy_v3020": {
+        "count": 21,
+        "us_per_step": 2.3793999999999995
+      },
+      "cudaStreamIsCapturing_v10000": {
+        "count": 180,
+        "us_per_step": 7.905300000000002
+      },
+      "cudaMemcpyAsync_v3020": {
+        "count": 20,
+        "us_per_step": 20.071099999999994
+      },
+      "cudaEventCreateWithFlags_v3020": {
+        "count": 20,
+        "us_per_step": 4.0356999999999985
+      },
+      "cudaEventRecord_v3020": {
+        "count": 60,
+        "us_per_step": 31.101900000000008
+      },
+      "cudaLaunchKernel_v7000": {
+        "count": 400,
+        "us_per_step": 187.67209999999997
+      },
+      "cuLaunchKernel": {
+        "count": 1070,
+        "us_per_step": 412.1885999999998
+      },
+      "cuStreamGetCaptureInfo_v2": {
+        "count": 240,
+        "us_per_step": 2.5994999999999964
+      },
+      "cudaStreamSynchronize_v3020": {
+        "count": 1,
+        "us_per_step": 0.9187
+      }
+    },
+    "col2im_us_per_step": 217.60350000000003,
+    "col2im_layers_us": {
+      "conv1": 55.7633,
+      "conv2": 88.51540000000001,
+      "conv3": 43.11999999999999,
+      "conv4": 15.225600000000004,
+      "conv5": 14.9792
+    },
+    "activity_union_fraction": 0.2890870774274288,
+    "trace_wall_us_per_step": 5167.0887999999995,
+    "memcpy_count": 20,
+    "memcpy_bytes": 6336160,
+    "fp64_cast_count": 0
+  },
+  "native": {
+    "steps": 10,
+    "kernel_count": 1470,
+    "kernel_us_per_step": 1410.8966000000005,
+    "phase_gpu_us": {
+      "backward": 734.7218999999991,
+      "forward": 557.7039000000002,
+      "update": 118.47079999999991
+    },
+    "category_gpu_us": {
+      "activation_backward": 74.32980000000005,
+      "linear_backward": 39.86570000000001,
+      "linear_bias_backward": 10.608000000000004,
+      "forward": 557.7039000000002,
+      "conv_dBias": 57.40809999999999,
+      "conv_dWeight": 340.7401000000002,
+      "conv_dInput": 193.71569999999997,
+      "other_backward": 18.054500000000004,
+      "update": 118.47079999999991
+    },
+    "phase_cpu_elapsed_us": {
+      "forward": 1410.0143,
+      "final_sync": 1.1554,
+      "transfer": 207.7685,
+      "backward": 3056.4737,
+      "data": 208.3949,
+      "update": 412.72799999999995
+    },
+    "cuda_api": {
+      "cuProfilerStart": {
+        "count": 1,
+        "us_per_step": 1.1877
+      },
+      "cudaEventQuery_v3020": {
+        "count": 41,
+        "us_per_step": 9.605799999999999
+      },
+      "cudaEventDestroy_v3020": {
+        "count": 21,
+        "us_per_step": 2.697200000000001
+      },
+      "cudaStreamIsCapturing_v10000": {
+        "count": 180,
+        "us_per_step": 8.190800000000001
+      },
+      "cudaMemcpyAsync_v3020": {
+        "count": 20,
+        "us_per_step": 23.0511
+      },
+      "cudaEventCreateWithFlags_v3020": {
+        "count": 20,
+        "us_per_step": 3.9550999999999994
+      },
+      "cudaEventRecord_v3020": {
+        "count": 60,
+        "us_per_step": 31.365600000000008
+      },
+      "cudaLaunchKernel_v7000": {
+        "count": 450,
+        "us_per_step": 217.63010000000003
+      },
+      "cuLaunchKernel": {
+        "count": 1020,
+        "us_per_step": 411.13809999999955
+      },
+      "cuStreamGetCaptureInfo_v2": {
+        "count": 240,
+        "us_per_step": 2.6689999999999987
+      },
+      "cudaStreamSynchronize_v3020": {
+        "count": 1,
+        "us_per_step": 0.7852
+      }
+    },
+    "col2im_us_per_step": 85.8467,
+    "col2im_layers_us": {
+      "conv1": 20.0993,
+      "conv2": 31.590400000000006,
+      "conv3": 15.894499999999997,
+      "conv4": 10.9056,
+      "conv5": 7.3569
+    },
+    "activity_union_fraction": 0.2712352088093918,
+    "trace_wall_us_per_step": 5349.5271,
+    "memcpy_count": 20,
+    "memcpy_bytes": 6336160,
+    "fp64_cast_count": 0
+  }
+}

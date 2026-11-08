@@ -1,0 +1,276 @@
+file,line,function,primitive_calls,calls,self_s,cumulative_s
+~,0,<method 'join' of 'str' objects>,5,5,1.418e-06,1.418e-06
+~,0,<method 'strip' of 'str' objects>,20,20,3.4500000000000004e-06,3.4500000000000004e-06
+~,0,<method 'upper' of 'str' objects>,30,30,1.3757e-05,1.3757e-05
+~,0,<method 'format' of 'str' objects>,10,10,5.364000000000001e-06,5.364000000000001e-06
+~,0,<method 'get' of '_contextvars.ContextVar' objects>,780,780,0.000133094,0.000133094
+~,0,<method 'set' of '_contextvars.ContextVar' objects>,1,1,1.678e-06,1.678e-06
+~,0,<method 'reset' of '_contextvars.ContextVar' objects>,1,1,2.842e-06,2.842e-06
+~,0,<method 'index' of 'tuple' objects>,240,240,4.8409000000000004e-05,4.8409000000000004e-05
+~,0,<method 'add' of 'set' objects>,635,635,0.000204386,0.000204386
+~,0,<method 'get' of 'dict' objects>,153,153,3.2675e-05,3.2675e-05
+~,0,<method 'items' of 'dict' objects>,1146,1146,0.000160363,0.000160363
+~,0,<method 'append' of 'list' objects>,685,685,0.000138927,0.000138927
+~,0,<method 'pop' of 'list' objects>,630,630,0.000130421,0.000130421
+~,0,<method 'reverse' of 'list' objects>,1,1,3.6000000000000005e-07,3.6000000000000005e-07
+~,0,<method 'sort' of 'list' objects>,630,630,0.000265125,0.000411283
+~,0,<built-in method sys._getframe>,1,1,6.830000000000001e-07,6.830000000000001e-07
+~,0,<built-in method builtins.any>,2460,2460,0.0020602800000000003,0.005265995000000001
+~,0,<built-in method builtins.chr>,30,30,7.286e-06,7.286e-06
+~,0,<built-in method builtins.getattr>,3393,3393,0.0012340270000000002,0.0012340270000000002
+~,0,<built-in method builtins.hasattr>,693,693,0.00014723400000000002,0.00015117600000000002
+~,0,<built-in method builtins.isinstance>,28558,28558,0.003927313,0.0059447580000000005
+~,0,<built-in method builtins.iter>,1,1,7.57e-07,1.041e-06
+~,0,<built-in method builtins.len>,5181,5213,0.0006762690000000001,0.0006932500000000001
+~,0,<built-in method builtins.max>,630,630,0.00021741000000000002,0.00021741000000000002
+~,0,<built-in method builtins.min>,600,600,0.000242536,0.000242536
+~,0,<built-in method builtins.next>,1562,1564,0.000615952,0.0018324720000000001
+~,0,<built-in method builtins.ord>,30,30,7.203e-06,7.203e-06
+~,0,<built-in method builtins.setattr>,1260,1260,0.00023308200000000002,0.00023308200000000002
+~,0,<built-in method builtins.sorted>,3,3,1.0668e-05,1.0668e-05
+~,0,<method '__exit__' of '_thread.lock' objects>,2,2,4.54e-07,4.54e-07
+~,0,<built-in method posix.stat>,4,4,2.1182e-05,2.1182e-05
+~,0,<built-in method time.perf_counter>,2,2,1.0220000000000001e-06,1.0220000000000001e-06
+~,0,<built-in method _abc._abc_instancecheck>,2686,2686,0.0009261680000000001,0.0011854880000000002
+~,0,<built-in method _abc._abc_subclasscheck>,150,150,0.000144004,0.000208158
+~,0,<built-in method _operator.index>,1200,1200,0.000127568,0.000127568
+~,0,<built-in method math.ceil>,1,1,5.53e-07,5.53e-07
+~,0,<built-in method torch._C._get_privateuse1_backend_name>,1,1,1.8800000000000002e-06,1.8800000000000002e-06
+~,0,<built-in method torch._C._mps_is_in_bad_fork>,1,1,6.39e-07,6.39e-07
+~,0,<built-in method torch._C._cuda_isInBadFork>,2,2,7.073000000000001e-06,7.073000000000001e-06
+~,0,<built-in method cupy_backends.cuda.libs.curand.setPseudoRandomGeneratorSeed>,1,1,2.131e-06,2.131e-06
+~,0,<built-in method cupy_backends.cuda.libs.curand.setGeneratorOffset>,1,1,1.173e-06,1.173e-06
+~,0,<built-in method cupy._core._routines_linalg.tensordot_core>,150,150,0.0069131950000000005,0.0069131950000000005
+~,0,<built-in method cupy._core._routines_manipulation._expand_dims>,30,30,5.3707000000000006e-05,0.000100587
+~,0,<built-in method cupy._core._routines_manipulation.rollaxis>,150,150,0.00041175,0.00041175
+~,0,<built-in method cupy._core._routines_manipulation.concatenate_method>,1,1,0.000130783,0.000132311
+~,0,<built-in method cupy._core._memory_range.may_share_bounds>,150,150,5.8265000000000005e-05,5.8265000000000005e-05
+/home/xieminhui_pubuse/hytorch/hytorch/optimizers.py,87,__init__,1,1,2.5850000000000002e-06,3.3800000000000002e-06
+/home/xieminhui_pubuse/hytorch/hytorch/optimizers.py,94,update,30,30,6.7983e-05,0.010639318
+/home/xieminhui_pubuse/hytorch/hytorch/optimizers.py,109,update_one,480,480,0.009469318000000001,0.009469318000000001
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,20,current_config,390,390,0.00033062,0.000384452
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,31,backend,2,2,7.2390000000000005e-06,1.1759e-05
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,55,load_library,1140,1140,0.000367319,0.000367319
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,88,_call,840,840,0.007188198000000001,0.008028698
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,96,_ptr,2070,2070,0.0005656750000000001,0.0005656750000000001
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,102,<listcomp>,390,390,0.00017967200000000002,0.00017967200000000002
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,103,<genexpr>,1320,1320,0.000602743,0.0007164410000000001
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,106,<genexpr>,1320,1320,0.000601456,0.000601456
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,108,<genexpr>,1320,1320,0.000381541,0.000381541
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,110,<genexpr>,1320,1320,0.000530675,0.0037677
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,100,_arrays,390,390,0.0015295530000000001,0.008179404000000001
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,114,<genexpr>,4620,4620,0.0007398740000000001,0.0007398740000000001
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,113,_shape_ok,1140,1140,0.002134416,0.0130787
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,118,gemm,240,240,0.001641957,0.013336454000000001
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,144,_geometry,300,300,0.001329041,0.007508326
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,157,conv2d,150,150,0.0022933180000000004,0.024934641
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,197,selected,390,390,0.00114842,0.002618604
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,246,<genexpr>,750,750,0.000258198,0.00033131
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,247,<genexpr>,450,450,0.00012343800000000002,0.00015202800000000002
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,248,<genexpr>,450,450,0.000103776,0.00012964200000000002
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,232,col2im,150,150,0.002470646,0.0061179070000000006
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,284,<genexpr>,1950,1950,0.0006376320000000001,0.000766403
+/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,271,packed_dweight,150,150,0.00613437,0.020686450000000002
+/home/xieminhui_pubuse/hytorch/benchmarks/bench_cuda_training.py,41,__len__,2,2,1.2140000000000002e-06,1.7220000000000002e-06
+/home/xieminhui_pubuse/hytorch/benchmarks/bench_cuda_training.py,44,__getitem__,120,120,9.8948e-05,9.8948e-05
+/home/xieminhui_pubuse/hytorch/donkeycar_hy/model.py,56,forward,30,30,0.000437479,0.052459737000000006
+/home/xieminhui_pubuse/hytorch/benchmarks/bench_cuda_training.py,59,parameters,3,3,1.5614e-05,9.297600000000001e-05
+/home/xieminhui_pubuse/hytorch/benchmarks/bench_cuda_training.py,66,<dictcomp>,1,1,1.9861000000000002e-05,0.000685997
+/home/xieminhui_pubuse/hytorch/benchmarks/bench_cuda_training.py,65,snapshot,1,1,2.8790000000000003e-06,0.0007188390000000001
+~,0,<built-in method cupy._core.internal.prod>,150,150,0.000113654,0.000113654
+~,0,<built-in method cupy._core.internal._update_order_char>,30,30,1.6358e-05,1.6358e-05
+~,0,<built-in method cupy.cuda.stream.get_current_stream>,840,840,0.000360795,0.000360795
+~,0,<built-in method cupy_backends.cuda.api.runtime.getDevice>,690,690,0.00021793300000000002,0.00021793300000000002
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,19,__setattr__,660,660,0.000621012,0.0007207320000000001
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,16,using_config,1260,1260,0.000739102,0.001122198
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,45,__init__,2490,2490,0.001699385,0.001995134
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,63,__len__,30,30,1.5767e-05,2.0792e-05
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,66,shape,720,720,0.000286034,0.000286034
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,78,dtype,90,90,2.4500000000000003e-05,2.4500000000000003e-05
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,82,T,180,180,0.00013922700000000001,0.0023601390000000002
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,87,set_creator,630,630,0.00027405400000000003,0.00027405400000000003
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,97,cleargrad,496,496,0.000498143,0.000498143
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,107,sum,150,150,0.000349801,0.008078073
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,137,<lambda>,630,630,0.00014615800000000002,0.00014615800000000002
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,133,add_func,630,630,0.0008885680000000001,0.001633838
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,143,<listcomp>,630,630,0.00026268900000000003,0.00026268900000000003
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,126,backward,30,30,0.004448199,0.105558461
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,29,<listcomp>,330,330,0.00014157000000000002,0.00014157000000000002
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,30,<listcomp>,330,330,0.000107193,0.000107193
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,170,as_array,2460,2460,0.0013739470000000001,0.006410767
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,176,as_variable,3660,3660,0.0011585480000000001,0.001886538
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,184,<listcomp>,1980,1980,0.001303474,0.003134876
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,186,<listcomp>,1980,1980,0.0007034410000000001,0.0007034410000000001
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,190,<listcomp>,1980,1980,0.0018566230000000002,0.008687531
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,193,<listcomp>,630,630,0.000273606,0.000273606
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,197,<listcomp>,1980,1980,0.001021964,0.001021964
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,183,__call__,1980,1980,0.008696789,0.129081109
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,25,__call__,30,330,0.0010853520000000001,0.052655932
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,230,forward,90,90,0.001592279,0.001592279
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,235,backward,90,90,0.000165963,0.005165879
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,243,add,90,90,0.000178509,0.003313649
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,250,forward,330,330,0.00483306,0.00483306
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,36,params,1037,2562,0.001213801,0.001364881
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,264,mul,330,330,0.0007516780000000001,0.0110484
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,270,forward,30,30,0.00036275900000000004,0.00036275900000000004
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,45,cleargrads,31,31,0.000252383,0.0014492110000000002
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,277,neg,30,30,3.9382000000000003e-05,0.000670186
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,282,forward,60,60,0.0009035810000000001,0.0009035810000000001
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,295,sub,30,30,7.913500000000001e-05,0.0011385540000000002
+/home/xieminhui_pubuse/hytorch/hytorch/core.py,300,rsub,30,30,6.2749e-05,0.000885668
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,57,_flatten_params,3,30,5.8582e-05,6.6145e-05
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,112,forward,90,90,9.850600000000001e-05,0.01000898
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,174,forward,150,150,0.000205605,0.030879206000000003
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,247,dropout,60,60,8.149000000000001e-05,0.000103499
+/home/xieminhui_pubuse/hytorch/hytorch/layers.py,273,forward,60,60,4.6853e-05,0.000150352
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,15,__init__,1,1,5.004000000000001e-06,1.8334e-05
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,48,forward,30,30,0.00045071200000000003,0.0005236290000000001
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,53,backward,30,30,0.000185853,0.0035082000000000004
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,62,tanh,30,30,2.8177e-05,0.000898343
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,103,__init__,60,60,2.4084000000000002e-05,2.4084000000000002e-05
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,106,forward,60,60,6.2783e-05,0.00021976500000000002
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,111,backward,30,30,2.0685000000000003e-05,0.000491971
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,115,reshape,60,60,0.000116261,0.000996842
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,123,__init__,180,180,4.8382000000000005e-05,4.8382000000000005e-05
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,126,forward,180,180,0.00011098500000000001,0.000356587
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,145,transpose,180,180,0.00021506500000000002,0.0022209120000000002
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,198,__init__,150,150,7.3762e-05,7.3762e-05
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,202,forward,150,150,0.000219766,0.005738372
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,213,sum,150,150,0.000283201,0.0077282720000000004
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,239,__init__,90,90,2.8521e-05,2.8521e-05
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,242,forward,90,90,0.00011405800000000001,0.0037013930000000003
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,252,sum_to,180,180,0.000263563,0.004999916
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,267,__init__,270,270,8.5318e-05,8.5318e-05
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,270,forward,270,270,0.000719612,0.009411281
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,278,backward,90,90,0.00041604900000000004,0.009024122
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,285,matmul,90,90,0.000107353,0.006356452
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,320,linear_simple,90,90,0.00024037300000000002,0.009910474
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,378,forward,210,210,0.004152829,0.00474834
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,383,backward,210,210,0.005814461,0.013190017
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,24,reset,1,1,2.644e-06,1.0426000000000001e-05
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,390,relu,210,210,0.000210485,0.007592665
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,473,forward,30,30,0.001644388,0.002511035
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,478,backward,30,30,0.00023653200000000002,0.0050079650000000005
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,31,__iter__,1,1,2.84e-07,2.84e-07
+/home/xieminhui_pubuse/hytorch/hytorch/functions.py,489,mean_square_error,30,30,2.7582e-05,0.0029943030000000002
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,41,<listcomp>,30,30,0.00020143800000000002,0.00030038600000000003
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,44,<listcomp>,30,30,2.1447e-05,2.1447e-05
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,45,<listcomp>,30,30,1.5879e-05,1.5879e-05
+/home/xieminhui_pubuse/hytorch/hytorch/cuda.py,11,get_array_module,1800,1800,0.001361694,0.004913516000000001
+/home/xieminhui_pubuse/hytorch/hytorch/cuda.py,30,as_numpy,16,16,2.6214e-05,0.00054141
+/home/xieminhui_pubuse/hytorch/hytorch/utils.py,121,<listcomp>,90,90,5.2897000000000005e-05,5.2897000000000005e-05
+/home/xieminhui_pubuse/hytorch/hytorch/utils.py,107,sum_to,90,90,0.00039787700000000004,0.003587335
+/home/xieminhui_pubuse/hytorch/hytorch/utils.py,389,get_conv_outsize,300,300,0.00012006600000000001,0.00012006600000000001
+/home/xieminhui_pubuse/hytorch/hytorch/utils.py,393,pair,2400,2400,0.001398238,0.0021102860000000003
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,51,__init__,150,150,0.00025373100000000004,0.000390638
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,56,forward,150,150,0.0008697650000000001,0.027442145
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,70,backward,150,150,0.0007419620000000001,0.057377977000000004
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,84,conv2d,150,150,0.00024771600000000004,0.030673601
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,89,__init__,150,150,0.000279755,0.000625591
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,95,forward,150,150,0.0007375060000000001,0.021056958
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,34,__next__,30,30,0.00020589500000000002,0.002634974
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,135,deconv2d,150,150,0.000279325,0.024207392
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,140,__init__,150,150,0.000216276,0.00028558
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,147,forward,150,150,0.0008252480000000001,0.022095463000000003
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,221,__init__,1,1,2.9630000000000003e-06,2.1297000000000003e-05
+/home/xieminhui_pubuse/hytorch/hytorch/dataloaders.py,231,__iter__,1,1,1.4680000000000002e-06,2.509e-06
+/home/xieminhui_pubuse/hytorch/hytorch/optimizers.py,10,__init__,1,1,7.95e-07,7.95e-07
+/home/xieminhui_pubuse/hytorch/hytorch/optimizers.py,14,setup,1,1,4.800000000000001e-07,4.800000000000001e-07
+/home/xieminhui_pubuse/hytorch/hytorch/optimizers.py,19,<listcomp>,30,30,0.000134362,0.000800558
+/home/xieminhui_pubuse/hytorch/hytorch/optimizers.py,26,<listcomp>,30,30,4.6834000000000006e-05,4.6834000000000006e-05
+/home/xieminhui_pubuse/hytorch/hytorch/optimizers.py,18,update,30,30,0.000254625,0.010571335000000001
+/home/xieminhui_pubuse/hytorch/hytorch/functions_conv.py,448,col2im_array,150,150,0.0008343070000000001,0.008947411
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/random/_generator.py,824,seed,1,1,1.6724e-05,2.6332e-05
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/random/_generator.py,1313,seed,1,1,4.61e-06,3.6321e-05
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/random/_generator.py,1341,get_random_state,1,1,4.836e-06,5.3790000000000005e-06
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_creation/basic.py,15,empty,840,840,0.0037387310000000003,0.0037387310000000003
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_creation/basic.py,37,_new_like_order_and_strides,30,30,0.00019690400000000002,0.000311303
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_creation/basic.py,190,ones_like,30,30,0.00021578800000000001,0.001105929
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_creation/from_data.py,9,array,60,60,4.8399e-05,0.0013313230000000001
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_creation/from_data.py,59,asarray,76,76,6.3982e-05,0.005719058
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_creation/from_data.py,111,ascontiguousarray,1080,1080,0.000437094,0.0033740410000000004
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_manipulation/transpose.py,7,rollaxis,150,150,0.000105586,0.0005173360000000001
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_manipulation/dims.py,134,expand_dims,30,30,2.0638e-05,0.000121225
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_manipulation/join.py,39,concatenate,1,1,2.178e-06,0.000134489
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_manipulation/join.py,165,<listcomp>,1,1,1.3556e-05,0.000134781
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_manipulation/join.py,147,stack,1,1,5.811000000000001e-06,0.000275081
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_misc/memory_ranges.py,9,may_share_memory,150,150,0.000126295,0.00018456
+~,0,<built-in method cupy._core.core.array>,136,136,0.0067641820000000005,0.006938000000000001
+~,0,<built-in method cupy._core.core.ascontiguousarray>,1080,1080,0.002936947,0.002936947
+~,0,<method 'fill' of 'cupy._core.core._ndarray_base' objects>,30,30,0.000578838,0.000578838
+~,0,<method 'reshape' of 'cupy._core.core._ndarray_base' objects>,510,510,0.004257636,0.004257636
+~,0,<method 'transpose' of 'cupy._core.core._ndarray_base' objects>,480,480,0.0011755180000000002,0.0011755180000000002
+~,0,<method 'squeeze' of 'cupy._core.core._ndarray_base' objects>,90,90,0.00021442500000000002,0.00021442500000000002
+~,0,<method 'sum' of 'cupy._core.core._ndarray_base' objects>,270,270,0.009285308,0.009285308
+~,0,<method 'dot' of 'cupy._core.core._ndarray_base' objects>,180,180,0.004028707,0.004028707
+~,0,<method 'get' of 'cupy._core.core._ndarray_base' objects>,33,33,0.000847223,0.000900265
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/linalg/_product.py,409,<listcomp>,150,150,8.042200000000001e-05,8.042200000000001e-05
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/linalg/_product.py,410,<listcomp>,150,150,4.3821e-05,4.3821e-05
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/linalg/_product.py,358,tensordot,150,150,0.001418011,0.010299907
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/linalg/_product.py,513,<listcomp>,150,150,0.00012824400000000001,0.00012824400000000001
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/linalg/_product.py,504,_move_axes_to_head,300,300,0.00048423600000000003,0.001065262
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_core/syncdetect.py,29,_is_allowed,33,33,9.14e-06,9.14e-06
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_core/syncdetect.py,38,_declare_synchronize,33,33,1.2827000000000001e-05,2.1967e-05
+/usr/local/lib/python3.10/dist-packages/torch/xpu/__init__.py,30,<lambda>,1,1,7.340000000000001e-07,7.340000000000001e-07
+/usr/local/lib/python3.10/dist-packages/torch/xpu/__init__.py,80,is_initialized,1,1,6.98e-07,6.98e-07
+/usr/local/lib/python3.10/dist-packages/torch/xpu/__init__.py,85,_lazy_call,1,1,6.1400000000000005e-06,0.000149331
+/usr/local/lib/python3.10/dist-packages/torch/xpu/random.py,98,manual_seed_all,1,1,2.731e-06,0.000152062
+/usr/local/lib/python3.10/dist-packages/torch/mps/__init__.py,61,manual_seed,1,1,1.697e-06,1.697e-06
+/usr/local/lib/python3.10/dist-packages/torch/cuda/random.py,126,cb,1,1,6.479e-06,3.3374e-05
+/usr/local/lib/python3.10/dist-packages/torch/cuda/random.py,115,manual_seed_all,1,1,4.249e-06,4.2988e-05
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py,1020,device_count,1,1,2.691e-06,5.518e-06
+~,0,<method 'all' of 'numpy.ndarray' objects>,1,1,2.466e-06,1.5425000000000002e-05
+~,0,<method 'copy' of 'numpy.ndarray' objects>,32,32,0.000250579,0.000250579
+~,0,<built-in method numpy.array>,60,60,0.0020913670000000002,0.0020913670000000002
+~,0,<built-in method numpy.asarray>,1,1,2.2360000000000003e-06,2.2360000000000003e-06
+~,0,<built-in method numpy.arange>,1,1,6.7720000000000006e-06,6.7720000000000006e-06
+~,0,<method 'reduce' of 'numpy.ufunc' objects>,1141,1141,0.00406904,0.00406904
+/usr/local/lib/python3.10/dist-packages/torch/random.py,32,manual_seed,1,1,2.6883000000000003e-05,0.00024795700000000004
+/usr/local/lib/python3.10/dist-packages/torch/random.py,88,_seed_custom_device,1,1,4.157e-06,1.3322e-05
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py,154,_is_compiled,1,1,1.6430000000000002e-06,2.827e-06
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py,333,is_initialized,1,1,9.11e-07,1.089e-06
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py,338,_lazy_call,1,1,4.0540000000000005e-06,3.8739e-05
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/_internal.py,262,__init__,110,110,0.000168207,0.000168207
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/_internal.py,316,data,110,110,3.8214000000000004e-05,3.8214000000000004e-05
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/numeric.py,1927,isscalar,2836,2836,0.0024175530000000002,0.005324456
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/fromnumeric.py,70,<dictcomp>,1140,1140,0.000637133,0.000637133
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/fromnumeric.py,69,_wrapreduction,1140,1140,0.002385407,0.007934759000000001
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/fromnumeric.py,3323,_prod_dispatcher,1140,1140,0.00021716400000000002,0.00021716400000000002
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/fromnumeric.py,3328,prod,1140,1140,0.001177689,0.009112448
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/_methods.py,67,_all,1,1,2.375e-06,1.2959e-05
+~,0,<method 'manual_seed' of 'torch._C.Generator' objects>,2,2,2.4114e-05,2.4114e-05
+~,0,<method 'disable' of '_lsprof.Profiler' objects>,1,1,8.36e-07,8.36e-07
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/multiarray.py,690,result_type,30,30,7.861e-06,7.861e-06
+/usr/lib/python3.10/traceback.py,209,format_stack,1,1,4.9510000000000005e-06,0.00013975900000000001
+/usr/lib/python3.10/traceback.py,216,extract_stack,1,1,5.856e-06,9.8647e-05
+/usr/lib/python3.10/traceback.py,259,__init__,5,5,3.04e-06,3.04e-06
+/usr/lib/python3.10/traceback.py,301,line,15,15,9.413000000000001e-06,2.2358000000000002e-05
+/usr/lib/python3.10/traceback.py,309,walk_stack,6,6,3.598e-06,3.598e-06
+/usr/lib/python3.10/traceback.py,338,extract,1,1,2.7831000000000002e-05,9.243100000000001e-05
+/usr/lib/python3.10/traceback.py,386,from_list,1,1,2.926e-06,3.919e-06
+/usr/lib/python3.10/traceback.py,405,format,1,1,1.5684e-05,2.8795e-05
+/usr/local/lib/python3.10/dist-packages/torch/_utils.py,1015,queue_seed_all,1,1,2.476e-06,2.476e-06
+/usr/lib/python3.10/traceback.py,27,format_list,1,1,2.764e-06,3.5478e-05
+/usr/local/lib/python3.10/dist-packages/torch/__init__.py,2741,__getattr__,1,1,3.5610000000000003e-06,3.9420000000000005e-06
+/usr/lib/python3.10/linecache.py,26,getline,5,5,5.857e-06,1.0004000000000001e-05
+/usr/lib/python3.10/linecache.py,36,getlines,5,5,3.0710000000000003e-06,3.552e-06
+/usr/lib/python3.10/linecache.py,52,checkcache,4,4,8.185e-06,2.9928000000000002e-05
+/usr/lib/python3.10/linecache.py,147,lazycache,5,5,4.471e-06,5.122e-06
+/home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/diagnostics/common.py,22,config,2,2,5.235000000000001e-06,2.3118e-05
+/home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/diagnostics/common.py,28,host,17,17,2.2621000000000002e-05,0.000472798
+/home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/diagnostics/common.py,37,phase,300,300,7.3101e-05,7.3101e-05
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/__init__.py,376,result_type,30,30,0.000120172,0.00017075100000000002
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/__init__.py,826,asnumpy,33,33,2.3989e-05,0.000926561
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/__init__.py,867,get_array_module,1800,1800,0.003132015,0.0033188400000000004
+/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/__init__.py,382,<listcomp>,30,30,3.253e-05,4.2718e-05
+/usr/lib/python3.10/abc.py,117,__instancecheck__,2686,2686,0.000831957,0.002017445
+/usr/lib/python3.10/abc.py,121,__subclasscheck__,150,150,5.1162e-05,0.00025932
+/usr/lib/python3.10/_collections_abc.py,315,__subclasshook__,150,150,6.415400000000001e-05,6.415400000000001e-05
+/usr/lib/python3.10/contextlib.py,102,__init__,782,782,0.001089121,0.0012598700000000002
+/usr/lib/python3.10/contextlib.py,130,__enter__,781,782,0.000508272,0.00151485
+/usr/lib/python3.10/contextlib.py,139,__exit__,781,782,0.0008291720000000001,0.001653441
+/usr/lib/python3.10/contextlib.py,279,helper,782,782,0.000460062,0.0017199320000000002
+/home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/diagnostics/training.py,13,run,1,1,0.0013696140000000001,0.186000416
+/home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/diagnostics/training.py,50,<dictcomp>,1,1,1.5325e-05,0.000587416
+/home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/diagnostics/training.py,29,<listcomp>,30,30,8.4708e-05,0.0049697940000000005
+<frozen importlib._bootstrap>,1053,_handle_fromlist,391,391,0.00042775100000000003,0.000528627

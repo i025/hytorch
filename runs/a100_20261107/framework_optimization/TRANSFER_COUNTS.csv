@@ -1,0 +1,8 @@
+trace,copy_kind,calls_per_step,bytes_per_step,gpu_copy_us_per_step
+train_F1_c,Host-to-Device,2.0,633616.0,32.8066
+train_B0_c,Host-to-Device,2.0,633616.0,39.7857
+train_torch_a,Host-to-Device,2.0,633616.0,38.3617
+train_F1_b,Host-to-Device,2.0,633616.0,38.7584
+train_B0_b,Host-to-Device,2.0,633616.0,39.0403
+train_B0_a,Host-to-Device,2.0,633616.0,39.1009
+train_torch_b,Host-to-Device,2.0,633616.0,38.3427

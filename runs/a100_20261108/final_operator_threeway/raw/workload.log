@@ -1,0 +1,8 @@
+警告: 未找到scipy，无法加载SVHN数据集
+Fresh step:  24 GEMM calls; 5 col2im calls. All five col strides match training layout.
+Traceback (most recent call last):
+  File "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/diagnostics/workload.py", line 48, in <module>
+    (O/'raw/cases.json').write_text(json.dumps(cases(),indent=2));write('WORKLOAD.csv',[dict(**c,spec=json.dumps(c.get('spec',{})),source='fresh workload validated' if c['origin']=='real' else c['origin']) for c in cases()])
+  File "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/diagnostics/workload.py", line 48, in <listcomp>
+    (O/'raw/cases.json').write_text(json.dumps(cases(),indent=2));write('WORKLOAD.csv',[dict(**c,spec=json.dumps(c.get('spec',{})),source='fresh workload validated' if c['origin']=='real' else c['origin']) for c in cases()])
+TypeError: dict() got multiple values for keyword argument 'spec'

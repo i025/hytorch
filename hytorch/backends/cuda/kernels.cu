@@ -47,15 +47,67 @@ template<int T> __global__ void gemm_shared(const float* a, const float* b,
     if (r<m && col<n) c[(int64_t)r*n+col]=v;
 }
 
+// A 64x64 output tile with sixteen FP32 accumulators per thread. Reuse each
+// shared-memory operand across four outputs instead of loading it per FMA.
+// Keep the original kernel for small/narrow matrices to avoid wasted lanes.
+template<int K> __global__ void gemm_register(const float* a, const float* b,
+                                             float* c, int m, int n, int k) {
+    __shared__ float sa[K][65], sb[K][64];
+    int tx=threadIdx.x, ty=threadIdx.y, tid=ty*16+tx;
+    int row0=blockIdx.y*64, col0=blockIdx.x*64;
+    float acc[4][4]={};
+    for (int base=0; base<k; base+=K) {
+        for (int i=tid; i<64*K; i+=256) {
+            int r=i/K, q=i%K;
+            sa[q][r]=(row0+r<m && base+q<k)?a[(int64_t)(row0+r)*k+base+q]:0;
+            q=i/64; int col=i%64;
+            sb[q][col]=(base+q<k && col0+col<n)?b[(int64_t)(base+q)*n+col0+col]:0;
+        }
+        __syncthreads();
+        #pragma unroll
+        for (int q=0; q<K; ++q) {
+            float av[4], bv[4];
+            #pragma unroll
+            for (int i=0; i<4; ++i) {
+                av[i]=sa[q][ty+i*16];
+                bv[i]=sb[q][tx+i*16];
+            }
+            #pragma unroll
+            for (int i=0; i<4; ++i)
+                #pragma unroll
+                for (int j=0; j<4; ++j) acc[i][j]+=av[i]*bv[j];
+        }
+        __syncthreads();
+    }
+    #pragma unroll
+    for (int i=0; i<4; ++i)
+        #pragma unroll
+        for (int j=0; j<4; ++j) {
+            int r=row0+ty+i*16, col=col0+tx+j*16;
+            if (r<m && col<n) c[(int64_t)r*n+col]=acc[i][j];
+        }
+}
+
 API int hy_cuda_abi_version() { return 1; }
 API const char* hy_cuda_error(int code) { return cudaGetErrorString((cudaError_t)code); }
 API int hy_gemm(const float* a, const float* b, float* c, int m, int n,
                 int k, int variant, int tile, void* stream) {
     if (!a || !b || !c || m<=0 || n<=0 || k<=0 || variant<0 || variant>2 ||
         (tile!=16 && tile!=32)) return (int)cudaErrorInvalidValue;
+    // Conservative shape-only heuristic; 128 CTAs is a tuning starting point.
+    const int64_t grid_m = ((int64_t)m + 63) / 64;
+    const int64_t grid_n = ((int64_t)n + 63) / 64;
+    const int64_t register_blocks = grid_m * grid_n;
+    constexpr int64_t kMinRegisterBlocks = 128;
+    const bool use_register = variant == 2 && m >= 64 && n >= 64 && k >= 64 &&
+                              register_blocks >= kMinRegisterBlocks;
     cudaStream_t s=(cudaStream_t)stream;
     if (variant==0) gemm_basic<<<((int64_t)m*n+255)/256,256,0,s>>>(a,b,c,m,n,k);
-    else {
+    else if (use_register) {
+        dim3 block(16,16), grid((n+63)/64,(m+63)/64);
+        if (tile==16) gemm_register<16><<<grid,block,0,s>>>(a,b,c,m,n,k);
+        else gemm_register<32><<<grid,block,0,s>>>(a,b,c,m,n,k);
+    } else {
         dim3 block(tile,tile), grid((n+tile-1)/tile,(m+tile-1)/tile);
         if (variant==1) {
             if (tile==16) gemm_blocked<16><<<grid,block,0,s>>>(a,b,c,m,n,k);
@@ -138,4 +190,126 @@ API int hy_pool(const float* x,float* y,int64_t* indexes,int N,int C,int H,int W
     pool_kernel<<<((int64_t)N*C*OH*OW+255)/256,256,0,(cudaStream_t)stream>>>
         (x,y,indexes,N,C,H,W,KH,KW,SH,SW,PH,PW,OH,OW);
     return (int)cudaGetLastError();
+}
+
+// Strided FP32 col2im: one writer per NCHW output, ascending kh/kw reduction.
+__global__ void col2im_strided(const float* col, float* img,
+    int64_t n, int64_t c, int64_t h, int64_t w,
+    int64_t kh, int64_t kw, int64_t oh, int64_t ow,
+    int64_t sh, int64_t sw, int64_t ph, int64_t pw,
+    int64_t s0, int64_t s1, int64_t s2, int64_t s3, int64_t s4, int64_t s5) {
+    int64_t i = (int64_t)blockIdx.x * blockDim.x + threadIdx.x;
+    const int64_t total = n * c * h * w;
+    const int64_t step = (int64_t)gridDim.x * blockDim.x;
+    for (; i < total; i += step) {
+        const int64_t x = i % w, y = (i / w) % h;
+        const int64_t ci = (i / (w * h)) % c, ni = i / (w * h * c);
+        const int64_t ty = y + ph, tx = x + pw;
+        // 0 <= (ty-ky)/sh < oh, and ky == ty (mod sh); analogous for x.
+        int64_t ky0 = ty - (oh - 1) * sh;
+        int64_t kx0 = tx - (ow - 1) * sw;
+        ky0 = ky0 > 0 ? ky0 : 0;
+        kx0 = kx0 > 0 ? kx0 : 0;
+        const int64_t ky1 = ty < kh - 1 ? ty : kh - 1;
+        const int64_t kx1 = tx < kw - 1 ? tx : kw - 1;
+        float val = 0.0f;
+        if (ky0 <= ky1 && kx0 <= kx1) {
+            if (sh != 1) ky0 += (ty - ky0) % sh;
+            if (sw != 1) kx0 += (tx - kx0) % sw;
+            const int64_t base = ni * s0 + ci * s1;
+            // Step directly over valid congruence classes; no inner validity tests.
+            const int64_t iy0 = sh == 1 ? ty - ky0 : (ty - ky0) / sh;
+            const int64_t ix0 = sw == 1 ? tx - kx0 : (tx - kx0) / sw;
+            for (int64_t ky = ky0, iy = iy0; ky <= ky1; ky += sh, --iy) {
+                for (int64_t kx = kx0, ix = ix0; kx <= kx1; kx += sw, --ix) {
+                    val = val + col[base + ky * s2 + kx * s3 + iy * s4 + ix * s5];
+                }
+            }
+        }
+        img[i] = val;
+        if (total - i <= step) break;  // Avoid signed overflow of the grid-stride increment.
+    }
+}
+
+API int hy_col2im(const float* col, float* img,
+    int64_t n, int64_t c, int64_t h, int64_t w,
+    int64_t kh, int64_t kw, int64_t oh, int64_t ow,
+    int64_t sh, int64_t sw, int64_t ph, int64_t pw,
+    int64_t s0, int64_t s1, int64_t s2, int64_t s3, int64_t s4, int64_t s5,
+    void* stream) {
+    if (!col || !img || n <= 0 || c <= 0 || h <= 0 || w <= 0 ||
+        kh <= 0 || kw <= 0 || oh <= 0 || ow <= 0 || sh <= 0 || sw <= 0 ||
+        ph < 0 || pw < 0) return (int)cudaErrorInvalidValue;
+    // Python binding validates products/offsets; cap grid for wide-index outputs.
+    const int64_t total = n * c * h * w;
+    const int64_t needed = (total - 1) / 256 + 1;
+    const unsigned int blocks = (unsigned int)(needed < 65535 ? needed : 65535);
+    col2im_strided<<<blocks,256,0,(cudaStream_t)stream>>>(col,img,n,c,h,w,
+        kh,kw,oh,ow,sh,sw,ph,pw,s0,s1,s2,s3,s4,s5);
+    return (int)cudaGetLastError();
+}
+
+// Optional ABI-1 host binding extension. Native-endian signed 64-bit POD fields.
+// Byte input is copied to an aligned local object; the caller owns it until return.
+struct Col2imParams { int64_t v[18]; };
+static_assert(sizeof(Col2imParams) == 144, "col2im POD size");
+static_assert(alignof(Col2imParams) == alignof(int64_t), "col2im POD alignment");
+API int hy_col2im_fast(const float* col, float* img, const void* params, void* stream) {
+    if (!params) return (int)cudaErrorInvalidValue;
+    Col2imParams p;
+    memcpy(&p, params, sizeof(p));
+    return hy_col2im(col,img,p.v[0],p.v[1],p.v[2],p.v[3],p.v[4],p.v[5],
+        p.v[6],p.v[7],p.v[8],p.v[9],p.v[10],p.v[11],p.v[12],p.v[13],
+        p.v[14],p.v[15],p.v[16],p.v[17],stream);
+}
+
+// ABI extension: a private host descriptor array, no device pointer table allocation.
+struct SgdTensor { uint64_t p, g, n; };
+struct SgdBlock { uint64_t p, g, n, begin, end; };
+struct SgdBatch { SgdBlock tensors[32]; int64_t count; };
+static_assert(sizeof(SgdTensor)==24 && alignof(SgdTensor)==8, "SGD ctypes layout");
+static_assert(sizeof(SgdBatch)==1288, "SGD launch parameter layout");
+__global__ void sgd_multi_kernel(const __grid_constant__ SgdBatch batch, float lr) {
+    int t=0;
+    while (t<batch.count && blockIdx.x>=batch.tensors[t].end) ++t;
+    if (t==batch.count) return;
+    const SgdBlock& d=batch.tensors[t];
+    float* p=(float*)(uintptr_t)d.p;
+    const float* g=(const float*)(uintptr_t)d.g;
+    uint64_t i=((uint64_t)blockIdx.x-d.begin)*blockDim.x+threadIdx.x;
+    const uint64_t step=(d.end-d.begin)*blockDim.x;
+    while (i<d.n) {
+        const float delta=__fmul_rn(lr,g[i]);
+        p[i]=__fsub_rn(p[i],delta);
+        if (d.n-i<=step) break;
+        i+=step;
+    }
+}
+API int hy_sgd_multi(const SgdTensor* tensors, int64_t count, float lr, void* stream) {
+    if (count<0 || (count && !tensors)) return (int)cudaErrorInvalidValue;
+    // Validate the entire sequence before any launch, not after a partial update.
+    for (int64_t i=0;i<count;++i) {
+        const SgdTensor& d=tensors[i];
+        if (d.n>(uint64_t)INT64_MAX || (d.n && (!d.p || !d.g)) ||
+            (d.p%4) || (d.g%4)) return (int)cudaErrorInvalidValue;
+    }
+    for (int64_t offset=0;offset<count;) {
+        SgdBatch batch={};
+        batch.count=count-offset<32 ? count-offset : 32;
+        uint64_t blocks=0;
+        for (int t=0;t<batch.count;++t) {
+            const SgdTensor& d=tensors[offset+t];
+            uint64_t b=d.n ? (d.n-1)/256+1 : 0;
+            b=b<256 ? b : 256;
+            batch.tensors[t]={d.p,d.g,d.n,blocks,blocks+b};
+            blocks+=b;
+        }
+        if (blocks) {
+            sgd_multi_kernel<<<(unsigned)blocks,256,0,(cudaStream_t)stream>>>(batch,lr);
+            cudaError_t status=cudaGetLastError();
+            if (status!=cudaSuccess) return (int)status;
+        }
+        offset+=batch.count;
+    }
+    return 0;
 }

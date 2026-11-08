@@ -1,0 +1,5 @@
+index, name, uuid, utilization.gpu [%], memory.used [MiB], clocks.current.sm [MHz], clocks.current.memory [MHz]
+0, NVIDIA A100-PCIE-40GB, GPU-af2dc3da-4948-7c30-005b-1ab38ccd4863, 0 %, 4 MiB, 210 MHz, 1215 MHz
+1, NVIDIA A100-PCIE-40GB, GPU-0bc09ee6-967a-b53d-bf80-38379585cf08, 54 %, 10115 MiB, 1410 MHz, 1215 MHz
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-0bc09ee6-967a-b53d-bf80-38379585cf08, 1445648, python, 10106 MiB

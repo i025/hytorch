@@ -1,0 +1,65 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 192,
+    "measured_step_total_s": 0.9543009316548705,
+    "mean_step_s": 0.0049703173523691175,
+    "samples_per_sec": 804.7775859007046,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 4,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 0.2,
+    "gpu_utilization_pct_mean": 24.75,
+    "gpu_utilization_pct_max": 40.0,
+    "gpu_memory_used_mib_mean": 505.0,
+    "gpu_memory_used_mib_max": 505.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 28.0,
+    "gpu_temperature_c_max": 28.0,
+    "gpu_power_w_mean": 43.692499999999995,
+    "gpu_power_w_max": 46.79,
+    "cpu_utilization_pct_mean": 1.35,
+    "cpu_utilization_pct_max": 1.5,
+    "process_rss_mib_mean": 644.0263671875,
+    "process_rss_mib_max": 644.28125,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266062044664068,
+      "train_wall_s": 0.3374401261098683,
+      "samples": 256,
+      "train_samples_per_sec": 758.6531067044708
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0004873680097148281,
+      "train_wall_s": 0.32240271009504795,
+      "samples": 256,
+      "train_samples_per_sec": 794.0379903274644
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126584121300766,
+      "train_wall_s": 0.32561224000528455,
+      "samples": 256,
+      "train_samples_per_sec": 786.2112308672587
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": "d9f315341f1a68b9990cea589eb8818b62a18e71b9453da2a2fa5069273457b6"
+}

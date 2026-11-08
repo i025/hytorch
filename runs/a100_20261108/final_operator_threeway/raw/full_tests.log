@@ -1,0 +1,965 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting runs/a100_20261106/col2im_binding_optimization/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/col2im_binding_optimization/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/col2im_binding_optimization/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/col2im_binding_optimization/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/col2im_binding_optimization/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/col2im_binding_optimization/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_binding.py _
+import file mismatch:
+imported module 'test_col2im_binding' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_binding.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_binding.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/dweight_im2col_reuse/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_binding.py _
+import file mismatch:
+imported module 'test_col2im_binding' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_binding.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_binding.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/baseline/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/baseline/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_col2im_binding.py _
+import file mismatch:
+imported module 'test_col2im_binding' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_binding.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_col2im_binding.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/final_training_optimization/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/fp32_fix_and_profile/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/fp32_fix_and_profile/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/fp32_fix_and_profile/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/fp32_fix_and_profile/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/fp32_fix_and_profile/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/fp32_fix_and_profile/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/fp32_fix_and_profile/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/fp32_fix_and_profile/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/fp32_fix_and_profile/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/fp32_fix_and_profile/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/gemm_shape_dispatch/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/gemm_shape_dispatch/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/gemm_shape_dispatch/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/gemm_shape_dispatch/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/gemm_shape_dispatch/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/gemm_shape_dispatch/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/baseline/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/baseline/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/baseline/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/baseline/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/baseline/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/baseline/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/baseline/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/baseline/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/baseline/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/baseline/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/baseline/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/baseline/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/source/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/source/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/source/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/source/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/native_col2im/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/operator_handoff/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/operator_handoff/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/operator_handoff/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261106/operator_handoff/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_binding.py _
+import file mismatch:
+imported module 'test_col2im_binding' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_binding.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_binding.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_final_optimization.py _
+import file mismatch:
+imported module 'test_final_optimization' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_final_optimization.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_final_optimization.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_binding.py _
+import file mismatch:
+imported module 'test_col2im_binding' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_binding.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_binding.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_final_optimization.py _
+import file mismatch:
+imported module 'test_final_optimization' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_final_optimization.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_final_optimization.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_framework_metadata.py _
+import file mismatch:
+imported module 'test_framework_metadata' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_framework_metadata.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_framework_metadata.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_binding.py _
+import file mismatch:
+imported module 'test_col2im_binding' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_binding.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_binding.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_final_optimization.py _
+import file mismatch:
+imported module 'test_final_optimization' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_final_optimization.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_final_optimization.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/baseline/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/baseline/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261107/framework_optimization/source/tests/test_framework_metadata.py _
+import file mismatch:
+imported module 'test_framework_metadata' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_framework_metadata.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/source/tests/test_framework_metadata.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_backward_dtype.py _
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_binding.py _
+import file mismatch:
+imported module 'test_col2im_binding' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_binding.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_binding.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_cuda.py _
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_host.py _
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_compact_function.py _
+import file mismatch:
+imported module 'test_compact_function' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_compact_function.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_compact_function.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_conv2d_gemm_cpu.py _
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_cuda_device.py _
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_cuda_host.py _
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_final_optimization.py _
+import file mismatch:
+imported module 'test_final_optimization' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_final_optimization.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_final_optimization.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_framework_metadata.py _
+import file mismatch:
+imported module 'test_framework_metadata' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_framework_metadata.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_framework_metadata.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_gemm_blocked_packed.py _
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting runs/a100_20261108/final_operator_threeway/source/tests/test_gemm_dispatch.py _
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/source/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_backward_dtype.py _________________
+import file mismatch:
+imported module 'test_backward_dtype' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_backward_dtype.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_backward_dtype.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_col2im_binding.py _________________
+import file mismatch:
+imported module 'test_col2im_binding' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_binding.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_col2im_binding.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_col2im_cuda.py __________________
+import file mismatch:
+imported module 'test_col2im_cuda' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_cuda.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_col2im_cuda.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_col2im_host.py __________________
+import file mismatch:
+imported module 'test_col2im_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_col2im_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_col2im_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______________ ERROR collecting tests/test_compact_function.py ________________
+import file mismatch:
+imported module 'test_compact_function' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_compact_function.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_compact_function.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_conv2d_gemm_cpu.py ________________
+import file mismatch:
+imported module 'test_conv2d_gemm_cpu' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_conv2d_gemm_cpu.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_cuda_device.py __________________
+import file mismatch:
+imported module 'test_cuda_device' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_device.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_cuda_device.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+___________________ ERROR collecting tests/test_cuda_host.py ___________________
+import file mismatch:
+imported module 'test_cuda_host' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_cuda_host.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_cuda_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_final_optimization.py _______________
+import file mismatch:
+imported module 'test_final_optimization' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/final_training_optimization/source/tests/test_final_optimization.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_final_optimization.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_framework_metadata.py _______________
+import file mismatch:
+imported module 'test_framework_metadata' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_framework_metadata.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_framework_metadata.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_gemm_blocked_packed.py ______________
+import file mismatch:
+imported module 'test_gemm_blocked_packed' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_blocked_packed.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_gemm_blocked_packed.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_gemm_dispatch.py _________________
+import file mismatch:
+imported module 'test_gemm_dispatch' has this __file__ attribute:
+  /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/baseline/tests/test_gemm_dispatch.py
+which is not the same as the test file we want to collect:
+  /home/xieminhui_pubuse/hytorch/tests/test_gemm_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+=========================== short test summary info ============================
+ERROR runs/a100_20261106/col2im_binding_optimization/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_cuda.py
+ERROR runs/a100_20261106/col2im_binding_optimization/source/tests/test_col2im_host.py
+ERROR runs/a100_20261106/col2im_binding_optimization/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/col2im_binding_optimization/source/tests/test_cuda_device.py
+ERROR runs/a100_20261106/col2im_binding_optimization/source/tests/test_cuda_host.py
+ERROR runs/a100_20261106/col2im_binding_optimization/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261106/col2im_binding_optimization/source/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_binding.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_cuda.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_col2im_host.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_cuda_device.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_cuda_host.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261106/dweight_im2col_reuse/source/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_backward_dtype.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_binding.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_cuda.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_col2im_host.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_cuda_device.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_cuda_host.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261106/final_training_optimization/baseline/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_col2im_binding.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_col2im_cuda.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_col2im_host.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_cuda_device.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_cuda_host.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261106/final_training_optimization/source/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261106/fp32_fix_and_profile/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261106/fp32_fix_and_profile/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/fp32_fix_and_profile/source/tests/test_cuda_device.py
+ERROR runs/a100_20261106/fp32_fix_and_profile/source/tests/test_cuda_host.py
+ERROR runs/a100_20261106/fp32_fix_and_profile/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261106/gemm_shape_dispatch/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261106/gemm_shape_dispatch/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/gemm_shape_dispatch/source/tests/test_cuda_device.py
+ERROR runs/a100_20261106/gemm_shape_dispatch/source/tests/test_cuda_host.py
+ERROR runs/a100_20261106/gemm_shape_dispatch/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261106/gemm_shape_dispatch/source/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261106/native_col2im/baseline/tests/test_backward_dtype.py
+ERROR runs/a100_20261106/native_col2im/baseline/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/native_col2im/baseline/tests/test_cuda_device.py
+ERROR runs/a100_20261106/native_col2im/baseline/tests/test_cuda_host.py
+ERROR runs/a100_20261106/native_col2im/baseline/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261106/native_col2im/baseline/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261106/native_col2im/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261106/native_col2im/source/tests/test_col2im_cuda.py
+ERROR runs/a100_20261106/native_col2im/source/tests/test_col2im_host.py
+ERROR runs/a100_20261106/native_col2im/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/native_col2im/source/tests/test_cuda_device.py
+ERROR runs/a100_20261106/native_col2im/source/tests/test_cuda_host.py
+ERROR runs/a100_20261106/native_col2im/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261106/native_col2im/source/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261106/operator_handoff/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261106/operator_handoff/source/tests/test_cuda_device.py
+ERROR runs/a100_20261106/operator_handoff/source/tests/test_cuda_host.py
+ERROR runs/a100_20261106/operator_handoff/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_binding.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_cuda.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_col2im_host.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_cuda_device.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_cuda_host.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_final_optimization.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/baseline/source/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_binding.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_cuda.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_col2im_host.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_cuda_device.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_cuda_host.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_final_optimization.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_framework_metadata.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261107/conv_pool_framework_optimization/source/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_binding.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_cuda.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_col2im_host.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_cuda_device.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_cuda_host.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_final_optimization.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261107/framework_optimization/baseline/source/tests/test_gemm_dispatch.py
+ERROR runs/a100_20261107/framework_optimization/source/tests/test_framework_metadata.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_backward_dtype.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_binding.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_cuda.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_col2im_host.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_compact_function.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_conv2d_gemm_cpu.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_cuda_device.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_cuda_host.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_final_optimization.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_framework_metadata.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_gemm_blocked_packed.py
+ERROR runs/a100_20261108/final_operator_threeway/source/tests/test_gemm_dispatch.py
+ERROR tests/test_backward_dtype.py
+ERROR tests/test_col2im_binding.py
+ERROR tests/test_col2im_cuda.py
+ERROR tests/test_col2im_host.py
+ERROR tests/test_compact_function.py
+ERROR tests/test_conv2d_gemm_cpu.py
+ERROR tests/test_cuda_device.py
+ERROR tests/test_cuda_host.py
+ERROR tests/test_final_optimization.py
+ERROR tests/test_framework_metadata.py
+ERROR tests/test_gemm_blocked_packed.py
+ERROR tests/test_gemm_dispatch.py
+!!!!!!!!!!!!!!!!!! Interrupted: 120 errors during collection !!!!!!!!!!!!!!!!!!!
+120 errors in 3.99s

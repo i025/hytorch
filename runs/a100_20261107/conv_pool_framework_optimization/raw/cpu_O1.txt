@@ -1,0 +1,98 @@
+         118768 function calls (116876 primitive calls) in 0.163 seconds
+
+   Ordered by: cumulative time
+   List reduced from 270 to 90 due to restriction <90>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.001    0.001    0.163    0.163 training.py:13(run)
+     1980    0.008    0.000    0.107    0.000 core.py:184(__call__)
+       30    0.004    0.000    0.093    0.003 core.py:127(backward)
+      150    0.001    0.000    0.049    0.000 functions_conv.py:70(backward)
+   330/30    0.001    0.000    0.043    0.001 layers.py:25(__call__)
+       30    0.000    0.000    0.042    0.001 model.py:56(forward)
+      150    0.000    0.000    0.024    0.000 layers.py:174(forward)
+      150    0.000    0.000    0.024    0.000 functions_conv.py:84(conv2d)
+      150    0.000    0.000    0.023    0.000 functions_conv.py:135(deconv2d)
+      150    0.001    0.000    0.022    0.000 functions_conv.py:56(forward)
+      150    0.001    0.000    0.021    0.000 functions_conv.py:95(forward)
+      150    0.002    0.000    0.019    0.000 runtime.py:173(conv2d)
+      150    0.001    0.000    0.017    0.000 functions_conv.py:147(forward)
+      150    0.006    0.000    0.015    0.000 runtime.py:287(packed_dweight)
+      210    0.006    0.000    0.012    0.000 functions.py:383(backward)
+      240    0.002    0.000    0.011    0.000 runtime.py:134(gemm)
+       30    0.000    0.000    0.011    0.000 optimizers.py:94(update)
+       30    0.000    0.000    0.011    0.000 optimizers.py:18(update)
+      150    0.001    0.000    0.010    0.000 _product.py:358(tensordot)
+      330    0.001    0.000    0.010    0.000 core.py:275(mul)
+      480    0.010    0.000    0.010    0.000 optimizers.py:109(update_one)
+      270    0.009    0.000    0.009    0.000 {method 'sum' of 'cupy._core.core._ndarray_base' objects}
+      150    0.001    0.000    0.009    0.000 functions_conv.py:448(col2im_array)
+      270    0.001    0.000    0.008    0.000 functions.py:270(forward)
+       90    0.000    0.000    0.008    0.000 layers.py:112(forward)
+       90    0.000    0.000    0.008    0.000 functions.py:320(linear_simple)
+      840    0.007    0.000    0.008    0.000 runtime.py:90(_call)
+      390    0.001    0.000    0.008    0.000 runtime.py:102(_arrays)
+       90    0.000    0.000    0.007    0.000 functions.py:278(backward)
+      136    0.007    0.000    0.007    0.000 {built-in method cupy._core.core.array}
+      150    0.000    0.000    0.007    0.000 core.py:108(sum)
+      150    0.007    0.000    0.007    0.000 {built-in method cupy._core._routines_linalg.tensordot_core}
+      150    0.000    0.000    0.007    0.000 functions.py:213(sum)
+      210    0.000    0.000    0.006    0.000 functions.py:390(relu)
+      150    0.002    0.000    0.006    0.000 runtime.py:248(col2im)
+       76    0.000    0.000    0.006    0.000 from_data.py:59(asarray)
+      150    0.000    0.000    0.005    0.000 functions.py:202(forward)
+       30    0.000    0.000    0.005    0.000 training.py:29(<listcomp>)
+       90    0.000    0.000    0.005    0.000 functions.py:285(matmul)
+     1800    0.001    0.000    0.005    0.000 cuda.py:11(get_array_module)
+      330    0.005    0.000    0.005    0.000 core.py:261(forward)
+       90    0.000    0.000    0.005    0.000 core.py:246(backward)
+      180    0.000    0.000    0.005    0.000 functions.py:252(sum_to)
+      210    0.004    0.000    0.004    0.000 functions.py:378(forward)
+       30    0.000    0.000    0.004    0.000 functions.py:478(backward)
+      180    0.004    0.000    0.004    0.000 {method 'dot' of 'cupy._core.core._ndarray_base' objects}
+    26578    0.003    0.000    0.004    0.000 {built-in method builtins.isinstance}
+      510    0.004    0.000    0.004    0.000 {method 'reshape' of 'cupy._core.core._ndarray_base' objects}
+       90    0.000    0.000    0.004    0.000 functions.py:242(forward)
+       90    0.000    0.000    0.004    0.000 utils.py:107(sum_to)
+     1320    0.000    0.000    0.004    0.000 runtime.py:112(<genexpr>)
+      300    0.001    0.000    0.003    0.000 runtime.py:160(_geometry)
+      840    0.003    0.000    0.003    0.000 basic.py:15(empty)
+     1320    0.001    0.000    0.003    0.000 {built-in method builtins.any}
+     1800    0.003    0.000    0.003    0.000 __init__.py:867(get_array_module)
+     1080    0.000    0.000    0.003    0.000 from_data.py:111(ascontiguousarray)
+       30    0.000    0.000    0.003    0.000 functions.py:53(backward)
+     1980    0.001    0.000    0.003    0.000 core.py:185(<listcomp>)
+     1140    0.001    0.000    0.003    0.000 runtime.py:115(_shape_ok)
+       90    0.000    0.000    0.003    0.000 core.py:254(add)
+       30    0.000    0.000    0.003    0.000 functions.py:489(mean_square_error)
+     1080    0.003    0.000    0.003    0.000 {built-in method cupy._core.core.ascontiguousarray}
+       30    0.000    0.000    0.003    0.000 dataloaders.py:34(__next__)
+       30    0.002    0.000    0.003    0.000 functions.py:473(forward)
+      390    0.001    0.000    0.003    0.000 runtime.py:213(selected)
+       60    0.002    0.000    0.002    0.000 {built-in method numpy.array}
+     2400    0.001    0.000    0.002    0.000 utils.py:393(pair)
+     2490    0.002    0.000    0.002    0.000 core.py:46(__init__)
+     3660    0.001    0.000    0.002    0.000 core.py:177(as_variable)
+1566/1562    0.001    0.000    0.002    0.000 {built-in method builtins.next}
+      783    0.000    0.000    0.002    0.000 contextlib.py:279(helper)
+      630    0.001    0.000    0.002    0.000 core.py:134(add_func)
+      856    0.001    0.000    0.002    0.000 numeric.py:1927(isscalar)
+      180    0.000    0.000    0.002    0.000 core.py:83(T)
+      480    0.000    0.000    0.002    0.000 core.py:171(as_array)
+  783/781    0.001    0.000    0.002    0.000 contextlib.py:139(__exit__)
+     1140    0.001    0.000    0.002    0.000 {built-in method builtins.all}
+       90    0.002    0.000    0.002    0.000 core.py:241(forward)
+  783/781    0.000    0.000    0.001    0.000 contextlib.py:130(__enter__)
+      180    0.000    0.000    0.001    0.000 functions.py:145(transpose)
+       31    0.000    0.000    0.001    0.000 layers.py:45(cleargrads)
+2562/1037    0.001    0.000    0.001    0.000 layers.py:36(params)
+       60    0.000    0.000    0.001    0.000 from_data.py:9(array)
+      783    0.001    0.000    0.001    0.000 contextlib.py:102(__init__)
+       30    0.000    0.000    0.001    0.000 basic.py:190(ones_like)
+     1262    0.001    0.000    0.001    0.000 core.py:17(using_config)
+      480    0.001    0.000    0.001    0.000 {method 'transpose' of 'cupy._core.core._ndarray_base' objects}
+      300    0.000    0.000    0.001    0.000 _product.py:504(_move_axes_to_head)
+       30    0.000    0.000    0.001    0.000 core.py:306(sub)
+       33    0.000    0.000    0.001    0.000 __init__.py:826(asnumpy)
+
+

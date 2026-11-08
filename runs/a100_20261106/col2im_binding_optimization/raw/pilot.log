@@ -1,0 +1,6 @@
+警告: 未找到scipy，无法加载SVHN数据集
+conv1 {'old': np.float64(17.28415), 'cache': np.float64(13.97905), 'fast': np.float64(11.62615), 'direct18': np.float64(6.3662), 'direct4': np.float64(4.13515)}
+conv2 {'old': np.float64(17.2505), 'cache': np.float64(13.854), 'fast': np.float64(11.64815), 'direct18': np.float64(6.3382), 'direct4': np.float64(4.1554)}
+conv3 {'old': np.float64(17.0647), 'cache': np.float64(13.52845), 'fast': np.float64(11.3035), 'direct18': np.float64(6.1865), 'direct4': np.float64(4.05745)}
+conv4 {'old': np.float64(17.0195), 'cache': np.float64(13.45935), 'fast': np.float64(11.2596), 'direct18': np.float64(6.2284), 'direct4': np.float64(4.0377)}
+conv5 {'old': np.float64(16.97785), 'cache': np.float64(13.44495), 'fast': np.float64(11.16885), 'direct18': np.float64(6.1826), 'direct4': np.float64(4.0297)}

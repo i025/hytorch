@@ -1,0 +1,11 @@
+{
+  "total_gemm_flops_per_step": 645021168,
+  "native_gemm_calls": 8,
+  "register_calls": 2,
+  "register_flops": 18579456,
+  "native_flops": 215007056,
+  "pool_calls": 0,
+  "pool_requests": 147,
+  "pool_requested_bytes": 124776518,
+  "device_allocations": 0
+}

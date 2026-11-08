@@ -1,0 +1,20 @@
+--- before/hytorch/backends/cuda/kernels.cu
++++ after/hytorch/backends/cuda/kernels.cu
+@@ -94,9 +94,16 @@
+                 int k, int variant, int tile, void* stream) {
+     if (!a || !b || !c || m<=0 || n<=0 || k<=0 || variant<0 || variant>2 ||
+         (tile!=16 && tile!=32)) return (int)cudaErrorInvalidValue;
++    // Conservative shape-only heuristic; 128 CTAs is a tuning starting point.
++    const int64_t grid_m = ((int64_t)m + 63) / 64;
++    const int64_t grid_n = ((int64_t)n + 63) / 64;
++    const int64_t register_blocks = grid_m * grid_n;
++    constexpr int64_t kMinRegisterBlocks = 128;
++    const bool use_register = variant == 2 && m >= 64 && n >= 64 && k >= 64 &&
++                              register_blocks >= kMinRegisterBlocks;
+     cudaStream_t s=(cudaStream_t)stream;
+     if (variant==0) gemm_basic<<<((int64_t)m*n+255)/256,256,0,s>>>(a,b,c,m,n,k);
+-    else if (variant==2 && m>=64 && n>=64 && k>=64) {
++    else if (use_register) {
+         dim3 block(16,16), grid((n+63)/64,(m+63)/64);
+         if (tile==16) gemm_register<16><<<grid,block,0,s>>>(a,b,c,m,n,k);
+         else gemm_register<32><<<grid,block,0,s>>>(a,b,c,m,n,k);

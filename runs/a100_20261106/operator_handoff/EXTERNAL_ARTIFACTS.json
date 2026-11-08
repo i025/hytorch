@@ -1,0 +1,65 @@
+[
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/cupy_trace.nsys-rep",
+    "bytes": 575830,
+    "sha256": "fa7bd677b7f36c8545c584a692897dff36123068bc29cbd1d22dad8463698f40",
+    "included_in_archive": false,
+    "kind": "Nsight original report or SQLite; exported CSV retained in package"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/cupy_trace.sqlite",
+    "bytes": 1171456,
+    "sha256": "e5cab3892f512408d400608f6d31b64997d9aa88ebf254b854f0bcbe9af26ad8",
+    "included_in_archive": false,
+    "kind": "Nsight original report or SQLite; exported CSV retained in package"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/native_plain.nsys-rep",
+    "bytes": 533607,
+    "sha256": "5a22b7e50859200a1629430851c2e576628f7315a5840114ccd3a695cae9216b",
+    "included_in_archive": false,
+    "kind": "Nsight original report or SQLite; exported CSV retained in package"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/native_plain.sqlite",
+    "bytes": 1048576,
+    "sha256": "b9fcb513398bb309b6157042778f59028152d00d7a790ff0d32554230f8cb561",
+    "included_in_archive": false,
+    "kind": "Nsight original report or SQLite; exported CSV retained in package"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/native_trace.nsys-rep",
+    "bytes": 574232,
+    "sha256": "58bb39338187c247fc07e9f0c76b6d07471471c85c48b002c4a5469c0db3ae9a",
+    "included_in_archive": false,
+    "kind": "Nsight original report or SQLite; exported CSV retained in package"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/native_trace.sqlite",
+    "bytes": 1175552,
+    "sha256": "f3c71c6f33ce622fe74b4e208ea254b0b43d5261c7f83f24f0f5dc5ed1176c56",
+    "included_in_archive": false,
+    "kind": "Nsight original report or SQLite; exported CSV retained in package"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so",
+    "bytes": 309040,
+    "sha256": "5b93982d8c31438a033c7da6d43164a3389a15cf0e94baddc0e390df67199ec0",
+    "included_in_archive": false,
+    "kind": "compiled library"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/libhytorch_cuda_optimized.so",
+    "bytes": 309040,
+    "sha256": "5b93982d8c31438a033c7da6d43164a3389a15cf0e94baddc0e390df67199ec0",
+    "included_in_archive": false,
+    "kind": "compiled library"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/libhytorch_cuda_baseline.so",
+    "bytes": 169656,
+    "sha256": "324203dcd0142fa6896e31d9f96012cc5a12b04afcc379440bd1f1a307c4a526",
+    "included_in_archive": false,
+    "kind": "compiled library"
+  }
+]

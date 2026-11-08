@@ -1,0 +1,30 @@
+................F...............                                         [100%]
+=================================== FAILURES ===================================
+_______________________ test_sgd_rounding_special[-0.0] ________________________
+
+cp = <module 'cupy' from '/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/__init__.py'>
+lr = -0.0
+
+    @pytest.mark.parametrize('lr',[.001,1.,-0.,np.float32(.5)])
+    def test_sgd_rounding_special(cp,lr):
+        v=np.array([0.,-0.,1e-45,-1e-45,1e-38,-1e-38,1e30,-1e30,1.,-1.,np.inf,-np.inf,np.nan],np.float32)
+        p=make_param(cp,v,v[::-1].copy());ref=p.data.copy();ref-=lr*p.grad.data
+        assert (lr*p.grad.data).dtype==cp.float32
+        SGD(lr,backend='native').setup(Target([p])).update()
+        a,b=cp.asnumpy(ref),cp.asnumpy(p.data);finite=np.isfinite(a)
+>       np.testing.assert_array_equal(a[finite].view(np.uint32),b[finite].view(np.uint32))
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 3 / 7 (42.9%)
+E       Max absolute difference among violations: 7136238
+E       Max relative difference among violations: 1.
+E        ACTUAL: array([2147483648,          0, 2147483648, 1900671690, 4048155338,
+E              1065353216, 3212836864], dtype=uint32)
+E        DESIRED: array([2147483649,    7136238, 2154619886, 1900671690, 4048155338,
+E              1065353216, 3212836864], dtype=uint32)
+
+tests/test_final_optimization.py:66: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_final_optimization.py::test_sgd_rounding_special[-0.0] - As...
+1 failed, 31 passed, 2 deselected in 1.91s

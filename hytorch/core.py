@@ -9,6 +9,7 @@ import hytorch
 # Config
 # =============================================================================
 class Config:
+    compact_function = False  # Opt-in single-output packaging; graph semantics unchanged.
     enable_backprop = True     # 有的时候不需要反向传播，只需要正向传递，这时候修改配置configuration
     train = True               # 在使用dropout的情况下，需要区分训练阶段和测试阶段
 
@@ -185,6 +186,16 @@ class Function:
 
         xs = [x.data for x in inputs]
         ys = self.forward(*xs)
+        if Config.compact_function and not isinstance(ys, tuple):
+            # Keep the Variable, input ownership and weak output edge. Only
+            # eliminate temporary containers and scalar detection for ndarrays.
+            output = Variable(ys if isinstance(ys, array_types) else as_array(ys))
+            if Config.enable_backprop:
+                self.generation = max([x.generation for x in inputs])
+                output.set_creator(self)
+            self.inputs = inputs
+            self.outputs = [weakref.ref(output)]
+            return output
         if not isinstance(ys, tuple):
             ys = (ys,)
         outputs = [Variable(as_array(y)) for y in ys]

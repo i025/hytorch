@@ -1,0 +1,14 @@
+========= COMPUTE-SANITIZER
+警告: 未找到scipy，无法加载SVHN数据集
+conv1 donkey failures 3 maxabs 0.000152587890625
+conv2 donkey failures 9 maxabs 6.4849853515625e-05
+conv3 donkey failures 0 maxabs 1.52587890625e-05
+conv4 donkey failures 0 maxabs 0.0
+conv5 donkey failures 0 maxabs 0.0
+irregular donkey failures 0 maxabs 0.0
+overlap donkey failures 0 maxabs 6.866455078125e-05
+point donkey failures 0 maxabs 0.0
+holes donkey failures 0 maxabs 0.0
+tail donkey failures 0 maxabs 0.0
+DONE 90
+========= ERROR SUMMARY: 0 errors

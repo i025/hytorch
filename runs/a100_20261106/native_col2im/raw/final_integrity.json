@@ -1,0 +1,20 @@
+{
+  "scope_checks": {
+    "old_cuda_source_exact_prefix": true,
+    "gemm128_unchanged": true,
+    "old_cupy_col2im_unchanged": true,
+    "all_autograd_conv_classes_unchanged": true,
+    "fp32_functions_unchanged": true
+  },
+  "gpu_tests_passed": 200,
+  "host_tests_passed": 32,
+  "memcheck_errors": 0,
+  "racecheck_hazards": 0,
+  "benchmark_cases": 36,
+  "native_regression_cases": 5,
+  "training_pairs": 7,
+  "training_all_pairs_slower": true,
+  "loss_gradients_weights_bitwise_equal": true,
+  "default_backend": "cupy",
+  "no_commit_push_pr": true
+}

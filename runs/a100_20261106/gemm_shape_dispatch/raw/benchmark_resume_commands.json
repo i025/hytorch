@@ -1,0 +1,115 @@
+{
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "CUDA_PATH": "/usr/local/cuda",
+    "LD_LIBRARY_PATH": "/usr/local/cuda/lib64",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "PYTHONHASHSEED": "0",
+    "HYTORCH_REQUIRE_CUDA": "1",
+    "NVIDIA_TF32_OVERRIDE": "0"
+  },
+  "commands": [
+    {
+      "name": "gemm_paired_retry",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/diagnostics/gemm_bench.py",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/raw/gemm_paired_retry"
+      ],
+      "start_utc": "2026-11-06T03:48:21.379875+00:00",
+      "end_utc": "2026-11-06T03:48:32.606268+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "training_paired",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/diagnostics/train.py",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/raw/training_paired"
+      ],
+      "start_utc": "2026-11-06T03:48:32.607418+00:00",
+      "end_utc": "2026-11-06T03:48:45.693246+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "gemm",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/gemm",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/diagnostics/gemm_bench.py",
+        "--profile",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/raw/gemm_profile"
+      ],
+      "start_utc": "2026-11-06T03:48:45.693632+00:00",
+      "end_utc": "2026-11-06T03:48:55.118431+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_old",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/train_old",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/diagnostics/train.py",
+        "--trace",
+        "old",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/raw/train_old"
+      ],
+      "start_utc": "2026-11-06T03:48:55.118796+00:00",
+      "end_utc": "2026-11-06T03:49:01.806971+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_new",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/train_new",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/diagnostics/train.py",
+        "--trace",
+        "new",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/raw/train_new"
+      ],
+      "start_utc": "2026-11-06T03:49:01.807365+00:00",
+      "end_utc": "2026-11-06T03:49:08.479177+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "gpu_final",
+      "argv": [
+        "nvidia-smi"
+      ],
+      "start_utc": "2026-11-06T03:49:08.479567+00:00",
+      "end_utc": "2026-11-06T03:49:09.222680+00:00",
+      "returncode": 0
+    }
+  ]
+}

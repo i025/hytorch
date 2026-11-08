@@ -1,0 +1,65 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 192,
+    "measured_step_total_s": 0.5240329154767096,
+    "mean_step_s": 0.0027293381014411957,
+    "samples_per_sec": 1465.5567948462838,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 2,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 0.2,
+    "gpu_utilization_pct_mean": 44.0,
+    "gpu_utilization_pct_max": 79.0,
+    "gpu_memory_used_mib_mean": 573.0,
+    "gpu_memory_used_mib_max": 573.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 29.0,
+    "gpu_temperature_c_max": 30.0,
+    "gpu_power_w_mean": 77.275,
+    "gpu_power_w_max": 104.74,
+    "cpu_utilization_pct_mean": 2.6,
+    "cpu_utilization_pct_max": 2.7,
+    "process_rss_mib_mean": 1295.189453125,
+    "process_rss_mib_max": 1295.296875,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266055706622865,
+      "train_wall_s": 0.23135568015277386,
+      "samples": 256,
+      "train_samples_per_sec": 1106.5213520193342
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.00048736768320623014,
+      "train_wall_s": 0.16214128816500306,
+      "samples": 256,
+      "train_samples_per_sec": 1578.869903509596
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126556142970003,
+      "train_wall_s": 0.16039031418040395,
+      "samples": 256,
+      "train_samples_per_sec": 1596.1063565974196
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": "4984be0507256675a6697aa1d6d840173b8d32e099471b5a0fb176afeb980076"
+}

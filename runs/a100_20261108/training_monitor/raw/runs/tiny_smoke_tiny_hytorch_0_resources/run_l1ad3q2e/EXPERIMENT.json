@@ -1,0 +1,89 @@
+{
+  "row": {
+    "tag": "tiny_smoke",
+    "model": "tiny",
+    "framework": "hytorch",
+    "mode": "resources",
+    "repeat": 0,
+    "steps": 192,
+    "samples": 768,
+    "wall_s": 0.283655385,
+    "training_window_s": 0.282331285,
+    "samples_per_s": 2707.5107352536247,
+    "training_window_samples_per_s": 2720.20863716892,
+    "monitor_setup_finalize_export_s": 0.0013241,
+    "loss": 0.05779409408569336,
+    "sample_count": 2,
+    "interval_s": 0.2,
+    "latency_diagnostic": false,
+    "allocator_peak_diagnostic": false,
+    "train_start_ns": 2681141735078534,
+    "train_end_ns": 2681142017409819,
+    "run_dir": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/raw/runs/tiny_smoke_tiny_hytorch_0_resources/run_l1ad3q2e"
+  },
+  "monitor": {
+    "enabled": true,
+    "timing": false,
+    "resources": true,
+    "mode": "throughput",
+    "cuda_backend": "cupy",
+    "logical_cuda_index": 0,
+    "cuda_visible_devices": "1",
+    "resolved_selector": [
+      "pci",
+      "0000:E1:00.0"
+    ],
+    "gpu_event_status": "DISABLED",
+    "run_dir": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/raw/runs/tiny_smoke_tiny_hytorch_0_resources/run_l1ad3q2e",
+    "steps": 0,
+    "sample_count": 2,
+    "sample_interval_s": 0.2,
+    "sampled_peaks_bytes": {
+      "gpu_used_bytes": 1184301056,
+      "process_gpu_used_bytes": 631242752,
+      "cupy_active_bytes": 2182656,
+      "cupy_reserved_bytes": 27451392,
+      "torch_allocated_bytes": null,
+      "torch_reserved_bytes": null
+    },
+    "peak_kind": "sampled maxima; not instantaneous/exact device peaks",
+    "allocator_tracked_peak": null,
+    "errors": [],
+    "mean_host_iteration_s": null,
+    "mean_completed_step_wall_s": null,
+    "mean_step_gpu_interval_s": null,
+    "phase_means_cpu_s": {
+      "data_load": null,
+      "data_prepare": null,
+      "h2d": null,
+      "forward": null,
+      "loss": null,
+      "backward": null,
+      "optimizer": null
+    },
+    "phase_means_gpu_event_s": {
+      "data_load": null,
+      "data_prepare": null,
+      "h2d": null,
+      "forward": null,
+      "loss": null,
+      "backward": null,
+      "optimizer": null
+    },
+    "run_completed_wall_s": 0.282752439,
+    "event_limitation": "stream intervals include idle gaps; concurrent streams may overlap; do not sum across streams"
+  },
+  "weights_sha256": {
+    "conv1/W": "38fc74e6898af29482518bc41416a574ed5e1ad21b3cef81e89c585fd039bae1",
+    "conv1/b": "3e65b1f3fa4afbe9325b5bab38908f740283145556d84c9b5b099006db199759",
+    "fc1/W": "cd9b1a956160dc1059423cb201d79ec01408b751c642bed813432549bf951010",
+    "fc1/b": "b3220afbf1316b87909f7fb0dfe42be2e4ee7a09a2b0a7b8694751daa21c7d84"
+  },
+  "gradients_sha256": {
+    "conv1/W": "9a33727eed5173ffaac6a2b3a9ce4aaa58c8337ad02ff3d91ee6e4119d75f142",
+    "conv1/b": "a202faa04ee65d8e9af7e6d162055233ab8ac3d77db745721acdf387b8997fbb",
+    "fc1/W": "ef028eb44ad4dd8ce7f088556be7f4b93f8c0794b811fe595d94d3c933201bcf",
+    "fc1/b": "63b1853a9fd874b38a598ef2f4ce778eb0e2301d6761ee4e8fbbf00fecd75734"
+  },
+  "loss_sha256": "45530ec0938fa8b8f2ebe1fc263d7336d5ec1f6360f80de4e28441579af6d70c"
+}

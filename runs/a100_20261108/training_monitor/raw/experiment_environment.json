@@ -1,0 +1,27 @@
+{
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "numpy": "2.2.6",
+  "cupy": "14.2.0",
+  "torch": "2.9.1+cu128",
+  "cuda_runtime": 12090,
+  "gpu": "{'name': b'NVIDIA A100-PCIE-40GB', 'totalGlobalMem': 42405855232, 'sharedMemPerBlock': 49152, 'regsPerBlock': 65536, 'warpSize': 32, 'maxThreadsPerBlock': 1024, 'maxThreadsDim': (1024, 1024, 64), 'maxGridSize': (2147483647, 65535, 65535), 'clockRate': 1410000, 'totalConstMem': 65536, 'major': 8, 'minor': 0, 'textureAlignment': 512, 'texturePitchAlignment': 32, 'multiProcessorCount': 108, 'kernelExecTimeoutEnabled': 0, 'integrated': 0, 'canMapHostMemory': 1, 'computeMode': 0, 'maxTexture1D': 131072, 'maxTexture2D': (131072, 65536), 'maxTexture3D': (16384, 16384, 16384), 'concurrentKernels': 1, 'ECCEnabled': 1, 'pciBusID': 225, 'pciDeviceID': 0, 'pciDomainID': 0, 'tccDriver': 0, 'memoryClockRate': 1215000, 'memoryBusWidth': 5120, 'l2CacheSize': 41943040, 'maxThreadsPerMultiProcessor': 2048, 'isMultiGpuBoard': 0, 'cooperativeLaunch': 1, 'cooperativeMultiDeviceLaunch': 1, 'maxTexture1DMipmap': 32768, 'maxTexture1DLayered': (32768, 2048), 'maxTexture2DMipmap': (32768, 32768), 'maxTexture2DLinear': (131072, 65000, 2097120), 'maxTexture2DLayered': (32768, 32768, 2048), 'maxTexture2DGather': (32768, 32768), 'maxTexture3DAlt': (8192, 8192, 32768), 'maxTextureCubemap': 32768, 'maxTextureCubemapLayered': (32768, 2046), 'maxSurface1D': 32768, 'maxSurface1DLayered': (32768, 2048), 'maxSurface2D': (131072, 65536), 'maxSurface2DLayered': (32768, 32768, 2048), 'maxSurface3D': (16384, 16384, 16384), 'maxSurfaceCubemap': 32768, 'maxSurfaceCubemapLayered': (32768, 2046), 'surfaceAlignment': 512, 'asyncEngineCount': 3, 'unifiedAddressing': 1, 'streamPrioritiesSupported': 1, 'globalL1CacheSupported': 1, 'localL1CacheSupported': 1, 'sharedMemPerMultiprocessor': 167936, 'regsPerMultiprocessor': 65536, 'managedMemory': 1, 'multiGpuBoardGroupID': 0, 'hostNativeAtomicSupported': 0, 'pageableMemoryAccess': 0, 'concurrentManagedAccess': 1, 'computePreemptionSupported': 1, 'canUseHostPointerForRegisteredMem': 1, 'sharedMemPerBlockOptin': 166912, 'pageableMemoryAccessUsesHostPageTables': 0, 'directManagedMemAccessFromHost': 0, 'uuid': b'\\x0b\\xc0\\x9e\\xe6\\x96z\\xb5=\\xbf\\x8087\\x95\\x85\\xcf\\x08', 'luid': b'', 'luidDeviceNodeMask': 0, 'persistingL2CacheMaxSize': 26214400, 'maxBlocksPerMultiProcessor': 32, 'accessPolicyMaxWindowSize': 134213632, 'reservedSharedMemPerBlock': 1024, 'deviceOverlap': 1, 'maxTexture1DLinear': 268435456, 'singleToDoublePrecisionPerfRatio': 2}",
+  "nvml_binding": "/usr/local/lib/python3.10/dist-packages/pynvml.py",
+  "cpu_threads": 4,
+  "tf32_override": "0",
+  "cudnn_deterministic": true,
+  "seed": 42,
+  "batch": 4,
+  "samples": 256,
+  "epochs": 3,
+  "steps": 192,
+  "config": {
+    "matmul": "cupy",
+    "conv": "cupy",
+    "pool": "cupy",
+    "tile": 16,
+    "col2im": "cupy",
+    "dweight": "cupy",
+    "metadata_cache": false
+  },
+  "final_config": "shared/im2col/native pool/native col2im/packed dweight/F1=True/O1=True/legacy SGD .001"
+}

@@ -1,0 +1,26 @@
+{
+  "hytorch/functions_conv.py": {
+    "before": "8c6a45ec7ab8830e50f3d0a6b4cedebc10efcfbdfb4c3b14377148d99963db98",
+    "after": "8c6a45ec7ab8830e50f3d0a6b4cedebc10efcfbdfb4c3b14377148d99963db98"
+  },
+  "hytorch/backends/cuda/runtime.py": {
+    "before": "dfb801e08632de52c88b0399091e488b612a76b0af574eb0431e17510acb278a",
+    "after": "dfb801e08632de52c88b0399091e488b612a76b0af574eb0431e17510acb278a"
+  },
+  "hytorch/backends/cuda/kernels.cu": {
+    "before": "c26f70b7848c56c450659c7109228795ad9cbc633089f5481161d4ccfe711c3d",
+    "after": "c26f70b7848c56c450659c7109228795ad9cbc633089f5481161d4ccfe711c3d"
+  },
+  "hytorch/core.py": {
+    "before": "fd03dc6195f550ffe70cbd7c168f2949b8a2d254ef9b7e635fce03877f772755",
+    "after": "fd03dc6195f550ffe70cbd7c168f2949b8a2d254ef9b7e635fce03877f772755"
+  },
+  "hytorch/functions.py": {
+    "before": "b07918e6318aef94b57c69051bcfff58b41deaf756959c528c9f9bb8f94a56d8",
+    "after": "b07918e6318aef94b57c69051bcfff58b41deaf756959c528c9f9bb8f94a56d8"
+  },
+  "library": {
+    "before": "f7d4867dd88bb3943f3f52b52fee0271293f20c842642f5955c43e46a963fab9",
+    "after": "f7d4867dd88bb3943f3f52b52fee0271293f20c842642f5955c43e46a963fab9"
+  }
+}

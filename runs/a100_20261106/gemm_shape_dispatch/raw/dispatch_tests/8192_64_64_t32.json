@@ -1,0 +1,10 @@
+{
+  "M": 8192,
+  "N": 64,
+  "K": 64,
+  "tile": 32,
+  "expected": "register",
+  "actual_graph_kernel": "gemm_register",
+  "fp64_max_abs": 1.8426812004035398e-07,
+  "fp64_relative_l2": 1.4225486166098716e-07
+}

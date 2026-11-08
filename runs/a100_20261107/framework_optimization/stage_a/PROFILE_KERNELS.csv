@@ -1,0 +1,88 @@
+trace,mode,scope,phase,name,calls,calls_per_step,us_per_step
+train_B0_a,B0,GPU_kernel,forward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",50,5.0,109.21639999999998
+train_B0_a,B0,GPU_kernel,forward,cupy_copy__float32_float32,50,5.0,24.560299999999994
+train_B0_a,B0,GPU_kernel,forward,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",80,8.0,326.53220000000005
+train_B0_a,B0,GPU_kernel,forward,"conv_pack(const float *, const float *, float *, int, int, int)",50,5.0,33.1104
+train_B0_a,B0,GPU_kernel,forward,cupy_maximum__float_float32_float32,70,7.0,29.971200000000003
+train_B0_a,B0,GPU_kernel,forward,cupy_add__float32_float32_float32,30,3.0,11.5168
+train_B0_a,B0,GPU_kernel,forward,cupy_tanh__float32_float32,10,1.0,3.1135999999999995
+train_B0_a,B0,GPU_kernel,forward,cupy_subtract__float32_float32_float32,10,1.0,3.0623999999999993
+train_B0_a,B0,GPU_kernel,forward,cupy_square__float32_float32,10,1.0,3.0527999999999995
+train_B0_a,B0,GPU_kernel,forward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,3.4976
+train_B0_a,B0,GPU_kernel,forward,cupy_true_divide__float32_float_float32,10,1.0,3.0751999999999997
+train_B0_a,B0,GPU_kernel,backward,cupy_fill,30,3.0,7.440099999999999
+train_B0_a,B0,GPU_kernel,backward,cupy_subtract__float32_float32_float32,20,2.0,6.3392
+train_B0_a,B0,GPU_kernel,backward,cupy_multiply__float32_float32_float32,40,4.0,12.844900000000006
+train_B0_a,B0,GPU_kernel,backward,cupy_negative__float32_float32,10,1.0,2.9279999999999995
+train_B0_a,B0,GPU_kernel,backward,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,3.0911999999999997
+train_B0_a,B0,GPU_kernel,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,3.2992
+train_B0_a,B0,GPU_kernel,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,5.0689
+train_B0_a,B0,GPU_kernel,backward,cupy_greater__float32_float_bool,70,7.0,29.644900000000007
+train_B0_a,B0,GPU_kernel,backward,cupy_multiply__float32_bool_float32,70,7.0,31.871999999999993
+train_B0_a,B0,GPU_kernel,backward,cupy_sum,70,7.0,65.47850000000003
+train_B0_a,B0,GPU_kernel,backward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",20,2.0,15.632299999999997
+train_B0_a,B0,GPU_kernel,backward,ampere_sgemm_32x128_nt,30,3.0,31.98080000000001
+train_B0_a,B0,GPU_kernel,backward,cupy_copy__float32_float32,100,10.0,50.25
+train_B0_a,B0,GPU_kernel,backward,ampere_sgemm_32x32_sliced1x4_nt,20,2.0,23.1168
+train_B0_a,B0,GPU_kernel,backward,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",50,5.0,84.72019999999998
+train_B0_a,B0,GPU_kernel,backward,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",50,5.0,109.546
+train_B0_a,B0,GPU_kernel,backward,ampere_sgemm_32x32_sliced1x4_nn,30,3.0,44.528
+train_B0_a,B0,GPU_kernel,backward,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",40,4.0,27.193600000000004
+train_B0_a,B0,GPU_kernel,backward,ampere_sgemm_64x32_sliced1x4_nn,10,1.0,17.536099999999998
+train_B0_a,B0,GPU_kernel,backward,ampere_sgemm_128x32_nt,20,2.0,41.043499999999995
+train_B0_a,B0,GPU_kernel,backward,ampere_sgemm_128x32_sliced1x4_nn,10,1.0,35.139300000000006
+train_B0_a,B0,GPU_kernel,update,cupy_multiply__float_float32_float32,160,16.0,56.17619999999998
+train_B0_a,B0,GPU_kernel,update,cupy_subtract__float32_float32_float32,160,16.0,57.31850000000001
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cuProfilerStart,1,0.1,1.4068
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cudaEventQuery_v3020,41,4.1,9.124299999999998
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cudaEventDestroy_v3020,21,2.1,2.3976999999999995
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cudaStreamIsCapturing_v10000,180,18.0,8.354699999999996
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cudaMemcpyAsync_v3020,20,2.0,19.408900000000006
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cudaEventCreateWithFlags_v3020,20,2.0,4.0047999999999995
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cudaEventRecord_v3020,60,6.0,28.225900000000006
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cudaLaunchKernel_v7000,500,50.0,225.14029999999988
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cuLaunchKernel,920,92.0,330.8254
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cuStreamGetCaptureInfo_v2,240,24.0,2.815199999999998
+train_B0_a,B0,CUDA_API_CPU_elapsed,,cudaStreamSynchronize_v3020,1,0.1,0.6618
+train_torch_a,torch,GPU_kernel,forward,"void implicit_convolve_sgemm<float, float, (int)128, (int)5, (int)5, (int)3, (int)3, (int)3, (int)1, (bool)0, (bool)0, (bool)1>(int, int, int, const T1 *, int, T2 *, const T1 *, kernel_conv_params, unsigned long long, int, float, float, int, const T2 *, const T2 *, bool, bool, int, int)",10,1.0,21.078700000000005
+train_torch_a,torch,GPU_kernel,forward,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",50,5.0,31.926400000000008
+train_torch_a,torch,GPU_kernel,forward,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::<unnamed>::launch_clamp_scalar(at::TensorIteratorBase &, c10::Scalar, c10::Scalar, at::native::detail::ClampLimits)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>>(int, T2, T3)",70,7.0,28.90250000000001
+train_torch_a,torch,GPU_kernel,forward,"void cask__5x_cudnn::computeOffsetsKernel<(bool)0, (bool)0>(cask__5x_cudnn::ComputeOffsetsParams)",10,1.0,4.3904
+train_torch_a,torch,GPU_kernel,forward,_5x_cudnn_ampere_scudnn_128x64_relu_medium_nn_v1,10,1.0,139.1301
+train_torch_a,torch,GPU_kernel,forward,"void fft2d_r2c_32x32<float, (bool)0, (unsigned int)0, (bool)0>(float2 *, const T1 *, int, int, int, int, int, int, int, int, int, cudnn::reduced_divisor, bool, int2, int, int)",20,2.0,40.477199999999996
+train_torch_a,torch,GPU_kernel,forward,"void fft2d_r2c_32x32<float, (bool)0, (unsigned int)5, (bool)1>(float2 *, const T1 *, int, int, int, int, int, int, int, int, int, cudnn::reduced_divisor, bool, int2, int, int)",10,1.0,20.854499999999998
+train_torch_a,torch,GPU_kernel,forward,ampere_gcgemm_64x32_nt,20,2.0,100.6245
+train_torch_a,torch,GPU_kernel,forward,"void fft2d_c2r_32x32<float, (bool)1, (bool)0, (unsigned int)0, (bool)0, (bool)0>(T1 *, const float2 *, int, int, int, int, int, int, int, int, int, float, float, cudnn::reduced_divisor, bool, T1 *, T1 *, int2, cudnnActivationStruct, int, int)",20,2.0,33.424099999999996
+train_torch_a,torch,GPU_kernel,forward,"void cudnn::winograd::generateWinogradTilesKernel<(int)0, float, float>(cudnn::winograd::GenerateWinogradTilesParams<T2, T3>)",20,2.0,10.012899999999998
+train_torch_a,torch,GPU_kernel,forward,_5x_cudnn_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148n_nt_v1,20,2.0,59.84340000000001
+train_torch_a,torch,GPU_kernel,forward,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",20,2.0,25.6929
+train_torch_a,torch,GPU_kernel,forward,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",10,1.0,3.721600000000001
+train_torch_a,torch,GPU_kernel,forward,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",10,1.0,5.3696
+train_torch_a,torch,GPU_kernel,forward,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::tanh_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>>(int, T2, T3)",10,1.0,3.4880000000000004
+train_torch_a,torch,GPU_kernel,forward,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::mse_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(float, float) (instance 1)], std::array<char *, (unsigned long)3>>(int, T2, T3)",10,1.0,3.0431999999999997
+train_torch_a,torch,GPU_kernel,forward,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, (int)4, (int)4>>(T3)",10,1.0,5.8624
+train_torch_a,torch,GPU_kernel,backward,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::FillFunctor<float>, std::array<char *, (unsigned long)1>>(int, T2, T3)",20,2.0,5.043200000000001
+train_torch_a,torch,GPU_kernel,backward,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::mse_backward_cuda_kernel(at::TensorIterator &, const c10::Scalar &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(float, float, float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",10,1.0,3.6225
+train_torch_a,torch,GPU_kernel,backward,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::tanh_backward_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(float, float) (instance 1)], std::array<char *, (unsigned long)3>>(int, T2, T3)",10,1.0,2.9568999999999996
+train_torch_a,torch,GPU_kernel,backward,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)0, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,3.408
+train_torch_a,torch,GPU_kernel,backward,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,5.1297
+train_torch_a,torch,GPU_kernel,backward,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator ()(at::TensorIterator &)::[lambda(float, float) (instance 1)]>, unsigned int, float, (int)4, (int)4>>(T3)",60,6.0,81.645
+train_torch_a,torch,GPU_kernel,backward,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, void at::native::<unnamed>::threshold_kernel_impl<float>(at::TensorIteratorBase &, T1, T1)::[lambda(float, float) (instance 1)]>, std::array<char *, (unsigned long)3>>(int, T2, T3)",70,7.0,29.488200000000017
+train_torch_a,torch,GPU_kernel,backward,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",20,2.0,14.665600000000001
+train_torch_a,torch,GPU_kernel,backward,ampere_sgemm_32x128_nt,20,2.0,16.7136
+train_torch_a,torch,GPU_kernel,backward,"void at::native::reduce_kernel<(int)256, (int)2, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator ()(at::TensorIterator &)::[lambda(float, float) (instance 1)]>, unsigned int, float, (int)4, (int)4>>(T3)",10,1.0,7.097600000000002
+train_torch_a,torch,GPU_kernel,backward,"void at::native::reduce_kernel<(int)128, (int)4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator ()(at::TensorIterator &)::[lambda(float, float) (instance 1)]>, unsigned int, float, (int)4, (int)4>>(T3)",10,1.0,8.0449
+train_torch_a,torch,GPU_kernel,backward,"void cudnn::engines_precompiled::scalePackedTensor_kernel<float, float>(long, T1 *, T2)",40,4.0,17.981000000000005
+train_torch_a,torch,GPU_kernel,backward,"void cudnn::detail::dgrad2d_alg1_1<float, (int)0, (int)6, (int)7, (int)5, (int)4, (int)5, (bool)0, (bool)1>(int, int, int, const T1 *, int, const T1 *, int, T1 *, kernel_grad_params, unsigned long long, int, unsigned long long, int, float, int, int)",20,2.0,69.65459999999999
+train_torch_a,torch,GPU_kernel,backward,"void wgrad_alg0_engine<float, (int)128, (int)5, (int)5, (int)3, (int)3, (int)3, (bool)0, (int)512>(int, int, int, const T1 *, int, T1 *, const T1 *, kernel_grad_params, unsigned long long, int, float, int, int, int, int)",50,5.0,196.35610000000003
+train_torch_a,torch,GPU_kernel,backward,"void cudnn::detail::dgrad_engine<float, (int)512, (int)6, (int)5, (int)3, (int)3, (int)3, (bool)0>(int, int, int, const T1 *, int, const T1 *, int, T1 *, kernel_grad_params, unsigned long long, int, unsigned long long, int, float, int, int, int)",20,2.0,102.3681
+train_torch_a,torch,GPU_kernel,update,"void at::native::<unnamed>::multi_tensor_apply_kernel<at::native::<unnamed>::TensorListMetadata<(int)2>, at::native::<unnamed>::BinaryOpListAlphaFunctor<float, (int)2, (int)2, (int)0>, std::plus<float>, float>(T1, T2, T3...)",10,1.0,28.815999999999995
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cuProfilerStart,1,0.1,1.0718
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cudaMemcpyAsync_v3020,20,2.0,59.8359
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cudaStreamSynchronize_v3020,21,2.1,60.45210000000001
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cudaLaunchKernel_v7000,720,72.0,336.2044000000002
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cudaMemsetAsync_v3020,60,6.0,23.2066
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cudaEventCreate_v3020,10,1.0,3.509499999999999
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cudaEventRecord_v3020,100,10.0,33.586500000000015
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cudaStreamWaitEvent_v3020,180,18.0,13.850500000000002
+train_torch_a,torch,CUDA_API_CPU_elapsed,,cudaEventDestroy_v3020,10,1.0,1.5601

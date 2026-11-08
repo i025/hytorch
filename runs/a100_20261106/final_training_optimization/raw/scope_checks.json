@@ -1,0 +1,22 @@
+{
+  "existing_cuda_exact_prefix": true,
+  "hytorch/backends/cuda/runtime.py:gemm": true,
+  "hytorch/backends/cuda/runtime.py:conv2d": true,
+  "hytorch/backends/cuda/runtime.py:col2im": true,
+  "hytorch/backends/cuda/runtime.py:_col2im_metadata": true,
+  "hytorch/backends/cuda/runtime.py:_arrays": true,
+  "hytorch/backends/cuda/runtime.py:max_pool2d": true,
+  "hytorch/functions_conv.py:Conv2d": true,
+  "hytorch/functions_conv.py:Deconv2d": true,
+  "hytorch/functions_conv.py:col2im_array": true,
+  "hytorch/optimizers.py:Optimizer": true,
+  "hytorch/optimizers.py:MomentumSGD": true,
+  "hytorch/optimizers.py:Adam": true,
+  "hytorch/optimizers.py:AdamW": true,
+  "hytorch/optimizers.py:WeightDecay": true,
+  "hytorch/optimizers.py:ClipGrad": true,
+  "hytorch/optimizers.py:FreezeParam": true,
+  "hytorch/functions.py": true,
+  "hytorch/core.py": true,
+  "original_tests_unchanged": true
+}

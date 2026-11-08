@@ -1,0 +1,137 @@
+"""Dtype, numerical and higher-order regressions for internal backward constants."""
+import os
+import numpy as np
+import pytest
+import hytorch
+from hytorch import Variable
+import hytorch.functions as F
+from hytorch.backends.cuda import backend
+from hytorch.optimizers import SGD
+
+@pytest.fixture(params=['cpu', 'cuda'])
+def xp(request):
+    if request.param == 'cpu':
+        return np
+    try:
+        import cupy as cp
+        cp.cuda.Device(0).use()
+        cp.zeros(1)
+    except Exception as exc:
+        if os.environ.get('HYTORCH_REQUIRE_CUDA') == '1':
+            pytest.fail(str(exc))
+        pytest.skip('CUDA unavailable')
+    return cp
+
+@pytest.mark.parametrize('dtype', [np.float32, np.float64])
+@pytest.mark.parametrize('kind', ['mse', 'tanh'])
+def test_backward_dtype_values_and_second_derivative(xp, dtype, kind):
+    import torch
+    a = np.array([[-.7, .2], [.3, .8], [.1, -.4]], dtype=dtype)
+    b = np.full_like(a, .15)
+    x = Variable(xp.asarray(a)); t = Variable(xp.asarray(b))
+    tx = torch.tensor(a, requires_grad=True); tt = torch.tensor(b, requires_grad=True)
+    if kind == 'mse':
+        loss = F.mean_square_error(x, t)
+        ref = ((tx-tt)**2).sum()/len(a)  # HyTorch normalizes by batch, not element count.
+    else:
+        loss = F.tanh(x).sum(); ref = tx.tanh().sum()
+    loss.backward(create_graph=True)
+    tg = torch.autograd.grad(ref, tx, create_graph=True)[0]
+    grad = x.grad
+    assert loss.dtype == dtype and grad.dtype == dtype
+    np.testing.assert_allclose(hytorch.cuda.as_numpy(grad.data), tg.detach().numpy(), rtol=2e-6, atol=2e-7)
+    if kind == 'mse':
+        assert t.grad.dtype == dtype
+        np.testing.assert_allclose(hytorch.cuda.as_numpy(t.grad.data), -tg.detach().numpy(), rtol=2e-6, atol=2e-7)
+    x.cleargrad(); grad.sum().backward()
+    second = torch.autograd.grad(tg.sum(), tx)[0]
+    assert x.grad.dtype == dtype
+    np.testing.assert_allclose(hytorch.cuda.as_numpy(x.grad.data), second.numpy(), rtol=2e-6, atol=2e-7)
+
+@pytest.mark.parametrize('dtype', [np.float32, np.float64])
+def test_accumulation_and_explicit_promotion(xp, dtype):
+    x = Variable(xp.array([.2, -.4], dtype=dtype))
+    y = F.tanh(x)
+    (y+y).sum().backward()
+    assert x.grad.dtype == dtype
+    np.testing.assert_allclose(hytorch.cuda.as_numpy(x.grad.data), 2*(1-np.tanh(np.array([.2,-.4],dtype=dtype))**2), rtol=2e-6)
+    # Explicit FP64 operands retain the existing strong-array promotion contract.
+    z = x * xp.array([1.], dtype=np.float64)
+    assert z.dtype == np.float64
+
+@pytest.mark.parametrize('dtype', [np.float32, np.float64])
+def test_conv_linear_and_sgd(xp, dtype):
+    import torch
+    from hytorch.functions_conv import conv2d
+    rng=np.random.default_rng(13)
+    arrays=[rng.normal(0,.2,s).astype(dtype) for s in [(2,2,5,6),(3,2,3,2),(3,),(45,2),(2,)]]
+    x,w,b,v,c=[Variable(xp.asarray(a)) for a in arrays]
+    tx,tw,tb,tv,tc=[torch.tensor(a,requires_grad=True) for a in arrays]
+    with backend():
+        h=conv2d(x,w,b); y=F.tanh(F.linear_simple(h.reshape(2,-1),v,c))
+        loss=F.mean_square_error(y,xp.zeros((2,2),dtype=dtype));loss.backward(retain_grad=True)
+    th=torch.nn.functional.conv2d(tx,tw,tb)
+    ty=torch.tanh(th.flatten(1)@tv+tc);tl=(ty**2).sum()/2;tl.backward()
+    for a,ta in zip([x,w,b,v,c],[tx,tw,tb,tv,tc]):
+        assert a.grad.dtype==dtype
+        np.testing.assert_allclose(hytorch.cuda.as_numpy(a.grad.data),ta.grad.numpy(),rtol=2e-5,atol=2e-6)
+    assert h.dtype==dtype and h.grad.dtype==dtype and y.dtype==dtype
+    for p in [w,b,v,c]:
+        old=p.data.copy(); delta=.001*p.grad.data
+        assert delta.dtype==dtype
+        SGD(.001).update_one(p)
+        assert p.dtype==dtype
+        np.testing.assert_allclose(hytorch.cuda.as_numpy(p.data),hytorch.cuda.as_numpy(old-delta),rtol=1e-7,atol=1e-8)
+
+@pytest.mark.parametrize('mode', ['cupy','native'])
+def test_donkey_backward_and_update(xp, mode):
+    if xp is np:
+        pytest.skip('Full DonkeyNet regression runs on GPU; CPU operators covered above')
+    from donkeycar_hy.model import DonkeyNet
+    from benchmarks.bench_cuda_training import initialize,parameters,torch_model
+    import torch
+    model=DonkeyNet(dropout_rate=0.)
+    state=initialize(model,(3,66,200),42);model.to_gpu()
+    torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
+    torch.backends.cudnn.deterministic=True;torch.backends.cudnn.benchmark=False
+    tm=torch_model('donkey',state).cuda()
+    rng=np.random.default_rng(17);a=rng.uniform(-1,1,(4,3,66,200)).astype(np.float32)
+    x=Variable(xp.asarray(a));tx=torch.tensor(a,device='cuda',requires_grad=True)
+    context=backend(matmul='shared',conv='im2col',pool='native') if mode=='native' else backend()
+    with context:
+        y=model(x);loss=F.mean_square_error(y,xp.zeros((4,1),dtype=np.float32));loss.backward(retain_grad=True)
+    ty=tm(tx);tl=(ty**2).mean();tl.backward()
+    assert x.grad.dtype==np.float32
+    np.testing.assert_allclose(xp.asnumpy(y.data),ty.detach().cpu().numpy(),rtol=2e-4,atol=2e-5)
+    np.testing.assert_allclose(xp.asnumpy(x.grad.data),tx.grad.cpu().numpy(),rtol=2e-4,atol=2e-5)
+    # All retained activations and gradient tensors, not only parameters.
+    pending=[loss];seen=set()
+    while pending:
+        value=pending.pop()
+        if id(value) in seen:continue
+        seen.add(id(value))
+        if value.data is not None and value.data.dtype.kind=='f':assert value.dtype==np.float32
+        if value.grad is not None:assert value.grad.dtype==np.float32
+        if value.creator is not None:pending.extend(value.creator.inputs)
+    for key,p in parameters(model).items():
+        layer,name=key.split('/');tp=getattr(getattr(tm,layer),'weight' if name=='W' else 'bias')
+        ref=tp.grad.cpu().numpy();ref=ref.T if p.ndim==2 else ref
+        assert p.grad.dtype==np.float32
+        np.testing.assert_allclose(xp.asnumpy(p.grad.data),ref,rtol=2e-4,atol=2e-5)
+        assert (.001*p.grad.data).dtype==np.float32
+    SGD(.001).setup(model).update();torch.optim.SGD(tm.parameters(),lr=.001).step()
+    for key,p in parameters(model).items():
+        layer,name=key.split('/');tp=getattr(getattr(tm,layer),'weight' if name=='W' else 'bias')
+        ref=tp.detach().cpu().numpy();ref=ref.T if p.ndim==2 else ref
+        assert p.dtype==np.float32
+        np.testing.assert_allclose(xp.asnumpy(p.data),ref,rtol=2e-4,atol=2e-5)
+
+
+def test_mse_integer_inputs_keep_floating_scale():
+    # MSE forward yields a floating loss even for integer arrays. Do not truncate
+    # the derivative coefficient to integer zero when batch size exceeds two.
+    x=Variable(np.array([[1], [2], [3]], dtype=np.int64))
+    target=np.zeros((3,1), dtype=np.int64)
+    F.mean_square_error(x,target).backward()
+    assert x.grad.dtype == np.float64
+    np.testing.assert_allclose(x.grad.data, np.array([[2/3], [4/3], [2.]]), rtol=1e-15)

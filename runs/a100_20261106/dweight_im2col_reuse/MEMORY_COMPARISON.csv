@@ -1,0 +1,15 @@
+case,measurement,batch_shape,T,D,col_bytes,training_peak_gpu_bytes,training_growth_bytes,note
+conv1,actual_isolated_col_nbytes,"(4, 3, 66, 200)",12152,75,3645600,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+conv2,actual_isolated_col_nbytes,"(4, 24, 31, 98)",2632,600,6316800,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+conv3,actual_isolated_col_nbytes,"(4, 36, 14, 47)",440,900,1584000,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+conv4,actual_isolated_col_nbytes,"(4, 48, 5, 22)",240,432,414720,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+conv5,actual_isolated_col_nbytes,"(4, 64, 3, 20)",72,576,165888,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+irregular,actual_isolated_col_nbytes,"(2, 3, 13, 17)",84,45,15120,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+overlap,actual_isolated_col_nbytes,"(3, 5, 19, 23)",1311,75,393300,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+point,actual_isolated_col_nbytes,"(1, 7, 9, 11)",99,7,2772,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+holes,actual_isolated_col_nbytes,"(2, 2, 8, 13)",64,6,1536,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+tail,actual_isolated_col_nbytes,"(5, 3, 7, 8)",100,24,9600,,,size of actual allocated diagnostic matrix; not retained-workspace or training-peak measurement
+DonkeyNet_5_layer_sum,analytic_payload_only_NOT_measured_peak,batch=1,,,3031752,,,"4*sum(T*D), excludes allocator/other tensors/lifetime overlap; no implemented reuse"
+DonkeyNet_5_layer_sum,analytic_payload_only_NOT_measured_peak,batch=4,,,12127008,,,"4*sum(T*D), excludes allocator/other tensors/lifetime overlap; no implemented reuse"
+DonkeyNet_5_layer_sum,analytic_payload_only_NOT_measured_peak,batch=8,,,24254016,,,"4*sum(T*D), excludes allocator/other tensors/lifetime overlap; no implemented reuse"
+DonkeyNet_5_layer_sum,analytic_payload_only_NOT_measured_peak,batch=16,,,48508032,,,"4*sum(T*D), excludes allocator/other tensors/lifetime overlap; no implemented reuse"

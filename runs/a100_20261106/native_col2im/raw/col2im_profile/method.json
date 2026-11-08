@@ -1,0 +1,10 @@
+{
+  "seed": "501+case_id",
+  "warmup": 10,
+  "repeats": 15,
+  "graph_batch": 32,
+  "profile_repeats": 3,
+  "original_source": "ElementwiseKernel AST expression from unchanged functions_conv._col2im_gpu; output preallocated; equality vs full production function checked every case",
+  "timing": "unprofiled event around graph replay /32, excluding H2D/D2H; profile uses independent direct calls",
+  "cases": 36
+}

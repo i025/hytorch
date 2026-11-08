@@ -1,0 +1,26 @@
+{
+  "production_only_requested_dispatch": true,
+  "fp32_production_unchanged": true,
+  "runtime_abi_source_unchanged": true,
+  "baseline_library_preserved": true,
+  "kernel_math_unchanged": true,
+  "baseline_gpu_passed": 56,
+  "new_gpu_passed": 102,
+  "host_passed": 31,
+  "strict_gate_failure_rows": 22,
+  "new_gemm_numeric_regressions": 0,
+  "training_weights_bitwise": true,
+  "regression_shapes_retained": [
+    [
+      64,
+      8128,
+      65
+    ],
+    [
+      449,
+      897,
+      71
+    ]
+  ],
+  "no_commit_push_pr": true
+}

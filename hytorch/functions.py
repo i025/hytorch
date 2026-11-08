@@ -52,7 +52,10 @@ class Tanh(Function):
 
     def backward(self, gy):
         y = self.outputs[0]()       # weakref()
-        gx = gy*(1 - y*y)
+        # Internal constants follow the tensor dtype; explicit FP64 stays FP64.
+        xp = cuda.get_array_module(y.data)
+        one = xp.array(1, dtype=y.dtype)
+        gx = gy*(one - y*y)
         return gx
 
 
@@ -475,7 +478,10 @@ class MeanSquareError(Function):
     def backward(self, gy):
         x0, x1 = self.inputs
         diff = x0 - x1
-        gx0 = gy * diff*(2./len(diff))
+        # Avoid a Python float becoming a strong FP64 zero-dimensional array.
+        xp = cuda.get_array_module(diff.data)
+        scale = xp.array(2. / len(diff), dtype=xp.result_type(diff.dtype, gy.dtype))
+        gx0 = gy * diff * scale
         gx1 = -gx0
         return gx0, gx1
 

@@ -1,0 +1,52 @@
+{
+  "enabled": true,
+  "timing": true,
+  "resources": true,
+  "mode": "throughput",
+  "cuda_backend": "cupy",
+  "logical_cuda_index": 0,
+  "cuda_visible_devices": "1",
+  "resolved_selector": [
+    "pci",
+    "0000:E1:00.0"
+  ],
+  "gpu_event_status": "ENABLED",
+  "run_dir": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/raw/runs/formal_donkey_hytorch_9_all/run_0tskmfcz",
+  "steps": 192,
+  "sample_count": 4,
+  "sample_interval_s": 0.2,
+  "sampled_peaks_bytes": {
+    "gpu_used_bytes": 1035403264,
+    "process_gpu_used_bytes": 482344960,
+    "cupy_active_bytes": 13363200,
+    "cupy_reserved_bytes": 27451392,
+    "torch_allocated_bytes": null,
+    "torch_reserved_bytes": null
+  },
+  "peak_kind": "sampled maxima; not instantaneous/exact device peaks",
+  "allocator_tracked_peak": null,
+  "errors": [],
+  "mean_host_iteration_s": 0.0038916993645833307,
+  "mean_completed_step_wall_s": null,
+  "mean_step_gpu_interval_s": 0.0038810293463369234,
+  "phase_means_cpu_s": {
+    "data_load": 8.398253645833336e-05,
+    "data_prepare": 4.504572916666669e-06,
+    "h2d": 0.00015849399999999986,
+    "forward": 0.0009129366718749997,
+    "loss": 0.00013135415625,
+    "backward": 0.0021924834479166667,
+    "optimizer": 0.0003339112395833337
+  },
+  "phase_means_gpu_event_s": {
+    "data_load": null,
+    "data_prepare": null,
+    "h2d": 0.00015117133292369544,
+    "forward": 0.0009083098340779543,
+    "loss": 0.00012508266807223368,
+    "backward": 0.002191680000474055,
+    "optimizer": 0.00032760533317923525
+  },
+  "run_completed_wall_s": 0.761294189,
+  "event_limitation": "stream intervals include idle gaps; concurrent streams may overlap; do not sum across streams"
+}

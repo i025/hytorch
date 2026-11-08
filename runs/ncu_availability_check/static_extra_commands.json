@@ -1,0 +1,33 @@
+[
+  {
+    "argv": [
+      "/opt/nvidia/nsight-compute/2025.2.1/ncu",
+      "--list-sets"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "/opt/nvidia/nsight-compute/2025.2.1/ncu",
+      "--list-sections"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "/opt/nvidia/nsight-compute/2025.2.1/ncu",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ps",
+      "-o",
+      "pid,user,comm",
+      "-p",
+      "570250,575118"
+    ],
+    "exit_code": 0
+  }
+]

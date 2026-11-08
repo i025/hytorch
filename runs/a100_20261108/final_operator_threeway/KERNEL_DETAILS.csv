@@ -1,0 +1,993 @@
+op,case,scope,mode,kernel,gridX,gridY,gridZ,blockX,blockY,blockZ,registers_per_thread,calls,total_kernel_us,mean_kernel_us
+gemm,real_12152_24_75,array,cupy,ampere_sgemm_32x128_nn,1,95,1,256,1,1,57,15,237.53700000000003,15.835799999999999
+gemm,real_12152_24_75,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",2,760,1,16,16,1,32,15,410.752,27.383466666666667
+gemm,real_12152_24_75,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",2,760,1,16,16,1,32,15,411.77500000000003,27.451666666666668
+gemm,real_12152_24_75,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",2,760,1,16,16,1,32,15,410.84999999999997,27.39
+gemm,real_12152_24_75,function,cupy,ampere_sgemm_32x128_nn,1,95,1,256,1,1,57,15,237.15200000000004,15.810133333333333
+gemm,real_12152_24_75,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",2,760,1,16,16,1,32,15,410.30800000000005,27.353866666666665
+gemm,real_2632_36_600,array,cupy,ampere_sgemm_32x128_nn,2,21,7,256,1,1,57,15,465.376,31.025066666666667
+gemm,real_2632_36_600,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,165,1,32,16,1,32,15,128.096,8.539733333333334
+gemm,real_2632_36_600,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,165,1,16,16,1,32,15,1027.365,68.491
+gemm,real_2632_36_600,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,165,1,16,16,1,32,15,1026.822,68.4548
+gemm,real_2632_36_600,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,165,1,16,16,1,32,15,1027.52,68.50133333333333
+gemm,real_2632_36_600,function,cupy,ampere_sgemm_32x128_nn,2,21,7,256,1,1,57,15,466.115,31.074333333333332
+gemm,real_2632_36_600,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,165,1,32,16,1,32,15,127.03899999999999,8.469266666666668
+gemm,real_2632_36_600,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,165,1,16,16,1,32,15,1027.459,68.49726666666666
+gemm,real_440_48_900,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,2,14,8,128,1,1,86,15,278.37,18.558
+gemm,real_440_48_900,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,28,1,32,16,1,32,15,90.079,6.0052666666666665
+gemm,real_440_48_900,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,28,1,16,16,1,32,15,654.7210000000001,43.64806666666667
+gemm,real_440_48_900,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,28,1,16,16,1,32,15,654.914,43.66093333333333
+gemm,real_440_48_900,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,28,1,16,16,1,32,15,655.2669999999999,43.684466666666665
+gemm,real_440_48_900,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,2,14,8,128,1,1,86,15,279.199,18.613266666666664
+gemm,real_440_48_900,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,28,1,32,16,1,32,15,90.21000000000002,6.014
+gemm,real_440_48_900,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,28,1,16,16,1,32,15,653.3140000000001,43.55426666666667
+gemm,real_240_64_432,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,2,8,6,128,1,1,86,15,183.071,12.204733333333333
+gemm,real_240_64_432,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,15,1,32,16,1,32,15,96.96000000000001,6.464
+gemm,real_240_64_432,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,15,1,16,16,1,32,15,345.27900000000005,23.0186
+gemm,real_240_64_432,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,15,1,16,16,1,32,15,345.252,23.0168
+gemm,real_240_64_432,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",1,4,1,16,16,1,64,15,1225.8619999999999,81.72413333333333
+gemm,real_240_64_432,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,2,8,6,128,1,1,86,15,183.80899999999997,12.253933333333334
+gemm,real_240_64_432,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,15,1,32,16,1,32,15,97.025,6.468333333333334
+gemm,real_240_64_432,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,15,1,16,16,1,32,15,344.868,22.9912
+gemm,real_72_64_576,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,2,3,9,128,1,1,86,15,161.57000000000002,10.771333333333335
+gemm,real_72_64_576,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,5,1,32,16,1,32,15,92.801,6.186733333333334
+gemm,real_72_64_576,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,434.18000000000006,28.945333333333334
+gemm,real_72_64_576,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,434.33799999999997,28.95586666666667
+gemm,real_72_64_576,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",1,2,1,16,16,1,64,15,1594.1140000000003,106.27426666666666
+gemm,real_72_64_576,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,2,3,9,128,1,1,86,15,161.63100000000003,10.775400000000001
+gemm,real_72_64_576,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,5,1,32,16,1,32,15,92.93000000000002,6.195333333333333
+gemm,real_72_64_576,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,433.98600000000005,28.9324
+gemm,real_4_100_1152,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,4,1,16,128,1,1,86,15,172.516,11.501066666666667
+gemm,real_4_100_1152,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",4,1,1,32,16,1,32,15,85.69299999999998,5.712866666666667
+gemm,real_4_100_1152,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,32,15,765.6329999999999,51.0422
+gemm,real_4_100_1152,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,32,15,766.113,51.0742
+gemm,real_4_100_1152,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,32,15,765.536,51.03573333333333
+gemm,real_4_100_1152,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,4,1,16,128,1,1,86,15,172.769,11.517933333333334
+gemm,real_4_100_1152,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",4,1,1,32,16,1,32,15,86.05,5.736666666666666
+gemm,real_4_100_1152,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,32,15,764.802,50.9868
+gemm,real_4_50_100,array,cupy,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",1,1,1,256,1,1,64,15,111.96800000000002,7.464533333333334
+gemm,real_4_50_100,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,1,1,16,16,1,32,15,136.09799999999998,9.0732
+gemm,real_4_50_100,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,1,1,16,16,1,32,15,136.03199999999998,9.0688
+gemm,real_4_50_100,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,1,1,16,16,1,32,15,136.641,9.109399999999999
+gemm,real_4_50_100,function,cupy,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",1,1,1,256,1,1,64,15,112.86500000000001,7.524333333333334
+gemm,real_4_50_100,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,1,1,16,16,1,32,15,136.25699999999998,9.0838
+gemm,real_4_1_50,array,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,87.777,5.8518
+gemm,real_4_1_50,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,1,1,16,16,1,32,15,97.631,6.508733333333334
+gemm,real_4_1_50,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,1,1,16,16,1,32,15,98.367,6.5578
+gemm,real_4_1_50,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,1,1,16,16,1,32,15,97.793,6.519533333333333
+gemm,real_4_1_50,function,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,87.29599999999999,5.819733333333333
+gemm,real_4_1_50,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,1,1,16,16,1,32,15,97.858,6.523866666666667
+gemm,real_4_50_1,array,cupy,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",2,1,1,256,1,1,20,15,70.24299999999998,4.6828666666666665
+gemm,real_4_50_1,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,1,1,16,16,1,32,15,78.305,5.2203333333333335
+gemm,real_4_50_1,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,1,1,16,16,1,32,15,78.821,5.254733333333333
+gemm,real_4_50_1,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,1,1,16,16,1,32,15,78.624,5.2416
+gemm,real_4_50_1,function,cupy,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",2,1,1,256,1,1,20,15,69.75999999999999,4.650666666666666
+gemm,real_4_50_1,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,1,1,16,16,1,32,15,78.657,5.2438
+gemm,real_50_1_4,array,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",4,1,1,8,16,1,159,15,90.977,6.065133333333334
+gemm,real_50_1_4,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,4,1,16,16,1,32,15,78.496,5.233066666666667
+gemm,real_50_1_4,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,4,1,16,16,1,32,15,78.656,5.243733333333333
+gemm,real_50_1_4,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,4,1,16,16,1,32,15,78.688,5.245866666666667
+gemm,real_50_1_4,function,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",4,1,1,8,16,1,159,15,90.68800000000002,6.045866666666667
+gemm,real_50_1_4,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,4,1,16,16,1,32,15,78.401,5.226733333333334
+gemm,real_4_100_50,array,cupy,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",2,1,1,256,1,1,64,15,104.89600000000002,6.9930666666666665
+gemm,real_4_100_50,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,32,15,107.65,7.176666666666667
+gemm,real_4_100_50,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,32,15,108.09700000000001,7.206466666666667
+gemm,real_4_100_50,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,32,15,107.97100000000002,7.198066666666667
+gemm,real_4_100_50,function,cupy,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",2,1,1,256,1,1,64,15,104.674,6.978266666666666
+gemm,real_4_100_50,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,32,15,107.45700000000002,7.1638
+gemm,real_100_50_4,array,cupy,ampere_sgemm_128x32_nn,1,4,1,256,1,1,57,15,128.67,8.578
+gemm,real_100_50_4,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,7,1,16,16,1,32,15,80.223,5.3482
+gemm,real_100_50_4,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,7,1,16,16,1,32,15,79.585,5.305666666666667
+gemm,real_100_50_4,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,7,1,16,16,1,32,15,79.327,5.288466666666666
+gemm,real_100_50_4,function,cupy,ampere_sgemm_128x32_nn,1,4,1,256,1,1,57,15,129.311,8.620733333333334
+gemm,real_100_50_4,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,7,1,16,16,1,32,15,79.36000000000001,5.290666666666667
+gemm,real_4_1152_100,array,cupy,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",18,1,1,256,1,1,64,15,126.625,8.441666666666666
+gemm,real_4_1152_100,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",72,1,1,16,16,1,32,15,143.361,9.5574
+gemm,real_4_1152_100,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",72,1,1,16,16,1,32,15,143.492,9.566133333333333
+gemm,real_4_1152_100,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",72,1,1,16,16,1,32,15,144.03300000000002,9.6022
+gemm,real_4_1152_100,function,cupy,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",18,1,1,256,1,1,64,15,126.27300000000002,8.4182
+gemm,real_4_1152_100,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",72,1,1,16,16,1,32,15,143.777,9.585133333333333
+gemm,real_1152_100_4,array,cupy,ampere_sgemm_128x32_nn,1,36,1,256,1,1,57,15,132.162,8.8108
+gemm,real_1152_100_4,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,72,1,16,16,1,32,15,104.03300000000003,6.935533333333333
+gemm,real_1152_100_4,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,72,1,16,16,1,32,15,104.06200000000001,6.9374666666666664
+gemm,real_1152_100_4,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,72,1,16,16,1,32,15,104.00200000000002,6.933466666666667
+gemm,real_1152_100_4,function,cupy,ampere_sgemm_128x32_nn,1,36,1,256,1,1,57,15,132.70600000000002,8.847066666666667
+gemm,real_1152_100_4,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",7,72,1,16,16,1,32,15,105.98299999999999,7.065533333333334
+gemm,real_576_72_64,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,3,18,1,128,1,1,86,15,160.449,10.6966
+gemm,real_576_72_64,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,36,1,16,16,1,32,15,130.143,8.6762
+gemm,real_576_72_64,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,36,1,16,16,1,32,15,129.858,8.657200000000001
+gemm,real_576_72_64,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",2,9,1,16,16,1,64,15,256.73799999999994,17.115866666666665
+gemm,real_576_72_64,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,3,18,1,128,1,1,86,15,158.94500000000005,10.596333333333334
+gemm,real_576_72_64,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,36,1,16,16,1,32,15,130.24,8.682666666666668
+gemm,real_64_576_72,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,18,2,1,128,1,1,86,15,177.66400000000004,11.844266666666666
+gemm,real_64_576_72,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",36,4,1,16,16,1,32,15,135.68099999999998,9.045399999999999
+gemm,real_64_576_72,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",36,4,1,16,16,1,32,15,135.808,9.053866666666666
+gemm,real_64_576_72,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",9,1,1,16,16,1,64,15,293.46999999999997,19.564666666666668
+gemm,real_64_576_72,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,18,2,1,128,1,1,86,15,175.424,11.694933333333333
+gemm,real_64_576_72,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",36,4,1,16,16,1,32,15,135.55299999999997,9.036866666666667
+gemm,real_432_240_64,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,8,14,1,128,1,1,86,15,182.17700000000002,12.145133333333334
+gemm,real_432_240_64,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",15,27,1,16,16,1,32,15,163.615,10.907666666666668
+gemm,real_432_240_64,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",15,27,1,16,16,1,32,15,163.90300000000002,10.926866666666667
+gemm,real_432_240_64,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",4,7,1,16,16,1,64,15,258.59600000000006,17.239733333333334
+gemm,real_432_240_64,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,8,14,1,128,1,1,86,15,182.34000000000003,12.156
+gemm,real_432_240_64,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",15,27,1,16,16,1,32,15,164.321,10.954733333333333
+gemm,real_64_432_240,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,14,2,3,128,1,1,86,15,182.43399999999997,12.162266666666667
+gemm,real_64_432_240,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,89.182,5.9454666666666665
+gemm,real_64_432_240,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",27,4,1,16,16,1,32,15,230.401,15.360066666666667
+gemm,real_64_432_240,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",27,4,1,16,16,1,32,15,230.495,15.366333333333333
+gemm,real_64_432_240,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",7,1,1,16,16,1,64,15,721.603,48.10686666666667
+gemm,real_64_432_240,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,14,2,3,128,1,1,86,15,181.85700000000003,12.1238
+gemm,real_64_432_240,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,88.8,5.92
+gemm,real_64_432_240,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",27,4,1,16,16,1,32,15,230.018,15.334533333333333
+gemm,real_900_440_48,array,cupy,ampere_sgemm_128x32_nn,4,29,1,256,1,1,57,15,240.448,16.029866666666667
+gemm,real_900_440_48,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",28,57,1,16,16,1,32,15,295.26200000000006,19.68413333333333
+gemm,real_900_440_48,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",28,57,1,16,16,1,32,15,296.097,19.7398
+gemm,real_900_440_48,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",28,57,1,16,16,1,32,15,294.847,19.656466666666667
+gemm,real_900_440_48,function,cupy,ampere_sgemm_128x32_nn,4,29,1,256,1,1,57,15,240.574,16.038266666666665
+gemm,real_900_440_48,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",28,57,1,16,16,1,32,15,295.873,19.724866666666667
+gemm,real_48_900_440,array,cupy,ampere_sgemm_64x32_sliced1x4_nn,15,2,7,256,1,1,82,15,248.706,16.5804
+gemm,real_48_900_440,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,105.47200000000002,7.031466666666667
+gemm,real_48_900_440,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",57,3,1,16,16,1,32,15,396.8669999999999,26.4578
+gemm,real_48_900_440,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",57,3,1,16,16,1,32,15,395.81099999999986,26.3874
+gemm,real_48_900_440,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",57,3,1,16,16,1,32,15,396.545,26.436333333333334
+gemm,real_48_900_440,function,cupy,ampere_sgemm_64x32_sliced1x4_nn,15,2,7,256,1,1,82,15,249.57,16.638
+gemm,real_48_900_440,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,105.72900000000001,7.0486
+gemm,real_48_900_440,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",57,3,1,16,16,1,32,15,395.073,26.3382
+gemm,real_600_2632_36,array,cupy,ampere_sgemm_128x32_nn,21,19,1,256,1,1,57,15,344.8330000000001,22.988866666666667
+gemm,real_600_2632_36,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",165,38,1,16,16,1,32,15,870.5630000000001,58.037533333333336
+gemm,real_600_2632_36,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",165,38,1,16,16,1,32,15,871.0110000000001,58.0674
+gemm,real_600_2632_36,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",165,38,1,16,16,1,32,15,871.426,58.09506666666667
+gemm,real_600_2632_36,function,cupy,ampere_sgemm_128x32_nn,21,19,1,256,1,1,57,15,344.574,22.9716
+gemm,real_600_2632_36,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",165,38,1,16,16,1,32,15,870.178,58.01186666666667
+gemm,real_36_600_2632,array,cupy,ampere_sgemm_128x32_sliced1x4_nn,5,2,10,256,1,1,134,15,474.27299999999997,31.618199999999998
+gemm,real_36_600_2632,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,101.66499999999999,6.777666666666667
+gemm,real_36_600_2632,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",38,3,1,16,16,1,32,15,1818.4059999999997,121.22706666666667
+gemm,real_36_600_2632,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",38,3,1,16,16,1,32,15,1817.7010000000002,121.18006666666666
+gemm,real_36_600_2632,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",38,3,1,16,16,1,32,15,1818.983,121.26553333333334
+gemm,real_36_600_2632,function,cupy,ampere_sgemm_128x32_sliced1x4_nn,5,2,10,256,1,1,134,15,473.92099999999994,31.594733333333334
+gemm,real_36_600_2632,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,101.79100000000003,6.786066666666667
+gemm,real_36_600_2632,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",38,3,1,16,16,1,32,15,1818.6000000000004,121.24
+gemm,real_75_12152_24,array,cupy,ampere_sgemm_128x32_nn,95,3,1,256,1,1,57,15,268.099,17.873266666666666
+gemm,real_75_12152_24,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",760,5,1,16,16,1,32,15,485.72999999999996,32.382
+gemm,real_75_12152_24,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",760,5,1,16,16,1,32,15,486.53000000000003,32.43533333333333
+gemm,real_75_12152_24,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",760,5,1,16,16,1,32,15,487.48699999999997,32.49913333333333
+gemm,real_75_12152_24,function,cupy,ampere_sgemm_128x32_nn,95,3,1,256,1,1,57,15,267.93699999999995,17.862466666666666
+gemm,real_75_12152_24,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",760,5,1,16,16,1,32,15,486.01599999999996,32.401066666666665
+gemm,real_24_75_12152,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,3,1,72,128,1,1,86,15,322.338,21.4892
+gemm,real_24_75_12152,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,163.87099999999998,10.924733333333334
+gemm,real_24_75_12152,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,2,1,16,16,1,32,15,9052.287,603.4858
+gemm,real_24_75_12152,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,2,1,16,16,1,32,15,9045.821999999998,603.0548
+gemm,real_24_75_12152,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,2,1,16,16,1,32,15,9046.878999999999,603.1252666666667
+gemm,real_24_75_12152,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,3,1,72,128,1,1,86,15,321.46999999999997,21.431333333333335
+gemm,real_24_75_12152,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,163.71599999999998,10.9144
+gemm,real_24_75_12152,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,2,1,16,16,1,32,15,9047.262,603.1508
+gemm,ext_256_256_256,array,cupy,ampere_sgemm_64x32_sliced1x4_nn,4,8,3,256,1,1,82,15,240.28600000000003,16.019066666666667
+gemm,ext_256_256_256,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",8,16,1,32,16,1,32,15,116.483,7.765533333333333
+gemm,ext_256_256_256,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",16,16,1,16,16,1,32,15,412.57700000000006,27.505133333333333
+gemm,ext_256_256_256,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",16,16,1,16,16,1,32,15,413.283,27.5522
+gemm,ext_256_256_256,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",4,4,1,16,16,1,64,15,922.852,61.523466666666664
+gemm,ext_256_256_256,function,cupy,ampere_sgemm_64x32_sliced1x4_nn,4,8,3,256,1,1,82,15,240.28799999999998,16.0192
+gemm,ext_256_256_256,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",8,16,1,32,16,1,32,15,117.98199999999997,7.865466666666666
+gemm,ext_256_256_256,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",16,16,1,16,16,1,32,15,412.47799999999995,27.498533333333334
+gemm,ext_512_512_512,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,16,16,1,128,1,1,86,15,759.651,50.6434
+gemm,ext_512_512_512,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",32,32,1,16,16,1,32,15,1863.686,124.24573333333333
+gemm,ext_512_512_512,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",32,32,1,16,16,1,32,15,1862.8540000000003,124.19026666666666
+gemm,ext_512_512_512,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",8,8,1,16,16,1,64,15,1778.4670000000003,118.56446666666668
+gemm,ext_512_512_512,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,16,16,1,128,1,1,86,15,761.123,50.74153333333334
+gemm,ext_512_512_512,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",32,32,1,16,16,1,32,15,1863.429,124.2286
+gemm,ext_1024_1024_1024,array,cupy,ampere_sgemm_128x64_nn,8,16,5,128,1,1,122,15,3509.9989999999993,233.99993333333333
+gemm,ext_1024_1024_1024,array,native,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",16,16,1,16,16,1,64,15,7025.077,468.33846666666665
+gemm,ext_1024_1024_1024,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",64,64,1,16,16,1,32,15,12837.864,855.8576
+gemm,ext_1024_1024_1024,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",16,16,1,16,16,1,64,15,7020.919,468.06126666666665
+gemm,ext_1024_1024_1024,function,cupy,ampere_sgemm_128x64_nn,8,16,5,128,1,1,122,15,3508.525,233.90166666666667
+gemm,ext_1024_1024_1024,function,native,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",16,16,1,16,16,1,64,15,7023.3189999999995,468.2212666666667
+gemm,ext_2048_2048_2048,array,cupy,ampere_sgemm_128x64_nn,16,32,1,128,1,1,122,15,20978.306000000004,1398.5537333333334
+gemm,ext_2048_2048_2048,array,native,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",32,32,1,16,16,1,64,15,34487.057,2299.137133333333
+gemm,ext_2048_2048_2048,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",128,128,1,16,16,1,32,15,79034.4,5268.96
+gemm,ext_2048_2048_2048,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",32,32,1,16,16,1,64,15,35082.513,2338.8342
+gemm,ext_2048_2048_2048,function,cupy,ampere_sgemm_128x64_nn,16,32,1,128,1,1,122,15,18948.254,1263.2169333333334
+gemm,ext_2048_2048_2048,function,native,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",32,32,1,16,16,1,64,15,31169.797000000006,2077.9864666666667
+gemm,ext_4096_4096_4096,array,cupy,ampere_sgemm_128x64_nn,32,64,1,128,1,1,122,15,122315.987,8154.399133333333
+gemm,ext_4096_4096_4096,array,native,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",64,64,1,16,16,1,64,15,198269.96200000003,13217.997466666668
+gemm,ext_4096_4096_4096,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",256,256,1,16,16,1,32,15,491595.31200000003,32773.0208
+gemm,ext_4096_4096_4096,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",64,64,1,16,16,1,64,15,199063.94900000002,13270.929933333333
+gemm,ext_4096_4096_4096,function,cupy,ampere_sgemm_128x64_nn,32,64,1,128,1,1,122,15,121043.696,8069.579733333333
+gemm,ext_4096_4096_4096,function,native,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",64,64,1,16,16,1,64,15,196980.10800000004,13132.0072
+gemm,ext_63_65_67,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,3,2,1,128,1,1,86,15,117.60000000000001,7.84
+gemm,ext_63_65_67,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,4,1,16,16,1,32,15,83.19899999999998,5.5466
+gemm,ext_63_65_67,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,4,1,16,16,1,32,15,83.329,5.555266666666666
+gemm,ext_63_65_67,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,4,1,16,16,1,32,15,83.616,5.5744
+gemm,ext_63_65_67,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,3,2,1,128,1,1,86,15,117.47499999999997,7.831666666666667
+gemm,ext_63_65_67,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",5,4,1,16,16,1,32,15,83.29700000000001,5.553133333333333
+gemm,ext_65_63_129,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,2,3,1,128,1,1,86,15,133.537,8.902466666666667
+gemm,ext_65_63_129,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,108.22600000000001,7.215066666666667
+gemm,ext_65_63_129,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,108.066,7.2044
+gemm,ext_65_63_129,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,107.971,7.198066666666667
+gemm,ext_65_63_129,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,2,3,1,128,1,1,86,15,133.85700000000003,8.9238
+gemm,ext_65_63_129,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,108.09800000000001,7.206533333333334
+gemm,ext_1025_127_259,array,cupy,ampere_sgemm_64x32_sliced1x4_nn,2,33,3,256,1,1,82,15,195.74699999999999,13.0498
+gemm,ext_1025_127_259,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",4,65,1,32,16,1,32,15,71.23199999999999,4.7488
+gemm,ext_1025_127_259,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",8,65,1,16,16,1,32,15,350.04699999999997,23.336466666666666
+gemm,ext_1025_127_259,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",8,65,1,16,16,1,32,15,349.92100000000005,23.32806666666667
+gemm,ext_1025_127_259,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",2,17,1,16,16,1,64,15,555.1039999999999,37.006933333333336
+gemm,ext_1025_127_259,function,cupy,ampere_sgemm_64x32_sliced1x4_nn,2,33,3,256,1,1,82,15,196.161,13.077399999999999
+gemm,ext_1025_127_259,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",4,65,1,32,16,1,32,15,71.48700000000001,4.7658
+gemm,ext_1025_127_259,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",8,65,1,16,16,1,32,15,349.1219999999999,23.2748
+gemm,ext_8192_16_75,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,1,256,1,128,1,1,86,15,168.896,11.259733333333333
+gemm,ext_8192_16_75,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,512,1,16,16,1,32,15,141.438,9.4292
+gemm,ext_8192_16_75,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,512,1,16,16,1,32,15,141.249,9.416599999999999
+gemm,ext_8192_16_75,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,512,1,16,16,1,32,15,141.248,9.416533333333334
+gemm,ext_8192_16_75,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,1,256,1,128,1,1,86,15,169.058,11.270533333333333
+gemm,ext_8192_16_75,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,512,1,16,16,1,32,15,141.281,9.418733333333332
+gemm,ext_8_4096_257,array,cupy,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",64,2,1,256,1,1,64,15,133.954,8.930266666666666
+gemm,ext_8_4096_257,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",256,1,1,16,16,1,32,15,236.15999999999997,15.744
+gemm,ext_8_4096_257,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",256,1,1,16,16,1,32,15,236.12899999999993,15.741933333333334
+gemm,ext_8_4096_257,array,register_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",256,1,1,16,16,1,32,15,236.546,15.769733333333333
+gemm,ext_8_4096_257,function,cupy,"void gemmSN_NN_kernel<float, (int)256, (int)4, (int)2, (int)8, (int)4, (int)4, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",64,2,1,256,1,1,64,15,134.72,8.981333333333334
+gemm,ext_8_4096_257,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",256,1,1,16,16,1,32,15,235.74899999999994,15.7166
+gemm,ext_511_513_129,array,cupy,ampere_sgemm_32x32_sliced1x4_nn,17,16,1,128,1,1,86,15,212.29099999999997,14.152733333333334
+gemm,ext_511_513_129,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",33,32,1,16,16,1,32,15,341.1209999999999,22.7414
+gemm,ext_511_513_129,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",33,32,1,16,16,1,32,15,341.382,22.7588
+gemm,ext_511_513_129,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",9,8,1,16,16,1,64,15,314.8810000000001,20.992066666666666
+gemm,ext_511_513_129,function,cupy,ampere_sgemm_32x32_sliced1x4_nn,17,16,1,128,1,1,86,15,212.12899999999996,14.141933333333334
+gemm,ext_511_513_129,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",33,32,1,16,16,1,32,15,339.93600000000004,22.662399999999998
+gemm,ext_1024_512_256,array,cupy,ampere_sgemm_64x32_sliced1x4_nn,8,32,1,256,1,1,82,15,405.473,27.031533333333332
+gemm,ext_1024_512_256,array,native,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",8,16,1,16,16,1,64,15,746.1439999999998,49.74293333333333
+gemm,ext_1024_512_256,array,shared_old,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",32,64,1,16,16,1,32,15,959.493,63.9662
+gemm,ext_1024_512_256,array,register_old,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",8,16,1,16,16,1,64,15,745.4119999999999,49.69413333333333
+gemm,ext_1024_512_256,function,cupy,ampere_sgemm_64x32_sliced1x4_nn,8,32,1,256,1,1,82,15,404.12999999999994,26.942
+gemm,ext_1024_512_256,function,native,"void gemm_register<(int)16>(const float *, const float *, float *, int, int, int)",8,16,1,16,16,1,64,15,744.3219999999999,49.62146666666666
+im2col,conv1_contiguous,array,cupy,im2col,7121,1,1,128,1,1,32,15,267.23400000000004,17.8156
+im2col,conv1_contiguous,array,cupy,cupy_copy__float32_float32,7121,1,1,128,1,1,16,15,154.434,10.2956
+im2col,conv1_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",3561,1,1,256,1,1,23,15,276.12999999999994,18.408666666666665
+im2col,conv1_contiguous,function,cupy,im2col,7121,1,1,128,1,1,32,15,268.64400000000006,17.9096
+im2col,conv1_contiguous,function,cupy,cupy_copy__float32_float32,7121,1,1,128,1,1,16,15,154.59300000000002,10.3062
+im2col,conv1_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",3561,1,1,256,1,1,23,15,276.96099999999996,18.464066666666664
+conv,conv1_contiguous,array,cupy,im2col,7121,1,1,128,1,1,32,15,269.9200000000001,17.994666666666667
+conv,conv1_contiguous,array,cupy,cupy_copy__float32_float32,7121,1,1,128,1,1,16,15,134.849,8.989933333333333
+conv,conv1_contiguous,array,cupy,ampere_sgemm_32x128_tt,1,95,1,256,1,1,57,15,164.45,10.963333333333333
+conv,conv1_contiguous,array,cupy,cupy_add__float32_float32_float32,2279,1,1,128,1,1,16,15,82.07900000000001,5.471933333333333
+conv,conv1_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",3561,1,1,256,1,1,23,15,278.499,18.566599999999998
+conv,conv1_contiguous,array,native,cupy_copy__float32_float32,15,1,1,128,1,1,16,15,51.93300000000001,3.4622
+conv,conv1_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",2,760,1,16,16,1,32,15,279.42699999999996,18.628466666666665
+conv,conv1_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",1140,1,1,256,1,1,24,15,105.44200000000001,7.029466666666667
+conv,conv1_contiguous,function,cupy,im2col,7121,1,1,128,1,1,32,15,269.377,17.958466666666666
+conv,conv1_contiguous,function,cupy,cupy_copy__float32_float32,7121,1,1,128,1,1,16,15,135.329,9.021933333333333
+conv,conv1_contiguous,function,cupy,ampere_sgemm_32x128_tt,1,95,1,256,1,1,57,15,164.0,10.933333333333334
+conv,conv1_contiguous,function,cupy,cupy_add__float32_float32_float32,2279,1,1,128,1,1,16,15,82.08100000000002,5.472066666666667
+conv,conv1_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",3561,1,1,256,1,1,23,15,278.722,18.581466666666667
+conv,conv1_contiguous,function,native,cupy_copy__float32_float32,15,1,1,128,1,1,16,15,52.190000000000005,3.4793333333333334
+conv,conv1_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",2,760,1,16,16,1,32,15,278.5919999999999,18.572799999999997
+conv,conv1_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",1140,1,1,256,1,1,24,15,106.43200000000002,7.095466666666667
+col2im,conv1_training,array,cupy,col2im,1238,1,1,128,1,1,32,15,500.83000000000004,33.388666666666666
+col2im,conv1_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",619,1,1,256,1,1,38,15,177.34300000000002,11.822866666666666
+col2im,conv1_training,function,cupy,col2im,1238,1,1,128,1,1,32,15,504.99399999999997,33.666266666666665
+col2im,conv1_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",619,1,1,256,1,1,38,15,177.05599999999998,11.803733333333334
+col2im,conv1_contiguous,array,cupy,col2im,1238,1,1,128,1,1,32,15,321.75800000000004,21.450533333333333
+col2im,conv1_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",619,1,1,256,1,1,38,15,176.61,11.774
+col2im,conv1_contiguous,function,cupy,col2im,1238,1,1,128,1,1,32,15,320.35200000000003,21.3568
+col2im,conv1_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",619,1,1,256,1,1,38,15,177.27999999999997,11.818666666666667
+col2im,conv1_negative,array,cupy,col2im,1238,1,1,128,1,1,32,15,410.628,27.3752
+col2im,conv1_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",619,1,1,256,1,1,38,15,176.95899999999997,11.797266666666667
+col2im,conv1_negative,function,cupy,col2im,1238,1,1,128,1,1,32,15,408.77,27.25133333333333
+col2im,conv1_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",619,1,1,256,1,1,38,15,176.86499999999998,11.791
+im2col,conv2_contiguous,array,cupy,im2col,12338,1,1,128,1,1,32,15,420.8,28.053333333333335
+im2col,conv2_contiguous,array,cupy,cupy_copy__float32_float32,12338,1,1,128,1,1,16,15,328.4820000000001,21.8988
+im2col,conv2_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",6169,1,1,256,1,1,23,15,436.611,29.1074
+im2col,conv2_contiguous,function,cupy,im2col,12338,1,1,128,1,1,32,15,420.57700000000006,28.038466666666668
+im2col,conv2_contiguous,function,cupy,cupy_copy__float32_float32,12338,1,1,128,1,1,16,15,327.778,21.851866666666666
+im2col,conv2_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",6169,1,1,256,1,1,23,15,437.44100000000003,29.162733333333335
+conv,conv2_contiguous,array,cupy,im2col,12338,1,1,128,1,1,32,15,421.09000000000003,28.072666666666667
+conv,conv2_contiguous,array,cupy,cupy_copy__float32_float32,12338,1,1,128,1,1,16,15,192.577,12.838466666666667
+conv,conv2_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,2,83,1,128,1,1,86,15,360.12699999999995,24.008466666666667
+conv,conv2_contiguous,array,cupy,cupy_add__float32_float32_float32,741,1,1,128,1,1,16,15,66.881,4.458733333333334
+conv,conv2_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",6169,1,1,256,1,1,23,15,437.41100000000006,29.160733333333333
+conv,conv2_contiguous,array,native,cupy_copy__float32_float32,169,1,1,128,1,1,16,15,57.95100000000001,3.8634
+conv,conv2_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,165,1,16,16,1,32,15,706.4340000000001,47.095600000000005
+conv,conv2_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",371,1,1,256,1,1,24,15,82.59400000000001,5.506266666666667
+conv,conv2_contiguous,function,cupy,im2col,12338,1,1,128,1,1,32,15,420.8960000000001,28.059733333333334
+conv,conv2_contiguous,function,cupy,cupy_copy__float32_float32,12338,1,1,128,1,1,16,15,192.35299999999998,12.823533333333334
+conv,conv2_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,2,83,1,128,1,1,86,15,360.417,24.0278
+conv,conv2_contiguous,function,cupy,cupy_add__float32_float32_float32,741,1,1,128,1,1,16,15,66.944,4.462933333333334
+conv,conv2_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",6169,1,1,256,1,1,23,15,438.178,29.211866666666666
+conv,conv2_contiguous,function,native,cupy_copy__float32_float32,169,1,1,128,1,1,16,15,57.92,3.861333333333333
+conv,conv2_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,165,1,16,16,1,32,15,705.9859999999999,47.065733333333334
+conv,conv2_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",371,1,1,256,1,1,24,15,82.207,5.480466666666667
+col2im,conv2_training,array,cupy,col2im,2279,1,1,128,1,1,32,15,807.2009999999999,53.8134
+col2im,conv2_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1140,1,1,256,1,1,38,15,263.875,17.59166666666667
+col2im,conv2_training,function,cupy,col2im,2279,1,1,128,1,1,32,15,795.298,53.019866666666665
+col2im,conv2_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1140,1,1,256,1,1,38,15,265.2180000000001,17.6812
+col2im,conv2_contiguous,array,cupy,col2im,2279,1,1,128,1,1,32,15,491.58699999999993,32.772466666666666
+col2im,conv2_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1140,1,1,256,1,1,38,15,261.984,17.465600000000002
+col2im,conv2_contiguous,function,cupy,col2im,2279,1,1,128,1,1,32,15,493.4750000000001,32.89833333333333
+col2im,conv2_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1140,1,1,256,1,1,38,15,263.391,17.5594
+col2im,conv2_negative,array,cupy,col2im,2279,1,1,128,1,1,32,15,645.024,43.0016
+col2im,conv2_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1140,1,1,256,1,1,38,15,263.749,17.583266666666667
+col2im,conv2_negative,function,cupy,col2im,2279,1,1,128,1,1,32,15,642.113,42.80753333333333
+col2im,conv2_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1140,1,1,256,1,1,38,15,264.896,17.659733333333335
+im2col,conv3_contiguous,array,cupy,im2col,3094,1,1,128,1,1,32,15,148.86300000000003,9.9242
+im2col,conv3_contiguous,array,cupy,cupy_copy__float32_float32,3094,1,1,128,1,1,16,15,129.505,8.633666666666667
+im2col,conv3_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1547,1,1,256,1,1,23,15,150.97200000000004,10.0648
+im2col,conv3_contiguous,function,cupy,im2col,3094,1,1,128,1,1,32,15,148.833,9.9222
+im2col,conv3_contiguous,function,cupy,cupy_copy__float32_float32,3094,1,1,128,1,1,16,15,129.05700000000002,8.6038
+im2col,conv3_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1547,1,1,256,1,1,23,15,151.04100000000003,10.0694
+conv,conv3_contiguous,array,cupy,im2col,3094,1,1,128,1,1,32,15,149.02300000000002,9.934866666666666
+conv,conv3_contiguous,array,cupy,cupy_copy__float32_float32,3094,1,1,128,1,1,16,15,89.791,5.986066666666667
+conv,conv3_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,2,14,10,128,1,1,86,15,171.80700000000002,11.4538
+conv,conv3_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,28,1,32,16,1,32,15,66.72,4.448
+conv,conv3_contiguous,array,cupy,cupy_add__float32_float32_float32,165,1,1,128,1,1,16,15,62.52899999999998,4.1686000000000005
+conv,conv3_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1547,1,1,256,1,1,23,15,151.614,10.1076
+conv,conv3_contiguous,array,native,cupy_copy__float32_float32,338,1,1,128,1,1,16,15,60.833000000000006,4.055533333333333
+conv,conv3_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,28,1,16,16,1,32,15,510.9119999999999,34.0608
+conv,conv3_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",83,1,1,256,1,1,24,15,62.242000000000004,4.149466666666667
+conv,conv3_contiguous,function,cupy,im2col,3094,1,1,128,1,1,32,15,149.02399999999997,9.934933333333333
+conv,conv3_contiguous,function,cupy,cupy_copy__float32_float32,3094,1,1,128,1,1,16,15,90.11299999999999,6.007533333333333
+conv,conv3_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,2,14,10,128,1,1,86,15,171.839,11.455933333333332
+conv,conv3_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,28,1,32,16,1,32,15,66.818,4.454533333333334
+conv,conv3_contiguous,function,cupy,cupy_add__float32_float32_float32,165,1,1,128,1,1,16,15,63.61599999999999,4.241066666666667
+conv,conv3_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1547,1,1,256,1,1,23,15,152.512,10.167466666666666
+conv,conv3_contiguous,function,native,cupy_copy__float32_float32,338,1,1,128,1,1,16,15,61.376,4.091733333333333
+conv,conv3_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",3,28,1,16,16,1,32,15,510.885,34.059
+conv,conv3_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",83,1,1,256,1,1,24,15,62.39899999999999,4.159933333333333
+col2im,conv3_training,array,cupy,col2im,741,1,1,128,1,1,32,15,395.106,26.3404
+col2im,conv3_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",371,1,1,256,1,1,38,15,140.929,9.395266666666666
+col2im,conv3_training,function,cupy,col2im,741,1,1,128,1,1,32,15,395.52199999999993,26.368133333333333
+col2im,conv3_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",371,1,1,256,1,1,38,15,140.41699999999997,9.361133333333333
+col2im,conv3_contiguous,array,cupy,col2im,741,1,1,128,1,1,32,15,254.847,16.989800000000002
+col2im,conv3_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",371,1,1,256,1,1,38,15,139.64799999999997,9.309866666666666
+col2im,conv3_contiguous,function,cupy,col2im,741,1,1,128,1,1,32,15,254.49000000000007,16.966
+col2im,conv3_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",371,1,1,256,1,1,38,15,140.35399999999998,9.356933333333332
+col2im,conv3_negative,array,cupy,col2im,741,1,1,128,1,1,32,15,325.66500000000013,21.711000000000002
+col2im,conv3_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",371,1,1,256,1,1,38,15,141.47199999999998,9.431466666666667
+col2im,conv3_negative,function,cupy,col2im,741,1,1,128,1,1,32,15,327.90599999999995,21.860400000000002
+col2im,conv3_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",371,1,1,256,1,1,38,15,141.15299999999996,9.4102
+im2col,conv4_contiguous,array,cupy,im2col,810,1,1,128,1,1,32,15,79.839,5.3226
+im2col,conv4_contiguous,array,cupy,cupy_copy__float32_float32,810,1,1,128,1,1,16,15,81.087,5.4058
+im2col,conv4_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",405,1,1,256,1,1,23,15,84.67099999999999,5.644733333333333
+im2col,conv4_contiguous,function,cupy,im2col,810,1,1,128,1,1,32,15,79.58500000000001,5.305666666666667
+im2col,conv4_contiguous,function,cupy,cupy_copy__float32_float32,810,1,1,128,1,1,16,15,82.336,5.489066666666667
+im2col,conv4_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",405,1,1,256,1,1,23,15,84.16199999999999,5.610799999999999
+conv,conv4_contiguous,array,cupy,im2col,810,1,1,128,1,1,32,15,80.128,5.341866666666667
+conv,conv4_contiguous,array,cupy,cupy_copy__float32_float32,810,1,1,128,1,1,16,15,63.842,4.2561333333333335
+conv,conv4_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,2,8,5,128,1,1,86,15,124.35300000000001,8.2902
+conv,conv4_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,15,1,32,16,1,32,15,61.599000000000004,4.1066
+conv,conv4_contiguous,array,cupy,cupy_add__float32_float32_float32,120,1,1,128,1,1,16,15,61.730000000000004,4.115333333333333
+conv,conv4_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",405,1,1,256,1,1,23,15,85.31099999999999,5.687399999999999
+conv,conv4_contiguous,array,native,cupy_copy__float32_float32,216,1,1,128,1,1,16,15,60.769999999999996,4.051333333333333
+conv,conv4_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,15,1,16,16,1,32,15,266.72,17.781333333333333
+conv,conv4_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",60,1,1,256,1,1,24,15,61.05600000000001,4.0704
+conv,conv4_contiguous,function,cupy,im2col,810,1,1,128,1,1,32,15,79.77799999999999,5.318533333333334
+conv,conv4_contiguous,function,cupy,cupy_copy__float32_float32,810,1,1,128,1,1,16,15,64.672,4.311466666666667
+conv,conv4_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,2,8,5,128,1,1,86,15,124.703,8.313533333333334
+conv,conv4_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,15,1,32,16,1,32,15,61.858,4.123866666666666
+conv,conv4_contiguous,function,cupy,cupy_add__float32_float32_float32,120,1,1,128,1,1,16,15,61.665,4.111
+conv,conv4_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",405,1,1,256,1,1,23,15,85.12,5.674666666666666
+conv,conv4_contiguous,function,native,cupy_copy__float32_float32,216,1,1,128,1,1,16,15,60.541999999999994,4.036133333333333
+conv,conv4_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,15,1,16,16,1,32,15,266.657,17.777133333333335
+conv,conv4_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",60,1,1,256,1,1,24,15,60.994,4.0662666666666665
+col2im,conv4_training,array,cupy,col2im,165,1,1,128,1,1,32,15,141.696,9.446399999999999
+col2im,conv4_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",83,1,1,256,1,1,38,15,94.46300000000001,6.297533333333334
+col2im,conv4_training,function,cupy,col2im,165,1,1,128,1,1,32,15,141.888,9.4592
+col2im,conv4_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",83,1,1,256,1,1,38,15,94.721,6.314733333333334
+col2im,conv4_contiguous,array,cupy,col2im,165,1,1,128,1,1,32,15,117.24799999999996,7.816533333333333
+col2im,conv4_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",83,1,1,256,1,1,38,15,93.40799999999999,6.2272
+col2im,conv4_contiguous,function,cupy,col2im,165,1,1,128,1,1,32,15,117.31099999999998,7.820733333333333
+col2im,conv4_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",83,1,1,256,1,1,38,15,94.018,6.2678666666666665
+col2im,conv4_negative,array,cupy,col2im,165,1,1,128,1,1,32,15,131.61700000000002,8.774466666666667
+col2im,conv4_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",83,1,1,256,1,1,38,15,93.535,6.235666666666667
+col2im,conv4_negative,function,cupy,col2im,165,1,1,128,1,1,32,15,131.58300000000003,8.7722
+col2im,conv4_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",83,1,1,256,1,1,38,15,93.155,6.210333333333334
+im2col,conv5_contiguous,array,cupy,im2col,324,1,1,128,1,1,32,15,69.343,4.622866666666666
+im2col,conv5_contiguous,array,cupy,cupy_copy__float32_float32,324,1,1,128,1,1,16,15,63.45700000000001,4.230466666666667
+im2col,conv5_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",162,1,1,256,1,1,23,15,68.544,4.569599999999999
+im2col,conv5_contiguous,function,cupy,im2col,324,1,1,128,1,1,32,15,68.76700000000001,4.584466666666667
+im2col,conv5_contiguous,function,cupy,cupy_copy__float32_float32,324,1,1,128,1,1,16,15,64.034,4.268933333333334
+im2col,conv5_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",162,1,1,256,1,1,23,15,68.639,4.575933333333333
+conv,conv5_contiguous,array,cupy,im2col,324,1,1,128,1,1,32,15,70.079,4.6719333333333335
+conv,conv5_contiguous,array,cupy,cupy_copy__float32_float32,324,1,1,128,1,1,16,15,59.201,3.9467333333333334
+conv,conv5_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,2,3,8,128,1,1,86,15,119.744,7.982933333333333
+conv,conv5_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,5,1,32,16,1,32,15,58.56099999999999,3.9040666666666666
+conv,conv5_contiguous,array,cupy,cupy_add__float32_float32_float32,36,1,1,128,1,1,16,15,55.87100000000001,3.7247333333333335
+conv,conv5_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",162,1,1,256,1,1,23,15,69.31099999999999,4.620733333333333
+conv,conv5_contiguous,array,native,cupy_copy__float32_float32,288,1,1,128,1,1,16,15,63.874,4.258266666666667
+conv,conv5_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,337.53499999999997,22.502333333333333
+conv,conv5_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",18,1,1,256,1,1,24,15,58.849,3.9232666666666667
+conv,conv5_contiguous,function,cupy,im2col,324,1,1,128,1,1,32,15,69.663,4.6442
+conv,conv5_contiguous,function,cupy,cupy_copy__float32_float32,324,1,1,128,1,1,16,15,59.041000000000004,3.9360666666666666
+conv,conv5_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,2,3,8,128,1,1,86,15,120.15899999999999,8.0106
+conv,conv5_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",2,5,1,32,16,1,32,15,58.400999999999996,3.8933999999999997
+conv,conv5_contiguous,function,cupy,cupy_add__float32_float32_float32,36,1,1,128,1,1,16,15,55.777000000000015,3.718466666666667
+conv,conv5_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",162,1,1,256,1,1,23,15,69.50399999999999,4.6335999999999995
+conv,conv5_contiguous,function,native,cupy_copy__float32_float32,288,1,1,128,1,1,16,15,63.74300000000001,4.249533333333334
+conv,conv5_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",4,5,1,16,16,1,32,15,337.88499999999993,22.525666666666666
+conv,conv5_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",18,1,1,256,1,1,24,15,59.07199999999999,3.938133333333333
+col2im,conv5_training,array,cupy,col2im,120,1,1,128,1,1,32,15,249.697,16.64646666666667
+col2im,conv5_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",60,1,1,256,1,1,38,15,130.495,8.699666666666667
+col2im,conv5_training,function,cupy,col2im,120,1,1,128,1,1,32,15,250.209,16.680600000000002
+col2im,conv5_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",60,1,1,256,1,1,38,15,130.466,8.697733333333334
+col2im,conv5_contiguous,array,cupy,col2im,120,1,1,128,1,1,32,15,208.09400000000002,13.872933333333334
+col2im,conv5_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",60,1,1,256,1,1,38,15,129.346,8.623066666666666
+col2im,conv5_contiguous,function,cupy,col2im,120,1,1,128,1,1,32,15,207.61299999999997,13.840866666666667
+col2im,conv5_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",60,1,1,256,1,1,38,15,128.993,8.599533333333333
+col2im,conv5_negative,array,cupy,col2im,120,1,1,128,1,1,32,15,231.266,15.417733333333333
+col2im,conv5_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",60,1,1,256,1,1,38,15,130.112,8.674133333333334
+col2im,conv5_negative,function,cupy,col2im,120,1,1,128,1,1,32,15,231.78,15.452
+col2im,conv5_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",60,1,1,256,1,1,38,15,130.176,8.6784
+im2col,overlap_contiguous,array,cupy,im2col,3137,1,1,128,1,1,32,15,264.801,17.6534
+im2col,overlap_contiguous,array,cupy,cupy_copy__float32_float32,3137,1,1,128,1,1,16,15,226.081,15.072066666666666
+im2col,overlap_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1569,1,1,256,1,1,23,15,277.508,18.500533333333333
+im2col,overlap_contiguous,function,cupy,im2col,3137,1,1,128,1,1,32,15,264.322,17.621466666666667
+im2col,overlap_contiguous,function,cupy,cupy_copy__float32_float32,3137,1,1,128,1,1,16,15,226.271,15.084733333333332
+im2col,overlap_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1569,1,1,256,1,1,23,15,276.643,18.442866666666667
+conv,overlap_contiguous,array,cupy,im2col,3137,1,1,128,1,1,32,15,264.83400000000006,17.6556
+conv,overlap_contiguous,array,cupy,cupy_copy__float32_float32,3137,1,1,128,1,1,16,15,157.92,10.528
+conv,overlap_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,72,1,128,1,1,86,15,272.132,18.142133333333334
+conv,overlap_contiguous,array,cupy,cupy_add__float32_float32_float32,233,1,1,128,1,1,16,15,109.98600000000002,7.3324
+conv,overlap_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1569,1,1,256,1,1,23,15,276.896,18.459733333333332
+conv,overlap_contiguous,array,native,cupy_copy__float32_float32,18,1,1,128,1,1,16,15,90.33600000000001,6.0224
+conv,overlap_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,144,1,16,16,1,32,15,275.487,18.3658
+conv,overlap_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",117,1,1,256,1,1,24,15,112.67499999999998,7.511666666666667
+conv,overlap_contiguous,function,cupy,im2col,3137,1,1,128,1,1,32,15,264.545,17.636333333333333
+conv,overlap_contiguous,function,cupy,cupy_copy__float32_float32,3137,1,1,128,1,1,16,15,157.24699999999999,10.483133333333333
+conv,overlap_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,72,1,128,1,1,86,15,271.554,18.1036
+conv,overlap_contiguous,function,cupy,cupy_add__float32_float32_float32,233,1,1,128,1,1,16,15,110.43100000000001,7.362066666666667
+conv,overlap_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1569,1,1,256,1,1,23,15,276.702,18.4468
+conv,overlap_contiguous,function,native,cupy_copy__float32_float32,18,1,1,128,1,1,16,15,90.43299999999999,6.028866666666667
+conv,overlap_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,144,1,16,16,1,32,15,276.48,18.432
+conv,overlap_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",117,1,1,256,1,1,24,15,113.089,7.539266666666666
+col2im,overlap_training,array,cupy,col2im,126,1,1,128,1,1,32,15,521.313,34.7542
+col2im,overlap_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,253.118,16.874533333333332
+col2im,overlap_training,function,cupy,col2im,126,1,1,128,1,1,32,15,520.737,34.7158
+col2im,overlap_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,253.342,16.889466666666667
+col2im,overlap_contiguous,array,cupy,col2im,126,1,1,128,1,1,32,15,377.9530000000001,25.19686666666667
+col2im,overlap_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,254.21099999999998,16.947400000000002
+col2im,overlap_contiguous,function,cupy,col2im,126,1,1,128,1,1,32,15,378.84900000000005,25.2566
+col2im,overlap_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,254.272,16.95146666666667
+col2im,overlap_negative,array,cupy,col2im,126,1,1,128,1,1,32,15,453.0889999999999,30.20593333333333
+col2im,overlap_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,255.296,17.019733333333335
+col2im,overlap_negative,function,cupy,col2im,126,1,1,128,1,1,32,15,452.67599999999993,30.1784
+col2im,overlap_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,255.17000000000002,17.011333333333333
+im2col,nonoverlap_contiguous,array,cupy,im2col,117,1,1,128,1,1,32,15,116.895,7.793
+im2col,nonoverlap_contiguous,array,cupy,cupy_copy__float32_float32,117,1,1,128,1,1,16,15,104.89800000000001,6.9932
+im2col,nonoverlap_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",59,1,1,256,1,1,23,15,106.367,7.0911333333333335
+im2col,nonoverlap_contiguous,function,cupy,im2col,117,1,1,128,1,1,32,15,117.024,7.8016
+im2col,nonoverlap_contiguous,function,cupy,cupy_copy__float32_float32,117,1,1,128,1,1,16,15,104.47900000000003,6.9652666666666665
+im2col,nonoverlap_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",59,1,1,256,1,1,23,15,106.33600000000001,7.089066666666667
+conv,nonoverlap_contiguous,array,cupy,im2col,117,1,1,128,1,1,32,15,116.89699999999999,7.7931333333333335
+conv,nonoverlap_contiguous,array,cupy,cupy_copy__float32_float32,117,1,1,128,1,1,16,15,100.738,6.715866666666667
+conv,nonoverlap_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,11,1,128,1,1,86,15,191.747,12.783133333333334
+conv,nonoverlap_contiguous,array,cupy,cupy_add__float32_float32_float32,29,1,1,128,1,1,16,15,100.286,6.685733333333333
+conv,nonoverlap_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",59,1,1,256,1,1,23,15,106.498,7.099866666666667
+conv,nonoverlap_contiguous,array,native,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,89.37599999999998,5.9584
+conv,nonoverlap_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,21,1,16,16,1,32,15,123.83900000000001,8.255933333333333
+conv,nonoverlap_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",15,1,1,256,1,1,24,15,99.99900000000002,6.6666
+conv,nonoverlap_contiguous,function,cupy,im2col,117,1,1,128,1,1,32,15,116.931,7.7954
+conv,nonoverlap_contiguous,function,cupy,cupy_copy__float32_float32,117,1,1,128,1,1,16,15,101.538,6.7692
+conv,nonoverlap_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,11,1,128,1,1,86,15,191.615,12.774333333333335
+conv,nonoverlap_contiguous,function,cupy,cupy_add__float32_float32_float32,29,1,1,128,1,1,16,15,100.89800000000002,6.726533333333333
+conv,nonoverlap_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",59,1,1,256,1,1,23,15,106.689,7.1126000000000005
+conv,nonoverlap_contiguous,function,native,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,89.27899999999998,5.951933333333333
+conv,nonoverlap_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,21,1,16,16,1,32,15,123.681,8.2454
+conv,nonoverlap_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",15,1,1,256,1,1,24,15,100.416,6.6944
+col2im,nonoverlap_training,array,cupy,col2im,117,1,1,128,1,1,32,15,201.91899999999998,13.461266666666667
+col2im,nonoverlap_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",59,1,1,256,1,1,38,15,131.998,8.799866666666667
+col2im,nonoverlap_training,function,cupy,col2im,117,1,1,128,1,1,32,15,201.50399999999996,13.4336
+col2im,nonoverlap_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",59,1,1,256,1,1,38,15,131.938,8.795866666666667
+col2im,nonoverlap_contiguous,array,cupy,col2im,117,1,1,128,1,1,32,15,175.96999999999994,11.731333333333334
+col2im,nonoverlap_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",59,1,1,256,1,1,38,15,132.19000000000003,8.812666666666667
+col2im,nonoverlap_contiguous,function,cupy,col2im,117,1,1,128,1,1,32,15,176.16199999999998,11.744133333333332
+col2im,nonoverlap_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",59,1,1,256,1,1,38,15,132.22400000000002,8.814933333333334
+col2im,nonoverlap_negative,array,cupy,col2im,117,1,1,128,1,1,32,15,191.81,12.787333333333335
+col2im,nonoverlap_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",59,1,1,256,1,1,38,15,131.647,8.776466666666668
+col2im,nonoverlap_negative,function,cupy,col2im,117,1,1,128,1,1,32,15,191.201,12.746733333333333
+col2im,nonoverlap_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",59,1,1,256,1,1,38,15,131.77800000000002,8.7852
+im2col,asymmetric_contiguous,array,cupy,im2col,51,1,1,128,1,1,32,15,111.84,7.456
+im2col,asymmetric_contiguous,array,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,99.58499999999998,6.638999999999999
+im2col,asymmetric_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,104.224,6.948266666666667
+im2col,asymmetric_contiguous,function,cupy,im2col,51,1,1,128,1,1,32,15,111.23200000000001,7.415466666666667
+im2col,asymmetric_contiguous,function,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,99.07399999999998,6.604933333333333
+im2col,asymmetric_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,104.607,6.9738
+im2col,asymmetric_sliced,array,cupy,im2col,51,1,1,128,1,1,32,15,110.91100000000002,7.394066666666667
+im2col,asymmetric_sliced,array,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,98.59400000000001,6.572933333333333
+im2col,asymmetric_sliced,array,native,cupy_copy__float32_float32,19,1,1,128,1,1,18,15,82.55999999999999,5.5040000000000004
+im2col,asymmetric_sliced,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,104.60799999999999,6.973866666666667
+im2col,asymmetric_sliced,function,cupy,im2col,51,1,1,128,1,1,32,15,110.52600000000001,7.3684
+im2col,asymmetric_sliced,function,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,98.721,6.5813999999999995
+im2col,asymmetric_sliced,function,native,cupy_copy__float32_float32,19,1,1,128,1,1,18,15,81.95599999999999,5.463733333333334
+im2col,asymmetric_sliced,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,105.119,7.007933333333333
+conv,asymmetric_contiguous,array,cupy,im2col,51,1,1,128,1,1,32,15,110.238,7.349200000000001
+conv,asymmetric_contiguous,array,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,94.4,6.293333333333334
+conv,asymmetric_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,5,1,128,1,1,86,15,190.977,12.7318
+conv,asymmetric_contiguous,array,cupy,cupy_add__float32_float32_float32,8,1,1,128,1,1,16,15,98.02,6.534666666666666
+conv,asymmetric_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,102.78500000000001,6.852333333333333
+conv,asymmetric_contiguous,array,native,cupy_copy__float32_float32,3,1,1,128,1,1,16,15,88.482,5.8988
+conv,asymmetric_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,9,1,16,16,1,32,15,121.27999999999997,8.085333333333333
+conv,asymmetric_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",4,1,1,256,1,1,24,15,96.575,6.4383333333333335
+conv,asymmetric_contiguous,function,cupy,im2col,51,1,1,128,1,1,32,15,110.21100000000001,7.3474
+conv,asymmetric_contiguous,function,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,94.563,6.3042
+conv,asymmetric_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,5,1,128,1,1,86,15,190.97299999999998,12.731533333333333
+conv,asymmetric_contiguous,function,cupy,cupy_add__float32_float32_float32,8,1,1,128,1,1,16,15,97.41,6.494
+conv,asymmetric_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,102.43100000000001,6.828733333333333
+conv,asymmetric_contiguous,function,native,cupy_copy__float32_float32,3,1,1,128,1,1,16,15,88.41700000000002,5.894466666666666
+conv,asymmetric_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,9,1,16,16,1,32,15,121.15099999999998,8.076733333333333
+conv,asymmetric_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",4,1,1,256,1,1,24,15,96.959,6.463933333333333
+conv,asymmetric_sliced,array,cupy,im2col,51,1,1,128,1,1,32,15,112.29,7.486
+conv,asymmetric_sliced,array,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,94.432,6.295466666666667
+conv,asymmetric_sliced,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,5,1,128,1,1,86,15,192.73700000000005,12.849133333333334
+conv,asymmetric_sliced,array,cupy,cupy_add__float32_float32_float32,8,1,1,128,1,1,16,15,99.55099999999999,6.636733333333333
+conv,asymmetric_sliced,array,native,cupy_copy__float32_float32,19,1,1,128,1,1,18,15,84.95799999999998,5.663866666666666
+conv,asymmetric_sliced,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,105.63100000000003,7.042066666666667
+conv,asymmetric_sliced,array,native,cupy_copy__float32_float32,3,1,1,128,1,1,16,15,89.088,5.9392
+conv,asymmetric_sliced,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,9,1,16,16,1,32,15,121.47200000000001,8.098133333333333
+conv,asymmetric_sliced,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",4,1,1,256,1,1,24,15,100.06300000000003,6.670866666666666
+conv,asymmetric_sliced,function,cupy,im2col,51,1,1,128,1,1,32,15,111.807,7.4538
+conv,asymmetric_sliced,function,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,94.43300000000002,6.295533333333333
+conv,asymmetric_sliced,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,5,1,128,1,1,86,15,193.02600000000007,12.868400000000001
+conv,asymmetric_sliced,function,cupy,cupy_add__float32_float32_float32,8,1,1,128,1,1,16,15,99.10600000000002,6.607066666666666
+conv,asymmetric_sliced,function,native,cupy_copy__float32_float32,19,1,1,128,1,1,18,15,84.83000000000001,5.655333333333333
+conv,asymmetric_sliced,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,106.01700000000002,7.0678
+conv,asymmetric_sliced,function,native,cupy_copy__float32_float32,3,1,1,128,1,1,16,15,88.64200000000001,5.909466666666667
+conv,asymmetric_sliced,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,9,1,16,16,1,32,15,121.57000000000002,8.104666666666667
+conv,asymmetric_sliced,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",4,1,1,256,1,1,24,15,99.869,6.657933333333333
+col2im,asymmetric_training,array,cupy,col2im,19,1,1,128,1,1,32,15,339.359,22.623933333333333
+col2im,asymmetric_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1,1,256,1,1,38,15,151.17000000000002,10.078
+col2im,asymmetric_training,function,cupy,col2im,19,1,1,128,1,1,32,15,339.458,22.630533333333332
+col2im,asymmetric_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1,1,256,1,1,38,15,151.32999999999998,10.088666666666667
+col2im,asymmetric_contiguous,array,cupy,col2im,19,1,1,128,1,1,32,15,261.40900000000005,17.427266666666668
+col2im,asymmetric_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1,1,256,1,1,38,15,150.754,10.050266666666667
+col2im,asymmetric_contiguous,function,cupy,col2im,19,1,1,128,1,1,32,15,261.24600000000004,17.4164
+col2im,asymmetric_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1,1,256,1,1,38,15,151.106,10.073733333333333
+col2im,asymmetric_negative,array,cupy,col2im,19,1,1,128,1,1,32,15,301.924,20.12826666666667
+col2im,asymmetric_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1,1,256,1,1,38,15,151.20000000000002,10.08
+col2im,asymmetric_negative,function,cupy,col2im,19,1,1,128,1,1,32,15,302.01900000000006,20.1346
+col2im,asymmetric_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1,1,256,1,1,38,15,151.29800000000003,10.086533333333334
+im2col,holes_contiguous,array,cupy,im2col,4,1,1,128,1,1,32,15,110.14300000000001,7.342866666666667
+im2col,holes_contiguous,array,cupy,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,89.40700000000001,5.960466666666667
+im2col,holes_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",2,1,1,256,1,1,23,15,92.92800000000001,6.1952
+im2col,holes_contiguous,function,cupy,im2col,4,1,1,128,1,1,32,15,110.111,7.3407333333333336
+im2col,holes_contiguous,function,cupy,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,89.47299999999998,5.9648666666666665
+im2col,holes_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",2,1,1,256,1,1,23,15,93.60199999999999,6.2401333333333335
+conv,holes_contiguous,array,cupy,im2col,4,1,1,128,1,1,32,15,110.30400000000002,7.3536
+conv,holes_contiguous,array,cupy,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,91.67999999999999,6.112
+conv,holes_contiguous,array,cupy,ampere_sgemm_32x128_tt,1,1,1,256,1,1,57,15,140.286,9.3524
+conv,holes_contiguous,array,cupy,cupy_add__float32_float32_float32,8,1,1,128,1,1,16,15,97.24899999999998,6.483266666666666
+conv,holes_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",2,1,1,256,1,1,23,15,94.4,6.293333333333334
+conv,holes_contiguous,array,native,cupy_copy__float32_float32,1,1,1,36,1,1,16,15,79.2,5.28
+conv,holes_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,7,1,16,16,1,32,15,91.906,6.127066666666667
+conv,holes_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",4,1,1,256,1,1,24,15,98.23900000000002,6.549266666666667
+conv,holes_contiguous,function,cupy,im2col,4,1,1,128,1,1,32,15,110.46400000000001,7.3642666666666665
+conv,holes_contiguous,function,cupy,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,90.526,6.035066666666666
+conv,holes_contiguous,function,cupy,ampere_sgemm_32x128_tt,1,1,1,256,1,1,57,15,140.292,9.3528
+conv,holes_contiguous,function,cupy,cupy_add__float32_float32_float32,8,1,1,128,1,1,16,15,97.28,6.485333333333333
+conv,holes_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",2,1,1,256,1,1,23,15,94.047,6.2698
+conv,holes_contiguous,function,native,cupy_copy__float32_float32,1,1,1,36,1,1,16,15,79.233,5.2822000000000005
+conv,holes_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,7,1,16,16,1,32,15,91.872,6.1248000000000005
+conv,holes_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",4,1,1,256,1,1,24,15,98.079,6.5386
+col2im,holes_training,array,cupy,col2im,27,1,1,128,1,1,32,15,115.424,7.694933333333333
+col2im,holes_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",14,1,1,256,1,1,38,15,131.68000000000004,8.778666666666668
+col2im,holes_training,function,cupy,col2im,27,1,1,128,1,1,32,15,115.553,7.703533333333333
+col2im,holes_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",14,1,1,256,1,1,38,15,131.07500000000002,8.738333333333333
+col2im,holes_contiguous,array,cupy,col2im,27,1,1,128,1,1,32,15,111.03899999999999,7.4026000000000005
+col2im,holes_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",14,1,1,256,1,1,38,15,131.199,8.7466
+col2im,holes_contiguous,function,cupy,col2im,27,1,1,128,1,1,32,15,111.07099999999998,7.404733333333334
+col2im,holes_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",14,1,1,256,1,1,38,15,130.75400000000002,8.716933333333333
+col2im,holes_negative,array,cupy,col2im,27,1,1,128,1,1,32,15,113.37699999999997,7.558466666666667
+col2im,holes_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",14,1,1,256,1,1,38,15,130.882,8.725466666666668
+col2im,holes_negative,function,cupy,col2im,27,1,1,128,1,1,32,15,113.05499999999998,7.537
+col2im,holes_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",14,1,1,256,1,1,38,15,130.75300000000001,8.716866666666668
+im2col,narrow_contiguous,array,cupy,im2col,52,1,1,128,1,1,32,15,109.82500000000002,7.321666666666667
+im2col,narrow_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,106.657,7.1104666666666665
+im2col,narrow_contiguous,function,cupy,im2col,52,1,1,128,1,1,32,15,109.63400000000001,7.308933333333334
+im2col,narrow_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,106.402,7.093466666666667
+conv,narrow_contiguous,array,cupy,im2col,52,1,1,128,1,1,32,15,111.26400000000001,7.4176
+conv,narrow_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,5,1,128,1,1,86,15,191.745,12.783000000000001
+conv,narrow_contiguous,array,cupy,cupy_add__float32_float32_float32,6,1,1,128,1,1,16,15,96.67300000000002,6.444866666666667
+conv,narrow_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,106.68699999999998,7.112466666666666
+conv,narrow_contiguous,array,native,cupy_copy__float32_float32,2,1,1,128,1,1,16,15,79.64699999999999,5.3098
+conv,narrow_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,10,1,16,16,1,32,15,121.69600000000001,8.113066666666667
+conv,narrow_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",3,1,1,256,1,1,24,15,99.329,6.621933333333333
+conv,narrow_contiguous,function,cupy,im2col,52,1,1,128,1,1,32,15,111.424,7.428266666666667
+conv,narrow_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,1,5,1,128,1,1,86,15,191.874,12.7916
+conv,narrow_contiguous,function,cupy,cupy_add__float32_float32_float32,6,1,1,128,1,1,16,15,97.406,6.493733333333333
+conv,narrow_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,106.78599999999999,7.119066666666667
+conv,narrow_contiguous,function,native,cupy_copy__float32_float32,2,1,1,128,1,1,16,15,79.07300000000001,5.271533333333333
+conv,narrow_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,10,1,16,16,1,32,15,122.849,8.189933333333334
+conv,narrow_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",3,1,1,256,1,1,24,15,99.51999999999998,6.634666666666666
+col2im,narrow_training,array,cupy,col2im,21,1,1,128,1,1,32,15,174.493,11.632866666666667
+col2im,narrow_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",11,1,1,256,1,1,38,15,150.84900000000002,10.0566
+col2im,narrow_training,function,cupy,col2im,21,1,1,128,1,1,32,15,174.11700000000002,11.6078
+col2im,narrow_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",11,1,1,256,1,1,38,15,151.072,10.071466666666666
+col2im,narrow_contiguous,array,cupy,col2im,21,1,1,128,1,1,32,15,174.75099999999998,11.650066666666666
+col2im,narrow_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",11,1,1,256,1,1,38,15,151.01,10.067333333333334
+col2im,narrow_contiguous,function,cupy,col2im,21,1,1,128,1,1,32,15,175.202,11.680133333333332
+col2im,narrow_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",11,1,1,256,1,1,38,15,150.561,10.0374
+col2im,narrow_negative,array,cupy,col2im,21,1,1,128,1,1,32,15,184.35300000000004,12.2902
+col2im,narrow_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",11,1,1,256,1,1,38,15,151.356,10.0904
+col2im,narrow_negative,function,cupy,col2im,21,1,1,128,1,1,32,15,184.16199999999998,12.277466666666667
+col2im,narrow_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",11,1,1,256,1,1,38,15,151.39200000000002,10.0928
+im2col,tiny_contiguous,array,cupy,im2col,1,1,1,12,1,1,32,15,102.36900000000001,6.8246
+im2col,tiny_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.384,5.892266666666667
+im2col,tiny_contiguous,function,cupy,im2col,1,1,1,12,1,1,32,15,102.78300000000002,6.8522
+im2col,tiny_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.673,5.911533333333333
+im2col,tiny_sliced,array,cupy,im2col,1,1,1,12,1,1,32,15,102.944,6.862933333333333
+im2col,tiny_sliced,array,native,cupy_copy__float32_float32,1,1,1,12,1,1,18,15,77.11999999999999,5.141333333333334
+im2col,tiny_sliced,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.224,5.8816
+im2col,tiny_sliced,function,cupy,im2col,1,1,1,12,1,1,32,15,102.94300000000001,6.862866666666666
+im2col,tiny_sliced,function,native,cupy_copy__float32_float32,1,1,1,12,1,1,18,15,77.185,5.145666666666667
+im2col,tiny_sliced,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,87.93499999999999,5.862333333333333
+conv,tiny_contiguous,array,cupy,im2col,1,1,1,12,1,1,32,15,103.171,6.878066666666666
+conv,tiny_contiguous,array,cupy,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",1,1,1,256,1,1,20,15,83.74400000000001,5.582933333333333
+conv,tiny_contiguous,array,cupy,cupy_add__float32_float32_float32,1,1,1,24,1,1,16,15,84.67200000000001,5.6448
+conv,tiny_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.28899999999997,5.885933333333333
+conv,tiny_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,1,1,16,16,1,32,15,81.98799999999999,5.465866666666667
+conv,tiny_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",1,1,1,256,1,1,24,15,85.05799999999999,5.670533333333333
+conv,tiny_contiguous,function,cupy,im2col,1,1,1,12,1,1,32,15,102.36800000000001,6.824533333333333
+conv,tiny_contiguous,function,cupy,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",1,1,1,256,1,1,20,15,83.42199999999998,5.561466666666666
+conv,tiny_contiguous,function,cupy,cupy_add__float32_float32_float32,1,1,1,24,1,1,16,15,84.8,5.653333333333333
+conv,tiny_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.28999999999998,5.886
+conv,tiny_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,1,1,16,16,1,32,15,82.047,5.4698
+conv,tiny_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",1,1,1,256,1,1,24,15,84.67400000000002,5.644933333333333
+conv,tiny_sliced,array,cupy,im2col,1,1,1,12,1,1,32,15,103.61600000000001,6.907733333333333
+conv,tiny_sliced,array,cupy,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",1,1,1,256,1,1,20,15,83.681,5.578733333333333
+conv,tiny_sliced,array,cupy,cupy_add__float32_float32_float32,1,1,1,24,1,1,16,15,83.55200000000002,5.570133333333333
+conv,tiny_sliced,array,native,cupy_copy__float32_float32,1,1,1,12,1,1,18,15,76.992,5.1328000000000005
+conv,tiny_sliced,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.128,5.8751999999999995
+conv,tiny_sliced,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,1,1,16,16,1,32,15,82.21,5.480666666666667
+conv,tiny_sliced,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",1,1,1,256,1,1,24,15,85.08800000000001,5.672533333333333
+conv,tiny_sliced,function,cupy,im2col,1,1,1,12,1,1,32,15,103.201,6.880066666666667
+conv,tiny_sliced,function,cupy,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",1,1,1,256,1,1,20,15,84.221,5.614733333333334
+conv,tiny_sliced,function,cupy,cupy_add__float32_float32_float32,1,1,1,24,1,1,16,15,83.26599999999999,5.551066666666666
+conv,tiny_sliced,function,native,cupy_copy__float32_float32,1,1,1,12,1,1,18,15,76.735,5.115666666666667
+conv,tiny_sliced,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,89.057,5.937133333333334
+conv,tiny_sliced,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",1,1,1,16,16,1,32,15,82.083,5.4722
+conv,tiny_sliced,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",1,1,1,256,1,1,24,15,85.122,5.674799999999999
+col2im,tiny_training,array,cupy,col2im,1,1,1,12,1,1,32,15,102.04899999999999,6.803266666666667
+col2im,tiny_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,100.735,6.7156666666666665
+col2im,tiny_training,function,cupy,col2im,1,1,1,12,1,1,32,15,101.72800000000001,6.781866666666667
+col2im,tiny_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,101.059,6.737266666666667
+col2im,tiny_contiguous,array,cupy,col2im,1,1,1,12,1,1,32,15,101.50400000000003,6.766933333333333
+col2im,tiny_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,101.24799999999999,6.749866666666667
+col2im,tiny_contiguous,function,cupy,col2im,1,1,1,12,1,1,32,15,101.76299999999999,6.7842
+col2im,tiny_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,100.63799999999999,6.7092
+col2im,tiny_negative,array,cupy,col2im,1,1,1,12,1,1,32,15,104.161,6.944066666666667
+col2im,tiny_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,101.11999999999999,6.741333333333333
+col2im,tiny_negative,function,cupy,col2im,1,1,1,12,1,1,32,15,104.32200000000002,6.9548
+col2im,tiny_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,101.216,6.747733333333334
+im2col,large_channels_contiguous,array,cupy,im2col,2592,1,1,128,1,1,32,15,238.369,15.891266666666667
+im2col,large_channels_contiguous,array,cupy,cupy_copy__float32_float32,2592,1,1,128,1,1,16,15,215.36300000000003,14.357533333333334
+im2col,large_channels_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1296,1,1,256,1,1,23,15,243.99800000000002,16.266533333333335
+im2col,large_channels_contiguous,function,cupy,im2col,2592,1,1,128,1,1,32,15,238.49400000000003,15.8996
+im2col,large_channels_contiguous,function,cupy,cupy_copy__float32_float32,2592,1,1,128,1,1,16,15,215.78099999999998,14.3854
+im2col,large_channels_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1296,1,1,256,1,1,23,15,244.31900000000002,16.287933333333335
+conv,large_channels_contiguous,array,cupy,im2col,2592,1,1,128,1,1,32,15,238.46500000000003,15.897666666666666
+conv,large_channels_contiguous,array,cupy,cupy_copy__float32_float32,2592,1,1,128,1,1,16,15,147.61700000000002,9.841133333333334
+conv,large_channels_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_tt,3,18,5,128,1,1,86,15,345.02299999999997,23.001533333333334
+conv,large_channels_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,36,1,32,16,1,32,15,116.89699999999998,7.7931333333333335
+conv,large_channels_contiguous,array,cupy,cupy_add__float32_float32_float32,432,1,1,128,1,1,16,15,114.018,7.6011999999999995
+conv,large_channels_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1296,1,1,256,1,1,23,15,245.058,16.3372
+conv,large_channels_contiguous,array,native,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,115.488,7.699199999999999
+conv,large_channels_contiguous,array,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",6,36,1,16,16,1,32,15,651.776,43.45173333333334
+conv,large_channels_contiguous,array,native,"conv_pack(const float *, const float *, float *, int, int, int)",216,1,1,256,1,1,24,15,135.712,9.047466666666667
+conv,large_channels_contiguous,function,cupy,im2col,2592,1,1,128,1,1,32,15,238.754,15.916933333333333
+conv,large_channels_contiguous,function,cupy,cupy_copy__float32_float32,2592,1,1,128,1,1,16,15,147.33100000000002,9.822066666666666
+conv,large_channels_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_tt,3,18,5,128,1,1,86,15,344.22400000000005,22.948266666666665
+conv,large_channels_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,36,1,32,16,1,32,15,116.836,7.789066666666667
+conv,large_channels_contiguous,function,cupy,cupy_add__float32_float32_float32,432,1,1,128,1,1,16,15,114.4,7.626666666666667
+conv,large_channels_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1296,1,1,256,1,1,23,15,245.37700000000004,16.35846666666667
+conv,large_channels_contiguous,function,native,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,115.293,7.6861999999999995
+conv,large_channels_contiguous,function,native,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",6,36,1,16,16,1,32,15,651.968,43.464533333333335
+conv,large_channels_contiguous,function,native,"conv_pack(const float *, const float *, float *, int, int, int)",216,1,1,256,1,1,24,15,135.90599999999998,9.0604
+col2im,large_channels_training,array,cupy,col2im,1120,1,1,128,1,1,32,15,478.1460000000001,31.8764
+col2im,large_channels_training,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",560,1,1,256,1,1,38,15,261.761,17.450733333333336
+col2im,large_channels_training,function,cupy,col2im,1120,1,1,128,1,1,32,15,478.465,31.897666666666666
+col2im,large_channels_training,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",560,1,1,256,1,1,38,15,261.442,17.429466666666666
+col2im,large_channels_contiguous,array,cupy,col2im,1120,1,1,128,1,1,32,15,331.5189999999999,22.101266666666668
+col2im,large_channels_contiguous,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",560,1,1,256,1,1,38,15,261.50300000000004,17.433533333333333
+col2im,large_channels_contiguous,function,cupy,col2im,1120,1,1,128,1,1,32,15,329.92100000000005,21.994733333333333
+col2im,large_channels_contiguous,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",560,1,1,256,1,1,38,15,260.51200000000006,17.36746666666667
+col2im,large_channels_negative,array,cupy,col2im,1120,1,1,128,1,1,32,15,408.513,27.2342
+col2im,large_channels_negative,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",560,1,1,256,1,1,38,15,261.124,17.408266666666666
+col2im,large_channels_negative,function,cupy,col2im,1120,1,1,128,1,1,32,15,408.41599999999994,27.227733333333333
+col2im,large_channels_negative,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",560,1,1,256,1,1,38,15,261.69800000000004,17.446533333333335
+pool_forward,tiny_net_pool,array,cupy,im2col,32,1,1,128,1,1,32,15,111.45600000000002,7.430400000000001
+pool_forward,tiny_net_pool,array,cupy,cupy_argmax,8,1,1,512,1,1,31,15,118.81400000000001,7.920933333333333
+pool_forward,tiny_net_pool,array,cupy,cupy_max,8,1,1,512,1,1,25,15,113.47499999999998,7.5649999999999995
+pool_forward,tiny_net_pool,array,native,"pool_kernel(const float *, float *, long *, int, int, int, int, int, int, int, int, int, int, int, int)",4,1,1,256,1,1,30,15,111.45800000000004,7.430533333333334
+pool_forward,tiny_net_pool,function,cupy,im2col,32,1,1,128,1,1,32,15,111.23100000000001,7.4154
+pool_forward,tiny_net_pool,function,cupy,cupy_argmax,8,1,1,512,1,1,31,15,117.15299999999999,7.8102
+pool_forward,tiny_net_pool,function,cupy,cupy_max,8,1,1,512,1,1,25,15,113.50399999999998,7.566933333333333
+pool_forward,tiny_net_pool,function,native,"pool_kernel(const float *, float *, long *, int, int, int, int, int, int, int, int, int, int, int, int)",4,1,1,256,1,1,30,15,111.458,7.430533333333334
+pool_forward,overlap_pool,array,cupy,im2col,1130,1,1,128,1,1,32,15,161.6,10.773333333333333
+pool_forward,overlap_pool,array,cupy,cupy_argmax,502,1,1,512,1,1,31,15,208.801,13.920066666666667
+pool_forward,overlap_pool,array,cupy,cupy_max,502,1,1,512,1,1,25,15,194.46600000000007,12.964400000000001
+pool_forward,overlap_pool,array,native,"pool_kernel(const float *, float *, long *, int, int, int, int, int, int, int, int, int, int, int, int)",63,1,1,256,1,1,30,15,136.15799999999996,9.0772
+pool_forward,overlap_pool,function,cupy,im2col,1130,1,1,128,1,1,32,15,161.406,10.7604
+pool_forward,overlap_pool,function,cupy,cupy_argmax,502,1,1,512,1,1,31,15,207.778,13.851866666666666
+pool_forward,overlap_pool,function,cupy,cupy_max,502,1,1,512,1,1,25,15,194.91000000000003,12.994
+pool_forward,overlap_pool,function,native,"pool_kernel(const float *, float *, long *, int, int, int, int, int, int, int, int, int, int, int, int)",63,1,1,256,1,1,30,15,136.291,9.086066666666666
+pool_forward,asym_pool,array,cupy,im2col,13,1,1,128,1,1,32,15,110.04800000000002,7.336533333333334
+pool_forward,asym_pool,array,cupy,cupy_argmax,4,1,1,512,1,1,31,15,138.91199999999998,9.2608
+pool_forward,asym_pool,array,cupy,cupy_max,4,1,1,512,1,1,25,15,130.433,8.695533333333334
+pool_forward,asym_pool,array,native,"pool_kernel(const float *, float *, long *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,30,15,142.87800000000001,9.5252
+pool_forward,asym_pool,function,cupy,im2col,13,1,1,128,1,1,32,15,109.21800000000002,7.2812
+pool_forward,asym_pool,function,cupy,cupy_argmax,4,1,1,512,1,1,31,15,140.703,9.3802
+pool_forward,asym_pool,function,cupy,cupy_max,4,1,1,512,1,1,25,15,129.891,8.6594
+pool_forward,asym_pool,function,native,"pool_kernel(const float *, float *, long *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,30,15,142.847,9.523133333333332
+pool_forward,negative_pool,array,cupy,im2col,9,1,1,128,1,1,32,15,109.56600000000003,7.3044
+pool_forward,negative_pool,array,cupy,cupy_argmax,4,1,1,512,1,1,31,15,132.258,8.817200000000001
+pool_forward,negative_pool,array,cupy,cupy_max,4,1,1,512,1,1,25,15,124.09599999999999,8.273066666666667
+pool_forward,negative_pool,array,native,"pool_kernel(const float *, float *, long *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,30,15,115.87100000000001,7.724733333333333
+pool_forward,negative_pool,function,cupy,im2col,9,1,1,128,1,1,32,15,109.217,7.281133333333334
+pool_forward,negative_pool,function,cupy,cupy_argmax,4,1,1,512,1,1,31,15,135.424,9.028266666666665
+pool_forward,negative_pool,function,cupy,cupy_max,4,1,1,512,1,1,25,15,123.77500000000002,8.251666666666667
+pool_forward,negative_pool,function,native,"pool_kernel(const float *, float *, long *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,30,15,115.999,7.733266666666666
+dweight,conv1_contiguous,array,cupy,im2col,7121,1,1,128,1,1,32,15,479.29799999999994,31.9532
+dweight,conv1_contiguous,array,cupy,cupy_copy__float32_float32,2279,1,1,128,1,1,16,15,146.52799999999996,9.768533333333334
+dweight,conv1_contiguous,array,cupy,cupy_copy__float32_float32,7121,1,1,128,1,1,16,15,270.529,18.03526666666667
+dweight,conv1_contiguous,array,cupy,ampere_sgemm_64x32_sliced1x4_nt,2,1,54,256,1,1,82,15,343.424,22.894933333333334
+dweight,conv1_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,159.747,10.6498
+dweight,conv1_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",3561,1,1,256,1,1,23,15,495.872,33.05813333333333
+dweight,conv1_contiguous,array,native,cupy_copy__float32_float32,2279,1,1,128,1,1,16,15,138.369,9.224599999999999
+dweight,conv1_contiguous,array,native,ampere_sgemm_32x32_sliced1x4_nn,3,1,72,128,1,1,86,15,333.468,22.231199999999998
+dweight,conv1_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,164.41699999999997,10.961133333333335
+dweight,conv1_contiguous,function,cupy,im2col,7121,1,1,128,1,1,32,15,478.851,31.9234
+dweight,conv1_contiguous,function,cupy,cupy_copy__float32_float32,2279,1,1,128,1,1,16,15,146.337,9.755799999999999
+dweight,conv1_contiguous,function,cupy,cupy_copy__float32_float32,7121,1,1,128,1,1,16,15,272.959,18.197266666666668
+dweight,conv1_contiguous,function,cupy,ampere_sgemm_64x32_sliced1x4_nt,2,1,54,256,1,1,82,15,343.682,22.912133333333333
+dweight,conv1_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,159.42399999999998,10.628266666666667
+dweight,conv1_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",3561,1,1,256,1,1,23,15,496.64,33.10933333333333
+dweight,conv1_contiguous,function,native,cupy_copy__float32_float32,2279,1,1,128,1,1,16,15,138.08,9.205333333333332
+dweight,conv1_contiguous,function,native,ampere_sgemm_32x32_sliced1x4_nn,3,1,72,128,1,1,86,15,333.056,22.203733333333332
+dweight,conv1_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,164.287,10.952466666666668
+dweight,conv2_contiguous,array,cupy,im2col,12338,1,1,128,1,1,32,15,755.907,50.3938
+dweight,conv2_contiguous,array,cupy,cupy_copy__float32_float32,741,1,1,128,1,1,16,15,121.667,8.111133333333333
+dweight,conv2_contiguous,array,cupy,cupy_copy__float32_float32,12338,1,1,128,1,1,16,15,587.6810000000002,39.178733333333334
+dweight,conv2_contiguous,array,cupy,ampere_sgemm_64x32_sliced1x4_nt,10,2,5,256,1,1,82,15,530.9459999999999,35.3964
+dweight,conv2_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,110.97699999999999,7.398466666666667
+dweight,conv2_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",6169,1,1,256,1,1,23,15,786.883,52.458866666666665
+dweight,conv2_contiguous,array,native,cupy_copy__float32_float32,741,1,1,128,1,1,16,15,109.88900000000001,7.325933333333333
+dweight,conv2_contiguous,array,native,ampere_sgemm_128x32_sliced1x4_nn,5,2,10,256,1,1,134,15,566.496,37.7664
+dweight,conv2_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,122.368,8.157866666666667
+dweight,conv2_contiguous,function,cupy,im2col,12338,1,1,128,1,1,32,15,755.904,50.3936
+dweight,conv2_contiguous,function,cupy,cupy_copy__float32_float32,741,1,1,128,1,1,16,15,121.56799999999998,8.104533333333334
+dweight,conv2_contiguous,function,cupy,cupy_copy__float32_float32,12338,1,1,128,1,1,16,15,587.2349999999999,39.149
+dweight,conv2_contiguous,function,cupy,ampere_sgemm_64x32_sliced1x4_nt,10,2,5,256,1,1,82,15,531.426,35.4284
+dweight,conv2_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,111.52099999999999,7.434733333333334
+dweight,conv2_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",6169,1,1,256,1,1,23,15,786.5609999999999,52.4374
+dweight,conv2_contiguous,function,native,cupy_copy__float32_float32,741,1,1,128,1,1,16,15,109.888,7.325866666666667
+dweight,conv2_contiguous,function,native,ampere_sgemm_128x32_sliced1x4_nn,5,2,10,256,1,1,134,15,567.682,37.84546666666667
+dweight,conv2_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,122.848,8.189866666666667
+dweight,conv3_contiguous,array,cupy,im2col,3094,1,1,128,1,1,32,15,263.716,17.58106666666667
+dweight,conv3_contiguous,array,cupy,cupy_copy__float32_float32,165,1,1,128,1,1,16,15,105.47300000000003,7.031533333333333
+dweight,conv3_contiguous,array,cupy,cupy_copy__float32_float32,3094,1,1,128,1,1,16,15,229.377,15.2918
+dweight,conv3_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_nt,29,2,4,128,1,1,86,15,338.59,22.572666666666667
+dweight,conv3_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,108.35300000000002,7.223533333333333
+dweight,conv3_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1547,1,1,256,1,1,23,15,269.185,17.945666666666668
+dweight,conv3_contiguous,array,native,cupy_copy__float32_float32,165,1,1,128,1,1,16,15,97.151,6.476733333333334
+dweight,conv3_contiguous,array,native,ampere_sgemm_64x32_sliced1x4_nn,15,2,7,256,1,1,82,15,297.37699999999995,19.825133333333333
+dweight,conv3_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,125.439,8.3626
+dweight,conv3_contiguous,function,cupy,im2col,3094,1,1,128,1,1,32,15,263.938,17.595866666666666
+dweight,conv3_contiguous,function,cupy,cupy_copy__float32_float32,165,1,1,128,1,1,16,15,106.40000000000003,7.093333333333334
+dweight,conv3_contiguous,function,cupy,cupy_copy__float32_float32,3094,1,1,128,1,1,16,15,228.38299999999998,15.225533333333333
+dweight,conv3_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_nt,29,2,4,128,1,1,86,15,338.59299999999996,22.572866666666666
+dweight,conv3_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,108.32000000000002,7.221333333333334
+dweight,conv3_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1547,1,1,256,1,1,23,15,268.898,17.926533333333335
+dweight,conv3_contiguous,function,native,cupy_copy__float32_float32,165,1,1,128,1,1,16,15,97.53600000000002,6.502400000000001
+dweight,conv3_contiguous,function,native,ampere_sgemm_64x32_sliced1x4_nn,15,2,7,256,1,1,82,15,296.89699999999993,19.793133333333333
+dweight,conv3_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,124.60900000000001,8.307266666666667
+dweight,conv4_contiguous,array,cupy,im2col,810,1,1,128,1,1,32,15,140.801,9.386733333333334
+dweight,conv4_contiguous,array,cupy,cupy_copy__float32_float32,120,1,1,128,1,1,16,15,99.872,6.658133333333333
+dweight,conv4_contiguous,array,cupy,cupy_copy__float32_float32,810,1,1,128,1,1,16,15,140.704,9.380266666666666
+dweight,conv4_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_nt,14,2,3,128,1,1,86,15,225.31400000000002,15.020933333333334
+dweight,conv4_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,105.27799999999999,7.018533333333333
+dweight,conv4_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",405,1,1,256,1,1,23,15,149.66400000000002,9.9776
+dweight,conv4_contiguous,array,native,cupy_copy__float32_float32,120,1,1,128,1,1,16,15,95.77600000000001,6.385066666666667
+dweight,conv4_contiguous,array,native,ampere_sgemm_32x32_sliced1x4_nn,14,2,3,128,1,1,86,15,220.671,14.711400000000001
+dweight,conv4_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,104.51400000000001,6.9676
+dweight,conv4_contiguous,function,cupy,im2col,810,1,1,128,1,1,32,15,141.183,9.4122
+dweight,conv4_contiguous,function,cupy,cupy_copy__float32_float32,120,1,1,128,1,1,16,15,99.83999999999999,6.656
+dweight,conv4_contiguous,function,cupy,cupy_copy__float32_float32,810,1,1,128,1,1,16,15,141.15399999999997,9.410266666666667
+dweight,conv4_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_nt,14,2,3,128,1,1,86,15,226.21000000000004,15.080666666666666
+dweight,conv4_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,105.602,7.040133333333333
+dweight,conv4_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",405,1,1,256,1,1,23,15,149.44099999999997,9.962733333333333
+dweight,conv4_contiguous,function,native,cupy_copy__float32_float32,120,1,1,128,1,1,16,15,96.70300000000002,6.446866666666667
+dweight,conv4_contiguous,function,native,ampere_sgemm_32x32_sliced1x4_nn,14,2,3,128,1,1,86,15,221.05899999999997,14.737266666666667
+dweight,conv4_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,104.25500000000001,6.950333333333333
+dweight,conv5_contiguous,array,cupy,im2col,324,1,1,128,1,1,32,15,121.73,8.115333333333334
+dweight,conv5_contiguous,array,cupy,cupy_copy__float32_float32,36,1,1,128,1,1,16,15,92.29,6.152666666666667
+dweight,conv5_contiguous,array,cupy,cupy_copy__float32_float32,324,1,1,128,1,1,16,15,113.216,7.547733333333333
+dweight,conv5_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_nt,18,2,1,128,1,1,86,15,218.91200000000003,14.594133333333334
+dweight,conv5_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",162,1,1,256,1,1,23,15,121.70000000000002,8.113333333333333
+dweight,conv5_contiguous,array,native,cupy_copy__float32_float32,36,1,1,128,1,1,16,15,91.13600000000001,6.075733333333333
+dweight,conv5_contiguous,array,native,ampere_sgemm_32x32_sliced1x4_nn,18,2,1,128,1,1,86,15,213.505,14.233666666666666
+dweight,conv5_contiguous,function,cupy,im2col,324,1,1,128,1,1,32,15,121.85799999999998,8.123866666666666
+dweight,conv5_contiguous,function,cupy,cupy_copy__float32_float32,36,1,1,128,1,1,16,15,91.90599999999998,6.127066666666667
+dweight,conv5_contiguous,function,cupy,cupy_copy__float32_float32,324,1,1,128,1,1,16,15,112.86499999999998,7.524333333333333
+dweight,conv5_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_nt,18,2,1,128,1,1,86,15,218.04499999999996,14.536333333333333
+dweight,conv5_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",162,1,1,256,1,1,23,15,121.24800000000002,8.0832
+dweight,conv5_contiguous,function,native,cupy_copy__float32_float32,36,1,1,128,1,1,16,15,90.94300000000001,6.062866666666666
+dweight,conv5_contiguous,function,native,ampere_sgemm_32x32_sliced1x4_nn,18,2,1,128,1,1,86,15,213.986,14.265733333333333
+dweight,overlap_contiguous,array,cupy,im2col,3137,1,1,128,1,1,32,15,265.66499999999996,17.711000000000002
+dweight,overlap_contiguous,array,cupy,cupy_copy__float32_float32,233,1,1,128,1,1,16,15,103.29599999999999,6.8864
+dweight,overlap_contiguous,array,cupy,cupy_copy__float32_float32,3137,1,1,128,1,1,16,15,224.03299999999996,14.935533333333334
+dweight,overlap_contiguous,array,cupy,ampere_sgemm_64x32_sliced1x4_nt,3,1,35,256,1,1,82,15,239.36,15.957333333333333
+dweight,overlap_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",6,1,1,32,16,1,32,15,138.46599999999998,9.231066666666667
+dweight,overlap_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1569,1,1,256,1,1,23,15,278.175,18.544999999999998
+dweight,overlap_contiguous,array,native,cupy_copy__float32_float32,233,1,1,128,1,1,16,15,97.76000000000002,6.517333333333333
+dweight,overlap_contiguous,array,native,ampere_sgemm_64x32_sliced1x4_nn,3,1,32,256,1,1,82,15,240.03099999999998,16.002066666666668
+dweight,overlap_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",6,1,1,32,16,1,32,15,123.394,8.226266666666668
+dweight,overlap_contiguous,function,cupy,im2col,3137,1,1,128,1,1,32,15,265.76,17.717333333333332
+dweight,overlap_contiguous,function,cupy,cupy_copy__float32_float32,233,1,1,128,1,1,16,15,103.35900000000001,6.8906
+dweight,overlap_contiguous,function,cupy,cupy_copy__float32_float32,3137,1,1,128,1,1,16,15,224.641,14.976066666666666
+dweight,overlap_contiguous,function,cupy,ampere_sgemm_64x32_sliced1x4_nt,3,1,35,256,1,1,82,15,239.905,15.993666666666666
+dweight,overlap_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",6,1,1,32,16,1,32,15,138.78299999999996,9.2522
+dweight,overlap_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1569,1,1,256,1,1,23,15,277.95399999999995,18.530266666666666
+dweight,overlap_contiguous,function,native,cupy_copy__float32_float32,233,1,1,128,1,1,16,15,98.27100000000003,6.551399999999999
+dweight,overlap_contiguous,function,native,ampere_sgemm_64x32_sliced1x4_nn,3,1,32,256,1,1,82,15,240.51000000000002,16.034
+dweight,overlap_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",6,1,1,32,16,1,32,15,123.36000000000001,8.224
+dweight,nonoverlap_contiguous,array,cupy,im2col,117,1,1,128,1,1,32,15,116.38299999999998,7.758866666666666
+dweight,nonoverlap_contiguous,array,cupy,cupy_copy__float32_float32,29,1,1,128,1,1,16,15,93.28099999999999,6.218733333333334
+dweight,nonoverlap_contiguous,array,cupy,cupy_copy__float32_float32,117,1,1,128,1,1,16,15,104.96100000000001,6.9974
+dweight,nonoverlap_contiguous,array,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,609.536,40.635733333333334
+dweight,nonoverlap_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",59,1,1,256,1,1,23,15,105.72700000000002,7.048466666666667
+dweight,nonoverlap_contiguous,array,native,cupy_copy__float32_float32,29,1,1,128,1,1,16,15,92.542,6.169466666666667
+dweight,nonoverlap_contiguous,array,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,594.72,39.648
+dweight,nonoverlap_contiguous,function,cupy,im2col,117,1,1,128,1,1,32,15,116.48100000000001,7.7654
+dweight,nonoverlap_contiguous,function,cupy,cupy_copy__float32_float32,29,1,1,128,1,1,16,15,91.20000000000002,6.08
+dweight,nonoverlap_contiguous,function,cupy,cupy_copy__float32_float32,117,1,1,128,1,1,16,15,105.184,7.012266666666667
+dweight,nonoverlap_contiguous,function,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,609.4409999999999,40.6294
+dweight,nonoverlap_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",59,1,1,256,1,1,23,15,106.14300000000001,7.0762
+dweight,nonoverlap_contiguous,function,native,cupy_copy__float32_float32,29,1,1,128,1,1,16,15,90.72099999999999,6.048066666666667
+dweight,nonoverlap_contiguous,function,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,594.9450000000002,39.663000000000004
+dweight,asymmetric_contiguous,array,cupy,im2col,51,1,1,128,1,1,32,15,111.841,7.456066666666667
+dweight,asymmetric_contiguous,array,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,90.591,6.0394
+dweight,asymmetric_contiguous,array,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,98.23900000000002,6.549266666666666
+dweight,asymmetric_contiguous,array,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,314.814,20.9876
+dweight,asymmetric_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,103.29500000000002,6.886333333333333
+dweight,asymmetric_contiguous,array,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,88.929,5.9286
+dweight,asymmetric_contiguous,array,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,316.319,21.087933333333336
+dweight,asymmetric_contiguous,function,cupy,im2col,51,1,1,128,1,1,32,15,111.647,7.443133333333334
+dweight,asymmetric_contiguous,function,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,92.51100000000001,6.1674
+dweight,asymmetric_contiguous,function,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,99.48800000000001,6.632533333333333
+dweight,asymmetric_contiguous,function,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,314.49699999999996,20.96646666666667
+dweight,asymmetric_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,103.84200000000001,6.9228
+dweight,asymmetric_contiguous,function,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,89.66499999999999,5.977666666666667
+dweight,asymmetric_contiguous,function,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,315.777,21.0518
+dweight,asymmetric_sliced,array,cupy,im2col,51,1,1,128,1,1,32,15,111.39300000000001,7.426200000000001
+dweight,asymmetric_sliced,array,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,92.60900000000001,6.173933333333333
+dweight,asymmetric_sliced,array,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,99.392,6.626133333333333
+dweight,asymmetric_sliced,array,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,318.147,21.2098
+dweight,asymmetric_sliced,array,native,cupy_copy__float32_float32,19,1,1,128,1,1,18,15,85.568,5.704533333333333
+dweight,asymmetric_sliced,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,103.84000000000003,6.922666666666666
+dweight,asymmetric_sliced,array,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,89.699,5.979933333333333
+dweight,asymmetric_sliced,array,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,315.523,21.034866666666666
+dweight,asymmetric_sliced,function,cupy,im2col,51,1,1,128,1,1,32,15,111.52000000000002,7.434666666666667
+dweight,asymmetric_sliced,function,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,92.482,6.165466666666667
+dweight,asymmetric_sliced,function,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,99.04100000000001,6.602733333333333
+dweight,asymmetric_sliced,function,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,318.04600000000005,21.20306666666667
+dweight,asymmetric_sliced,function,native,cupy_copy__float32_float32,19,1,1,128,1,1,18,15,86.015,5.734333333333333
+dweight,asymmetric_sliced,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,104.25400000000002,6.950266666666667
+dweight,asymmetric_sliced,function,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,89.82299999999998,5.9882
+dweight,asymmetric_sliced,function,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,315.81100000000004,21.054066666666667
+dweight,holes_contiguous,array,cupy,im2col,4,1,1,128,1,1,32,15,109.28000000000003,7.285333333333334
+dweight,holes_contiguous,array,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,91.35799999999999,6.090533333333333
+dweight,holes_contiguous,array,cupy,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,91.362,6.0908
+dweight,holes_contiguous,array,cupy,ampere_sgemm_32x128_nt,1,1,1,256,1,1,57,15,272.19100000000003,18.146066666666666
+dweight,holes_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",2,1,1,256,1,1,23,15,93.311,6.2207333333333334
+dweight,holes_contiguous,array,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,88.447,5.896466666666667
+dweight,holes_contiguous,array,native,ampere_sgemm_32x128_nn,1,1,1,256,1,1,57,15,268.291,17.886066666666668
+dweight,holes_contiguous,function,cupy,im2col,4,1,1,128,1,1,32,15,106.97600000000001,7.131733333333333
+dweight,holes_contiguous,function,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,89.95199999999998,5.9968
+dweight,holes_contiguous,function,cupy,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,89.56799999999998,5.9712
+dweight,holes_contiguous,function,cupy,ampere_sgemm_32x128_nt,1,1,1,256,1,1,57,15,273.05899999999997,18.20393333333333
+dweight,holes_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",2,1,1,256,1,1,23,15,93.665,6.2443333333333335
+dweight,holes_contiguous,function,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,86.65599999999999,5.777066666666666
+dweight,holes_contiguous,function,native,ampere_sgemm_32x128_nn,1,1,1,256,1,1,57,15,268.386,17.892400000000002
+dweight,narrow_contiguous,array,cupy,im2col,52,1,1,128,1,1,32,15,110.46300000000001,7.3642
+dweight,narrow_contiguous,array,cupy,ampere_sgemm_32x128_tn,2,1,1,256,1,1,57,15,340.159,22.677266666666664
+dweight,narrow_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,106.23900000000002,7.0826
+dweight,narrow_contiguous,array,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,335.936,22.395733333333332
+dweight,narrow_contiguous,function,cupy,im2col,52,1,1,128,1,1,32,15,111.135,7.409
+dweight,narrow_contiguous,function,cupy,ampere_sgemm_32x128_tn,2,1,1,256,1,1,57,15,340.35499999999996,22.69033333333333
+dweight,narrow_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,105.98500000000001,7.065666666666667
+dweight,narrow_contiguous,function,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,335.549,22.369933333333332
+dweight,tiny_contiguous,array,cupy,im2col,1,1,1,12,1,1,32,15,102.561,6.8374
+dweight,tiny_contiguous,array,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.76000000000002,6.517333333333333
+dweight,tiny_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.48000000000002,5.898666666666666
+dweight,tiny_contiguous,array,native,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.98700000000001,6.532466666666666
+dweight,tiny_contiguous,function,cupy,im2col,1,1,1,12,1,1,32,15,103.138,6.875866666666667
+dweight,tiny_contiguous,function,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.729,6.515266666666666
+dweight,tiny_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.769,5.917933333333333
+dweight,tiny_contiguous,function,native,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.95300000000002,6.5302
+dweight,tiny_sliced,array,cupy,im2col,1,1,1,12,1,1,32,15,99.74600000000001,6.649733333333333
+dweight,tiny_sliced,array,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.408,6.4938666666666665
+dweight,tiny_sliced,array,native,cupy_copy__float32_float32,1,1,1,12,1,1,18,15,74.977,4.998466666666666
+dweight,tiny_sliced,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.70300000000002,5.9135333333333335
+dweight,tiny_sliced,array,native,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,99.29799999999999,6.619866666666667
+dweight,tiny_sliced,function,cupy,im2col,1,1,1,12,1,1,32,15,99.842,6.656133333333333
+dweight,tiny_sliced,function,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,98.36900000000001,6.557933333333334
+dweight,tiny_sliced,function,native,cupy_copy__float32_float32,1,1,1,12,1,1,18,15,75.108,5.0072
+dweight,tiny_sliced,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.51299999999999,5.9008666666666665
+dweight,tiny_sliced,function,native,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,99.039,6.6026
+dweight,large_channels_contiguous,array,cupy,im2col,2592,1,1,128,1,1,32,15,239.45600000000002,15.963733333333334
+dweight,large_channels_contiguous,array,cupy,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,122.33500000000001,8.155666666666667
+dweight,large_channels_contiguous,array,cupy,cupy_copy__float32_float32,2592,1,1,128,1,1,16,15,215.80999999999997,14.387333333333334
+dweight,large_channels_contiguous,array,cupy,ampere_sgemm_64x32_sliced1x4_nt,9,3,8,256,1,1,82,15,335.935,22.395666666666667
+dweight,large_channels_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",18,6,1,32,16,1,32,15,115.39100000000002,7.692733333333333
+dweight,large_channels_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1296,1,1,256,1,1,23,15,245.24999999999997,16.35
+dweight,large_channels_contiguous,array,native,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,100.928,6.728533333333333
+dweight,large_channels_contiguous,array,native,ampere_sgemm_32x32_sliced1x4_nn,18,3,4,128,1,1,86,15,307.841,20.522733333333335
+dweight,large_channels_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",18,6,1,32,16,1,32,15,108.673,7.244866666666667
+dweight,large_channels_contiguous,function,cupy,im2col,2592,1,1,128,1,1,32,15,238.978,15.931866666666666
+dweight,large_channels_contiguous,function,cupy,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,122.65599999999999,8.177066666666667
+dweight,large_channels_contiguous,function,cupy,cupy_copy__float32_float32,2592,1,1,128,1,1,16,15,215.23200000000003,14.3488
+dweight,large_channels_contiguous,function,cupy,ampere_sgemm_64x32_sliced1x4_nt,9,3,8,256,1,1,82,15,336.03299999999996,22.4022
+dweight,large_channels_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",18,6,1,32,16,1,32,15,114.84899999999999,7.6566
+dweight,large_channels_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1296,1,1,256,1,1,23,15,245.50499999999997,16.367
+dweight,large_channels_contiguous,function,native,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,101.12100000000001,6.7414
+dweight,large_channels_contiguous,function,native,ampere_sgemm_32x32_sliced1x4_nn,18,3,4,128,1,1,86,15,309.21400000000006,20.614266666666666
+dweight,large_channels_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",18,6,1,32,16,1,32,15,108.35300000000001,7.223533333333333
+pool_backward,tiny_net_pool,array,cupy,cupy_arange__int_int_int64,8,1,1,128,1,1,22,15,80.86299999999999,5.390866666666667
+pool_backward,tiny_net_pool,array,cupy,cupy_add__int64_int64_int64,8,1,1,128,1,1,24,15,87.20100000000001,5.8134
+pool_backward,tiny_net_pool,array,cupy,cupy_scatter_update,8,1,1,128,1,1,30,15,100.03100000000002,6.668733333333333
+pool_backward,tiny_net_pool,array,cupy,col2im,32,1,1,128,1,1,32,15,157.089,10.4726
+pool_backward,tiny_net_pool,array,native,cupy_arange__int_int_int64,8,1,1,128,1,1,22,15,81.11999999999999,5.408
+pool_backward,tiny_net_pool,array,native,cupy_add__int64_int64_int64,8,1,1,128,1,1,24,15,87.2,5.8133333333333335
+pool_backward,tiny_net_pool,array,native,cupy_scatter_update,8,1,1,128,1,1,30,15,100.128,6.675199999999999
+pool_backward,tiny_net_pool,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",16,1,1,256,1,1,38,15,132.706,8.847066666666667
+pool_backward,tiny_net_pool,function,cupy,cupy_arange__int_int_int64,8,1,1,128,1,1,22,15,79.93499999999999,5.329
+pool_backward,tiny_net_pool,function,cupy,cupy_add__int64_int64_int64,8,1,1,128,1,1,24,15,87.01300000000002,5.800866666666667
+pool_backward,tiny_net_pool,function,cupy,cupy_scatter_update,8,1,1,128,1,1,30,15,100.06400000000004,6.670933333333333
+pool_backward,tiny_net_pool,function,cupy,col2im,32,1,1,128,1,1,32,15,157.154,10.476933333333333
+pool_backward,tiny_net_pool,function,native,cupy_arange__int_int_int64,8,1,1,128,1,1,22,15,79.29599999999999,5.2864
+pool_backward,tiny_net_pool,function,native,cupy_add__int64_int64_int64,8,1,1,128,1,1,24,15,86.40000000000002,5.76
+pool_backward,tiny_net_pool,function,native,cupy_scatter_update,8,1,1,128,1,1,30,15,100.22500000000002,6.681666666666667
+pool_backward,tiny_net_pool,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",16,1,1,256,1,1,38,15,132.416,8.827733333333335
+pool_backward,overlap_pool,array,cupy,cupy_arange__int_int_int64,126,1,1,128,1,1,22,15,85.15199999999999,5.6768
+pool_backward,overlap_pool,array,cupy,cupy_add__int64_int64_int64,126,1,1,128,1,1,24,15,96.384,6.4256
+pool_backward,overlap_pool,array,cupy,cupy_scatter_update,126,1,1,128,1,1,30,15,110.11100000000002,7.3407333333333336
+pool_backward,overlap_pool,array,cupy,col2im,126,1,1,128,1,1,32,15,268.35200000000003,17.890133333333335
+pool_backward,overlap_pool,array,native,cupy_arange__int_int_int64,126,1,1,128,1,1,22,15,85.471,5.698066666666667
+pool_backward,overlap_pool,array,native,cupy_add__int64_int64_int64,126,1,1,128,1,1,24,15,96.95900000000002,6.463933333333333
+pool_backward,overlap_pool,array,native,cupy_scatter_update,126,1,1,128,1,1,30,15,110.14400000000003,7.342933333333334
+pool_backward,overlap_pool,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,169.31300000000002,11.287533333333332
+pool_backward,overlap_pool,function,cupy,cupy_arange__int_int_int64,126,1,1,128,1,1,22,15,86.589,5.7726
+pool_backward,overlap_pool,function,cupy,cupy_add__int64_int64_int64,126,1,1,128,1,1,24,15,96.80100000000002,6.4534
+pool_backward,overlap_pool,function,cupy,cupy_scatter_update,126,1,1,128,1,1,30,15,110.11200000000001,7.340800000000001
+pool_backward,overlap_pool,function,cupy,col2im,126,1,1,128,1,1,32,15,268.38300000000004,17.892200000000003
+pool_backward,overlap_pool,function,native,cupy_arange__int_int_int64,126,1,1,128,1,1,22,15,86.91199999999999,5.794133333333333
+pool_backward,overlap_pool,function,native,cupy_add__int64_int64_int64,126,1,1,128,1,1,24,15,96.47900000000001,6.431933333333333
+pool_backward,overlap_pool,function,native,cupy_scatter_update,126,1,1,128,1,1,30,15,110.04900000000004,7.336600000000001
+pool_backward,overlap_pool,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,168.896,11.259733333333333
+pool_backward,asym_pool,array,cupy,cupy_arange__int_int_int64,1,1,1,108,1,1,22,15,70.784,4.718933333333333
+pool_backward,asym_pool,array,cupy,cupy_add__int64_int64_int64,1,1,1,108,1,1,24,15,77.05499999999999,5.1370000000000005
+pool_backward,asym_pool,array,cupy,cupy_scatter_update,1,1,1,108,1,1,30,15,91.233,6.0822
+pool_backward,asym_pool,array,cupy,col2im,5,1,1,128,1,1,32,15,322.84800000000007,21.523200000000003
+pool_backward,asym_pool,array,native,cupy_arange__int_int_int64,1,1,1,108,1,1,22,15,70.943,4.729533333333333
+pool_backward,asym_pool,array,native,cupy_add__int64_int64_int64,1,1,1,108,1,1,24,15,76.705,5.113666666666667
+pool_backward,asym_pool,array,native,cupy_scatter_update,1,1,1,108,1,1,30,15,91.42399999999998,6.0949333333333335
+pool_backward,asym_pool,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",3,1,1,256,1,1,38,15,138.21200000000002,9.214133333333333
+pool_backward,asym_pool,function,cupy,cupy_arange__int_int_int64,1,1,1,108,1,1,22,15,69.79199999999999,4.6528
+pool_backward,asym_pool,function,cupy,cupy_add__int64_int64_int64,1,1,1,108,1,1,24,15,76.605,5.107
+pool_backward,asym_pool,function,cupy,cupy_scatter_update,1,1,1,108,1,1,30,15,91.26299999999998,6.0842
+pool_backward,asym_pool,function,cupy,col2im,5,1,1,128,1,1,32,15,321.85200000000003,21.4568
+pool_backward,asym_pool,function,native,cupy_arange__int_int_int64,1,1,1,108,1,1,22,15,69.82399999999998,4.654933333333333
+pool_backward,asym_pool,function,native,cupy_add__int64_int64_int64,1,1,1,108,1,1,24,15,76.512,5.1008000000000004
+pool_backward,asym_pool,function,native,cupy_scatter_update,1,1,1,108,1,1,30,15,91.202,6.080133333333333
+pool_backward,asym_pool,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",3,1,1,256,1,1,38,15,137.15099999999998,9.1434
+pool_backward,negative_pool,array,cupy,cupy_arange__int_int_int64,1,1,1,126,1,1,22,15,69.472,4.631466666666666
+pool_backward,negative_pool,array,cupy,cupy_add__int64_int64_int64,1,1,1,126,1,1,24,15,76.064,5.0709333333333335
+pool_backward,negative_pool,array,cupy,cupy_scatter_update,1,1,1,126,1,1,30,15,89.662,5.9774666666666665
+pool_backward,negative_pool,array,cupy,col2im,1,1,1,126,1,1,32,15,204.481,13.632066666666667
+pool_backward,negative_pool,array,native,cupy_arange__int_int_int64,1,1,1,126,1,1,22,15,69.663,4.6442
+pool_backward,negative_pool,array,native,cupy_add__int64_int64_int64,1,1,1,126,1,1,24,15,76.80099999999999,5.120066666666667
+pool_backward,negative_pool,array,native,cupy_scatter_update,1,1,1,126,1,1,30,15,89.91900000000001,5.9946
+pool_backward,negative_pool,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,126.62299999999999,8.441533333333334
+pool_backward,negative_pool,function,cupy,cupy_arange__int_int_int64,1,1,1,126,1,1,22,15,70.848,4.723199999999999
+pool_backward,negative_pool,function,cupy,cupy_add__int64_int64_int64,1,1,1,126,1,1,24,15,77.18099999999998,5.1454
+pool_backward,negative_pool,function,cupy,cupy_scatter_update,1,1,1,126,1,1,30,15,90.52800000000002,6.0352
+pool_backward,negative_pool,function,cupy,col2im,1,1,1,126,1,1,32,15,205.47299999999996,13.6982
+pool_backward,negative_pool,function,native,cupy_arange__int_int_int64,1,1,1,126,1,1,22,15,71.041,4.736066666666667
+pool_backward,negative_pool,function,native,cupy_add__int64_int64_int64,1,1,1,126,1,1,24,15,76.51399999999998,5.100933333333334
+pool_backward,negative_pool,function,native,cupy_scatter_update,1,1,1,126,1,1,30,15,90.24000000000001,6.016
+pool_backward,negative_pool,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,127.61600000000001,8.507733333333334

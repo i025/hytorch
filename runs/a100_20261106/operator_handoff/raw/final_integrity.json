@@ -1,0 +1,134 @@
+{
+  "project_source_checks": [
+    {
+      "path": "README.md",
+      "unchanged": true
+    },
+    {
+      "path": "requirements-cuda.txt",
+      "unchanged": true
+    },
+    {
+      "path": "donkeycar_hy/model.py",
+      "unchanged": true
+    },
+    {
+      "path": "donkeycar_hy/tub_dataset.py",
+      "unchanged": true
+    },
+    {
+      "path": "benchmarks/bench_cuda_training.py",
+      "unchanged": true
+    },
+    {
+      "path": "benchmarks/bench_cuda_gemm.py",
+      "unchanged": true
+    },
+    {
+      "path": "benchmarks/bench_cuda_ops.py",
+      "unchanged": true
+    },
+    {
+      "path": "benchmarks/bench_cuda_revisions.py",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/build_cuda.py",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/validate_cuda.py",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/report_cuda.py",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/run_cuda_comparison.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/__init__.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/core.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/functions.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/functions_conv.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/layers.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/cuda.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/optimizers.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/dataloaders.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/profiling.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/utils.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/backends/cuda/kernels.cu",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/backends/cuda/runtime.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/backends/cuda/__init__.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/backends/cpu/gemm.py",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_cuda_device.py",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_cuda_host.py",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_gemm_blocked_packed.py",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_conv2d_gemm_cpu.py",
+      "unchanged": true
+    },
+    {
+      "path": "hytorch/backends/cpu/gemm_kernels.c",
+      "unchanged": true
+    }
+  ],
+  "all_project_sources_unchanged": true,
+  "git_status_unchanged": true,
+  "tracked_patch_unchanged": true,
+  "cuda_library_matches_preexisting_optimized_copy": true,
+  "cuda_library_sha256": "5b93982d8c31438a033c7da6d43164a3389a15cf0e94baddc0e390df67199ec0",
+  "no_commit_push_pr": true
+}

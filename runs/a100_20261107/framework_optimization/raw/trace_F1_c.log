@@ -1,0 +1,12 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-06ff.qdstrm'
+[1/1] [0%                          ] train_F1_c.nsys-repProcessing events...
+[1/1] [0%                          ] train_F1_c.nsys-rep[1/1] [=16%                        ] train_F1_c.nsys-rep[1/1] [=17%                        ] train_F1_c.nsys-rep[1/1] [============56%             ] train_F1_c.nsys-rep[1/1] [=======================94%  ] train_F1_c.nsys-rep[1/1] [=======================95%  ] train_F1_c.nsys-rep[1/1] [========================100%] train_F1_c.nsys-rep[1/1] [========================100%] train_F1_c.nsys-rep
+警告: 未找到scipy，无法加载SVHN数据集
+Generated:
+	/home/xieminhui_pubuse/hytorch/runs/a100_20261107/framework_optimization/traces/train_F1_c.nsys-rep

@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "candidate": "F1 immutable shape validation cache",
+  "default_enabled": false,
+  "full_tests_passed": 291,
+  "existing_cpu_skips": 2,
+  "formal_rounds": 12,
+  "production_cuda_changed": false,
+  "own_gpu_processes_exited": true,
+  "external_task_after_formal_timings": "see raw/GPU_WINDOW.md"
+}

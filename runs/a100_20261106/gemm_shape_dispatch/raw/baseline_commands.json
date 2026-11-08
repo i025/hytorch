@@ -1,0 +1,18 @@
+[
+  {
+    "name": "baseline_gpu",
+    "argv": [
+      "/home/xieminhui_pubuse/hytorch-env/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_cuda_device.py",
+      "tests/test_backward_dtype.py",
+      "-k",
+      "cuda",
+      "-q"
+    ],
+    "start_utc": "2026-11-06T03:43:22.115468+00:00",
+    "end_utc": "2026-11-06T03:43:24.911436+00:00",
+    "returncode": 1
+  }
+]

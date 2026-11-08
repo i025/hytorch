@@ -1,0 +1,7 @@
+{
+  "old_cuda_source_exact_prefix": true,
+  "gemm128_unchanged": true,
+  "old_cupy_col2im_unchanged": true,
+  "all_autograd_conv_classes_unchanged": true,
+  "fp32_functions_unchanged": true
+}

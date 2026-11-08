@@ -1,0 +1,10 @@
+{
+  "M": 64,
+  "N": 8192,
+  "K": 63,
+  "tile": 16,
+  "expected": "shared",
+  "actual_graph_kernel": "gemm_shared",
+  "fp64_max_abs": 2.3436905416396314e-07,
+  "fp64_relative_l2": 1.4349819430771394e-07
+}

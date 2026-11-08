@@ -1,0 +1,12 @@
+{
+  "categories_us_per_step": {
+    "other_backward": 17.929799999999997,
+    "activation_backward": 73.78609999999998,
+    "linear_bias_backward": 10.508900000000002,
+    "linear_backward": 39.782399999999996,
+    "conv_dInput": 340.52300000000014,
+    "conv_dWeight": 340.8752999999998,
+    "conv_dBias": 57.2996
+  },
+  "method": "Latest train_new 1470-kernel sequence aligned with FP32 detailed metadata; every backward kernel name/grid/block matches; durations from latest shape-aware trace."
+}

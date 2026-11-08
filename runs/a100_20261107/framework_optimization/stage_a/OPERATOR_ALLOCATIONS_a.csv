@@ -1,0 +1,157 @@
+case,implementation,cupy_malloc_calls,cupy_requested_bytes,torch_extra_peak_bytes
+conv1/forward,HyTorch,4,5985984,
+conv1/forward,PyTorch,,,1166848
+conv1/dweight,HyTorch,3,4819392,
+conv1/dweight,PyTorch,,,7680
+conv1/dinput,HyTorch,3,5445792,
+conv1/dinput,PyTorch,,,633856
+conv1/dbias,HyTorch,1,96,
+conv1/dbias,PyTorch,,,512
+conv1/backward,HyTorch,7,10265280,
+conv1/backward,PyTorch,,,642048
+conv2/forward,HyTorch,4,7161216,
+conv2/forward,PyTorch,,,383488
+conv2/dweight,HyTorch,3,6782208,
+conv2/dweight,PyTorch,,,86528
+conv2/dinput,HyTorch,3,7862400,
+conv2/dinput,PyTorch,,,1166848
+conv2/dbias,HyTorch,1,144,
+conv2/dbias,PyTorch,,,512
+conv2/backward,HyTorch,7,14644752,
+conv2/backward,PyTorch,,,1253888
+conv3/forward,HyTorch,4,1925760,
+conv3/forward,PyTorch,,,10529280
+conv3/dweight,HyTorch,3,1841280,
+conv3/dweight,PyTorch,,,173056
+conv3/dinput,HyTorch,3,2047488,
+conv3/dinput,PyTorch,,,379392
+conv3/dbias,HyTorch,1,192,
+conv3/dbias,PyTorch,,,512
+conv3/backward,HyTorch,7,3888960,
+conv3/backward,PyTorch,,,552960
+conv4/forward,HyTorch,4,648192,
+conv4/forward,PyTorch,,,369152
+conv4/dweight,HyTorch,3,586752,
+conv4/dweight,PyTorch,,,110592
+conv4/dinput,HyTorch,3,560640,
+conv4/dinput,PyTorch,,,84480
+conv4/dbias,HyTorch,1,256,
+conv4/dbias,PyTorch,,,512
+conv4/backward,HyTorch,7,1147648,
+conv4/backward,PyTorch,,,195584
+conv5/forward,HyTorch,4,350208,
+conv5/forward,PyTorch,,,428544
+conv5/dweight,HyTorch,3,331776,
+conv5/dweight,PyTorch,,,147456
+conv5/dinput,HyTorch,3,245760,
+conv5/dinput,PyTorch,,,61440
+conv5/dbias,HyTorch,1,256,
+conv5/dbias,PyTorch,,,512
+conv5/backward,HyTorch,7,577792,
+conv5/backward,PyTorch,,,209408
+irregular/forward,HyTorch,4,21084,
+irregular/forward,PyTorch,,,2560
+irregular/dweight,HyTorch,3,18732,
+irregular/dweight,PyTorch,,,1536
+irregular/dinput,HyTorch,3,22776,
+irregular/dinput,PyTorch,,,5632
+irregular/dbias,HyTorch,1,28,
+irregular/dbias,PyTorch,,,512
+irregular/backward,HyTorch,7,41536,
+irregular/backward,PyTorch,,,7680
+asymmetric/forward,HyTorch,4,20508,
+asymmetric/forward,PyTorch,,,4608
+asymmetric/dweight,HyTorch,2,12300,
+asymmetric/dweight,PyTorch,,,1024
+asymmetric/dinput,HyTorch,2,15580,
+asymmetric/dinput,PyTorch,,,4608
+asymmetric/dbias,HyTorch,1,36,
+asymmetric/dbias,PyTorch,,,512
+asymmetric/backward,HyTorch,5,27916,
+asymmetric/backward,PyTorch,,,6144
+gemm/12152/24/75,basic,0,0,
+gemm/12152/24/75,blocked,0,0,
+gemm/12152/24/75,shared,0,0,
+gemm/12152/24/75,register_old_dispatch,0,0,
+gemm/12152/24/75,PyTorch,,,0
+gemm/2632/36/600,basic,0,0,
+gemm/2632/36/600,blocked,0,0,
+gemm/2632/36/600,shared,0,0,
+gemm/2632/36/600,register_old_dispatch,0,0,
+gemm/2632/36/600,PyTorch,,,0
+gemm/440/48/900,basic,0,0,
+gemm/440/48/900,blocked,0,0,
+gemm/440/48/900,shared,0,0,
+gemm/440/48/900,register_old_dispatch,0,0,
+gemm/440/48/900,PyTorch,,,0
+gemm/240/64/432,basic,0,0,
+gemm/240/64/432,blocked,0,0,
+gemm/240/64/432,shared,0,0,
+gemm/240/64/432,register_old_dispatch,0,0,
+gemm/240/64/432,PyTorch,,,0
+gemm/72/64/576,basic,0,0,
+gemm/72/64/576,blocked,0,0,
+gemm/72/64/576,shared,0,0,
+gemm/72/64/576,register_old_dispatch,0,0,
+gemm/72/64/576,PyTorch,,,0
+gemm/4/100/1152,basic,0,0,
+gemm/4/100/1152,blocked,0,0,
+gemm/4/100/1152,shared,0,0,
+gemm/4/100/1152,register_old_dispatch,0,0,
+gemm/4/100/1152,PyTorch,,,0
+gemm/4/50/100,basic,0,0,
+gemm/4/50/100,blocked,0,0,
+gemm/4/50/100,shared,0,0,
+gemm/4/50/100,register_old_dispatch,0,0,
+gemm/4/50/100,PyTorch,,,0
+gemm/4/1/50,basic,0,0,
+gemm/4/1/50,blocked,0,0,
+gemm/4/1/50,shared,0,0,
+gemm/4/1/50,register_old_dispatch,0,0,
+gemm/4/1/50,PyTorch,,,0
+gemm/1024/1024/1024,basic,0,0,
+gemm/1024/1024/1024,blocked,0,0,
+gemm/1024/1024/1024,shared,0,0,
+gemm/1024/1024/1024,register_old_dispatch,0,0,
+gemm/1024/1024/1024,PyTorch,,,0
+gemm/127/257/65,basic,0,0,
+gemm/127/257/65,blocked,0,0,
+gemm/127/257/65,shared,0,0,
+gemm/127/257/65,register_old_dispatch,0,0,
+gemm/127/257/65,PyTorch,,,0
+gemm/65/4097/129,basic,0,0,
+gemm/65/4097/129,blocked,0,0,
+gemm/65/4097/129,shared,0,0,
+gemm/65/4097/129,register_old_dispatch,0,0,
+gemm/65/4097/129,PyTorch,,,0
+"relu/(4, 24, 31, 98)",HyTorch,1,1166592,
+"relu/(4, 24, 31, 98)",PyTorch,,,1166848
+"tanh/(4, 24, 31, 98)",HyTorch,1,1166592,
+"tanh/(4, 24, 31, 98)",PyTorch,,,1166848
+"relu/(4, 64, 1, 18)",HyTorch,1,18432,
+"relu/(4, 64, 1, 18)",PyTorch,,,18432
+"tanh/(4, 64, 1, 18)",HyTorch,1,18432,
+"tanh/(4, 64, 1, 18)",PyTorch,,,18432
+"relu/(3, 7, 11, 13)",HyTorch,1,12012,
+"relu/(3, 7, 11, 13)",PyTorch,,,12288
+"tanh/(3, 7, 11, 13)",HyTorch,1,12012,
+"tanh/(3, 7, 11, 13)",PyTorch,,,12288
+"pool/(4, 3, 16, 16)",HyTorch,2,9216,
+"pool/(4, 3, 16, 16)",PyTorch,,,9216
+"poolback/(4, 3, 16, 16)",HyTorch,4,36864,
+"poolback/(4, 3, 16, 16)",PyTorch,,,12288
+"pool/(2, 7, 13, 17)",HyTorch,2,8064,
+"pool/(2, 7, 13, 17)",PyTorch,,,8704
+"poolback/(2, 7, 13, 17)",HyTorch,4,33880,
+"poolback/(2, 7, 13, 17)",PyTorch,,,12800
+linear/4/1152/100,HyTorch,1,1600,
+linear/4/1152/100,PyTorch,,,2048
+linear/4/100/50,HyTorch,1,800,
+linear/4/100/50,PyTorch,,,1024
+linear/4/50/1,HyTorch,1,16,
+linear/4/50/1,PyTorch,,,512
+linear/3/137/71,HyTorch,1,852,
+linear/3/137/71,PyTorch,,,1024
+sgd/all16,HyTorch,16,1006996,
+sgd/all16,PyTorch,,,0
+sgd/all16,PyTorch_foreach,,,0

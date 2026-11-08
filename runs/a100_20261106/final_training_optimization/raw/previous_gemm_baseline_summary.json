@@ -1,0 +1,55 @@
+{
+  "sizes": [
+    1024,
+    2048,
+    4096
+  ],
+  "tiles": [
+    16,
+    32
+  ],
+  "repeats": 10,
+  "seed": 42,
+  "device": 0,
+  "cpu_only": false,
+  "output": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_baseline",
+  "atol": 0.0001,
+  "rtol": 0.0001,
+  "benefit_speedup": 1.5,
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+  "numpy": "2.2.6",
+  "dtype": "float32",
+  "relative_error": "L2 norm(error) / L2 norm(reference)",
+  "timing": "preallocated device outputs; CUDA events; pageable transfer wall time separately",
+  "gpu_status": "EXECUTED",
+  "cupy": "14.2.0",
+  "cuda_runtime": 12090,
+  "cuda_driver": 13000,
+  "gpu_name": "b'NVIDIA A100-PCIE-40GB'",
+  "library": "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so",
+  "best_per_size": {
+    "1024": {
+      "implementation": "cupy",
+      "size": 1024,
+      "tile": null,
+      "mean_ms": 0.22026239931583405,
+      "std_ms": 0.033888228131433544,
+      "median_ms": 0.2088959962129593,
+      "repeats_ms": "[0.3164159953594208, 0.21606400609016418, 0.21196800470352173, 0.2088959962129593, 0.20787200331687927, 0.2088959962129593, 0.2088959962129593, 0.2088959962129593, 0.20684799551963806, 0.20787200331687927]",
+      "speedup_numpy": 19.821152758416,
+      "speedup_cupy": 1.0,
+      "max_abs_error": 0.0001068115234375,
+      "relative_l2_error": 3.668152474518979e-07,
+      "correct": true,
+      "h2d_ms": 0.5473996978253126,
+      "d2h_ms": 0.577355083078146,
+      "transfer_plus_compute_ms": 1.3450171802192927
+    },
+    "2048": null,
+    "4096": null
+  },
+  "first_measured_beneficial_size": null,
+  "threshold_scope": "tested sizes only, speedup versus CuPy, not a universal crossover",
+  "all_correct": false
+}

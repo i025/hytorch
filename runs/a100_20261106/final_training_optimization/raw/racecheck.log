@@ -1,0 +1,5 @@
+========= COMPUTE-SANITIZER
+警告: 未找到scipy，无法加载SVHN数据集
+............................                                             [100%]
+28 passed, 6 deselected in 2.62s
+========= RACECHECK SUMMARY: 0 hazards displayed (0 errors, 0 warnings)

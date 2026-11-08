@@ -1,0 +1,36 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+警告: 未找到scipy，无法加载SVHN数据集
+0 12152 24 75 {'original': 58.016, 'current': 62.032, 'cublas': 40.96}
+1 2632 36 600 {'original': 106.976, 'current': 110.608, 'cublas': 71.904}
+2 440 48 900 {'original': 78.624, 'current': 82.24, 'cublas': 56.144}
+3 240 64 432 {'original': 55.136, 'current': 128.624, 'cublas': 50.224}
+4 72 64 576 {'original': 61.28, 'current': 157.248, 'cublas': 45.552}
+5 4 100 1152 {'original': 88.944, 'current': 91.648, 'cublas': 47.168}
+6 4 50 100 {'original': 35.6, 'current': 38.4, 'cublas': 29.456}
+7 4 1 50 {'original': 32.544, 'current': 35.808, 'cublas': 26.944}
+8 4 50 1 {'original': 31.792, 'current': 35.2, 'cublas': 25.584}
+9 50 1 4 {'original': 31.744, 'current': 34.848, 'cublas': 28.576}
+10 4 100 50 {'original': 34.368, 'current': 37.712, 'cublas': 29.088}
+11 100 50 4 {'original': 31.52, 'current': 35.392, 'cublas': 31.536}
+12 4 1152 100 {'original': 39.12, 'current': 42.416, 'cublas': 31.296}
+13 1152 100 4 {'original': 34.528, 'current': 38.32, 'cublas': 31.904}
+14 576 72 64 {'original': 37.84, 'current': 51.76, 'cublas': 34.384}
+15 64 576 72 {'original': 38.416, 'current': 54.448, 'cublas': 35.408}
+16 432 240 64 {'original': 41.136, 'current': 52.032, 'cublas': 36.96}
+17 64 432 240 {'original': 46.304, 'current': 90.064, 'cublas': 47.712}
+18 900 440 48 {'original': 51.616, 'current': 53.808, 'cublas': 40.848}
+19 48 900 440 {'original': 60.64, 'current': 64.336, 'cublas': 54.928}
+20 600 2632 36 {'original': 96.08, 'current': 99.232, 'cublas': 49.136}
+21 36 600 2632 {'original': 171.888, 'current': 175.52, 'cublas': 72.272}
+22 75 12152 24 {'original': 58.704, 'current': 62.624, 'cublas': 39.792}
+23 24 75 12152 {'original': 632.96, 'current': 636.544, 'cublas': 61.408}
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-4829.qdstrm'
+[1/1] [0%                          ] gemm.nsys-repProcessing events...
+[1/1] [0%                          ] gemm.nsys-rep[1/1] [0%                          ] gemm.nsys-rep[1/1] [=15%                        ] gemm.nsys-rep[1/1] [=====30%                    ] gemm.nsys-rep[1/1] [===============66%          ] gemm.nsys-rep[1/1] [=====================86%    ] gemm.nsys-rep[1/1] [=====================87%    ] gemm.nsys-rep[1/1] [========================100%] gemm.nsys-rep[1/1] [========================100%] gemm.nsys-rep
+Generated:
+	/home/xieminhui_pubuse/hytorch/runs/a100_20261106/fp32_fix_and_profile_traces/gemm.nsys-rep

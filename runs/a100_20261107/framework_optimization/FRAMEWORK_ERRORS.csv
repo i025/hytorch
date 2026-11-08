@@ -1,0 +1,16 @@
+case,exact_value_equal
+conv1/forward,True
+conv1/dweight,True
+conv2/forward,True
+conv2/dweight,True
+conv3/forward,True
+conv3/dweight,True
+conv4/forward,True
+conv4/dweight,True
+conv5/forward,True
+conv5/dweight,True
+irregular/forward,True
+irregular/dweight,True
+gemm/4/100/1152,True
+gemm/127/257/65,True
+gemm/1024/1024/1024,True

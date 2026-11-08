@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "samples": 64,
+  "batch": 4,
+  "epochs": 3,
+  "warmup": 10,
+  "repeats": 5,
+  "backend": "shared/im2col/native tile16",
+  "monitor": false,
+  "logged": "StepProfiler throughput + per-step loss read",
+  "no_json": "same step boundary synchronization and loss read, no JSON/phase context managers",
+  "boundary_only": "no per-step log, scalar read or explicit sync; final boundary sync; pageable H2D still exists",
+  "event_span": "GPU stream elapsed span including CPU submission gaps, NOT cumulative kernel time"
+}

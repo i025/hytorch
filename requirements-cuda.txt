@@ -6,5 +6,7 @@ pytest>=7
 Pillow>=9
 matplotlib>=3.6
 psutil>=5.9
+# Optional GPU telemetry (import name: pynvml); TrainingMonitor degrades gracefully.
+nvidia-ml-py>=12
 # Optional, installed separately on the target host:
 # torch, torchvision: matched-framework benchmark and official weight conversion.

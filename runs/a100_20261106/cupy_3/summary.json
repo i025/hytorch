@@ -1,0 +1,65 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 192,
+    "measured_step_total_s": 0.9521774593740702,
+    "mean_step_s": 0.004959257600906615,
+    "samples_per_sec": 806.5723384219342,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 5,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 0.2,
+    "gpu_utilization_pct_mean": 27.6,
+    "gpu_utilization_pct_max": 40.0,
+    "gpu_memory_used_mib_mean": 505.0,
+    "gpu_memory_used_mib_max": 505.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 28.6,
+    "gpu_temperature_c_max": 29.0,
+    "gpu_power_w_mean": 46.397999999999996,
+    "gpu_power_w_max": 47.27,
+    "cpu_utilization_pct_mean": 1.34,
+    "cpu_utilization_pct_max": 1.6,
+    "process_rss_mib_mean": 619.415625,
+    "process_rss_mib_max": 619.7734375,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266062044664068,
+      "train_wall_s": 0.33351693162694573,
+      "samples": 256,
+      "train_samples_per_sec": 767.5772223952574
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0004873680097148281,
+      "train_wall_s": 0.3223369661718607,
+      "samples": 256,
+      "train_samples_per_sec": 794.1999425021213
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126584121300766,
+      "train_wall_s": 0.3248200612142682,
+      "samples": 256,
+      "train_samples_per_sec": 788.1286612748006
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": "d9f315341f1a68b9990cea589eb8818b62a18e71b9453da2a2fa5069273457b6"
+}

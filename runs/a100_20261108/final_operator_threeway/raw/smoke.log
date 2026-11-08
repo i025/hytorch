@@ -1,0 +1,16 @@
+警告: 未找到scipy，无法加载SVHN数据集
+1/14 gemm real_12152_24_75
+2/14 im2col tiny_contiguous
+3/14 im2col tiny_sliced
+4/14 conv tiny_contiguous
+5/14 conv tiny_sliced
+6/14 dweight tiny_contiguous
+7/14 dweight tiny_sliced
+8/14 col2im tiny_training
+9/14 col2im tiny_contiguous
+10/14 col2im tiny_negative
+11/14 pool_forward tiny_net_pool
+12/14 pool_backward tiny_net_pool
+13/14 pool_forward negative_pool
+14/14 pool_backward negative_pool
+FINISHED

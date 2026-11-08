@@ -1,0 +1,43 @@
+{
+  "required_files": [
+    "REPORT.md",
+    "CALL_PATH.md",
+    "CPU_OVERHEAD.csv",
+    "CONV_BACKWARD_COMPARISON.csv",
+    "POOLING_COMPARISON.csv",
+    "TRAINING_ABLATION.csv",
+    "PROFILE_BEFORE_AFTER.csv",
+    "MEMORY_COMPARISON.csv",
+    "CORRECTNESS.md",
+    "SOURCE_CHANGES.md",
+    "REPRODUCE.md",
+    "git_diff.patch"
+  ],
+  "training_rows": 36,
+  "balanced_orders": {
+    "('B0', 'O1', 'torch')": 2,
+    "('B0', 'torch', 'O1')": 2,
+    "('O1', 'B0', 'torch')": 2,
+    "('O1', 'torch', 'B0')": 2,
+    "('torch', 'B0', 'O1')": 2,
+    "('torch', 'O1', 'B0')": 2
+  },
+  "layer_summary_rows": 162,
+  "unprofiled_per_case": 18,
+  "cupti_per_case": 15,
+  "all_numerical_checks_pass": true,
+  "O1_bitwise_equal": true,
+  "production_change": [
+    "hytorch/core.py"
+  ],
+  "plots": 10,
+  "patch_apply_verified": {
+    "check_returncode": 0,
+    "apply_returncode": 0,
+    "stderr": "",
+    "byte_exact": {
+      "hytorch/core.py": true,
+      "tests/test_compact_function.py": true
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "enabled": true,
+  "timing": true,
+  "resources": false,
+  "mode": "throughput",
+  "cuda_backend": null,
+  "logical_cuda_index": null,
+  "cuda_visible_devices": null,
+  "resolved_selector": null,
+  "gpu_event_status": "DISABLED",
+  "run_dir": "runs/a100_20261108/training_monitor/raw/cli_cpu/monitor/run_yvqm_z43",
+  "steps": 2,
+  "sample_count": 0,
+  "sample_interval_s": 0.2,
+  "sampled_peaks_bytes": {
+    "gpu_used_bytes": null,
+    "process_gpu_used_bytes": null,
+    "cupy_active_bytes": null,
+    "cupy_reserved_bytes": null,
+    "torch_allocated_bytes": null,
+    "torch_reserved_bytes": null
+  },
+  "peak_kind": "sampled maxima; not instantaneous/exact device peaks",
+  "allocator_tracked_peak": null,
+  "errors": [],
+  "mean_host_iteration_s": 0.0017087875,
+  "mean_completed_step_wall_s": 0.001709697,
+  "mean_step_gpu_interval_s": null,
+  "phase_means_cpu_s": {
+    "data_load": 2.5591e-05,
+    "data_prepare": 5.375e-06,
+    "h2d": 3.0625e-06,
+    "forward": 0.0005447024999999999,
+    "loss": 3.00755e-05,
+    "backward": 0.0009355305,
+    "optimizer": 2.96235e-05
+  },
+  "phase_means_gpu_event_s": {
+    "data_load": null,
+    "data_prepare": null,
+    "h2d": null,
+    "forward": null,
+    "loss": null,
+    "backward": null,
+    "optimizer": null
+  },
+  "run_completed_wall_s": 0.003508917,
+  "event_limitation": "stream intervals include idle gaps; concurrent streams may overlap; do not sum across streams"
+}

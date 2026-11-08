@@ -1,0 +1,16 @@
+{
+  "library_sha256": {
+    "old": "5b93982d8c31438a033c7da6d43164a3389a15cf0e94baddc0e390df67199ec0",
+    "new": "c72293ac7efc50699eda649fc52c748e5cd871080776b227cfb14598b6327ddd",
+    "forced_shared": "324203dcd0142fa6896e31d9f96012cc5a12b04afcc379440bd1f1a307c4a526"
+  },
+  "shapes": 47,
+  "warmup": 5,
+  "graph_warmup": 1,
+  "repeats": 12,
+  "seed": "9000+shape_id",
+  "math_mode": 0,
+  "tf32_override": "0",
+  "cublas_api": "direct cublasSgemm_v2 using CuPy-created handle; row-major C=A@B via column-major C^T=B^T@A^T",
+  "note": "graph microbenchmark isolates kernels; direct launches separately captured by Nsight; graph debug files observe real kernel names; never modify production kernel math"
+}

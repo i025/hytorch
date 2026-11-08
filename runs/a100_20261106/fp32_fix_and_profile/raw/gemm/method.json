@@ -1,0 +1,14 @@
+{
+  "library_sha256": {
+    "original": "324203dcd0142fa6896e31d9f96012cc5a12b04afcc379440bd1f1a307c4a526",
+    "current": "5b93982d8c31438a033c7da6d43164a3389a15cf0e94baddc0e390df67199ec0"
+  },
+  "seed": "4200+shape_id",
+  "warmup": 10,
+  "repeats": 20,
+  "tile": 16,
+  "math_mode": 0,
+  "tf32_override": "0",
+  "scope": "logical M/N/K from instrumentation; random identical FP32 row-major packed inputs and preallocated output; excludes original tensor packing/transposition; current dispatch unchanged, so small shapes retain original shared kernel",
+  "gate": "unchanged original atol=rtol=1e-4 logged, plus existing revision bitwise and relative L2<=1e-5 check; no threshold relaxed"
+}

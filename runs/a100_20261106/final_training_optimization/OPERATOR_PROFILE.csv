@@ -1,0 +1,1024 @@
+range,kernel,count,total_gpu_us,gridX,blockX,registers,local_bytes,launch_api_cpu_us
+dwbench:conv1:contiguous:A:0,im2col,1,29.856,7121,128,32,127401984,8.69
+dwbench:conv1:contiguous:A:0,cupy_copy__float32_float32,1,7.648,2279,128,16,127401984,5.717
+dwbench:conv1:contiguous:A:0,cupy_copy__float32_float32,1,15.744,7121,128,16,127401984,5.224
+dwbench:conv1:contiguous:A:0,ampere_sgemm_64x32_sliced1x4_nt,1,20.896,2,256,82,127401984,6.269
+dwbench:conv1:contiguous:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.416,3,32,32,127401984,5.265
+dwbench:conv1:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,31.072,3561,256,23,127401984,6.204
+dwbench:conv1:contiguous:B:0,cupy_copy__float32_float32,1,7.168,2279,128,16,127401984,5.327
+dwbench:conv1:contiguous:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,20.288,3,128,86,127401984,5.326
+dwbench:conv1:contiguous:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.928,3,32,32,127401984,5.277
+dwbench:conv1:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,30.88,3561,256,23,127401984,6.015
+dwbench:conv1:contiguous:B:1,cupy_copy__float32_float32,1,7.104,2279,128,16,127401984,8.142
+dwbench:conv1:contiguous:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,20.064,3,128,86,127401984,5.135
+dwbench:conv1:contiguous:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.896,3,32,32,127401984,5.282
+dwbench:conv1:contiguous:A:1,im2col,1,29.952,7121,128,32,127401984,5.629
+dwbench:conv1:contiguous:A:1,cupy_copy__float32_float32,1,7.68,2279,128,16,127401984,5.125
+dwbench:conv1:contiguous:A:1,cupy_copy__float32_float32,1,15.968,7121,128,16,127401984,4.573
+dwbench:conv1:contiguous:A:1,ampere_sgemm_64x32_sliced1x4_nt,1,20.928,2,256,82,127401984,5.573
+dwbench:conv1:contiguous:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.384,3,32,32,127401984,5.666
+dwbench:conv1:contiguous:A:2,im2col,1,29.856,7121,128,32,127401984,5.843
+dwbench:conv1:contiguous:A:2,cupy_copy__float32_float32,1,7.68,2279,128,16,127401984,5.16
+dwbench:conv1:contiguous:A:2,cupy_copy__float32_float32,1,16.32,7121,128,16,127401984,4.58
+dwbench:conv1:contiguous:A:2,ampere_sgemm_64x32_sliced1x4_nt,1,20.736,2,256,82,127401984,5.548
+dwbench:conv1:contiguous:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.384,3,32,32,127401984,5.493
+dwbench:conv1:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,31.008,3561,256,23,127401984,6.11
+dwbench:conv1:contiguous:B:2,cupy_copy__float32_float32,1,7.232,2279,128,16,127401984,5.371
+dwbench:conv1:contiguous:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,20.32,3,128,86,127401984,5.226
+dwbench:conv1:contiguous:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.928,3,32,32,127401984,5.079
+dwbench:conv1:negative:A:0,im2col,1,32.992,7121,128,32,127401984,5.46
+dwbench:conv1:negative:A:0,cupy_copy__float32_float32,1,8.8,2279,128,21,127401984,5.353
+dwbench:conv1:negative:A:0,cupy_copy__float32_float32,1,16.0,7121,128,16,127401984,4.946
+dwbench:conv1:negative:A:0,ampere_sgemm_64x32_sliced1x4_nt,1,20.928,2,256,82,127401984,5.24
+dwbench:conv1:negative:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.48,3,32,32,127401984,6.011
+dwbench:conv1:negative:B:0,cupy_copy__float32_float32,1,5.824,1238,128,16,127401984,5.152
+dwbench:conv1:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,31.008,3561,256,23,127401984,5.792
+dwbench:conv1:negative:B:0,cupy_copy__float32_float32,1,7.872,2279,128,21,127401984,4.43
+dwbench:conv1:negative:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,20.0,3,128,86,127401984,5.38
+dwbench:conv1:negative:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.928,3,32,32,127401984,5.276
+dwbench:conv1:negative:B:1,cupy_copy__float32_float32,1,5.696,1238,128,16,127401984,5.01
+dwbench:conv1:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,31.04,3561,256,23,127401984,5.396
+dwbench:conv1:negative:B:1,cupy_copy__float32_float32,1,7.808,2279,128,21,127401984,5.248
+dwbench:conv1:negative:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,20.16,3,128,86,127401984,4.828
+dwbench:conv1:negative:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.992,3,32,32,127401984,5.039
+dwbench:conv1:negative:A:1,im2col,1,33.024,7121,128,32,127401984,4.817
+dwbench:conv1:negative:A:1,cupy_copy__float32_float32,1,8.896,2279,128,21,127401984,5.426
+dwbench:conv1:negative:A:1,cupy_copy__float32_float32,1,16.192,7121,128,16,127401984,4.479
+dwbench:conv1:negative:A:1,ampere_sgemm_64x32_sliced1x4_nt,1,20.928,2,256,82,127401984,4.829
+dwbench:conv1:negative:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.448,3,32,32,127401984,5.588
+dwbench:conv1:negative:A:2,im2col,1,32.992,7121,128,32,127401984,4.762
+dwbench:conv1:negative:A:2,cupy_copy__float32_float32,1,8.736,2279,128,21,127401984,5.061
+dwbench:conv1:negative:A:2,cupy_copy__float32_float32,1,16.256,7121,128,16,127401984,4.47
+dwbench:conv1:negative:A:2,ampere_sgemm_64x32_sliced1x4_nt,1,20.768,2,256,82,127401984,5.4
+dwbench:conv1:negative:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.448,3,32,32,127401984,5.107
+dwbench:conv1:negative:B:2,cupy_copy__float32_float32,1,5.856,1238,128,16,127401984,5.194
+dwbench:conv1:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,31.04,3561,256,23,127401984,5.534
+dwbench:conv1:negative:B:2,cupy_copy__float32_float32,1,7.776,2279,128,21,127401984,5.091
+dwbench:conv1:negative:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,20.064,3,128,86,127401984,4.883
+dwbench:conv1:negative:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.96,3,32,32,127401984,4.858
+dwbench:conv1:slice:A:0,im2col,1,29.6,7121,128,32,127401984,6.541
+dwbench:conv1:slice:A:0,cupy_copy__float32_float32,1,7.904,2279,128,16,127401984,5.315
+dwbench:conv1:slice:A:0,cupy_copy__float32_float32,1,16.192,7121,128,16,127401984,4.666
+dwbench:conv1:slice:A:0,ampere_sgemm_64x32_sliced1x4_nt,1,20.96,2,256,82,127401984,5.363
+dwbench:conv1:slice:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.32,3,32,32,127401984,5.685
+dwbench:conv1:slice:B:0,cupy_copy__float32_float32,1,5.568,1238,128,18,127401984,5.383
+dwbench:conv1:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,31.008,3561,256,23,127401984,5.659
+dwbench:conv1:slice:B:0,cupy_copy__float32_float32,1,7.232,2279,128,16,127401984,5.32
+dwbench:conv1:slice:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,20.192,3,128,86,127401984,5.225
+dwbench:conv1:slice:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.928,3,32,32,127401984,4.919
+dwbench:conv1:slice:B:1,cupy_copy__float32_float32,1,5.472,1238,128,18,127401984,4.989
+dwbench:conv1:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,31.008,3561,256,23,127401984,5.666
+dwbench:conv1:slice:B:1,cupy_copy__float32_float32,1,7.2,2279,128,16,127401984,4.607
+dwbench:conv1:slice:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,20.128,3,128,86,127401984,4.884
+dwbench:conv1:slice:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.96,3,32,32,127401984,5.092
+dwbench:conv1:slice:A:1,im2col,1,29.696,7121,128,32,127401984,5.717
+dwbench:conv1:slice:A:1,cupy_copy__float32_float32,1,7.904,2279,128,16,127401984,4.965
+dwbench:conv1:slice:A:1,cupy_copy__float32_float32,1,15.936,7121,128,16,127401984,4.481
+dwbench:conv1:slice:A:1,ampere_sgemm_64x32_sliced1x4_nt,1,20.96,2,256,82,127401984,5.075
+dwbench:conv1:slice:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.32,3,32,32,127401984,5.552
+dwbench:conv1:slice:A:2,im2col,1,29.76,7121,128,32,127401984,4.777
+dwbench:conv1:slice:A:2,cupy_copy__float32_float32,1,7.936,2279,128,16,127401984,5.158
+dwbench:conv1:slice:A:2,cupy_copy__float32_float32,1,15.456,7121,128,16,127401984,5.408
+dwbench:conv1:slice:A:2,ampere_sgemm_64x32_sliced1x4_nt,1,20.8,2,256,82,127401984,5.028
+dwbench:conv1:slice:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.32,3,32,32,127401984,4.877
+dwbench:conv1:slice:B:2,cupy_copy__float32_float32,1,5.568,1238,128,18,127401984,5.01
+dwbench:conv1:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,31.265,3561,256,23,127401984,5.963
+dwbench:conv1:slice:B:2,cupy_copy__float32_float32,1,7.232,2279,128,16,127401984,4.604
+dwbench:conv1:slice:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,20.256,3,128,86,127401984,5.183
+dwbench:conv1:slice:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,8.96,3,32,32,127401984,4.796
+dwbench:conv2:contiguous:A:0,im2col,1,48.352,12338,128,32,127401984,5.711
+dwbench:conv2:contiguous:A:0,cupy_copy__float32_float32,1,5.888,741,128,16,127401984,5.386
+dwbench:conv2:contiguous:A:0,cupy_copy__float32_float32,1,37.472,12338,128,16,127401984,5.011
+dwbench:conv2:contiguous:A:0,ampere_sgemm_64x32_sliced1x4_nt,1,33.408,10,256,82,127401984,5.289
+dwbench:conv2:contiguous:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.344,19,32,32,127401984,5.148
+dwbench:conv2:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.336,6169,256,23,127401984,6.285
+dwbench:conv2:contiguous:B:0,cupy_copy__float32_float32,1,5.088,741,128,16,127401984,5.491
+dwbench:conv2:contiguous:B:0,ampere_sgemm_128x32_sliced1x4_nn,1,35.648,5,256,134,127401984,5.088
+dwbench:conv2:contiguous:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.208,19,32,32,127401984,5.073
+dwbench:conv2:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.272,6169,256,23,127401984,5.806
+dwbench:conv2:contiguous:B:1,cupy_copy__float32_float32,1,5.12,741,128,16,127401984,5.42
+dwbench:conv2:contiguous:B:1,ampere_sgemm_128x32_sliced1x4_nn,1,35.68,5,256,134,127401984,5.079
+dwbench:conv2:contiguous:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.144,19,32,32,127401984,11.92
+dwbench:conv2:contiguous:A:1,im2col,1,48.288,12338,128,32,127401984,5.149
+dwbench:conv2:contiguous:A:1,cupy_copy__float32_float32,1,5.952,741,128,16,127401984,5.393
+dwbench:conv2:contiguous:A:1,cupy_copy__float32_float32,1,37.537,12338,128,16,127401984,4.543
+dwbench:conv2:contiguous:A:1,ampere_sgemm_64x32_sliced1x4_nt,1,33.376,10,256,82,127401984,5.158
+dwbench:conv2:contiguous:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.312,19,32,32,127401984,5.8
+dwbench:conv2:contiguous:A:2,im2col,1,48.352,12338,128,32,127401984,5.146
+dwbench:conv2:contiguous:A:2,cupy_copy__float32_float32,1,6.048,741,128,16,127401984,4.918
+dwbench:conv2:contiguous:A:2,cupy_copy__float32_float32,1,37.6,12338,128,16,127401984,4.764
+dwbench:conv2:contiguous:A:2,ampere_sgemm_64x32_sliced1x4_nt,1,33.184,10,256,82,127401984,5.395
+dwbench:conv2:contiguous:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.312,19,32,32,127401984,4.885
+dwbench:conv2:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.336,6169,256,23,127401984,5.532
+dwbench:conv2:contiguous:B:2,cupy_copy__float32_float32,1,5.088,741,128,16,127401984,4.731
+dwbench:conv2:contiguous:B:2,ampere_sgemm_128x32_sliced1x4_nn,1,35.872,5,256,134,127401984,5.632
+dwbench:conv2:contiguous:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.144,19,32,32,127401984,4.889
+dwbench:conv2:negative:A:0,im2col,1,53.728,12338,128,32,127401984,5.155
+dwbench:conv2:negative:A:0,cupy_copy__float32_float32,1,6.944,741,128,21,127401984,5.38
+dwbench:conv2:negative:A:0,cupy_copy__float32_float32,1,37.632,12338,128,16,127401984,4.567
+dwbench:conv2:negative:A:0,ampere_sgemm_64x32_sliced1x4_nt,1,33.344,10,256,82,127401984,5.134
+dwbench:conv2:negative:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.504,19,32,32,127401984,5.858
+dwbench:conv2:negative:B:0,cupy_copy__float32_float32,1,7.168,2279,128,16,127401984,4.781
+dwbench:conv2:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.368,6169,256,23,127401984,5.322
+dwbench:conv2:negative:B:0,cupy_copy__float32_float32,1,6.336,741,128,21,127401984,4.485
+dwbench:conv2:negative:B:0,ampere_sgemm_128x32_sliced1x4_nn,1,35.744,5,256,134,127401984,5.253
+dwbench:conv2:negative:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.176,19,32,32,127401984,4.864
+dwbench:conv2:negative:B:1,cupy_copy__float32_float32,1,7.136,2279,128,16,127401984,4.797
+dwbench:conv2:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.368,6169,256,23,127401984,5.012
+dwbench:conv2:negative:B:1,cupy_copy__float32_float32,1,6.016,741,128,21,127401984,5.096
+dwbench:conv2:negative:B:1,ampere_sgemm_128x32_sliced1x4_nn,1,35.616,5,256,134,127401984,5.041
+dwbench:conv2:negative:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.176,19,32,32,127401984,4.906
+dwbench:conv2:negative:A:1,im2col,1,53.888,12338,128,32,127401984,5.306
+dwbench:conv2:negative:A:1,cupy_copy__float32_float32,1,6.944,741,128,21,127401984,4.691
+dwbench:conv2:negative:A:1,cupy_copy__float32_float32,1,37.792,12338,128,16,127401984,4.607
+dwbench:conv2:negative:A:1,ampere_sgemm_64x32_sliced1x4_nt,1,33.312,10,256,82,127401984,4.936
+dwbench:conv2:negative:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.536,19,32,32,127401984,5.59
+dwbench:conv2:negative:A:2,im2col,1,53.728,12338,128,32,127401984,4.815
+dwbench:conv2:negative:A:2,cupy_copy__float32_float32,1,7.008,741,128,21,127401984,4.811
+dwbench:conv2:negative:A:2,cupy_copy__float32_float32,1,37.601,12338,128,16,127401984,4.657
+dwbench:conv2:negative:A:2,ampere_sgemm_64x32_sliced1x4_nt,1,33.28,10,256,82,127401984,5.534
+dwbench:conv2:negative:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.536,19,32,32,127401984,5.065
+dwbench:conv2:negative:B:2,cupy_copy__float32_float32,1,7.168,2279,128,16,127401984,5.061
+dwbench:conv2:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.368,6169,256,23,127401984,5.83
+dwbench:conv2:negative:B:2,cupy_copy__float32_float32,1,6.4,741,128,21,127401984,4.536
+dwbench:conv2:negative:B:2,ampere_sgemm_128x32_sliced1x4_nn,1,35.808,5,256,134,127401984,4.877
+dwbench:conv2:negative:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.144,19,32,32,127401984,4.837
+dwbench:conv2:slice:A:0,im2col,1,48.064,12338,128,32,127401984,3.743
+dwbench:conv2:slice:A:0,cupy_copy__float32_float32,1,6.112,741,128,16,127401984,3.59
+dwbench:conv2:slice:A:0,cupy_copy__float32_float32,1,37.568,12338,128,16,127401984,3.85
+dwbench:conv2:slice:A:0,ampere_sgemm_64x32_sliced1x4_nt,1,33.312,10,256,82,127401984,3.652
+dwbench:conv2:slice:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.344,19,32,32,127401984,3.491
+dwbench:conv2:slice:B:0,cupy_copy__float32_float32,1,6.816,2279,128,18,127401984,3.542
+dwbench:conv2:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.368,6169,256,23,127401984,4.526
+dwbench:conv2:slice:B:0,cupy_copy__float32_float32,1,5.248,741,128,16,127401984,3.19
+dwbench:conv2:slice:B:0,ampere_sgemm_128x32_sliced1x4_nn,1,35.808,5,256,134,127401984,3.517
+dwbench:conv2:slice:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.144,19,32,32,127401984,3.318
+dwbench:conv2:slice:B:1,cupy_copy__float32_float32,1,6.72,2279,128,18,127401984,4.254
+dwbench:conv2:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.464,6169,256,23,127401984,3.903
+dwbench:conv2:slice:B:1,cupy_copy__float32_float32,1,5.248,741,128,16,127401984,3.272
+dwbench:conv2:slice:B:1,ampere_sgemm_128x32_sliced1x4_nn,1,35.68,5,256,134,127401984,4.226
+dwbench:conv2:slice:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.176,19,32,32,127401984,3.26
+dwbench:conv2:slice:A:1,im2col,1,48.032,12338,128,32,127401984,3.896
+dwbench:conv2:slice:A:1,cupy_copy__float32_float32,1,6.144,741,128,16,127401984,3.621
+dwbench:conv2:slice:A:1,cupy_copy__float32_float32,1,37.632,12338,128,16,127401984,3.612
+dwbench:conv2:slice:A:1,ampere_sgemm_64x32_sliced1x4_nt,1,33.344,10,256,82,127401984,3.71
+dwbench:conv2:slice:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.344,19,32,32,127401984,3.177
+dwbench:conv2:slice:A:2,im2col,1,48.0,12338,128,32,127401984,3.674
+dwbench:conv2:slice:A:2,cupy_copy__float32_float32,1,6.144,741,128,16,127401984,3.887
+dwbench:conv2:slice:A:2,cupy_copy__float32_float32,1,37.472,12338,128,16,127401984,3.429
+dwbench:conv2:slice:A:2,ampere_sgemm_64x32_sliced1x4_nt,1,33.184,10,256,82,127401984,3.483
+dwbench:conv2:slice:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.344,19,32,32,127401984,3.685
+dwbench:conv2:slice:B:2,cupy_copy__float32_float32,1,6.848,2279,128,18,127401984,4.003
+dwbench:conv2:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,50.401,6169,256,23,127401984,4.232
+dwbench:conv2:slice:B:2,cupy_copy__float32_float32,1,5.28,741,128,16,127401984,3.344
+dwbench:conv2:slice:B:2,ampere_sgemm_128x32_sliced1x4_nn,1,35.904,5,256,134,127401984,4.086
+dwbench:conv2:slice:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.176,19,32,32,127401984,3.342
+dwbench:conv3:contiguous:A:0,im2col,1,15.648,3094,128,32,127401984,4.287
+dwbench:conv3:contiguous:A:0,cupy_copy__float32_float32,1,5.056,165,128,16,127401984,3.869
+dwbench:conv3:contiguous:A:0,cupy_copy__float32_float32,1,13.312,3094,128,16,127401984,3.214
+dwbench:conv3:contiguous:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,20.224,29,128,86,127401984,3.995
+dwbench:conv3:contiguous:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.28,29,32,32,127401984,3.245
+dwbench:conv3:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,15.872,1547,256,23,127401984,4.497
+dwbench:conv3:contiguous:B:0,cupy_copy__float32_float32,1,4.448,165,128,16,127401984,3.462
+dwbench:conv3:contiguous:B:0,ampere_sgemm_64x32_sliced1x4_nn,1,17.824,15,256,82,127401984,3.686
+dwbench:conv3:contiguous:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.368,29,32,32,127401984,3.367
+dwbench:conv3:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,15.776,1547,256,23,127401984,4.069
+dwbench:conv3:contiguous:B:1,cupy_copy__float32_float32,1,4.48,165,128,16,127401984,3.4
+dwbench:conv3:contiguous:B:1,ampere_sgemm_64x32_sliced1x4_nn,1,17.824,15,256,82,127401984,3.774
+dwbench:conv3:contiguous:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.4,29,32,32,127401984,3.443
+dwbench:conv3:contiguous:A:1,im2col,1,15.584,3094,128,32,127401984,3.791
+dwbench:conv3:contiguous:A:1,cupy_copy__float32_float32,1,5.024,165,128,16,127401984,3.773
+dwbench:conv3:contiguous:A:1,cupy_copy__float32_float32,1,13.152,3094,128,16,127401984,3.18
+dwbench:conv3:contiguous:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,20.256,29,128,86,127401984,3.716
+dwbench:conv3:contiguous:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.312,29,32,32,127401984,3.476
+dwbench:conv3:contiguous:A:2,im2col,1,15.648,3094,128,32,127401984,4.042
+dwbench:conv3:contiguous:A:2,cupy_copy__float32_float32,1,5.056,165,128,16,127401984,3.655
+dwbench:conv3:contiguous:A:2,cupy_copy__float32_float32,1,13.184,3094,128,16,127401984,3.274
+dwbench:conv3:contiguous:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,20.256,29,128,86,127401984,3.629
+dwbench:conv3:contiguous:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.312,29,32,32,127401984,3.365
+dwbench:conv3:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,15.936,1547,256,23,127401984,4.598
+dwbench:conv3:contiguous:B:2,cupy_copy__float32_float32,1,4.48,165,128,16,127401984,3.44
+dwbench:conv3:contiguous:B:2,ampere_sgemm_64x32_sliced1x4_nn,1,17.792,15,256,82,127401984,12.433
+dwbench:conv3:contiguous:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.368,29,32,32,127401984,3.497
+dwbench:conv3:negative:A:0,im2col,1,17.088,3094,128,32,127401984,3.779
+dwbench:conv3:negative:A:0,cupy_copy__float32_float32,1,5.696,165,128,21,127401984,3.627
+dwbench:conv3:negative:A:0,cupy_copy__float32_float32,1,13.184,3094,128,16,127401984,3.382
+dwbench:conv3:negative:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,20.704,29,128,86,127401984,3.617
+dwbench:conv3:negative:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.408,29,32,32,127401984,3.37
+dwbench:conv3:negative:B:0,cupy_copy__float32_float32,1,5.152,741,128,16,127401984,3.749
+dwbench:conv3:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,15.968,1547,256,23,127401984,3.771
+dwbench:conv3:negative:B:0,cupy_copy__float32_float32,1,5.248,165,128,21,127401984,3.248
+dwbench:conv3:negative:B:0,ampere_sgemm_64x32_sliced1x4_nn,1,17.824,15,256,82,127401984,3.453
+dwbench:conv3:negative:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.432,29,32,32,127401984,3.234
+dwbench:conv3:negative:B:1,cupy_copy__float32_float32,1,4.992,741,128,16,127401984,3.753
+dwbench:conv3:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,15.873,1547,256,23,127401984,3.921
+dwbench:conv3:negative:B:1,cupy_copy__float32_float32,1,5.248,165,128,21,127401984,3.337
+dwbench:conv3:negative:B:1,ampere_sgemm_64x32_sliced1x4_nn,1,17.824,15,256,82,127401984,3.333
+dwbench:conv3:negative:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.464,29,32,32,127401984,10.889
+dwbench:conv3:negative:A:1,im2col,1,17.024,3094,128,32,127401984,3.668
+dwbench:conv3:negative:A:1,cupy_copy__float32_float32,1,5.632,165,128,21,127401984,3.4
+dwbench:conv3:negative:A:1,cupy_copy__float32_float32,1,13.408,3094,128,16,127401984,3.152
+dwbench:conv3:negative:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,20.64,29,128,86,127401984,3.997
+dwbench:conv3:negative:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.408,29,32,32,127401984,3.515
+dwbench:conv3:negative:A:2,im2col,1,17.056,3094,128,32,127401984,3.472
+dwbench:conv3:negative:A:2,cupy_copy__float32_float32,1,5.664,165,128,21,127401984,3.332
+dwbench:conv3:negative:A:2,cupy_copy__float32_float32,1,13.152,3094,128,16,127401984,3.161
+dwbench:conv3:negative:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,20.608,29,128,86,127401984,3.58
+dwbench:conv3:negative:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.472,29,32,32,127401984,3.211
+dwbench:conv3:negative:B:2,cupy_copy__float32_float32,1,5.152,741,128,16,127401984,3.657
+dwbench:conv3:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,16.064,1547,256,23,127401984,4.064
+dwbench:conv3:negative:B:2,cupy_copy__float32_float32,1,5.28,165,128,21,127401984,3.139
+dwbench:conv3:negative:B:2,ampere_sgemm_64x32_sliced1x4_nn,1,17.856,15,256,82,127401984,3.409
+dwbench:conv3:negative:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.464,29,32,32,127401984,3.207
+dwbench:conv3:slice:A:0,im2col,1,15.584,3094,128,32,127401984,3.85
+dwbench:conv3:slice:A:0,cupy_copy__float32_float32,1,4.896,165,128,16,127401984,3.562
+dwbench:conv3:slice:A:0,cupy_copy__float32_float32,1,13.473,3094,128,16,127401984,3.149
+dwbench:conv3:slice:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,20.288,29,128,86,127401984,3.654
+dwbench:conv3:slice:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.28,29,32,32,127401984,3.265
+dwbench:conv3:slice:B:0,cupy_copy__float32_float32,1,4.864,741,128,18,127401984,4.05
+dwbench:conv3:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,15.968,1547,256,23,127401984,4.197
+dwbench:conv3:slice:B:0,cupy_copy__float32_float32,1,4.48,165,128,16,127401984,3.417
+dwbench:conv3:slice:B:0,ampere_sgemm_64x32_sliced1x4_nn,1,17.824,15,256,82,127401984,3.419
+dwbench:conv3:slice:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.368,29,32,32,127401984,3.343
+dwbench:conv3:slice:B:1,cupy_copy__float32_float32,1,4.704,741,128,18,127401984,3.708
+dwbench:conv3:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,15.936,1547,256,23,127401984,3.631
+dwbench:conv3:slice:B:1,cupy_copy__float32_float32,1,4.448,165,128,16,127401984,3.352
+dwbench:conv3:slice:B:1,ampere_sgemm_64x32_sliced1x4_nn,1,17.664,15,256,82,127401984,3.42
+dwbench:conv3:slice:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.368,29,32,32,127401984,3.345
+dwbench:conv3:slice:A:1,im2col,1,15.552,3094,128,32,127401984,4.156
+dwbench:conv3:slice:A:1,cupy_copy__float32_float32,1,4.896,165,128,16,127401984,3.928
+dwbench:conv3:slice:A:1,cupy_copy__float32_float32,1,13.248,3094,128,16,127401984,3.192
+dwbench:conv3:slice:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,20.192,29,128,86,127401984,3.82
+dwbench:conv3:slice:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.312,29,32,32,127401984,3.244
+dwbench:conv3:slice:A:2,im2col,1,15.488,3094,128,32,127401984,3.536
+dwbench:conv3:slice:A:2,cupy_copy__float32_float32,1,4.896,165,128,16,127401984,3.979
+dwbench:conv3:slice:A:2,cupy_copy__float32_float32,1,13.12,3094,128,16,127401984,3.297
+dwbench:conv3:slice:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,20.096,29,128,86,127401984,3.675
+dwbench:conv3:slice:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.312,29,32,32,127401984,3.401
+dwbench:conv3:slice:B:2,cupy_copy__float32_float32,1,4.864,741,128,18,127401984,3.743
+dwbench:conv3:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,16.128,1547,256,23,127401984,3.983
+dwbench:conv3:slice:B:2,cupy_copy__float32_float32,1,4.48,165,128,16,127401984,3.133
+dwbench:conv3:slice:B:2,ampere_sgemm_64x32_sliced1x4_nn,1,17.728,15,256,82,127401984,3.678
+dwbench:conv3:slice:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,6.4,29,32,32,127401984,3.429
+dwbench:conv4:contiguous:A:0,im2col,1,7.392,810,128,32,127401984,3.896
+dwbench:conv4:contiguous:A:0,cupy_copy__float32_float32,1,4.8,120,128,16,127401984,3.736
+dwbench:conv4:contiguous:A:0,cupy_copy__float32_float32,1,7.808,810,128,16,127401984,3.347
+dwbench:conv4:contiguous:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,13.152,14,128,86,127401984,3.709
+dwbench:conv4:contiguous:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.056,14,32,32,127401984,3.447
+dwbench:conv4:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,8.16,405,256,23,127401984,4.366
+dwbench:conv4:contiguous:B:0,cupy_copy__float32_float32,1,4.384,120,128,16,127401984,3.322
+dwbench:conv4:contiguous:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,12.8,14,128,86,127401984,3.712
+dwbench:conv4:contiguous:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.896,14,32,32,127401984,3.299
+dwbench:conv4:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,8.064,405,256,23,127401984,3.935
+dwbench:conv4:contiguous:B:1,cupy_copy__float32_float32,1,4.384,120,128,16,127401984,3.223
+dwbench:conv4:contiguous:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,12.64,14,128,86,127401984,3.63
+dwbench:conv4:contiguous:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.864,14,32,32,127401984,3.27
+dwbench:conv4:contiguous:A:1,im2col,1,7.424,810,128,32,127401984,4.097
+dwbench:conv4:contiguous:A:1,cupy_copy__float32_float32,1,4.736,120,128,16,127401984,3.881
+dwbench:conv4:contiguous:A:1,cupy_copy__float32_float32,1,7.904,810,128,16,127401984,3.175
+dwbench:conv4:contiguous:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,13.056,14,128,86,127401984,3.851
+dwbench:conv4:contiguous:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.056,14,32,32,127401984,3.379
+dwbench:conv4:contiguous:A:2,im2col,1,7.264,810,128,32,127401984,3.826
+dwbench:conv4:contiguous:A:2,cupy_copy__float32_float32,1,4.768,120,128,16,127401984,3.68
+dwbench:conv4:contiguous:A:2,cupy_copy__float32_float32,1,7.808,810,128,16,127401984,3.114
+dwbench:conv4:contiguous:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,12.928,14,128,86,127401984,3.52
+dwbench:conv4:contiguous:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.024,14,32,32,127401984,3.435
+dwbench:conv4:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,8.096,405,256,23,127401984,4.361
+dwbench:conv4:contiguous:B:2,cupy_copy__float32_float32,1,4.352,120,128,16,127401984,3.456
+dwbench:conv4:contiguous:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,12.832,14,128,86,127401984,3.654
+dwbench:conv4:contiguous:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.928,14,32,32,127401984,3.329
+dwbench:conv4:negative:A:0,im2col,1,7.808,810,128,32,127401984,4.113
+dwbench:conv4:negative:A:0,cupy_copy__float32_float32,1,5.408,120,128,21,127401984,3.746
+dwbench:conv4:negative:A:0,cupy_copy__float32_float32,1,7.808,810,128,16,127401984,3.209
+dwbench:conv4:negative:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,13.216,14,128,86,127401984,3.887
+dwbench:conv4:negative:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.152,14,32,32,127401984,3.283
+dwbench:conv4:negative:B:0,cupy_copy__float32_float32,1,4.48,165,128,16,127401984,3.596
+dwbench:conv4:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.936,405,256,23,127401984,3.901
+dwbench:conv4:negative:B:0,cupy_copy__float32_float32,1,5.152,120,128,21,127401984,2.995
+dwbench:conv4:negative:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,12.768,14,128,86,127401984,3.589
+dwbench:conv4:negative:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.024,14,32,32,127401984,3.286
+dwbench:conv4:negative:B:1,cupy_copy__float32_float32,1,4.352,165,128,16,127401984,3.568
+dwbench:conv4:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.872,405,256,23,127401984,3.846
+dwbench:conv4:negative:B:1,cupy_copy__float32_float32,1,5.12,120,128,21,127401984,2.995
+dwbench:conv4:negative:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,12.673,14,128,86,127401984,3.512
+dwbench:conv4:negative:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.056,14,32,32,127401984,3.372
+dwbench:conv4:negative:A:1,im2col,1,7.904,810,128,32,127401984,4.181
+dwbench:conv4:negative:A:1,cupy_copy__float32_float32,1,5.44,120,128,21,127401984,3.81
+dwbench:conv4:negative:A:1,cupy_copy__float32_float32,1,7.84,810,128,16,127401984,3.279
+dwbench:conv4:negative:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,13.248,14,128,86,127401984,3.601
+dwbench:conv4:negative:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.184,14,32,32,127401984,3.25
+dwbench:conv4:negative:A:2,im2col,1,7.808,810,128,32,127401984,3.738
+dwbench:conv4:negative:A:2,cupy_copy__float32_float32,1,5.44,120,128,21,127401984,3.344
+dwbench:conv4:negative:A:2,cupy_copy__float32_float32,1,7.68,810,128,16,127401984,3.053
+dwbench:conv4:negative:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,12.896,14,128,86,127401984,3.601
+dwbench:conv4:negative:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.184,14,32,32,127401984,3.346
+dwbench:conv4:negative:B:2,cupy_copy__float32_float32,1,4.48,165,128,16,127401984,3.787
+dwbench:conv4:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.936,405,256,23,127401984,4.317
+dwbench:conv4:negative:B:2,cupy_copy__float32_float32,1,5.152,120,128,21,127401984,3.298
+dwbench:conv4:negative:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,12.736,14,128,86,127401984,3.556
+dwbench:conv4:negative:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.024,14,32,32,127401984,3.401
+dwbench:conv4:slice:A:0,im2col,1,7.424,810,128,32,127401984,3.697
+dwbench:conv4:slice:A:0,cupy_copy__float32_float32,1,4.736,120,128,16,127401984,3.384
+dwbench:conv4:slice:A:0,cupy_copy__float32_float32,1,7.456,810,128,16,127401984,2.971
+dwbench:conv4:slice:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,13.056,14,128,86,127401984,3.822
+dwbench:conv4:slice:A:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.056,14,32,32,127401984,3.41
+dwbench:conv4:slice:B:0,cupy_copy__float32_float32,1,4.192,165,128,18,127401984,3.8
+dwbench:conv4:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,8.0,405,256,23,127401984,4.261
+dwbench:conv4:slice:B:0,cupy_copy__float32_float32,1,4.352,120,128,16,127401984,3.208
+dwbench:conv4:slice:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,12.832,14,128,86,127401984,3.436
+dwbench:conv4:slice:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.896,14,32,32,127401984,3.266
+dwbench:conv4:slice:B:1,cupy_copy__float32_float32,1,4.096,165,128,18,127401984,3.5
+dwbench:conv4:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.936,405,256,23,127401984,3.655
+dwbench:conv4:slice:B:1,cupy_copy__float32_float32,1,4.48,120,128,16,127401984,3.104
+dwbench:conv4:slice:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,12.64,14,128,86,127401984,3.511
+dwbench:conv4:slice:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.896,14,32,32,127401984,3.324
+dwbench:conv4:slice:A:1,im2col,1,7.424,810,128,32,127401984,3.663
+dwbench:conv4:slice:A:1,cupy_copy__float32_float32,1,4.768,120,128,16,127401984,3.48
+dwbench:conv4:slice:A:1,cupy_copy__float32_float32,1,7.52,810,128,16,127401984,3.045
+dwbench:conv4:slice:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,13.088,14,128,86,127401984,3.612
+dwbench:conv4:slice:A:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.088,14,32,32,127401984,3.254
+dwbench:conv4:slice:A:2,im2col,1,7.296,810,128,32,127401984,3.931
+dwbench:conv4:slice:A:2,cupy_copy__float32_float32,1,4.608,120,128,16,127401984,3.964
+dwbench:conv4:slice:A:2,cupy_copy__float32_float32,1,7.456,810,128,16,127401984,3.27
+dwbench:conv4:slice:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,12.864,14,128,86,127401984,3.82
+dwbench:conv4:slice:A:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.024,14,32,32,127401984,3.654
+dwbench:conv4:slice:B:2,cupy_copy__float32_float32,1,4.16,165,128,18,127401984,3.794
+dwbench:conv4:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.968,405,256,23,127401984,4.287
+dwbench:conv4:slice:B:2,cupy_copy__float32_float32,1,4.384,120,128,16,127401984,3.199
+dwbench:conv4:slice:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,12.832,14,128,86,127401984,3.635
+dwbench:conv4:slice:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.896,14,32,32,127401984,3.354
+dwbench:conv5:contiguous:A:0,im2col,1,6.112,324,128,32,127401984,3.659
+dwbench:conv5:contiguous:A:0,cupy_copy__float32_float32,1,4.096,36,128,16,127401984,3.317
+dwbench:conv5:contiguous:A:0,cupy_copy__float32_float32,1,5.44,324,128,16,127401984,3.189
+dwbench:conv5:contiguous:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,12.48,18,128,86,127401984,3.6
+dwbench:conv5:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.176,162,256,23,127401984,4.384
+dwbench:conv5:contiguous:B:0,cupy_copy__float32_float32,1,4.032,36,128,16,127401984,3.34
+dwbench:conv5:contiguous:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,12.192,18,128,86,127401984,3.85
+dwbench:conv5:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.112,162,256,23,127401984,4.146
+dwbench:conv5:contiguous:B:1,cupy_copy__float32_float32,1,4.0,36,128,16,127401984,3.477
+dwbench:conv5:contiguous:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,12.064,18,128,86,127401984,3.559
+dwbench:conv5:contiguous:A:1,im2col,1,6.112,324,128,32,127401984,4.695
+dwbench:conv5:contiguous:A:1,cupy_copy__float32_float32,1,4.032,36,128,16,127401984,3.816
+dwbench:conv5:contiguous:A:1,cupy_copy__float32_float32,1,5.472,324,128,16,127401984,3.246
+dwbench:conv5:contiguous:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,12.48,18,128,86,127401984,3.916
+dwbench:conv5:contiguous:A:2,im2col,1,6.048,324,128,32,127401984,3.881
+dwbench:conv5:contiguous:A:2,cupy_copy__float32_float32,1,4.064,36,128,16,127401984,3.66
+dwbench:conv5:contiguous:A:2,cupy_copy__float32_float32,1,5.44,324,128,16,127401984,3.173
+dwbench:conv5:contiguous:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,12.16,18,128,86,127401984,3.763
+dwbench:conv5:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.112,162,256,23,127401984,4.498
+dwbench:conv5:contiguous:B:2,cupy_copy__float32_float32,1,4.0,36,128,16,127401984,3.309
+dwbench:conv5:contiguous:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,12.16,18,128,86,127401984,3.724
+dwbench:conv5:negative:A:0,im2col,1,6.368,324,128,32,127401984,3.944
+dwbench:conv5:negative:A:0,cupy_copy__float32_float32,1,4.096,36,128,16,127401984,4.001
+dwbench:conv5:negative:A:0,cupy_copy__float32_float32,1,5.632,324,128,16,127401984,3.049
+dwbench:conv5:negative:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,12.448,18,128,86,127401984,3.804
+dwbench:conv5:negative:B:0,cupy_copy__float32_float32,1,4.384,120,128,16,127401984,3.587
+dwbench:conv5:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.176,162,256,23,127401984,4.347
+dwbench:conv5:negative:B:0,cupy_copy__float32_float32,1,4.032,36,128,16,127401984,3.067
+dwbench:conv5:negative:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,12.064,18,128,86,127401984,3.538
+dwbench:conv5:negative:B:1,cupy_copy__float32_float32,1,4.32,120,128,16,127401984,3.57
+dwbench:conv5:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.176,162,256,23,127401984,4.13
+dwbench:conv5:negative:B:1,cupy_copy__float32_float32,1,4.032,36,128,16,127401984,3.157
+dwbench:conv5:negative:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,12.0,18,128,86,127401984,3.606
+dwbench:conv5:negative:A:1,im2col,1,6.368,324,128,32,127401984,3.666
+dwbench:conv5:negative:A:1,cupy_copy__float32_float32,1,4.064,36,128,16,127401984,3.897
+dwbench:conv5:negative:A:1,cupy_copy__float32_float32,1,5.6,324,128,16,127401984,2.969
+dwbench:conv5:negative:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,12.448,18,128,86,127401984,3.613
+dwbench:conv5:negative:A:2,im2col,1,6.304,324,128,32,127401984,3.756
+dwbench:conv5:negative:A:2,cupy_copy__float32_float32,1,4.064,36,128,16,127401984,3.861
+dwbench:conv5:negative:A:2,cupy_copy__float32_float32,1,5.6,324,128,16,127401984,3.04
+dwbench:conv5:negative:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,12.224,18,128,86,127401984,3.526
+dwbench:conv5:negative:B:2,cupy_copy__float32_float32,1,4.352,120,128,16,127401984,3.448
+dwbench:conv5:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.176,162,256,23,127401984,4.231
+dwbench:conv5:negative:B:2,cupy_copy__float32_float32,1,4.064,36,128,16,127401984,3.104
+dwbench:conv5:negative:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,12.096,18,128,86,127401984,3.56
+dwbench:conv5:slice:A:0,im2col,1,6.144,324,128,32,127401984,3.914
+dwbench:conv5:slice:A:0,cupy_copy__float32_float32,1,4.16,36,128,16,127401984,3.712
+dwbench:conv5:slice:A:0,cupy_copy__float32_float32,1,5.504,324,128,16,127401984,3.142
+dwbench:conv5:slice:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,12.608,18,128,86,127401984,3.729
+dwbench:conv5:slice:B:0,cupy_copy__float32_float32,1,4.064,120,128,18,127401984,4.259
+dwbench:conv5:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.176,162,256,23,127401984,3.986
+dwbench:conv5:slice:B:0,cupy_copy__float32_float32,1,4.032,36,128,16,127401984,3.406
+dwbench:conv5:slice:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,12.256,18,128,86,127401984,3.621
+dwbench:conv5:slice:B:1,cupy_copy__float32_float32,1,3.968,120,128,18,127401984,3.819
+dwbench:conv5:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.144,162,256,23,127401984,4.024
+dwbench:conv5:slice:B:1,cupy_copy__float32_float32,1,4.032,36,128,16,127401984,3.197
+dwbench:conv5:slice:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,12.16,18,128,86,127401984,3.516
+dwbench:conv5:slice:A:1,im2col,1,6.112,324,128,32,127401984,3.799
+dwbench:conv5:slice:A:1,cupy_copy__float32_float32,1,4.16,36,128,16,127401984,3.796
+dwbench:conv5:slice:A:1,cupy_copy__float32_float32,1,5.472,324,128,16,127401984,3.299
+dwbench:conv5:slice:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,12.64,18,128,86,127401984,3.651
+dwbench:conv5:slice:A:2,im2col,1,6.08,324,128,32,127401984,3.968
+dwbench:conv5:slice:A:2,cupy_copy__float32_float32,1,4.096,36,128,16,127401984,3.669
+dwbench:conv5:slice:A:2,cupy_copy__float32_float32,1,5.536,324,128,16,127401984,3.15
+dwbench:conv5:slice:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,12.224,18,128,86,127401984,3.492
+dwbench:conv5:slice:B:2,cupy_copy__float32_float32,1,4.032,120,128,18,127401984,3.833
+dwbench:conv5:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,6.176,162,256,23,127401984,3.837
+dwbench:conv5:slice:B:2,cupy_copy__float32_float32,1,4.0,36,128,16,127401984,3.211
+dwbench:conv5:slice:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,12.32,18,128,86,127401984,3.646
+dwbench:irregular:contiguous:A:0,im2col,1,5.44,30,128,32,127401984,4.147
+dwbench:irregular:contiguous:A:0,cupy_copy__float32_float32,1,4.096,5,128,16,127401984,3.903
+dwbench:irregular:contiguous:A:0,cupy_copy__float32_float32,1,4.416,30,128,16,127401984,3.308
+dwbench:irregular:contiguous:A:0,ampere_sgemm_32x128_nt,1,14.592,2,256,57,127401984,3.691
+dwbench:irregular:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,15,256,23,127401984,4.292
+dwbench:irregular:contiguous:B:0,cupy_copy__float32_float32,1,3.904,5,128,16,127401984,3.378
+dwbench:irregular:contiguous:B:0,ampere_sgemm_32x128_nn,1,14.336,2,256,57,127401984,3.799
+dwbench:irregular:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,15,256,23,127401984,4.281
+dwbench:irregular:contiguous:B:1,cupy_copy__float32_float32,1,3.904,5,128,16,127401984,3.325
+dwbench:irregular:contiguous:B:1,ampere_sgemm_32x128_nn,1,14.368,2,256,57,127401984,3.514
+dwbench:irregular:contiguous:A:1,im2col,1,5.312,30,128,32,127401984,3.692
+dwbench:irregular:contiguous:A:1,cupy_copy__float32_float32,1,4.032,5,128,16,127401984,6.733
+dwbench:irregular:contiguous:A:1,cupy_copy__float32_float32,1,4.384,30,128,16,127401984,2.958
+dwbench:irregular:contiguous:A:1,ampere_sgemm_32x128_nt,1,14.529,2,256,57,127401984,3.449
+dwbench:irregular:contiguous:A:2,im2col,1,5.312,30,128,32,127401984,3.975
+dwbench:irregular:contiguous:A:2,cupy_copy__float32_float32,1,4.064,5,128,16,127401984,3.837
+dwbench:irregular:contiguous:A:2,cupy_copy__float32_float32,1,4.352,30,128,16,127401984,3.121
+dwbench:irregular:contiguous:A:2,ampere_sgemm_32x128_nt,1,14.496,2,256,57,127401984,3.651
+dwbench:irregular:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,15,256,23,127401984,4.183
+dwbench:irregular:contiguous:B:2,cupy_copy__float32_float32,1,3.872,5,128,16,127401984,3.428
+dwbench:irregular:contiguous:B:2,ampere_sgemm_32x128_nn,1,14.304,2,256,57,127401984,3.469
+dwbench:irregular:negative:A:0,im2col,1,5.6,30,128,32,127401984,3.737
+dwbench:irregular:negative:A:0,cupy_copy__float32_float32,1,4.704,5,128,21,127401984,3.425
+dwbench:irregular:negative:A:0,cupy_copy__float32_float32,1,4.416,30,128,16,127401984,3.34
+dwbench:irregular:negative:A:0,ampere_sgemm_32x128_nt,1,14.784,2,256,57,127401984,3.753
+dwbench:irregular:negative:B:0,cupy_copy__float32_float32,1,3.872,11,128,16,127401984,3.669
+dwbench:irregular:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.024,15,256,23,127401984,3.958
+dwbench:irregular:negative:B:0,cupy_copy__float32_float32,1,4.576,5,128,21,127401984,3.194
+dwbench:irregular:negative:B:0,ampere_sgemm_32x128_nn,1,14.4,2,256,57,127401984,3.25
+dwbench:irregular:negative:B:1,cupy_copy__float32_float32,1,3.84,11,128,16,127401984,3.639
+dwbench:irregular:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.024,15,256,23,127401984,3.608
+dwbench:irregular:negative:B:1,cupy_copy__float32_float32,1,4.544,5,128,21,127401984,3.103
+dwbench:irregular:negative:B:1,ampere_sgemm_32x128_nn,1,14.24,2,256,57,127401984,3.45
+dwbench:irregular:negative:A:1,im2col,1,5.568,30,128,32,127401984,3.768
+dwbench:irregular:negative:A:1,cupy_copy__float32_float32,1,4.704,5,128,21,127401984,3.963
+dwbench:irregular:negative:A:1,cupy_copy__float32_float32,1,4.384,30,128,16,127401984,3.135
+dwbench:irregular:negative:A:1,ampere_sgemm_32x128_nt,1,14.752,2,256,57,127401984,3.578
+dwbench:irregular:negative:A:2,im2col,1,5.568,30,128,32,127401984,3.617
+dwbench:irregular:negative:A:2,cupy_copy__float32_float32,1,4.736,5,128,21,127401984,3.433
+dwbench:irregular:negative:A:2,cupy_copy__float32_float32,1,4.384,30,128,16,127401984,3.093
+dwbench:irregular:negative:A:2,ampere_sgemm_32x128_nt,1,14.656,2,256,57,127401984,3.4
+dwbench:irregular:negative:B:2,cupy_copy__float32_float32,1,3.84,11,128,16,127401984,3.797
+dwbench:irregular:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.024,15,256,23,127401984,3.941
+dwbench:irregular:negative:B:2,cupy_copy__float32_float32,1,4.544,5,128,21,127401984,3.167
+dwbench:irregular:negative:B:2,ampere_sgemm_32x128_nn,1,14.432,2,256,57,127401984,3.48
+dwbench:irregular:slice:A:0,im2col,1,5.408,30,128,32,127401984,4.025
+dwbench:irregular:slice:A:0,cupy_copy__float32_float32,1,4.096,5,128,16,127401984,3.951
+dwbench:irregular:slice:A:0,cupy_copy__float32_float32,1,4.448,30,128,16,127401984,3.405
+dwbench:irregular:slice:A:0,ampere_sgemm_32x128_nt,1,14.72,2,256,57,127401984,3.535
+dwbench:irregular:slice:B:0,cupy_copy__float32_float32,1,3.584,11,128,18,127401984,3.788
+dwbench:irregular:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.96,15,256,23,127401984,3.787
+dwbench:irregular:slice:B:0,cupy_copy__float32_float32,1,3.936,5,128,16,127401984,3.269
+dwbench:irregular:slice:B:0,ampere_sgemm_32x128_nn,1,14.336,2,256,57,127401984,3.455
+dwbench:irregular:slice:B:1,cupy_copy__float32_float32,1,3.584,11,128,18,127401984,3.898
+dwbench:irregular:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.056,15,256,23,127401984,3.81
+dwbench:irregular:slice:B:1,cupy_copy__float32_float32,1,3.968,5,128,16,127401984,3.13
+dwbench:irregular:slice:B:1,ampere_sgemm_32x128_nn,1,14.336,2,256,57,127401984,3.568
+dwbench:irregular:slice:A:1,im2col,1,5.344,30,128,32,127401984,3.609
+dwbench:irregular:slice:A:1,cupy_copy__float32_float32,1,4.096,5,128,16,127401984,3.645
+dwbench:irregular:slice:A:1,cupy_copy__float32_float32,1,4.384,30,128,16,127401984,3.129
+dwbench:irregular:slice:A:1,ampere_sgemm_32x128_nt,1,14.688,2,256,57,127401984,3.533
+dwbench:irregular:slice:A:2,im2col,1,5.344,30,128,32,127401984,4.491
+dwbench:irregular:slice:A:2,cupy_copy__float32_float32,1,4.096,5,128,16,127401984,3.626
+dwbench:irregular:slice:A:2,cupy_copy__float32_float32,1,4.384,30,128,16,127401984,3.254
+dwbench:irregular:slice:A:2,ampere_sgemm_32x128_nt,1,14.56,2,256,57,127401984,3.488
+dwbench:irregular:slice:B:2,cupy_copy__float32_float32,1,3.552,11,128,18,127401984,3.683
+dwbench:irregular:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.024,15,256,23,127401984,3.996
+dwbench:irregular:slice:B:2,cupy_copy__float32_float32,1,3.936,5,128,16,127401984,2.978
+dwbench:irregular:slice:B:2,ampere_sgemm_32x128_nn,1,14.304,2,256,57,127401984,3.401
+dwbench:overlap:contiguous:A:0,im2col,1,7.328,769,128,32,127401984,4.037
+dwbench:overlap:contiguous:A:0,cupy_copy__float32_float32,1,4.512,113,128,16,127401984,3.814
+dwbench:overlap:contiguous:A:0,cupy_copy__float32_float32,1,6.208,769,128,16,127401984,3.208
+dwbench:overlap:contiguous:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,58.464,3,128,86,127401984,3.789
+dwbench:overlap:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.712,385,256,23,127401984,4.304
+dwbench:overlap:contiguous:B:0,cupy_copy__float32_float32,1,4.544,113,128,16,127401984,3.176
+dwbench:overlap:contiguous:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,11.872,3,128,86,127401984,3.583
+dwbench:overlap:contiguous:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.992,3,32,32,127401984,3.556
+dwbench:overlap:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.68,385,256,23,127401984,3.776
+dwbench:overlap:contiguous:B:1,cupy_copy__float32_float32,1,4.512,113,128,16,127401984,3.168
+dwbench:overlap:contiguous:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,11.872,3,128,86,127401984,3.522
+dwbench:overlap:contiguous:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.8,3,32,32,127401984,3.435
+dwbench:overlap:contiguous:A:1,im2col,1,7.264,769,128,32,127401984,3.802
+dwbench:overlap:contiguous:A:1,cupy_copy__float32_float32,1,4.576,113,128,16,127401984,3.721
+dwbench:overlap:contiguous:A:1,cupy_copy__float32_float32,1,6.176,769,128,16,127401984,3.063
+dwbench:overlap:contiguous:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,58.496,3,128,86,127401984,3.607
+dwbench:overlap:contiguous:A:2,im2col,1,7.296,769,128,32,127401984,4.063
+dwbench:overlap:contiguous:A:2,cupy_copy__float32_float32,1,4.544,113,128,16,127401984,3.812
+dwbench:overlap:contiguous:A:2,cupy_copy__float32_float32,1,6.24,769,128,16,127401984,3.253
+dwbench:overlap:contiguous:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,58.208,3,128,86,127401984,3.847
+dwbench:overlap:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.744,385,256,23,127401984,4.783
+dwbench:overlap:contiguous:B:2,cupy_copy__float32_float32,1,4.513,113,128,16,127401984,3.645
+dwbench:overlap:contiguous:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,11.904,3,128,86,127401984,3.935
+dwbench:overlap:contiguous:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.992,3,32,32,127401984,3.734
+dwbench:overlap:negative:A:0,im2col,1,7.808,769,128,32,127401984,4.097
+dwbench:overlap:negative:A:0,cupy_copy__float32_float32,1,5.376,113,128,21,127401984,3.608
+dwbench:overlap:negative:A:0,cupy_copy__float32_float32,1,6.528,769,128,16,127401984,3.181
+dwbench:overlap:negative:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,58.656,3,128,86,127401984,3.942
+dwbench:overlap:negative:B:0,cupy_copy__float32_float32,1,3.936,52,128,16,127401984,3.778
+dwbench:overlap:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.776,385,256,23,127401984,3.837
+dwbench:overlap:negative:B:0,cupy_copy__float32_float32,1,5.216,113,128,21,127401984,3.326
+dwbench:overlap:negative:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,11.872,3,128,86,127401984,3.46
+dwbench:overlap:negative:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.056,3,32,32,127401984,3.443
+dwbench:overlap:negative:B:1,cupy_copy__float32_float32,1,4.0,52,128,16,127401984,3.843
+dwbench:overlap:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.68,385,256,23,127401984,4.079
+dwbench:overlap:negative:B:1,cupy_copy__float32_float32,1,5.216,113,128,21,127401984,3.297
+dwbench:overlap:negative:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,11.904,3,128,86,127401984,3.644
+dwbench:overlap:negative:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.896,3,32,32,127401984,3.749
+dwbench:overlap:negative:A:1,im2col,1,7.84,769,128,32,127401984,4.262
+dwbench:overlap:negative:A:1,cupy_copy__float32_float32,1,5.344,113,128,21,127401984,3.975
+dwbench:overlap:negative:A:1,cupy_copy__float32_float32,1,6.496,769,128,16,127401984,3.53
+dwbench:overlap:negative:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,58.752,3,128,86,127401984,3.601
+dwbench:overlap:negative:A:2,im2col,1,7.84,769,128,32,127401984,3.753
+dwbench:overlap:negative:A:2,cupy_copy__float32_float32,1,5.344,113,128,21,127401984,3.32
+dwbench:overlap:negative:A:2,cupy_copy__float32_float32,1,6.464,769,128,16,127401984,3.193
+dwbench:overlap:negative:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,58.304,3,128,86,127401984,3.623
+dwbench:overlap:negative:B:2,cupy_copy__float32_float32,1,3.936,52,128,16,127401984,3.783
+dwbench:overlap:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.744,385,256,23,127401984,3.975
+dwbench:overlap:negative:B:2,cupy_copy__float32_float32,1,5.216,113,128,21,127401984,3.301
+dwbench:overlap:negative:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,11.84,3,128,86,127401984,3.708
+dwbench:overlap:negative:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.056,3,32,32,127401984,3.532
+dwbench:overlap:slice:A:0,im2col,1,7.328,769,128,32,127401984,4.338
+dwbench:overlap:slice:A:0,cupy_copy__float32_float32,1,4.64,113,128,16,127401984,3.775
+dwbench:overlap:slice:A:0,cupy_copy__float32_float32,1,6.208,769,128,16,127401984,3.563
+dwbench:overlap:slice:A:0,ampere_sgemm_32x32_sliced1x4_nt,1,57.664,3,128,86,127401984,3.937
+dwbench:overlap:slice:B:0,cupy_copy__float32_float32,1,3.648,52,128,18,127401984,4.186
+dwbench:overlap:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.776,385,256,23,127401984,4.117
+dwbench:overlap:slice:B:0,cupy_copy__float32_float32,1,4.512,113,128,16,127401984,3.222
+dwbench:overlap:slice:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,11.904,3,128,86,127401984,3.638
+dwbench:overlap:slice:B:0,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.992,3,32,32,127401984,3.567
+dwbench:overlap:slice:B:1,cupy_copy__float32_float32,1,3.648,52,128,18,127401984,3.637
+dwbench:overlap:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.68,385,256,23,127401984,3.829
+dwbench:overlap:slice:B:1,cupy_copy__float32_float32,1,4.512,113,128,16,127401984,3.327
+dwbench:overlap:slice:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,11.904,3,128,86,127401984,3.413
+dwbench:overlap:slice:B:1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,4.832,3,32,32,127401984,3.445
+dwbench:overlap:slice:A:1,im2col,1,7.296,769,128,32,127401984,4.106
+dwbench:overlap:slice:A:1,cupy_copy__float32_float32,1,4.672,113,128,16,127401984,3.576
+dwbench:overlap:slice:A:1,cupy_copy__float32_float32,1,6.176,769,128,16,127401984,3.081
+dwbench:overlap:slice:A:1,ampere_sgemm_32x32_sliced1x4_nt,1,57.632,3,128,86,127401984,3.63
+dwbench:overlap:slice:A:2,im2col,1,7.264,769,128,32,127401984,3.667
+dwbench:overlap:slice:A:2,cupy_copy__float32_float32,1,4.64,113,128,16,127401984,3.42
+dwbench:overlap:slice:A:2,cupy_copy__float32_float32,1,6.208,769,128,16,127401984,3.18
+dwbench:overlap:slice:A:2,ampere_sgemm_32x32_sliced1x4_nt,1,57.408,3,128,86,127401984,3.511
+dwbench:overlap:slice:B:2,cupy_copy__float32_float32,1,3.616,52,128,18,127401984,3.824
+dwbench:overlap:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,7.744,385,256,23,127401984,3.911
+dwbench:overlap:slice:B:2,cupy_copy__float32_float32,1,4.544,113,128,16,127401984,3.116
+dwbench:overlap:slice:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,11.872,3,128,86,127401984,3.617
+dwbench:overlap:slice:B:2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",1,5.024,3,32,32,127401984,3.609
+dwbench:point:contiguous:A:0,im2col,1,5.248,6,128,32,127401984,3.911
+dwbench:point:contiguous:A:0,ampere_sgemm_32x128_tn,1,15.52,1,256,57,127401984,3.782
+dwbench:point:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.704,3,256,23,127401984,4.208
+dwbench:point:contiguous:B:0,ampere_sgemm_32x128_nn,1,15.488,1,256,57,127401984,3.457
+dwbench:point:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.704,3,256,23,127401984,4.039
+dwbench:point:contiguous:B:1,ampere_sgemm_32x128_nn,1,15.488,1,256,57,127401984,3.443
+dwbench:point:contiguous:A:1,im2col,1,5.216,6,128,32,127401984,3.849
+dwbench:point:contiguous:A:1,ampere_sgemm_32x128_tn,1,15.424,1,256,57,127401984,3.886
+dwbench:point:contiguous:A:2,im2col,1,5.216,6,128,32,127401984,3.805
+dwbench:point:contiguous:A:2,ampere_sgemm_32x128_tn,1,15.488,1,256,57,127401984,3.811
+dwbench:point:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,3,256,23,127401984,4.125
+dwbench:point:contiguous:B:2,ampere_sgemm_32x128_nn,1,15.52,1,256,57,127401984,3.499
+dwbench:point:negative:A:0,im2col,1,5.408,6,128,32,127401984,3.689
+dwbench:point:negative:A:0,cupy_copy__float32_float32,1,4.096,11,128,16,127401984,3.561
+dwbench:point:negative:A:0,ampere_sgemm_32x128_tt,1,16.48,1,256,57,127401984,3.742
+dwbench:point:negative:B:0,cupy_copy__float32_float32,1,3.84,6,128,16,127401984,3.793
+dwbench:point:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,3,256,23,127401984,3.852
+dwbench:point:negative:B:0,cupy_copy__float32_float32,1,3.904,11,128,16,127401984,3.034
+dwbench:point:negative:B:0,ampere_sgemm_32x128_nn,1,16.64,1,256,57,127401984,3.332
+dwbench:point:negative:B:1,cupy_copy__float32_float32,1,3.776,6,128,16,127401984,3.878
+dwbench:point:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.736,3,256,23,127401984,3.655
+dwbench:point:negative:B:1,cupy_copy__float32_float32,1,3.84,11,128,16,127401984,3.151
+dwbench:point:negative:B:1,ampere_sgemm_32x128_nn,1,16.32,1,256,57,127401984,3.397
+dwbench:point:negative:A:1,im2col,1,5.44,6,128,32,127401984,3.808
+dwbench:point:negative:A:1,cupy_copy__float32_float32,1,4.16,11,128,16,127401984,3.732
+dwbench:point:negative:A:1,ampere_sgemm_32x128_tt,1,16.416,1,256,57,127401984,3.732
+dwbench:point:negative:A:2,im2col,1,5.408,6,128,32,127401984,3.582
+dwbench:point:negative:A:2,cupy_copy__float32_float32,1,4.128,11,128,16,127401984,3.408
+dwbench:point:negative:A:2,ampere_sgemm_32x128_tt,1,16.352,1,256,57,127401984,3.584
+dwbench:point:negative:B:2,cupy_copy__float32_float32,1,3.808,6,128,16,127401984,3.813
+dwbench:point:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,3,256,23,127401984,3.855
+dwbench:point:negative:B:2,cupy_copy__float32_float32,1,3.872,11,128,16,127401984,3.178
+dwbench:point:negative:B:2,ampere_sgemm_32x128_nn,1,16.576,1,256,57,127401984,3.381
+dwbench:point:slice:A:0,im2col,1,5.248,6,128,32,127401984,3.906
+dwbench:point:slice:A:0,cupy_copy__float32_float32,1,3.936,11,128,16,127401984,3.549
+dwbench:point:slice:A:0,ampere_sgemm_32x128_tt,1,15.744,1,256,57,127401984,3.836
+dwbench:point:slice:B:0,cupy_copy__float32_float32,1,3.552,6,128,18,127401984,3.734
+dwbench:point:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.928,3,256,23,127401984,3.849
+dwbench:point:slice:B:0,cupy_copy__float32_float32,1,3.936,11,128,16,127401984,3.29
+dwbench:point:slice:B:0,ampere_sgemm_32x128_nt,1,16.064,1,256,57,127401984,3.364
+dwbench:point:slice:B:1,cupy_copy__float32_float32,1,3.52,6,128,18,127401984,3.716
+dwbench:point:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.96,3,256,23,127401984,3.747
+dwbench:point:slice:B:1,cupy_copy__float32_float32,1,3.968,11,128,16,127401984,3.242
+dwbench:point:slice:B:1,ampere_sgemm_32x128_nt,1,15.936,1,256,57,127401984,3.697
+dwbench:point:slice:A:1,im2col,1,5.216,6,128,32,127401984,3.686
+dwbench:point:slice:A:1,cupy_copy__float32_float32,1,3.904,11,128,16,127401984,3.46
+dwbench:point:slice:A:1,ampere_sgemm_32x128_tt,1,15.68,1,256,57,127401984,3.903
+dwbench:point:slice:A:2,im2col,1,5.216,6,128,32,127401984,4.032
+dwbench:point:slice:A:2,cupy_copy__float32_float32,1,3.968,11,128,16,127401984,3.826
+dwbench:point:slice:A:2,ampere_sgemm_32x128_tt,1,15.712,1,256,57,127401984,3.867
+dwbench:point:slice:B:2,cupy_copy__float32_float32,1,3.552,6,128,18,127401984,4.018
+dwbench:point:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.928,3,256,23,127401984,3.852
+dwbench:point:slice:B:2,cupy_copy__float32_float32,1,3.936,11,128,16,127401984,3.285
+dwbench:point:slice:B:2,ampere_sgemm_32x128_nt,1,16.064,1,256,57,127401984,3.335
+dwbench:holes:contiguous:A:0,im2col,1,5.216,3,128,32,127401984,3.851
+dwbench:holes:contiguous:A:0,cupy_copy__float32_float32,2,7.776,3,128,16,127401984,7.21
+dwbench:holes:contiguous:A:0,ampere_sgemm_32x128_nt,1,11.456,1,256,57,127401984,3.809
+dwbench:holes:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.064,2,256,23,127401984,4.351
+dwbench:holes:contiguous:B:0,cupy_copy__float32_float32,1,3.712,3,128,16,127401984,3.826
+dwbench:holes:contiguous:B:0,ampere_sgemm_32x128_nn,1,11.488,1,256,57,127401984,3.503
+dwbench:holes:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.032,2,256,23,127401984,4.064
+dwbench:holes:contiguous:B:1,cupy_copy__float32_float32,1,3.68,3,128,16,127401984,3.302
+dwbench:holes:contiguous:B:1,ampere_sgemm_32x128_nn,1,11.488,1,256,57,127401984,3.374
+dwbench:holes:contiguous:A:1,im2col,1,5.184,3,128,32,127401984,3.963
+dwbench:holes:contiguous:A:1,cupy_copy__float32_float32,2,7.776,3,128,16,127401984,7.1129999999999995
+dwbench:holes:contiguous:A:1,ampere_sgemm_32x128_nt,1,11.456,1,256,57,127401984,3.498
+dwbench:holes:contiguous:A:2,im2col,1,5.184,3,128,32,127401984,3.854
+dwbench:holes:contiguous:A:2,cupy_copy__float32_float32,2,7.808,3,128,16,127401984,6.821
+dwbench:holes:contiguous:A:2,ampere_sgemm_32x128_nt,1,11.456,1,256,57,127401984,3.401
+dwbench:holes:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.096,2,256,23,127401984,4.279
+dwbench:holes:contiguous:B:2,cupy_copy__float32_float32,1,3.648,3,128,16,127401984,3.372
+dwbench:holes:contiguous:B:2,ampere_sgemm_32x128_nn,1,11.52,1,256,57,127401984,3.537
+dwbench:holes:negative:A:0,im2col,1,5.408,3,128,32,127401984,4.18
+dwbench:holes:negative:A:0,cupy_copy__float32_float32,1,4.416,3,128,21,127401984,3.898
+dwbench:holes:negative:A:0,cupy_copy__float32_float32,1,4.096,3,128,16,127401984,3.641
+dwbench:holes:negative:A:0,ampere_sgemm_32x128_nt,1,11.328,1,256,57,127401984,3.768
+dwbench:holes:negative:B:0,cupy_copy__float32_float32,1,3.776,4,128,16,127401984,3.612
+dwbench:holes:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,3.904,2,256,23,127401984,3.88
+dwbench:holes:negative:B:0,cupy_copy__float32_float32,1,4.192,3,128,21,127401984,3.107
+dwbench:holes:negative:B:0,ampere_sgemm_32x128_nn,1,11.488,1,256,57,127401984,3.382
+dwbench:holes:negative:B:1,cupy_copy__float32_float32,1,3.808,4,128,16,127401984,3.694
+dwbench:holes:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,3.776,2,256,23,127401984,3.803
+dwbench:holes:negative:B:1,cupy_copy__float32_float32,1,4.192,3,128,21,127401984,3.478
+dwbench:holes:negative:B:1,ampere_sgemm_32x128_nn,1,11.328,1,256,57,127401984,3.343
+dwbench:holes:negative:A:1,im2col,1,5.44,3,128,32,127401984,3.768
+dwbench:holes:negative:A:1,cupy_copy__float32_float32,1,4.384,3,128,21,127401984,3.563
+dwbench:holes:negative:A:1,cupy_copy__float32_float32,1,4.096,3,128,16,127401984,3.16
+dwbench:holes:negative:A:1,ampere_sgemm_32x128_nt,1,11.36,1,256,57,127401984,3.525
+dwbench:holes:negative:A:2,im2col,1,5.44,3,128,32,127401984,3.417
+dwbench:holes:negative:A:2,cupy_copy__float32_float32,1,4.448,3,128,21,127401984,3.514
+dwbench:holes:negative:A:2,cupy_copy__float32_float32,1,4.128,3,128,16,127401984,3.147
+dwbench:holes:negative:A:2,ampere_sgemm_32x128_nt,1,11.232,1,256,57,127401984,3.486
+dwbench:holes:negative:B:2,cupy_copy__float32_float32,1,3.776,4,128,16,127401984,3.727
+dwbench:holes:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,3.84,2,256,23,127401984,3.665
+dwbench:holes:negative:B:2,cupy_copy__float32_float32,1,4.224,3,128,21,127401984,3.171
+dwbench:holes:negative:B:2,ampere_sgemm_32x128_nn,1,11.456,1,256,57,127401984,3.544
+dwbench:holes:slice:A:0,im2col,1,5.216,3,128,32,127401984,3.592
+dwbench:holes:slice:A:0,cupy_copy__float32_float32,2,7.744,3,128,16,127401984,7.07
+dwbench:holes:slice:A:0,ampere_sgemm_32x128_nt,1,11.328,1,256,57,127401984,3.6
+dwbench:holes:slice:B:0,cupy_copy__float32_float32,1,3.52,4,128,18,127401984,3.965
+dwbench:holes:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.128,2,256,23,127401984,4.215
+dwbench:holes:slice:B:0,cupy_copy__float32_float32,1,3.648,3,128,16,127401984,3.103
+dwbench:holes:slice:B:0,ampere_sgemm_32x128_nn,1,11.36,1,256,57,127401984,3.607
+dwbench:holes:slice:B:1,cupy_copy__float32_float32,1,3.488,4,128,18,127401984,3.831
+dwbench:holes:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.032,2,256,23,127401984,3.66
+dwbench:holes:slice:B:1,cupy_copy__float32_float32,1,3.648,3,128,16,127401984,3.062
+dwbench:holes:slice:B:1,ampere_sgemm_32x128_nn,1,11.328,1,256,57,127401984,3.502
+dwbench:holes:slice:A:1,im2col,1,5.216,3,128,32,127401984,3.475
+dwbench:holes:slice:A:1,cupy_copy__float32_float32,2,7.808,3,128,16,127401984,6.413
+dwbench:holes:slice:A:1,ampere_sgemm_32x128_nt,1,11.36,1,256,57,127401984,3.408
+dwbench:holes:slice:A:2,im2col,1,5.248,3,128,32,127401984,3.556
+dwbench:holes:slice:A:2,cupy_copy__float32_float32,2,7.776,3,128,16,127401984,6.827
+dwbench:holes:slice:A:2,ampere_sgemm_32x128_nt,1,11.232,1,256,57,127401984,3.505
+dwbench:holes:slice:B:2,cupy_copy__float32_float32,1,3.552,4,128,18,127401984,3.89
+dwbench:holes:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.096,2,256,23,127401984,3.865
+dwbench:holes:slice:B:2,cupy_copy__float32_float32,1,3.68,3,128,16,127401984,3.255
+dwbench:holes:slice:B:2,ampere_sgemm_32x128_nn,1,11.36,1,256,57,127401984,3.436
+dwbench:tail:contiguous:A:0,im2col,1,5.312,19,128,32,127401984,3.677
+dwbench:tail:contiguous:A:0,cupy_copy__float32_float32,1,4.064,8,128,16,127401984,3.429
+dwbench:tail:contiguous:A:0,cupy_copy__float32_float32,1,4.256,19,128,16,127401984,3.167
+dwbench:tail:contiguous:A:0,ampere_sgemm_32x128_nt,1,15.744,1,256,57,127401984,3.485
+dwbench:tail:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,10,256,23,127401984,4.153
+dwbench:tail:contiguous:B:0,cupy_copy__float32_float32,1,4.064,8,128,16,127401984,3.251
+dwbench:tail:contiguous:B:0,ampere_sgemm_32x128_nn,1,16.064,1,256,57,127401984,3.416
+dwbench:tail:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.736,10,256,23,127401984,4.33
+dwbench:tail:contiguous:B:1,cupy_copy__float32_float32,1,4.096,8,128,16,127401984,3.344
+dwbench:tail:contiguous:B:1,ampere_sgemm_32x128_nn,1,16.032,1,256,57,127401984,3.332
+dwbench:tail:contiguous:A:1,im2col,1,5.28,19,128,32,127401984,3.549
+dwbench:tail:contiguous:A:1,cupy_copy__float32_float32,1,4.096,8,128,16,127401984,3.345
+dwbench:tail:contiguous:A:1,cupy_copy__float32_float32,1,4.288,19,128,16,127401984,3.143
+dwbench:tail:contiguous:A:1,ampere_sgemm_32x128_nt,1,15.808,1,256,57,127401984,3.362
+dwbench:tail:contiguous:A:2,im2col,1,5.312,19,128,32,127401984,3.92
+dwbench:tail:contiguous:A:2,cupy_copy__float32_float32,1,4.064,8,128,16,127401984,3.944
+dwbench:tail:contiguous:A:2,cupy_copy__float32_float32,1,4.288,19,128,16,127401984,3.203
+dwbench:tail:contiguous:A:2,ampere_sgemm_32x128_nt,1,15.744,1,256,57,127401984,3.533
+dwbench:tail:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.736,10,256,23,127401984,4.064
+dwbench:tail:contiguous:B:2,cupy_copy__float32_float32,1,4.064,8,128,16,127401984,3.363
+dwbench:tail:contiguous:B:2,ampere_sgemm_32x128_nn,1,16.032,1,256,57,127401984,5.81
+dwbench:tail:negative:A:0,im2col,1,5.536,19,128,32,127401984,4.141
+dwbench:tail:negative:A:0,cupy_copy__float32_float32,1,4.576,8,128,21,127401984,4.059
+dwbench:tail:negative:A:0,cupy_copy__float32_float32,1,4.352,19,128,16,127401984,3.522
+dwbench:tail:negative:A:0,ampere_sgemm_32x128_nt,1,16.224,1,256,57,127401984,3.933
+dwbench:tail:negative:B:0,cupy_copy__float32_float32,1,3.648,7,128,16,127401984,3.771
+dwbench:tail:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.8,10,256,23,127401984,3.809
+dwbench:tail:negative:B:0,cupy_copy__float32_float32,1,4.608,8,128,21,127401984,3.255
+dwbench:tail:negative:B:0,ampere_sgemm_32x128_nn,1,16.032,1,256,57,127401984,3.593
+dwbench:tail:negative:B:1,cupy_copy__float32_float32,1,3.616,7,128,16,127401984,3.588
+dwbench:tail:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.736,10,256,23,127401984,3.628
+dwbench:tail:negative:B:1,cupy_copy__float32_float32,1,4.576,8,128,21,127401984,3.108
+dwbench:tail:negative:B:1,ampere_sgemm_32x128_nn,1,15.872,1,256,57,127401984,3.33
+dwbench:tail:negative:A:1,im2col,1,5.6,19,128,32,127401984,3.882
+dwbench:tail:negative:A:1,cupy_copy__float32_float32,1,4.576,8,128,21,127401984,3.859
+dwbench:tail:negative:A:1,cupy_copy__float32_float32,1,4.384,19,128,16,127401984,3.317
+dwbench:tail:negative:A:1,ampere_sgemm_32x128_nt,1,16.224,1,256,57,127401984,3.753
+dwbench:tail:negative:A:2,im2col,1,5.6,19,128,32,127401984,3.695
+dwbench:tail:negative:A:2,cupy_copy__float32_float32,1,4.576,8,128,21,127401984,3.496
+dwbench:tail:negative:A:2,cupy_copy__float32_float32,1,4.352,19,128,16,127401984,3.192
+dwbench:tail:negative:A:2,ampere_sgemm_32x128_nt,1,16.128,1,256,57,127401984,3.338
+dwbench:tail:negative:B:2,cupy_copy__float32_float32,1,3.616,7,128,16,127401984,3.872
+dwbench:tail:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,10,256,23,127401984,3.691
+dwbench:tail:negative:B:2,cupy_copy__float32_float32,1,4.608,8,128,21,127401984,3.077
+dwbench:tail:negative:B:2,ampere_sgemm_32x128_nn,1,16.0,1,256,57,127401984,3.452
+dwbench:tail:slice:A:0,im2col,1,5.344,19,128,32,127401984,4.013
+dwbench:tail:slice:A:0,cupy_copy__float32_float32,1,4.16,8,128,16,127401984,3.733
+dwbench:tail:slice:A:0,cupy_copy__float32_float32,1,4.352,19,128,16,127401984,3.17
+dwbench:tail:slice:A:0,ampere_sgemm_32x128_nt,1,16.384,1,256,57,127401984,3.579
+dwbench:tail:slice:B:0,cupy_copy__float32_float32,1,3.52,7,128,18,127401984,4.038
+dwbench:tail:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,10,256,23,127401984,3.95
+dwbench:tail:slice:B:0,cupy_copy__float32_float32,1,4.128,8,128,16,127401984,3.237
+dwbench:tail:slice:B:0,ampere_sgemm_32x128_nn,1,15.712,1,256,57,127401984,3.421
+dwbench:tail:slice:B:1,cupy_copy__float32_float32,1,3.552,7,128,18,127401984,3.48
+dwbench:tail:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,10,256,23,127401984,3.631
+dwbench:tail:slice:B:1,cupy_copy__float32_float32,1,4.096,8,128,16,127401984,3.116
+dwbench:tail:slice:B:1,ampere_sgemm_32x128_nn,1,15.68,1,256,57,127401984,3.452
+dwbench:tail:slice:A:1,im2col,1,5.344,19,128,32,127401984,3.635
+dwbench:tail:slice:A:1,cupy_copy__float32_float32,1,4.16,8,128,16,127401984,3.369
+dwbench:tail:slice:A:1,cupy_copy__float32_float32,1,4.384,19,128,16,127401984,2.989
+dwbench:tail:slice:A:1,ampere_sgemm_32x128_nt,1,16.352,1,256,57,127401984,3.568
+dwbench:tail:slice:A:2,im2col,1,5.344,19,128,32,127401984,3.549
+dwbench:tail:slice:A:2,cupy_copy__float32_float32,1,4.16,8,128,16,127401984,3.87
+dwbench:tail:slice:A:2,cupy_copy__float32_float32,1,4.384,19,128,16,127401984,3.081
+dwbench:tail:slice:A:2,ampere_sgemm_32x128_nt,1,16.32,1,256,57,127401984,3.584
+dwbench:tail:slice:B:2,cupy_copy__float32_float32,1,3.552,7,128,18,127401984,3.813
+dwbench:tail:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.8,10,256,23,127401984,3.984
+dwbench:tail:slice:B:2,cupy_copy__float32_float32,1,4.096,8,128,16,127401984,3.257
+dwbench:tail:slice:B:2,ampere_sgemm_32x128_nn,1,15.68,1,256,57,127401984,3.402
+dwbench:hold1:contiguous:A:0,im2col,1,5.472,75,128,32,127401984,4.238
+dwbench:hold1:contiguous:A:0,cupy_copy__float32_float32,1,4.192,25,128,16,127401984,4.339
+dwbench:hold1:contiguous:A:0,cupy_copy__float32_float32,1,4.672,75,128,16,127401984,3.528
+dwbench:hold1:contiguous:A:0,ampere_sgemm_32x128_nt,1,28.256,2,256,57,127401984,3.736
+dwbench:hold1:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.896,38,256,23,127401984,4.603
+dwbench:hold1:contiguous:B:0,cupy_copy__float32_float32,1,4.0,25,128,16,127401984,3.374
+dwbench:hold1:contiguous:B:0,ampere_sgemm_32x128_nn,1,28.288,2,256,57,127401984,3.559
+dwbench:hold1:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.864,38,256,23,127401984,4.186
+dwbench:hold1:contiguous:B:1,cupy_copy__float32_float32,1,4.032,25,128,16,127401984,3.574
+dwbench:hold1:contiguous:B:1,ampere_sgemm_32x128_nn,1,28.192,2,256,57,127401984,3.553
+dwbench:hold1:contiguous:A:1,im2col,1,5.472,75,128,32,127401984,3.834
+dwbench:hold1:contiguous:A:1,cupy_copy__float32_float32,1,4.256,25,128,16,127401984,3.856
+dwbench:hold1:contiguous:A:1,cupy_copy__float32_float32,1,4.64,75,128,16,127401984,3.234
+dwbench:hold1:contiguous:A:1,ampere_sgemm_32x128_nt,1,28.352,2,256,57,127401984,3.533
+dwbench:hold1:contiguous:A:2,im2col,1,5.408,75,128,32,127401984,3.748
+dwbench:hold1:contiguous:A:2,cupy_copy__float32_float32,1,4.192,25,128,16,127401984,3.97
+dwbench:hold1:contiguous:A:2,cupy_copy__float32_float32,1,4.704,75,128,16,127401984,3.351
+dwbench:hold1:contiguous:A:2,ampere_sgemm_32x128_nt,1,28.256,2,256,57,127401984,3.555
+dwbench:hold1:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.928,38,256,23,127401984,4.838
+dwbench:hold1:contiguous:B:2,cupy_copy__float32_float32,1,4.0,25,128,16,127401984,3.449
+dwbench:hold1:contiguous:B:2,ampere_sgemm_32x128_nn,1,28.192,2,256,57,127401984,3.64
+dwbench:hold1:negative:A:0,im2col,1,5.76,75,128,32,127401984,4.192
+dwbench:hold1:negative:A:0,cupy_copy__float32_float32,1,4.704,25,128,21,127401984,3.896
+dwbench:hold1:negative:A:0,cupy_copy__float32_float32,1,4.768,75,128,16,127401984,3.3
+dwbench:hold1:negative:A:0,ampere_sgemm_32x128_nt,1,28.544,2,256,57,127401984,3.582
+dwbench:hold1:negative:B:0,cupy_copy__float32_float32,1,3.904,39,128,16,127401984,3.541
+dwbench:hold1:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.12,38,256,23,127401984,3.971
+dwbench:hold1:negative:B:0,cupy_copy__float32_float32,1,4.448,25,128,21,127401984,3.274
+dwbench:hold1:negative:B:0,ampere_sgemm_32x128_nn,1,28.416,2,256,57,127401984,3.481
+dwbench:hold1:negative:B:1,cupy_copy__float32_float32,1,3.872,39,128,16,127401984,3.515
+dwbench:hold1:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.056,38,256,23,127401984,3.687
+dwbench:hold1:negative:B:1,cupy_copy__float32_float32,1,4.512,25,128,21,127401984,3.218
+dwbench:hold1:negative:B:1,ampere_sgemm_32x128_nn,1,28.256,2,256,57,127401984,3.672
+dwbench:hold1:negative:A:1,im2col,1,5.728,75,128,32,127401984,3.593
+dwbench:hold1:negative:A:1,cupy_copy__float32_float32,1,4.736,25,128,21,127401984,3.535
+dwbench:hold1:negative:A:1,cupy_copy__float32_float32,1,4.736,75,128,16,127401984,3.192
+dwbench:hold1:negative:A:1,ampere_sgemm_32x128_nt,1,28.576,2,256,57,127401984,3.57
+dwbench:hold1:negative:A:2,im2col,1,5.728,75,128,32,127401984,3.99
+dwbench:hold1:negative:A:2,cupy_copy__float32_float32,1,4.672,25,128,21,127401984,3.712
+dwbench:hold1:negative:A:2,cupy_copy__float32_float32,1,4.704,75,128,16,127401984,3.193
+dwbench:hold1:negative:A:2,ampere_sgemm_32x128_nt,1,28.416,2,256,57,127401984,3.666
+dwbench:hold1:negative:B:2,cupy_copy__float32_float32,1,3.904,39,128,16,127401984,3.849
+dwbench:hold1:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.12,38,256,23,127401984,3.893
+dwbench:hold1:negative:B:2,cupy_copy__float32_float32,1,4.512,25,128,21,127401984,3.468
+dwbench:hold1:negative:B:2,ampere_sgemm_32x128_nn,1,28.32,2,256,57,127401984,3.743
+dwbench:hold1:slice:A:0,im2col,1,5.536,75,128,32,127401984,3.885
+dwbench:hold1:slice:A:0,cupy_copy__float32_float32,1,4.256,25,128,16,127401984,3.798
+dwbench:hold1:slice:A:0,cupy_copy__float32_float32,1,4.672,75,128,16,127401984,3.701
+dwbench:hold1:slice:A:0,ampere_sgemm_32x128_nt,1,28.896,2,256,57,127401984,3.66
+dwbench:hold1:slice:B:0,cupy_copy__float32_float32,1,3.616,39,128,18,127401984,3.648
+dwbench:hold1:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.12,38,256,23,127401984,3.901
+dwbench:hold1:slice:B:0,cupy_copy__float32_float32,1,4.032,25,128,16,127401984,3.711
+dwbench:hold1:slice:B:0,ampere_sgemm_32x128_nn,1,28.288,2,256,57,127401984,3.587
+dwbench:hold1:slice:B:1,cupy_copy__float32_float32,1,3.648,39,128,18,127401984,3.841
+dwbench:hold1:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.056,38,256,23,127401984,3.836
+dwbench:hold1:slice:B:1,cupy_copy__float32_float32,1,4.032,25,128,16,127401984,3.442
+dwbench:hold1:slice:B:1,ampere_sgemm_32x128_nn,1,28.16,2,256,57,127401984,3.451
+dwbench:hold1:slice:A:1,im2col,1,5.472,75,128,32,127401984,3.542
+dwbench:hold1:slice:A:1,cupy_copy__float32_float32,1,4.224,25,128,16,127401984,3.552
+dwbench:hold1:slice:A:1,cupy_copy__float32_float32,1,4.672,75,128,16,127401984,3.605
+dwbench:hold1:slice:A:1,ampere_sgemm_32x128_nt,1,28.8,2,256,57,127401984,3.492
+dwbench:hold1:slice:A:2,im2col,1,5.536,75,128,32,127401984,3.977
+dwbench:hold1:slice:A:2,cupy_copy__float32_float32,1,4.256,25,128,16,127401984,4.245
+dwbench:hold1:slice:A:2,cupy_copy__float32_float32,1,4.672,75,128,16,127401984,3.134
+dwbench:hold1:slice:A:2,ampere_sgemm_32x128_nt,1,28.704,2,256,57,127401984,3.586
+dwbench:hold1:slice:B:2,cupy_copy__float32_float32,1,3.648,39,128,18,127401984,3.603
+dwbench:hold1:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.152,38,256,23,127401984,4.237
+dwbench:hold1:slice:B:2,cupy_copy__float32_float32,1,4.032,25,128,16,127401984,3.283
+dwbench:hold1:slice:B:2,ampere_sgemm_32x128_nn,1,28.224,2,256,57,127401984,3.467
+dwbench:hold2:contiguous:A:0,im2col,1,5.344,28,128,32,127401984,4.274
+dwbench:hold2:contiguous:A:0,ampere_sgemm_32x32_sliced1x4_tn,1,10.432,3,128,86,127401984,4.209
+dwbench:hold2:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.864,14,256,23,127401984,4.388
+dwbench:hold2:contiguous:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,10.432,3,128,86,127401984,3.796
+dwbench:hold2:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.864,14,256,23,127401984,4.176
+dwbench:hold2:contiguous:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,10.368,3,128,86,127401984,3.557
+dwbench:hold2:contiguous:A:1,im2col,1,5.376,28,128,32,127401984,3.975
+dwbench:hold2:contiguous:A:1,ampere_sgemm_32x32_sliced1x4_tn,1,10.528,3,128,86,127401984,4.133
+dwbench:hold2:contiguous:A:2,im2col,1,5.376,28,128,32,127401984,3.87
+dwbench:hold2:contiguous:A:2,ampere_sgemm_32x32_sliced1x4_tn,1,10.24,3,128,86,127401984,3.913
+dwbench:hold2:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.832,14,256,23,127401984,4.455
+dwbench:hold2:contiguous:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,10.4,3,128,86,127401984,3.639
+dwbench:hold2:negative:A:0,im2col,1,5.504,28,128,32,127401984,4.077
+dwbench:hold2:negative:A:0,cupy_copy__float32_float32,1,4.128,7,128,16,127401984,3.919
+dwbench:hold2:negative:A:0,ampere_sgemm_32x32_sliced1x4_tt,1,10.88,3,128,86,127401984,3.842
+dwbench:hold2:negative:B:0,cupy_copy__float32_float32,1,3.904,17,128,16,127401984,4.068
+dwbench:hold2:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.056,14,256,23,127401984,3.987
+dwbench:hold2:negative:B:0,cupy_copy__float32_float32,1,3.84,7,128,16,127401984,3.264
+dwbench:hold2:negative:B:0,ampere_sgemm_32x32_sliced1x4_nn,1,10.784,3,128,86,127401984,3.467
+dwbench:hold2:negative:B:1,cupy_copy__float32_float32,1,3.872,17,128,16,127401984,3.631
+dwbench:hold2:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.024,14,256,23,127401984,3.85
+dwbench:hold2:negative:B:1,cupy_copy__float32_float32,1,3.808,7,128,16,127401984,3.329
+dwbench:hold2:negative:B:1,ampere_sgemm_32x32_sliced1x4_nn,1,10.56,3,128,86,127401984,3.797
+dwbench:hold2:negative:A:1,im2col,1,5.536,28,128,32,127401984,3.77
+dwbench:hold2:negative:A:1,cupy_copy__float32_float32,1,4.128,7,128,16,127401984,4.138
+dwbench:hold2:negative:A:1,ampere_sgemm_32x32_sliced1x4_tt,1,10.88,3,128,86,127401984,3.758
+dwbench:hold2:negative:A:2,im2col,1,5.536,28,128,32,127401984,3.815
+dwbench:hold2:negative:A:2,cupy_copy__float32_float32,1,4.128,7,128,16,127401984,3.865
+dwbench:hold2:negative:A:2,ampere_sgemm_32x32_sliced1x4_tt,1,10.464,3,128,86,127401984,3.639
+dwbench:hold2:negative:B:2,cupy_copy__float32_float32,1,3.936,17,128,16,127401984,3.977
+dwbench:hold2:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.024,14,256,23,127401984,3.936
+dwbench:hold2:negative:B:2,cupy_copy__float32_float32,1,3.872,7,128,16,127401984,3.113
+dwbench:hold2:negative:B:2,ampere_sgemm_32x32_sliced1x4_nn,1,10.752,3,128,86,127401984,3.567
+dwbench:hold2:slice:A:0,im2col,1,5.344,28,128,32,127401984,3.903
+dwbench:hold2:slice:A:0,cupy_copy__float32_float32,1,3.872,7,128,16,127401984,3.831
+dwbench:hold2:slice:A:0,ampere_sgemm_32x32_sliced1x4_tt,1,10.784,3,128,86,127401984,3.816
+dwbench:hold2:slice:B:0,cupy_copy__float32_float32,1,3.584,17,128,18,127401984,4.099
+dwbench:hold2:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.992,14,256,23,127401984,4.064
+dwbench:hold2:slice:B:0,cupy_copy__float32_float32,1,3.904,7,128,16,127401984,3.414
+dwbench:hold2:slice:B:0,ampere_sgemm_32x32_sliced1x4_nt,1,10.976,3,128,86,127401984,3.709
+dwbench:hold2:slice:B:1,cupy_copy__float32_float32,1,3.584,17,128,18,127401984,3.793
+dwbench:hold2:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.024,14,256,23,127401984,3.742
+dwbench:hold2:slice:B:1,cupy_copy__float32_float32,1,3.904,7,128,16,127401984,3.396
+dwbench:hold2:slice:B:1,ampere_sgemm_32x32_sliced1x4_nt,1,10.688,3,128,86,127401984,3.537
+dwbench:hold2:slice:A:1,im2col,1,5.312,28,128,32,127401984,3.609
+dwbench:hold2:slice:A:1,cupy_copy__float32_float32,1,3.936,7,128,16,127401984,3.411
+dwbench:hold2:slice:A:1,ampere_sgemm_32x32_sliced1x4_tt,1,10.816,3,128,86,127401984,3.652
+dwbench:hold2:slice:A:2,im2col,1,5.344,28,128,32,127401984,3.46
+dwbench:hold2:slice:A:2,cupy_copy__float32_float32,1,3.904,7,128,16,127401984,3.308
+dwbench:hold2:slice:A:2,ampere_sgemm_32x32_sliced1x4_tt,1,10.464,3,128,86,127401984,3.883
+dwbench:hold2:slice:B:2,cupy_copy__float32_float32,1,3.616,17,128,18,127401984,3.54
+dwbench:hold2:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,5.024,14,256,23,127401984,3.752
+dwbench:hold2:slice:B:2,cupy_copy__float32_float32,1,3.968,7,128,16,127401984,3.149
+dwbench:hold2:slice:B:2,ampere_sgemm_32x32_sliced1x4_nt,1,10.976,3,128,86,127401984,3.32
+dwbench:hold3:contiguous:A:0,im2col,1,5.312,13,128,32,127401984,4.064
+dwbench:hold3:contiguous:A:0,cupy_copy__float32_float32,2,8.416,13,128,16,127401984,7.470000000000001
+dwbench:hold3:contiguous:A:0,ampere_sgemm_32x128_nt,1,31.361,1,256,57,127401984,4.157
+dwbench:hold3:contiguous:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.768,7,256,23,127401984,4.794
+dwbench:hold3:contiguous:B:0,cupy_copy__float32_float32,1,4.064,13,128,16,127401984,3.669
+dwbench:hold3:contiguous:B:0,ampere_sgemm_32x128_nn,1,30.784,1,256,57,127401984,3.494
+dwbench:hold3:contiguous:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.832,7,256,23,127401984,4.209
+dwbench:hold3:contiguous:B:1,cupy_copy__float32_float32,1,4.064,13,128,16,127401984,3.322
+dwbench:hold3:contiguous:B:1,ampere_sgemm_32x128_nn,1,30.784,1,256,57,127401984,3.614
+dwbench:hold3:contiguous:A:1,im2col,1,5.248,13,128,32,127401984,3.921
+dwbench:hold3:contiguous:A:1,cupy_copy__float32_float32,2,8.416,13,128,16,127401984,6.814
+dwbench:hold3:contiguous:A:1,ampere_sgemm_32x128_nt,1,31.36,1,256,57,127401984,3.553
+dwbench:hold3:contiguous:A:2,im2col,1,5.216,13,128,32,127401984,3.94
+dwbench:hold3:contiguous:A:2,cupy_copy__float32_float32,2,8.384,13,128,16,127401984,6.756
+dwbench:hold3:contiguous:A:2,ampere_sgemm_32x128_nt,1,31.392,1,256,57,127401984,3.371
+dwbench:hold3:contiguous:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.8,7,256,23,127401984,4.168
+dwbench:hold3:contiguous:B:2,cupy_copy__float32_float32,1,4.064,13,128,16,127401984,3.315
+dwbench:hold3:contiguous:B:2,ampere_sgemm_32x128_nn,1,30.848,1,256,57,127401984,3.472
+dwbench:hold3:negative:A:0,im2col,1,5.472,13,128,32,127401984,3.614
+dwbench:hold3:negative:A:0,cupy_copy__float32_float32,1,4.8,13,128,21,127401984,3.755
+dwbench:hold3:negative:A:0,cupy_copy__float32_float32,1,4.256,13,128,16,127401984,3.257
+dwbench:hold3:negative:A:0,ampere_sgemm_32x128_nt,1,31.072,1,256,57,127401984,3.693
+dwbench:hold3:negative:B:0,cupy_copy__float32_float32,1,3.84,8,128,16,127401984,3.533
+dwbench:hold3:negative:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.992,7,256,23,127401984,4.089
+dwbench:hold3:negative:B:0,cupy_copy__float32_float32,1,4.736,13,128,21,127401984,3.606
+dwbench:hold3:negative:B:0,ampere_sgemm_32x128_nn,1,31.552,1,256,57,127401984,3.498
+dwbench:hold3:negative:B:1,cupy_copy__float32_float32,1,3.808,8,128,16,127401984,3.593
+dwbench:hold3:negative:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.992,7,256,23,127401984,3.767
+dwbench:hold3:negative:B:1,cupy_copy__float32_float32,1,4.768,13,128,21,127401984,3.369
+dwbench:hold3:negative:B:1,ampere_sgemm_32x128_nn,1,31.424,1,256,57,127401984,3.617
+dwbench:hold3:negative:A:1,im2col,1,5.472,13,128,32,127401984,3.74
+dwbench:hold3:negative:A:1,cupy_copy__float32_float32,1,4.768,13,128,21,127401984,3.824
+dwbench:hold3:negative:A:1,cupy_copy__float32_float32,1,4.288,13,128,16,127401984,3.174
+dwbench:hold3:negative:A:1,ampere_sgemm_32x128_nt,1,31.072,1,256,57,127401984,3.586
+dwbench:hold3:negative:A:2,im2col,1,5.472,13,128,32,127401984,3.861
+dwbench:hold3:negative:A:2,cupy_copy__float32_float32,1,4.768,13,128,21,127401984,3.723
+dwbench:hold3:negative:A:2,cupy_copy__float32_float32,1,4.288,13,128,16,127401984,3.407
+dwbench:hold3:negative:A:2,ampere_sgemm_32x128_nt,1,31.008,1,256,57,127401984,3.418
+dwbench:hold3:negative:B:2,cupy_copy__float32_float32,1,3.84,8,128,16,127401984,4.014
+dwbench:hold3:negative:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.96,7,256,23,127401984,4.144
+dwbench:hold3:negative:B:2,cupy_copy__float32_float32,1,4.736,13,128,21,127401984,3.463
+dwbench:hold3:negative:B:2,ampere_sgemm_32x128_nn,1,31.584,1,256,57,127401984,3.649
+dwbench:hold3:slice:A:0,im2col,1,5.248,13,128,32,127401984,3.936
+dwbench:hold3:slice:A:0,cupy_copy__float32_float32,2,8.416,13,128,16,127401984,13.385000000000002
+dwbench:hold3:slice:A:0,ampere_sgemm_32x128_nt,1,31.04,1,256,57,127401984,3.595
+dwbench:hold3:slice:B:0,cupy_copy__float32_float32,1,3.584,8,128,18,127401984,3.735
+dwbench:hold3:slice:B:0,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.96,7,256,23,127401984,4.041
+dwbench:hold3:slice:B:0,cupy_copy__float32_float32,1,4.16,13,128,16,127401984,3.11
+dwbench:hold3:slice:B:0,ampere_sgemm_32x128_nn,1,31.136,1,256,57,127401984,3.561
+dwbench:hold3:slice:B:1,cupy_copy__float32_float32,1,3.552,8,128,18,127401984,3.741
+dwbench:hold3:slice:B:1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.992,7,256,23,127401984,3.894
+dwbench:hold3:slice:B:1,cupy_copy__float32_float32,1,4.096,13,128,16,127401984,3.235
+dwbench:hold3:slice:B:1,ampere_sgemm_32x128_nn,1,31.168,1,256,57,127401984,3.627
+dwbench:hold3:slice:A:1,im2col,1,5.28,13,128,32,127401984,3.509
+dwbench:hold3:slice:A:1,cupy_copy__float32_float32,2,8.384,13,128,16,127401984,6.833
+dwbench:hold3:slice:A:1,ampere_sgemm_32x128_nt,1,31.2,1,256,57,127401984,3.53
+dwbench:hold3:slice:A:2,im2col,1,5.248,13,128,32,127401984,3.659
+dwbench:hold3:slice:A:2,cupy_copy__float32_float32,2,8.384,13,128,16,127401984,6.546
+dwbench:hold3:slice:A:2,ampere_sgemm_32x128_nt,1,30.976,1,256,57,127401984,3.46
+dwbench:hold3:slice:B:2,cupy_copy__float32_float32,1,3.584,8,128,18,127401984,4.178
+dwbench:hold3:slice:B:2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,4.992,7,256,23,127401984,3.953
+dwbench:hold3:slice:B:2,cupy_copy__float32_float32,1,4.096,13,128,16,127401984,3.238
+dwbench:hold3:slice:B:2,ampere_sgemm_32x128_nn,1,31.136,1,256,57,127401984,3.367
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,4.352,338,128,18,127401984,4.265
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,4.672,338,128,22,127401984,3.369
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,2.848,1,48,18,127401984,3.14
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,2.912,1,48,22,127401984,2.983
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,4.064,169,128,18,127401984,3.0
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,4.384,169,128,22,127401984,2.944
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,2.88,1,36,18,127401984,2.979
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,2.912,1,36,22,127401984,2.994
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,4.16,288,128,18,127401984,3.063
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,4.544,288,128,22,127401984,2.932
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,2,5.6,1,64,18,127401984,5.974
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,2,5.824,1,64,22,127401984,6.222
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,4.096,216,128,18,127401984,2.887
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,4.448,216,128,22,127401984,2.979
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,4.832,900,128,18,127401984,2.931
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,5.088,900,128,22,127401984,2.913
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,2.816,1,100,18,127401984,2.852
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,2.912,1,100,22,127401984,2.943
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,2,5.632,1,50,18,127401984,5.759
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,2,5.792,1,50,22,127401984,5.793
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,2.912,1,1,18,127401984,2.889
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,3.072,1,1,22,127401984,2.91
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,3.616,40,128,18,127401984,2.848
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,4.0,40,128,22,127401984,2.895
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,3.584,15,128,18,127401984,2.974
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,3.872,15,128,22,127401984,2.998
+sgdbench:legacy:0,cupy_multiply__float_float32_float32,1,2.944,1,24,18,127401984,2.987
+sgdbench:legacy:0,cupy_subtract__float32_float32_float32,1,3.264,1,24,22,127401984,2.963
+sgdbench:prototype_rejected:0,"sgd_multi_kernel(SgdBatch, float)",1,8.736,799,256,24,127401984,4.577
+sgdbench:prototype_rejected:1,"sgd_multi_kernel(SgdBatch, float)",1,8.48,799,256,24,127401984,3.905
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,4.16,338,128,18,127401984,3.606
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,4.544,338,128,22,127401984,3.079
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,2.88,1,48,18,127401984,3.186
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,2.912,1,48,22,127401984,2.955
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,4.032,169,128,18,127401984,2.911
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,4.448,169,128,22,127401984,3.068
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,2.816,1,36,18,127401984,2.916
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,2.88,1,36,22,127401984,3.044
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,4.16,288,128,18,127401984,3.04
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,4.512,288,128,22,127401984,3.095
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,2,5.664,1,64,18,127401984,5.994999999999999
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,2,5.792,1,64,22,127401984,6.203
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,4.096,216,128,18,127401984,2.924
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,4.416,216,128,22,127401984,3.175
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,4.8,900,128,18,127401984,2.902
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,5.152,900,128,22,127401984,2.949
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,2.816,1,100,18,127401984,2.894
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,2.88,1,100,22,127401984,2.887
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,2,5.4399999999999995,1,50,18,127401984,5.802
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,2,5.664,1,50,22,127401984,5.779999999999999
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,2.944,1,1,18,127401984,2.992
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,3.04,1,1,22,127401984,2.949
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,3.648,40,128,18,127401984,2.998
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,4.0,40,128,22,127401984,3.025
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,3.616,15,128,18,127401984,2.953
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,3.84,15,128,22,127401984,3.214
+sgdbench:legacy:1,cupy_multiply__float_float32_float32,1,2.976,1,24,18,127401984,2.994
+sgdbench:legacy:1,cupy_subtract__float32_float32_float32,1,3.264,1,24,22,127401984,3.116
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,4.224,338,128,18,127401984,3.22
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,4.384,338,128,22,127401984,2.939
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,2.848,1,48,18,127401984,2.967
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,2.72,1,48,22,127401984,2.874
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,4.032,169,128,18,127401984,2.909
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,4.288,169,128,22,127401984,3.132
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,2.88,1,36,18,127401984,2.85
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,2.72,1,36,22,127401984,2.984
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,4.192,288,128,18,127401984,2.836
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,4.352,288,128,22,127401984,3.114
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,2,5.248,1,64,18,127401984,5.855
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,2,5.44,1,64,22,127401984,5.929
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,4.096,216,128,18,127401984,2.884
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,4.32,216,128,22,127401984,2.864
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,4.8,900,128,18,127401984,2.943
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,5.024,900,128,22,127401984,2.892
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,2.624,1,100,18,127401984,2.878
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,2.752,1,100,22,127401984,2.934
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,2,5.184,1,50,18,127401984,5.697
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,2,5.504,1,50,22,127401984,5.915
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,2.72,1,1,18,127401984,2.844
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,2.848,1,1,22,127401984,2.848
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,3.648,40,128,18,127401984,3.018
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,3.776,40,128,22,127401984,5.204
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,3.552,15,128,18,127401984,2.963
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,3.648,15,128,22,127401984,2.923
+sgdbench:legacy:2,cupy_multiply__float_float32_float32,1,2.976,1,24,18,127401984,2.996
+sgdbench:legacy:2,cupy_subtract__float32_float32_float32,1,3.041,1,24,22,127401984,2.909
+sgdbench:prototype_rejected:2,"sgd_multi_kernel(SgdBatch, float)",1,8.896,799,256,24,127401984,4.14

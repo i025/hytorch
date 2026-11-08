@@ -1,0 +1,52 @@
+{
+  "enabled": true,
+  "timing": true,
+  "resources": true,
+  "mode": "throughput",
+  "cuda_backend": "cupy",
+  "logical_cuda_index": 0,
+  "cuda_visible_devices": "1",
+  "resolved_selector": [
+    "pci",
+    "0000:E1:00.0"
+  ],
+  "gpu_event_status": "ENABLED",
+  "run_dir": "runs/a100_20261108/training_monitor/raw/cli_donkey_gpu/monitor/run_yerzy6t6",
+  "steps": 192,
+  "sample_count": 4,
+  "sample_interval_s": 0.2,
+  "sampled_peaks_bytes": {
+    "gpu_used_bytes": 1037500416,
+    "process_gpu_used_bytes": 484442112,
+    "cupy_active_bytes": 17472512,
+    "cupy_reserved_bytes": 27750912,
+    "torch_allocated_bytes": null,
+    "torch_reserved_bytes": null
+  },
+  "peak_kind": "sampled maxima; not instantaneous/exact device peaks",
+  "allocator_tracked_peak": null,
+  "errors": [],
+  "mean_host_iteration_s": 0.004342310343749998,
+  "mean_completed_step_wall_s": null,
+  "mean_step_gpu_interval_s": 0.004330394682784876,
+  "phase_means_cpu_s": {
+    "data_load": 0.00012820083854166666,
+    "data_prepare": 4.6094687499999975e-06,
+    "h2d": 0.00020409678125,
+    "forward": 0.001011657255208333,
+    "loss": 0.00014341194270833324,
+    "backward": 0.0024037707395833338,
+    "optimizer": 0.0003654215104166668
+  },
+  "phase_means_gpu_event_s": {
+    "data_load": null,
+    "data_prepare": null,
+    "h2d": 0.00019224400096572947,
+    "forward": 0.0010051783348123235,
+    "loss": 0.00013693866727408028,
+    "backward": 0.002399423996607463,
+    "optimizer": 0.0003587466675477723
+  },
+  "run_completed_wall_s": 0.8533806,
+  "event_limitation": "stream intervals include idle gaps; concurrent streams may overlap; do not sum across streams"
+}

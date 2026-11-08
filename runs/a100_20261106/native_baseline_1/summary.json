@@ -1,0 +1,68 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 192,
+    "measured_step_total_s": 0.952657809946686,
+    "mean_step_s": 0.004961759426805656,
+    "samples_per_sec": 806.1656472883793,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 4,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 0.2,
+    "gpu_utilization_pct_mean": 28.0,
+    "gpu_utilization_pct_max": 36.0,
+    "gpu_memory_used_mib_mean": 499.0,
+    "gpu_memory_used_mib_max": 499.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 28.0,
+    "gpu_temperature_c_max": 28.0,
+    "gpu_power_w_mean": 46.63,
+    "gpu_power_w_max": 47.94,
+    "cpu_utilization_pct_mean": 1.2000000000000002,
+    "cpu_utilization_pct_max": 1.3,
+    "process_rss_mib_mean": 540.203125,
+    "process_rss_mib_max": 540.33203125,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266056381922681,
+      "train_wall_s": 0.3332880330272019,
+      "samples": 256,
+      "train_samples_per_sec": 768.1043860914925
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0004873677125942777,
+      "train_wall_s": 0.3229155200533569,
+      "samples": 256,
+      "train_samples_per_sec": 792.7770085429771
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126575373098603,
+      "train_wall_s": 0.3248335039243102,
+      "samples": 256,
+      "train_samples_per_sec": 788.0960458427676
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 1536,
+    "conv_im2col": 960
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": "3966bba37018bf878414e8d8764afc39aa706a4e2d2a157aa972d6a82df70184"
+}

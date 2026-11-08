@@ -1,0 +1,13 @@
+{
+  "python": "3.10.12",
+  "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+  "packages": {
+    "numpy": "2.2.6",
+    "cupy-cuda12x": "14.2.0",
+    "torch": "2.9.1",
+    "pytest": "9.2.0"
+  },
+  "tf32": "NVIDIA_TF32_OVERRIDE=0",
+  "data": "N(0,1), FP32, seeds42/123/501",
+  "gpu": "physical1 A100-PCIE-40GB"
+}

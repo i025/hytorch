@@ -1,0 +1,10 @@
+mode,batch,repeat,malloc_calls,peak_active_bytes,initial_active_bytes,after_clear_bytes,note
+torch,1,0,44545,30333440,21121536,21121536,includes parameter reset and result capture; diagnostic only
+torch,1,1,44545,30333440,21121536,21121536,includes parameter reset and result capture; diagnostic only
+torch,1,2,44545,30333440,21121536,21121536,includes parameter reset and result capture; diagnostic only
+torch,4,0,10945,33929216,21121536,21121536,includes parameter reset and result capture; diagnostic only
+torch,4,1,10945,33929216,21121536,21121536,includes parameter reset and result capture; diagnostic only
+torch,4,2,10945,33929216,21121536,21121536,includes parameter reset and result capture; diagnostic only
+torch,16,0,2737,58679296,21121536,21121536,includes parameter reset and result capture; diagnostic only
+torch,16,1,2737,58679296,21121536,21121536,includes parameter reset and result capture; diagnostic only
+torch,16,2,2737,58679296,21121536,21121536,includes parameter reset and result capture; diagnostic only

@@ -1,0 +1,3 @@
+mode,status,reason,forward_gpu_us,dweight_gpu_us,dinput_gpu_us,kernel_calls_per_step,im2col_calls_per_step,cuda_api_us,cpu_scheduling_us
+reuse_off,NOT_RUN,stopped_at_numerical_gate,,,,,,,
+reuse_on,NOT_RUN,stopped_at_numerical_gate,,,,,,,

@@ -1,0 +1,11 @@
+case,implementation,output,bitwise_equal,max_abs,rel_l2,failed
+tiny_actual_pool/direct,B0,0,True,0.0,0.0,0
+tiny_actual_pool/direct,O1,0,True,0.0,0.0,0
+tiny_actual_pool/raw,B0,0,True,0.0,0.0,0
+tiny_actual_pool/raw,O1,0,True,0.0,0.0,0
+tiny_actual_pool/forward,B0,0,True,0.0,0.0,0
+tiny_actual_pool/forward,O1,0,True,0.0,0.0,0
+tiny_actual_pool/forward,torch,0,True,0.0,0.0,0
+tiny_actual_pool/backward,B0,0,True,0.0,0.0,0
+tiny_actual_pool/backward,O1,0,True,0.0,0.0,0
+tiny_actual_pool/backward,torch,0,True,0.0,0.0,0

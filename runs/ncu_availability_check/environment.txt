@@ -1,0 +1,101 @@
+UTC: 2026-11-08T07:58:46.600062+00:00
+PATH: /home/xieminhui_pubuse/.local/bin:/usr/local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/home/xieminhui_pubuse/.codex/tmp/arg0/codex-arg07EPTSG:/home/xieminhui_pubuse/.local/bin:/home/xieminhui_pubuse/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/mellanox/doca/tools/:/opt/mellanox/doca/tools/
+$ which ncu
+exit_code=1
+
+$ bash -c ncu --version
+exit_code=127
+bash: line 1: ncu: command not found
+
+$ which nvcc
+exit_code=1
+
+$ bash -c nvcc --version
+exit_code=127
+bash: line 1: nvcc: command not found
+
+$ /usr/local/cuda/bin/nvcc --version
+exit_code=0
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2024 NVIDIA Corporation
+Built on Tue_Feb_27_16:19:38_PST_2024
+Cuda compilation tools, release 12.4, V12.4.99
+Build cuda_12.4.r12.4/compiler.33961263_0
+
+$ /opt/nvidia/nsight-compute/2025.2.1/ncu --version
+exit_code=0
+NVIDIA (R) Nsight Compute Command Line Profiler
+Copyright (c) 2018-2025 NVIDIA Corporation
+Version 2025.2.1.0 (build 35987062) (public-release)
+
+$ /usr/local/cuda/bin/ncu --version
+exit_code=0
+NVIDIA (R) Nsight Compute Command Line Profiler
+Copyright (c) 2018-2025 NVIDIA Corporation
+Version 2025.2.1.0 (build 35987062) (public-release)
+
+$ nvidia-smi
+exit_code=0
+Sun Nov  8 07:58:46 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:CA:00.0 Off |                    0 |
+| N/A   27C    P0             33W /  250W |   20543MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-PCIE-40GB          Off |   00000000:E1:00.0 Off |                    0 |
+| N/A   39C    P0             37W /  250W |    3009MiB /  40960MiB |      4%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          570250      C   VLLM::EngineCore                      20534MiB |
+|    1   N/A  N/A          575118      C   python                                 3000MiB |
++-----------------------------------------------------------------------------------------+
+
+$ nvidia-smi --query-gpu=index,uuid,name,utilization.gpu,memory.used,memory.total,driver_version,compute_mode --format=csv
+exit_code=0
+index, uuid, name, utilization.gpu [%], memory.used [MiB], memory.total [MiB], driver_version, compute_mode
+0, GPU-af2dc3da-4948-7c30-005b-1ab38ccd4863, NVIDIA A100-PCIE-40GB, 0 %, 20543 MiB, 40960 MiB, 580.95.05, Default
+1, GPU-0bc09ee6-967a-b53d-bf80-38379585cf08, NVIDIA A100-PCIE-40GB, 92 %, 3009 MiB, 40960 MiB, 580.95.05, Default
+
+$ nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_memory --format=csv
+exit_code=0
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-af2dc3da-4948-7c30-005b-1ab38ccd4863, 570250, VLLM::EngineCore, 20534 MiB
+GPU-0bc09ee6-967a-b53d-bf80-38379585cf08, 575118, python, 3000 MiB
+
+Resolved paths:
+/usr/local/cuda-12.9/bin/ncu -> /usr/local/cuda-12.9/bin/ncu
+/usr/local/cuda-12.9/bin/nvcc -> /usr/local/cuda-12.9/bin/nvcc
+/usr/local/cuda-13.1/bin/ncu -> /usr/local/cuda-13.1/bin/ncu
+/usr/local/cuda-13.1/bin/nvcc -> /usr/local/cuda-13.1/bin/nvcc
+/usr/local/cuda-12/bin/ncu -> /usr/local/cuda-12.9/bin/ncu
+/usr/local/cuda-12/bin/nvcc -> /usr/local/cuda-12.9/bin/nvcc
+/usr/local/cuda-12.0/bin/ncu -> /usr/local/cuda-12.0/bin/ncu
+/usr/local/cuda-12.0/bin/nvcc -> /usr/local/cuda-12.0/bin/nvcc
+/usr/local/cuda-12.1/bin/ncu -> /usr/local/cuda-12.1/bin/ncu
+/usr/local/cuda-12.1/bin/nvcc -> /usr/local/cuda-12.1/bin/nvcc
+/usr/local/cuda-11.8/bin/ncu -> /usr/local/cuda-11.8/bin/ncu
+/usr/local/cuda-11.8/bin/nvcc -> /usr/local/cuda-11.8/bin/nvcc
+/usr/local/cuda-13.0/bin/ncu -> /usr/local/cuda-13.0/bin/ncu
+/usr/local/cuda-13.0/bin/nvcc -> /usr/local/cuda-13.0/bin/nvcc
+/usr/local/cuda/bin/ncu -> /usr/local/cuda-12.4/bin/ncu
+/usr/local/cuda/bin/nvcc -> /usr/local/cuda-12.4/bin/nvcc
+/usr/local/cuda-12.4/bin/ncu -> /usr/local/cuda-12.4/bin/ncu
+/usr/local/cuda-12.4/bin/nvcc -> /usr/local/cuda-12.4/bin/nvcc
+
+RECHECK /home/xieminhui_pubuse/hytorch/runs/ncu_availability_check/recheck_20261108T082100Z
+index, uuid, name, utilization.gpu [%], memory.used [MiB], memory.total [MiB], driver_version
+0, GPU-af2dc3da-4948-7c30-005b-1ab38ccd4863, NVIDIA A100-PCIE-40GB, 0 %, 20543 MiB, 40960 MiB, 580.95.05
+1, GPU-0bc09ee6-967a-b53d-bf80-38379585cf08, NVIDIA A100-PCIE-40GB, 0 %, 0 MiB, 40960 MiB, 580.95.05
+

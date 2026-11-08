@@ -2,7 +2,7 @@
 
 供队友在 NVIDIA GPU 上编译、验证和运行课程实验的源码包。
 
-**当前状态：代码已在 Mac 完成主机侧检查，CUDA 编译和 GPU 正确性/性能尚未验收。不要把本仓库当作已获得加速结果的实验。**
+**当前状态：2026-11-08 已完成 A100 上的 FP32 backward 修复、shape-aware GEMM dispatch、Col2im/dWeight 与框架调用优化，以及可选 GPU 训练监控。最新完整回归为 347 passed、2 个已有 CPU skip；GPU 测试实际执行。各轮性能与数值限制分别记录，不能将单算子加速等同于端到端加速。真实数据训练和迁移学习尚未验收。详见 [实验结果索引](docs/实验结果索引.md)。**
 
 ## 队友第一次运行：只做这四步
 
@@ -122,7 +122,8 @@ python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/tes
 
 - [完整开发与 GPU 验收指南](docs/CUDA开发与GPU验收指南.md)
 - [Mac 上的验证记录](docs/CUDA验证记录.md)
+- [A100 算子、合成训练与优化记录](docs/A100复现与优化记录.md)
 - [核心修改清单](docs/CUDA修改清单.json)
-- `UPLOAD_MANIFEST.json`：本次上传文件及 SHA256，用于确认源码包内容。
+- `UPLOAD_MANIFEST.json`：原始上传源码包的文件及 SHA256，不代表后续优化版本。
 
-文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布；验证记录描述的是本机已做的检查。当前仓库只声明实现状态，不包含实测 GPU 加速结论。
+Mac 文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布。A100 实测结论、范围与未通过项见新的优化记录；原始 GPU 日志和动态库保存在实验服务器，未随 Git 发布。

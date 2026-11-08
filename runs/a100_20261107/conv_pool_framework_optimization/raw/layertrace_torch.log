@@ -1,0 +1,34 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+警告: 未找到scipy，无法加载SVHN数据集
+conv1/direct
+conv1/backward
+conv2/direct
+conv2/backward
+conv3/direct
+conv3/backward
+conv4/direct
+conv4/backward
+conv5/direct
+conv5/backward
+irregular/direct
+irregular/backward
+asymmetric/direct
+asymmetric/backward
+tiny_pool/forward
+tiny_pool/backward
+irregular_pool/forward
+irregular_pool/backward
+overlap_pool/forward
+overlap_pool/backward
+wide_pool/forward
+wide_pool/backward
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-ec02.qdstrm'
+[1/1] [0%                          ] layers_torch.nsys-repProcessing events...
+[1/1] [0%                          ] layers_torch.nsys-rep[1/1] [=16%                        ] layers_torch.nsys-rep[1/1] [=17%                        ] layers_torch.nsys-rep[1/1] [============55%             ] layers_torch.nsys-rep[1/1] [=======================94%  ] layers_torch.nsys-rep[1/1] [========================100%] layers_torch.nsys-rep[1/1] [========================100%] layers_torch.nsys-rep
+Generated:
+	/home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/traces/layers_torch.nsys-rep

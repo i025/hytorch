@@ -1,0 +1,20 @@
+{
+  "status": "BASIC_FAILED_INTERPROCESS_LOCK",
+  "run": "/home/xieminhui_pubuse/hytorch/runs/ncu_availability_check/recheck_20261108T082100Z",
+  "ncu_version": "2025.2.1.0",
+  "basic_executed": true,
+  "basic_exit_code": 9,
+  "kernel_recognized": "vectorized_elementwise_kernel",
+  "collected_metrics": 0,
+  "gemm_executed": false,
+  "error": "InterprocessLockFailed",
+  "lock": "/tmp/nsight-compute-lock",
+  "lock_uid": 1291600034,
+  "lock_mode": "0666",
+  "tmp_mode": "1777",
+  "current_uid": 1291600100,
+  "rm_profiling_admin_only": 0,
+  "performance_counter_permission_error_observed": false,
+  "fs_protected_regular_value": "unknown: reading denied",
+  "source_changes": false
+}

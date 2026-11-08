@@ -1,0 +1,1 @@
+{"timestamp": 1793928840.4026904, "gpu_id": "0000:E1:00.0", "scope": "whole_device", "gpu_utilization_pct": 0.0, "gpu_memory_used_mib": 437.0, "gpu_memory_total_mib": 40960.0, "gpu_temperature_c": 28.0, "gpu_power_w": 35.7, "cpu_utilization_pct": 0.7, "process_cpu_pct": 0.0, "process_rss_mib": 566.5546875}

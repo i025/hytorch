@@ -1,0 +1,8 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"tag": "formal", "model": "donkey", "framework": "hytorch", "mode": "disabled", "repeat": 0, "steps": 192, "samples": 768, "wall_s": 0.754092599, "training_window_s": 0.754088428, "samples_per_s": 1018.4425639748256, "training_window_samples_per_s": 1018.4481971655451, "monitor_setup_finalize_export_s": 4.171e-06, "loss": 0.00025566318072378635, "sample_count": 0, "interval_s": 0.2, "latency_diagnostic": false, "allocator_peak_diagnostic": false, "train_start_ns": 2680948311875473, "train_end_ns": 2680949065963901, "run_dir": ""}
+Traceback (most recent call last):
+  File "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/diagnostics/experiment.py", line 125, in <module>
+    results[mode]=e.run(mode,rep=rep);results[mode][0]['order']=pos
+  File "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/diagnostics/experiment.py", line 91, in run
+    target.append(dict(tag=tag,model=self.kind,framework=framework,mode=mode,repeat=rep,run_dir=row['run_dir'],train_start_ns=start_train,train_end_ns=end_train,inside_train=start_train<=tt<=end_train,**v))
+TypeError: dict() got multiple values for keyword argument 'mode'

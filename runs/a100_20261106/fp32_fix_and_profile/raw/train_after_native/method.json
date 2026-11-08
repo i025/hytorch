@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "batch": 4,
+  "samples": 256,
+  "epochs": 3,
+  "warmup": 10,
+  "repeats": 5,
+  "initial_hash": "d57a7e5d7a0c6b5080c3876c641143a6bd4726fa739a8ef25d9c27d70f1e4109",
+  "tf32_matmul": false,
+  "tf32_cudnn": false,
+  "cudnn_enabled": true,
+  "cudnn_deterministic": true,
+  "cudnn_benchmark": false,
+  "torch": "2.9.1+cu128",
+  "cupy": "14.2.0",
+  "lr": 0.001,
+  "dropout": 0,
+  "wall": "includes sequential host data loader, pageable H2D, all computation and final sync; no per-step logging/loss read/sync",
+  "nvtx": "phase annotations shared by every mode; CPU elapsed is not active CPU scheduling time"
+}

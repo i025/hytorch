@@ -1,0 +1,7 @@
+{
+  "hytorch/backends/cuda/kernels.cu": "303f6813fb1664435f4337edbe8e6db137d40aa7368e5c7741afb3eff3f175de",
+  "hytorch/functions.py": "b07918e6318aef94b57c69051bcfff58b41deaf756959c528c9f9bb8f94a56d8",
+  "hytorch/backends/cuda/runtime.py": "b978fc1a57cef39dcf6f9821a70cd63a90a97179583862e3a189ec7ccc56b0b1",
+  "tests/test_backward_dtype.py": "619e01a3c5efb32cede85f96ef7d7461b32b63187ebffaf2ff0e9389e111deaf",
+  "hytorch/backends/cuda/build/libhytorch_cuda.so": "5b93982d8c31438a033c7da6d43164a3389a15cf0e94baddc0e390df67199ec0"
+}

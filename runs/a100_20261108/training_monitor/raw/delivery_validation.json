@@ -1,0 +1,10 @@
+{
+  "total_runs": 62,
+  "formal_runs": 48,
+  "paired_repeats": 12,
+  "numerical_checks": 1884,
+  "failed_elements": 0,
+  "monitor_bitwise_equal": true,
+  "figures_png": 6,
+  "figures_svg": 6
+}

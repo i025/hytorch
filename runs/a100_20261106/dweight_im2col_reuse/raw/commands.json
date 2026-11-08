@@ -1,0 +1,121 @@
+{
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "CUDA_PATH": "/usr/local/cuda",
+    "LD_LIBRARY_PATH": "/usr/local/cuda/lib64",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "HYTORCH_REQUIRE_CUDA": "1",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "PYTHONHASHSEED": "0"
+  },
+  "commands": [
+    {
+      "name": "gpu_before",
+      "argv": [
+        "nvidia-smi"
+      ],
+      "start_utc": "2026-11-06T09:38:35.970576+00:00",
+      "end_utc": "2026-11-06T09:38:36.761733+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "baseline_gpu",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "-c",
+        "import torch,pytest,sys;sys.exit(pytest.main(sys.argv[1:]))",
+        "tests/test_cuda_device.py",
+        "tests/test_backward_dtype.py",
+        "tests/test_gemm_dispatch.py",
+        "tests/test_col2im_cuda.py",
+        "tests/test_col2im_binding.py",
+        "-k",
+        "not cpu",
+        "-q"
+      ],
+      "start_utc": "2026-11-06T09:38:36.808069+00:00",
+      "end_utc": "2026-11-06T09:38:42.575684+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "baseline_host",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "-c",
+        "import torch,pytest,sys;sys.exit(pytest.main(sys.argv[1:]))",
+        "tests/test_cuda_host.py",
+        "tests/test_conv2d_gemm_cpu.py",
+        "tests/test_gemm_blocked_packed.py",
+        "tests/test_col2im_host.py",
+        "tests/test_col2im_binding.py",
+        "-k",
+        "not cache_changes and not warm_cache and not legacy_col2im and not fast_abi",
+        "-q"
+      ],
+      "start_utc": "2026-11-06T09:38:42.576065+00:00",
+      "end_utc": "2026-11-06T09:38:46.190601+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "baseline_dtype_host",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "-c",
+        "import torch,pytest,sys;sys.exit(pytest.main(sys.argv[1:]))",
+        "tests/test_backward_dtype.py",
+        "-k",
+        "not cuda and not donkey",
+        "-q"
+      ],
+      "start_utc": "2026-11-06T09:38:46.190963+00:00",
+      "end_utc": "2026-11-06T09:38:48.684777+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "memcheck",
+      "argv": [
+        "/usr/local/cuda/bin/compute-sanitizer",
+        "--tool",
+        "memcheck",
+        "--error-exitcode",
+        "99",
+        "--target-processes",
+        "all",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/diagnostics/math_gate.py",
+        "memcheck"
+      ],
+      "start_utc": "2026-11-06T09:38:48.685304+00:00",
+      "end_utc": "2026-11-06T09:38:52.522564+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "racecheck",
+      "argv": [
+        "/usr/local/cuda/bin/compute-sanitizer",
+        "--tool",
+        "racecheck",
+        "--error-exitcode",
+        "99",
+        "--target-processes",
+        "all",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/dweight_im2col_reuse/diagnostics/math_gate.py",
+        "racecheck"
+      ],
+      "start_utc": "2026-11-06T09:38:52.522951+00:00",
+      "end_utc": "2026-11-06T09:39:17.163397+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "gpu_after",
+      "argv": [
+        "nvidia-smi"
+      ],
+      "start_utc": "2026-11-06T09:39:17.163801+00:00",
+      "end_utc": "2026-11-06T09:39:17.798485+00:00",
+      "returncode": 0
+    }
+  ]
+}

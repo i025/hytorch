@@ -1,0 +1,2 @@
+mode,repeat,steps,samples,wall_s,samples_per_s,loss,final_hash
+cupy,0,10,40,0.05304649192839861,754.055518958566,0.0010302267037332058,f52de64c5b7e927b64ff2dfa58aa0bd5a6d3ac812cad7ee325a47a10046f8ddd

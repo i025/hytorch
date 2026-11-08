@@ -84,9 +84,27 @@ class FreezeParam:
 # =============================================================================
 # 随机梯度下降法
 class SGD(Optimizer):
-    def __init__(self, lr=0.01):
+    def __init__(self, lr=0.01, backend="legacy"):
         super().__init__()
         self.lr = lr
+        if backend not in ("legacy", "native"):
+            raise ValueError("SGD backend must be legacy/native")
+        self.backend = backend
+
+    def update(self):
+        if type(self) is not SGD or self.backend != "native":
+            return super().update()
+        params = [p for p in self.target.params() if p.grad is not None]
+        for hook in self.hooks:
+            hook(params)
+        params = [p for p in params if p.grad is not None]
+        from hytorch.backends.cuda.runtime import sgd_multi
+        # Avoid importing/initializing a GPU for CPU-only models.
+        if params and cuda.get_array_module(params[0].data).__name__ == "cupy":
+            if sgd_multi(params, self.lr):
+                return
+        for param in params:
+            self.update_one(param)
 
     def update_one(self, param):  # 更新权重和偏移
         param.data -= self.lr * param.grad.data

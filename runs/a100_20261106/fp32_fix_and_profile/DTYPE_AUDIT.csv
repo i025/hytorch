@@ -1,0 +1,289 @@
+mode,layer,role,dtype,shape,strides,source,observation
+before_native,conv1,forward_activation,float32,"[4, 24, 31, 98]","[291648, 12152, 392, 4]",raw/before_workload/operators.json,actual tensor
+before_native,conv1,dInput,float64,"[4, 3, 66, 200]","[316800, 105600, 1600, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv1,dWeight,float64,"[24, 3, 5, 5]","[600, 200, 40, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv1,dBias,float64,[24],[8],raw/before_workload/operators.json,actual tensor
+before_native,conv2,forward_activation,float32,"[4, 36, 14, 47]","[94752, 2632, 188, 4]",raw/before_workload/operators.json,actual tensor
+before_native,conv2,dInput,float64,"[4, 24, 31, 98]","[583296, 24304, 784, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv2,dWeight,float64,"[36, 24, 5, 5]","[4800, 200, 40, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv2,dBias,float64,[36],[8],raw/before_workload/operators.json,actual tensor
+before_native,conv3,forward_activation,float32,"[4, 48, 5, 22]","[21120, 440, 88, 4]",raw/before_workload/operators.json,actual tensor
+before_native,conv3,dInput,float64,"[4, 36, 14, 47]","[189504, 5264, 376, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv3,dWeight,float64,"[48, 36, 5, 5]","[7200, 200, 40, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv3,dBias,float64,[48],[8],raw/before_workload/operators.json,actual tensor
+before_native,conv4,forward_activation,float32,"[4, 64, 3, 20]","[15360, 240, 80, 4]",raw/before_workload/operators.json,actual tensor
+before_native,conv4,dInput,float64,"[4, 48, 5, 22]","[42240, 880, 176, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv4,dWeight,float64,"[64, 48, 3, 3]","[3456, 72, 24, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv4,dBias,float64,[64],[8],raw/before_workload/operators.json,actual tensor
+before_native,conv5,forward_activation,float32,"[4, 64, 1, 18]","[4608, 72, 72, 4]",raw/before_workload/operators.json,actual tensor
+before_native,conv5,dInput,float64,"[4, 64, 3, 20]","[30720, 480, 160, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv5,dWeight,float64,"[64, 64, 3, 3]","[4608, 72, 24, 8]",raw/before_workload/operators.json,actual tensor
+before_native,conv5,dBias,float64,[64],[8],raw/before_workload/operators.json,actual tensor
+before_native,fc1,forward_activation,float32,"[4, 100]","[400, 4]",raw/before_workload/operators.json,actual tensor
+before_native,fc1,dInput,float64,"[4, 1152]","[9216, 8]",raw/before_workload/operators.json,actual tensor
+before_native,fc1,dWeight,float64,"[1152, 100]","[800, 8]",raw/before_workload/operators.json,actual tensor
+before_native,fc1,dBias,float64,[100],[8],raw/before_workload/operators.json,actual tensor
+before_native,fc2,forward_activation,float32,"[4, 50]","[200, 4]",raw/before_workload/operators.json,actual tensor
+before_native,fc2,dInput,float64,"[4, 100]","[800, 8]",raw/before_workload/operators.json,actual tensor
+before_native,fc2,dWeight,float64,"[100, 50]","[400, 8]",raw/before_workload/operators.json,actual tensor
+before_native,fc2,dBias,float64,[50],[8],raw/before_workload/operators.json,actual tensor
+before_native,fc3,forward_activation,float32,"[4, 1]","[4, 4]",raw/before_workload/operators.json,actual tensor
+before_native,fc3,dInput,float64,"[4, 50]","[400, 8]",raw/before_workload/operators.json,actual tensor
+before_native,fc3,dWeight,float64,"[50, 1]","[8, 8]",raw/before_workload/operators.json,actual tensor
+before_native,fc3,dBias,float64,[1],[8],raw/before_workload/operators.json,actual tensor
+after_native,conv1,forward_activation,float32,"[4, 24, 31, 98]","[291648, 12152, 392, 4]",raw/workload/operators.json,actual tensor
+after_native,conv1,dInput,float32,"[4, 3, 66, 200]","[158400, 52800, 800, 4]",raw/workload/operators.json,actual tensor
+after_native,conv1,dWeight,float32,"[24, 3, 5, 5]","[300, 100, 20, 4]",raw/workload/operators.json,actual tensor
+after_native,conv1,dBias,float32,[24],[4],raw/workload/operators.json,actual tensor
+after_native,conv2,forward_activation,float32,"[4, 36, 14, 47]","[94752, 2632, 188, 4]",raw/workload/operators.json,actual tensor
+after_native,conv2,dInput,float32,"[4, 24, 31, 98]","[291648, 12152, 392, 4]",raw/workload/operators.json,actual tensor
+after_native,conv2,dWeight,float32,"[36, 24, 5, 5]","[2400, 100, 20, 4]",raw/workload/operators.json,actual tensor
+after_native,conv2,dBias,float32,[36],[4],raw/workload/operators.json,actual tensor
+after_native,conv3,forward_activation,float32,"[4, 48, 5, 22]","[21120, 440, 88, 4]",raw/workload/operators.json,actual tensor
+after_native,conv3,dInput,float32,"[4, 36, 14, 47]","[94752, 2632, 188, 4]",raw/workload/operators.json,actual tensor
+after_native,conv3,dWeight,float32,"[48, 36, 5, 5]","[3600, 100, 20, 4]",raw/workload/operators.json,actual tensor
+after_native,conv3,dBias,float32,[48],[4],raw/workload/operators.json,actual tensor
+after_native,conv4,forward_activation,float32,"[4, 64, 3, 20]","[15360, 240, 80, 4]",raw/workload/operators.json,actual tensor
+after_native,conv4,dInput,float32,"[4, 48, 5, 22]","[21120, 440, 88, 4]",raw/workload/operators.json,actual tensor
+after_native,conv4,dWeight,float32,"[64, 48, 3, 3]","[1728, 36, 12, 4]",raw/workload/operators.json,actual tensor
+after_native,conv4,dBias,float32,[64],[4],raw/workload/operators.json,actual tensor
+after_native,conv5,forward_activation,float32,"[4, 64, 1, 18]","[4608, 72, 72, 4]",raw/workload/operators.json,actual tensor
+after_native,conv5,dInput,float32,"[4, 64, 3, 20]","[15360, 240, 80, 4]",raw/workload/operators.json,actual tensor
+after_native,conv5,dWeight,float32,"[64, 64, 3, 3]","[2304, 36, 12, 4]",raw/workload/operators.json,actual tensor
+after_native,conv5,dBias,float32,[64],[4],raw/workload/operators.json,actual tensor
+after_native,fc1,forward_activation,float32,"[4, 100]","[400, 4]",raw/workload/operators.json,actual tensor
+after_native,fc1,dInput,float32,"[4, 1152]","[4608, 4]",raw/workload/operators.json,actual tensor
+after_native,fc1,dWeight,float32,"[1152, 100]","[400, 4]",raw/workload/operators.json,actual tensor
+after_native,fc1,dBias,float32,[100],[4],raw/workload/operators.json,actual tensor
+after_native,fc2,forward_activation,float32,"[4, 50]","[200, 4]",raw/workload/operators.json,actual tensor
+after_native,fc2,dInput,float32,"[4, 100]","[400, 4]",raw/workload/operators.json,actual tensor
+after_native,fc2,dWeight,float32,"[100, 50]","[200, 4]",raw/workload/operators.json,actual tensor
+after_native,fc2,dBias,float32,[50],[4],raw/workload/operators.json,actual tensor
+after_native,fc3,forward_activation,float32,"[4, 1]","[4, 4]",raw/workload/operators.json,actual tensor
+after_native,fc3,dInput,float32,"[4, 50]","[200, 4]",raw/workload/operators.json,actual tensor
+after_native,fc3,dWeight,float32,"[50, 1]","[4, 4]",raw/workload/operators.json,actual tensor
+after_native,fc3,dBias,float32,[1],[4],raw/workload/operators.json,actual tensor
+after_cupy,conv1,forward_activation,float32,"[4, 24, 31, 98]","[291648, 4, 9408, 96]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv1,dInput,float32,"[4, 3, 66, 200]","[158400, 52800, 800, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv1,dWeight,float32,"[24, 3, 5, 5]","[300, 100, 20, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv1,dBias,float32,[24],[4],raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv2,forward_activation,float32,"[4, 36, 14, 47]","[94752, 4, 6768, 144]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv2,dInput,float32,"[4, 24, 31, 98]","[291648, 12152, 392, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv2,dWeight,float32,"[36, 24, 5, 5]","[2400, 100, 20, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv2,dBias,float32,[36],[4],raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv3,forward_activation,float32,"[4, 48, 5, 22]","[21120, 4, 4224, 192]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv3,dInput,float32,"[4, 36, 14, 47]","[94752, 2632, 188, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv3,dWeight,float32,"[48, 36, 5, 5]","[3600, 100, 20, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv3,dBias,float32,[48],[4],raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv4,forward_activation,float32,"[4, 64, 3, 20]","[15360, 4, 5120, 256]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv4,dInput,float32,"[4, 48, 5, 22]","[21120, 440, 88, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv4,dWeight,float32,"[64, 48, 3, 3]","[1728, 36, 12, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv4,dBias,float32,[64],[4],raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv5,forward_activation,float32,"[4, 64, 1, 18]","[4608, 4, 4608, 256]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv5,dInput,float32,"[4, 64, 3, 20]","[15360, 240, 80, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv5,dWeight,float32,"[64, 64, 3, 3]","[2304, 36, 12, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,conv5,dBias,float32,[64],[4],raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc1,forward_activation,float32,"[4, 100]","[400, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc1,dInput,float32,"[4, 1152]","[4608, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc1,dWeight,float32,"[1152, 100]","[400, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc1,dBias,float32,[100],[4],raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc2,forward_activation,float32,"[4, 50]","[200, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc2,dInput,float32,"[4, 100]","[400, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc2,dWeight,float32,"[100, 50]","[200, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc2,dBias,float32,[50],[4],raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc3,forward_activation,float32,"[4, 1]","[4, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc3,dInput,float32,"[4, 50]","[200, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc3,dWeight,float32,"[50, 1]","[4, 4]",raw/cupy_trace/operators.json,actual tensor
+after_cupy,fc3,dBias,float32,[1],[4],raw/cupy_trace/operators.json,actual tensor
+before_native,conv1/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv1/W,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv1/W,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv1/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv1/b,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv1/b,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv2/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv2/W,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv2/W,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv2/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv2/b,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv2/b,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv3/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv3/W,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv3/W,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv3/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv3/b,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv3/b,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv4/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv4/W,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv4/W,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv4/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv4/b,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv4/b,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv5/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv5/W,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv5/W,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv5/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv5/b,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,conv5/b,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc1/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc1/W,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc1/W,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc1/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc1/b,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc1/b,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc2/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc2/W,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc2/W,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc2/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc2/b,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc2/b,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc3/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc3/W,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc3/W,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc3/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc3/b,parameter_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+before_native,fc3/b,SGD_lr_times_grad,float64,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv1/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv1/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv1/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv1/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv1/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv1/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv2/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv2/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv2/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv2/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv2/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv2/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv3/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv3/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv3/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv3/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv3/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv3/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv4/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv4/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv4/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv4/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv4/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv4/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv5/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv5/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv5/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv5/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv5/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,conv5/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc1/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc1/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc1/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc1/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc1/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc1/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc2/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc2/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc2/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc2/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc2/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc2/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc3/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc3/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc3/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc3/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc3/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_native,fc3/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv1/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv1/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv1/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv1/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv1/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv1/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv2/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv2/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv2/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv2/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv2/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv2/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv3/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv3/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv3/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv3/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv3/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv3/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv4/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv4/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv4/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv4/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv4/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv4/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv5/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv5/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv5/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv5/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv5/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,conv5/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc1/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc1/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc1/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc1/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc1/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc1/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc2/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc2/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc2/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc2/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc2/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc2/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc3/W,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc3/W,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc3/W,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc3/b,parameter_after_update,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc3/b,parameter_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+after_cupy,fc3/b,SGD_lr_times_grad,float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv1/W,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv1/W,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv1/W,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv1/b,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv1/b,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv1/b,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv2/W,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv2/W,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv2/W,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv2/b,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv2/b,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv2/b,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv3/W,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv3/W,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv3/W,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv3/b,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv3/b,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv3/b,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv4/W,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv4/W,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv4/W,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv4/b,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv4/b,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv4/b,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv5/W,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv5/W,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv5/W,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv5/b,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv5/b,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,conv5/b,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc1/W,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc1/W,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc1/W,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc1/b,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc1/b,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc1/b,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc2/W,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc2/W,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc2/W,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc2/b,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc2/b,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc2/b,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc3/W,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc3/W,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc3/W,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc3/b,parameter_after_update,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc3/b,parameter_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"
+torch,fc3/b,SGD_lr_times_grad,torch.float32,,,raw/training/parameter_dtype.json,"actual expression dtype after training, outside timing"

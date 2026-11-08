@@ -1,0 +1,24 @@
+{
+  "args": {
+    "mode": "trace",
+    "backend": "cupy",
+    "steps": 10,
+    "output": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/raw/cupy_trace",
+    "events": false
+  },
+  "steps": 10,
+  "wall_s": 0.14337190799415112,
+  "loss": 0.0010302250739187002,
+  "checks": {},
+  "dispatch_counts": {},
+  "gpu": "b'NVIDIA A100-PCIE-40GB'",
+  "pci": "0000:E1:00.0",
+  "cupy": "14.2.0",
+  "numpy": "2.2.6",
+  "driver": 13000,
+  "runtime": 12090,
+  "memory_pool_used_bytes": 8358912,
+  "memory_pool_total_bytes": 60639232,
+  "instrumented": true,
+  "note": "NVTX diagnostic CPU overhead; use plain/original benchmark for end-to-end timing"
+}

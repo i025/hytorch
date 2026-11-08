@@ -1,0 +1,18 @@
+[
+  "/usr/local/cuda/bin/nvcc",
+  "-O3",
+  "-std=c++14",
+  "-lineinfo",
+  "--shared",
+  "--cudart",
+  "shared",
+  "-gencode=arch=compute_80,code=sm_80",
+  "-gencode=arch=compute_80,code=compute_80",
+  "-Xcompiler",
+  "-fPIC",
+  "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/kernels.cu",
+  "-o",
+  "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so"
+]
+
+Built: /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so

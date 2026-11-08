@@ -1,0 +1,51 @@
+Warning: Directory "/tmp" used to store temporary files appears to have only 190 MiB of free space.
+Nsight Systems recommends to have at least 200 MiB available.
+Proceed at your own risk or choose another directory by setting TMPDIR environment variable.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+警告: 未找到scipy，无法加载SVHN数据集
+0 conv1 training {}
+1 conv1 contiguous {}
+2 conv1 negative {}
+3 conv2 training {}
+4 conv2 contiguous {}
+5 conv2 negative {}
+6 conv3 training {}
+7 conv3 contiguous {}
+8 conv3 negative {}
+9 conv4 training {}
+10 conv4 contiguous {}
+11 conv4 negative {}
+12 conv5 training {}
+13 conv5 contiguous {}
+14 conv5 negative {}
+15 overlap training {}
+16 overlap contiguous {}
+17 overlap negative {}
+18 nonoverlap training {}
+19 nonoverlap contiguous {}
+20 nonoverlap negative {}
+21 asymmetric training {}
+22 asymmetric contiguous {}
+23 asymmetric negative {}
+24 holes training {}
+25 holes contiguous {}
+26 holes negative {}
+27 narrow training {}
+28 narrow contiguous {}
+29 narrow negative {}
+30 tiny training {}
+31 tiny contiguous {}
+32 tiny negative {}
+33 large_channels training {}
+34 large_channels contiguous {}
+35 large_channels negative {}
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-655a.qdstrm'
+[1/1] [0%                          ] col2im.nsys-repProcessing events...
+[1/1] [0%                          ] col2im.nsys-rep[1/1] [0%                          ] col2im.nsys-rep[1/1] [====28%                     ] col2im.nsys-rep[1/1] [============56%             ] col2im.nsys-rep[1/1] [======================91%   ] col2im.nsys-rep[1/1] [======================92%   ] col2im.nsys-rep[1/1] [========================100%] col2im.nsys-rep[1/1] [========================100%] col2im.nsys-rep
+Generated:
+	/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im_traces/col2im.nsys-rep

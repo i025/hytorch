@@ -1,0 +1,56 @@
+[
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/lib_baseline.so",
+    "bytes": 309040,
+    "sha256": "c72293ac7efc50699eda649fc52c748e5cd871080776b227cfb14598b6327ddd",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im/lib_native_col2im.so",
+    "bytes": 350216,
+    "sha256": "e4cc46d2b50346ca16d2aa572af6e994ca41b8c8ad65bfdd2453cbb14d990cc9",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so",
+    "bytes": 350216,
+    "sha256": "e4cc46d2b50346ca16d2aa572af6e994ca41b8c8ad65bfdd2453cbb14d990cc9",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im_traces/col2im.nsys-rep",
+    "bytes": 650921,
+    "sha256": "a6b5590849192f37ea669023e3c2aaa3f6064078833dd4afd47c5b9b40a0b788",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im_traces/col2im.sqlite",
+    "bytes": 1310720,
+    "sha256": "dec0a6a1a48e24001476327f2bba42930afed6bc4ae00de449a287f3b6065ad4",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im_traces/train_cupy.nsys-rep",
+    "bytes": 560972,
+    "sha256": "9ff82c4ab777d5801c98ecf4bd5428ecd54e5b92ba1f6a4c67df22f51f74efad",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im_traces/train_cupy.sqlite",
+    "bytes": 1085440,
+    "sha256": "9f4ce1613f60a42329c91e86b8a62e959080e020d8b0a45c9e8db3cf29f51bd8",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im_traces/train_native.nsys-rep",
+    "bytes": 560824,
+    "sha256": "4b550941bd5fb1c803c968e006415a85a599e53a270ed6770861271b18092f02",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/native_col2im_traces/train_native.sqlite",
+    "bytes": 1085440,
+    "sha256": "91b370f82d362a5548041a283cb4ac0282b06727e7cf13b47de0bec411717930",
+    "included": false
+  }
+]

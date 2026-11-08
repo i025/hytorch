@@ -1,0 +1,17 @@
+def _compile_with_cache_cuda(
+        source, options, arch, extra_source=None, backend='nvrtc',
+        enable_cooperative_groups=False, name_expressions=None,
+        log_stream=None, cache_in_memory=False, jitify=False, to_ltoir=False):
+    # NVRTC does not use extra_source. extra_source is used for cache key.
+    global _empty_file_preprocess_cache
+
+    if arch is None:
+        arch = _get_arch()
+
+    # TODO(leofang): consider move --device-as-default-execution-space
+    # (-default-device) to here to avoid double definition error
+    options += ('-ftz=true',)
+
+    if to_ltoir:
+        options += ('-dlto',)
+

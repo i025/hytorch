@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/traces/interface_corrected.nsys-rep",
+    "bytes": 823542,
+    "sha256": "15a22aebf45f77eea22aad5411b7905ed7546ea6857d6aa496ee8a4e335d4d8f",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/traces/interface_corrected.sqlite",
+    "bytes": 1929216,
+    "sha256": "ddbf89f5a967a5b9e2f0c04d618a81f26e12b52004fc44e7858816ecb5e58f8c",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/traces/operators.nsys-rep",
+    "bytes": 2339953,
+    "sha256": "0e740ab1eb9a2a3a7f39cc6f03b6cf57df839a045e468e3d30b2b6992d25ee62",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/final_operator_threeway/traces/operators.sqlite",
+    "bytes": 5918720,
+    "sha256": "2f332b9c6d5f91863482379883f861b2d6685779a2b2427549172ce600178e47",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so",
+    "bytes": 362736,
+    "sha256": "ead6af170bc71039542c6c2d992ce5b41d88875df5e969a9ae1ec7779b4e4ab2",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/libhytorch_cuda_baseline.so",
+    "bytes": 169656,
+    "sha256": "324203dcd0142fa6896e31d9f96012cc5a12b04afcc379440bd1f1a307c4a526",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/lib_before.so",
+    "bytes": 309040,
+    "sha256": "5b93982d8c31438a033c7da6d43164a3389a15cf0e94baddc0e390df67199ec0",
+    "included": false
+  }
+]

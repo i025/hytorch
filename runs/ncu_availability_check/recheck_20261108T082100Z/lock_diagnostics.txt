@@ -1,0 +1,46 @@
+UTC: 2026-11-08T08:21:48.498318+00:00
+
+$ id
+exit=0
+uid=1291600100(xieminhui_pubuse) gid=1291600100(xieminhui_pubuse) groups=1291600100(xieminhui_pubuse)
+
+$ stat -c %n type=%F uid=%u gid=%g mode=%a permissions=%A mtime=%y ctime=%z /tmp /tmp/nsight-compute-lock
+exit=0
+/tmp type=directory uid=0 gid=0 mode=1777 permissions=drwxrwxrwt mtime=2026-11-08 08:21:39.490922745 +0000 ctime=2026-11-08 08:21:39.490922745 +0000
+/tmp/nsight-compute-lock type=regular empty file uid=1291600034 gid=1291600034 mode=666 permissions=-rw-rw-rw- mtime=2026-11-06 21:01:40.923710443 +0000 ctime=2026-11-07 17:35:26.649420767 +0000
+
+$ namei -l /tmp/nsight-compute-lock
+exit=0
+f: /tmp/nsight-compute-lock
+drwxr-xr-x root root /
+drwxrwxrwt root root tmp
+-rw-rw-rw- tzj  tzj  nsight-compute-lock
+
+$ bash -c cat /proc/sys/fs/protected_regular; cat /proc/sys/fs/protected_fifos; cat /proc/driver/nvidia/params | grep -i RmProfilingAdminOnly
+exit=0
+RmProfilingAdminOnly: 0
+cat: /proc/sys/fs/protected_regular: Permission denied
+cat: /proc/sys/fs/protected_fifos: Permission denied
+
+$ getfacl -p /tmp/nsight-compute-lock
+exit=0
+# file: /tmp/nsight-compute-lock
+# owner: tzj
+# group: tzj
+user::rw-
+group::rw-
+other::rw-
+
+
+$ nvidia-smi --query-gpu=index,uuid,utilization.gpu,memory.used --format=csv
+exit=0
+index, uuid, utilization.gpu [%], memory.used [MiB]
+0, GPU-af2dc3da-4948-7c30-005b-1ab38ccd4863, 0 %, 20543 MiB
+1, GPU-0bc09ee6-967a-b53d-bf80-38379585cf08, 0 %, 0 MiB
+
+$ nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_memory --format=csv
+exit=0
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-af2dc3da-4948-7c30-005b-1ab38ccd4863, 570250, VLLM::EngineCore, 20534 MiB
+
+os.access(W_OK), no file open or mutation: True

@@ -1,0 +1,148 @@
+{
+  "B0": {
+    "n": 12,
+    "mean_s": 0.7641353974662101,
+    "median_s": 0.7608917970210314,
+    "sd_s": 0.009725455535663686,
+    "samples_per_s": 1005.2040542236933
+  },
+  "O1": {
+    "n": 12,
+    "mean_s": 0.7320398018152142,
+    "median_s": 0.7319135104771703,
+    "sd_s": 0.004197198694514697,
+    "samples_per_s": 1049.154931176255
+  },
+  "torch": {
+    "n": 12,
+    "mean_s": 0.3138932335811357,
+    "median_s": 0.30600433074869215,
+    "sd_s": 0.014644348662864822,
+    "samples_per_s": 2451.4595025441654
+  },
+  "paired": {
+    "delta_mean_s": 0.03209559565099577,
+    "ci95_s": [
+      0.025621284068872267,
+      0.03856990723311927
+    ],
+    "wins": 12,
+    "wall_reduction_pct": 4.200249819262565,
+    "speedup": 1.0438440581665225,
+    "before_vs_torch": 2.4343799601806166,
+    "after_vs_torch": 2.332129920302966
+  },
+  "supplement": [
+    {
+      "model": "donkey",
+      "batch": "1",
+      "B0_s": 2.8633866145585976,
+      "O1_s": 2.698690678924322,
+      "reduction_pct": 5.751788277450753,
+      "wins": 3,
+      "n": 3
+    },
+    {
+      "model": "donkey",
+      "batch": "16",
+      "B0_s": 0.20429919256518284,
+      "O1_s": 0.19841676919410625,
+      "reduction_pct": 2.8793179734177166,
+      "wins": 3,
+      "n": 3
+    },
+    {
+      "model": "tiny",
+      "batch": "4",
+      "B0_s": 0.28847339299197,
+      "O1_s": 0.27596286466966075,
+      "reduction_pct": 4.336804927675775,
+      "wins": 3,
+      "n": 3
+    }
+  ],
+  "TRAINING_ERRORS.csv": {
+    "failed_elements": 0,
+    "max_abs": 7.078051567077637e-08,
+    "O1_max_abs": 0.0
+  },
+  "SUPPLEMENT_ERRORS.csv": {
+    "failed_elements": 0,
+    "max_abs": 0.0,
+    "O1_max_abs": 0.0
+  },
+  "stage_a": {
+    "B0": 0.7908676049672068,
+    "torch": 0.30531151946634055
+  },
+  "local": {
+    "conv_real": {
+      "submit_us_median": {
+        "reduction_pct_median": 3.101127338527143,
+        "B0_over_torch_median": 2.209423602079265,
+        "O1_over_torch_median": 2.140606206398845
+      },
+      "sync_us_median": {
+        "reduction_pct_median": 3.159588196169605,
+        "B0_over_torch_median": 2.3058079751300293,
+        "O1_over_torch_median": 2.2061088858332836
+      },
+      "gpu_kernel_us_median": {
+        "reduction_pct_median": 0.0007321877036225999,
+        "B0_over_torch_median": 0.9079978574650428,
+        "O1_over_torch_median": 0.9093369418132612
+      }
+    },
+    "conv_all": {
+      "submit_us_median": {
+        "reduction_pct_median": 4.816531782823919,
+        "B0_over_torch_median": 2.209423602079265,
+        "O1_over_torch_median": 2.140606206398845
+      },
+      "sync_us_median": {
+        "reduction_pct_median": 3.159588196169605,
+        "B0_over_torch_median": 2.3058079751300293,
+        "O1_over_torch_median": 2.2061088858332836
+      },
+      "gpu_kernel_us_median": {
+        "reduction_pct_median": -0.01878628835776386,
+        "B0_over_torch_median": 0.9079978574650428,
+        "O1_over_torch_median": 0.9093369418132612
+      }
+    },
+    "pool_main_window": {
+      "submit_us_median": {
+        "reduction_pct_median": 8.980879854613965,
+        "B0_over_torch_median": 2.732139608263565,
+        "O1_over_torch_median": 2.4690000266370373
+      },
+      "sync_us_median": {
+        "reduction_pct_median": 7.323297026925768,
+        "B0_over_torch_median": 2.3329571693198723,
+        "O1_over_torch_median": 2.147764444127254
+      },
+      "gpu_kernel_us_median": {
+        "reduction_pct_median": -0.295857988165682,
+        "B0_over_torch_median": 0.9670037531276063,
+        "O1_over_torch_median": 0.9641628440366973
+      }
+    },
+    "pool_actual_supplement": {
+      "submit_us_median": {
+        "reduction_pct_median": 5.530608764849665,
+        "B0_over_torch_median": 2.8523022049286637,
+        "O1_over_torch_median": 2.6945525291828787
+      },
+      "sync_us_median": {
+        "reduction_pct_median": 1.8767343362056432,
+        "B0_over_torch_median": 2.085963086140801,
+        "O1_over_torch_median": 2.046815100662622
+      },
+      "gpu_kernel_us_median": {
+        "reduction_pct_median": 0.0,
+        "B0_over_torch_median": 0.9435028248587571,
+        "O1_over_torch_median": 0.9435028248587571
+      }
+    }
+  }
+}

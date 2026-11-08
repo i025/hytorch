@@ -1,0 +1,130 @@
+{
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "CUDA_PATH": "/usr/local/cuda",
+    "LD_LIBRARY_PATH": "/usr/local/cuda/lib64",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "PYTHONHASHSEED": "0"
+  },
+  "commands": [
+    {
+      "name": "gpu_before",
+      "command": [
+        "nvidia-smi"
+      ],
+      "returncode": 0,
+      "time_utc": "2026-11-06T02:03:37.419240+00:00"
+    },
+    {
+      "name": "workload",
+      "command": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/diagnostics/diagnose.py",
+        "--mode",
+        "workload",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/raw/workload"
+      ],
+      "returncode": 0,
+      "time_utc": "2026-11-06T02:03:38.743303+00:00"
+    },
+    {
+      "name": "native_trace",
+      "command": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/native_trace",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/diagnostics/diagnose.py",
+        "--mode",
+        "trace",
+        "--backend",
+        "native",
+        "--steps",
+        "10",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/raw/native_trace"
+      ],
+      "returncode": 0,
+      "time_utc": "2026-11-06T02:03:46.104596+00:00"
+    },
+    {
+      "name": "native_plain",
+      "command": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/native_plain",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/diagnostics/diagnose.py",
+        "--mode",
+        "plain",
+        "--backend",
+        "native",
+        "--steps",
+        "10",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/raw/native_plain"
+      ],
+      "returncode": 0,
+      "time_utc": "2026-11-06T02:03:53.299275+00:00"
+    },
+    {
+      "name": "cupy_trace",
+      "command": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff_traces/cupy_trace",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/diagnostics/diagnose.py",
+        "--mode",
+        "trace",
+        "--backend",
+        "cupy",
+        "--steps",
+        "10",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/raw/cupy_trace"
+      ],
+      "returncode": 0,
+      "time_utc": "2026-11-06T02:04:00.460137+00:00"
+    },
+    {
+      "name": "observer_overhead",
+      "command": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/diagnostics/compare_overhead.py",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/operator_handoff/raw/observer_overhead"
+      ],
+      "returncode": 0,
+      "time_utc": "2026-11-06T02:04:05.274013+00:00"
+    },
+    {
+      "name": "gpu_after_initial",
+      "command": [
+        "nvidia-smi"
+      ],
+      "returncode": 0,
+      "time_utc": "2026-11-06T02:04:06.066109+00:00"
+    }
+  ]
+}

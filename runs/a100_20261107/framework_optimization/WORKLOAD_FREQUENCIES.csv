@@ -1,0 +1,16 @@
+function,calls_per_step
+Conv2d,5
+ReLU,7
+Reshape,2
+MatMul,9
+Add,3
+Tanh,1
+MeanSquareError,1
+Sub,2
+Mul,11
+Neg,1
+SumTo,3
+Transpose,6
+Deconv2d,5
+Conv2DGradW,5
+Sum,5

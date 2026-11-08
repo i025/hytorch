@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/baseline/hytorch/backends/cuda/build/libhytorch_cuda.so",
+    "bytes": 362736,
+    "sha256": "ead6af170bc71039542c6c2d992ce5b41d88875df5e969a9ae1ec7779b4e4ab2"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/raw/cli_donkey_gpu/final_weights.npz",
+    "bytes": 1010930,
+    "sha256": "7a028b221d70b2691939eaf454c12eb718c265ed5f3571f017862010a5e1a611"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/raw/cli_cpu/final_weights.npz",
+    "bytes": 2474,
+    "sha256": "c0831b2f121af3f109ce8b5d3f762b33037525deb4403bc5c928e3bf49ab7214"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/raw/cli_torch_gpu/final_weights.npz",
+    "bytes": 2474,
+    "sha256": "6f7ef1a2fc1746af0eabd6439cd914e67395a4f2486a468d5cd608928e914db0"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/raw/cli_legacy_cpu/final_weights.npz",
+    "bytes": 2474,
+    "sha256": "c0831b2f121af3f109ce8b5d3f762b33037525deb4403bc5c928e3bf49ab7214"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/traces/training.nsys-rep",
+    "bytes": 525633,
+    "sha256": "d947d90f0041f8ed30265eb52c910f075ae2d2b378f7a99fad26cc2efd7b9c94"
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261108/training_monitor/traces/training.sqlite",
+    "bytes": 1208320,
+    "sha256": "01a146aea9724b491182fbd1ca58854954a4bef531a097ef9b8a65f240b6fc5e"
+  }
+]

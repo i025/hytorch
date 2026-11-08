@@ -1,0 +1,15 @@
+{
+  "batches": [
+    1,
+    4,
+    16
+  ],
+  "repeats": 10,
+  "device": 0,
+  "output": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/ops_baseline",
+  "dtype": "float32",
+  "seed": "42+batch",
+  "timing": "CUDA event, includes operator workspace allocation/packing; no H2D/D2H",
+  "gpu": "b'NVIDIA A100-PCIE-40GB'",
+  "cupy": "14.2.0"
+}

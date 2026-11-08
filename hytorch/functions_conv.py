@@ -155,6 +155,12 @@ class Conv2DGradW(Function):
             gW_matrix = cpu_gemm(gy_matrix.transpose(1, 0), col)
             return gW_matrix.reshape(gy.shape[1], x.shape[1], kh, kw)
 
+        from hytorch.backends.cuda.runtime import current_config, packed_dweight, _counts
+        if current_config().get("dweight", "cupy") == "packed":
+            try:
+                return packed_dweight(x, gy, self.kernel_size, self.stride, self.pad)
+            except NotImplementedError:
+                _counts["dweight_fallback"] += 1
         col = im2col_array(x, self.kernel_size, self.stride, self.pad,
                            to_matrix=False)
         gW = xp.tensordot(gy, col, ((0, 2, 3), (0, 4, 5)))
@@ -162,7 +168,7 @@ class Conv2DGradW(Function):
 
     def backward(self, gys):
         x, gy = self.inputs
-        gW, = self.outputs
+        gW = gys  # Incoming cotangent, not the weak reference to our output.
 
         xh, xw = x.shape[2:]
         gx = deconv2d(gy, gW, stride=self.stride, pad=self.pad,
@@ -452,6 +458,12 @@ def col2im_array(col, img_shape, kernel_size, stride, pad, to_matrix=True):
 
     xp = cuda.get_array_module(col)
     if xp != np:
+        from hytorch.backends.cuda.runtime import selected, col2im as native_col2im, _counts
+        if selected("col2im", col) == "native":
+            try:
+                return native_col2im(col, img_shape, (SH, SW), (PH, PW))
+            except NotImplementedError:
+                _counts["col2im_fallback_unsupported"] += 1
         img = _col2im_gpu(col, SH, SW, PH, PW, H, W)
         return img
     else:

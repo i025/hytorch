@@ -1,0 +1,3860 @@
+{
+  "functions": [
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            3,
+            66,
+            200
+          ],
+          "strides_bytes": [
+            158400,
+            52800,
+            800,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            24,
+            3,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            300,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            24
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            36,
+            24,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            2400,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            36
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            48,
+            36,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            3600,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            48
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            64,
+            48,
+            3,
+            3
+          ],
+          "strides_bytes": [
+            1728,
+            36,
+            12,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            64
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "strides_bytes": [
+            2304,
+            36,
+            12,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            64
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Reshape",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "strides_bytes": [
+            4608,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "strides_bytes": [
+            4608,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            1152,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Add",
+      "inputs": [
+        {
+          "shape": [
+            100
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            100,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Add",
+      "inputs": [
+        {
+          "shape": [
+            50
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            50,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Add",
+      "inputs": [
+        {
+          "shape": [
+            1
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Tanh",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MeanSquareError",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [],
+          "strides_bytes": [],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Sub",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [],
+          "strides_bytes": [],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [],
+          "strides_bytes": [],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Neg",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Sub",
+      "inputs": [
+        {
+          "shape": [],
+          "strides_bytes": [],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "SumTo",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            1
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            50,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            1,
+            50
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            1,
+            50
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            50,
+            4
+          ],
+          "strides_bytes": [
+            4,
+            200
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            50,
+            4
+          ],
+          "strides_bytes": [
+            4,
+            200
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            50,
+            1
+          ],
+          "strides_bytes": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            50,
+            1
+          ],
+          "dtype": "bool"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "SumTo",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            50
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            100,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            50,
+            100
+          ],
+          "strides_bytes": [
+            4,
+            200
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            50,
+            100
+          ],
+          "strides_bytes": [
+            4,
+            200
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            100,
+            4
+          ],
+          "strides_bytes": [
+            4,
+            400
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            100,
+            4
+          ],
+          "strides_bytes": [
+            4,
+            400
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            100,
+            50
+          ],
+          "strides_bytes": [
+            200,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            100,
+            1
+          ],
+          "dtype": "bool"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "SumTo",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            100
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            1152,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            100,
+            1152
+          ],
+          "strides_bytes": [
+            4,
+            400
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            100,
+            1152
+          ],
+          "strides_bytes": [
+            4,
+            400
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "strides_bytes": [
+            4608,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "strides_bytes": [
+            4608,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            1152,
+            4
+          ],
+          "strides_bytes": [
+            4,
+            4608
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            1152,
+            4
+          ],
+          "strides_bytes": [
+            4,
+            4608
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            1152,
+            100
+          ],
+          "strides_bytes": [
+            400,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Reshape",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "strides_bytes": [
+            4608,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            1152,
+            18,
+            18,
+            1
+          ],
+          "dtype": "bool"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "strides_bytes": [
+            2304,
+            36,
+            12,
+            4
+          ],
+          "dtype": "float32"
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "strides_bytes": [
+            2304,
+            36,
+            12,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "strides_bytes": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            64
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            3840,
+            60,
+            20,
+            1
+          ],
+          "dtype": "bool"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            64,
+            48,
+            3,
+            3
+          ],
+          "strides_bytes": [
+            1728,
+            36,
+            12,
+            4
+          ],
+          "dtype": "float32"
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            64,
+            48,
+            3,
+            3
+          ],
+          "strides_bytes": [
+            1728,
+            36,
+            12,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "strides_bytes": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            64
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            5280,
+            110,
+            22,
+            1
+          ],
+          "dtype": "bool"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            48,
+            36,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            3600,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            48,
+            36,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            3600,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "strides_bytes": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            48
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            23688,
+            658,
+            47,
+            1
+          ],
+          "dtype": "bool"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            36,
+            24,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            2400,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            36,
+            24,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            2400,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "strides_bytes": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            36
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            72912,
+            3038,
+            98,
+            1
+          ],
+          "dtype": "bool"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            24,
+            3,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            300,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            3,
+            66,
+            200
+          ],
+          "strides_bytes": [
+            158400,
+            52800,
+            800,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            3,
+            66,
+            200
+          ],
+          "strides_bytes": [
+            158400,
+            52800,
+            800,
+            4
+          ],
+          "dtype": "float32"
+        },
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            24,
+            3,
+            5,
+            5
+          ],
+          "strides_bytes": [
+            300,
+            100,
+            20,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "strides_bytes": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            24
+          ],
+          "strides_bytes": [
+            4
+          ],
+          "dtype": "float32"
+        }
+      ],
+      "stride": null,
+      "pad": null
+    }
+  ],
+  "gemms": [
+    {
+      "M": 12152,
+      "N": 24,
+      "K": 75,
+      "path": "native_gemm:Conv2d",
+      "a": {
+        "shape": [
+          12152,
+          75
+        ],
+        "strides_bytes": [
+          300,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          75,
+          24
+        ],
+        "strides_bytes": [
+          4,
+          300
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 2632,
+      "N": 36,
+      "K": 600,
+      "path": "native_gemm:Conv2d",
+      "a": {
+        "shape": [
+          2632,
+          600
+        ],
+        "strides_bytes": [
+          2400,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          600,
+          36
+        ],
+        "strides_bytes": [
+          4,
+          2400
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 440,
+      "N": 48,
+      "K": 900,
+      "path": "native_gemm:Conv2d",
+      "a": {
+        "shape": [
+          440,
+          900
+        ],
+        "strides_bytes": [
+          3600,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          900,
+          48
+        ],
+        "strides_bytes": [
+          4,
+          3600
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 240,
+      "N": 64,
+      "K": 432,
+      "path": "native_gemm:Conv2d",
+      "a": {
+        "shape": [
+          240,
+          432
+        ],
+        "strides_bytes": [
+          1728,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          432,
+          64
+        ],
+        "strides_bytes": [
+          4,
+          1728
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 72,
+      "N": 64,
+      "K": 576,
+      "path": "native_gemm:Conv2d",
+      "a": {
+        "shape": [
+          72,
+          576
+        ],
+        "strides_bytes": [
+          2304,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          576,
+          64
+        ],
+        "strides_bytes": [
+          4,
+          2304
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 4,
+      "N": 100,
+      "K": 1152,
+      "path": "MatMul_native",
+      "a": {
+        "shape": [
+          4,
+          1152
+        ],
+        "strides_bytes": [
+          4608,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          1152,
+          100
+        ],
+        "strides_bytes": [
+          400,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 4,
+      "N": 50,
+      "K": 100,
+      "path": "MatMul_native",
+      "a": {
+        "shape": [
+          4,
+          100
+        ],
+        "strides_bytes": [
+          400,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          100,
+          50
+        ],
+        "strides_bytes": [
+          200,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 4,
+      "N": 1,
+      "K": 50,
+      "path": "MatMul_native",
+      "a": {
+        "shape": [
+          4,
+          50
+        ],
+        "strides_bytes": [
+          200,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          50,
+          1
+        ],
+        "strides_bytes": [
+          4,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 4,
+      "N": 50,
+      "K": 1,
+      "path": "MatMul_cupy_backward",
+      "a": {
+        "shape": [
+          4,
+          1
+        ],
+        "strides_bytes": [
+          4,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          1,
+          50
+        ],
+        "strides_bytes": [
+          4,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 50,
+      "N": 1,
+      "K": 4,
+      "path": "MatMul_cupy_backward",
+      "a": {
+        "shape": [
+          50,
+          4
+        ],
+        "strides_bytes": [
+          4,
+          200
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          4,
+          1
+        ],
+        "strides_bytes": [
+          4,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 4,
+      "N": 100,
+      "K": 50,
+      "path": "MatMul_cupy_backward",
+      "a": {
+        "shape": [
+          4,
+          50
+        ],
+        "strides_bytes": [
+          200,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          50,
+          100
+        ],
+        "strides_bytes": [
+          4,
+          200
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 100,
+      "N": 50,
+      "K": 4,
+      "path": "MatMul_cupy_backward",
+      "a": {
+        "shape": [
+          100,
+          4
+        ],
+        "strides_bytes": [
+          4,
+          400
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          4,
+          50
+        ],
+        "strides_bytes": [
+          200,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 4,
+      "N": 1152,
+      "K": 100,
+      "path": "MatMul_cupy_backward",
+      "a": {
+        "shape": [
+          4,
+          100
+        ],
+        "strides_bytes": [
+          400,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          100,
+          1152
+        ],
+        "strides_bytes": [
+          4,
+          400
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 1152,
+      "N": 100,
+      "K": 4,
+      "path": "MatMul_cupy_backward",
+      "a": {
+        "shape": [
+          1152,
+          4
+        ],
+        "strides_bytes": [
+          4,
+          4608
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          4,
+          100
+        ],
+        "strides_bytes": [
+          400,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 576,
+      "N": 72,
+      "K": 64,
+      "path": "dInput_tensordot_cublas",
+      "a": {
+        "shape": [
+          64,
+          64,
+          3,
+          3
+        ],
+        "strides_bytes": [
+          2304,
+          36,
+          12,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          4,
+          64,
+          1,
+          18
+        ],
+        "strides_bytes": [
+          4608,
+          72,
+          72,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 64,
+      "N": 576,
+      "K": 72,
+      "path": "packed_dweight_cublas",
+      "x": {
+        "shape": [
+          4,
+          64,
+          3,
+          20
+        ],
+        "strides_bytes": [
+          15360,
+          240,
+          80,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "gy": {
+        "shape": [
+          4,
+          64,
+          1,
+          18
+        ],
+        "strides_bytes": [
+          4608,
+          72,
+          72,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 432,
+      "N": 240,
+      "K": 64,
+      "path": "dInput_tensordot_cublas",
+      "a": {
+        "shape": [
+          64,
+          48,
+          3,
+          3
+        ],
+        "strides_bytes": [
+          1728,
+          36,
+          12,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          4,
+          64,
+          3,
+          20
+        ],
+        "strides_bytes": [
+          15360,
+          240,
+          80,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 64,
+      "N": 432,
+      "K": 240,
+      "path": "packed_dweight_cublas",
+      "x": {
+        "shape": [
+          4,
+          48,
+          5,
+          22
+        ],
+        "strides_bytes": [
+          21120,
+          440,
+          88,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "gy": {
+        "shape": [
+          4,
+          64,
+          3,
+          20
+        ],
+        "strides_bytes": [
+          15360,
+          240,
+          80,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 900,
+      "N": 440,
+      "K": 48,
+      "path": "dInput_tensordot_cublas",
+      "a": {
+        "shape": [
+          48,
+          36,
+          5,
+          5
+        ],
+        "strides_bytes": [
+          3600,
+          100,
+          20,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          4,
+          48,
+          5,
+          22
+        ],
+        "strides_bytes": [
+          21120,
+          440,
+          88,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 48,
+      "N": 900,
+      "K": 440,
+      "path": "packed_dweight_cublas",
+      "x": {
+        "shape": [
+          4,
+          36,
+          14,
+          47
+        ],
+        "strides_bytes": [
+          94752,
+          2632,
+          188,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "gy": {
+        "shape": [
+          4,
+          48,
+          5,
+          22
+        ],
+        "strides_bytes": [
+          21120,
+          440,
+          88,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 600,
+      "N": 2632,
+      "K": 36,
+      "path": "dInput_tensordot_cublas",
+      "a": {
+        "shape": [
+          36,
+          24,
+          5,
+          5
+        ],
+        "strides_bytes": [
+          2400,
+          100,
+          20,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          4,
+          36,
+          14,
+          47
+        ],
+        "strides_bytes": [
+          94752,
+          2632,
+          188,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 36,
+      "N": 600,
+      "K": 2632,
+      "path": "packed_dweight_cublas",
+      "x": {
+        "shape": [
+          4,
+          24,
+          31,
+          98
+        ],
+        "strides_bytes": [
+          291648,
+          12152,
+          392,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "gy": {
+        "shape": [
+          4,
+          36,
+          14,
+          47
+        ],
+        "strides_bytes": [
+          94752,
+          2632,
+          188,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 75,
+      "N": 12152,
+      "K": 24,
+      "path": "dInput_tensordot_cublas",
+      "a": {
+        "shape": [
+          24,
+          3,
+          5,
+          5
+        ],
+        "strides_bytes": [
+          300,
+          100,
+          20,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "b": {
+        "shape": [
+          4,
+          24,
+          31,
+          98
+        ],
+        "strides_bytes": [
+          291648,
+          12152,
+          392,
+          4
+        ],
+        "dtype": "float32"
+      }
+    },
+    {
+      "M": 24,
+      "N": 75,
+      "K": 12152,
+      "path": "packed_dweight_cublas",
+      "x": {
+        "shape": [
+          4,
+          3,
+          66,
+          200
+        ],
+        "strides_bytes": [
+          158400,
+          52800,
+          800,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "gy": {
+        "shape": [
+          4,
+          24,
+          31,
+          98
+        ],
+        "strides_bytes": [
+          291648,
+          12152,
+          392,
+          4
+        ],
+        "dtype": "float32"
+      }
+    }
+  ],
+  "col2im": [
+    {
+      "input": {
+        "shape": [
+          4,
+          64,
+          3,
+          3,
+          1,
+          18
+        ],
+        "strides_bytes": [
+          72,
+          2592,
+          864,
+          288,
+          72,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "img_shape": [
+        4,
+        64,
+        3,
+        20
+      ],
+      "kernel": [
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "to_matrix": false
+    },
+    {
+      "input": {
+        "shape": [
+          4,
+          48,
+          3,
+          3,
+          3,
+          20
+        ],
+        "strides_bytes": [
+          240,
+          8640,
+          2880,
+          960,
+          80,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "img_shape": [
+        4,
+        48,
+        5,
+        22
+      ],
+      "kernel": [
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "to_matrix": false
+    },
+    {
+      "input": {
+        "shape": [
+          4,
+          36,
+          5,
+          5,
+          5,
+          22
+        ],
+        "strides_bytes": [
+          440,
+          44000,
+          8800,
+          1760,
+          88,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "img_shape": [
+        4,
+        36,
+        14,
+        47
+      ],
+      "kernel": [
+        5,
+        5
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "to_matrix": false
+    },
+    {
+      "input": {
+        "shape": [
+          4,
+          24,
+          5,
+          5,
+          14,
+          47
+        ],
+        "strides_bytes": [
+          2632,
+          263200,
+          52640,
+          10528,
+          188,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "img_shape": [
+        4,
+        24,
+        31,
+        98
+      ],
+      "kernel": [
+        5,
+        5
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "to_matrix": false
+    },
+    {
+      "input": {
+        "shape": [
+          4,
+          3,
+          5,
+          5,
+          31,
+          98
+        ],
+        "strides_bytes": [
+          12152,
+          1215200,
+          243040,
+          48608,
+          392,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "img_shape": [
+        4,
+        3,
+        66,
+        200
+      ],
+      "kernel": [
+        5,
+        5
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ],
+      "to_matrix": false
+    }
+  ],
+  "loss": 0.0007207734743133187
+}

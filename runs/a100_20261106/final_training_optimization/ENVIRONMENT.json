@@ -1,0 +1,70 @@
+{
+  "python": "3.10.12",
+  "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+  "packages": {
+    "numpy": "2.2.6",
+    "cupy-cuda12x": "14.2.0",
+    "torch": "2.9.1",
+    "pytest": "9.2.0",
+    "matplotlib": "3.10.9"
+  },
+  "sgd_descriptor": {
+    "size": 24,
+    "alignment": 8,
+    "offsets": {
+      "p": 0,
+      "g": 8,
+      "n": 16
+    }
+  },
+  "GPU": "physical1 A100-PCIE-40GB",
+  "user_timezone": "Asia/Shanghai",
+  "build": {
+    "command": [
+      "/usr/local/cuda/bin/nvcc",
+      "-O3",
+      "-std=c++14",
+      "-lineinfo",
+      "--shared",
+      "--cudart",
+      "shared",
+      "-gencode=arch=compute_80,code=sm_80",
+      "-gencode=arch=compute_80,code=compute_80",
+      "-Xcompiler",
+      "-fPIC",
+      "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/kernels.cu",
+      "-o",
+      "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so"
+    ],
+    "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "arch": "80",
+    "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2024 NVIDIA Corporation\nBuilt on Tue_Feb_27_16:19:38_PST_2024\nCuda compilation tools, release 12.4, V12.4.99\nBuild cuda_12.4.r12.4/compiler.33961263_0\n"
+  },
+  "torch": {
+    "version": "2.9.1+cu128",
+    "tf32_matmul": false,
+    "tf32_cudnn": false,
+    "cudnn_enabled": true,
+    "cudnn_benchmark": false,
+    "optimizer": "SGD",
+    "foreach": null,
+    "fused": null,
+    "set_to_none": true
+  },
+  "torch_observed_dispatch": {
+    "counts": {
+      "_multi_tensor_sgd": 1
+    },
+    "defaults": {
+      "lr": 0.001,
+      "momentum": 0,
+      "dampening": 0,
+      "weight_decay": 0,
+      "nesterov": false,
+      "maximize": false,
+      "foreach": null,
+      "differentiable": false,
+      "fused": null
+    }
+  }
+}

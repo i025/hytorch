@@ -1,0 +1,11 @@
+trace,mode,phase,kernels_per_step,gpu_kernel_us_per_step,cpu_range_elapsed_us_per_step,cuda_api_elapsed_us_per_step,api_calls_per_step,gpu_active_union_us_per_step,kernel_span_gaps_us_per_step,memcpy_calls_per_step,memcpy_bytes_per_step
+train_B0_a,B0,forward,38.0,550.7088999999994,1427.1646,161.654,38.0,,,,
+train_B0_a,B0,backward,72.0,648.6934999999991,2814.175,316.765,116.0,,,,
+train_B0_a,B0,update,32.0,113.49470000000011,405.2819,103.9676,32.0,,,,
+train_B0_a,B0,transfer,0.0,0.0,192.6494,47.9106,14.2,,,,
+train_B0_a,B0,ALL,142.0,1312.8970999999988,,632.3658,,1312.8971,3585.3158,2.0,633616.0
+train_torch_a,torch,forward,33.0,537.8424000000005,758.2318,220.2598,64.0,,,,
+train_torch_a,torch,backward,38.0,564.1749999999995,936.9949,182.4617,43.0,,,,
+train_torch_a,torch,update,1.0,28.815999999999995,153.4331,9.1961,1.0,,,,
+train_torch_a,torch,transfer,0.0,0.0,163.2326,113.2271,4.0,,,,
+train_torch_a,torch,ALL,72.0,1130.8334,,533.2774,,1065.0121,1026.9256,2.0,633616.0

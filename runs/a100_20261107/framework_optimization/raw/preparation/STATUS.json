@@ -1,0 +1,17 @@
+{
+  "status": "blocked_before_gpu_experiments",
+  "recorded_at_Asia_Shanghai": "2026-11-07T22:52:20.995849+08:00",
+  "host_tests": "19 passed (three host test modules only)",
+  "GPU_tests": "NOT_RUN",
+  "stage_A": "baseline_saved; GPU measurement NOT_RUN",
+  "stage_B": "NOT_RUN: requires stage A evidence",
+  "production_changes": false,
+  "GPU1_pid": 1290426,
+  "GPU1_observed_utilization_percent": [
+    0,
+    29,
+    38
+  ],
+  "GPU1_last_observed_memory_MiB": 3445,
+  "GPU0": "VLLM PID 1115402; untouched"
+}

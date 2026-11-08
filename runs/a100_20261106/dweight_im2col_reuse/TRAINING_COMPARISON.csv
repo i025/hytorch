@@ -1,0 +1,3 @@
+mode,status,reason,steps,wall_s,samples_per_s,loss,gradient_error,weight_error
+reuse_off,NOT_RUN,numerical_compatibility_gate_failed_before_production_reuse_implementation,,,,,,
+reuse_on,NOT_RUN,numerical_compatibility_gate_failed_before_production_reuse_implementation,,,,,,

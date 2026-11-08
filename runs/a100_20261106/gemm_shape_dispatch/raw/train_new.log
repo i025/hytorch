@@ -1,0 +1,13 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-b1bb.qdstrm'
+[1/1] [0%                          ] train_new.nsys-repProcessing events...
+[1/1] [0%                          ] train_new.nsys-rep[1/1] [=======37%                  ] train_new.nsys-rep[1/1] [=================74%        ] train_new.nsys-rep[1/1] [=======================93%  ] train_new.nsys-rep[1/1] [========================100%] train_new.nsys-rep[1/1] [========================100%] train_new.nsys-rep
+警告: 未找到scipy，无法加载SVHN数据集
+{'mode': 'new', 'repeat': 0, 'steps': 10, 'samples': 40, 'wall_s': 0.051460995338857174, 'samples_per_s': 777.2877251326073, 'loss': 0.0010302267037332058, 'final_hash': 'f52de64c5b7e927b64ff2dfa58aa0bd5a6d3ac812cad7ee325a47a10046f8ddd'}
+Generated:
+	/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/train_new.nsys-rep

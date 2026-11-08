@@ -1,0 +1,2809 @@
+trace,case,implementation,gpu_kernel_us,kernel_count,cpu_elapsed_us
+operators_15,conv1/forward,HyTorch,77.728,4,491.027
+operators_15,conv1/forward,PyTorch,30.24,2,302.77
+operators_15,conv1/forward,PyTorch,28.352,2,52.736
+operators_15,conv1/forward,HyTorch,76.0,4,197.401
+operators_15,conv1/forward,HyTorch,76.032,4,135.9
+operators_15,conv1/forward,PyTorch,28.384,2,52.439
+operators_15,conv1/forward,PyTorch,28.288,2,38.781
+operators_15,conv1/forward,HyTorch,75.456,4,146.037
+operators_15,conv1/forward,HyTorch,76.032,4,124.096
+operators_15,conv1/forward,PyTorch,28.576,2,44.79
+operators_15,conv1/forward,PyTorch,28.864,2,33.653
+operators_15,conv1/forward,HyTorch,76.032,4,144.094
+operators_15,conv1/forward,HyTorch,75.74499999999999,4,126.693
+operators_15,conv1/forward,PyTorch,28.352,2,43.26
+operators_15,conv1/forward,PyTorch,28.448,2,33.094
+operators_15,conv1/forward,HyTorch,75.84,4,138.278
+operators_15,conv1/forward,HyTorch,75.93599999999999,4,124.901
+operators_15,conv1/forward,PyTorch,28.48,2,42.53
+operators_15,conv1/forward,PyTorch,28.512,2,32.344
+operators_15,conv1/forward,HyTorch,75.67999999999999,4,138.223
+operators_15,conv1/forward,HyTorch,76.128,4,122.73
+operators_15,conv1/forward,PyTorch,28.64,2,42.019
+operators_15,conv1/forward,PyTorch,28.256,2,33.069
+operators_15,conv1/forward,HyTorch,75.96799999999999,4,137.952
+operators_15,conv1/forward,HyTorch,75.712,4,125.845
+operators_15,conv1/forward,PyTorch,28.544,2,42.327
+operators_15,conv1/forward,PyTorch,28.352,2,32.522
+operators_15,conv1/forward,HyTorch,76.192,4,137.004
+operators_15,conv1/forward,HyTorch,76.384,4,121.841
+operators_15,conv1/forward,PyTorch,28.384,2,41.835
+operators_15,conv1/dweight,HyTorch,70.336,4,278.106
+operators_15,conv1/dweight,PyTorch,75.968,1,478.914
+operators_15,conv1/dweight,PyTorch,53.536,1,97.685
+operators_15,conv1/dweight,HyTorch,67.297,4,207.411
+operators_15,conv1/dweight,HyTorch,66.944,4,138.396
+operators_15,conv1/dweight,PyTorch,53.409,1,104.767
+operators_15,conv1/dweight,PyTorch,53.504,1,79.45
+operators_15,conv1/dweight,HyTorch,67.29599999999999,4,157.672
+operators_15,conv1/dweight,HyTorch,67.00800000000001,4,136.189
+operators_15,conv1/dweight,PyTorch,53.44,1,91.256
+operators_15,conv1/dweight,PyTorch,53.536,1,76.053
+operators_15,conv1/dweight,HyTorch,67.61600000000001,4,144.523
+operators_15,conv1/dweight,HyTorch,66.912,4,128.712
+operators_15,conv1/dweight,PyTorch,53.408,1,87.26
+operators_15,conv1/dweight,PyTorch,53.537,1,72.748
+operators_15,conv1/dweight,HyTorch,67.328,4,140.069
+operators_15,conv1/dweight,HyTorch,67.008,4,120.434
+operators_15,conv1/dweight,PyTorch,53.536,1,90.061
+operators_15,conv1/dweight,PyTorch,53.504,1,74.086
+operators_15,conv1/dweight,HyTorch,67.232,4,141.784
+operators_15,conv1/dweight,HyTorch,66.816,4,123.206
+operators_15,conv1/dweight,PyTorch,53.472,1,87.392
+operators_15,conv1/dweight,PyTorch,53.568,1,74.75
+operators_15,conv1/dweight,HyTorch,67.489,4,140.402
+operators_15,conv1/dweight,HyTorch,66.72,4,120.211
+operators_15,conv1/dweight,PyTorch,53.441,1,85.418
+operators_15,conv1/dweight,PyTorch,53.504,1,92.318
+operators_15,conv1/dweight,HyTorch,67.489,4,143.863
+operators_15,conv1/dweight,HyTorch,66.976,4,124.511
+operators_15,conv1/dweight,PyTorch,53.441,1,109.073
+operators_15,conv1/dinput,HyTorch,43.584,3,193.838
+operators_15,conv1/dinput,PyTorch,543.329,1,104.164
+operators_15,conv1/dinput,PyTorch,542.657,1,73.162
+operators_15,conv1/dinput,HyTorch,43.232,3,141.529
+operators_15,conv1/dinput,HyTorch,43.04,3,113.708
+operators_15,conv1/dinput,PyTorch,542.913,1,82.394
+operators_15,conv1/dinput,PyTorch,543.393,1,68.402
+operators_15,conv1/dinput,HyTorch,43.04,3,121.293
+operators_15,conv1/dinput,HyTorch,43.232,3,109.892
+operators_15,conv1/dinput,PyTorch,543.394,1,78.127
+operators_15,conv1/dinput,PyTorch,543.106,1,67.975
+operators_15,conv1/dinput,HyTorch,43.232,3,128.187
+operators_15,conv1/dinput,HyTorch,43.007999999999996,3,107.04
+operators_15,conv1/dinput,PyTorch,543.202,1,97.324
+operators_15,conv1/dinput,PyTorch,542.242,1,71.851
+operators_15,conv1/dinput,HyTorch,43.2,3,117.721
+operators_15,conv1/dinput,HyTorch,42.976,3,104.072
+operators_15,conv1/dinput,PyTorch,543.266,1,77.493
+operators_15,conv1/dinput,PyTorch,543.426,1,69.906
+operators_15,conv1/dinput,HyTorch,43.072,3,119.712
+operators_15,conv1/dinput,HyTorch,43.04,3,103.518
+operators_15,conv1/dinput,PyTorch,543.138,1,76.248
+operators_15,conv1/dinput,PyTorch,542.818,1,68.202
+operators_15,conv1/dinput,HyTorch,43.135999999999996,3,119.498
+operators_15,conv1/dinput,HyTorch,42.879999999999995,3,104.097
+operators_15,conv1/dinput,PyTorch,543.362,1,77.806
+operators_15,conv1/dinput,PyTorch,543.458,1,66.753
+operators_15,conv1/dinput,HyTorch,43.391999999999996,3,117.039
+operators_15,conv1/dinput,HyTorch,43.135999999999996,3,104.436
+operators_15,conv1/dinput,PyTorch,543.106,1,77.106
+operators_15,conv1/dbias,HyTorch,27.744,1,121.364
+operators_15,conv1/dbias,PyTorch,16.416,1,116.715
+operators_15,conv1/dbias,PyTorch,14.944,1,67.293
+operators_15,conv1/dbias,HyTorch,25.952,1,56.865
+operators_15,conv1/dbias,HyTorch,25.984,1,41.44
+operators_15,conv1/dbias,PyTorch,14.88,1,76.358
+operators_15,conv1/dbias,PyTorch,14.912,1,68.281
+operators_15,conv1/dbias,HyTorch,25.728,1,47.793
+operators_15,conv1/dbias,HyTorch,25.888,1,39.25
+operators_15,conv1/dbias,PyTorch,14.912,1,79.367
+operators_15,conv1/dbias,PyTorch,14.912,1,65.584
+operators_15,conv1/dbias,HyTorch,25.92,1,46.442
+operators_15,conv1/dbias,HyTorch,25.824,1,38.034
+operators_15,conv1/dbias,PyTorch,14.912,1,73.505
+operators_15,conv1/dbias,PyTorch,14.848,1,63.688
+operators_15,conv1/dbias,HyTorch,25.984,1,45.212
+operators_15,conv1/dbias,HyTorch,25.792,1,38.799
+operators_15,conv1/dbias,PyTorch,14.912,1,72.078
+operators_15,conv1/dbias,PyTorch,14.944,1,63.756
+operators_15,conv1/dbias,HyTorch,25.92,1,45.283
+operators_15,conv1/dbias,HyTorch,25.952,1,37.568
+operators_15,conv1/dbias,PyTorch,14.881,1,72.758
+operators_15,conv1/dbias,PyTorch,14.976,1,63.277
+operators_15,conv1/dbias,HyTorch,25.824,1,45.883
+operators_15,conv1/dbias,HyTorch,25.792,1,36.612
+operators_15,conv1/dbias,PyTorch,14.976,1,73.098
+operators_15,conv1/dbias,PyTorch,14.848,1,62.235
+operators_15,conv1/dbias,HyTorch,25.856,1,45.177
+operators_15,conv1/dbias,HyTorch,25.92,1,37.169
+operators_15,conv1/dbias,PyTorch,14.88,1,73.546
+operators_15,conv1/backward,HyTorch,136.48100000000002,8,450.867
+operators_15,conv1/backward,PyTorch,612.418,3,153.514
+operators_15,conv1/backward,PyTorch,611.874,3,114.852
+operators_15,conv1/backward,HyTorch,136.44899999999998,8,383.207
+operators_15,conv1/backward,HyTorch,136.57700000000003,8,346.703
+operators_15,conv1/backward,PyTorch,612.77,3,155.954
+operators_15,conv1/backward,PyTorch,611.9379999999999,3,117.602
+operators_15,conv1/backward,HyTorch,136.769,8,380.283
+operators_15,conv1/backward,HyTorch,136.576,8,311.908
+operators_15,conv1/backward,PyTorch,612.3539999999999,3,315.778
+operators_15,conv1/backward,PyTorch,611.938,3,149.138
+operators_15,conv1/backward,HyTorch,136.545,8,358.041
+operators_15,conv1/backward,HyTorch,136.768,8,314.93
+operators_15,conv1/backward,PyTorch,612.482,3,151.603
+operators_15,conv1/backward,PyTorch,612.066,3,119.107
+operators_15,conv1/backward,HyTorch,136.769,8,354.977
+operators_15,conv1/backward,HyTorch,136.448,8,299.984
+operators_15,conv1/backward,PyTorch,611.906,3,138.899
+operators_15,conv1/backward,PyTorch,612.322,3,114.541
+operators_15,conv1/backward,HyTorch,136.929,8,349.249
+operators_15,conv1/backward,HyTorch,136.768,8,315.915
+operators_15,conv1/backward,PyTorch,613.0580000000001,3,143.99
+operators_15,conv1/backward,PyTorch,611.746,3,116.775
+operators_15,conv1/backward,HyTorch,136.86399999999998,8,346.767
+operators_15,conv1/backward,HyTorch,136.51299999999998,8,299.436
+operators_15,conv1/backward,PyTorch,612.1940000000001,3,138.135
+operators_15,conv1/backward,PyTorch,612.162,3,114.774
+operators_15,conv1/backward,HyTorch,136.608,8,341.506
+operators_15,conv1/backward,HyTorch,136.481,8,315.619
+operators_15,conv1/backward,PyTorch,612.2579999999999,3,163.22
+operators_15,conv2/forward,HyTorch,146.27299999999997,4,192.806
+operators_15,conv2/forward,PyTorch,151.93699999999998,3,150.273
+operators_15,conv2/forward,PyTorch,149.40800000000002,3,49.487
+operators_15,conv2/forward,HyTorch,145.66400000000002,4,164.741
+operators_15,conv2/forward,HyTorch,145.633,4,134.81
+operators_15,conv2/forward,PyTorch,149.697,3,61.509
+operators_15,conv2/forward,PyTorch,149.37599999999998,3,43.317
+operators_15,conv2/forward,HyTorch,145.56900000000002,4,147.34
+operators_15,conv2/forward,HyTorch,145.79299999999998,4,126.632
+operators_15,conv2/forward,PyTorch,149.856,3,54.121
+operators_15,conv2/forward,PyTorch,149.409,3,39.363
+operators_15,conv2/forward,HyTorch,145.953,4,156.577
+operators_15,conv2/forward,HyTorch,146.55999999999997,4,128.06
+operators_15,conv2/forward,PyTorch,149.792,3,54.302
+operators_15,conv2/forward,PyTorch,149.37699999999998,3,39.726
+operators_15,conv2/forward,HyTorch,145.536,4,141.271
+operators_15,conv2/forward,HyTorch,145.76,4,129.941
+operators_15,conv2/forward,PyTorch,149.761,3,51.251
+operators_15,conv2/forward,PyTorch,149.408,3,38.912
+operators_15,conv2/forward,HyTorch,145.344,4,142.766
+operators_15,conv2/forward,HyTorch,146.881,4,126.112
+operators_15,conv2/forward,PyTorch,149.793,3,54.061
+operators_15,conv2/forward,PyTorch,149.408,3,38.978
+operators_15,conv2/forward,HyTorch,146.369,4,141.963
+operators_15,conv2/forward,HyTorch,145.793,4,124.782
+operators_15,conv2/forward,PyTorch,149.888,3,50.469
+operators_15,conv2/forward,PyTorch,149.34499999999997,3,41.083
+operators_15,conv2/forward,HyTorch,145.50500000000002,4,140.251
+operators_15,conv2/forward,HyTorch,146.176,4,125.864
+operators_15,conv2/forward,PyTorch,149.824,3,51.176
+operators_15,conv2/dweight,HyTorch,97.857,4,190.296
+operators_15,conv2/dweight,PyTorch,81.889,1,211.874
+operators_15,conv2/dweight,PyTorch,83.808,1,93.436
+operators_15,conv2/dweight,HyTorch,97.473,4,189.034
+operators_15,conv2/dweight,HyTorch,96.992,4,133.456
+operators_15,conv2/dweight,PyTorch,84.064,1,102.106
+operators_15,conv2/dweight,PyTorch,83.84,1,79.159
+operators_15,conv2/dweight,HyTorch,97.472,4,153.854
+operators_15,conv2/dweight,HyTorch,97.185,4,126.536
+operators_15,conv2/dweight,PyTorch,83.744,1,91.252
+operators_15,conv2/dweight,PyTorch,83.585,1,74.362
+operators_15,conv2/dweight,HyTorch,97.344,4,142.311
+operators_15,conv2/dweight,HyTorch,97.025,4,127.489
+operators_15,conv2/dweight,PyTorch,84.0,1,88.359
+operators_15,conv2/dweight,PyTorch,83.712,1,75.601
+operators_15,conv2/dweight,HyTorch,97.472,4,142.445
+operators_15,conv2/dweight,HyTorch,97.05600000000001,4,120.457
+operators_15,conv2/dweight,PyTorch,84.0,1,89.295
+operators_15,conv2/dweight,PyTorch,83.552,1,73.706
+operators_15,conv2/dweight,HyTorch,97.473,4,143.02
+operators_15,conv2/dweight,HyTorch,97.27999999999999,4,122.461
+operators_15,conv2/dweight,PyTorch,84.001,1,86.534
+operators_15,conv2/dweight,PyTorch,83.744,1,76.15
+operators_15,conv2/dweight,HyTorch,97.536,4,141.181
+operators_15,conv2/dweight,HyTorch,97.12,4,128.072
+operators_15,conv2/dweight,PyTorch,83.969,1,90.145
+operators_15,conv2/dweight,PyTorch,83.808,1,75.571
+operators_15,conv2/dweight,HyTorch,97.632,4,158.258
+operators_15,conv2/dweight,HyTorch,97.088,4,125.584
+operators_15,conv2/dweight,PyTorch,84.064,1,88.33
+operators_15,conv2/dinput,HyTorch,62.272000000000006,3,157.766
+operators_15,conv2/dinput,PyTorch,80.992,2,103.349
+operators_15,conv2/dinput,PyTorch,75.585,2,73.791
+operators_15,conv2/dinput,HyTorch,61.952,3,136.148
+operators_15,conv2/dinput,HyTorch,61.633,3,415.98
+operators_15,conv2/dinput,PyTorch,76.512,2,107.79
+operators_15,conv2/dinput,PyTorch,78.049,2,76.652
+operators_15,conv2/dinput,HyTorch,62.592,3,181.21
+operators_15,conv2/dinput,HyTorch,62.496,3,120.61
+operators_15,conv2/dinput,PyTorch,82.176,2,88.027
+operators_15,conv2/dinput,PyTorch,74.97699999999999,2,70.782
+operators_15,conv2/dinput,HyTorch,62.336,3,127.902
+operators_15,conv2/dinput,HyTorch,61.057,3,111.524
+operators_15,conv2/dinput,PyTorch,75.584,2,86.059
+operators_15,conv2/dinput,PyTorch,79.32900000000001,2,78.377
+operators_15,conv2/dinput,HyTorch,62.048,3,121.452
+operators_15,conv2/dinput,HyTorch,62.04900000000001,3,104.909
+operators_15,conv2/dinput,PyTorch,75.968,2,83.489
+operators_15,conv2/dinput,PyTorch,76.41600000000001,2,72.833
+operators_15,conv2/dinput,HyTorch,62.272000000000006,3,124.494
+operators_15,conv2/dinput,HyTorch,61.536,3,106.117
+operators_15,conv2/dinput,PyTorch,75.744,2,83.7
+operators_15,conv2/dinput,PyTorch,76.83200000000001,2,71.991
+operators_15,conv2/dinput,HyTorch,61.984,3,121.183
+operators_15,conv2/dinput,HyTorch,62.08,3,103.666
+operators_15,conv2/dinput,PyTorch,75.648,2,100.859
+operators_15,conv2/dinput,PyTorch,76.41600000000001,2,85.469
+operators_15,conv2/dinput,HyTorch,62.144000000000005,3,118.498
+operators_15,conv2/dinput,HyTorch,62.144000000000005,3,106.959
+operators_15,conv2/dinput,PyTorch,75.169,2,83.197
+operators_15,conv2/dbias,HyTorch,11.584,1,89.346
+operators_15,conv2/dbias,PyTorch,28.64,1,101.702
+operators_15,conv2/dbias,PyTorch,26.88,1,68.167
+operators_15,conv2/dbias,HyTorch,10.816,1,54.945
+operators_15,conv2/dbias,HyTorch,10.784,1,41.416
+operators_15,conv2/dbias,PyTorch,26.816,1,75.375
+operators_15,conv2/dbias,PyTorch,26.848,1,64.901
+operators_15,conv2/dbias,HyTorch,10.752,1,48.457
+operators_15,conv2/dbias,HyTorch,10.784,1,39.606
+operators_15,conv2/dbias,PyTorch,26.816,1,72.902
+operators_15,conv2/dbias,PyTorch,26.977,1,65.333
+operators_15,conv2/dbias,HyTorch,10.752,1,46.841
+operators_15,conv2/dbias,HyTorch,10.784,1,38.664
+operators_15,conv2/dbias,PyTorch,26.88,1,73.619
+operators_15,conv2/dbias,PyTorch,27.072,1,62.992
+operators_15,conv2/dbias,HyTorch,10.752,1,46.9
+operators_15,conv2/dbias,HyTorch,10.752,1,37.869
+operators_15,conv2/dbias,PyTorch,26.88,1,72.398
+operators_15,conv2/dbias,PyTorch,26.848,1,63.208
+operators_15,conv2/dbias,HyTorch,10.752,1,45.083
+operators_15,conv2/dbias,HyTorch,10.752,1,36.994
+operators_15,conv2/dbias,PyTorch,27.008,1,76.615
+operators_15,conv2/dbias,PyTorch,26.944,1,63.312
+operators_15,conv2/dbias,HyTorch,10.752,1,46.152
+operators_15,conv2/dbias,HyTorch,10.785,1,38.541
+operators_15,conv2/dbias,PyTorch,26.944,1,71.688
+operators_15,conv2/dbias,PyTorch,27.072,1,63.865
+operators_15,conv2/dbias,HyTorch,10.784,1,46.016
+operators_15,conv2/dbias,HyTorch,10.784,1,38.898
+operators_15,conv2/dbias,PyTorch,26.944,1,71.746
+operators_15,conv2/backward,HyTorch,170.43200000000002,8,443.116
+operators_15,conv2/backward,PyTorch,187.00900000000001,4,165.529
+operators_15,conv2/backward,PyTorch,189.05700000000002,4,121.264
+operators_15,conv2/backward,HyTorch,170.017,8,386.321
+operators_15,conv2/backward,HyTorch,170.208,8,332.196
+operators_15,conv2/backward,PyTorch,192.83200000000002,4,151.378
+operators_15,conv2/backward,PyTorch,188.256,4,120.072
+operators_15,conv2/backward,HyTorch,170.752,8,370.934
+operators_15,conv2/backward,HyTorch,169.92100000000002,8,320.374
+operators_15,conv2/backward,PyTorch,190.91299999999998,4,200.01
+operators_15,conv2/backward,PyTorch,188.16100000000003,4,127.905
+operators_15,conv2/backward,HyTorch,170.68900000000002,8,361.468
+operators_15,conv2/backward,HyTorch,170.01600000000002,8,303.66
+operators_15,conv2/backward,PyTorch,194.305,4,149.153
+operators_15,conv2/backward,PyTorch,190.97699999999998,4,122.204
+operators_15,conv2/backward,HyTorch,170.304,8,387.706
+operators_15,conv2/backward,HyTorch,170.689,8,318.291
+operators_15,conv2/backward,PyTorch,187.072,4,157.651
+operators_15,conv2/backward,PyTorch,192.51299999999998,4,118.74
+operators_15,conv2/backward,HyTorch,170.04900000000004,8,349.968
+operators_15,conv2/backward,HyTorch,169.79200000000003,8,305.224
+operators_15,conv2/backward,PyTorch,191.392,4,171.895
+operators_15,conv2/backward,PyTorch,193.63199999999998,4,124.914
+operators_15,conv2/backward,HyTorch,170.689,8,376.236
+operators_15,conv2/backward,HyTorch,169.31300000000002,8,314.517
+operators_15,conv2/backward,PyTorch,189.05699999999996,4,146.035
+operators_15,conv2/backward,PyTorch,189.728,4,120.156
+operators_15,conv2/backward,HyTorch,170.46499999999997,8,352.314
+operators_15,conv2/backward,HyTorch,170.04899999999998,8,302.063
+operators_15,conv2/backward,PyTorch,188.32100000000003,4,139.73
+operators_15,conv3/forward,HyTorch,87.52,4,199.957
+operators_15,conv3/forward,PyTorch,186.368,8,273.797
+operators_15,conv3/forward,PyTorch,196.73599999999996,8,124.419
+operators_15,conv3/forward,HyTorch,86.721,4,185.434
+operators_15,conv3/forward,HyTorch,86.209,4,139.287
+operators_15,conv3/forward,PyTorch,185.6,8,148.033
+operators_15,conv3/forward,PyTorch,200.70499999999998,8,108.703
+operators_15,conv3/forward,HyTorch,86.689,4,161.92
+operators_15,conv3/forward,HyTorch,86.304,4,133.212
+operators_15,conv3/forward,PyTorch,198.08200000000002,8,129.946
+operators_15,conv3/forward,PyTorch,199.2,8,109.141
+operators_15,conv3/forward,HyTorch,86.848,4,155.478
+operators_15,conv3/forward,HyTorch,86.304,4,127.512
+operators_15,conv3/forward,PyTorch,183.808,8,145.257
+operators_15,conv3/forward,PyTorch,202.24000000000004,8,108.366
+operators_15,conv3/forward,HyTorch,86.752,4,173.513
+operators_15,conv3/forward,HyTorch,86.304,4,136.733
+operators_15,conv3/forward,PyTorch,201.53600000000003,8,130.909
+operators_15,conv3/forward,PyTorch,202.434,8,112.785
+operators_15,conv3/forward,HyTorch,86.688,4,152.752
+operators_15,conv3/forward,HyTorch,86.304,4,127.386
+operators_15,conv3/forward,PyTorch,199.39299999999997,8,126.331
+operators_15,conv3/forward,PyTorch,199.776,8,106.084
+operators_15,conv3/forward,HyTorch,86.688,4,152.325
+operators_15,conv3/forward,HyTorch,86.304,4,130.264
+operators_15,conv3/forward,PyTorch,202.43200000000002,8,124.207
+operators_15,conv3/forward,PyTorch,203.74599999999998,8,106.687
+operators_15,conv3/forward,HyTorch,86.65599999999999,4,153.728
+operators_15,conv3/forward,HyTorch,86.336,4,128.803
+operators_15,conv3/forward,PyTorch,199.90499999999997,8,124.509
+operators_15,conv3/dweight,HyTorch,45.248,4,191.1
+operators_15,conv3/dweight,PyTorch,25.44,1,224.098
+operators_15,conv3/dweight,PyTorch,24.928,1,91.33
+operators_15,conv3/dweight,HyTorch,44.704,4,176.707
+operators_15,conv3/dweight,HyTorch,44.161,4,138.422
+operators_15,conv3/dweight,PyTorch,24.8,1,100.048
+operators_15,conv3/dweight,PyTorch,25.024,1,81.485
+operators_15,conv3/dweight,HyTorch,44.641000000000005,4,154.607
+operators_15,conv3/dweight,HyTorch,44.128,4,126.455
+operators_15,conv3/dweight,PyTorch,25.217,1,91.991
+operators_15,conv3/dweight,PyTorch,25.024,1,74.775
+operators_15,conv3/dweight,HyTorch,44.704,4,154.813
+operators_15,conv3/dweight,HyTorch,43.904,4,125.306
+operators_15,conv3/dweight,PyTorch,24.8,1,89.589
+operators_15,conv3/dweight,PyTorch,24.961,1,74.26
+operators_15,conv3/dweight,HyTorch,44.64,4,143.796
+operators_15,conv3/dweight,HyTorch,44.096000000000004,4,122.329
+operators_15,conv3/dweight,PyTorch,25.216,1,87.514
+operators_15,conv3/dweight,PyTorch,25.024,1,82.254
+operators_15,conv3/dweight,HyTorch,44.64,4,139.426
+operators_15,conv3/dweight,HyTorch,44.0,4,120.863
+operators_15,conv3/dweight,PyTorch,25.248,1,85.37
+operators_15,conv3/dweight,PyTorch,24.992,1,76.775
+operators_15,conv3/dweight,HyTorch,44.64,4,140.313
+operators_15,conv3/dweight,HyTorch,44.001,4,119.008
+operators_15,conv3/dweight,PyTorch,24.704,1,94.347
+operators_15,conv3/dweight,PyTorch,24.96,1,73.333
+operators_15,conv3/dweight,HyTorch,44.576,4,144.722
+operators_15,conv3/dweight,HyTorch,44.12800000000001,4,118.567
+operators_15,conv3/dweight,PyTorch,24.769,1,85.686
+operators_15,conv3/dinput,HyTorch,37.28,3,162.592
+operators_15,conv3/dinput,PyTorch,38.016999999999996,2,107.748
+operators_15,conv3/dinput,PyTorch,35.04,2,78.348
+operators_15,conv3/dinput,HyTorch,37.344,3,139.164
+operators_15,conv3/dinput,HyTorch,36.832,3,114.181
+operators_15,conv3/dinput,PyTorch,37.343999999999994,2,85.941
+operators_15,conv3/dinput,PyTorch,35.168,2,71.602
+operators_15,conv3/dinput,HyTorch,37.312,3,226.429
+operators_15,conv3/dinput,HyTorch,36.608000000000004,3,109.447
+operators_15,conv3/dinput,PyTorch,36.96,2,86.636
+operators_15,conv3/dinput,PyTorch,35.2,2,72.01
+operators_15,conv3/dinput,HyTorch,37.088,3,124.524
+operators_15,conv3/dinput,HyTorch,36.672,3,106.652
+operators_15,conv3/dinput,PyTorch,36.993,2,83.457
+operators_15,conv3/dinput,PyTorch,34.495999999999995,2,70.746
+operators_15,conv3/dinput,HyTorch,37.632000000000005,3,118.767
+operators_15,conv3/dinput,HyTorch,36.929,3,103.682
+operators_15,conv3/dinput,PyTorch,37.024,2,83.315
+operators_15,conv3/dinput,PyTorch,34.688,2,71.711
+operators_15,conv3/dinput,HyTorch,37.408,3,120.081
+operators_15,conv3/dinput,HyTorch,36.512,3,105.088
+operators_15,conv3/dinput,PyTorch,36.736,2,81.657
+operators_15,conv3/dinput,PyTorch,34.879999999999995,2,70.038
+operators_15,conv3/dinput,HyTorch,37.120000000000005,3,120.707
+operators_15,conv3/dinput,HyTorch,36.576,3,103.172
+operators_15,conv3/dinput,PyTorch,37.632000000000005,2,79.626
+operators_15,conv3/dinput,PyTorch,34.432,2,71.071
+operators_15,conv3/dinput,HyTorch,37.153,3,117.711
+operators_15,conv3/dinput,HyTorch,37.056,3,107.347
+operators_15,conv3/dinput,PyTorch,36.96,2,86.564
+operators_15,conv3/dbias,HyTorch,6.912,1,80.974
+operators_15,conv3/dbias,PyTorch,12.832,1,97.896
+operators_15,conv3/dbias,PyTorch,11.04,1,68.198
+operators_15,conv3/dbias,HyTorch,6.528,1,55.818
+operators_15,conv3/dbias,HyTorch,6.56,1,40.444
+operators_15,conv3/dbias,PyTorch,11.008,1,76.495
+operators_15,conv3/dbias,PyTorch,11.04,1,63.985
+operators_15,conv3/dbias,HyTorch,6.528,1,46.398
+operators_15,conv3/dbias,HyTorch,6.56,1,38.133
+operators_15,conv3/dbias,PyTorch,11.04,1,73.542
+operators_15,conv3/dbias,PyTorch,11.008,1,64.506
+operators_15,conv3/dbias,HyTorch,6.56,1,45.77
+operators_15,conv3/dbias,HyTorch,6.56,1,37.177
+operators_15,conv3/dbias,PyTorch,11.008,1,166.984
+operators_15,conv3/dbias,PyTorch,11.04,1,66.654
+operators_15,conv3/dbias,HyTorch,6.528,1,51.08
+operators_15,conv3/dbias,HyTorch,6.56,1,38.838
+operators_15,conv3/dbias,PyTorch,11.072,1,74.684
+operators_15,conv3/dbias,PyTorch,11.008,1,71.688
+operators_15,conv3/dbias,HyTorch,6.528,1,46.294
+operators_15,conv3/dbias,HyTorch,6.528,1,36.838
+operators_15,conv3/dbias,PyTorch,11.04,1,73.756
+operators_15,conv3/dbias,PyTorch,11.072,1,63.795
+operators_15,conv3/dbias,HyTorch,6.528,1,45.723
+operators_15,conv3/dbias,HyTorch,6.528,1,37.383
+operators_15,conv3/dbias,PyTorch,10.977,1,73.186
+operators_15,conv3/dbias,PyTorch,11.04,1,63.203
+operators_15,conv3/dbias,HyTorch,6.528,1,45.912
+operators_15,conv3/dbias,HyTorch,6.592,1,39.318
+operators_15,conv3/dbias,PyTorch,11.04,1,73.203
+operators_15,conv3/backward,HyTorch,88.544,8,431.282
+operators_15,conv3/backward,PyTorch,73.98400000000001,4,144.582
+operators_15,conv3/backward,PyTorch,71.84,4,124.422
+operators_15,conv3/backward,HyTorch,88.736,8,403.29
+operators_15,conv3/backward,HyTorch,88.67200000000001,8,335.955
+operators_15,conv3/backward,PyTorch,74.176,4,141.497
+operators_15,conv3/backward,PyTorch,72.28899999999999,4,119.07
+operators_15,conv3/backward,HyTorch,88.449,8,357.475
+operators_15,conv3/backward,HyTorch,88.8,8,309.515
+operators_15,conv3/backward,PyTorch,75.84,4,148.235
+operators_15,conv3/backward,PyTorch,72.672,4,116.052
+operators_15,conv3/backward,HyTorch,88.768,8,374.239
+operators_15,conv3/backward,HyTorch,88.44800000000001,8,326.934
+operators_15,conv3/backward,PyTorch,73.344,4,161.837
+operators_15,conv3/backward,PyTorch,73.34400000000001,4,125.757
+operators_15,conv3/backward,HyTorch,88.73700000000001,8,349.125
+operators_15,conv3/backward,HyTorch,88.384,8,299.084
+operators_15,conv3/backward,PyTorch,75.10399999999998,4,140.928
+operators_15,conv3/backward,PyTorch,70.881,4,121.583
+operators_15,conv3/backward,HyTorch,88.86399999999999,8,381.401
+operators_15,conv3/backward,HyTorch,88.64,8,314.256
+operators_15,conv3/backward,PyTorch,73.697,4,141.096
+operators_15,conv3/backward,PyTorch,71.488,4,118.343
+operators_15,conv3/backward,HyTorch,88.736,8,364.016
+operators_15,conv3/backward,HyTorch,88.832,8,299.286
+operators_15,conv3/backward,PyTorch,73.376,4,151.87
+operators_15,conv3/backward,PyTorch,72.416,4,120.302
+operators_15,conv3/backward,HyTorch,88.768,8,358.189
+operators_15,conv3/backward,HyTorch,88.705,8,314.349
+operators_15,conv3/backward,PyTorch,72.73599999999999,4,145.542
+operators_15,conv4/forward,HyTorch,48.608000000000004,4,183.879
+operators_15,conv4/forward,PyTorch,39.168,3,117.57
+operators_15,conv4/forward,PyTorch,37.376,3,49.885
+operators_15,conv4/forward,HyTorch,48.352,4,165.001
+operators_15,conv4/forward,HyTorch,48.16,4,135.286
+operators_15,conv4/forward,PyTorch,37.6,3,62.379
+operators_15,conv4/forward,PyTorch,37.472,3,41.122
+operators_15,conv4/forward,HyTorch,48.38399999999999,4,146.428
+operators_15,conv4/forward,HyTorch,48.352000000000004,4,127.949
+operators_15,conv4/forward,PyTorch,37.6,3,51.085
+operators_15,conv4/forward,PyTorch,37.408,3,42.409
+operators_15,conv4/forward,HyTorch,48.32,4,140.222
+operators_15,conv4/forward,HyTorch,48.288,4,125.438
+operators_15,conv4/forward,PyTorch,37.504,3,50.442
+operators_15,conv4/forward,PyTorch,37.408,3,39.074
+operators_15,conv4/forward,HyTorch,48.384,4,143.464
+operators_15,conv4/forward,HyTorch,48.321,4,126.893
+operators_15,conv4/forward,PyTorch,37.568,3,49.718
+operators_15,conv4/forward,PyTorch,37.408,3,38.908
+operators_15,conv4/forward,HyTorch,48.353,4,140.066
+operators_15,conv4/forward,HyTorch,48.224,4,127.746
+operators_15,conv4/forward,PyTorch,37.568,3,49.941
+operators_15,conv4/forward,PyTorch,37.409,3,38.481
+operators_15,conv4/forward,HyTorch,48.384,4,140.548
+operators_15,conv4/forward,HyTorch,48.321,4,124.799
+operators_15,conv4/forward,PyTorch,37.568,3,48.215
+operators_15,conv4/forward,PyTorch,37.408,3,38.311
+operators_15,conv4/forward,HyTorch,48.352000000000004,4,144.267
+operators_15,conv4/forward,HyTorch,48.224000000000004,4,124.961
+operators_15,conv4/forward,PyTorch,37.536,3,59.934
+operators_15,conv4/dweight,HyTorch,30.880000000000003,4,174.861
+operators_15,conv4/dweight,PyTorch,17.056,1,123.685
+operators_15,conv4/dweight,PyTorch,16.704,1,80.566
+operators_15,conv4/dweight,HyTorch,30.240000000000002,4,165.675
+operators_15,conv4/dweight,HyTorch,29.568,4,125.176
+operators_15,conv4/dweight,PyTorch,16.704,1,94.203
+operators_15,conv4/dweight,PyTorch,16.704,1,81.383
+operators_15,conv4/dweight,HyTorch,30.272000000000002,4,147.147
+operators_15,conv4/dweight,HyTorch,29.6,4,124.038
+operators_15,conv4/dweight,PyTorch,16.704,1,92.284
+operators_15,conv4/dweight,PyTorch,16.672,1,75.94
+operators_15,conv4/dweight,HyTorch,30.208000000000002,4,147.816
+operators_15,conv4/dweight,HyTorch,29.568,4,121.843
+operators_15,conv4/dweight,PyTorch,16.736,1,89.478
+operators_15,conv4/dweight,PyTorch,16.704,1,74.435
+operators_15,conv4/dweight,HyTorch,30.176000000000002,4,140.158
+operators_15,conv4/dweight,HyTorch,29.664,4,122.986
+operators_15,conv4/dweight,PyTorch,16.704,1,88.647
+operators_15,conv4/dweight,PyTorch,16.704,1,74.331
+operators_15,conv4/dweight,HyTorch,30.240000000000002,4,138.883
+operators_15,conv4/dweight,HyTorch,29.6,4,119.322
+operators_15,conv4/dweight,PyTorch,16.704,1,88.373
+operators_15,conv4/dweight,PyTorch,16.736,1,73.662
+operators_15,conv4/dweight,HyTorch,30.240000000000002,4,139.561
+operators_15,conv4/dweight,HyTorch,29.6,4,121.126
+operators_15,conv4/dweight,PyTorch,16.672,1,92.17
+operators_15,conv4/dweight,PyTorch,16.672,1,74.339
+operators_15,conv4/dweight,HyTorch,30.240000000000002,4,141.533
+operators_15,conv4/dweight,HyTorch,29.632,4,116.815
+operators_15,conv4/dweight,PyTorch,16.705,1,86.621
+operators_15,conv4/dinput,HyTorch,27.904,3,156.259
+operators_15,conv4/dinput,PyTorch,43.265,2,139.042
+operators_15,conv4/dinput,PyTorch,42.688,2,102.523
+operators_15,conv4/dinput,HyTorch,27.968,3,140.806
+operators_15,conv4/dinput,HyTorch,28.032,3,111.748
+operators_15,conv4/dinput,PyTorch,42.944,2,114.71
+operators_15,conv4/dinput,PyTorch,42.72,2,87.443
+operators_15,conv4/dinput,HyTorch,27.936,3,126.453
+operators_15,conv4/dinput,HyTorch,28.096,3,105.727
+operators_15,conv4/dinput,PyTorch,42.944,2,83.324
+operators_15,conv4/dinput,PyTorch,42.784,2,71.651
+operators_15,conv4/dinput,HyTorch,27.904999999999998,3,118.379
+operators_15,conv4/dinput,HyTorch,28.0,3,107.519
+operators_15,conv4/dinput,PyTorch,42.944,2,84.482
+operators_15,conv4/dinput,PyTorch,42.848000000000006,2,85.856
+operators_15,conv4/dinput,HyTorch,27.872,3,119.295
+operators_15,conv4/dinput,HyTorch,27.936,3,105.45
+operators_15,conv4/dinput,PyTorch,42.944,2,138.818
+operators_15,conv4/dinput,PyTorch,42.816,2,80.878
+operators_15,conv4/dinput,HyTorch,27.968,3,117.7
+operators_15,conv4/dinput,HyTorch,28.0,3,102.766
+operators_15,conv4/dinput,PyTorch,42.913,2,83.974
+operators_15,conv4/dinput,PyTorch,42.656000000000006,2,72.277
+operators_15,conv4/dinput,HyTorch,27.872,3,118.281
+operators_15,conv4/dinput,HyTorch,28.032,3,102.916
+operators_15,conv4/dinput,PyTorch,42.912,2,82.445
+operators_15,conv4/dinput,PyTorch,42.752,2,71.893
+operators_15,conv4/dinput,HyTorch,28.0,3,116.891
+operators_15,conv4/dinput,HyTorch,28.0,3,103.156
+operators_15,conv4/dinput,PyTorch,42.816,2,88.178
+operators_15,conv4/dbias,HyTorch,6.464,1,77.677
+operators_15,conv4/dbias,PyTorch,12.032,1,123.158
+operators_15,conv4/dbias,PyTorch,10.241,1,93.321
+operators_15,conv4/dbias,HyTorch,6.144,1,53.214
+operators_15,conv4/dbias,HyTorch,6.176,1,43.68
+operators_15,conv4/dbias,PyTorch,10.208,1,120.262
+operators_15,conv4/dbias,PyTorch,10.208,1,76.234
+operators_15,conv4/dbias,HyTorch,6.176,1,49.098
+operators_15,conv4/dbias,HyTorch,6.176,1,48.564
+operators_15,conv4/dbias,PyTorch,10.24,1,82.268
+operators_15,conv4/dbias,PyTorch,10.208,1,64.582
+operators_15,conv4/dbias,HyTorch,6.176,1,44.931
+operators_15,conv4/dbias,HyTorch,6.208,1,38.706
+operators_15,conv4/dbias,PyTorch,10.208,1,71.822
+operators_15,conv4/dbias,PyTorch,10.176,1,64.947
+operators_15,conv4/dbias,HyTorch,6.176,1,43.449
+operators_15,conv4/dbias,HyTorch,6.208,1,35.621
+operators_15,conv4/dbias,PyTorch,10.24,1,71.173
+operators_15,conv4/dbias,PyTorch,10.24,1,62.989
+operators_15,conv4/dbias,HyTorch,6.176,1,45.357
+operators_15,conv4/dbias,HyTorch,6.208,1,38.861
+operators_15,conv4/dbias,PyTorch,10.24,1,71.799
+operators_15,conv4/dbias,PyTorch,10.208,1,63.352
+operators_15,conv4/dbias,HyTorch,6.144,1,45.636
+operators_15,conv4/dbias,HyTorch,6.208,1,37.661
+operators_15,conv4/dbias,PyTorch,10.272,1,71.637
+operators_15,conv4/dbias,PyTorch,10.24,1,63.156
+operators_15,conv4/dbias,HyTorch,6.144,1,44.182
+operators_15,conv4/dbias,HyTorch,6.208,1,38.385
+operators_15,conv4/dbias,PyTorch,10.24,1,70.466
+operators_15,conv4/backward,HyTorch,64.416,8,415.996
+operators_15,conv4/backward,PyTorch,71.169,4,171.379
+operators_15,conv4/backward,PyTorch,70.88,4,132.847
+operators_15,conv4/backward,HyTorch,64.576,8,372.266
+operators_15,conv4/backward,HyTorch,64.448,8,325.511
+operators_15,conv4/backward,PyTorch,71.19999999999999,4,144.1
+operators_15,conv4/backward,PyTorch,71.073,4,127.254
+operators_15,conv4/backward,HyTorch,64.57600000000001,8,374.777
+operators_15,conv4/backward,HyTorch,64.384,8,311.884
+operators_15,conv4/backward,PyTorch,71.03999999999999,4,154.225
+operators_15,conv4/backward,PyTorch,71.04,4,123.85
+operators_15,conv4/backward,HyTorch,64.44900000000001,8,393.264
+operators_15,conv4/backward,HyTorch,64.544,8,326.812
+operators_15,conv4/backward,PyTorch,71.2,4,141.669
+operators_15,conv4/backward,PyTorch,71.008,4,123.549
+operators_15,conv4/backward,HyTorch,64.48,8,355.403
+operators_15,conv4/backward,HyTorch,64.513,8,303.899
+operators_15,conv4/backward,PyTorch,71.392,4,136.65
+operators_15,conv4/backward,PyTorch,70.945,4,117.562
+operators_15,conv4/backward,HyTorch,64.288,8,344.057
+operators_15,conv4/backward,HyTorch,64.384,8,313.803
+operators_15,conv4/backward,PyTorch,71.20100000000001,4,145.816
+operators_15,conv4/backward,PyTorch,70.944,4,121.179
+operators_15,conv4/backward,HyTorch,64.416,8,346.149
+operators_15,conv4/backward,HyTorch,64.47999999999999,8,304.705
+operators_15,conv4/backward,PyTorch,71.168,4,147.617
+operators_15,conv4/backward,PyTorch,70.976,4,124.474
+operators_15,conv4/backward,HyTorch,64.48,8,377.555
+operators_15,conv4/backward,HyTorch,64.448,8,310.711
+operators_15,conv4/backward,PyTorch,71.136,4,142.424
+operators_15,conv5/forward,HyTorch,55.36,4,184.4
+operators_15,conv5/forward,PyTorch,44.576,3,109.655
+operators_15,conv5/forward,PyTorch,43.041,3,48.258
+operators_15,conv5/forward,HyTorch,54.623999999999995,4,164.041
+operators_15,conv5/forward,HyTorch,54.624,4,143.612
+operators_15,conv5/forward,PyTorch,43.391999999999996,3,60.362
+operators_15,conv5/forward,PyTorch,43.135999999999996,3,41.081
+operators_15,conv5/forward,HyTorch,54.72,4,149.297
+operators_15,conv5/forward,HyTorch,54.657,4,130.378
+operators_15,conv5/forward,PyTorch,43.263999999999996,3,52.566
+operators_15,conv5/forward,PyTorch,43.135999999999996,3,39.906
+operators_15,conv5/forward,HyTorch,54.656,4,143.611
+operators_15,conv5/forward,HyTorch,54.623999999999995,4,126.468
+operators_15,conv5/forward,PyTorch,43.199999999999996,3,50.066
+operators_15,conv5/forward,PyTorch,43.071999999999996,3,37.718
+operators_15,conv5/forward,HyTorch,54.751999999999995,4,143.145
+operators_15,conv5/forward,HyTorch,54.56,4,126.883
+operators_15,conv5/forward,PyTorch,43.296,3,49.667
+operators_15,conv5/forward,PyTorch,43.135999999999996,3,38.334
+operators_15,conv5/forward,HyTorch,54.688,4,142.426
+operators_15,conv5/forward,HyTorch,54.561,4,128.442
+operators_15,conv5/forward,PyTorch,43.199999999999996,3,48.963
+operators_15,conv5/forward,PyTorch,43.04,3,38.218
+operators_15,conv5/forward,HyTorch,54.689,4,152.637
+operators_15,conv5/forward,HyTorch,54.687999999999995,4,126.394
+operators_15,conv5/forward,PyTorch,43.328,3,53.417
+operators_15,conv5/forward,PyTorch,43.071999999999996,3,39.05
+operators_15,conv5/forward,HyTorch,54.656,4,142.425
+operators_15,conv5/forward,HyTorch,54.559999999999995,4,126.249
+operators_15,conv5/forward,PyTorch,43.263999999999996,3,48.967
+operators_15,conv5/dweight,HyTorch,22.88,3,157.31
+operators_15,conv5/dweight,PyTorch,11.04,1,125.169
+operators_15,conv5/dweight,PyTorch,11.264,1,79.489
+operators_15,conv5/dweight,HyTorch,22.4,3,165.844
+operators_15,conv5/dweight,HyTorch,22.144,3,118.722
+operators_15,conv5/dweight,PyTorch,10.976,1,92.267
+operators_15,conv5/dweight,PyTorch,11.264,1,75.559
+operators_15,conv5/dweight,HyTorch,22.4,3,136.506
+operators_15,conv5/dweight,HyTorch,22.112000000000002,3,110.804
+operators_15,conv5/dweight,PyTorch,10.944,1,85.759
+operators_15,conv5/dweight,PyTorch,11.232,1,73.64
+operators_15,conv5/dweight,HyTorch,22.304000000000002,3,128.994
+operators_15,conv5/dweight,HyTorch,22.144,3,110.345
+operators_15,conv5/dweight,PyTorch,10.976,1,85.36
+operators_15,conv5/dweight,PyTorch,11.2,1,74.586
+operators_15,conv5/dweight,HyTorch,22.368000000000002,3,127.778
+operators_15,conv5/dweight,HyTorch,22.08,3,113.814
+operators_15,conv5/dweight,PyTorch,10.976,1,85.072
+operators_15,conv5/dweight,PyTorch,11.264,1,72.524
+operators_15,conv5/dweight,HyTorch,22.336,3,126.368
+operators_15,conv5/dweight,HyTorch,22.048000000000002,3,109.286
+operators_15,conv5/dweight,PyTorch,10.944,1,87.092
+operators_15,conv5/dweight,PyTorch,11.264,1,73.282
+operators_15,conv5/dweight,HyTorch,22.368000000000002,3,127.597
+operators_15,conv5/dweight,HyTorch,22.048000000000002,3,110.094
+operators_15,conv5/dweight,PyTorch,10.976,1,83.458
+operators_15,conv5/dweight,PyTorch,11.232,1,75.069
+operators_15,conv5/dweight,HyTorch,22.304000000000002,3,138.209
+operators_15,conv5/dweight,HyTorch,22.016,3,110.694
+operators_15,conv5/dweight,PyTorch,10.945,1,91.803
+operators_15,conv5/dinput,HyTorch,22.400000000000002,3,152.771
+operators_15,conv5/dinput,PyTorch,33.824,2,96.429
+operators_15,conv5/dinput,PyTorch,33.664,2,74.411
+operators_15,conv5/dinput,HyTorch,22.272000000000002,3,143.137
+operators_15,conv5/dinput,HyTorch,21.856,3,113.55
+operators_15,conv5/dinput,PyTorch,33.632000000000005,2,84.783
+operators_15,conv5/dinput,PyTorch,33.440000000000005,2,72.506
+operators_15,conv5/dinput,HyTorch,22.240000000000002,3,124.873
+operators_15,conv5/dinput,HyTorch,21.888,3,107.734
+operators_15,conv5/dinput,PyTorch,33.632000000000005,2,81.759
+operators_15,conv5/dinput,PyTorch,33.664,2,72.225
+operators_15,conv5/dinput,HyTorch,22.272000000000002,3,118.421
+operators_15,conv5/dinput,HyTorch,21.888,3,107.233
+operators_15,conv5/dinput,PyTorch,33.728,2,81.779
+operators_15,conv5/dinput,PyTorch,33.536,2,77.759
+operators_15,conv5/dinput,HyTorch,22.273,3,118.697
+operators_15,conv5/dinput,HyTorch,21.888,3,105.199
+operators_15,conv5/dinput,PyTorch,33.76,2,84.071
+operators_15,conv5/dinput,PyTorch,33.504000000000005,2,70.82
+operators_15,conv5/dinput,HyTorch,22.176000000000002,3,117.068
+operators_15,conv5/dinput,HyTorch,21.856,3,102.59
+operators_15,conv5/dinput,PyTorch,33.696,2,81.41
+operators_15,conv5/dinput,PyTorch,33.472,2,72.577
+operators_15,conv5/dinput,HyTorch,22.240000000000002,3,118.793
+operators_15,conv5/dinput,HyTorch,21.952,3,102.519
+operators_15,conv5/dinput,PyTorch,33.632000000000005,2,80.867
+operators_15,conv5/dinput,PyTorch,33.6,2,70.982
+operators_15,conv5/dinput,HyTorch,22.240000000000002,3,119.754
+operators_15,conv5/dinput,HyTorch,21.888,3,102.684
+operators_15,conv5/dinput,PyTorch,33.729,2,81.336
+operators_15,conv5/dbias,HyTorch,6.208,1,77.753
+operators_15,conv5/dbias,PyTorch,9.568,1,78.964
+operators_15,conv5/dbias,PyTorch,7.968,1,65.209
+operators_15,conv5/dbias,HyTorch,5.888,1,54.996
+operators_15,conv5/dbias,HyTorch,5.92,1,43.667
+operators_15,conv5/dbias,PyTorch,7.968,1,88.349
+operators_15,conv5/dbias,PyTorch,7.968,1,67.036
+operators_15,conv5/dbias,HyTorch,5.888,1,49.863
+operators_15,conv5/dbias,HyTorch,5.984,1,39.101
+operators_15,conv5/dbias,PyTorch,8.0,1,72.671
+operators_15,conv5/dbias,PyTorch,7.968,1,65.556
+operators_15,conv5/dbias,HyTorch,5.92,1,45.054
+operators_15,conv5/dbias,HyTorch,5.92,1,38.746
+operators_15,conv5/dbias,PyTorch,7.936,1,71.72
+operators_15,conv5/dbias,PyTorch,7.968,1,63.244
+operators_15,conv5/dbias,HyTorch,5.92,1,45.854
+operators_15,conv5/dbias,HyTorch,5.952,1,38.282
+operators_15,conv5/dbias,PyTorch,7.968,1,73.553
+operators_15,conv5/dbias,PyTorch,7.968,1,63.801
+operators_15,conv5/dbias,HyTorch,5.92,1,45.843
+operators_15,conv5/dbias,HyTorch,5.92,1,39.014
+operators_15,conv5/dbias,PyTorch,7.968,1,73.076
+operators_15,conv5/dbias,PyTorch,8.0,1,63.755
+operators_15,conv5/dbias,HyTorch,5.888,1,45.098
+operators_15,conv5/dbias,HyTorch,5.92,1,36.241
+operators_15,conv5/dbias,PyTorch,8.0,1,71.87
+operators_15,conv5/dbias,PyTorch,8.0,1,63.397
+operators_15,conv5/dbias,HyTorch,5.888,1,46.606
+operators_15,conv5/dbias,HyTorch,5.952,1,37.895
+operators_15,conv5/dbias,PyTorch,7.968,1,71.391
+operators_15,conv5/backward,HyTorch,50.687999999999995,7,400.669
+operators_15,conv5/backward,PyTorch,53.792,4,138.902
+operators_15,conv5/backward,PyTorch,52.25600000000001,4,118.644
+operators_15,conv5/backward,HyTorch,50.881,7,357.272
+operators_15,conv5/backward,HyTorch,50.656000000000006,7,315.326
+operators_15,conv5/backward,PyTorch,53.85600000000001,4,148.366
+operators_15,conv5/backward,PyTorch,52.384,4,119.788
+operators_15,conv5/backward,HyTorch,50.751999999999995,7,347.382
+operators_15,conv5/backward,HyTorch,50.62400000000001,7,292.213
+operators_15,conv5/backward,PyTorch,53.92,4,141.852
+operators_15,conv5/backward,PyTorch,52.256,4,119.137
+operators_15,conv5/backward,HyTorch,50.784000000000006,7,334.949
+operators_15,conv5/backward,HyTorch,50.56100000000001,7,285.728
+operators_15,conv5/backward,PyTorch,53.952999999999996,4,134.762
+operators_15,conv5/backward,PyTorch,52.416,4,117.207
+operators_15,conv5/backward,HyTorch,50.815999999999995,7,339.311
+operators_15,conv5/backward,HyTorch,50.688,7,293.996
+operators_15,conv5/backward,PyTorch,53.889,4,139.383
+operators_15,conv5/backward,PyTorch,52.352000000000004,4,115.711
+operators_15,conv5/backward,HyTorch,50.879999999999995,7,322.682
+operators_15,conv5/backward,HyTorch,50.592000000000006,7,281.666
+operators_15,conv5/backward,PyTorch,53.98500000000001,4,131.609
+operators_15,conv5/backward,PyTorch,52.224000000000004,4,115.356
+operators_15,conv5/backward,HyTorch,50.81700000000001,7,319.414
+operators_15,conv5/backward,HyTorch,50.592000000000006,7,285.75
+operators_15,conv5/backward,PyTorch,53.985,4,151.083
+operators_15,conv5/backward,PyTorch,52.288000000000004,4,118.586
+operators_15,conv5/backward,HyTorch,50.72,7,333.032
+operators_15,conv5/backward,HyTorch,50.52899999999999,7,280.831
+operators_15,conv5/backward,PyTorch,53.92100000000001,4,136.76
+operators_15,irregular/forward,HyTorch,19.424,4,177.704
+operators_15,irregular/forward,PyTorch,17.056,2,101.524
+operators_15,irregular/forward,PyTorch,15.744,2,41.593
+operators_15,irregular/forward,HyTorch,18.944000000000003,4,162.961
+operators_15,irregular/forward,HyTorch,18.72,4,134.911
+operators_15,irregular/forward,PyTorch,16.0,2,48.021
+operators_15,irregular/forward,PyTorch,15.712,2,34.47
+operators_15,irregular/forward,HyTorch,18.912,4,143.26
+operators_15,irregular/forward,HyTorch,18.784,4,127.13
+operators_15,irregular/forward,PyTorch,15.936,2,44.121
+operators_15,irregular/forward,PyTorch,15.745000000000001,2,33.105
+operators_15,irregular/forward,HyTorch,18.912,4,143.568
+operators_15,irregular/forward,HyTorch,18.784,4,127.612
+operators_15,irregular/forward,PyTorch,15.968,2,43.861
+operators_15,irregular/forward,PyTorch,15.68,2,33.395
+operators_15,irregular/forward,HyTorch,18.848,4,137.383
+operators_15,irregular/forward,HyTorch,18.752000000000002,4,122.645
+operators_15,irregular/forward,PyTorch,15.936,2,42.772
+operators_15,irregular/forward,PyTorch,15.744,2,32.708
+operators_15,irregular/forward,HyTorch,18.849,4,138.859
+operators_15,irregular/forward,HyTorch,18.784,4,125.566
+operators_15,irregular/forward,PyTorch,16.0,2,42.269
+operators_15,irregular/forward,PyTorch,15.744,2,32.652
+operators_15,irregular/forward,HyTorch,18.848,4,136.436
+operators_15,irregular/forward,HyTorch,18.816000000000003,4,122.713
+operators_15,irregular/forward,PyTorch,15.968,2,41.937
+operators_15,irregular/forward,PyTorch,15.712,2,32.731
+operators_15,irregular/forward,HyTorch,18.912,4,136.38
+operators_15,irregular/forward,HyTorch,18.784,4,125.454
+operators_15,irregular/forward,PyTorch,16.0,2,42.502
+operators_15,irregular/dweight,HyTorch,24.160000000000004,3,159.969
+operators_15,irregular/dweight,PyTorch,6.784,1,121.256
+operators_15,irregular/dweight,PyTorch,6.112,1,82.395
+operators_15,irregular/dweight,HyTorch,23.297,3,156.062
+operators_15,irregular/dweight,HyTorch,23.328000000000003,3,122.36
+operators_15,irregular/dweight,PyTorch,6.08,1,90.703
+operators_15,irregular/dweight,PyTorch,6.144,1,72.082
+operators_15,irregular/dweight,HyTorch,23.424,3,136.942
+operators_15,irregular/dweight,HyTorch,23.328000000000003,3,111.977
+operators_15,irregular/dweight,PyTorch,6.048,1,87.788
+operators_15,irregular/dweight,PyTorch,6.112,1,69.155
+operators_15,irregular/dweight,HyTorch,23.393,3,130.11
+operators_15,irregular/dweight,HyTorch,23.296,3,109.799
+operators_15,irregular/dweight,PyTorch,6.048,1,81.958
+operators_15,irregular/dweight,PyTorch,6.112,1,69.809
+operators_15,irregular/dweight,HyTorch,23.36,3,128.853
+operators_15,irregular/dweight,HyTorch,23.36,3,109.914
+operators_15,irregular/dweight,PyTorch,6.08,1,80.677
+operators_15,irregular/dweight,PyTorch,6.112,1,69.068
+operators_15,irregular/dweight,HyTorch,23.424,3,128.331
+operators_15,irregular/dweight,HyTorch,23.36,3,109.651
+operators_15,irregular/dweight,PyTorch,6.048,1,78.973
+operators_15,irregular/dweight,PyTorch,6.08,1,68.476
+operators_15,irregular/dweight,HyTorch,23.392000000000003,3,128.907
+operators_15,irregular/dweight,HyTorch,23.264000000000003,3,114.227
+operators_15,irregular/dweight,PyTorch,6.08,1,79.323
+operators_15,irregular/dweight,PyTorch,6.144,1,68.232
+operators_15,irregular/dweight,HyTorch,23.296,3,128.321
+operators_15,irregular/dweight,HyTorch,23.296,3,111.143
+operators_15,irregular/dweight,PyTorch,6.08,1,80.505
+operators_15,irregular/dinput,HyTorch,20.768,3,147.541
+operators_15,irregular/dinput,PyTorch,17.792,2,92.434
+operators_15,irregular/dinput,PyTorch,16.992,2,82.57
+operators_15,irregular/dinput,HyTorch,20.672,3,129.902
+operators_15,irregular/dinput,HyTorch,20.48,3,112.657
+operators_15,irregular/dinput,PyTorch,17.088,2,88.459
+operators_15,irregular/dinput,PyTorch,16.929000000000002,2,75.986
+operators_15,irregular/dinput,HyTorch,20.544,3,122.66
+operators_15,irregular/dinput,HyTorch,20.512,3,111.203
+operators_15,irregular/dinput,PyTorch,17.088,2,84.681
+operators_15,irregular/dinput,PyTorch,16.896,2,71.98
+operators_15,irregular/dinput,HyTorch,20.64,3,117.457
+operators_15,irregular/dinput,HyTorch,20.448,3,103.341
+operators_15,irregular/dinput,PyTorch,17.12,2,82.066
+operators_15,irregular/dinput,PyTorch,16.928,2,70.531
+operators_15,irregular/dinput,HyTorch,20.576,3,117.125
+operators_15,irregular/dinput,HyTorch,20.512,3,103.053
+operators_15,irregular/dinput,PyTorch,17.184,2,82.121
+operators_15,irregular/dinput,PyTorch,16.896,2,70.051
+operators_15,irregular/dinput,HyTorch,20.576,3,116.195
+operators_15,irregular/dinput,HyTorch,20.544,3,101.144
+operators_15,irregular/dinput,PyTorch,17.12,2,80.86
+operators_15,irregular/dinput,PyTorch,16.896,2,70.192
+operators_15,irregular/dinput,HyTorch,20.608,3,114.961
+operators_15,irregular/dinput,HyTorch,20.512,3,103.188
+operators_15,irregular/dinput,PyTorch,17.184,2,80.688
+operators_15,irregular/dinput,PyTorch,16.896,2,70.227
+operators_15,irregular/dinput,HyTorch,20.544,3,119.615
+operators_15,irregular/dinput,HyTorch,20.48,3,103.569
+operators_15,irregular/dinput,PyTorch,17.152,2,79.554
+operators_15,irregular/dbias,HyTorch,5.28,1,77.301
+operators_15,irregular/dbias,PyTorch,7.904,1,78.06
+operators_15,irregular/dbias,PyTorch,6.144,1,64.742
+operators_15,irregular/dbias,HyTorch,5.217,1,53.857
+operators_15,irregular/dbias,HyTorch,5.216,1,40.726
+operators_15,irregular/dbias,PyTorch,6.144,1,74.564
+operators_15,irregular/dbias,PyTorch,6.176,1,63.902
+operators_15,irregular/dbias,HyTorch,5.216,1,45.401
+operators_15,irregular/dbias,HyTorch,5.185,1,36.103
+operators_15,irregular/dbias,PyTorch,6.144,1,73.525
+operators_15,irregular/dbias,PyTorch,6.144,1,65.018
+operators_15,irregular/dbias,HyTorch,5.184,1,46.35
+operators_15,irregular/dbias,HyTorch,5.216,1,37.608
+operators_15,irregular/dbias,PyTorch,6.144,1,74.006
+operators_15,irregular/dbias,PyTorch,6.176,1,64.913
+operators_15,irregular/dbias,HyTorch,5.216,1,43.775
+operators_15,irregular/dbias,HyTorch,5.184,1,35.938
+operators_15,irregular/dbias,PyTorch,6.144,1,71.475
+operators_15,irregular/dbias,PyTorch,6.176,1,64.108
+operators_15,irregular/dbias,HyTorch,5.216,1,45.23
+operators_15,irregular/dbias,HyTorch,5.184,1,37.618
+operators_15,irregular/dbias,PyTorch,6.176,1,73.61
+operators_15,irregular/dbias,PyTorch,6.176,1,64.665
+operators_15,irregular/dbias,HyTorch,5.216,1,44.291
+operators_15,irregular/dbias,HyTorch,5.152,1,36.432
+operators_15,irregular/dbias,PyTorch,6.144,1,71.222
+operators_15,irregular/dbias,PyTorch,6.176,1,64.342
+operators_15,irregular/dbias,HyTorch,5.216,1,44.273
+operators_15,irregular/dbias,HyTorch,5.152,1,36.111
+operators_15,irregular/dbias,PyTorch,6.176,1,66.981
+operators_15,irregular/backward,HyTorch,49.409,7,389.949
+operators_15,irregular/backward,PyTorch,31.2,4,184.353
+operators_15,irregular/backward,PyTorch,29.6,4,156.299
+operators_15,irregular/backward,HyTorch,49.344,7,345.997
+operators_15,irregular/backward,HyTorch,49.216,7,301.413
+operators_15,irregular/backward,PyTorch,31.680000000000003,4,254.798
+operators_15,irregular/backward,PyTorch,29.6,4,170.826
+operators_15,irregular/backward,HyTorch,49.312,7,371.793
+operators_15,irregular/backward,HyTorch,49.28,7,307.335
+operators_15,irregular/backward,PyTorch,31.488,4,143.159
+operators_15,irregular/backward,PyTorch,29.664,4,115.305
+operators_15,irregular/backward,HyTorch,49.376,7,331.589
+operators_15,irregular/backward,HyTorch,49.216,7,286.672
+operators_15,irregular/backward,PyTorch,31.392,4,133.046
+operators_15,irregular/backward,PyTorch,29.695999999999998,4,115.775
+operators_15,irregular/backward,HyTorch,49.408,7,356.995
+operators_15,irregular/backward,HyTorch,49.12,7,295.583
+operators_15,irregular/backward,PyTorch,31.488,4,144.295
+operators_15,irregular/backward,PyTorch,29.599999999999998,4,114.333
+operators_15,irregular/backward,HyTorch,49.312999999999995,7,330.259
+operators_15,irregular/backward,HyTorch,49.120000000000005,7,284.173
+operators_15,irregular/backward,PyTorch,31.424000000000003,4,129.319
+operators_15,irregular/backward,PyTorch,29.632,4,112.484
+operators_15,irregular/backward,HyTorch,49.409000000000006,7,329.683
+operators_15,irregular/backward,HyTorch,49.184,7,289.958
+operators_15,irregular/backward,PyTorch,31.456,4,137.734
+operators_15,irregular/backward,PyTorch,29.727999999999998,4,116.225
+operators_15,irregular/backward,HyTorch,49.408,7,323.638
+operators_15,irregular/backward,HyTorch,49.152,7,283.252
+operators_15,irregular/backward,PyTorch,31.328,4,132.318
+operators_15,asymmetric/forward,HyTorch,18.624000000000002,4,184.355
+operators_15,asymmetric/forward,PyTorch,16.448,2,98.369
+operators_15,asymmetric/forward,PyTorch,14.144000000000002,2,41.949
+operators_15,asymmetric/forward,HyTorch,17.536,4,159.398
+operators_15,asymmetric/forward,HyTorch,17.216,4,130.656
+operators_15,asymmetric/forward,PyTorch,14.655999999999999,2,64.951
+operators_15,asymmetric/forward,PyTorch,14.144000000000002,2,35.294
+operators_15,asymmetric/forward,HyTorch,17.472,4,147.802
+operators_15,asymmetric/forward,HyTorch,17.152,4,131.922
+operators_15,asymmetric/forward,PyTorch,14.687999999999999,2,44.17
+operators_15,asymmetric/forward,PyTorch,14.144000000000002,2,33.623
+operators_15,asymmetric/forward,HyTorch,17.376,4,140.066
+operators_15,asymmetric/forward,HyTorch,17.12,4,126.013
+operators_15,asymmetric/forward,PyTorch,14.687999999999999,2,43.303
+operators_15,asymmetric/forward,PyTorch,14.176000000000002,2,32.622
+operators_15,asymmetric/forward,HyTorch,17.536,4,139.243
+operators_15,asymmetric/forward,HyTorch,17.184,4,125.261
+operators_15,asymmetric/forward,PyTorch,14.751999999999999,2,42.025
+operators_15,asymmetric/forward,PyTorch,14.175999999999998,2,32.905
+operators_15,asymmetric/forward,HyTorch,17.408,4,139.567
+operators_15,asymmetric/forward,HyTorch,17.088,4,126.941
+operators_15,asymmetric/forward,PyTorch,14.783999999999999,2,43.335
+operators_15,asymmetric/forward,PyTorch,14.176000000000002,2,32.689
+operators_15,asymmetric/forward,HyTorch,17.536,4,137.111
+operators_15,asymmetric/forward,HyTorch,17.152,4,124.069
+operators_15,asymmetric/forward,PyTorch,14.687999999999999,2,42.385
+operators_15,asymmetric/forward,PyTorch,14.176000000000002,2,33.38
+operators_15,asymmetric/forward,HyTorch,17.441,4,138.753
+operators_15,asymmetric/forward,HyTorch,17.088,4,122.713
+operators_15,asymmetric/forward,PyTorch,14.719999999999999,2,41.987
+operators_15,asymmetric/dweight,HyTorch,25.216,2,131.262
+operators_15,asymmetric/dweight,PyTorch,7.584,1,118.171
+operators_15,asymmetric/dweight,PyTorch,6.944,1,76.086
+operators_15,asymmetric/dweight,HyTorch,22.112000000000002,2,121.538
+operators_15,asymmetric/dweight,HyTorch,22.048000000000002,2,89.528
+operators_15,asymmetric/dweight,PyTorch,6.912,1,83.843
+operators_15,asymmetric/dweight,PyTorch,6.944,1,72.1
+operators_15,asymmetric/dweight,HyTorch,22.080000000000002,2,104.163
+operators_15,asymmetric/dweight,HyTorch,22.049,2,86.399
+operators_15,asymmetric/dweight,PyTorch,6.944,1,77.806
+operators_15,asymmetric/dweight,PyTorch,6.976,1,68.96
+operators_15,asymmetric/dweight,HyTorch,22.080000000000002,2,101.978
+operators_15,asymmetric/dweight,HyTorch,22.048000000000002,2,85.452
+operators_15,asymmetric/dweight,PyTorch,6.944,1,76.876
+operators_15,asymmetric/dweight,PyTorch,6.944,1,66.851
+operators_15,asymmetric/dweight,HyTorch,22.112000000000002,2,101.779
+operators_15,asymmetric/dweight,HyTorch,22.080000000000002,2,95.332
+operators_15,asymmetric/dweight,PyTorch,6.976,1,80.072
+operators_15,asymmetric/dweight,PyTorch,6.944,1,69.825
+operators_15,asymmetric/dweight,HyTorch,22.112000000000002,2,100.51
+operators_15,asymmetric/dweight,HyTorch,22.080000000000002,2,82.633
+operators_15,asymmetric/dweight,PyTorch,6.912,1,76.676
+operators_15,asymmetric/dweight,PyTorch,6.944,1,69.59
+operators_15,asymmetric/dweight,HyTorch,22.112000000000002,2,102.503
+operators_15,asymmetric/dweight,HyTorch,22.016000000000002,2,84.752
+operators_15,asymmetric/dweight,PyTorch,6.944,1,78.845
+operators_15,asymmetric/dweight,PyTorch,6.976,1,69.097
+operators_15,asymmetric/dweight,HyTorch,22.113,2,98.513
+operators_15,asymmetric/dweight,HyTorch,21.952,2,91.036
+operators_15,asymmetric/dweight,PyTorch,6.944,1,76.874
+operators_15,asymmetric/dinput,HyTorch,17.728,2,122.869
+operators_15,asymmetric/dinput,PyTorch,37.632,1,86.723
+operators_15,asymmetric/dinput,PyTorch,37.024,1,66.763
+operators_15,asymmetric/dinput,HyTorch,17.505000000000003,2,101.338
+operators_15,asymmetric/dinput,HyTorch,17.504,2,85.061
+operators_15,asymmetric/dinput,PyTorch,37.152,1,75.527
+operators_15,asymmetric/dinput,PyTorch,37.153,1,65.152
+operators_15,asymmetric/dinput,HyTorch,17.568,2,94.472
+operators_15,asymmetric/dinput,HyTorch,17.536,2,82.792
+operators_15,asymmetric/dinput,PyTorch,37.025,1,74.057
+operators_15,asymmetric/dinput,PyTorch,36.928,1,67.347
+operators_15,asymmetric/dinput,HyTorch,17.536,2,92.709
+operators_15,asymmetric/dinput,HyTorch,17.568,2,80.487
+operators_15,asymmetric/dinput,PyTorch,37.152,1,75.64
+operators_15,asymmetric/dinput,PyTorch,36.928,1,65.941
+operators_15,asymmetric/dinput,HyTorch,17.568,2,90.907
+operators_15,asymmetric/dinput,HyTorch,17.504,2,81.334
+operators_15,asymmetric/dinput,PyTorch,37.088,1,75.02
+operators_15,asymmetric/dinput,PyTorch,36.96,1,66.095
+operators_15,asymmetric/dinput,HyTorch,17.473,2,91.371
+operators_15,asymmetric/dinput,HyTorch,17.504,2,77.753
+operators_15,asymmetric/dinput,PyTorch,37.216,1,74.684
+operators_15,asymmetric/dinput,PyTorch,37.121,1,64.872
+operators_15,asymmetric/dinput,HyTorch,17.504,2,91.945
+operators_15,asymmetric/dinput,HyTorch,17.536,2,79.491
+operators_15,asymmetric/dinput,PyTorch,36.992,1,74.788
+operators_15,asymmetric/dinput,PyTorch,36.928,1,65.673
+operators_15,asymmetric/dinput,HyTorch,17.504,2,91.445
+operators_15,asymmetric/dinput,HyTorch,17.504,2,87.305
+operators_15,asymmetric/dinput,PyTorch,37.216,1,75.79
+operators_15,asymmetric/dbias,HyTorch,5.696,1,87.543
+operators_15,asymmetric/dbias,PyTorch,7.488,1,78.492
+operators_15,asymmetric/dbias,PyTorch,5.952,1,65.293
+operators_15,asymmetric/dbias,HyTorch,5.408,1,55.984
+operators_15,asymmetric/dbias,HyTorch,5.408,1,42.003
+operators_15,asymmetric/dbias,PyTorch,6.048,1,72.498
+operators_15,asymmetric/dbias,PyTorch,5.984,1,64.672
+operators_15,asymmetric/dbias,HyTorch,5.408,1,47.539
+operators_15,asymmetric/dbias,HyTorch,5.408,1,38.245
+operators_15,asymmetric/dbias,PyTorch,6.08,1,70.481
+operators_15,asymmetric/dbias,PyTorch,5.984,1,62.78
+operators_15,asymmetric/dbias,HyTorch,5.44,1,45.092
+operators_15,asymmetric/dbias,HyTorch,5.44,1,38.642
+operators_15,asymmetric/dbias,PyTorch,6.048,1,76.646
+operators_15,asymmetric/dbias,PyTorch,5.952,1,63.858
+operators_15,asymmetric/dbias,HyTorch,5.44,1,46.817
+operators_15,asymmetric/dbias,HyTorch,5.376,1,38.169
+operators_15,asymmetric/dbias,PyTorch,6.048,1,71.032
+operators_15,asymmetric/dbias,PyTorch,5.984,1,65.281
+operators_15,asymmetric/dbias,HyTorch,5.408,1,46.143
+operators_15,asymmetric/dbias,HyTorch,5.408,1,37.085
+operators_15,asymmetric/dbias,PyTorch,6.049,1,72.835
+operators_15,asymmetric/dbias,PyTorch,5.952,1,66.373
+operators_15,asymmetric/dbias,HyTorch,5.408,1,46.394
+operators_15,asymmetric/dbias,HyTorch,5.44,1,38.701
+operators_15,asymmetric/dbias,PyTorch,6.048,1,70.911
+operators_15,asymmetric/dbias,PyTorch,5.984,1,64.933
+operators_15,asymmetric/dbias,HyTorch,5.408,1,46.347
+operators_15,asymmetric/dbias,HyTorch,5.44,1,37.199
+operators_15,asymmetric/dbias,PyTorch,6.048,1,70.732
+operators_15,asymmetric/backward,HyTorch,45.184000000000005,5,348.519
+operators_15,asymmetric/backward,PyTorch,50.431999999999995,3,132.395
+operators_15,asymmetric/backward,PyTorch,50.272000000000006,3,107.891
+operators_15,asymmetric/backward,HyTorch,45.21600000000001,5,314.11
+operators_15,asymmetric/backward,HyTorch,45.152,5,253.197
+operators_15,asymmetric/backward,PyTorch,50.879999999999995,3,127.498
+operators_15,asymmetric/backward,PyTorch,50.208,3,107.337
+operators_15,asymmetric/backward,HyTorch,45.216,5,279.105
+operators_15,asymmetric/backward,HyTorch,45.08800000000001,5,257.101
+operators_15,asymmetric/backward,PyTorch,50.720000000000006,3,136.106
+operators_15,asymmetric/backward,PyTorch,50.016000000000005,3,117.477
+operators_15,asymmetric/backward,HyTorch,45.248000000000005,5,284.568
+operators_15,asymmetric/backward,HyTorch,45.120000000000005,5,238.613
+operators_15,asymmetric/backward,PyTorch,50.784000000000006,3,126.38
+operators_15,asymmetric/backward,PyTorch,50.24100000000001,3,108.384
+operators_15,asymmetric/backward,HyTorch,45.248,5,268.514
+operators_15,asymmetric/backward,HyTorch,45.088,5,235.205
+operators_15,asymmetric/backward,PyTorch,50.720000000000006,3,123.199
+operators_15,asymmetric/backward,PyTorch,50.272000000000006,3,107.782
+operators_15,asymmetric/backward,HyTorch,45.152,5,290.651
+operators_15,asymmetric/backward,HyTorch,45.089000000000006,5,244.064
+operators_15,asymmetric/backward,PyTorch,50.688,3,123.807
+operators_15,asymmetric/backward,PyTorch,49.984,3,106.912
+operators_15,asymmetric/backward,HyTorch,45.184000000000005,5,272.163
+operators_15,asymmetric/backward,HyTorch,45.248000000000005,5,234.177
+operators_15,asymmetric/backward,PyTorch,50.751999999999995,3,128.149
+operators_15,asymmetric/backward,PyTorch,50.24,3,107.606
+operators_15,asymmetric/backward,HyTorch,45.248000000000005,5,261.973
+operators_15,asymmetric/backward,HyTorch,45.184000000000005,5,241.181
+operators_15,asymmetric/backward,PyTorch,50.75300000000001,3,127.397
+operators_15,gemm/12152/24/75,basic,33.632,1,66.233
+operators_15,gemm/12152/24/75,blocked,52.32,1,32.649
+operators_15,gemm/12152/24/75,shared,30.785,1,28.863
+operators_15,gemm/12152/24/75,register_old_dispatch,30.944,1,15.806
+operators_15,gemm/12152/24/75,PyTorch,22.08,1,60.89
+operators_15,gemm/12152/24/75,PyTorch,16.704,1,14.788
+operators_15,gemm/12152/24/75,register_old_dispatch,30.528,1,8.366
+operators_15,gemm/12152/24/75,shared,30.528,1,33.835
+operators_15,gemm/12152/24/75,blocked,51.552,1,27.41
+operators_15,gemm/12152/24/75,basic,30.72,1,24.023
+operators_15,gemm/12152/24/75,basic,30.176,1,23.94
+operators_15,gemm/12152/24/75,blocked,51.456,1,22.543
+operators_15,gemm/12152/24/75,shared,30.944,1,22.384
+operators_15,gemm/12152/24/75,register_old_dispatch,30.688,1,7.732
+operators_15,gemm/12152/24/75,PyTorch,16.672,1,15.908
+operators_15,gemm/12152/24/75,PyTorch,16.576,1,12.917
+operators_15,gemm/12152/24/75,register_old_dispatch,30.624,1,7.511
+operators_15,gemm/12152/24/75,shared,30.816,1,29.016
+operators_15,gemm/12152/24/75,blocked,51.425,1,24.338
+operators_15,gemm/12152/24/75,basic,30.4,1,22.731
+operators_15,gemm/12152/24/75,basic,30.208,1,22.535
+operators_15,gemm/12152/24/75,blocked,51.424,1,22.45
+operators_15,gemm/12152/24/75,shared,30.785,1,22.237
+operators_15,gemm/12152/24/75,register_old_dispatch,30.624,1,7.427
+operators_15,gemm/12152/24/75,PyTorch,16.704,1,14.931
+operators_15,gemm/12152/24/75,PyTorch,16.64,1,12.793
+operators_15,gemm/12152/24/75,register_old_dispatch,30.624,1,7.646
+operators_15,gemm/12152/24/75,shared,30.72,1,26.844
+operators_15,gemm/12152/24/75,blocked,51.553,1,30.951
+operators_15,gemm/12152/24/75,basic,30.208,1,22.238
+operators_15,gemm/12152/24/75,basic,30.336,1,22.848
+operators_15,gemm/12152/24/75,blocked,51.488,1,21.695
+operators_15,gemm/12152/24/75,shared,30.592,1,22.854
+operators_15,gemm/12152/24/75,register_old_dispatch,30.465,1,7.865
+operators_15,gemm/12152/24/75,PyTorch,16.704,1,15.905
+operators_15,gemm/12152/24/75,PyTorch,16.704,1,12.904
+operators_15,gemm/12152/24/75,register_old_dispatch,30.24,1,7.523
+operators_15,gemm/12152/24/75,shared,30.624,1,26.385
+operators_15,gemm/12152/24/75,blocked,51.584,1,24.149
+operators_15,gemm/12152/24/75,basic,30.208,1,22.756
+operators_15,gemm/12152/24/75,basic,30.176,1,22.755
+operators_15,gemm/12152/24/75,blocked,51.456,1,22.422
+operators_15,gemm/12152/24/75,shared,30.784,1,21.554
+operators_15,gemm/12152/24/75,register_old_dispatch,30.624,1,7.533
+operators_15,gemm/12152/24/75,PyTorch,16.704,1,15.122
+operators_15,gemm/12152/24/75,PyTorch,16.672,1,13.147
+operators_15,gemm/12152/24/75,register_old_dispatch,30.688,1,7.375
+operators_15,gemm/12152/24/75,shared,30.848,1,26.011
+operators_15,gemm/12152/24/75,blocked,51.68,1,23.999
+operators_15,gemm/12152/24/75,basic,30.113,1,21.558
+operators_15,gemm/12152/24/75,basic,30.304,1,22.43
+operators_15,gemm/12152/24/75,blocked,51.52,1,22.077
+operators_15,gemm/12152/24/75,shared,30.368,1,21.646
+operators_15,gemm/12152/24/75,register_old_dispatch,30.592,1,7.279
+operators_15,gemm/12152/24/75,PyTorch,16.64,1,15.339
+operators_15,gemm/12152/24/75,PyTorch,16.64,1,12.791
+operators_15,gemm/12152/24/75,register_old_dispatch,30.624,1,7.431
+operators_15,gemm/12152/24/75,shared,30.496,1,25.892
+operators_15,gemm/12152/24/75,blocked,51.584,1,23.186
+operators_15,gemm/12152/24/75,basic,30.144,1,22.128
+operators_15,gemm/12152/24/75,basic,30.209,1,22.643
+operators_15,gemm/12152/24/75,blocked,51.52,1,22.805
+operators_15,gemm/12152/24/75,shared,30.528,1,21.354
+operators_15,gemm/12152/24/75,register_old_dispatch,30.592,1,7.438
+operators_15,gemm/12152/24/75,PyTorch,16.736,1,14.712
+operators_15,gemm/12152/24/75,PyTorch,16.768,1,18.532
+operators_15,gemm/12152/24/75,register_old_dispatch,30.593,1,7.375
+operators_15,gemm/12152/24/75,shared,30.656,1,26.636
+operators_15,gemm/12152/24/75,blocked,51.552,1,23.517
+operators_15,gemm/12152/24/75,basic,30.368,1,22.752
+operators_15,gemm/12152/24/75,basic,30.336,1,22.644
+operators_15,gemm/12152/24/75,blocked,51.744,1,21.504
+operators_15,gemm/12152/24/75,shared,30.688,1,21.733
+operators_15,gemm/12152/24/75,register_old_dispatch,30.592,1,7.505
+operators_15,gemm/12152/24/75,PyTorch,16.704,1,14.823
+operators_15,gemm/2632/36/600,basic,95.905,1,30.887
+operators_15,gemm/2632/36/600,blocked,148.288,1,24.575
+operators_15,gemm/2632/36/600,shared,79.329,1,22.805
+operators_15,gemm/2632/36/600,register_old_dispatch,79.36,1,7.95
+operators_15,gemm/2632/36/600,PyTorch,45.376000000000005,2,24.38
+operators_15,gemm/2632/36/600,PyTorch,42.623999999999995,2,17.367
+operators_15,gemm/2632/36/600,register_old_dispatch,79.457,1,7.581
+operators_15,gemm/2632/36/600,shared,79.264,1,27.178
+operators_15,gemm/2632/36/600,blocked,144.385,1,23.894
+operators_15,gemm/2632/36/600,basic,94.048,1,22.428
+operators_15,gemm/2632/36/600,basic,93.504,1,23.041
+operators_15,gemm/2632/36/600,blocked,144.8,1,22.493
+operators_15,gemm/2632/36/600,shared,79.232,1,21.688
+operators_15,gemm/2632/36/600,register_old_dispatch,80.225,1,7.561
+operators_15,gemm/2632/36/600,PyTorch,42.656,2,18.532
+operators_15,gemm/2632/36/600,PyTorch,42.592,2,16.468
+operators_15,gemm/2632/36/600,register_old_dispatch,79.424,1,7.469
+operators_15,gemm/2632/36/600,shared,79.36,1,25.699
+operators_15,gemm/2632/36/600,blocked,144.384,1,23.794
+operators_15,gemm/2632/36/600,basic,93.92,1,22.374
+operators_15,gemm/2632/36/600,basic,93.056,1,22.539
+operators_15,gemm/2632/36/600,blocked,144.417,1,22.325
+operators_15,gemm/2632/36/600,shared,79.552,1,21.707
+operators_15,gemm/2632/36/600,register_old_dispatch,79.425,1,8.03
+operators_15,gemm/2632/36/600,PyTorch,42.944,2,18.712
+operators_15,gemm/2632/36/600,PyTorch,42.4,2,16.926
+operators_15,gemm/2632/36/600,register_old_dispatch,79.264,1,7.557
+operators_15,gemm/2632/36/600,shared,79.425,1,28.71
+operators_15,gemm/2632/36/600,blocked,144.64,1,31.518
+operators_15,gemm/2632/36/600,basic,93.537,1,24.128
+operators_15,gemm/2632/36/600,basic,94.368,1,27.531
+operators_15,gemm/2632/36/600,blocked,145.441,1,22.712
+operators_15,gemm/2632/36/600,shared,79.584,1,22.067
+operators_15,gemm/2632/36/600,register_old_dispatch,79.712,1,7.39
+operators_15,gemm/2632/36/600,PyTorch,43.105,2,19.314
+operators_15,gemm/2632/36/600,PyTorch,42.464,2,16.522
+operators_15,gemm/2632/36/600,register_old_dispatch,79.968,1,7.568
+operators_15,gemm/2632/36/600,shared,79.264,1,26.179
+operators_15,gemm/2632/36/600,blocked,144.64,1,23.545
+operators_15,gemm/2632/36/600,basic,94.368,1,22.669
+operators_15,gemm/2632/36/600,basic,94.08,1,22.919
+operators_15,gemm/2632/36/600,blocked,144.384,1,22.602
+operators_15,gemm/2632/36/600,shared,79.424,1,22.195
+operators_15,gemm/2632/36/600,register_old_dispatch,79.072,1,7.248
+operators_15,gemm/2632/36/600,PyTorch,42.848,2,19.508
+operators_15,gemm/2632/36/600,PyTorch,42.497,2,16.296
+operators_15,gemm/2632/36/600,register_old_dispatch,79.04,1,7.53
+operators_15,gemm/2632/36/600,shared,79.808,1,25.406
+operators_15,gemm/2632/36/600,blocked,144.577,1,22.152
+operators_15,gemm/2632/36/600,basic,93.376,1,22.435
+operators_15,gemm/2632/36/600,basic,93.761,1,21.966
+operators_15,gemm/2632/36/600,blocked,144.32,1,22.111
+operators_15,gemm/2632/36/600,shared,79.169,1,21.891
+operators_15,gemm/2632/36/600,register_old_dispatch,79.104,1,7.342
+operators_15,gemm/2632/36/600,PyTorch,42.88,2,18.109
+operators_15,gemm/2632/36/600,PyTorch,42.528,2,16.225
+operators_15,gemm/2632/36/600,register_old_dispatch,79.681,1,7.811
+operators_15,gemm/2632/36/600,shared,79.168,1,25.348
+operators_15,gemm/2632/36/600,blocked,144.449,1,22.174
+operators_15,gemm/2632/36/600,basic,93.888,1,21.494
+operators_15,gemm/2632/36/600,basic,94.016,1,22.798
+operators_15,gemm/2632/36/600,blocked,144.289,1,22.182
+operators_15,gemm/2632/36/600,shared,80.416,1,22.023
+operators_15,gemm/2632/36/600,register_old_dispatch,79.265,1,7.617
+operators_15,gemm/2632/36/600,PyTorch,42.72,2,18.44
+operators_15,gemm/2632/36/600,PyTorch,42.528,2,16.306
+operators_15,gemm/2632/36/600,register_old_dispatch,79.392,1,8.018
+operators_15,gemm/2632/36/600,shared,79.841,1,27.092
+operators_15,gemm/2632/36/600,blocked,144.576,1,27.25
+operators_15,gemm/2632/36/600,basic,93.889,1,22.392
+operators_15,gemm/2632/36/600,basic,93.568,1,22.384
+operators_15,gemm/2632/36/600,blocked,144.609,1,21.544
+operators_15,gemm/2632/36/600,shared,79.136,1,21.913
+operators_15,gemm/2632/36/600,register_old_dispatch,79.616,1,7.455
+operators_15,gemm/2632/36/600,PyTorch,42.753,2,18.934
+operators_15,gemm/440/48/900,basic,101.76,1,28.911
+operators_15,gemm/440/48/900,blocked,131.233,1,23.265
+operators_15,gemm/440/48/900,shared,49.952,1,23.233
+operators_15,gemm/440/48/900,register_old_dispatch,49.952,1,8.124
+operators_15,gemm/440/48/900,PyTorch,25.664,2,24.884
+operators_15,gemm/440/48/900,PyTorch,24.8,2,17.983
+operators_15,gemm/440/48/900,register_old_dispatch,49.825,1,7.278
+operators_15,gemm/440/48/900,shared,50.112,1,26.889
+operators_15,gemm/440/48/900,blocked,102.912,1,25.373
+operators_15,gemm/440/48/900,basic,57.409,1,23.314
+operators_15,gemm/440/48/900,basic,58.016,1,22.401
+operators_15,gemm/440/48/900,blocked,102.56,1,21.534
+operators_15,gemm/440/48/900,shared,49.793,1,22.341
+operators_15,gemm/440/48/900,register_old_dispatch,49.888,1,8.173
+operators_15,gemm/440/48/900,PyTorch,25.024,2,20.092
+operators_15,gemm/440/48/900,PyTorch,24.8,2,17.311
+operators_15,gemm/440/48/900,register_old_dispatch,49.824,1,7.533
+operators_15,gemm/440/48/900,shared,50.113,1,26.541
+operators_15,gemm/440/48/900,blocked,102.144,1,22.555
+operators_15,gemm/440/48/900,basic,57.248,1,21.244
+operators_15,gemm/440/48/900,basic,57.281,1,21.523
+operators_15,gemm/440/48/900,blocked,102.336,1,21.711
+operators_15,gemm/440/48/900,shared,49.792,1,21.735
+operators_15,gemm/440/48/900,register_old_dispatch,49.921,1,7.38
+operators_15,gemm/440/48/900,PyTorch,24.96,2,19.192
+operators_15,gemm/440/48/900,PyTorch,24.832,2,17.104
+operators_15,gemm/440/48/900,register_old_dispatch,49.792,1,7.19
+operators_15,gemm/440/48/900,shared,50.144,1,25.25
+operators_15,gemm/440/48/900,blocked,102.529,1,22.038
+operators_15,gemm/440/48/900,basic,57.664,1,22.084
+operators_15,gemm/440/48/900,basic,57.696,1,21.998
+operators_15,gemm/440/48/900,blocked,102.433,1,22.021
+operators_15,gemm/440/48/900,shared,49.728,1,22.162
+operators_15,gemm/440/48/900,register_old_dispatch,49.952,1,7.607
+operators_15,gemm/440/48/900,PyTorch,24.896,2,18.934
+operators_15,gemm/440/48/900,PyTorch,25.088,2,20.468
+operators_15,gemm/440/48/900,register_old_dispatch,49.824,1,7.387
+operators_15,gemm/440/48/900,shared,50.144,1,25.414
+operators_15,gemm/440/48/900,blocked,102.081,1,27.733
+operators_15,gemm/440/48/900,basic,57.248,1,22.139
+operators_15,gemm/440/48/900,basic,57.696,1,22.609
+operators_15,gemm/440/48/900,blocked,102.657,1,21.431
+operators_15,gemm/440/48/900,shared,49.76,1,22.683
+operators_15,gemm/440/48/900,register_old_dispatch,49.92,1,9.464
+operators_15,gemm/440/48/900,PyTorch,24.928,2,19.812
+operators_15,gemm/440/48/900,PyTorch,24.832,2,17.808
+operators_15,gemm/440/48/900,register_old_dispatch,49.857,1,8.052
+operators_15,gemm/440/48/900,shared,50.176,1,25.997
+operators_15,gemm/440/48/900,blocked,102.72,1,22.397
+operators_15,gemm/440/48/900,basic,57.409,1,21.72
+operators_15,gemm/440/48/900,basic,57.6,1,22.856
+operators_15,gemm/440/48/900,blocked,102.848,1,21.5
+operators_15,gemm/440/48/900,shared,49.761,1,21.94
+operators_15,gemm/440/48/900,register_old_dispatch,49.92,1,7.335
+operators_15,gemm/440/48/900,PyTorch,24.896,2,19.611
+operators_15,gemm/440/48/900,PyTorch,24.896,2,17.436
+operators_15,gemm/440/48/900,register_old_dispatch,49.856,1,7.174
+operators_15,gemm/440/48/900,shared,50.145,1,26.002
+operators_15,gemm/440/48/900,blocked,103.104,1,23.149
+operators_15,gemm/440/48/900,basic,57.568,1,22.108
+operators_15,gemm/440/48/900,basic,57.761,1,22.523
+operators_15,gemm/440/48/900,blocked,103.008,1,21.671
+operators_15,gemm/440/48/900,shared,49.792,1,21.685
+operators_15,gemm/440/48/900,register_old_dispatch,49.952,1,7.285
+operators_15,gemm/440/48/900,PyTorch,25.024,2,18.813
+operators_15,gemm/440/48/900,PyTorch,24.992,2,17.068
+operators_15,gemm/440/48/900,register_old_dispatch,49.792,1,7.201
+operators_15,gemm/440/48/900,shared,50.144,1,24.334
+operators_15,gemm/440/48/900,blocked,101.953,1,23.139
+operators_15,gemm/440/48/900,basic,57.568,1,22.797
+operators_15,gemm/440/48/900,basic,58.048,1,22.131
+operators_15,gemm/440/48/900,blocked,102.465,1,21.814
+operators_15,gemm/440/48/900,shared,49.824,1,21.968
+operators_15,gemm/440/48/900,register_old_dispatch,50.016,1,7.73
+operators_15,gemm/440/48/900,PyTorch,24.896,2,19.411
+operators_15,gemm/240/64/432,basic,43.617,1,29.135
+operators_15,gemm/240/64/432,blocked,56.96,1,23.251
+operators_15,gemm/240/64/432,shared,25.408,1,22.761
+operators_15,gemm/240/64/432,register_old_dispatch,99.168,1,10.889
+operators_15,gemm/240/64/432,PyTorch,19.488,2,20.512
+operators_15,gemm/240/64/432,PyTorch,17.824,2,16.223
+operators_15,gemm/240/64/432,register_old_dispatch,95.232,1,7.73
+operators_15,gemm/240/64/432,shared,25.344,1,26.445
+operators_15,gemm/240/64/432,blocked,52.673,1,23.569
+operators_15,gemm/240/64/432,basic,30.016,1,22.381
+operators_15,gemm/240/64/432,basic,29.888,1,25.097
+operators_15,gemm/240/64/432,blocked,52.672,1,22.23
+operators_15,gemm/240/64/432,shared,25.248,1,21.38
+operators_15,gemm/240/64/432,register_old_dispatch,95.265,1,8.157
+operators_15,gemm/240/64/432,PyTorch,18.08,2,19.122
+operators_15,gemm/240/64/432,PyTorch,17.856,2,16.794
+operators_15,gemm/240/64/432,register_old_dispatch,95.424,1,7.517
+operators_15,gemm/240/64/432,shared,25.28,1,25.953
+operators_15,gemm/240/64/432,blocked,52.448,1,25.691
+operators_15,gemm/240/64/432,basic,29.952,1,22.415
+operators_15,gemm/240/64/432,basic,29.92,1,23.093
+operators_15,gemm/240/64/432,blocked,52.769,1,22.223
+operators_15,gemm/240/64/432,shared,25.28,1,22.205
+operators_15,gemm/240/64/432,register_old_dispatch,95.136,1,7.841
+operators_15,gemm/240/64/432,PyTorch,18.112000000000002,2,18.627
+operators_15,gemm/240/64/432,PyTorch,17.792,2,16.476
+operators_15,gemm/240/64/432,register_old_dispatch,95.361,1,7.42
+operators_15,gemm/240/64/432,shared,25.248,1,26.354
+operators_15,gemm/240/64/432,blocked,52.576,1,23.583
+operators_15,gemm/240/64/432,basic,30.048,1,22.377
+operators_15,gemm/240/64/432,basic,29.857,1,23.104
+operators_15,gemm/240/64/432,blocked,52.736,1,22.18
+operators_15,gemm/240/64/432,shared,25.312,1,22.021
+operators_15,gemm/240/64/432,register_old_dispatch,95.264,1,8.023
+operators_15,gemm/240/64/432,PyTorch,18.145,2,18.545
+operators_15,gemm/240/64/432,PyTorch,17.824,2,16.694
+operators_15,gemm/240/64/432,register_old_dispatch,95.392,1,7.443
+operators_15,gemm/240/64/432,shared,25.312,1,26.052
+operators_15,gemm/240/64/432,blocked,52.448,1,23.686
+operators_15,gemm/240/64/432,basic,29.984,1,22.097
+operators_15,gemm/240/64/432,basic,29.92,1,22.453
+operators_15,gemm/240/64/432,blocked,52.736,1,21.745
+operators_15,gemm/240/64/432,shared,25.28,1,21.681
+operators_15,gemm/240/64/432,register_old_dispatch,95.297,1,7.6
+operators_15,gemm/240/64/432,PyTorch,18.144,2,18.595
+operators_15,gemm/240/64/432,PyTorch,17.887999999999998,2,16.702
+operators_15,gemm/240/64/432,register_old_dispatch,95.296,1,7.581
+operators_15,gemm/240/64/432,shared,25.313,1,26.703
+operators_15,gemm/240/64/432,blocked,52.736,1,24.022
+operators_15,gemm/240/64/432,basic,30.016,1,22.466
+operators_15,gemm/240/64/432,basic,29.6,1,21.608
+operators_15,gemm/240/64/432,blocked,52.8,1,21.841
+operators_15,gemm/240/64/432,shared,25.28,1,21.401
+operators_15,gemm/240/64/432,register_old_dispatch,95.168,1,7.443
+operators_15,gemm/240/64/432,PyTorch,18.112000000000002,2,18.834
+operators_15,gemm/240/64/432,PyTorch,17.823999999999998,2,16.604
+operators_15,gemm/240/64/432,register_old_dispatch,95.233,1,7.579
+operators_15,gemm/240/64/432,shared,25.28,1,24.58
+operators_15,gemm/240/64/432,blocked,52.608,1,23.306
+operators_15,gemm/240/64/432,basic,30.08,1,21.846
+operators_15,gemm/240/64/432,basic,29.92,1,22.308
+operators_15,gemm/240/64/432,blocked,52.96,1,21.799
+operators_15,gemm/240/64/432,shared,25.312,1,22.116
+operators_15,gemm/240/64/432,register_old_dispatch,95.168,1,7.398
+operators_15,gemm/240/64/432,PyTorch,18.144,2,18.965
+operators_15,gemm/240/64/432,PyTorch,17.825,2,16.444
+operators_15,gemm/240/64/432,register_old_dispatch,95.328,1,7.544
+operators_15,gemm/240/64/432,shared,25.312,1,25.304
+operators_15,gemm/240/64/432,blocked,52.608,1,22.931
+operators_15,gemm/240/64/432,basic,30.081,1,23.068
+operators_15,gemm/240/64/432,basic,29.888,1,23.16
+operators_15,gemm/240/64/432,blocked,52.768,1,22.448
+operators_15,gemm/240/64/432,shared,25.28,1,21.757
+operators_15,gemm/240/64/432,register_old_dispatch,95.265,1,7.549
+operators_15,gemm/240/64/432,PyTorch,18.144,2,18.456
+operators_15,gemm/72/64/576,basic,58.56,1,28.594
+operators_15,gemm/72/64/576,blocked,74.048,1,23.165
+operators_15,gemm/72/64/576,shared,32.417,1,22.109
+operators_15,gemm/72/64/576,register_old_dispatch,130.24,1,7.504
+operators_15,gemm/72/64/576,PyTorch,17.184,2,27.247
+operators_15,gemm/72/64/576,PyTorch,15.84,2,17.448
+operators_15,gemm/72/64/576,register_old_dispatch,124.673,1,7.572
+operators_15,gemm/72/64/576,shared,32.32,1,25.106
+operators_15,gemm/72/64/576,blocked,67.616,1,23.994
+operators_15,gemm/72/64/576,basic,37.825,1,22.437
+operators_15,gemm/72/64/576,basic,37.952,1,22.528
+operators_15,gemm/72/64/576,blocked,68.064,1,22.481
+operators_15,gemm/72/64/576,shared,32.352,1,21.992
+operators_15,gemm/72/64/576,register_old_dispatch,124.449,1,7.533
+operators_15,gemm/72/64/576,PyTorch,16.064,2,18.819
+operators_15,gemm/72/64/576,PyTorch,15.872,2,16.841
+operators_15,gemm/72/64/576,register_old_dispatch,124.608,1,7.383
+operators_15,gemm/72/64/576,shared,32.352,1,26.014
+operators_15,gemm/72/64/576,blocked,67.744,1,23.628
+operators_15,gemm/72/64/576,basic,37.856,1,21.699
+operators_15,gemm/72/64/576,basic,37.856,1,22.968
+operators_15,gemm/72/64/576,blocked,67.968,1,23.046
+operators_15,gemm/72/64/576,shared,32.384,1,21.548
+operators_15,gemm/72/64/576,register_old_dispatch,124.576,1,7.777
+operators_15,gemm/72/64/576,PyTorch,16.032,2,19.105
+operators_15,gemm/72/64/576,PyTorch,15.872,2,16.713
+operators_15,gemm/72/64/576,register_old_dispatch,124.576,1,7.329
+operators_15,gemm/72/64/576,shared,32.352,1,24.545
+operators_15,gemm/72/64/576,blocked,67.713,1,22.127
+operators_15,gemm/72/64/576,basic,37.984,1,21.471
+operators_15,gemm/72/64/576,basic,37.792,1,21.311
+operators_15,gemm/72/64/576,blocked,68.032,1,22.573
+operators_15,gemm/72/64/576,shared,32.32,1,21.22
+operators_15,gemm/72/64/576,register_old_dispatch,124.672,1,7.337
+operators_15,gemm/72/64/576,PyTorch,16.096,2,19.484
+operators_15,gemm/72/64/576,PyTorch,15.904,2,17.242
+operators_15,gemm/72/64/576,register_old_dispatch,124.577,1,8.047
+operators_15,gemm/72/64/576,shared,32.352,1,24.429
+operators_15,gemm/72/64/576,blocked,67.968,1,22.133
+operators_15,gemm/72/64/576,basic,37.921,1,21.82
+operators_15,gemm/72/64/576,basic,37.184,1,22.335
+operators_15,gemm/72/64/576,blocked,68.064,1,22.291
+operators_15,gemm/72/64/576,shared,32.384,1,22.346
+operators_15,gemm/72/64/576,register_old_dispatch,124.641,1,7.516
+operators_15,gemm/72/64/576,PyTorch,16.064,2,19.169
+operators_15,gemm/72/64/576,PyTorch,15.904,2,16.998
+operators_15,gemm/72/64/576,register_old_dispatch,124.801,1,7.737
+operators_15,gemm/72/64/576,shared,32.32,1,25.538
+operators_15,gemm/72/64/576,blocked,67.68,1,23.407
+operators_15,gemm/72/64/576,basic,37.76,1,22.71
+operators_15,gemm/72/64/576,basic,38.048,1,21.649
+operators_15,gemm/72/64/576,blocked,67.936,1,22.723
+operators_15,gemm/72/64/576,shared,32.352,1,21.358
+operators_15,gemm/72/64/576,register_old_dispatch,124.576,1,7.631
+operators_15,gemm/72/64/576,PyTorch,16.096,2,19.384
+operators_15,gemm/72/64/576,PyTorch,15.904,2,17.078
+operators_15,gemm/72/64/576,register_old_dispatch,124.736,1,7.611
+operators_15,gemm/72/64/576,shared,32.352,1,25.711
+operators_15,gemm/72/64/576,blocked,67.744,1,22.87
+operators_15,gemm/72/64/576,basic,37.92,1,21.605
+operators_15,gemm/72/64/576,basic,37.44,1,22.749
+operators_15,gemm/72/64/576,blocked,67.936,1,22.14
+operators_15,gemm/72/64/576,shared,32.384,1,21.555
+operators_15,gemm/72/64/576,register_old_dispatch,124.576,1,7.766
+operators_15,gemm/72/64/576,PyTorch,16.032,2,19.441
+operators_15,gemm/72/64/576,PyTorch,15.84,2,16.86
+operators_15,gemm/72/64/576,register_old_dispatch,124.513,1,7.466
+operators_15,gemm/72/64/576,shared,32.352,1,25.734
+operators_15,gemm/72/64/576,blocked,67.808,1,28.427
+operators_15,gemm/72/64/576,basic,37.856,1,22.299
+operators_15,gemm/72/64/576,basic,37.792,1,21.885
+operators_15,gemm/72/64/576,blocked,68.192,1,22.041
+operators_15,gemm/72/64/576,shared,32.384,1,22.12
+operators_15,gemm/72/64/576,register_old_dispatch,124.513,1,7.805
+operators_15,gemm/72/64/576,PyTorch,16.032,2,18.673
+operators_15,gemm/4/100/1152,basic,118.817,1,29.05
+operators_15,gemm/4/100/1152,blocked,154.72,1,23.002
+operators_15,gemm/4/100/1152,shared,58.592,1,22.714
+operators_15,gemm/4/100/1152,register_old_dispatch,58.625,1,7.884
+operators_15,gemm/4/100/1152,PyTorch,17.28,2,19.856
+operators_15,gemm/4/100/1152,PyTorch,16.128,2,16.552
+operators_15,gemm/4/100/1152,register_old_dispatch,58.496,1,7.515
+operators_15,gemm/4/100/1152,shared,58.624,1,25.504
+operators_15,gemm/4/100/1152,blocked,117.472,1,22.94
+operators_15,gemm/4/100/1152,basic,60.288,1,22.026
+operators_15,gemm/4/100/1152,basic,62.945,1,22.566
+operators_15,gemm/4/100/1152,blocked,117.504,1,21.858
+operators_15,gemm/4/100/1152,shared,58.464,1,22.058
+operators_15,gemm/4/100/1152,register_old_dispatch,58.593,1,7.677
+operators_15,gemm/4/100/1152,PyTorch,16.32,2,18.634
+operators_15,gemm/4/100/1152,PyTorch,16.128,2,16.751
+operators_15,gemm/4/100/1152,register_old_dispatch,58.464,1,7.427
+operators_15,gemm/4/100/1152,shared,58.624,1,26.681
+operators_15,gemm/4/100/1152,blocked,117.505,1,23.722
+operators_15,gemm/4/100/1152,basic,60.8,1,22.362
+operators_15,gemm/4/100/1152,basic,62.048,1,23.2
+operators_15,gemm/4/100/1152,blocked,117.504,1,21.62
+operators_15,gemm/4/100/1152,shared,58.464,1,21.485
+operators_15,gemm/4/100/1152,register_old_dispatch,58.592,1,7.362
+operators_15,gemm/4/100/1152,PyTorch,16.224,2,18.666
+operators_15,gemm/4/100/1152,PyTorch,16.128,2,16.803
+operators_15,gemm/4/100/1152,register_old_dispatch,58.432,1,8.097
+operators_15,gemm/4/100/1152,shared,58.656,1,24.898
+operators_15,gemm/4/100/1152,blocked,117.473,1,22.725
+operators_15,gemm/4/100/1152,basic,61.856,1,22.351
+operators_15,gemm/4/100/1152,basic,63.616,1,21.48
+operators_15,gemm/4/100/1152,blocked,117.505,1,21.296
+operators_15,gemm/4/100/1152,shared,58.432,1,21.652
+operators_15,gemm/4/100/1152,register_old_dispatch,58.592,1,7.444
+operators_15,gemm/4/100/1152,PyTorch,16.225,2,18.807
+operators_15,gemm/4/100/1152,PyTorch,16.096,2,16.573
+operators_15,gemm/4/100/1152,register_old_dispatch,58.432,1,7.539
+operators_15,gemm/4/100/1152,shared,58.624,1,25.201
+operators_15,gemm/4/100/1152,blocked,117.505,1,23.123
+operators_15,gemm/4/100/1152,basic,64.48,1,22.241
+operators_15,gemm/4/100/1152,basic,61.024,1,22.614
+operators_15,gemm/4/100/1152,blocked,117.569,1,22.514
+operators_15,gemm/4/100/1152,shared,58.464,1,22.041
+operators_15,gemm/4/100/1152,register_old_dispatch,58.624,1,7.367
+operators_15,gemm/4/100/1152,PyTorch,16.288,2,19.04
+operators_15,gemm/4/100/1152,PyTorch,16.097,2,16.764
+operators_15,gemm/4/100/1152,register_old_dispatch,58.464,1,7.059
+operators_15,gemm/4/100/1152,shared,58.656,1,24.663
+operators_15,gemm/4/100/1152,blocked,117.441,1,22.635
+operators_15,gemm/4/100/1152,basic,59.2,1,21.837
+operators_15,gemm/4/100/1152,basic,63.072,1,21.592
+operators_15,gemm/4/100/1152,blocked,117.505,1,29.923
+operators_15,gemm/4/100/1152,shared,58.496,1,20.818
+operators_15,gemm/4/100/1152,register_old_dispatch,58.592,1,7.507
+operators_15,gemm/4/100/1152,PyTorch,16.256,2,19.151
+operators_15,gemm/4/100/1152,PyTorch,16.128,2,25.233
+operators_15,gemm/4/100/1152,register_old_dispatch,58.464,1,7.89
+operators_15,gemm/4/100/1152,shared,58.624,1,27.127
+operators_15,gemm/4/100/1152,blocked,117.409,1,23.868
+operators_15,gemm/4/100/1152,basic,61.248,1,22.108
+operators_15,gemm/4/100/1152,basic,62.4,1,22.088
+operators_15,gemm/4/100/1152,blocked,117.537,1,22.195
+operators_15,gemm/4/100/1152,shared,58.496,1,23.054
+operators_15,gemm/4/100/1152,register_old_dispatch,58.624,1,7.854
+operators_15,gemm/4/100/1152,PyTorch,16.288,2,19.806
+operators_15,gemm/4/100/1152,PyTorch,16.096,2,17.076
+operators_15,gemm/4/100/1152,register_old_dispatch,58.465,1,7.355
+operators_15,gemm/4/100/1152,shared,58.592,1,26.308
+operators_15,gemm/4/100/1152,blocked,117.44,1,22.656
+operators_15,gemm/4/100/1152,basic,61.344,1,21.765
+operators_15,gemm/4/100/1152,basic,62.944,1,22.168
+operators_15,gemm/4/100/1152,blocked,117.537,1,21.975
+operators_15,gemm/4/100/1152,shared,58.432,1,21.705
+operators_15,gemm/4/100/1152,register_old_dispatch,58.56,1,7.735
+operators_15,gemm/4/100/1152,PyTorch,16.224,2,18.951
+operators_15,gemm/4/50/100,basic,14.72,1,29.39
+operators_15,gemm/4/50/100,blocked,15.553,1,23.964
+operators_15,gemm/4/50/100,shared,8.672,1,21.727
+operators_15,gemm/4/50/100,register_old_dispatch,8.576,1,8.184
+operators_15,gemm/4/50/100,PyTorch,9.632,1,22.562
+operators_15,gemm/4/50/100,PyTorch,6.592,1,13.103
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.808
+operators_15,gemm/4/50/100,shared,8.576,1,26.847
+operators_15,gemm/4/50/100,blocked,13.44,1,24.003
+operators_15,gemm/4/50/100,basic,8.512,1,22.458
+operators_15,gemm/4/50/100,basic,8.544,1,21.968
+operators_15,gemm/4/50/100,blocked,13.408,1,21.432
+operators_15,gemm/4/50/100,shared,8.576,1,21.648
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.33
+operators_15,gemm/4/50/100,PyTorch,6.592,1,14.833
+operators_15,gemm/4/50/100,PyTorch,6.56,1,13.259
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.643
+operators_15,gemm/4/50/100,shared,8.576,1,25.308
+operators_15,gemm/4/50/100,blocked,13.408,1,22.112
+operators_15,gemm/4/50/100,basic,8.608,1,22.048
+operators_15,gemm/4/50/100,basic,8.544,1,23.258
+operators_15,gemm/4/50/100,blocked,13.408,1,22.663
+operators_15,gemm/4/50/100,shared,8.544,1,21.478
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.489
+operators_15,gemm/4/50/100,PyTorch,6.624,1,14.926
+operators_15,gemm/4/50/100,PyTorch,6.592,1,13.298
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.686
+operators_15,gemm/4/50/100,shared,8.544,1,24.569
+operators_15,gemm/4/50/100,blocked,13.44,1,22.597
+operators_15,gemm/4/50/100,basic,8.576,1,21.96
+operators_15,gemm/4/50/100,basic,8.544,1,22.597
+operators_15,gemm/4/50/100,blocked,13.376,1,21.797
+operators_15,gemm/4/50/100,shared,8.544,1,21.962
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.391
+operators_15,gemm/4/50/100,PyTorch,6.56,1,14.552
+operators_15,gemm/4/50/100,PyTorch,6.592,1,12.899
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.907
+operators_15,gemm/4/50/100,shared,8.608,1,24.955
+operators_15,gemm/4/50/100,blocked,13.376,1,22.722
+operators_15,gemm/4/50/100,basic,8.544,1,21.883
+operators_15,gemm/4/50/100,basic,8.48,1,21.393
+operators_15,gemm/4/50/100,blocked,13.376,1,22.389
+operators_15,gemm/4/50/100,shared,8.544,1,21.485
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.153
+operators_15,gemm/4/50/100,PyTorch,6.592,1,14.344
+operators_15,gemm/4/50/100,PyTorch,6.56,1,12.542
+operators_15,gemm/4/50/100,register_old_dispatch,8.576,1,7.228
+operators_15,gemm/4/50/100,shared,8.577,1,25.294
+operators_15,gemm/4/50/100,blocked,13.408,1,22.415
+operators_15,gemm/4/50/100,basic,8.544,1,21.73
+operators_15,gemm/4/50/100,basic,8.512,1,22.755
+operators_15,gemm/4/50/100,blocked,13.408,1,21.602
+operators_15,gemm/4/50/100,shared,8.576,1,20.851
+operators_15,gemm/4/50/100,register_old_dispatch,8.576,1,7.211
+operators_15,gemm/4/50/100,PyTorch,6.624,1,13.99
+operators_15,gemm/4/50/100,PyTorch,6.592,1,12.368
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.242
+operators_15,gemm/4/50/100,shared,8.576,1,24.922
+operators_15,gemm/4/50/100,blocked,13.408,1,22.957
+operators_15,gemm/4/50/100,basic,8.608,1,22.082
+operators_15,gemm/4/50/100,basic,8.512,1,21.323
+operators_15,gemm/4/50/100,blocked,13.408,1,21.276
+operators_15,gemm/4/50/100,shared,8.576,1,20.978
+operators_15,gemm/4/50/100,register_old_dispatch,8.608,1,7.631
+operators_15,gemm/4/50/100,PyTorch,6.656,1,14.249
+operators_15,gemm/4/50/100,PyTorch,6.56,1,12.462
+operators_15,gemm/4/50/100,register_old_dispatch,8.544,1,7.277
+operators_15,gemm/4/50/100,shared,8.576,1,24.633
+operators_15,gemm/4/50/100,blocked,13.408,1,21.659
+operators_15,gemm/4/50/100,basic,8.576,1,21.568
+operators_15,gemm/4/50/100,basic,8.576,1,22.423
+operators_15,gemm/4/50/100,blocked,13.376,1,21.478
+operators_15,gemm/4/50/100,shared,8.544,1,21.205
+operators_15,gemm/4/50/100,register_old_dispatch,8.576,1,7.484
+operators_15,gemm/4/50/100,PyTorch,6.593,1,14.539
+operators_15,gemm/4/1/50,basic,7.04,1,27.08
+operators_15,gemm/4/1/50,blocked,7.456,1,22.797
+operators_15,gemm/4/1/50,shared,5.632,1,22.391
+operators_15,gemm/4/1/50,register_old_dispatch,5.536,1,7.138
+operators_15,gemm/4/1/50,PyTorch,5.408,1,25.171
+operators_15,gemm/4/1/50,PyTorch,4.704,1,13.535
+operators_15,gemm/4/1/50,register_old_dispatch,5.536,1,7.649
+operators_15,gemm/4/1/50,shared,5.6,1,27.706
+operators_15,gemm/4/1/50,blocked,7.456,1,23.788
+operators_15,gemm/4/1/50,basic,5.568,1,21.818
+operators_15,gemm/4/1/50,basic,5.6,1,22.374
+operators_15,gemm/4/1/50,blocked,7.456,1,25.683
+operators_15,gemm/4/1/50,shared,5.536,1,21.203
+operators_15,gemm/4/1/50,register_old_dispatch,5.6,1,7.478
+operators_15,gemm/4/1/50,PyTorch,4.736,1,14.941
+operators_15,gemm/4/1/50,PyTorch,4.704,1,12.91
+operators_15,gemm/4/1/50,register_old_dispatch,5.536,1,7.381
+operators_15,gemm/4/1/50,shared,5.568,1,29.848
+operators_15,gemm/4/1/50,blocked,7.488,1,22.865
+operators_15,gemm/4/1/50,basic,5.568,1,22.295
+operators_15,gemm/4/1/50,basic,5.568,1,22.79
+operators_15,gemm/4/1/50,blocked,7.424,1,21.959
+operators_15,gemm/4/1/50,shared,5.568,1,20.826
+operators_15,gemm/4/1/50,register_old_dispatch,5.568,1,7.334
+operators_15,gemm/4/1/50,PyTorch,4.704,1,14.971
+operators_15,gemm/4/1/50,PyTorch,4.736,1,12.634
+operators_15,gemm/4/1/50,register_old_dispatch,5.568,1,7.443
+operators_15,gemm/4/1/50,shared,5.568,1,24.748
+operators_15,gemm/4/1/50,blocked,7.488,1,22.55
+operators_15,gemm/4/1/50,basic,5.568,1,21.804
+operators_15,gemm/4/1/50,basic,5.568,1,22.609
+operators_15,gemm/4/1/50,blocked,7.424,1,21.321
+operators_15,gemm/4/1/50,shared,5.536,1,21.683
+operators_15,gemm/4/1/50,register_old_dispatch,5.536,1,7.38
+operators_15,gemm/4/1/50,PyTorch,4.672,1,14.331
+operators_15,gemm/4/1/50,PyTorch,4.704,1,12.751
+operators_15,gemm/4/1/50,register_old_dispatch,5.568,1,7.082
+operators_15,gemm/4/1/50,shared,5.536,1,24.382
+operators_15,gemm/4/1/50,blocked,7.456,1,22.498
+operators_15,gemm/4/1/50,basic,5.568,1,21.727
+operators_15,gemm/4/1/50,basic,5.568,1,21.74
+operators_15,gemm/4/1/50,blocked,7.456,1,21.399
+operators_15,gemm/4/1/50,shared,5.504,1,22.345
+operators_15,gemm/4/1/50,register_old_dispatch,5.504,1,7.515
+operators_15,gemm/4/1/50,PyTorch,4.704,1,14.533
+operators_15,gemm/4/1/50,PyTorch,4.64,1,12.785
+operators_15,gemm/4/1/50,register_old_dispatch,5.504,1,8.023
+operators_15,gemm/4/1/50,shared,5.536,1,23.91
+operators_15,gemm/4/1/50,blocked,7.424,1,22.257
+operators_15,gemm/4/1/50,basic,5.536,1,21.528
+operators_15,gemm/4/1/50,basic,5.6,1,21.697
+operators_15,gemm/4/1/50,blocked,7.424,1,21.491
+operators_15,gemm/4/1/50,shared,5.536,1,21.846
+operators_15,gemm/4/1/50,register_old_dispatch,5.504,1,7.291
+operators_15,gemm/4/1/50,PyTorch,4.704,1,14.594
+operators_15,gemm/4/1/50,PyTorch,4.672,1,12.491
+operators_15,gemm/4/1/50,register_old_dispatch,5.536,1,7.161
+operators_15,gemm/4/1/50,shared,5.504,1,25.904
+operators_15,gemm/4/1/50,blocked,7.456,1,24.073
+operators_15,gemm/4/1/50,basic,5.568,1,21.771
+operators_15,gemm/4/1/50,basic,5.568,1,21.905
+operators_15,gemm/4/1/50,blocked,7.392,1,21.385
+operators_15,gemm/4/1/50,shared,5.504,1,21.781
+operators_15,gemm/4/1/50,register_old_dispatch,5.568,1,7.279
+operators_15,gemm/4/1/50,PyTorch,4.704,1,14.456
+operators_15,gemm/4/1/50,PyTorch,4.704,1,13.126
+operators_15,gemm/4/1/50,register_old_dispatch,5.504,1,7.083
+operators_15,gemm/4/1/50,shared,5.536,1,23.201
+operators_15,gemm/4/1/50,blocked,7.424,1,22.024
+operators_15,gemm/4/1/50,basic,5.536,1,21.947
+operators_15,gemm/4/1/50,basic,5.568,1,21.798
+operators_15,gemm/4/1/50,blocked,7.424,1,21.851
+operators_15,gemm/4/1/50,shared,5.568,1,22.325
+operators_15,gemm/4/1/50,register_old_dispatch,5.568,1,7.298
+operators_15,gemm/4/1/50,PyTorch,4.704,1,14.328
+operators_15,gemm/1024/1024/1024,basic,1418.437,1,29.891
+operators_15,gemm/1024/1024/1024,blocked,1562.117,1,23.247
+operators_15,gemm/1024/1024/1024,shared,466.146,1,23.68
+operators_15,gemm/1024/1024/1024,register_old_dispatch,465.249,1,8.499
+operators_15,gemm/1024/1024/1024,PyTorch,232.288,1,32.126
+operators_15,gemm/1024/1024/1024,PyTorch,231.841,1,17.726
+operators_15,gemm/1024/1024/1024,register_old_dispatch,480.866,1,7.95
+operators_15,gemm/1024/1024/1024,shared,466.625,1,28.6
+operators_15,gemm/1024/1024/1024,blocked,1561.477,1,23.77
+operators_15,gemm/1024/1024/1024,basic,1420.037,1,23.56
+operators_15,gemm/1024/1024/1024,basic,1414.564,1,22.824
+operators_15,gemm/1024/1024/1024,blocked,1562.245,1,23.975
+operators_15,gemm/1024/1024/1024,shared,466.593,1,24.083
+operators_15,gemm/1024/1024/1024,register_old_dispatch,465.954,1,8.171
+operators_15,gemm/1024/1024/1024,PyTorch,231.905,1,21.308
+operators_15,gemm/1024/1024/1024,PyTorch,231.873,1,17.442
+operators_15,gemm/1024/1024/1024,register_old_dispatch,478.017,1,8.372
+operators_15,gemm/1024/1024/1024,shared,465.953,1,30.949
+operators_15,gemm/1024/1024/1024,blocked,1562.757,1,24.002
+operators_15,gemm/1024/1024/1024,basic,1419.972,1,25.269
+operators_15,gemm/1024/1024/1024,basic,1416.837,1,23.416
+operators_15,gemm/1024/1024/1024,blocked,1562.629,1,23.907
+operators_15,gemm/1024/1024/1024,shared,467.265,1,22.328
+operators_15,gemm/1024/1024/1024,register_old_dispatch,465.346,1,7.578
+operators_15,gemm/1024/1024/1024,PyTorch,232.001,1,19.395
+operators_15,gemm/1024/1024/1024,PyTorch,231.744,1,16.074
+operators_15,gemm/1024/1024/1024,register_old_dispatch,479.298,1,7.825
+operators_15,gemm/1024/1024/1024,shared,466.466,1,27.38
+operators_15,gemm/1024/1024/1024,blocked,1562.821,1,24.056
+operators_15,gemm/1024/1024/1024,basic,1416.581,1,24.008
+operators_15,gemm/1024/1024/1024,basic,1418.469,1,22.513
+operators_15,gemm/1024/1024/1024,blocked,1562.021,1,26.609
+operators_15,gemm/1024/1024/1024,shared,467.17,1,23.784
+operators_15,gemm/1024/1024/1024,register_old_dispatch,466.401,1,7.543
+operators_15,gemm/1024/1024/1024,PyTorch,232.129,1,21.947
+operators_15,gemm/1024/1024/1024,PyTorch,231.713,1,16.42
+operators_15,gemm/1024/1024/1024,register_old_dispatch,478.658,1,7.481
+operators_15,gemm/1024/1024/1024,shared,465.377,1,26.374
+operators_15,gemm/1024/1024/1024,blocked,1561.67,1,23.168
+operators_15,gemm/1024/1024/1024,basic,1418.917,1,26.941
+operators_15,gemm/1024/1024/1024,basic,1418.82,1,25.421
+operators_15,gemm/1024/1024/1024,blocked,1562.214,1,22.949
+operators_15,gemm/1024/1024/1024,shared,464.609,1,22.568
+operators_15,gemm/1024/1024/1024,register_old_dispatch,465.474,1,8.229
+operators_15,gemm/1024/1024/1024,PyTorch,231.969,1,20.837
+operators_15,gemm/1024/1024/1024,PyTorch,231.777,1,16.211
+operators_15,gemm/1024/1024/1024,register_old_dispatch,478.913,1,7.831
+operators_15,gemm/1024/1024/1024,shared,465.858,1,28.166
+operators_15,gemm/1024/1024/1024,blocked,1562.021,1,22.917
+operators_15,gemm/1024/1024/1024,basic,1417.381,1,21.793
+operators_15,gemm/1024/1024/1024,basic,1418.821,1,23.933
+operators_15,gemm/1024/1024/1024,blocked,1561.637,1,29.352
+operators_15,gemm/1024/1024/1024,shared,466.37,1,25.912
+operators_15,gemm/1024/1024/1024,register_old_dispatch,466.338,1,8.535
+operators_15,gemm/1024/1024/1024,PyTorch,231.968,1,21.713
+operators_15,gemm/1024/1024/1024,PyTorch,231.84,1,15.926
+operators_15,gemm/1024/1024/1024,register_old_dispatch,477.762,1,7.788
+operators_15,gemm/1024/1024/1024,shared,465.794,1,27.09
+operators_15,gemm/1024/1024/1024,blocked,1561.509,1,23.34
+operators_15,gemm/1024/1024/1024,basic,1416.357,1,23.102
+operators_15,gemm/1024/1024/1024,basic,1417.125,1,24.851
+operators_15,gemm/1024/1024/1024,blocked,1562.181,1,23.359
+operators_15,gemm/1024/1024/1024,shared,465.986,1,22.057
+operators_15,gemm/1024/1024/1024,register_old_dispatch,467.073,1,7.655
+operators_15,gemm/1024/1024/1024,PyTorch,232.193,1,20.218
+operators_15,gemm/1024/1024/1024,PyTorch,231.777,1,16.23
+operators_15,gemm/1024/1024/1024,register_old_dispatch,478.018,1,7.558
+operators_15,gemm/1024/1024/1024,shared,465.409,1,26.746
+operators_15,gemm/1024/1024/1024,blocked,1562.438,1,23.45
+operators_15,gemm/1024/1024/1024,basic,1415.812,1,23.117
+operators_15,gemm/1024/1024/1024,basic,1414.788,1,22.294
+operators_15,gemm/1024/1024/1024,blocked,1562.95,1,22.11
+operators_15,gemm/1024/1024/1024,shared,466.337,1,23.456
+operators_15,gemm/1024/1024/1024,register_old_dispatch,466.434,1,7.609
+operators_15,gemm/1024/1024/1024,PyTorch,231.873,1,21.126
+operators_15,gemm/127/257/65,basic,12.96,1,30.43
+operators_15,gemm/127/257/65,blocked,12.448,1,23.704
+operators_15,gemm/127/257/65,shared,8.928,1,22.758
+operators_15,gemm/127/257/65,register_old_dispatch,21.184,1,8.386
+operators_15,gemm/127/257/65,PyTorch,12.16,1,18.806
+operators_15,gemm/127/257/65,PyTorch,11.648,1,13.256
+operators_15,gemm/127/257/65,register_old_dispatch,21.056,1,7.368
+operators_15,gemm/127/257/65,shared,8.768,1,27.295
+operators_15,gemm/127/257/65,blocked,12.064,1,24.109
+operators_15,gemm/127/257/65,basic,12.224,1,23.878
+operators_15,gemm/127/257/65,basic,12.064,1,22.724
+operators_15,gemm/127/257/65,blocked,12.224,1,21.803
+operators_15,gemm/127/257/65,shared,8.736,1,21.506
+operators_15,gemm/127/257/65,register_old_dispatch,21.153,1,7.579
+operators_15,gemm/127/257/65,PyTorch,11.616,1,15.157
+operators_15,gemm/127/257/65,PyTorch,11.616,1,12.951
+operators_15,gemm/127/257/65,register_old_dispatch,21.12,1,7.764
+operators_15,gemm/127/257/65,shared,8.736,1,26.476
+operators_15,gemm/127/257/65,blocked,12.096,1,23.099
+operators_15,gemm/127/257/65,basic,12.192,1,22.196
+operators_15,gemm/127/257/65,basic,12.128,1,21.897
+operators_15,gemm/127/257/65,blocked,12.129,1,22.841
+operators_15,gemm/127/257/65,shared,8.736,1,22.273
+operators_15,gemm/127/257/65,register_old_dispatch,21.056,1,7.337
+operators_15,gemm/127/257/65,PyTorch,11.648,1,14.613
+operators_15,gemm/127/257/65,PyTorch,11.648,1,12.868
+operators_15,gemm/127/257/65,register_old_dispatch,21.12,1,7.725
+operators_15,gemm/127/257/65,shared,8.736,1,25.315
+operators_15,gemm/127/257/65,blocked,12.16,1,24.195
+operators_15,gemm/127/257/65,basic,12.224,1,22.074
+operators_15,gemm/127/257/65,basic,12.096,1,22.345
+operators_15,gemm/127/257/65,blocked,12.096,1,22.268
+operators_15,gemm/127/257/65,shared,8.736,1,22.601
+operators_15,gemm/127/257/65,register_old_dispatch,21.088,1,7.419
+operators_15,gemm/127/257/65,PyTorch,11.648,1,14.77
+operators_15,gemm/127/257/65,PyTorch,11.616,1,12.849
+operators_15,gemm/127/257/65,register_old_dispatch,21.056,1,7.41
+operators_15,gemm/127/257/65,shared,8.8,1,25.255
+operators_15,gemm/127/257/65,blocked,12.096,1,23.139
+operators_15,gemm/127/257/65,basic,12.288,1,22.351
+operators_15,gemm/127/257/65,basic,12.224,1,22.689
+operators_15,gemm/127/257/65,blocked,12.128,1,22.469
+operators_15,gemm/127/257/65,shared,8.768,1,22.197
+operators_15,gemm/127/257/65,register_old_dispatch,21.024,1,7.728
+operators_15,gemm/127/257/65,PyTorch,11.68,1,15.243
+operators_15,gemm/127/257/65,PyTorch,11.616,1,12.941
+operators_15,gemm/127/257/65,register_old_dispatch,21.057,1,7.473
+operators_15,gemm/127/257/65,shared,8.736,1,25.455
+operators_15,gemm/127/257/65,blocked,12.096,1,22.544
+operators_15,gemm/127/257/65,basic,12.224,1,21.276
+operators_15,gemm/127/257/65,basic,12.192,1,21.636
+operators_15,gemm/127/257/65,blocked,12.192,1,22.072
+operators_15,gemm/127/257/65,shared,8.736,1,22.025
+operators_15,gemm/127/257/65,register_old_dispatch,21.088,1,7.405
+operators_15,gemm/127/257/65,PyTorch,11.648,1,14.875
+operators_15,gemm/127/257/65,PyTorch,11.616,1,13.08
+operators_15,gemm/127/257/65,register_old_dispatch,21.024,1,7.251
+operators_15,gemm/127/257/65,shared,8.768,1,25.374
+operators_15,gemm/127/257/65,blocked,12.064,1,22.513
+operators_15,gemm/127/257/65,basic,12.256,1,21.886
+operators_15,gemm/127/257/65,basic,12.096,1,22.318
+operators_15,gemm/127/257/65,blocked,12.096,1,22.725
+operators_15,gemm/127/257/65,shared,8.8,1,21.847
+operators_15,gemm/127/257/65,register_old_dispatch,21.056,1,7.798
+operators_15,gemm/127/257/65,PyTorch,11.68,1,15.263
+operators_15,gemm/127/257/65,PyTorch,11.616,1,12.816
+operators_15,gemm/127/257/65,register_old_dispatch,21.12,1,7.661
+operators_15,gemm/127/257/65,shared,8.736,1,25.298
+operators_15,gemm/127/257/65,blocked,12.064,1,23.716
+operators_15,gemm/127/257/65,basic,12.096,1,22.144
+operators_15,gemm/127/257/65,basic,12.16,1,21.371
+operators_15,gemm/127/257/65,blocked,12.128,1,21.405
+operators_15,gemm/127/257/65,shared,8.736,1,21.71
+operators_15,gemm/127/257/65,register_old_dispatch,21.152,1,7.275
+operators_15,gemm/127/257/65,PyTorch,11.648,1,14.68
+operators_15,gemm/65/4097/129,basic,60.32,1,27.377
+operators_15,gemm/65/4097/129,blocked,64.672,1,24.15
+operators_15,gemm/65/4097/129,shared,50.944,1,22.77
+operators_15,gemm/65/4097/129,register_old_dispatch,50.752,1,7.504
+operators_15,gemm/65/4097/129,PyTorch,26.112,1,17.454
+operators_15,gemm/65/4097/129,PyTorch,26.049,1,12.629
+operators_15,gemm/65/4097/129,register_old_dispatch,50.784,1,7.41
+operators_15,gemm/65/4097/129,shared,50.88,1,25.342
+operators_15,gemm/65/4097/129,blocked,64.448,1,23.251
+operators_15,gemm/65/4097/129,basic,60.513,1,22.505
+operators_15,gemm/65/4097/129,basic,58.784,1,23.086
+operators_15,gemm/65/4097/129,blocked,64.384,1,22.665
+operators_15,gemm/65/4097/129,shared,50.72,1,22.247
+operators_15,gemm/65/4097/129,register_old_dispatch,50.784,1,7.775
+operators_15,gemm/65/4097/129,PyTorch,26.016,1,14.664
+operators_15,gemm/65/4097/129,PyTorch,25.856,1,12.555
+operators_15,gemm/65/4097/129,register_old_dispatch,51.104,1,7.267
+operators_15,gemm/65/4097/129,shared,50.848,1,25.772
+operators_15,gemm/65/4097/129,blocked,64.704,1,23.88
+operators_15,gemm/65/4097/129,basic,59.456,1,22.923
+operators_15,gemm/65/4097/129,basic,59.584,1,22.812
+operators_15,gemm/65/4097/129,blocked,64.353,1,22.355
+operators_15,gemm/65/4097/129,shared,50.88,1,21.663
+operators_15,gemm/65/4097/129,register_old_dispatch,50.656,1,7.441
+operators_15,gemm/65/4097/129,PyTorch,25.952,1,14.974
+operators_15,gemm/65/4097/129,PyTorch,25.888,1,12.479
+operators_15,gemm/65/4097/129,register_old_dispatch,50.848,1,7.365
+operators_15,gemm/65/4097/129,shared,50.784,1,24.988
+operators_15,gemm/65/4097/129,blocked,64.48,1,22.273
+operators_15,gemm/65/4097/129,basic,60.257,1,22.331
+operators_15,gemm/65/4097/129,basic,58.624,1,21.913
+operators_15,gemm/65/4097/129,blocked,64.544,1,21.597
+operators_15,gemm/65/4097/129,shared,50.688,1,21.572
+operators_15,gemm/65/4097/129,register_old_dispatch,50.881,1,7.42
+operators_15,gemm/65/4097/129,PyTorch,26.112,1,14.35
+operators_15,gemm/65/4097/129,PyTorch,26.016,1,12.423
+operators_15,gemm/65/4097/129,register_old_dispatch,50.912,1,7.954
+operators_15,gemm/65/4097/129,shared,50.752,1,25.581
+operators_15,gemm/65/4097/129,blocked,64.448,1,23.44
+operators_15,gemm/65/4097/129,basic,57.184,1,21.689
+operators_15,gemm/65/4097/129,basic,57.792,1,22.647
+operators_15,gemm/65/4097/129,blocked,64.897,1,21.872
+operators_15,gemm/65/4097/129,shared,51.264,1,22.718
+operators_15,gemm/65/4097/129,register_old_dispatch,50.848,1,7.613
+operators_15,gemm/65/4097/129,PyTorch,26.048,1,15.221
+operators_15,gemm/65/4097/129,PyTorch,25.984,1,12.529
+operators_15,gemm/65/4097/129,register_old_dispatch,50.881,1,7.78
+operators_15,gemm/65/4097/129,shared,51.104,1,24.809
+operators_15,gemm/65/4097/129,blocked,64.32,1,23.022
+operators_15,gemm/65/4097/129,basic,57.921,1,23.03
+operators_15,gemm/65/4097/129,basic,58.784,1,22.612
+operators_15,gemm/65/4097/129,blocked,64.128,1,22.559
+operators_15,gemm/65/4097/129,shared,50.752,1,21.165
+operators_15,gemm/65/4097/129,register_old_dispatch,50.753,1,7.557
+operators_15,gemm/65/4097/129,PyTorch,26.08,1,14.83
+operators_15,gemm/65/4097/129,PyTorch,25.856,1,12.762
+operators_15,gemm/65/4097/129,register_old_dispatch,51.072,1,7.404
+operators_15,gemm/65/4097/129,shared,50.784,1,24.336
+operators_15,gemm/65/4097/129,blocked,64.289,1,22.532
+operators_15,gemm/65/4097/129,basic,60.16,1,23.436
+operators_15,gemm/65/4097/129,basic,58.56,1,22.133
+operators_15,gemm/65/4097/129,blocked,64.449,1,22.772
+operators_15,gemm/65/4097/129,shared,50.848,1,21.358
+operators_15,gemm/65/4097/129,register_old_dispatch,50.816,1,7.465
+operators_15,gemm/65/4097/129,PyTorch,26.016,1,14.616
+operators_15,gemm/65/4097/129,PyTorch,25.984,1,12.624
+operators_15,gemm/65/4097/129,register_old_dispatch,50.977,1,7.318
+operators_15,gemm/65/4097/129,shared,50.752,1,23.837
+operators_15,gemm/65/4097/129,blocked,64.576,1,23.089
+operators_15,gemm/65/4097/129,basic,59.008,1,21.751
+operators_15,gemm/65/4097/129,basic,59.328,1,22.539
+operators_15,gemm/65/4097/129,blocked,64.672,1,22.16
+operators_15,gemm/65/4097/129,shared,51.072,1,21.648
+operators_15,gemm/65/4097/129,register_old_dispatch,51.009,1,7.509
+operators_15,gemm/65/4097/129,PyTorch,25.92,1,14.4
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,7.264,1,106.885
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,6.048,1,82.5
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,23.457
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.784,1,44.966
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.816,1,32.162
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.768,1,19.014
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.768,1,14.753
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.752,1,31.219
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.752,1,25.252
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,16.794
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,14.529
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.784,1,26.921
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.752,1,23.785
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.768,1,15.7
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.768,1,13.401
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.784,1,25.865
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.816,1,22.866
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,15.121
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.832,1,13.421
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.816,1,24.957
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.784,1,23.138
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,15.434
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,13.683
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.72,1,24.922
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.784,1,23.209
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,15.33
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.864,1,13.422
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.784,1,24.705
+operators_15,"relu/(4, 24, 31, 98)",HyTorch,6.72,1,21.933
+operators_15,"relu/(4, 24, 31, 98)",PyTorch,4.768,1,15.743
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.848,1,34.734
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.216,1,28.318
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.056,1,14.633
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.688,1,25.577
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.752,1,22.238
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.12,1,15.059
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.12,1,12.307
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.688,1,22.736
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.752,1,19.783
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.12,1,14.09
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.056,1,12.282
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.752,1,21.811
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.752,1,19.582
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.12,1,13.539
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.089,1,12.267
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.72,1,20.513
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.784,1,19.632
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.12,1,13.3
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.088,1,12.001
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.72,1,22.224
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.752,1,18.766
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.088,1,13.765
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.12,1,12.011
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.72,1,20.604
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.72,1,19.128
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.088,1,13.673
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.088,1,11.995
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.72,1,21.34
+operators_15,"tanh/(4, 24, 31, 98)",HyTorch,6.752,1,19.703
+operators_15,"tanh/(4, 24, 31, 98)",PyTorch,5.056,1,13.552
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,4.16,1,31.102
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.544,1,19.239
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.064,1,14.329
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.712,1,27.49
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,25.3
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.032,1,16.704
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.032,1,13.891
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,26.357
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,23.114
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.064,1,15.474
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.032,1,13.638
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.648,1,23.762
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.648,1,22.138
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.032,1,15.506
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.064,1,13.37
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,25.029
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.648,1,22.128
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.064,1,15.733
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.064,1,13.485
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,24.852
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.648,1,22.348
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.096,1,15.848
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.064,1,13.409
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,24.1
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.712,1,22.474
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.032,1,15.045
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.032,1,13.529
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,23.832
+operators_15,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,21.657
+operators_15,"relu/(4, 64, 1, 18)",PyTorch,4.032,1,15.111
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.68,1,25.403
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.448,1,15.205
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.352,1,12.398
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,22.799
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.68,1,20.783
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.416,1,13.82
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.32,1,12.266
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,22.393
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.744,1,20.038
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.416,1,13.945
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.352,1,12.009
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,21.329
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,19.854
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.352,1,13.619
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.352,1,12.181
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,20.08
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.744,1,18.675
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.384,1,13.705
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.352,1,12.45
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.68,1,20.943
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.68,1,19.64
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.384,1,13.347
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.32,1,12.357
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,20.385
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,18.437
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.416,1,13.326
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.352,1,12.148
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.68,1,20.515
+operators_15,"tanh/(4, 64, 1, 18)",HyTorch,3.744,1,18.57
+operators_15,"tanh/(4, 64, 1, 18)",PyTorch,4.416,1,13.351
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,4.096,1,28.864
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.448,1,16.926
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.192,1,14.758
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.648,1,26.743
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.648,1,24.188
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.192,1,15.618
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.192,1,13.494
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.648,1,25.917
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.616,1,23.016
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.192,1,15.58
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.224,1,13.441
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.584,1,24.559
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.584,1,22.322
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.224,1,15.485
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.192,1,13.526
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.616,1,23.062
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.648,1,22.05
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.16,1,15.132
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.193,1,13.756
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.616,1,23.236
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.68,1,22.26
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.16,1,14.971
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.256,1,13.449
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.584,1,23.461
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.648,1,21.107
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.16,1,15.037
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.192,1,13.464
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.616,1,24.64
+operators_15,"relu/(3, 7, 11, 13)",HyTorch,3.616,1,21.537
+operators_15,"relu/(3, 7, 11, 13)",PyTorch,4.192,1,15.013
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.616,1,24.912
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,15.526
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,12.745
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.68,1,23.377
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.68,1,20.793
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.896,1,13.743
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.832,1,12.473
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,21.179
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,20.113
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.896,1,13.646
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.832,1,12.052
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,20.497
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.68,1,19.678
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,13.498
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.896,1,12.178
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.616,1,19.945
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,19.192
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,13.674
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.832,1,12.227
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,20.072
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.712,1,19.246
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,13.36
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,12.267
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,20.541
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.68,1,20.046
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,13.375
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,12.231
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,20.701
+operators_15,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,25.527
+operators_15,"tanh/(3, 7, 11, 13)",PyTorch,4.864,1,13.339
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.888,1,114.411
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,6.465,1,49.332
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.568,1,19.961
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,64.578
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,55.331
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,21.588
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,16.745
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,55.904
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,50.7
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,20.106
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,16.896
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.28,1,52.933
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,49.983
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.568,1,27.681
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,16.614
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.28,1,53.299
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.28,1,48.178
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.632,1,19.266
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.568,1,16.448
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,51.504
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,48.037
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,19.623
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.569,1,16.011
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.28,1,50.46
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.28,1,48.045
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,19.481
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.632,1,16.177
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.344,1,51.359
+operators_15,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,46.889
+operators_15,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,19.295
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,19.168,4,279.587
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,10.304,2,314.619
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.056000000000001,2,85.352
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.304,4,204.044
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.368,4,158.397
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,8.96,2,93.474
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,8.992,2,70.653
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.304,4,170.803
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.272,4,145.302
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.024000000000001,2,109.61
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.024000000000001,2,85.182
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.272,4,160.458
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.337,4,142.963
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.056000000000001,2,109.172
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.024000000000001,2,82.296
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.368,4,163.168
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.304,4,140.89
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.024000000000001,2,102.357
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.056000000000001,2,81.745
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.272,4,156.559
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.24,4,142.967
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.088000000000001,2,99.381
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.056000000000001,2,91.617
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.272,4,161.29
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.304,4,141.829
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.024000000000001,2,82.701
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.024000000000001,2,69.516
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.208,4,155.055
+operators_15,"poolback/(4, 3, 16, 16)",HyTorch,18.368,4,138.071
+operators_15,"poolback/(4, 3, 16, 16)",PyTorch,9.088000000000001,2,80.194
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.664,1,90.972
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,6.496,1,48.613
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.76,1,21.486
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.28,1,70.037
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.248,1,54.81
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.76,1,21.985
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.728,1,17.554
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.28,1,55.677
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.248,1,49.595
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.76,1,20.44
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.728,1,17.046
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.312,1,52.521
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.28,1,48.908
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.76,1,19.805
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.728,1,16.582
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.248,1,52.952
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.28,1,48.605
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.76,1,19.84
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.76,1,16.201
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.248,1,51.98
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.28,1,48.926
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.728,1,19.406
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.76,1,15.825
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.248,1,52.045
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.28,1,47.524
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.728,1,19.295
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.76,1,15.985
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.248,1,49.148
+operators_15,"pool/(2, 7, 13, 17)",HyTorch,5.216,1,46.048
+operators_15,"pool/(2, 7, 13, 17)",PyTorch,5.792,1,18.936
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.784,4,207.153
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,10.017,2,141.066
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.248,2,76.767
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.24,4,198.872
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.24,4,155.25
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.216000000000001,2,85.387
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.248,2,70.254
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.176,4,166.073
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.272,4,145.397
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.216000000000001,2,82.44
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.248,2,68.786
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.208,4,176.94
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.241,4,145.646
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.248,2,84.63
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.184,2,71.549
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.305,4,165.335
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.272,4,141.296
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.248000000000001,2,80.246
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.216,2,68.682
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.304,4,155.086
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.304,4,138.041
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.248000000000001,2,78.033
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.152,2,68.954
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.272,4,153.755
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.272,4,144.801
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.248000000000001,2,79.239
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.184,2,68.751
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.24,4,159.786
+operators_15,"poolback/(2, 7, 13, 17)",HyTorch,18.24,4,140.816
+operators_15,"poolback/(2, 7, 13, 17)",PyTorch,9.216000000000001,2,78.922
+operators_15,linear/4/1152/100,HyTorch,94.048,2,136.847
+operators_15,linear/4/1152/100,PyTorch,74.721,1,129.919
+operators_15,linear/4/1152/100,PyTorch,41.056,1,39.511
+operators_15,linear/4/1152/100,HyTorch,63.2,2,98.067
+operators_15,linear/4/1152/100,HyTorch,62.977,2,69.611
+operators_15,linear/4/1152/100,PyTorch,40.864,1,40.614
+operators_15,linear/4/1152/100,PyTorch,40.992,1,29.21
+operators_15,linear/4/1152/100,HyTorch,63.20099999999999,2,77.23
+operators_15,linear/4/1152/100,HyTorch,62.944,2,65.047
+operators_15,linear/4/1152/100,PyTorch,40.928,1,35.741
+operators_15,linear/4/1152/100,PyTorch,41.024,1,27.13
+operators_15,linear/4/1152/100,HyTorch,63.135999999999996,2,71.7
+operators_15,linear/4/1152/100,HyTorch,63.007999999999996,2,62.729
+operators_15,linear/4/1152/100,PyTorch,40.896,1,34.045
+operators_15,linear/4/1152/100,PyTorch,41.088,1,26.508
+operators_15,linear/4/1152/100,HyTorch,63.168000000000006,2,68.809
+operators_15,linear/4/1152/100,HyTorch,63.007999999999996,2,61.169
+operators_15,linear/4/1152/100,PyTorch,40.832,1,37.041
+operators_15,linear/4/1152/100,PyTorch,41.024,1,27.247
+operators_15,linear/4/1152/100,HyTorch,63.136,2,73.158
+operators_15,linear/4/1152/100,HyTorch,63.007999999999996,2,62.491
+operators_15,linear/4/1152/100,PyTorch,40.896,1,34.557
+operators_15,linear/4/1152/100,PyTorch,41.12,1,26.972
+operators_15,linear/4/1152/100,HyTorch,63.233,2,70.384
+operators_15,linear/4/1152/100,HyTorch,63.008,2,61.446
+operators_15,linear/4/1152/100,PyTorch,40.896,1,33.518
+operators_15,linear/4/1152/100,PyTorch,41.12,1,25.934
+operators_15,linear/4/1152/100,HyTorch,63.232,2,67.536
+operators_15,linear/4/1152/100,HyTorch,63.008,2,61.026
+operators_15,linear/4/1152/100,PyTorch,40.928,1,33.904
+operators_15,linear/4/100/50,HyTorch,14.847999999999999,2,74.414
+operators_15,linear/4/100/50,PyTorch,12.704,1,36.734
+operators_15,linear/4/100/50,PyTorch,8.096,1,27.19
+operators_15,linear/4/100/50,HyTorch,12.192,2,70.831
+operators_15,linear/4/100/50,HyTorch,12.16,2,62.848
+operators_15,linear/4/100/50,PyTorch,8.128,1,34.86
+operators_15,linear/4/100/50,PyTorch,8.096,1,27.249
+operators_15,linear/4/100/50,HyTorch,12.192,2,69.416
+operators_15,linear/4/100/50,HyTorch,12.16,2,60.413
+operators_15,linear/4/100/50,PyTorch,8.129,1,34.697
+operators_15,linear/4/100/50,PyTorch,8.128,1,26.817
+operators_15,linear/4/100/50,HyTorch,12.192,2,68.283
+operators_15,linear/4/100/50,HyTorch,12.224,2,59.318
+operators_15,linear/4/100/50,PyTorch,8.096,1,33.993
+operators_15,linear/4/100/50,PyTorch,8.096,1,26.796
+operators_15,linear/4/100/50,HyTorch,12.224,2,67.846
+operators_15,linear/4/100/50,HyTorch,12.128,2,60.363
+operators_15,linear/4/100/50,PyTorch,8.096,1,33.63
+operators_15,linear/4/100/50,PyTorch,8.096,1,26.354
+operators_15,linear/4/100/50,HyTorch,12.16,2,68.518
+operators_15,linear/4/100/50,HyTorch,12.128,2,61.802
+operators_15,linear/4/100/50,PyTorch,8.096,1,33.733
+operators_15,linear/4/100/50,PyTorch,8.128,1,26.464
+operators_15,linear/4/100/50,HyTorch,12.192,2,68.157
+operators_15,linear/4/100/50,HyTorch,12.128,2,59.349
+operators_15,linear/4/100/50,PyTorch,8.16,1,33.581
+operators_15,linear/4/100/50,PyTorch,8.096,1,26.207
+operators_15,linear/4/100/50,HyTorch,12.16,2,68.078
+operators_15,linear/4/100/50,HyTorch,12.16,2,60.251
+operators_15,linear/4/100/50,PyTorch,8.096,1,34.439
+operators_15,linear/4/50/1,HyTorch,10.431999999999999,2,68.871
+operators_15,linear/4/50/1,PyTorch,9.984,2,80.359
+operators_15,linear/4/50/1,PyTorch,8.32,2,36.517
+operators_15,linear/4/50/1,HyTorch,8.895999999999999,2,72.418
+operators_15,linear/4/50/1,HyTorch,8.959999999999999,2,61.643
+operators_15,linear/4/50/1,PyTorch,8.256,2,43.039
+operators_15,linear/4/50/1,PyTorch,8.256,2,33.81
+operators_15,linear/4/50/1,HyTorch,8.895999999999999,2,69.9
+operators_15,linear/4/50/1,HyTorch,8.991999999999999,2,61.049
+operators_15,linear/4/50/1,PyTorch,8.224,2,41.323
+operators_15,linear/4/50/1,PyTorch,8.257,2,32.909
+operators_15,linear/4/50/1,HyTorch,8.927999999999999,2,70.246
+operators_15,linear/4/50/1,HyTorch,8.927999999999999,2,59.889
+operators_15,linear/4/50/1,PyTorch,8.288,2,41.398
+operators_15,linear/4/50/1,PyTorch,8.288,2,32.6
+operators_15,linear/4/50/1,HyTorch,8.897,2,68.569
+operators_15,linear/4/50/1,HyTorch,8.895999999999999,2,66.804
+operators_15,linear/4/50/1,PyTorch,8.288,2,44.389
+operators_15,linear/4/50/1,PyTorch,8.256,2,33.768
+operators_15,linear/4/50/1,HyTorch,8.863999999999999,2,70.523
+operators_15,linear/4/50/1,HyTorch,8.959999999999999,2,63.567
+operators_15,linear/4/50/1,PyTorch,8.288,2,42.563
+operators_15,linear/4/50/1,PyTorch,8.288,2,33.778
+operators_15,linear/4/50/1,HyTorch,8.959999999999999,2,69.822
+operators_15,linear/4/50/1,HyTorch,8.991999999999999,2,59.187
+operators_15,linear/4/50/1,PyTorch,8.256,2,41.631
+operators_15,linear/4/50/1,PyTorch,8.32,2,43.123
+operators_15,linear/4/50/1,HyTorch,8.895999999999999,2,72.536
+operators_15,linear/4/50/1,HyTorch,8.991999999999999,2,59.439
+operators_15,linear/4/50/1,PyTorch,8.288,2,42.991
+operators_15,linear/3/137/71,HyTorch,17.472,2,73.713
+operators_15,linear/3/137/71,PyTorch,16.032,1,40.506
+operators_15,linear/3/137/71,PyTorch,9.856,1,27.201
+operators_15,linear/3/137/71,HyTorch,13.792,2,70.46
+operators_15,linear/3/137/71,HyTorch,13.792,2,68.07
+operators_15,linear/3/137/71,PyTorch,9.824,1,34.41
+operators_15,linear/3/137/71,PyTorch,9.888,1,26.565
+operators_15,linear/3/137/71,HyTorch,13.792,2,69.272
+operators_15,linear/3/137/71,HyTorch,13.728,2,60.568
+operators_15,linear/3/137/71,PyTorch,9.824,1,33.286
+operators_15,linear/3/137/71,PyTorch,9.856,1,26.005
+operators_15,linear/3/137/71,HyTorch,13.792,2,68.136
+operators_15,linear/3/137/71,HyTorch,13.76,2,60.477
+operators_15,linear/3/137/71,PyTorch,9.792,1,33.555
+operators_15,linear/3/137/71,PyTorch,9.888,1,26.002
+operators_15,linear/3/137/71,HyTorch,13.76,2,68.823
+operators_15,linear/3/137/71,HyTorch,13.728,2,60.225
+operators_15,linear/3/137/71,PyTorch,9.888,1,33.531
+operators_15,linear/3/137/71,PyTorch,9.856,1,26.322
+operators_15,linear/3/137/71,HyTorch,13.76,2,67.36
+operators_15,linear/3/137/71,HyTorch,13.792,2,60.07
+operators_15,linear/3/137/71,PyTorch,9.888,1,33.95
+operators_15,linear/3/137/71,PyTorch,9.92,1,26.137
+operators_15,linear/3/137/71,HyTorch,13.792,2,68.692
+operators_15,linear/3/137/71,HyTorch,13.792,2,62.142
+operators_15,linear/3/137/71,PyTorch,9.825,1,33.573
+operators_15,linear/3/137/71,PyTorch,9.92,1,26.628
+operators_15,linear/3/137/71,HyTorch,13.856,2,68.459
+operators_15,linear/3/137/71,HyTorch,13.792,2,60.981
+operators_15,linear/3/137/71,PyTorch,9.824,1,33.083
+operators_15,sgd/all16,HyTorch,123.80799999999999,32,458.064
+operators_15,sgd/all16,PyTorch,37.28,1,308.903
+operators_15,sgd/all16,PyTorch_foreach,23.936,1,87.895
+operators_15,sgd/all16,PyTorch_foreach,23.905,1,71.566
+operators_15,sgd/all16,PyTorch,23.904,1,79.08
+operators_15,sgd/all16,HyTorch,109.921,32,410.921
+operators_15,sgd/all16,HyTorch,110.14500000000002,32,362.809
+operators_15,sgd/all16,PyTorch,23.936,1,102.82
+operators_15,sgd/all16,PyTorch_foreach,23.968,1,68.464
+operators_15,sgd/all16,PyTorch_foreach,23.936,1,63.06
+operators_15,sgd/all16,PyTorch,24.0,1,75.283
+operators_15,sgd/all16,HyTorch,109.88800000000002,32,387.852
+operators_15,sgd/all16,HyTorch,110.11300000000001,32,357.575
+operators_15,sgd/all16,PyTorch,24.0,1,90.301
+operators_15,sgd/all16,PyTorch_foreach,23.936,1,67.605
+operators_15,sgd/all16,PyTorch_foreach,23.968,1,62.79
+operators_15,sgd/all16,PyTorch,23.968,1,72.406
+operators_15,sgd/all16,HyTorch,110.04900000000004,32,390.202
+operators_15,sgd/all16,HyTorch,109.95300000000002,32,359.244
+operators_15,sgd/all16,PyTorch,23.968,1,90.828
+operators_15,sgd/all16,PyTorch_foreach,23.904,1,68.082
+operators_15,sgd/all16,PyTorch_foreach,24.0,1,61.389
+operators_15,sgd/all16,PyTorch,23.968,1,71.155
+operators_15,sgd/all16,HyTorch,110.208,32,376.733
+operators_15,sgd/all16,HyTorch,109.95200000000003,32,360.978
+operators_15,sgd/all16,PyTorch,23.904,1,87.897
+operators_15,sgd/all16,PyTorch_foreach,23.968,1,68.309
+operators_15,sgd/all16,PyTorch_foreach,23.969,1,68.979
+operators_15,sgd/all16,PyTorch,23.936,1,74.379
+operators_15,sgd/all16,HyTorch,110.17600000000003,32,381.487
+operators_15,sgd/all16,HyTorch,110.04800000000002,32,363.599
+operators_15,sgd/all16,PyTorch,24.032,1,87.752
+operators_15,sgd/all16,PyTorch_foreach,23.872,1,64.709
+operators_15,sgd/all16,PyTorch_foreach,23.968,1,62.364
+operators_15,sgd/all16,PyTorch,24.033,1,74.196
+operators_15,sgd/all16,HyTorch,110.08,32,384.319
+operators_15,sgd/all16,HyTorch,109.88900000000004,32,361.1
+operators_15,sgd/all16,PyTorch,23.968,1,89.485
+operators_15,sgd/all16,PyTorch_foreach,23.936,1,65.453
+operators_15,sgd/all16,PyTorch_foreach,24.096,1,64.078
+operators_15,sgd/all16,PyTorch,23.904,1,72.941
+operators_15,sgd/all16,HyTorch,110.20900000000003,32,380.984
+operators_15,sgd/all16,HyTorch,110.04800000000003,32,360.289
+operators_15,sgd/all16,PyTorch,23.904,1,87.649
+operators_15,sgd/all16,PyTorch_foreach,24.0,1,66.416
+operators_a,conv1/forward,HyTorch,77.312,4,346.452
+operators_a,conv1/forward,PyTorch,30.048,2,198.764
+operators_a,conv1/forward,PyTorch,28.576,2,47.639
+operators_a,conv1/forward,HyTorch,76.03200000000001,4,192.027
+operators_a,conv1/forward,HyTorch,76.224,4,142.207
+operators_a,conv1/forward,PyTorch,28.448,2,51.251
+operators_a,conv1/dweight,HyTorch,70.52799999999999,4,278.148
+operators_a,conv1/dweight,PyTorch,76.801,1,371.661
+operators_a,conv1/dweight,PyTorch,53.472,1,109.293
+operators_a,conv1/dweight,HyTorch,67.36,4,198.943
+operators_a,conv1/dweight,HyTorch,66.976,4,144.519
+operators_a,conv1/dweight,PyTorch,53.376,1,102.508
+operators_a,conv1/dinput,HyTorch,43.647999999999996,3,218.175
+operators_a,conv1/dinput,PyTorch,543.618,1,103.781
+operators_a,conv1/dinput,PyTorch,542.817,1,73.938
+operators_a,conv1/dinput,HyTorch,43.04,3,155.483
+operators_a,conv1/dinput,HyTorch,43.201,3,129.973
+operators_a,conv1/dinput,PyTorch,542.978,1,89.234
+operators_a,conv1/dbias,HyTorch,28.608,1,118.206
+operators_a,conv1/dbias,PyTorch,16.64,1,114.428
+operators_a,conv1/dbias,PyTorch,14.88,1,70.208
+operators_a,conv1/dbias,HyTorch,25.92,1,56.499
+operators_a,conv1/dbias,HyTorch,25.888,1,41.094
+operators_a,conv1/dbias,PyTorch,14.88,1,74.353
+operators_a,conv1/backward,HyTorch,136.481,8,430.067
+operators_a,conv1/backward,PyTorch,612.386,3,142.905
+operators_a,conv1/backward,PyTorch,611.9709999999999,3,124.185
+operators_a,conv1/backward,HyTorch,137.024,8,394.715
+operators_a,conv1/backward,HyTorch,136.736,8,354.541
+operators_a,conv1/backward,PyTorch,612.8659999999999,3,146.779
+operators_a,conv2/forward,HyTorch,146.432,4,192.786
+operators_a,conv2/forward,PyTorch,152.06400000000002,3,127.029
+operators_a,conv2/forward,PyTorch,149.409,3,50.261
+operators_a,conv2/forward,HyTorch,145.69699999999997,4,167.211
+operators_a,conv2/forward,HyTorch,146.432,4,140.479
+operators_a,conv2/forward,PyTorch,149.82500000000002,3,58.311
+operators_a,conv2/dweight,HyTorch,98.017,4,179.342
+operators_a,conv2/dweight,PyTorch,81.12,1,126.387
+operators_a,conv2/dweight,PyTorch,83.777,1,84.449
+operators_a,conv2/dweight,HyTorch,97.34400000000001,4,194.683
+operators_a,conv2/dweight,HyTorch,97.152,4,146.673
+operators_a,conv2/dweight,PyTorch,83.969,1,93.642
+operators_a,conv2/dinput,HyTorch,61.6,3,163.354
+operators_a,conv2/dinput,PyTorch,78.465,2,103.954
+operators_a,conv2/dinput,PyTorch,86.144,2,77.439
+operators_a,conv2/dinput,HyTorch,62.08,3,141.994
+operators_a,conv2/dinput,HyTorch,61.536,3,395.722
+operators_a,conv2/dinput,PyTorch,77.121,2,102.487
+operators_a,conv2/dbias,HyTorch,11.52,1,91.273
+operators_a,conv2/dbias,PyTorch,28.608,1,85.901
+operators_a,conv2/dbias,PyTorch,27.105,1,69.026
+operators_a,conv2/dbias,HyTorch,10.752,1,58.202
+operators_a,conv2/dbias,HyTorch,10.752,1,44.059
+operators_a,conv2/dbias,PyTorch,26.88,1,76.59
+operators_a,conv2/backward,HyTorch,169.857,8,446.975
+operators_a,conv2/backward,PyTorch,191.42499999999998,4,142.554
+operators_a,conv2/backward,PyTorch,189.889,4,120.885
+operators_a,conv2/backward,HyTorch,170.30500000000004,8,392.525
+operators_a,conv2/backward,HyTorch,170.88000000000002,8,343.486
+operators_a,conv2/backward,PyTorch,194.209,4,144.817
+operators_a,conv3/forward,HyTorch,87.36,4,186.368
+operators_a,conv3/forward,PyTorch,186.56,8,267.223
+operators_a,conv3/forward,PyTorch,196.67200000000003,8,131.384
+operators_a,conv3/forward,HyTorch,86.88,4,207.632
+operators_a,conv3/forward,HyTorch,86.30499999999999,4,145.94
+operators_a,conv3/forward,PyTorch,186.881,8,150.056
+operators_a,conv3/dweight,HyTorch,45.248000000000005,4,188.623
+operators_a,conv3/dweight,PyTorch,24.96,1,127.32
+operators_a,conv3/dweight,PyTorch,25.216,1,80.089
+operators_a,conv3/dweight,HyTorch,44.704,4,178.577
+operators_a,conv3/dweight,HyTorch,44.064,4,138.18
+operators_a,conv3/dweight,PyTorch,24.736,1,93.145
+operators_a,conv3/dinput,HyTorch,37.088,3,167.121
+operators_a,conv3/dinput,PyTorch,37.184,2,93.828
+operators_a,conv3/dinput,PyTorch,34.784,2,74.075
+operators_a,conv3/dinput,HyTorch,37.408,3,142.128
+operators_a,conv3/dinput,HyTorch,36.768,3,134.481
+operators_a,conv3/dinput,PyTorch,36.32,2,92.338
+operators_a,conv3/dbias,HyTorch,6.848,1,81.689
+operators_a,conv3/dbias,PyTorch,12.8,1,78.45
+operators_a,conv3/dbias,PyTorch,11.04,1,67.254
+operators_a,conv3/dbias,HyTorch,6.56,1,54.772
+operators_a,conv3/dbias,HyTorch,6.56,1,42.459
+operators_a,conv3/dbias,PyTorch,11.009,1,78.204
+operators_a,conv3/backward,HyTorch,88.577,8,409.855
+operators_a,conv3/backward,PyTorch,75.969,4,140.463
+operators_a,conv3/backward,PyTorch,71.328,4,117.412
+operators_a,conv3/backward,HyTorch,88.672,8,376.141
+operators_a,conv3/backward,HyTorch,88.54500000000002,8,330.766
+operators_a,conv3/backward,PyTorch,73.632,4,142.884
+operators_a,conv4/forward,HyTorch,48.608,4,195.917
+operators_a,conv4/forward,PyTorch,39.168,3,120.387
+operators_a,conv4/forward,PyTorch,37.312,3,49.049
+operators_a,conv4/forward,HyTorch,48.352,4,165.31
+operators_a,conv4/forward,HyTorch,48.224,4,138.38
+operators_a,conv4/forward,PyTorch,37.472,3,56.135
+operators_a,conv4/dweight,HyTorch,30.880000000000003,4,177.262
+operators_a,conv4/dweight,PyTorch,17.344,1,117.635
+operators_a,conv4/dweight,PyTorch,16.48,1,78.986
+operators_a,conv4/dweight,HyTorch,30.272000000000002,4,173.205
+operators_a,conv4/dweight,HyTorch,29.568,4,138.774
+operators_a,conv4/dweight,PyTorch,17.056,1,91.093
+operators_a,conv4/dinput,HyTorch,27.968,3,157.462
+operators_a,conv4/dinput,PyTorch,43.2,2,96.088
+operators_a,conv4/dinput,PyTorch,42.784000000000006,2,73.973
+operators_a,conv4/dinput,HyTorch,27.936,3,142.513
+operators_a,conv4/dinput,HyTorch,27.904,3,140.772
+operators_a,conv4/dinput,PyTorch,42.976,2,103.484
+operators_a,conv4/dbias,HyTorch,6.464,1,82.058
+operators_a,conv4/dbias,PyTorch,11.968,1,79.776
+operators_a,conv4/dbias,PyTorch,10.208,1,67.32
+operators_a,conv4/dbias,HyTorch,6.176,1,56.308
+operators_a,conv4/dbias,HyTorch,6.208,1,52.701
+operators_a,conv4/dbias,PyTorch,10.24,1,76.442
+operators_a,conv4/backward,HyTorch,64.352,8,406.681
+operators_a,conv4/backward,PyTorch,71.328,4,139.081
+operators_a,conv4/backward,PyTorch,71.61600000000001,4,117.693
+operators_a,conv4/backward,HyTorch,64.513,8,382.964
+operators_a,conv4/backward,HyTorch,64.57600000000001,8,333.756
+operators_a,conv4/backward,PyTorch,71.456,4,145.453
+operators_a,conv5/forward,HyTorch,55.36,4,197.818
+operators_a,conv5/forward,PyTorch,44.512,3,106.052
+operators_a,conv5/forward,PyTorch,43.168,3,47.27
+operators_a,conv5/forward,HyTorch,54.656,4,171.99
+operators_a,conv5/forward,HyTorch,54.624,4,143.255
+operators_a,conv5/forward,PyTorch,43.263999999999996,3,58.174
+operators_a,conv5/dweight,HyTorch,22.912,3,165.486
+operators_a,conv5/dweight,PyTorch,11.04,1,112.22
+operators_a,conv5/dweight,PyTorch,11.296,1,76.032
+operators_a,conv5/dweight,HyTorch,22.272,3,156.213
+operators_a,conv5/dweight,HyTorch,22.144,3,123.449
+operators_a,conv5/dweight,PyTorch,10.977,1,87.252
+operators_a,conv5/dinput,HyTorch,22.368000000000002,3,170.011
+operators_a,conv5/dinput,PyTorch,33.857,2,100.583
+operators_a,conv5/dinput,PyTorch,33.6,2,75.619
+operators_a,conv5/dinput,HyTorch,22.176000000000002,3,142.841
+operators_a,conv5/dinput,HyTorch,21.888,3,117.279
+operators_a,conv5/dinput,PyTorch,33.696000000000005,2,85.91
+operators_a,conv5/dbias,HyTorch,6.24,1,81.118
+operators_a,conv5/dbias,PyTorch,9.44,1,78.678
+operators_a,conv5/dbias,PyTorch,7.968,1,64.646
+operators_a,conv5/dbias,HyTorch,5.888,1,54.524
+operators_a,conv5/dbias,HyTorch,5.92,1,43.342
+operators_a,conv5/dbias,PyTorch,7.968,1,81.208
+operators_a,conv5/backward,HyTorch,50.784000000000006,7,379.936
+operators_a,conv5/backward,PyTorch,53.72800000000001,4,144.093
+operators_a,conv5/backward,PyTorch,52.31999999999999,4,119.553
+operators_a,conv5/backward,HyTorch,50.848,7,353.837
+operators_a,conv5/backward,HyTorch,50.592,7,313.621
+operators_a,conv5/backward,PyTorch,53.82500000000001,4,139.666
+operators_a,irregular/forward,HyTorch,19.424,4,196.545
+operators_a,irregular/forward,PyTorch,17.44,2,95.27
+operators_a,irregular/forward,PyTorch,15.712,2,42.987
+operators_a,irregular/forward,HyTorch,18.848,4,163.44
+operators_a,irregular/forward,HyTorch,18.784,4,135.248
+operators_a,irregular/forward,PyTorch,16.032,2,48.336
+operators_a,irregular/dweight,HyTorch,24.384,3,163.722
+operators_a,irregular/dweight,PyTorch,6.784,1,111.584
+operators_a,irregular/dweight,PyTorch,6.112,1,71.487
+operators_a,irregular/dweight,HyTorch,23.296,3,154.426
+operators_a,irregular/dweight,HyTorch,23.264000000000003,3,131.988
+operators_a,irregular/dweight,PyTorch,6.048,1,98.613
+operators_a,irregular/dinput,HyTorch,20.736,3,161.722
+operators_a,irregular/dinput,PyTorch,17.697,2,95.153
+operators_a,irregular/dinput,PyTorch,17.024,2,73.583
+operators_a,irregular/dinput,HyTorch,20.736,3,141.13
+operators_a,irregular/dinput,HyTorch,20.512,3,122.526
+operators_a,irregular/dinput,PyTorch,16.992,2,85.032
+operators_a,irregular/dbias,HyTorch,5.248,1,78.483
+operators_a,irregular/dbias,PyTorch,7.808,1,77.311
+operators_a,irregular/dbias,PyTorch,5.984,1,65.78
+operators_a,irregular/dbias,HyTorch,5.184,1,55.754
+operators_a,irregular/dbias,HyTorch,5.216,1,42.258
+operators_a,irregular/dbias,PyTorch,5.984,1,73.054
+operators_a,irregular/backward,HyTorch,49.184,7,373.033
+operators_a,irregular/backward,PyTorch,31.488000000000003,4,131.332
+operators_a,irregular/backward,PyTorch,29.6,4,116.876
+operators_a,irregular/backward,HyTorch,49.440000000000005,7,362.711
+operators_a,irregular/backward,HyTorch,48.96,7,325.052
+operators_a,irregular/backward,PyTorch,31.616,4,145.625
+operators_a,asymmetric/forward,HyTorch,18.048000000000002,4,183.85
+operators_a,asymmetric/forward,PyTorch,16.416,2,92.903
+operators_a,asymmetric/forward,PyTorch,14.176000000000002,2,45.406
+operators_a,asymmetric/forward,HyTorch,17.28,4,159.61
+operators_a,asymmetric/forward,HyTorch,17.728,4,132.854
+operators_a,asymmetric/forward,PyTorch,14.687999999999999,2,50.382
+operators_a,asymmetric/dweight,HyTorch,25.12,2,127.029
+operators_a,asymmetric/dweight,PyTorch,7.552,1,108.41
+operators_a,asymmetric/dweight,PyTorch,6.944,1,80.361
+operators_a,asymmetric/dweight,HyTorch,22.048000000000002,2,128.285
+operators_a,asymmetric/dweight,HyTorch,22.048000000000002,2,95.049
+operators_a,asymmetric/dweight,PyTorch,6.976,1,86.269
+operators_a,asymmetric/dinput,HyTorch,17.728,2,130.334
+operators_a,asymmetric/dinput,PyTorch,37.28,1,84.995
+operators_a,asymmetric/dinput,PyTorch,36.992,1,67.27
+operators_a,asymmetric/dinput,HyTorch,17.536,2,106.076
+operators_a,asymmetric/dinput,HyTorch,17.504,2,87.061
+operators_a,asymmetric/dinput,PyTorch,37.088,1,80.341
+operators_a,asymmetric/dbias,HyTorch,5.696,1,84.307
+operators_a,asymmetric/dbias,PyTorch,7.456,1,78.154
+operators_a,asymmetric/dbias,PyTorch,5.92,1,65.237
+operators_a,asymmetric/dbias,HyTorch,5.408,1,55.396
+operators_a,asymmetric/dbias,HyTorch,5.44,1,44.93
+operators_a,asymmetric/dbias,PyTorch,6.016,1,72.241
+operators_a,asymmetric/backward,HyTorch,45.21600000000001,5,308.774
+operators_a,asymmetric/backward,PyTorch,50.72,3,123.137
+operators_a,asymmetric/backward,PyTorch,50.4,3,109.522
+operators_a,asymmetric/backward,HyTorch,45.28,5,311.468
+operators_a,asymmetric/backward,HyTorch,45.089,5,266.459
+operators_a,asymmetric/backward,PyTorch,50.976,3,128.566
+operators_a,gemm/12152/24/75,basic,35.137,1,63.733
+operators_a,gemm/12152/24/75,blocked,52.16,1,34.319
+operators_a,gemm/12152/24/75,shared,31.392,1,28.571
+operators_a,gemm/12152/24/75,register_old_dispatch,30.848,1,16.483
+operators_a,gemm/12152/24/75,PyTorch,22.016,1,58.864
+operators_a,gemm/12152/24/75,PyTorch,16.704,1,15.15
+operators_a,gemm/12152/24/75,register_old_dispatch,30.56,1,8.617
+operators_a,gemm/12152/24/75,shared,30.688,1,31.906
+operators_a,gemm/12152/24/75,blocked,51.552,1,26.379
+operators_a,gemm/12152/24/75,basic,30.528,1,26.273
+operators_a,gemm/12152/24/75,basic,30.368,1,23.196
+operators_a,gemm/12152/24/75,blocked,51.584,1,23.222
+operators_a,gemm/12152/24/75,shared,30.464,1,22.214
+operators_a,gemm/12152/24/75,register_old_dispatch,30.72,1,9.752
+operators_a,gemm/12152/24/75,PyTorch,16.672,1,16.556
+operators_a,gemm/2632/36/600,basic,95.808,1,32.384
+operators_a,gemm/2632/36/600,blocked,147.872,1,25.694
+operators_a,gemm/2632/36/600,shared,79.392,1,24.523
+operators_a,gemm/2632/36/600,register_old_dispatch,79.424,1,10.1
+operators_a,gemm/2632/36/600,PyTorch,46.272,2,25.82
+operators_a,gemm/2632/36/600,PyTorch,42.689,2,17.324
+operators_a,gemm/2632/36/600,register_old_dispatch,80.16,1,8.274
+operators_a,gemm/2632/36/600,shared,79.264,1,30.504
+operators_a,gemm/2632/36/600,blocked,144.673,1,26.855
+operators_a,gemm/2632/36/600,basic,93.984,1,22.701
+operators_a,gemm/2632/36/600,basic,93.281,1,24.021
+operators_a,gemm/2632/36/600,blocked,144.128,1,22.387
+operators_a,gemm/2632/36/600,shared,79.681,1,21.712
+operators_a,gemm/2632/36/600,register_old_dispatch,79.296,1,9.463
+operators_a,gemm/2632/36/600,PyTorch,42.72,2,20.301
+operators_a,gemm/440/48/900,basic,104.417,1,30.908
+operators_a,gemm/440/48/900,blocked,130.496,1,25.145
+operators_a,gemm/440/48/900,shared,49.984,1,22.764
+operators_a,gemm/440/48/900,register_old_dispatch,49.953,1,8.089
+operators_a,gemm/440/48/900,PyTorch,25.504,2,26.42
+operators_a,gemm/440/48/900,PyTorch,24.896,2,17.919
+operators_a,gemm/440/48/900,register_old_dispatch,49.856,1,8.325
+operators_a,gemm/440/48/900,shared,50.176,1,29.743
+operators_a,gemm/440/48/900,blocked,102.336,1,25.251
+operators_a,gemm/440/48/900,basic,57.856,1,24.33
+operators_a,gemm/440/48/900,basic,57.696,1,23.827
+operators_a,gemm/440/48/900,blocked,103.136,1,22.504
+operators_a,gemm/440/48/900,shared,49.76,1,22.394
+operators_a,gemm/440/48/900,register_old_dispatch,49.92,1,8.207
+operators_a,gemm/440/48/900,PyTorch,25.696,2,22.8
+operators_a,gemm/240/64/432,basic,43.84,1,30.791
+operators_a,gemm/240/64/432,blocked,56.704,1,24.049
+operators_a,gemm/240/64/432,shared,25.408,1,22.801
+operators_a,gemm/240/64/432,register_old_dispatch,99.073,1,11.047
+operators_a,gemm/240/64/432,PyTorch,19.264,2,22.527
+operators_a,gemm/240/64/432,PyTorch,17.856,2,16.798
+operators_a,gemm/240/64/432,register_old_dispatch,95.264,1,7.656
+operators_a,gemm/240/64/432,shared,25.312,1,29.562
+operators_a,gemm/240/64/432,blocked,52.544,1,25.053
+operators_a,gemm/240/64/432,basic,29.984,1,24.028
+operators_a,gemm/240/64/432,basic,29.632,1,23.261
+operators_a,gemm/240/64/432,blocked,52.864,1,22.269
+operators_a,gemm/240/64/432,shared,25.281,1,22.326
+operators_a,gemm/240/64/432,register_old_dispatch,95.2,1,8.094
+operators_a,gemm/240/64/432,PyTorch,18.144,2,20.654
+operators_a,gemm/72/64/576,basic,56.928,1,29.278
+operators_a,gemm/72/64/576,blocked,74.304,1,24.743
+operators_a,gemm/72/64/576,shared,32.448,1,22.945
+operators_a,gemm/72/64/576,register_old_dispatch,130.336,1,8.115
+operators_a,gemm/72/64/576,PyTorch,17.057,2,22.855
+operators_a,gemm/72/64/576,PyTorch,15.84,2,17.655
+operators_a,gemm/72/64/576,register_old_dispatch,124.832,1,7.647
+operators_a,gemm/72/64/576,shared,32.352,1,29.238
+operators_a,gemm/72/64/576,blocked,68.001,1,24.309
+operators_a,gemm/72/64/576,basic,37.952,1,23.368
+operators_a,gemm/72/64/576,basic,37.12,1,22.572
+operators_a,gemm/72/64/576,blocked,67.968,1,22.137
+operators_a,gemm/72/64/576,shared,32.32,1,21.657
+operators_a,gemm/72/64/576,register_old_dispatch,124.768,1,7.754
+operators_a,gemm/72/64/576,PyTorch,16.096,2,20.366
+operators_a,gemm/4/100/1152,basic,116.161,1,31.541
+operators_a,gemm/4/100/1152,blocked,154.72,1,24.021
+operators_a,gemm/4/100/1152,shared,58.529,1,27.863
+operators_a,gemm/4/100/1152,register_old_dispatch,58.624,1,8.006
+operators_a,gemm/4/100/1152,PyTorch,17.216,2,22.748
+operators_a,gemm/4/100/1152,PyTorch,16.128,2,19.499
+operators_a,gemm/4/100/1152,register_old_dispatch,58.464,1,7.765
+operators_a,gemm/4/100/1152,shared,58.624,1,28.761
+operators_a,gemm/4/100/1152,blocked,117.472,1,25.219
+operators_a,gemm/4/100/1152,basic,63.648,1,23.131
+operators_a,gemm/4/100/1152,basic,61.664,1,25.229
+operators_a,gemm/4/100/1152,blocked,117.6,1,22.309
+operators_a,gemm/4/100/1152,shared,58.465,1,22.36
+operators_a,gemm/4/100/1152,register_old_dispatch,58.624,1,7.785
+operators_a,gemm/4/100/1152,PyTorch,16.288,2,19.934
+operators_a,gemm/4/50/100,basic,14.624,1,31.853
+operators_a,gemm/4/50/100,blocked,15.52,1,24.666
+operators_a,gemm/4/50/100,shared,8.704,1,23.199
+operators_a,gemm/4/50/100,register_old_dispatch,8.576,1,8.347
+operators_a,gemm/4/50/100,PyTorch,9.696,1,22.532
+operators_a,gemm/4/50/100,PyTorch,6.56,1,12.821
+operators_a,gemm/4/50/100,register_old_dispatch,8.576,1,9.088
+operators_a,gemm/4/50/100,shared,8.576,1,29.473
+operators_a,gemm/4/50/100,blocked,13.44,1,24.788
+operators_a,gemm/4/50/100,basic,8.608,1,22.92
+operators_a,gemm/4/50/100,basic,8.512,1,23.156
+operators_a,gemm/4/50/100,blocked,13.376,1,21.168
+operators_a,gemm/4/50/100,shared,8.544,1,21.123
+operators_a,gemm/4/50/100,register_old_dispatch,8.576,1,7.941
+operators_a,gemm/4/50/100,PyTorch,6.624,1,15.282
+operators_a,gemm/4/1/50,basic,6.976,1,28.927
+operators_a,gemm/4/1/50,blocked,7.328,1,23.778
+operators_a,gemm/4/1/50,shared,5.6,1,22.12
+operators_a,gemm/4/1/50,register_old_dispatch,5.536,1,9.082
+operators_a,gemm/4/1/50,PyTorch,5.312,1,25.181
+operators_a,gemm/4/1/50,PyTorch,4.704,1,13.033
+operators_a,gemm/4/1/50,register_old_dispatch,5.568,1,7.493
+operators_a,gemm/4/1/50,shared,5.6,1,27.659
+operators_a,gemm/4/1/50,blocked,7.456,1,23.313
+operators_a,gemm/4/1/50,basic,5.536,1,22.709
+operators_a,gemm/4/1/50,basic,5.536,1,22.843
+operators_a,gemm/4/1/50,blocked,7.296,1,21.719
+operators_a,gemm/4/1/50,shared,5.536,1,21.606
+operators_a,gemm/4/1/50,register_old_dispatch,5.536,1,7.594
+operators_a,gemm/4/1/50,PyTorch,4.672,1,15.265
+operators_a,gemm/1024/1024/1024,basic,1419.845,1,30.273
+operators_a,gemm/1024/1024/1024,blocked,1563.173,1,26.388
+operators_a,gemm/1024/1024/1024,shared,466.498,1,22.265
+operators_a,gemm/1024/1024/1024,register_old_dispatch,465.857,1,8.181
+operators_a,gemm/1024/1024/1024,PyTorch,231.904,1,41.528
+operators_a,gemm/1024/1024/1024,PyTorch,231.745,1,17.81
+operators_a,gemm/1024/1024/1024,register_old_dispatch,480.706,1,7.819
+operators_a,gemm/1024/1024/1024,shared,466.274,1,31.636
+operators_a,gemm/1024/1024/1024,blocked,1561.541,1,23.639
+operators_a,gemm/1024/1024/1024,basic,1417.028,1,23.738
+operators_a,gemm/1024/1024/1024,basic,1415.364,1,23.826
+operators_a,gemm/1024/1024/1024,blocked,1561.541,1,25.711
+operators_a,gemm/1024/1024/1024,shared,466.913,1,22.862
+operators_a,gemm/1024/1024/1024,register_old_dispatch,466.05,1,8.17
+operators_a,gemm/1024/1024/1024,PyTorch,232.097,1,20.52
+operators_a,gemm/127/257/65,basic,12.992,1,31.726
+operators_a,gemm/127/257/65,blocked,12.384,1,25.021
+operators_a,gemm/127/257/65,shared,8.864,1,25.31
+operators_a,gemm/127/257/65,register_old_dispatch,21.312,1,8.059
+operators_a,gemm/127/257/65,PyTorch,12.192,1,17.561
+operators_a,gemm/127/257/65,PyTorch,11.648,1,12.929
+operators_a,gemm/127/257/65,register_old_dispatch,21.024,1,8.045
+operators_a,gemm/127/257/65,shared,8.736,1,30.65
+operators_a,gemm/127/257/65,blocked,12.064,1,24.099
+operators_a,gemm/127/257/65,basic,12.16,1,21.94
+operators_a,gemm/127/257/65,basic,12.128,1,23.426
+operators_a,gemm/127/257/65,blocked,12.16,1,21.966
+operators_a,gemm/127/257/65,shared,8.736,1,23.821
+operators_a,gemm/127/257/65,register_old_dispatch,21.088,1,8.227
+operators_a,gemm/127/257/65,PyTorch,11.616,1,15.699
+operators_a,gemm/65/4097/129,basic,59.616,1,28.946
+operators_a,gemm/65/4097/129,blocked,64.352,1,24.377
+operators_a,gemm/65/4097/129,shared,50.912,1,24.832
+operators_a,gemm/65/4097/129,register_old_dispatch,50.913,1,7.95
+operators_a,gemm/65/4097/129,PyTorch,26.208,1,17.191
+operators_a,gemm/65/4097/129,PyTorch,25.952,1,12.617
+operators_a,gemm/65/4097/129,register_old_dispatch,50.848,1,7.861
+operators_a,gemm/65/4097/129,shared,51.104,1,28.852
+operators_a,gemm/65/4097/129,blocked,64.641,1,24.251
+operators_a,gemm/65/4097/129,basic,56.576,1,22.475
+operators_a,gemm/65/4097/129,basic,56.864,1,22.439
+operators_a,gemm/65/4097/129,blocked,64.161,1,22.375
+operators_a,gemm/65/4097/129,shared,51.168,1,21.502
+operators_a,gemm/65/4097/129,register_old_dispatch,51.072,1,8.26
+operators_a,gemm/65/4097/129,PyTorch,26.08,1,15.279
+operators_a,"relu/(4, 24, 31, 98)",HyTorch,7.264,1,78.55
+operators_a,"relu/(4, 24, 31, 98)",PyTorch,6.112,1,52.91
+operators_a,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,20.995
+operators_a,"relu/(4, 24, 31, 98)",HyTorch,6.752,1,47.159
+operators_a,"relu/(4, 24, 31, 98)",HyTorch,6.784,1,33.434
+operators_a,"relu/(4, 24, 31, 98)",PyTorch,4.8,1,19.339
+operators_a,"tanh/(4, 24, 31, 98)",HyTorch,6.816,1,39.679
+operators_a,"tanh/(4, 24, 31, 98)",PyTorch,5.248,1,29.292
+operators_a,"tanh/(4, 24, 31, 98)",PyTorch,5.184,1,16.309
+operators_a,"tanh/(4, 24, 31, 98)",HyTorch,6.816,1,28.02
+operators_a,"tanh/(4, 24, 31, 98)",HyTorch,6.72,1,24.485
+operators_a,"tanh/(4, 24, 31, 98)",PyTorch,5.088,1,14.72
+operators_a,"relu/(4, 64, 1, 18)",HyTorch,4.32,1,32.949
+operators_a,"relu/(4, 64, 1, 18)",PyTorch,4.544,1,27.351
+operators_a,"relu/(4, 64, 1, 18)",PyTorch,4.064,1,14.952
+operators_a,"relu/(4, 64, 1, 18)",HyTorch,3.68,1,31.005
+operators_a,"relu/(4, 64, 1, 18)",HyTorch,3.648,1,27.448
+operators_a,"relu/(4, 64, 1, 18)",PyTorch,4.064,1,17.507
+operators_a,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,29.577
+operators_a,"tanh/(4, 64, 1, 18)",PyTorch,4.448,1,16.018
+operators_a,"tanh/(4, 64, 1, 18)",PyTorch,4.32,1,13.062
+operators_a,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,26.248
+operators_a,"tanh/(4, 64, 1, 18)",HyTorch,3.712,1,22.107
+operators_a,"tanh/(4, 64, 1, 18)",PyTorch,4.416,1,14.035
+operators_a,"relu/(3, 7, 11, 13)",HyTorch,4.224,1,32.768
+operators_a,"relu/(3, 7, 11, 13)",PyTorch,4.384,1,17.71
+operators_a,"relu/(3, 7, 11, 13)",PyTorch,4.224,1,14.171
+operators_a,"relu/(3, 7, 11, 13)",HyTorch,3.648,1,30.368
+operators_a,"relu/(3, 7, 11, 13)",HyTorch,3.616,1,27.308
+operators_a,"relu/(3, 7, 11, 13)",PyTorch,4.16,1,16.987
+operators_a,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,27.553
+operators_a,"tanh/(3, 7, 11, 13)",PyTorch,4.832,1,15.196
+operators_a,"tanh/(3, 7, 11, 13)",PyTorch,4.832,1,12.896
+operators_a,"tanh/(3, 7, 11, 13)",HyTorch,3.616,1,25.666
+operators_a,"tanh/(3, 7, 11, 13)",HyTorch,3.648,1,24.686
+operators_a,"tanh/(3, 7, 11, 13)",PyTorch,4.896,1,13.756
+operators_a,"pool/(4, 3, 16, 16)",HyTorch,5.856,1,88.446
+operators_a,"pool/(4, 3, 16, 16)",PyTorch,6.496,1,43.307
+operators_a,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,20.646
+operators_a,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,63.397
+operators_a,"pool/(4, 3, 16, 16)",HyTorch,5.312,1,53.402
+operators_a,"pool/(4, 3, 16, 16)",PyTorch,5.6,1,22.793
+operators_a,"poolback/(4, 3, 16, 16)",HyTorch,19.328,4,267.322
+operators_a,"poolback/(4, 3, 16, 16)",PyTorch,10.144,2,136.637
+operators_a,"poolback/(4, 3, 16, 16)",PyTorch,9.056000000000001,2,78.04
+operators_a,"poolback/(4, 3, 16, 16)",HyTorch,18.24,4,212.179
+operators_a,"poolback/(4, 3, 16, 16)",HyTorch,18.24,4,161.662
+operators_a,"poolback/(4, 3, 16, 16)",PyTorch,9.057,2,86.057
+operators_a,"pool/(2, 7, 13, 17)",HyTorch,5.76,1,85.817
+operators_a,"pool/(2, 7, 13, 17)",PyTorch,6.432,1,44.048
+operators_a,"pool/(2, 7, 13, 17)",PyTorch,5.728,1,21.159
+operators_a,"pool/(2, 7, 13, 17)",HyTorch,5.248,1,63.692
+operators_a,"pool/(2, 7, 13, 17)",HyTorch,5.248,1,53.658
+operators_a,"pool/(2, 7, 13, 17)",PyTorch,5.792,1,22.485
+operators_a,"poolback/(2, 7, 13, 17)",HyTorch,18.784,4,190.235
+operators_a,"poolback/(2, 7, 13, 17)",PyTorch,10.08,2,92.027
+operators_a,"poolback/(2, 7, 13, 17)",PyTorch,9.184,2,70.427
+operators_a,"poolback/(2, 7, 13, 17)",HyTorch,18.272,4,180.386
+operators_a,"poolback/(2, 7, 13, 17)",HyTorch,18.304,4,153.837
+operators_a,"poolback/(2, 7, 13, 17)",PyTorch,9.248000000000001,2,80.949
+operators_a,linear/4/1152/100,HyTorch,93.728,2,117.766
+operators_a,linear/4/1152/100,PyTorch,74.241,1,107.763
+operators_a,linear/4/1152/100,PyTorch,41.024,1,35.529
+operators_a,linear/4/1152/100,HyTorch,63.168000000000006,2,103.711
+operators_a,linear/4/1152/100,HyTorch,63.233,2,71.277
+operators_a,linear/4/1152/100,PyTorch,40.896,1,43.562
+operators_a,linear/4/100/50,HyTorch,14.847999999999999,2,81.359
+operators_a,linear/4/100/50,PyTorch,12.768,1,37.74
+operators_a,linear/4/100/50,PyTorch,8.128,1,27.719
+operators_a,linear/4/100/50,HyTorch,12.16,2,74.025
+operators_a,linear/4/100/50,HyTorch,11.936,2,66.807
+operators_a,linear/4/100/50,PyTorch,8.128,1,35.405
+operators_a,linear/4/50/1,HyTorch,10.209,2,74.356
+operators_a,linear/4/50/1,PyTorch,9.984,2,70.176
+operators_a,linear/4/50/1,PyTorch,8.288,2,35.751
+operators_a,linear/4/50/1,HyTorch,8.991999999999999,2,80.615
+operators_a,linear/4/50/1,HyTorch,9.44,2,64.151
+operators_a,linear/4/50/1,PyTorch,8.256,2,44.385
+operators_a,linear/3/137/71,HyTorch,17.28,2,76.608
+operators_a,linear/3/137/71,PyTorch,15.936,1,40.079
+operators_a,linear/3/137/71,PyTorch,9.856,1,29.787
+operators_a,linear/3/137/71,HyTorch,13.761,2,74.354
+operators_a,linear/3/137/71,HyTorch,13.6,2,65.421
+operators_a,linear/3/137/71,PyTorch,9.856,1,35.204
+operators_a,sgd/all16,HyTorch,123.93600000000002,32,441.397
+operators_a,sgd/all16,PyTorch,37.184,1,189.668
+operators_a,sgd/all16,PyTorch_foreach,23.936,1,89.503
+operators_a,sgd/all16,PyTorch_foreach,23.968,1,71.636
+operators_a,sgd/all16,PyTorch,23.936,1,82.397
+operators_a,sgd/all16,HyTorch,110.14400000000002,32,411.351
+operators_a,sgd/all16,HyTorch,110.14500000000002,32,372.867
+operators_a,sgd/all16,PyTorch,24.0,1,96.433
+operators_a,sgd/all16,PyTorch_foreach,24.064,1,70.315

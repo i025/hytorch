@@ -1,0 +1,11 @@
+STATUS: NOT_RUN_GPU_BUSY
+NCU profiling process was not launched.
+Profiling exit code: N/A (not executed; this is not exit 0).
+Profiling stdout: N/A
+Profiling stderr: N/A
+Reason: physical GPU0 runs VLLM PID 570250; GPU1 runs Python PID 575118 using 3000 MiB.
+Kernel identification: NOT TESTED
+Performance counters: NOT TESTED
+Valid profiling result: NOT GENERATED
+ERR_NVGPUCTRPERM: NOT OBSERVED; no profiling attempted.
+See environment.txt and permissions.txt for actual static command results.

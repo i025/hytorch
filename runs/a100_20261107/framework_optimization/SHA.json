@@ -1,0 +1,13 @@
+{
+  "scope_changed_baseline_files": [
+    "hytorch/backends/cuda/runtime.py"
+  ],
+  "new_test": "tests/test_framework_metadata.py",
+  "files": {
+    "hytorch/backends/cuda/runtime.py": "6402dae745c39d26697c1c25ddc6c38c46ca0c1e54fb6a4cd46ba667fd0206dc",
+    "tests/test_framework_metadata.py": "328de75ba22cc4f86436742ef4a71ce0c13f20f8544a8464bc3ae155de690655",
+    "hytorch/backends/cuda/kernels.cu": "7d89c71136dfc543c14e75133344c0d2c3bebfffcbca2940d6d2fa2033e8fcf6",
+    "hytorch/backends/cuda/build/libhytorch_cuda.so": "ead6af170bc71039542c6c2d992ce5b41d88875df5e969a9ae1ec7779b4e4ab2"
+  },
+  "stage_a_frozen_verified": true
+}

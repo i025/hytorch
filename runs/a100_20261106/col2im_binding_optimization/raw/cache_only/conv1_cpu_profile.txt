@@ -1,0 +1,26 @@
+         12901 function calls in 0.008 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      300    0.003    0.000    0.008    0.000 /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py:225(col2im)
+      300    0.003    0.000    0.003    0.000 /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py:83(_call)
+     1500    0.000    0.000    0.000    0.000 /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py:239(<genexpr>)
+      600    0.000    0.000    0.000    0.000 /home/xieminhui_pubuse/hytorch/hytorch/utils.py:393(pair)
+      300    0.000    0.000    0.008    0.000 /home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/diagnose_cache.py:23(full)
+      900    0.000    0.000    0.000    0.000 /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py:241(<genexpr>)
+     1800    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+      900    0.000    0.000    0.000    0.000 /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py:240(<genexpr>)
+     2400    0.000    0.000    0.000    0.000 {built-in method _operator.index}
+      600    0.000    0.000    0.000    0.000 /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py:52(load_library)
+      600    0.000    0.000    0.000    0.000 /home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py:91(_ptr)
+      300    0.000    0.000    0.000    0.000 /home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/_misc/memory_ranges.py:9(may_share_memory)
+      900    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+      300    0.000    0.000    0.000    0.000 {built-in method cupy.cuda.stream.get_current_stream}
+      300    0.000    0.000    0.000    0.000 {built-in method cupy_backends.cuda.api.runtime.getDevice}
+      300    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+      300    0.000    0.000    0.000    0.000 {built-in method cupy._core._memory_range.may_share_bounds}
+      300    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+

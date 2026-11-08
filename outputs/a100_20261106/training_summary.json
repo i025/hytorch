@@ -1,0 +1,74 @@
+[
+  {
+    "implementation": "native_baseline",
+    "repeats": 3,
+    "mean_train_wall_s": 0.9768851973737279,
+    "std_train_wall_s": 0.004959422765396334,
+    "samples_per_second": 786.1722155937076,
+    "mean_step_ms": 4.941400950580525,
+    "weight_max_abs_difference": 0.0,
+    "weights_close": true,
+    "weights_bitwise_equal": true,
+    "final_epoch_loss": 0.00038126575373098603,
+    "wall_repeats_s": [
+      0.981037057004869,
+      0.978225028142333,
+      0.9713935069739819
+    ],
+    "speedup_vs_original": 1.0
+  },
+  {
+    "implementation": "native_optimized",
+    "repeats": 3,
+    "mean_train_wall_s": 0.9822681200069686,
+    "std_train_wall_s": 0.0025658705749034083,
+    "samples_per_second": 781.8639171497814,
+    "mean_step_ms": 4.972007522559983,
+    "weight_max_abs_difference": 0.0,
+    "weights_close": true,
+    "weights_bitwise_equal": true,
+    "final_epoch_loss": 0.00038126575373098603,
+    "wall_repeats_s": [
+      0.9825829239562154,
+      0.9795593721792102,
+      0.9846620638854802
+    ],
+    "speedup_vs_original": 0.9945199049795055
+  },
+  {
+    "implementation": "cupy",
+    "repeats": 3,
+    "mean_train_wall_s": 0.9819618241551021,
+    "std_train_wall_s": 0.0030598315297451807,
+    "samples_per_second": 782.1077979898059,
+    "mean_step_ms": 4.963908055894232,
+    "weight_max_abs_difference": 4.190951585769653e-08,
+    "weights_close": true,
+    "weights_bitwise_equal": false,
+    "final_epoch_loss": 0.00038126584121300766,
+    "wall_repeats_s": [
+      0.9854550762102008,
+      0.9797564372420311,
+      0.9806739590130746
+    ],
+    "speedup_vs_original": 0.9948301179776086
+  },
+  {
+    "implementation": "torch",
+    "repeats": 3,
+    "mean_train_wall_s": 0.5547034128879508,
+    "std_train_wall_s": 0.007542361842901867,
+    "samples_per_second": 1384.5236610345767,
+    "mean_step_ms": 2.7332913458748305,
+    "weight_max_abs_difference": 2.9802322387695312e-08,
+    "weights_close": true,
+    "weights_bitwise_equal": false,
+    "final_epoch_loss": 0.00038126556142970003,
+    "wall_repeats_s": [
+      0.5476023056544363,
+      0.562620650511235,
+      0.5538872824981809
+    ],
+    "speedup_vs_original": 1.7610946222374464
+  }
+]

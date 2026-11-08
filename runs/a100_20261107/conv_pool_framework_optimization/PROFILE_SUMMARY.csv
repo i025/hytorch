@@ -1,0 +1,16 @@
+scope,mode,phase,captures,kernels_per_step,gpu_kernel_us_per_step,cpu_range_elapsed_us_per_step,cuda_api_elapsed_us_per_step,api_calls_per_step,gpu_active_union_us_per_step,kernel_span_gaps_us_per_step,memcpy_calls_per_step,memcpy_bytes_per_step
+training_10step_capture_mean,B0,forward,2,38.0,553.6245000000001,1290.3493,167.6907,38.0,,,,
+training_10step_capture_mean,B0,backward,2,72.0,653.1666999999998,2779.33245,336.18115,116.0,,,,
+training_10step_capture_mean,B0,update,2,32.0,113.54590000000005,407.0393,104.243,32.0,,,,
+training_10step_capture_mean,B0,transfer,2,0.0,0.0,196.91675,52.342349999999996,14.2,,,,
+training_10step_capture_mean,B0,ALL,2,142.0,1320.3370999999997,,662.5479,,1320.3371,3415.6743500000002,2.0,633616.0
+training_10step_capture_mean,O1,forward,2,38.0,557.2816500000005,1219.07725,161.66264999999999,38.0,,,,
+training_10step_capture_mean,O1,backward,2,72.0,657.6420999999996,2616.79765,318.70485,116.0,,,,
+training_10step_capture_mean,O1,update,2,32.0,113.41465000000002,400.881,104.676,32.0,,,,
+training_10step_capture_mean,O1,transfer,2,0.0,0.0,198.7928,50.82085,14.2,,,,
+training_10step_capture_mean,O1,ALL,2,142.0,1328.3383999999994,,638.143,,1328.3384,3163.97205,2.0,633616.0
+training_10step_capture_mean,torch,forward,2,33.0,541.2691500000001,795.4071,234.8886,64.0,,,,
+training_10step_capture_mean,torch,backward,2,38.0,564.9236999999995,941.9643000000001,188.8908,43.0,,,,
+training_10step_capture_mean,torch,update,2,1.0,28.78405,158.2086,9.640149999999998,1.0,,,,
+training_10step_capture_mean,torch,transfer,2,0.0,0.0,180.40205,117.85385,4.0,,,,
+training_10step_capture_mean,torch,ALL,2,72.0,1134.9769000000001,,558.06405,,1064.815,1084.25655,2.0,633616.0

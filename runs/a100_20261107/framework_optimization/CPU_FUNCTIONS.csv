@@ -1,0 +1,14 @@
+mode,steps,file,line,function,primitive_calls,calls,self_s,cumulative_s
+B0,30,~,0,<method 'sort' of 'list' objects>,630,630,0.000265125,0.000411283
+B0,30,/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,113,_shape_ok,1140,1140,0.002134416,0.0130787
+B0,30,/home/xieminhui_pubuse/hytorch/hytorch/core.py,16,using_config,1260,1260,0.000739102,0.001122198
+B0,30,/home/xieminhui_pubuse/hytorch/hytorch/core.py,133,add_func,630,630,0.0008885680000000001,0.001633838
+B0,30,/home/xieminhui_pubuse/hytorch/hytorch/core.py,183,__call__,1980,1980,0.008696789,0.129081109
+B0,30,/home/xieminhui_pubuse/hytorch/hytorch/layers.py,25,__call__,30,330,0.0010853520000000001,0.052655932
+B0,30,/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/numpy/_core/fromnumeric.py,3328,prod,1140,1140,0.001177689,0.009112448
+F1,30,~,0,<method 'sort' of 'list' objects>,630,630,0.000249686,0.00039616900000000004
+F1,30,/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/runtime.py,115,_shape_ok,1140,1140,0.001430512,0.0031038880000000004
+F1,30,/home/xieminhui_pubuse/hytorch/hytorch/core.py,16,using_config,1260,1260,0.000718024,0.0011017050000000001
+F1,30,/home/xieminhui_pubuse/hytorch/hytorch/core.py,133,add_func,630,630,0.000901152,0.0016257460000000002
+F1,30,/home/xieminhui_pubuse/hytorch/hytorch/core.py,183,__call__,1980,1980,0.008483724,0.11588371600000001
+F1,30,/home/xieminhui_pubuse/hytorch/hytorch/layers.py,25,__call__,30,330,0.001060875,0.045122615000000005

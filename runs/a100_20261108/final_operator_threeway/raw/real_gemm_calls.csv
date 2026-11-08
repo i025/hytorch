@@ -1,0 +1,25 @@
+M,N,K,path,a,b,x,gy
+12152,24,75,native_gemm:Conv2d,"{'shape': [12152, 75], 'strides_bytes': [300, 4], 'dtype': 'float32'}","{'shape': [75, 24], 'strides_bytes': [4, 300], 'dtype': 'float32'}",,
+2632,36,600,native_gemm:Conv2d,"{'shape': [2632, 600], 'strides_bytes': [2400, 4], 'dtype': 'float32'}","{'shape': [600, 36], 'strides_bytes': [4, 2400], 'dtype': 'float32'}",,
+440,48,900,native_gemm:Conv2d,"{'shape': [440, 900], 'strides_bytes': [3600, 4], 'dtype': 'float32'}","{'shape': [900, 48], 'strides_bytes': [4, 3600], 'dtype': 'float32'}",,
+240,64,432,native_gemm:Conv2d,"{'shape': [240, 432], 'strides_bytes': [1728, 4], 'dtype': 'float32'}","{'shape': [432, 64], 'strides_bytes': [4, 1728], 'dtype': 'float32'}",,
+72,64,576,native_gemm:Conv2d,"{'shape': [72, 576], 'strides_bytes': [2304, 4], 'dtype': 'float32'}","{'shape': [576, 64], 'strides_bytes': [4, 2304], 'dtype': 'float32'}",,
+4,100,1152,MatMul_native,"{'shape': [4, 1152], 'strides_bytes': [4608, 4], 'dtype': 'float32'}","{'shape': [1152, 100], 'strides_bytes': [400, 4], 'dtype': 'float32'}",,
+4,50,100,MatMul_native,"{'shape': [4, 100], 'strides_bytes': [400, 4], 'dtype': 'float32'}","{'shape': [100, 50], 'strides_bytes': [200, 4], 'dtype': 'float32'}",,
+4,1,50,MatMul_native,"{'shape': [4, 50], 'strides_bytes': [200, 4], 'dtype': 'float32'}","{'shape': [50, 1], 'strides_bytes': [4, 4], 'dtype': 'float32'}",,
+4,50,1,MatMul_cupy_backward,"{'shape': [4, 1], 'strides_bytes': [4, 4], 'dtype': 'float32'}","{'shape': [1, 50], 'strides_bytes': [4, 4], 'dtype': 'float32'}",,
+50,1,4,MatMul_cupy_backward,"{'shape': [50, 4], 'strides_bytes': [4, 200], 'dtype': 'float32'}","{'shape': [4, 1], 'strides_bytes': [4, 4], 'dtype': 'float32'}",,
+4,100,50,MatMul_cupy_backward,"{'shape': [4, 50], 'strides_bytes': [200, 4], 'dtype': 'float32'}","{'shape': [50, 100], 'strides_bytes': [4, 200], 'dtype': 'float32'}",,
+100,50,4,MatMul_cupy_backward,"{'shape': [100, 4], 'strides_bytes': [4, 400], 'dtype': 'float32'}","{'shape': [4, 50], 'strides_bytes': [200, 4], 'dtype': 'float32'}",,
+4,1152,100,MatMul_cupy_backward,"{'shape': [4, 100], 'strides_bytes': [400, 4], 'dtype': 'float32'}","{'shape': [100, 1152], 'strides_bytes': [4, 400], 'dtype': 'float32'}",,
+1152,100,4,MatMul_cupy_backward,"{'shape': [1152, 4], 'strides_bytes': [4, 4608], 'dtype': 'float32'}","{'shape': [4, 100], 'strides_bytes': [400, 4], 'dtype': 'float32'}",,
+576,72,64,dInput_tensordot_cublas,"{'shape': [64, 64, 3, 3], 'strides_bytes': [2304, 36, 12, 4], 'dtype': 'float32'}","{'shape': [4, 64, 1, 18], 'strides_bytes': [4608, 72, 72, 4], 'dtype': 'float32'}",,
+64,576,72,packed_dweight_cublas,,,"{'shape': [4, 64, 3, 20], 'strides_bytes': [15360, 240, 80, 4], 'dtype': 'float32'}","{'shape': [4, 64, 1, 18], 'strides_bytes': [4608, 72, 72, 4], 'dtype': 'float32'}"
+432,240,64,dInput_tensordot_cublas,"{'shape': [64, 48, 3, 3], 'strides_bytes': [1728, 36, 12, 4], 'dtype': 'float32'}","{'shape': [4, 64, 3, 20], 'strides_bytes': [15360, 240, 80, 4], 'dtype': 'float32'}",,
+64,432,240,packed_dweight_cublas,,,"{'shape': [4, 48, 5, 22], 'strides_bytes': [21120, 440, 88, 4], 'dtype': 'float32'}","{'shape': [4, 64, 3, 20], 'strides_bytes': [15360, 240, 80, 4], 'dtype': 'float32'}"
+900,440,48,dInput_tensordot_cublas,"{'shape': [48, 36, 5, 5], 'strides_bytes': [3600, 100, 20, 4], 'dtype': 'float32'}","{'shape': [4, 48, 5, 22], 'strides_bytes': [21120, 440, 88, 4], 'dtype': 'float32'}",,
+48,900,440,packed_dweight_cublas,,,"{'shape': [4, 36, 14, 47], 'strides_bytes': [94752, 2632, 188, 4], 'dtype': 'float32'}","{'shape': [4, 48, 5, 22], 'strides_bytes': [21120, 440, 88, 4], 'dtype': 'float32'}"
+600,2632,36,dInput_tensordot_cublas,"{'shape': [36, 24, 5, 5], 'strides_bytes': [2400, 100, 20, 4], 'dtype': 'float32'}","{'shape': [4, 36, 14, 47], 'strides_bytes': [94752, 2632, 188, 4], 'dtype': 'float32'}",,
+36,600,2632,packed_dweight_cublas,,,"{'shape': [4, 24, 31, 98], 'strides_bytes': [291648, 12152, 392, 4], 'dtype': 'float32'}","{'shape': [4, 36, 14, 47], 'strides_bytes': [94752, 2632, 188, 4], 'dtype': 'float32'}"
+75,12152,24,dInput_tensordot_cublas,"{'shape': [24, 3, 5, 5], 'strides_bytes': [300, 100, 20, 4], 'dtype': 'float32'}","{'shape': [4, 24, 31, 98], 'strides_bytes': [291648, 12152, 392, 4], 'dtype': 'float32'}",,
+24,75,12152,packed_dweight_cublas,,,"{'shape': [4, 3, 66, 200], 'strides_bytes': [158400, 52800, 800, 4], 'dtype': 'float32'}","{'shape': [4, 24, 31, 98], 'strides_bytes': [291648, 12152, 392, 4], 'dtype': 'float32'}"

@@ -1,0 +1,77 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+警告: 未找到scipy，无法加载SVHN数据集
+conv1/direct
+conv1/raw
+conv1/function
+conv1/backward
+conv1/dinput
+conv1/dweight
+conv1/dbias
+conv2/direct
+conv2/raw
+conv2/function
+conv2/backward
+conv2/dinput
+conv2/dweight
+conv2/dbias
+conv3/direct
+conv3/raw
+conv3/function
+conv3/backward
+conv3/dinput
+conv3/dweight
+conv3/dbias
+conv4/direct
+conv4/raw
+conv4/function
+conv4/backward
+conv4/dinput
+conv4/dweight
+conv4/dbias
+conv5/direct
+conv5/raw
+conv5/function
+conv5/backward
+conv5/dinput
+conv5/dweight
+conv5/dbias
+irregular/direct
+irregular/raw
+irregular/function
+irregular/backward
+irregular/dinput
+irregular/dweight
+irregular/dbias
+asymmetric/direct
+asymmetric/raw
+asymmetric/function
+asymmetric/backward
+asymmetric/dinput
+asymmetric/dweight
+asymmetric/dbias
+tiny_pool/direct
+tiny_pool/raw
+tiny_pool/forward
+tiny_pool/backward
+irregular_pool/direct
+irregular_pool/raw
+irregular_pool/forward
+irregular_pool/backward
+overlap_pool/direct
+overlap_pool/raw
+overlap_pool/forward
+overlap_pool/backward
+wide_pool/direct
+wide_pool/raw
+wide_pool/forward
+wide_pool/backward
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-e552.qdstrm'
+[1/1] [0%                          ] layers_O1.nsys-repProcessing events...
+[1/1] [0%                          ] layers_O1.nsys-rep[1/1] [0%                          ] layers_O1.nsys-rep[1/1] [========42%                 ] layers_O1.nsys-rep[1/1] [=========44%                ] layers_O1.nsys-rep[1/1] [===============66%          ] layers_O1.nsys-rep[1/1] [=====================88%    ] layers_O1.nsys-rep[1/1] [========================100%] layers_O1.nsys-rep[1/1] [========================100%] layers_O1.nsys-rep
+Generated:
+	/home/xieminhui_pubuse/hytorch/runs/a100_20261107/conv_pool_framework_optimization/traces/layers_O1.nsys-rep

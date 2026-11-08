@@ -1,0 +1,17 @@
+警告: 未找到scipy，无法加载SVHN数据集
+Traceback (most recent call last):
+  File "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/diagnostics/gemm_bench.py", line 41, in <module>
+    for _ in range(batch):call(mode)
+  File "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/diagnostics/gemm_bench.py", line 31, in call
+    if mode=='cublas':cp.dot(da,db,out=outs[mode])
+  File "/home/xieminhui_pubuse/hytorch-env/lib/python3.10/site-packages/cupy/linalg/_product.py", line 100, in dot
+    return a.dot(b, out)
+  File "cupy/_core/core.pyx", line 2088, in cupy._core.core._ndarray_base.dot
+  File "cupy/_core/_routines_linalg.pyx", line 538, in cupy._core._routines_linalg.dot
+  File "cupy/_core/_routines_linalg.pyx", line 630, in cupy._core._routines_linalg.tensordot_core
+  File "cupy/_core/_routines_linalg.pyx", line 775, in cupy._core._routines_linalg.tensordot_core_v11
+  File "cupy_backends/cuda/libs/cublas.pyx", line 1639, in cupy_backends.cuda.libs.cublas.gemmEx
+  File "cupy_backends/cuda/libs/cublas.pyx", line 1644, in cupy_backends.cuda.libs.cublas.gemmEx
+  File "cupy_backends/cuda/libs/cublas.pyx", line 668, in cupy_backends.cuda.libs.cublas._setStream
+  File "cupy_backends/cuda/libs/cublas.pyx", line 649, in cupy_backends.cuda.libs.cublas.setStream
+NotImplementedError: calling cuBLAS API during stream capture is currently unsupported

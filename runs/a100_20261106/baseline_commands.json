@@ -1,0 +1,87 @@
+[
+  {
+    "name": "smoke_baseline",
+    "command": [
+      "/home/xieminhui_pubuse/hytorch-env/bin/python",
+      "benchmarks/bench_cuda_training.py",
+      "--device",
+      "cuda",
+      "--model",
+      "tiny",
+      "--samples",
+      "8",
+      "--batch",
+      "2",
+      "--matmul",
+      "shared",
+      "--conv",
+      "im2col",
+      "--pool",
+      "native",
+      "--output",
+      "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/smoke_baseline"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "gemm_baseline",
+    "command": [
+      "/home/xieminhui_pubuse/hytorch-env/bin/python",
+      "benchmarks/bench_cuda_gemm.py",
+      "--sizes",
+      "1024",
+      "2048",
+      "4096",
+      "--tiles",
+      "16",
+      "32",
+      "--repeats",
+      "10",
+      "--output",
+      "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_baseline"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "ops_baseline",
+    "command": [
+      "/home/xieminhui_pubuse/hytorch-env/bin/python",
+      "benchmarks/bench_cuda_ops.py",
+      "--batches",
+      "1",
+      "4",
+      "16",
+      "--repeats",
+      "10",
+      "--output",
+      "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/ops_baseline"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "donkey_profile_baseline",
+    "command": [
+      "/home/xieminhui_pubuse/hytorch-env/bin/python",
+      "benchmarks/bench_cuda_training.py",
+      "--model",
+      "donkey",
+      "--samples",
+      "64",
+      "--batch",
+      "4",
+      "--matmul",
+      "shared",
+      "--conv",
+      "im2col",
+      "--pool",
+      "native",
+      "--warmup",
+      "5",
+      "--mode",
+      "phases",
+      "--output",
+      "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/donkey_profile_baseline"
+    ],
+    "returncode": 0
+  }
+]

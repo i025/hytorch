@@ -1,0 +1,4 @@
+{
+  "hytorch/functions_conv.py": "newline-only after GPU validation; AST identical",
+  "hytorch/optimizers.py": "newline-only after GPU validation; AST identical"
+}

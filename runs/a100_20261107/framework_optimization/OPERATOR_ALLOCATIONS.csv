@@ -1,0 +1,157 @@
+case,implementation,allocator,allocation_requests,allocator_reported_bytes,free_events,copy_count_source
+conv1/forward,HyTorch,CuPy MemoryHook,4,5985984,,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/forward,PyTorch,torch allocator history,1,1166592,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/dweight,HyTorch,CuPy MemoryHook,3,4819392,,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/dweight,PyTorch,torch allocator history,1,7200,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/dinput,HyTorch,CuPy MemoryHook,3,5445792,,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/dinput,PyTorch,torch allocator history,1,633600,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/dbias,HyTorch,CuPy MemoryHook,1,96,,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/dbias,PyTorch,torch allocator history,1,96,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/backward,HyTorch,CuPy MemoryHook,7,10265280,,OPERATOR_KERNELS and raw SQLite memcpy
+conv1/backward,PyTorch,torch allocator history,3,640896,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/forward,HyTorch,CuPy MemoryHook,4,7161216,,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/forward,PyTorch,torch allocator history,2,382976,1,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/dweight,HyTorch,CuPy MemoryHook,3,6782208,,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/dweight,PyTorch,torch allocator history,1,86400,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/dinput,HyTorch,CuPy MemoryHook,3,7862400,,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/dinput,PyTorch,torch allocator history,1,1166592,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/dbias,HyTorch,CuPy MemoryHook,1,144,,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/dbias,PyTorch,torch allocator history,1,144,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/backward,HyTorch,CuPy MemoryHook,7,14644752,,OPERATOR_KERNELS and raw SQLite memcpy
+conv2/backward,PyTorch,torch allocator history,3,1253136,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/forward,HyTorch,CuPy MemoryHook,4,1925760,,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/forward,PyTorch,torch allocator history,2,10529280,1,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/dweight,HyTorch,CuPy MemoryHook,3,1841280,,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/dweight,PyTorch,torch allocator history,1,172800,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/dinput,HyTorch,CuPy MemoryHook,3,2047488,,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/dinput,PyTorch,torch allocator history,1,379008,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/dbias,HyTorch,CuPy MemoryHook,1,192,,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/dbias,PyTorch,torch allocator history,1,192,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/backward,HyTorch,CuPy MemoryHook,7,3888960,,OPERATOR_KERNELS and raw SQLite memcpy
+conv3/backward,PyTorch,torch allocator history,3,552000,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/forward,HyTorch,CuPy MemoryHook,4,648192,,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/forward,PyTorch,torch allocator history,2,368896,1,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/dweight,HyTorch,CuPy MemoryHook,3,586752,,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/dweight,PyTorch,torch allocator history,1,110592,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/dinput,HyTorch,CuPy MemoryHook,3,560640,,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/dinput,PyTorch,torch allocator history,1,84480,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/dbias,HyTorch,CuPy MemoryHook,1,256,,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/dbias,PyTorch,torch allocator history,1,256,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/backward,HyTorch,CuPy MemoryHook,7,1147648,,OPERATOR_KERNELS and raw SQLite memcpy
+conv4/backward,PyTorch,torch allocator history,3,195328,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/forward,HyTorch,CuPy MemoryHook,4,350208,,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/forward,PyTorch,torch allocator history,2,428288,1,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/dweight,HyTorch,CuPy MemoryHook,3,331776,,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/dweight,PyTorch,torch allocator history,1,147456,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/dinput,HyTorch,CuPy MemoryHook,3,245760,,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/dinput,PyTorch,torch allocator history,1,61440,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/dbias,HyTorch,CuPy MemoryHook,1,256,,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/dbias,PyTorch,torch allocator history,1,256,0,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/backward,HyTorch,CuPy MemoryHook,7,577792,,OPERATOR_KERNELS and raw SQLite memcpy
+conv5/backward,PyTorch,torch allocator history,3,209152,0,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/forward,HyTorch,CuPy MemoryHook,4,21084,,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/forward,PyTorch,torch allocator history,1,2352,0,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/dweight,HyTorch,CuPy MemoryHook,3,18732,,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/dweight,PyTorch,torch allocator history,1,1260,0,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/dinput,HyTorch,CuPy MemoryHook,3,22776,,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/dinput,PyTorch,torch allocator history,1,5304,0,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/dbias,HyTorch,CuPy MemoryHook,1,28,,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/dbias,PyTorch,torch allocator history,1,28,0,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/backward,HyTorch,CuPy MemoryHook,7,41536,,OPERATOR_KERNELS and raw SQLite memcpy
+irregular/backward,PyTorch,torch allocator history,3,6592,0,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/forward,HyTorch,CuPy MemoryHook,4,20508,,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/forward,PyTorch,torch allocator history,1,4104,0,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/dweight,HyTorch,CuPy MemoryHook,2,12300,,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/dweight,PyTorch,torch allocator history,1,900,0,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/dinput,HyTorch,CuPy MemoryHook,2,15580,,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/dinput,PyTorch,torch allocator history,1,4180,0,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/dbias,HyTorch,CuPy MemoryHook,1,36,,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/dbias,PyTorch,torch allocator history,1,36,0,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/backward,HyTorch,CuPy MemoryHook,5,27916,,OPERATOR_KERNELS and raw SQLite memcpy
+asymmetric/backward,PyTorch,torch allocator history,3,5116,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/12152/24/75,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/12152/24/75,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/12152/24/75,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/12152/24/75,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/12152/24/75,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/2632/36/600,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/2632/36/600,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/2632/36/600,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/2632/36/600,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/2632/36/600,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/440/48/900,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/440/48/900,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/440/48/900,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/440/48/900,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/440/48/900,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/240/64/432,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/240/64/432,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/240/64/432,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/240/64/432,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/240/64/432,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/72/64/576,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/72/64/576,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/72/64/576,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/72/64/576,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/72/64/576,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/100/1152,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/100/1152,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/100/1152,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/100/1152,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/100/1152,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/50/100,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/50/100,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/50/100,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/50/100,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/50/100,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/1/50,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/1/50,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/1/50,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/1/50,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/4/1/50,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/1024/1024/1024,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/1024/1024/1024,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/1024/1024/1024,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/1024/1024/1024,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/1024/1024/1024,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/127/257/65,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/127/257/65,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/127/257/65,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/127/257/65,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/127/257/65,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/65/4097/129,basic,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/65/4097/129,blocked,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/65/4097/129,shared,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/65/4097/129,register_old_dispatch,CuPy MemoryHook,0,0,,OPERATOR_KERNELS and raw SQLite memcpy
+gemm/65/4097/129,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+"relu/(4, 24, 31, 98)",HyTorch,CuPy MemoryHook,1,1166592,,OPERATOR_KERNELS and raw SQLite memcpy
+"relu/(4, 24, 31, 98)",PyTorch,torch allocator history,1,1166592,0,OPERATOR_KERNELS and raw SQLite memcpy
+"tanh/(4, 24, 31, 98)",HyTorch,CuPy MemoryHook,1,1166592,,OPERATOR_KERNELS and raw SQLite memcpy
+"tanh/(4, 24, 31, 98)",PyTorch,torch allocator history,1,1166592,0,OPERATOR_KERNELS and raw SQLite memcpy
+"relu/(4, 64, 1, 18)",HyTorch,CuPy MemoryHook,1,18432,,OPERATOR_KERNELS and raw SQLite memcpy
+"relu/(4, 64, 1, 18)",PyTorch,torch allocator history,1,18432,0,OPERATOR_KERNELS and raw SQLite memcpy
+"tanh/(4, 64, 1, 18)",HyTorch,CuPy MemoryHook,1,18432,,OPERATOR_KERNELS and raw SQLite memcpy
+"tanh/(4, 64, 1, 18)",PyTorch,torch allocator history,1,18432,0,OPERATOR_KERNELS and raw SQLite memcpy
+"relu/(3, 7, 11, 13)",HyTorch,CuPy MemoryHook,1,12012,,OPERATOR_KERNELS and raw SQLite memcpy
+"relu/(3, 7, 11, 13)",PyTorch,torch allocator history,1,12012,0,OPERATOR_KERNELS and raw SQLite memcpy
+"tanh/(3, 7, 11, 13)",HyTorch,CuPy MemoryHook,1,12012,,OPERATOR_KERNELS and raw SQLite memcpy
+"tanh/(3, 7, 11, 13)",PyTorch,torch allocator history,1,12012,0,OPERATOR_KERNELS and raw SQLite memcpy
+"pool/(4, 3, 16, 16)",HyTorch,CuPy MemoryHook,2,9216,,OPERATOR_KERNELS and raw SQLite memcpy
+"pool/(4, 3, 16, 16)",PyTorch,torch allocator history,2,9216,0,OPERATOR_KERNELS and raw SQLite memcpy
+"poolback/(4, 3, 16, 16)",HyTorch,CuPy MemoryHook,4,36864,,OPERATOR_KERNELS and raw SQLite memcpy
+"poolback/(4, 3, 16, 16)",PyTorch,torch allocator history,1,12288,0,OPERATOR_KERNELS and raw SQLite memcpy
+"pool/(2, 7, 13, 17)",HyTorch,CuPy MemoryHook,2,8064,,OPERATOR_KERNELS and raw SQLite memcpy
+"pool/(2, 7, 13, 17)",PyTorch,torch allocator history,2,8064,0,OPERATOR_KERNELS and raw SQLite memcpy
+"poolback/(2, 7, 13, 17)",HyTorch,CuPy MemoryHook,4,33880,,OPERATOR_KERNELS and raw SQLite memcpy
+"poolback/(2, 7, 13, 17)",PyTorch,torch allocator history,1,12376,0,OPERATOR_KERNELS and raw SQLite memcpy
+linear/4/1152/100,HyTorch,CuPy MemoryHook,1,1600,,OPERATOR_KERNELS and raw SQLite memcpy
+linear/4/1152/100,PyTorch,torch allocator history,1,1600,0,OPERATOR_KERNELS and raw SQLite memcpy
+linear/4/100/50,HyTorch,CuPy MemoryHook,1,800,,OPERATOR_KERNELS and raw SQLite memcpy
+linear/4/100/50,PyTorch,torch allocator history,1,800,0,OPERATOR_KERNELS and raw SQLite memcpy
+linear/4/50/1,HyTorch,CuPy MemoryHook,1,16,,OPERATOR_KERNELS and raw SQLite memcpy
+linear/4/50/1,PyTorch,torch allocator history,1,16,0,OPERATOR_KERNELS and raw SQLite memcpy
+linear/3/137/71,HyTorch,CuPy MemoryHook,1,852,,OPERATOR_KERNELS and raw SQLite memcpy
+linear/3/137/71,PyTorch,torch allocator history,1,852,0,OPERATOR_KERNELS and raw SQLite memcpy
+sgd/all16,HyTorch,CuPy MemoryHook,16,1006996,,OPERATOR_KERNELS and raw SQLite memcpy
+sgd/all16,PyTorch,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy
+sgd/all16,PyTorch_foreach,torch allocator history,0,0,0,OPERATOR_KERNELS and raw SQLite memcpy

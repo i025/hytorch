@@ -1,0 +1,16 @@
+{
+  "status": "STATIC_CHECK_COMPLETE_PROFILING_NOT_TESTED_GPU_BUSY",
+  "ncu_installed": true,
+  "ncu_version": "2025.2.1.0",
+  "in_default_path": false,
+  "driver": "580.95.05",
+  "rm_profiling_admin_only": 0,
+  "current_uid": 1291600100,
+  "basic_executed": false,
+  "basic_exit_code": null,
+  "gemm_executed": false,
+  "collected_metrics": 0,
+  "permission_error_observed": false,
+  "administrator_configuration_change_required": "not established; no evidence supporting a change",
+  "gpu_selection": null
+}

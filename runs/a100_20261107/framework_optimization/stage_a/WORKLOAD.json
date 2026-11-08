@@ -1,0 +1,3315 @@
+{
+  "function_calls": [
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            3,
+            66,
+            200
+          ],
+          "dtype": "float32",
+          "strides": [
+            158400,
+            52800,
+            800,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            24,
+            3,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            300,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            24
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            36,
+            24,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            2400,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            36
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            48,
+            36,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            3600,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            48
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            64,
+            48,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "strides": [
+            1728,
+            36,
+            12,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Conv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "strides": [
+            2304,
+            36,
+            12,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Reshape",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            1152,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Add",
+      "inputs": [
+        {
+          "shape": [
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            100,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Add",
+      "inputs": [
+        {
+          "shape": [
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "ReLU",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            50,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Add",
+      "inputs": [
+        {
+          "shape": [
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Tanh",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MeanSquareError",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [],
+          "dtype": "float32",
+          "strides": [],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Sub",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [],
+          "dtype": "float32",
+          "strides": [],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [],
+          "dtype": "float32",
+          "strides": [],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Neg",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Sub",
+      "inputs": [
+        {
+          "shape": [],
+          "dtype": "float32",
+          "strides": [],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "SumTo",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            50,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            1,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            1,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            50,
+            4
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            200
+          ],
+          "c_contiguous": false
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            50,
+            4
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            200
+          ],
+          "c_contiguous": false
+        },
+        {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            50,
+            1
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "bool",
+          "strides": [
+            50,
+            1
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "SumTo",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            100,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            50,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            200
+          ],
+          "c_contiguous": false
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            50,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            200
+          ],
+          "c_contiguous": false
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            100,
+            4
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            400
+          ],
+          "c_contiguous": false
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            100,
+            4
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            400
+          ],
+          "c_contiguous": false
+        },
+        {
+          "shape": [
+            4,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            100,
+            50
+          ],
+          "dtype": "float32",
+          "strides": [
+            200,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "bool",
+          "strides": [
+            100,
+            1
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "SumTo",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            1152,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            100,
+            1152
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            400
+          ],
+          "c_contiguous": false
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            100,
+            1152
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            400
+          ],
+          "c_contiguous": false
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Transpose",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            1152,
+            4
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4608
+          ],
+          "c_contiguous": false
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "MatMul",
+      "inputs": [
+        {
+          "shape": [
+            1152,
+            4
+          ],
+          "dtype": "float32",
+          "strides": [
+            4,
+            4608
+          ],
+          "c_contiguous": false
+        },
+        {
+          "shape": [
+            4,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            1152,
+            100
+          ],
+          "dtype": "float32",
+          "strides": [
+            400,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Reshape",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            1152
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "bool",
+          "strides": [
+            1152,
+            18,
+            18,
+            1
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "strides": [
+            2304,
+            36,
+            12,
+            4
+          ],
+          "c_contiguous": true
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "strides": [
+            2304,
+            36,
+            12,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            1,
+            18
+          ],
+          "dtype": "float32",
+          "strides": [
+            4608,
+            72,
+            72,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "bool",
+          "strides": [
+            3840,
+            60,
+            20,
+            1
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            64,
+            48,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "strides": [
+            1728,
+            36,
+            12,
+            4
+          ],
+          "c_contiguous": true
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            64,
+            48,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "strides": [
+            1728,
+            36,
+            12,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            64,
+            3,
+            20
+          ],
+          "dtype": "float32",
+          "strides": [
+            15360,
+            240,
+            80,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "bool",
+          "strides": [
+            5280,
+            110,
+            22,
+            1
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            48,
+            36,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            3600,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            48,
+            36,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            3600,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            48,
+            5,
+            22
+          ],
+          "dtype": "float32",
+          "strides": [
+            21120,
+            440,
+            88,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            48
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "bool",
+          "strides": [
+            23688,
+            658,
+            47,
+            1
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            36,
+            24,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            2400,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            36,
+            24,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            2400,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            36,
+            14,
+            47
+          ],
+          "dtype": "float32",
+          "strides": [
+            94752,
+            2632,
+            188,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            36
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Mul",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "bool",
+          "strides": [
+            72912,
+            3038,
+            98,
+            1
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    },
+    {
+      "function": "Deconv2d",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            24,
+            3,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            300,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        },
+        null
+      ],
+      "outputs": [
+        {
+          "shape": [
+            4,
+            3,
+            66,
+            200
+          ],
+          "dtype": "float32",
+          "strides": [
+            158400,
+            52800,
+            800,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Conv2DGradW",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            3,
+            66,
+            200
+          ],
+          "dtype": "float32",
+          "strides": [
+            158400,
+            52800,
+            800,
+            4
+          ],
+          "c_contiguous": true
+        },
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            24,
+            3,
+            5,
+            5
+          ],
+          "dtype": "float32",
+          "strides": [
+            300,
+            100,
+            20,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "pad": [
+        0,
+        0
+      ]
+    },
+    {
+      "function": "Sum",
+      "inputs": [
+        {
+          "shape": [
+            4,
+            24,
+            31,
+            98
+          ],
+          "dtype": "float32",
+          "strides": [
+            291648,
+            12152,
+            392,
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "outputs": [
+        {
+          "shape": [
+            24
+          ],
+          "dtype": "float32",
+          "strides": [
+            4
+          ],
+          "c_contiguous": true
+        }
+      ],
+      "stride": null,
+      "pad": null
+    }
+  ],
+  "native_gemm_calls": [
+    {
+      "M": 12152,
+      "N": 24,
+      "K": 75,
+      "a": {
+        "shape": [
+          12152,
+          75
+        ],
+        "dtype": "float32",
+        "strides": [
+          300,
+          4
+        ],
+        "c_contiguous": true
+      },
+      "b": {
+        "shape": [
+          75,
+          24
+        ],
+        "dtype": "float32",
+        "strides": [
+          4,
+          300
+        ],
+        "c_contiguous": false
+      }
+    },
+    {
+      "M": 2632,
+      "N": 36,
+      "K": 600,
+      "a": {
+        "shape": [
+          2632,
+          600
+        ],
+        "dtype": "float32",
+        "strides": [
+          2400,
+          4
+        ],
+        "c_contiguous": true
+      },
+      "b": {
+        "shape": [
+          600,
+          36
+        ],
+        "dtype": "float32",
+        "strides": [
+          4,
+          2400
+        ],
+        "c_contiguous": false
+      }
+    },
+    {
+      "M": 440,
+      "N": 48,
+      "K": 900,
+      "a": {
+        "shape": [
+          440,
+          900
+        ],
+        "dtype": "float32",
+        "strides": [
+          3600,
+          4
+        ],
+        "c_contiguous": true
+      },
+      "b": {
+        "shape": [
+          900,
+          48
+        ],
+        "dtype": "float32",
+        "strides": [
+          4,
+          3600
+        ],
+        "c_contiguous": false
+      }
+    },
+    {
+      "M": 240,
+      "N": 64,
+      "K": 432,
+      "a": {
+        "shape": [
+          240,
+          432
+        ],
+        "dtype": "float32",
+        "strides": [
+          1728,
+          4
+        ],
+        "c_contiguous": true
+      },
+      "b": {
+        "shape": [
+          432,
+          64
+        ],
+        "dtype": "float32",
+        "strides": [
+          4,
+          1728
+        ],
+        "c_contiguous": false
+      }
+    },
+    {
+      "M": 72,
+      "N": 64,
+      "K": 576,
+      "a": {
+        "shape": [
+          72,
+          576
+        ],
+        "dtype": "float32",
+        "strides": [
+          2304,
+          4
+        ],
+        "c_contiguous": true
+      },
+      "b": {
+        "shape": [
+          576,
+          64
+        ],
+        "dtype": "float32",
+        "strides": [
+          4,
+          2304
+        ],
+        "c_contiguous": false
+      }
+    },
+    {
+      "M": 4,
+      "N": 100,
+      "K": 1152,
+      "a": {
+        "shape": [
+          4,
+          1152
+        ],
+        "dtype": "float32",
+        "strides": [
+          4608,
+          4
+        ],
+        "c_contiguous": true
+      },
+      "b": {
+        "shape": [
+          1152,
+          100
+        ],
+        "dtype": "float32",
+        "strides": [
+          400,
+          4
+        ],
+        "c_contiguous": true
+      }
+    },
+    {
+      "M": 4,
+      "N": 50,
+      "K": 100,
+      "a": {
+        "shape": [
+          4,
+          100
+        ],
+        "dtype": "float32",
+        "strides": [
+          400,
+          4
+        ],
+        "c_contiguous": true
+      },
+      "b": {
+        "shape": [
+          100,
+          50
+        ],
+        "dtype": "float32",
+        "strides": [
+          200,
+          4
+        ],
+        "c_contiguous": true
+      }
+    },
+    {
+      "M": 4,
+      "N": 1,
+      "K": 50,
+      "a": {
+        "shape": [
+          4,
+          50
+        ],
+        "dtype": "float32",
+        "strides": [
+          200,
+          4
+        ],
+        "c_contiguous": true
+      },
+      "b": {
+        "shape": [
+          50,
+          1
+        ],
+        "dtype": "float32",
+        "strides": [
+          4,
+          4
+        ],
+        "c_contiguous": true
+      }
+    }
+  ]
+}

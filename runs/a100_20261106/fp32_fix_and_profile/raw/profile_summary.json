@@ -1,0 +1,431 @@
+{
+  "native_trace": {
+    "steps": 10,
+    "kernel_count": 1470,
+    "kernel_total_us": 17489.827000000023,
+    "kernel_us_per_step": 1748.9827000000023,
+    "step_wall_us_per_step": 14128.291000000001,
+    "activity_union_us_per_step": 1790.5573,
+    "activity_fraction_of_step_wall": 0.12673559031308174,
+    "kernel_under_10us": 1140,
+    "by_phase": {
+      "backward": {
+        "count": 770,
+        "total_us": 8794.117999999999,
+        "us_per_step": 879.4117999999999,
+        "pct": 50.28133211380528
+      },
+      "forward": {
+        "count": 380,
+        "total_us": 7518.011,
+        "us_per_step": 751.8011,
+        "pct": 42.98505068117593
+      },
+      "update": {
+        "count": 320,
+        "total_us": 1177.697999999999,
+        "us_per_step": 117.76979999999989,
+        "pct": 6.733617205018652
+      }
+    },
+    "by_category": {
+      "SGD_update": {
+        "count": 320,
+        "total_us": 1177.697999999999,
+        "us_per_step": 117.76979999999989,
+        "pct": 6.733617205018652
+      },
+      "activation_backward": {
+        "count": 180,
+        "total_us": 739.397,
+        "us_per_step": 73.9397,
+        "pct": 4.227583268833929
+      },
+      "conv_dBias": {
+        "count": 50,
+        "total_us": 573.1900000000002,
+        "us_per_step": 57.31900000000002,
+        "pct": 3.277276556251811
+      },
+      "conv_dInput": {
+        "count": 150,
+        "total_us": 3393.7699999999995,
+        "us_per_step": 339.37699999999995,
+        "pct": 19.404251397112134
+      },
+      "conv_dWeight": {
+        "count": 240,
+        "total_us": 3404.429,
+        "us_per_step": 340.4429,
+        "pct": 19.46519539615798
+      },
+      "conv_forward": {
+        "count": 200,
+        "total_us": 6059.063999999996,
+        "us_per_step": 605.9063999999996,
+        "pct": 34.64336153811006
+      },
+      "linear_backward": {
+        "count": 60,
+        "total_us": 398.75500000000005,
+        "us_per_step": 39.8755,
+        "pct": 2.2799253531781623
+      },
+      "linear_bias_backward": {
+        "count": 30,
+        "total_us": 104.67200000000005,
+        "us_per_step": 10.467200000000005,
+        "pct": 0.598473615548055
+      },
+      "other_backward": {
+        "count": 60,
+        "total_us": 179.90500000000006,
+        "us_per_step": 17.990500000000004,
+        "pct": 1.0286265267232193
+      },
+      "other_forward": {
+        "count": 180,
+        "total_us": 1458.947,
+        "us_per_step": 145.8947,
+        "pct": 8.34168914306584
+      }
+    },
+    "phase_cpu_us_per_step": {
+      "backward": 8150.7689,
+      "data": 170.8098,
+      "forward": 4556.1765,
+      "loss_read": 59.1965,
+      "step_sync": 9.902399999999998,
+      "transfer": 212.72449999999998,
+      "update": 908.5581
+    },
+    "memcpy": [
+      {
+        "trace": "native_trace",
+        "scope": "GPU_memcpy",
+        "name": "Host-to-Device",
+        "count": 20,
+        "calls_per_step": 2.0,
+        "total_us": 389.922,
+        "us_per_step": 38.992200000000004,
+        "mean_us": 19.496100000000002,
+        "bytes": 6336160,
+        "timing": "CUPTI memcpy activity",
+        "denominator": "separate from kernel sum"
+      },
+      {
+        "trace": "native_trace",
+        "scope": "GPU_memcpy",
+        "name": "Device-to-Host",
+        "count": 10,
+        "calls_per_step": 1.0,
+        "total_us": 25.824,
+        "us_per_step": 2.5824000000000003,
+        "mean_us": 2.5824000000000003,
+        "bytes": 40,
+        "timing": "CUPTI memcpy activity",
+        "denominator": "separate from kernel sum"
+      }
+    ],
+    "device": [
+      {
+        "gpuId": 0,
+        "cudaId": 1,
+        "pid": 3127834
+      },
+      {
+        "gpuId": 1,
+        "cudaId": 0,
+        "pid": 3127834
+      }
+    ],
+    "missing_correlations": 0,
+    "attribution": "direct launch correlation to containing NVTX ranges"
+  },
+  "native_plain": {
+    "steps": 10,
+    "kernel_count": 1470,
+    "kernel_total_us": 17511.257999999973,
+    "kernel_us_per_step": 1751.1257999999973,
+    "step_wall_us_per_step": 5432.380999999999,
+    "activity_union_us_per_step": 1794.0475999999999,
+    "activity_fraction_of_step_wall": 0.3302506948610563,
+    "kernel_under_10us": 1140,
+    "by_phase": {
+      "backward": {
+        "count": 770,
+        "total_us": 8810.362999999992,
+        "us_per_step": 881.0362999999992,
+        "pct": 50.31256463698956
+      },
+      "forward": {
+        "count": 380,
+        "total_us": 7516.15500000001,
+        "us_per_step": 751.615500000001,
+        "pct": 42.92184490685947
+      },
+      "update": {
+        "count": 320,
+        "total_us": 1184.7399999999998,
+        "us_per_step": 118.47399999999998,
+        "pct": 6.7655904561511315
+      }
+    },
+    "by_category": {
+      "SGD_update": {
+        "count": 320,
+        "total_us": 1184.7399999999998,
+        "us_per_step": 118.47399999999998,
+        "pct": 6.7655904561511315
+      },
+      "activation_backward": {
+        "count": 180,
+        "total_us": 737.6990000000004,
+        "us_per_step": 73.76990000000004,
+        "pct": 4.212712758843491
+      },
+      "conv_dBias": {
+        "count": 50,
+        "total_us": 572.065,
+        "us_per_step": 57.206500000000005,
+        "pct": 3.266841251496614
+      },
+      "conv_dInput": {
+        "count": 150,
+        "total_us": 3417.096000000002,
+        "us_per_step": 341.7096000000002,
+        "pct": 19.51370940911274
+      },
+      "conv_dWeight": {
+        "count": 240,
+        "total_us": 3402.9910000000013,
+        "us_per_step": 340.2991000000001,
+        "pct": 19.433161226909036
+      },
+      "conv_forward": {
+        "count": 200,
+        "total_us": 6051.830000000002,
+        "us_per_step": 605.1830000000002,
+        "pct": 34.55965299580425
+      },
+      "linear_backward": {
+        "count": 60,
+        "total_us": 400.3840000000001,
+        "us_per_step": 40.03840000000001,
+        "pct": 2.286437673409876
+      },
+      "linear_bias_backward": {
+        "count": 30,
+        "total_us": 103.104,
+        "us_per_step": 10.3104,
+        "pct": 0.5887869392364624
+      },
+      "other_backward": {
+        "count": 60,
+        "total_us": 177.02400000000003,
+        "us_per_step": 17.702400000000004,
+        "pct": 1.0109153779814122
+      },
+      "other_forward": {
+        "count": 180,
+        "total_us": 1464.3249999999994,
+        "us_per_step": 146.43249999999995,
+        "pct": 8.362191911055172
+      }
+    },
+    "phase_cpu_us_per_step": {
+      "backward": 3143.8039,
+      "data": 139.1403,
+      "forward": 1421.7521,
+      "loss_read": 57.9418,
+      "step_sync": 9.9346,
+      "transfer": 192.1522,
+      "update": 414.4049
+    },
+    "memcpy": [
+      {
+        "trace": "native_plain",
+        "scope": "GPU_memcpy",
+        "name": "Host-to-Device",
+        "count": 20,
+        "calls_per_step": 2.0,
+        "total_us": 402.562,
+        "us_per_step": 40.2562,
+        "mean_us": 20.1281,
+        "bytes": 6336160,
+        "timing": "CUPTI memcpy activity",
+        "denominator": "separate from kernel sum"
+      },
+      {
+        "trace": "native_plain",
+        "scope": "GPU_memcpy",
+        "name": "Device-to-Host",
+        "count": 10,
+        "calls_per_step": 1.0,
+        "total_us": 26.656,
+        "us_per_step": 2.6656,
+        "mean_us": 2.6656,
+        "bytes": 40,
+        "timing": "CUPTI memcpy activity",
+        "denominator": "separate from kernel sum"
+      }
+    ],
+    "device": [
+      {
+        "gpuId": 0,
+        "cudaId": 1,
+        "pid": 3128112
+      },
+      {
+        "gpuId": 1,
+        "cudaId": 0,
+        "pid": 3128112
+      }
+    ],
+    "missing_correlations": 0,
+    "attribution": "1470/1470 kernel sequence+phase+grid/block/register/shared signatures matched detailed trace; shapes inherited"
+  },
+  "cupy_trace": {
+    "steps": 10,
+    "kernel_count": 1510,
+    "kernel_total_us": 14203.541000000016,
+    "kernel_us_per_step": 1420.3541000000016,
+    "step_wall_us_per_step": 12970.1575,
+    "activity_union_us_per_step": 1462.2807,
+    "activity_fraction_of_step_wall": 0.11274193856165587,
+    "kernel_under_10us": 1151,
+    "by_phase": {
+      "backward": {
+        "count": 770,
+        "total_us": 8917.18400000001,
+        "us_per_step": 891.718400000001,
+        "pct": 62.78141485985784
+      },
+      "forward": {
+        "count": 420,
+        "total_us": 4091.694000000003,
+        "us_per_step": 409.16940000000034,
+        "pct": 28.807562846476092
+      },
+      "update": {
+        "count": 320,
+        "total_us": 1194.6629999999998,
+        "us_per_step": 119.46629999999998,
+        "pct": 8.411022293666054
+      }
+    },
+    "by_category": {
+      "SGD_update": {
+        "count": 320,
+        "total_us": 1194.6629999999998,
+        "us_per_step": 119.46629999999998,
+        "pct": 8.411022293666054
+      },
+      "activation_backward": {
+        "count": 180,
+        "total_us": 848.1930000000006,
+        "us_per_step": 84.81930000000006,
+        "pct": 5.971701000475865
+      },
+      "conv_dBias": {
+        "count": 50,
+        "total_us": 572.3870000000001,
+        "us_per_step": 57.23870000000001,
+        "pct": 4.029889447990465
+      },
+      "conv_dInput": {
+        "count": 150,
+        "total_us": 3399.7239999999997,
+        "us_per_step": 339.9724,
+        "pct": 23.935749543018858
+      },
+      "conv_dWeight": {
+        "count": 240,
+        "total_us": 3405.5500000000015,
+        "us_per_step": 340.5550000000002,
+        "pct": 23.97676748354511
+      },
+      "conv_forward": {
+        "count": 230,
+        "total_us": 3078.3150000000014,
+        "us_per_step": 307.8315000000001,
+        "pct": 21.672870166671803
+      },
+      "linear_backward": {
+        "count": 60,
+        "total_us": 401.15299999999996,
+        "us_per_step": 40.1153,
+        "pct": 2.8243168376111245
+      },
+      "linear_bias_backward": {
+        "count": 30,
+        "total_us": 105.15200000000004,
+        "us_per_step": 10.515200000000004,
+        "pct": 0.7403224308642467
+      },
+      "other_backward": {
+        "count": 60,
+        "total_us": 185.0250000000001,
+        "us_per_step": 18.50250000000001,
+        "pct": 1.3026681163521117
+      },
+      "other_forward": {
+        "count": 190,
+        "total_us": 1013.3789999999997,
+        "us_per_step": 101.33789999999996,
+        "pct": 7.134692679804273
+      }
+    },
+    "phase_cpu_us_per_step": {
+      "backward": 8087.1515,
+      "data": 175.52100000000002,
+      "forward": 3410.2254999999996,
+      "loss_read": 59.1528,
+      "step_sync": 10.390499999999998,
+      "transfer": 200.5674,
+      "update": 967.1446
+    },
+    "memcpy": [
+      {
+        "trace": "cupy_trace",
+        "scope": "GPU_memcpy",
+        "name": "Host-to-Device",
+        "count": 20,
+        "calls_per_step": 2.0,
+        "total_us": 392.545,
+        "us_per_step": 39.2545,
+        "mean_us": 19.62725,
+        "bytes": 6336160,
+        "timing": "CUPTI memcpy activity",
+        "denominator": "separate from kernel sum"
+      },
+      {
+        "trace": "cupy_trace",
+        "scope": "GPU_memcpy",
+        "name": "Device-to-Host",
+        "count": 10,
+        "calls_per_step": 1.0,
+        "total_us": 26.721,
+        "us_per_step": 2.6721,
+        "mean_us": 2.6721,
+        "bytes": 40,
+        "timing": "CUPTI memcpy activity",
+        "denominator": "separate from kernel sum"
+      }
+    ],
+    "device": [
+      {
+        "gpuId": 0,
+        "cudaId": 1,
+        "pid": 3128588
+      },
+      {
+        "gpuId": 1,
+        "cudaId": 0,
+        "pid": 3128588
+      }
+    ],
+    "missing_correlations": 0,
+    "attribution": "direct launch correlation to containing NVTX ranges"
+  }
+}

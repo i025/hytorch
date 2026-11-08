@@ -1,0 +1,8 @@
+phase,monitored_cpu_mean_ms,monitored_gpu_event_mean_ms,nsys_kernel_us_per_step,nsys_kernel_calls_per_step,nsys_cuda_api_cpu_us_per_step,source
+data_load,0.09057363194444444,,0.0,0.0,0.0,formal full-monitor 2304 steps (no peak hook) + independent 20-step Nsight; not additive
+data_prepare,0.0045530134548611104,,0.0,0.0,0.0,formal full-monitor 2304 steps (no peak hook) + independent 20-step Nsight; not additive
+h2d,0.15954235026041666,0.15209538891213015,0.0,0.0,45.651000000000025,formal full-monitor 2304 steps (no peak hook) + independent 20-step Nsight; not additive
+forward,0.9576420065104166,0.9526137512228968,615.3722500000005,34.0,157.75324999999998,formal full-monitor 2304 steps (no peak hook) + independent 20-step Nsight; not additive
+loss,0.13222935850694445,0.12609155650392898,21.382300000000008,4.0,19.9917,formal full-monitor 2304 steps (no peak hook) + independent 20-step Nsight; not additive
+backward,2.232714381076389,2.231631556939748,809.0809999999988,72.0,353.5264500000004,formal full-monitor 2304 steps (no peak hook) + independent 20-step Nsight; not additive
+optimizer,0.33561161979166665,0.32920355638230425,182.36364999999995,32.0,115.64134999999987,formal full-monitor 2304 steps (no peak hook) + independent 20-step Nsight; not additive

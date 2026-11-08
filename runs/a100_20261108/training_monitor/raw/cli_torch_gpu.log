@@ -1,0 +1,2 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{"epoch": 1, "host_submission_s": 0.012901653, "train_loss": 0.09599322360008955, "samples": 16, "time_scope": "epoch host submission only; full completed duration in summary"}

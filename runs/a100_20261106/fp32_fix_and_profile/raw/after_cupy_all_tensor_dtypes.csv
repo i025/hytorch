@@ -1,0 +1,359 @@
+mode,operator,layer,phase,where,shape,dtype,strides_bytes,c_contiguous,f_contiguous,device,nbytes,layout
+after_cupy,Conv2d.forward,conv1,forward,input[0],"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv1,forward,input[1],"[24, 3, 5, 5]",float32,"[300, 100, 20, 4]",True,False,CUDA,7200,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv1,forward,input[2],[24],float32,[4],True,True,CUDA,96,strided tensor
+after_cupy,Conv2d.forward,conv1,forward,output,"[4, 24, 31, 98]",float32,"[291648, 4, 9408, 96]",False,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv1,forward,input[0],"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv1,forward,output,"[4, 3, 5, 5, 31, 98]",float32,"[911400, 303800, 60760, 12152, 392, 4]",True,False,CUDA,3645600,strided tensor
+after_cupy,_im2col_gpu,conv1,forward,input[0],"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv1,forward,output,"[4, 3, 5, 5, 31, 98]",float32,"[911400, 303800, 60760, 12152, 392, 4]",True,False,CUDA,3645600,strided tensor
+after_cupy,cupy.tensordot,conv1,forward,input[0],"[4, 3, 5, 5, 31, 98]",float32,"[911400, 303800, 60760, 12152, 392, 4]",True,False,CUDA,3645600,strided tensor
+after_cupy,cupy.tensordot,conv1,forward,input[1],"[24, 3, 5, 5]",float32,"[300, 100, 20, 4]",True,False,CUDA,7200,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv1,forward,output,"[4, 31, 98, 24]",float32,"[291648, 9408, 96, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,input[0],"[4, 24, 31, 98]",float32,"[291648, 4, 9408, 96]",False,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,output,"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv2,forward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv2,forward,input[1],"[36, 24, 5, 5]",float32,"[2400, 100, 20, 4]",True,False,CUDA,86400,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv2,forward,input[2],[36],float32,[4],True,True,CUDA,144,strided tensor
+after_cupy,Conv2d.forward,conv2,forward,output,"[4, 36, 14, 47]",float32,"[94752, 4, 6768, 144]",False,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv2,forward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv2,forward,output,"[4, 24, 5, 5, 14, 47]",float32,"[1579200, 65800, 13160, 2632, 188, 4]",True,False,CUDA,6316800,strided tensor
+after_cupy,_im2col_gpu,conv2,forward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv2,forward,output,"[4, 24, 5, 5, 14, 47]",float32,"[1579200, 65800, 13160, 2632, 188, 4]",True,False,CUDA,6316800,strided tensor
+after_cupy,cupy.tensordot,conv2,forward,input[0],"[4, 24, 5, 5, 14, 47]",float32,"[1579200, 65800, 13160, 2632, 188, 4]",True,False,CUDA,6316800,strided tensor
+after_cupy,cupy.tensordot,conv2,forward,input[1],"[36, 24, 5, 5]",float32,"[2400, 100, 20, 4]",True,False,CUDA,86400,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv2,forward,output,"[4, 14, 47, 36]",float32,"[94752, 6768, 144, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,input[0],"[4, 36, 14, 47]",float32,"[94752, 4, 6768, 144]",False,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,output,"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv3,forward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv3,forward,input[1],"[48, 36, 5, 5]",float32,"[3600, 100, 20, 4]",True,False,CUDA,172800,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv3,forward,input[2],[48],float32,[4],True,True,CUDA,192,strided tensor
+after_cupy,Conv2d.forward,conv3,forward,output,"[4, 48, 5, 22]",float32,"[21120, 4, 4224, 192]",False,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv3,forward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv3,forward,output,"[4, 36, 5, 5, 5, 22]",float32,"[396000, 11000, 2200, 440, 88, 4]",True,False,CUDA,1584000,strided tensor
+after_cupy,_im2col_gpu,conv3,forward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv3,forward,output,"[4, 36, 5, 5, 5, 22]",float32,"[396000, 11000, 2200, 440, 88, 4]",True,False,CUDA,1584000,strided tensor
+after_cupy,cupy.tensordot,conv3,forward,input[0],"[4, 36, 5, 5, 5, 22]",float32,"[396000, 11000, 2200, 440, 88, 4]",True,False,CUDA,1584000,strided tensor
+after_cupy,cupy.tensordot,conv3,forward,input[1],"[48, 36, 5, 5]",float32,"[3600, 100, 20, 4]",True,False,CUDA,172800,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv3,forward,output,"[4, 5, 22, 48]",float32,"[21120, 4224, 192, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,input[0],"[4, 48, 5, 22]",float32,"[21120, 4, 4224, 192]",False,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,output,"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv4,forward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv4,forward,input[1],"[64, 48, 3, 3]",float32,"[1728, 36, 12, 4]",True,False,CUDA,110592,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv4,forward,input[2],[64],float32,[4],True,True,CUDA,256,strided tensor
+after_cupy,Conv2d.forward,conv4,forward,output,"[4, 64, 3, 20]",float32,"[15360, 4, 5120, 256]",False,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv4,forward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv4,forward,output,"[4, 48, 3, 3, 3, 20]",float32,"[103680, 2160, 720, 240, 80, 4]",True,False,CUDA,414720,strided tensor
+after_cupy,_im2col_gpu,conv4,forward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv4,forward,output,"[4, 48, 3, 3, 3, 20]",float32,"[103680, 2160, 720, 240, 80, 4]",True,False,CUDA,414720,strided tensor
+after_cupy,cupy.tensordot,conv4,forward,input[0],"[4, 48, 3, 3, 3, 20]",float32,"[103680, 2160, 720, 240, 80, 4]",True,False,CUDA,414720,strided tensor
+after_cupy,cupy.tensordot,conv4,forward,input[1],"[64, 48, 3, 3]",float32,"[1728, 36, 12, 4]",True,False,CUDA,110592,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv4,forward,output,"[4, 3, 20, 64]",float32,"[15360, 5120, 256, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,input[0],"[4, 64, 3, 20]",float32,"[15360, 4, 5120, 256]",False,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,output,"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv5,forward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv5,forward,input[1],"[64, 64, 3, 3]",float32,"[2304, 36, 12, 4]",True,False,CUDA,147456,NCHW if convolution image; see operator
+after_cupy,Conv2d.forward,conv5,forward,input[2],[64],float32,[4],True,True,CUDA,256,strided tensor
+after_cupy,Conv2d.forward,conv5,forward,output,"[4, 64, 1, 18]",float32,"[4608, 4, 4608, 256]",False,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv5,forward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv5,forward,output,"[4, 64, 3, 3, 1, 18]",float32,"[41472, 648, 216, 72, 72, 4]",True,False,CUDA,165888,strided tensor
+after_cupy,_im2col_gpu,conv5,forward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv5,forward,output,"[4, 64, 3, 3, 1, 18]",float32,"[41472, 648, 216, 72, 72, 4]",True,False,CUDA,165888,strided tensor
+after_cupy,cupy.tensordot,conv5,forward,input[0],"[4, 64, 3, 3, 1, 18]",float32,"[41472, 648, 216, 72, 72, 4]",True,False,CUDA,165888,strided tensor
+after_cupy,cupy.tensordot,conv5,forward,input[1],"[64, 64, 3, 3]",float32,"[2304, 36, 12, 4]",True,False,CUDA,147456,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv5,forward,output,"[4, 1, 18, 64]",float32,"[4608, 4608, 256, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,input[0],"[4, 64, 1, 18]",float32,"[4608, 4, 4608, 256]",False,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,ReLU.forward,,forward,output,"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Reshape.forward,,forward,input[0],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Reshape.forward,,forward,output,"[4, 1152]",float32,"[4608, 4]",True,False,CUDA,18432,strided tensor
+after_cupy,MatMul.forward,fc1,forward,input[0],"[4, 1152]",float32,"[4608, 4]",True,False,CUDA,18432,strided tensor
+after_cupy,MatMul.forward,fc1,forward,input[1],"[1152, 100]",float32,"[400, 4]",True,False,CUDA,460800,strided tensor
+after_cupy,MatMul.forward,fc1,forward,output,"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,Add.forward,fc1,forward,input[0],[100],float32,[4],True,True,CUDA,400,strided tensor
+after_cupy,Add.forward,fc1,forward,input[1],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,Add.forward,fc1,forward,output,"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,ReLU.forward,,forward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,ReLU.forward,,forward,output,"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,MatMul.forward,fc2,forward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,MatMul.forward,fc2,forward,input[1],"[100, 50]",float32,"[200, 4]",True,False,CUDA,20000,strided tensor
+after_cupy,MatMul.forward,fc2,forward,output,"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,Add.forward,fc2,forward,input[0],[50],float32,[4],True,True,CUDA,200,strided tensor
+after_cupy,Add.forward,fc2,forward,input[1],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,Add.forward,fc2,forward,output,"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,ReLU.forward,,forward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,ReLU.forward,,forward,output,"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,MatMul.forward,fc3,forward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,MatMul.forward,fc3,forward,input[1],"[50, 1]",float32,"[4, 4]",True,True,CUDA,200,strided tensor
+after_cupy,MatMul.forward,fc3,forward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Add.forward,fc3,forward,input[0],[1],float32,[4],True,True,CUDA,4,strided tensor
+after_cupy,Add.forward,fc3,forward,input[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Add.forward,fc3,forward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Tanh.forward,,forward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Tanh.forward,,forward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,MeanSquareError.forward,,forward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,MeanSquareError.forward,,forward,input[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,MeanSquareError.forward,,forward,output,[],float32,[],True,True,CUDA,4,strided tensor
+after_cupy,MeanSquareError.backward,,backward,input[0],[],float32,[],True,True,CUDA,4,strided tensor
+after_cupy,MeanSquareError.backward,,backward,output[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,MeanSquareError.backward,,backward,output[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Sub.forward,,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Sub.forward,,backward,input[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Sub.forward,,backward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,input[0],[],float32,[],True,True,CUDA,4,strided tensor
+after_cupy,Mul.forward,,backward,input[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,input[1],[],float32,[],True,True,CUDA,4,strided tensor
+after_cupy,Mul.forward,,backward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Neg.forward,,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Neg.forward,,backward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Tanh.backward,,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Tanh.backward,,backward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,input[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Sub.forward,,backward,input[0],[],float32,[],True,True,CUDA,4,strided tensor
+after_cupy,Sub.forward,,backward,input[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Sub.forward,,backward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,input[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Mul.forward,,backward,output,"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Add.backward,fc3,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,Add.backward,fc3,backward,output[0],[1],float32,[4],True,True,CUDA,4,strided tensor
+after_cupy,Add.backward,fc3,backward,output[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,SumTo.forward,fc3,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,SumTo.forward,fc3,backward,output,[1],float32,[4],True,True,CUDA,4,strided tensor
+after_cupy,MatMul.backward,fc3,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,MatMul.backward,fc3,backward,output[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,MatMul.backward,fc3,backward,output[1],"[50, 1]",float32,"[4, 4]",True,True,CUDA,200,strided tensor
+after_cupy,Transpose.forward,fc3,backward,input[0],"[50, 1]",float32,"[4, 4]",True,True,CUDA,200,strided tensor
+after_cupy,Transpose.forward,fc3,backward,output,"[1, 50]",float32,"[4, 4]",True,True,CUDA,200,strided tensor
+after_cupy,MatMul.forward,fc3,backward,input[0],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,MatMul.forward,fc3,backward,input[1],"[1, 50]",float32,"[4, 4]",True,True,CUDA,200,strided tensor
+after_cupy,MatMul.forward,fc3,backward,output,"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,Transpose.forward,fc3,backward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,Transpose.forward,fc3,backward,output,"[50, 4]",float32,"[4, 200]",False,True,CUDA,800,strided tensor
+after_cupy,MatMul.forward,fc3,backward,input[0],"[50, 4]",float32,"[4, 200]",False,True,CUDA,800,strided tensor
+after_cupy,MatMul.forward,fc3,backward,input[1],"[4, 1]",float32,"[4, 4]",True,True,CUDA,16,strided tensor
+after_cupy,MatMul.forward,fc3,backward,output,"[50, 1]",float32,"[4, 4]",True,True,CUDA,200,strided tensor
+after_cupy,ReLU.backward,,backward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,ReLU.backward,,backward,output,"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,Mul.forward,,backward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,Mul.forward,,backward,input[1],"[4, 50]",bool,"[50, 1]",True,False,CUDA,200,strided tensor
+after_cupy,Mul.forward,,backward,output,"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,Add.backward,fc2,backward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,Add.backward,fc2,backward,output[0],[50],float32,[4],True,True,CUDA,200,strided tensor
+after_cupy,Add.backward,fc2,backward,output[1],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,SumTo.forward,fc2,backward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,SumTo.forward,fc2,backward,output,[50],float32,[4],True,True,CUDA,200,strided tensor
+after_cupy,MatMul.backward,fc2,backward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,MatMul.backward,fc2,backward,output[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,MatMul.backward,fc2,backward,output[1],"[100, 50]",float32,"[200, 4]",True,False,CUDA,20000,strided tensor
+after_cupy,Transpose.forward,fc2,backward,input[0],"[100, 50]",float32,"[200, 4]",True,False,CUDA,20000,strided tensor
+after_cupy,Transpose.forward,fc2,backward,output,"[50, 100]",float32,"[4, 200]",False,True,CUDA,20000,strided tensor
+after_cupy,MatMul.forward,fc2,backward,input[0],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,MatMul.forward,fc2,backward,input[1],"[50, 100]",float32,"[4, 200]",False,True,CUDA,20000,strided tensor
+after_cupy,MatMul.forward,fc2,backward,output,"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,Transpose.forward,fc2,backward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,Transpose.forward,fc2,backward,output,"[100, 4]",float32,"[4, 400]",False,True,CUDA,1600,strided tensor
+after_cupy,MatMul.forward,fc2,backward,input[0],"[100, 4]",float32,"[4, 400]",False,True,CUDA,1600,strided tensor
+after_cupy,MatMul.forward,fc2,backward,input[1],"[4, 50]",float32,"[200, 4]",True,False,CUDA,800,strided tensor
+after_cupy,MatMul.forward,fc2,backward,output,"[100, 50]",float32,"[200, 4]",True,False,CUDA,20000,strided tensor
+after_cupy,ReLU.backward,,backward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,ReLU.backward,,backward,output,"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,Mul.forward,,backward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,Mul.forward,,backward,input[1],"[4, 100]",bool,"[100, 1]",True,False,CUDA,400,strided tensor
+after_cupy,Mul.forward,,backward,output,"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,Add.backward,fc1,backward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,Add.backward,fc1,backward,output[0],[100],float32,[4],True,True,CUDA,400,strided tensor
+after_cupy,Add.backward,fc1,backward,output[1],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,SumTo.forward,fc1,backward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,SumTo.forward,fc1,backward,output,[100],float32,[4],True,True,CUDA,400,strided tensor
+after_cupy,MatMul.backward,fc1,backward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,MatMul.backward,fc1,backward,output[0],"[4, 1152]",float32,"[4608, 4]",True,False,CUDA,18432,strided tensor
+after_cupy,MatMul.backward,fc1,backward,output[1],"[1152, 100]",float32,"[400, 4]",True,False,CUDA,460800,strided tensor
+after_cupy,Transpose.forward,fc1,backward,input[0],"[1152, 100]",float32,"[400, 4]",True,False,CUDA,460800,strided tensor
+after_cupy,Transpose.forward,fc1,backward,output,"[100, 1152]",float32,"[4, 400]",False,True,CUDA,460800,strided tensor
+after_cupy,MatMul.forward,fc1,backward,input[0],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,MatMul.forward,fc1,backward,input[1],"[100, 1152]",float32,"[4, 400]",False,True,CUDA,460800,strided tensor
+after_cupy,MatMul.forward,fc1,backward,output,"[4, 1152]",float32,"[4608, 4]",True,False,CUDA,18432,strided tensor
+after_cupy,Transpose.forward,fc1,backward,input[0],"[4, 1152]",float32,"[4608, 4]",True,False,CUDA,18432,strided tensor
+after_cupy,Transpose.forward,fc1,backward,output,"[1152, 4]",float32,"[4, 4608]",False,True,CUDA,18432,strided tensor
+after_cupy,MatMul.forward,fc1,backward,input[0],"[1152, 4]",float32,"[4, 4608]",False,True,CUDA,18432,strided tensor
+after_cupy,MatMul.forward,fc1,backward,input[1],"[4, 100]",float32,"[400, 4]",True,False,CUDA,1600,strided tensor
+after_cupy,MatMul.forward,fc1,backward,output,"[1152, 100]",float32,"[400, 4]",True,False,CUDA,460800,strided tensor
+after_cupy,Reshape.backward,,backward,input[0],"[4, 1152]",float32,"[4608, 4]",True,False,CUDA,18432,strided tensor
+after_cupy,Reshape.backward,,backward,output,"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Reshape.forward,,backward,input[0],"[4, 1152]",float32,"[4608, 4]",True,False,CUDA,18432,strided tensor
+after_cupy,Reshape.forward,,backward,output,"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,ReLU.backward,,backward,input[0],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,ReLU.backward,,backward,output,"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[0],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[1],"[4, 64, 1, 18]",bool,"[1152, 18, 18, 1]",True,False,CUDA,4608,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,output,"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv5,backward,input[0],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv5,backward,output[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv5,backward,output[1],"[64, 64, 3, 3]",float32,"[2304, 36, 12, 4]",True,False,CUDA,147456,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv5,backward,output[2],[64],float32,[4],True,True,CUDA,256,strided tensor
+after_cupy,Deconv2d.forward,conv5,backward,input[0],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv5,backward,input[1],"[64, 64, 3, 3]",float32,"[2304, 36, 12, 4]",True,False,CUDA,147456,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv5,backward,output,"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv5,backward,input[0],"[64, 64, 3, 3]",float32,"[2304, 36, 12, 4]",True,False,CUDA,147456,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv5,backward,input[1],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv5,backward,output,"[64, 3, 3, 4, 1, 18]",float32,"[2592, 864, 288, 72, 72, 4]",True,False,CUDA,165888,strided tensor
+after_cupy,col2im_array,conv5,backward,input[0],"[4, 64, 3, 3, 1, 18]",float32,"[72, 2592, 864, 288, 72, 4]",False,False,CUDA,165888,strided tensor
+after_cupy,col2im_array,conv5,backward,output,"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,_col2im_gpu,conv5,backward,input[0],"[4, 64, 3, 3, 1, 18]",float32,"[72, 2592, 864, 288, 72, 4]",False,False,CUDA,165888,strided tensor
+after_cupy,_col2im_gpu,conv5,backward,output,"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv5,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv5,backward,input[1],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv5,backward,output,"[64, 64, 3, 3]",float32,"[2304, 36, 12, 4]",True,False,CUDA,147456,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv5,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv5,backward,output,"[4, 64, 3, 3, 1, 18]",float32,"[41472, 648, 216, 72, 72, 4]",True,False,CUDA,165888,strided tensor
+after_cupy,_im2col_gpu,conv5,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv5,backward,output,"[4, 64, 3, 3, 1, 18]",float32,"[41472, 648, 216, 72, 72, 4]",True,False,CUDA,165888,strided tensor
+after_cupy,cupy.tensordot,conv5,backward,input[0],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv5,backward,input[1],"[4, 64, 3, 3, 1, 18]",float32,"[41472, 648, 216, 72, 72, 4]",True,False,CUDA,165888,strided tensor
+after_cupy,cupy.tensordot,conv5,backward,output,"[64, 64, 3, 3]",float32,"[2304, 36, 12, 4]",True,False,CUDA,147456,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv5,backward,input[0],"[4, 64, 1, 18]",float32,"[4608, 72, 72, 4]",True,False,CUDA,18432,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv5,backward,output,[64],float32,[4],True,True,CUDA,256,strided tensor
+after_cupy,ReLU.backward,,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,ReLU.backward,,backward,output,"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[1],"[4, 64, 3, 20]",bool,"[3840, 60, 20, 1]",True,False,CUDA,15360,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,output,"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv4,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv4,backward,output[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv4,backward,output[1],"[64, 48, 3, 3]",float32,"[1728, 36, 12, 4]",True,False,CUDA,110592,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv4,backward,output[2],[64],float32,[4],True,True,CUDA,256,strided tensor
+after_cupy,Deconv2d.forward,conv4,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv4,backward,input[1],"[64, 48, 3, 3]",float32,"[1728, 36, 12, 4]",True,False,CUDA,110592,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv4,backward,output,"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv4,backward,input[0],"[64, 48, 3, 3]",float32,"[1728, 36, 12, 4]",True,False,CUDA,110592,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv4,backward,input[1],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv4,backward,output,"[48, 3, 3, 4, 3, 20]",float32,"[8640, 2880, 960, 240, 80, 4]",True,False,CUDA,414720,strided tensor
+after_cupy,col2im_array,conv4,backward,input[0],"[4, 48, 3, 3, 3, 20]",float32,"[240, 8640, 2880, 960, 80, 4]",False,False,CUDA,414720,strided tensor
+after_cupy,col2im_array,conv4,backward,output,"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,_col2im_gpu,conv4,backward,input[0],"[4, 48, 3, 3, 3, 20]",float32,"[240, 8640, 2880, 960, 80, 4]",False,False,CUDA,414720,strided tensor
+after_cupy,_col2im_gpu,conv4,backward,output,"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv4,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv4,backward,input[1],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv4,backward,output,"[64, 48, 3, 3]",float32,"[1728, 36, 12, 4]",True,False,CUDA,110592,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv4,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv4,backward,output,"[4, 48, 3, 3, 3, 20]",float32,"[103680, 2160, 720, 240, 80, 4]",True,False,CUDA,414720,strided tensor
+after_cupy,_im2col_gpu,conv4,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv4,backward,output,"[4, 48, 3, 3, 3, 20]",float32,"[103680, 2160, 720, 240, 80, 4]",True,False,CUDA,414720,strided tensor
+after_cupy,cupy.tensordot,conv4,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv4,backward,input[1],"[4, 48, 3, 3, 3, 20]",float32,"[103680, 2160, 720, 240, 80, 4]",True,False,CUDA,414720,strided tensor
+after_cupy,cupy.tensordot,conv4,backward,output,"[64, 48, 3, 3]",float32,"[1728, 36, 12, 4]",True,False,CUDA,110592,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv4,backward,input[0],"[4, 64, 3, 20]",float32,"[15360, 240, 80, 4]",True,False,CUDA,61440,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv4,backward,output,[64],float32,[4],True,True,CUDA,256,strided tensor
+after_cupy,ReLU.backward,,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,ReLU.backward,,backward,output,"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[1],"[4, 48, 5, 22]",bool,"[5280, 110, 22, 1]",True,False,CUDA,21120,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,output,"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv3,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv3,backward,output[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv3,backward,output[1],"[48, 36, 5, 5]",float32,"[3600, 100, 20, 4]",True,False,CUDA,172800,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv3,backward,output[2],[48],float32,[4],True,True,CUDA,192,strided tensor
+after_cupy,Deconv2d.forward,conv3,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv3,backward,input[1],"[48, 36, 5, 5]",float32,"[3600, 100, 20, 4]",True,False,CUDA,172800,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv3,backward,output,"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv3,backward,input[0],"[48, 36, 5, 5]",float32,"[3600, 100, 20, 4]",True,False,CUDA,172800,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv3,backward,input[1],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv3,backward,output,"[36, 5, 5, 4, 5, 22]",float32,"[44000, 8800, 1760, 440, 88, 4]",True,False,CUDA,1584000,strided tensor
+after_cupy,col2im_array,conv3,backward,input[0],"[4, 36, 5, 5, 5, 22]",float32,"[440, 44000, 8800, 1760, 88, 4]",False,False,CUDA,1584000,strided tensor
+after_cupy,col2im_array,conv3,backward,output,"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,_col2im_gpu,conv3,backward,input[0],"[4, 36, 5, 5, 5, 22]",float32,"[440, 44000, 8800, 1760, 88, 4]",False,False,CUDA,1584000,strided tensor
+after_cupy,_col2im_gpu,conv3,backward,output,"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv3,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv3,backward,input[1],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv3,backward,output,"[48, 36, 5, 5]",float32,"[3600, 100, 20, 4]",True,False,CUDA,172800,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv3,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv3,backward,output,"[4, 36, 5, 5, 5, 22]",float32,"[396000, 11000, 2200, 440, 88, 4]",True,False,CUDA,1584000,strided tensor
+after_cupy,_im2col_gpu,conv3,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv3,backward,output,"[4, 36, 5, 5, 5, 22]",float32,"[396000, 11000, 2200, 440, 88, 4]",True,False,CUDA,1584000,strided tensor
+after_cupy,cupy.tensordot,conv3,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv3,backward,input[1],"[4, 36, 5, 5, 5, 22]",float32,"[396000, 11000, 2200, 440, 88, 4]",True,False,CUDA,1584000,strided tensor
+after_cupy,cupy.tensordot,conv3,backward,output,"[48, 36, 5, 5]",float32,"[3600, 100, 20, 4]",True,False,CUDA,172800,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv3,backward,input[0],"[4, 48, 5, 22]",float32,"[21120, 440, 88, 4]",True,False,CUDA,84480,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv3,backward,output,[48],float32,[4],True,True,CUDA,192,strided tensor
+after_cupy,ReLU.backward,,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,ReLU.backward,,backward,output,"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[1],"[4, 36, 14, 47]",bool,"[23688, 658, 47, 1]",True,False,CUDA,94752,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,output,"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv2,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv2,backward,output[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv2,backward,output[1],"[36, 24, 5, 5]",float32,"[2400, 100, 20, 4]",True,False,CUDA,86400,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv2,backward,output[2],[36],float32,[4],True,True,CUDA,144,strided tensor
+after_cupy,Deconv2d.forward,conv2,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv2,backward,input[1],"[36, 24, 5, 5]",float32,"[2400, 100, 20, 4]",True,False,CUDA,86400,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv2,backward,output,"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv2,backward,input[0],"[36, 24, 5, 5]",float32,"[2400, 100, 20, 4]",True,False,CUDA,86400,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv2,backward,input[1],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv2,backward,output,"[24, 5, 5, 4, 14, 47]",float32,"[263200, 52640, 10528, 2632, 188, 4]",True,False,CUDA,6316800,strided tensor
+after_cupy,col2im_array,conv2,backward,input[0],"[4, 24, 5, 5, 14, 47]",float32,"[2632, 263200, 52640, 10528, 188, 4]",False,False,CUDA,6316800,strided tensor
+after_cupy,col2im_array,conv2,backward,output,"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,_col2im_gpu,conv2,backward,input[0],"[4, 24, 5, 5, 14, 47]",float32,"[2632, 263200, 52640, 10528, 188, 4]",False,False,CUDA,6316800,strided tensor
+after_cupy,_col2im_gpu,conv2,backward,output,"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv2,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv2,backward,input[1],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv2,backward,output,"[36, 24, 5, 5]",float32,"[2400, 100, 20, 4]",True,False,CUDA,86400,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv2,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv2,backward,output,"[4, 24, 5, 5, 14, 47]",float32,"[1579200, 65800, 13160, 2632, 188, 4]",True,False,CUDA,6316800,strided tensor
+after_cupy,_im2col_gpu,conv2,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv2,backward,output,"[4, 24, 5, 5, 14, 47]",float32,"[1579200, 65800, 13160, 2632, 188, 4]",True,False,CUDA,6316800,strided tensor
+after_cupy,cupy.tensordot,conv2,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv2,backward,input[1],"[4, 24, 5, 5, 14, 47]",float32,"[1579200, 65800, 13160, 2632, 188, 4]",True,False,CUDA,6316800,strided tensor
+after_cupy,cupy.tensordot,conv2,backward,output,"[36, 24, 5, 5]",float32,"[2400, 100, 20, 4]",True,False,CUDA,86400,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv2,backward,input[0],"[4, 36, 14, 47]",float32,"[94752, 2632, 188, 4]",True,False,CUDA,379008,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv2,backward,output,[36],float32,[4],True,True,CUDA,144,strided tensor
+after_cupy,ReLU.backward,,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,ReLU.backward,,backward,output,"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,input[1],"[4, 24, 31, 98]",bool,"[72912, 3038, 98, 1]",True,False,CUDA,291648,NCHW if convolution image; see operator
+after_cupy,Mul.forward,,backward,output,"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv1,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv1,backward,output[0],"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv1,backward,output[1],"[24, 3, 5, 5]",float32,"[300, 100, 20, 4]",True,False,CUDA,7200,NCHW if convolution image; see operator
+after_cupy,Conv2d.backward,conv1,backward,output[2],[24],float32,[4],True,True,CUDA,96,strided tensor
+after_cupy,Deconv2d.forward,conv1,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv1,backward,input[1],"[24, 3, 5, 5]",float32,"[300, 100, 20, 4]",True,False,CUDA,7200,NCHW if convolution image; see operator
+after_cupy,Deconv2d.forward,conv1,backward,output,"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv1,backward,input[0],"[24, 3, 5, 5]",float32,"[300, 100, 20, 4]",True,False,CUDA,7200,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv1,backward,input[1],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv1,backward,output,"[3, 5, 5, 4, 31, 98]",float32,"[1215200, 243040, 48608, 12152, 392, 4]",True,False,CUDA,3645600,strided tensor
+after_cupy,col2im_array,conv1,backward,input[0],"[4, 3, 5, 5, 31, 98]",float32,"[12152, 1215200, 243040, 48608, 392, 4]",False,False,CUDA,3645600,strided tensor
+after_cupy,col2im_array,conv1,backward,output,"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,_col2im_gpu,conv1,backward,input[0],"[4, 3, 5, 5, 31, 98]",float32,"[12152, 1215200, 243040, 48608, 392, 4]",False,False,CUDA,3645600,strided tensor
+after_cupy,_col2im_gpu,conv1,backward,output,"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv1,backward,input[0],"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv1,backward,input[1],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Conv2DGradW.forward,conv1,backward,output,"[24, 3, 5, 5]",float32,"[300, 100, 20, 4]",True,False,CUDA,7200,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv1,backward,input[0],"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,im2col_array,conv1,backward,output,"[4, 3, 5, 5, 31, 98]",float32,"[911400, 303800, 60760, 12152, 392, 4]",True,False,CUDA,3645600,strided tensor
+after_cupy,_im2col_gpu,conv1,backward,input[0],"[4, 3, 66, 200]",float32,"[158400, 52800, 800, 4]",True,False,CUDA,633600,NCHW if convolution image; see operator
+after_cupy,_im2col_gpu,conv1,backward,output,"[4, 3, 5, 5, 31, 98]",float32,"[911400, 303800, 60760, 12152, 392, 4]",True,False,CUDA,3645600,strided tensor
+after_cupy,cupy.tensordot,conv1,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,cupy.tensordot,conv1,backward,input[1],"[4, 3, 5, 5, 31, 98]",float32,"[911400, 303800, 60760, 12152, 392, 4]",True,False,CUDA,3645600,strided tensor
+after_cupy,cupy.tensordot,conv1,backward,output,"[24, 3, 5, 5]",float32,"[300, 100, 20, 4]",True,False,CUDA,7200,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv1,backward,input[0],"[4, 24, 31, 98]",float32,"[291648, 12152, 392, 4]",True,False,CUDA,1166592,NCHW if convolution image; see operator
+after_cupy,Sum.forward,conv1,backward,output,[24],float32,[4],True,True,CUDA,96,strided tensor
+after_cupy,SGD.update_one,conv3,update,input[0],"[48, 36, 5, 5]",float32,"[3600, 100, 20, 4]",True,False,CUDA,172800,NCHW if convolution image; see operator
+after_cupy,SGD.update_one,conv3,update,input[0],[48],float32,[4],True,True,CUDA,192,strided tensor
+after_cupy,SGD.update_one,conv2,update,input[0],"[36, 24, 5, 5]",float32,"[2400, 100, 20, 4]",True,False,CUDA,86400,NCHW if convolution image; see operator
+after_cupy,SGD.update_one,conv2,update,input[0],[36],float32,[4],True,True,CUDA,144,strided tensor
+after_cupy,SGD.update_one,conv5,update,input[0],"[64, 64, 3, 3]",float32,"[2304, 36, 12, 4]",True,False,CUDA,147456,NCHW if convolution image; see operator
+after_cupy,SGD.update_one,conv5,update,input[0],[64],float32,[4],True,True,CUDA,256,strided tensor
+after_cupy,SGD.update_one,conv4,update,input[0],"[64, 48, 3, 3]",float32,"[1728, 36, 12, 4]",True,False,CUDA,110592,NCHW if convolution image; see operator
+after_cupy,SGD.update_one,conv4,update,input[0],[64],float32,[4],True,True,CUDA,256,strided tensor
+after_cupy,SGD.update_one,fc1,update,input[0],"[1152, 100]",float32,"[400, 4]",True,False,CUDA,460800,strided tensor
+after_cupy,SGD.update_one,fc1,update,input[0],[100],float32,[4],True,True,CUDA,400,strided tensor
+after_cupy,SGD.update_one,fc3,update,input[0],"[50, 1]",float32,"[4, 4]",True,True,CUDA,200,strided tensor
+after_cupy,SGD.update_one,fc3,update,input[0],[1],float32,[4],True,True,CUDA,4,strided tensor
+after_cupy,SGD.update_one,fc2,update,input[0],"[100, 50]",float32,"[200, 4]",True,False,CUDA,20000,strided tensor
+after_cupy,SGD.update_one,fc2,update,input[0],[50],float32,[4],True,True,CUDA,200,strided tensor
+after_cupy,SGD.update_one,conv1,update,input[0],"[24, 3, 5, 5]",float32,"[300, 100, 20, 4]",True,False,CUDA,7200,NCHW if convolution image; see operator
+after_cupy,SGD.update_one,conv1,update,input[0],[24],float32,[4],True,True,CUDA,96,strided tensor

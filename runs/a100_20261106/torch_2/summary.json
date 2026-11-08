@@ -1,0 +1,65 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 192,
+    "measured_step_total_s": 0.5320228585042059,
+    "mean_step_s": 0.002770952388042739,
+    "samples_per_sec": 1443.5469975091842,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 3,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 0.2,
+    "gpu_utilization_pct_mean": 38.666666666666664,
+    "gpu_utilization_pct_max": 79.0,
+    "gpu_memory_used_mib_mean": 573.0,
+    "gpu_memory_used_mib_max": 573.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 29.333333333333332,
+    "gpu_temperature_c_max": 31.0,
+    "gpu_power_w_mean": 69.3,
+    "gpu_power_w_max": 103.71,
+    "cpu_utilization_pct_mean": 1.3,
+    "cpu_utilization_pct_max": 1.5,
+    "process_rss_mib_mean": 1295.5104166666667,
+    "process_rss_mib_max": 1295.65234375,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266055706622865,
+      "train_wall_s": 0.23186886170879006,
+      "samples": 256,
+      "train_samples_per_sec": 1104.0723541460984
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.00048736768320623014,
+      "train_wall_s": 0.1668046279810369,
+      "samples": 256,
+      "train_samples_per_sec": 1534.7296001229847
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126556142970003,
+      "train_wall_s": 0.16394716082140803,
+      "samples": 256,
+      "train_samples_per_sec": 1561.4787027563566
+    }
+  ],
+  "dispatch_counts": {},
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": "4984be0507256675a6697aa1d6d840173b8d32e099471b5a0fb176afeb980076"
+}

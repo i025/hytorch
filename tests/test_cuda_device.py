@@ -54,6 +54,26 @@ def test_gemm_views_and_alias_rejection(cp):
         gemm(square,square,out=square)
 
 
+@pytest.mark.parametrize("shape",[(64,64,64),(65,67,71),(127,129,193),(128,256,192)])
+@pytest.mark.parametrize("tile",[16,32])
+def test_gemm_register_tiles_and_tails(cp,shape,tile):
+    m,k,n=shape
+    rng=np.random.default_rng(93)
+    a=rng.normal(size=(m,k)).astype(np.float32)
+    b=rng.normal(size=(k,n)).astype(np.float32)
+    with cp.cuda.Stream(non_blocking=True) as stream:
+        da,db=cp.asarray(a),cp.asarray(b)
+        out=cp.full((m,n),cp.nan,dtype=cp.float32)
+        actual=gemm(da,db,"shared",tile,out=out)
+        assert actual is out
+        original=gemm(da,db,"basic",tile)
+        stream.synchronize()
+        host=cp.asnumpy(actual)
+        np.testing.assert_array_equal(host,cp.asnumpy(original))
+    np.testing.assert_allclose(host,a.astype(np.float64)@b.astype(np.float64),
+                               atol=5e-5,rtol=2e-5)
+
+
 @pytest.mark.parametrize("variant",["direct","im2col"])
 @pytest.mark.parametrize("bias",[False,True])
 @pytest.mark.parametrize("stride,pad",[((1,1),(0,0)),((2,1),(1,2))])

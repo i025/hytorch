@@ -1,0 +1,390 @@
+--- a/hytorch/backends/cuda/runtime.py
++++ b/hytorch/backends/cuda/runtime.py
+@@ -11,7 +11,7 @@
+ import numpy as np
+ 
+ _config = ContextVar("hytorch_cuda_backend", default={
+-    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16, "col2im": "cupy"})
++    "matmul": "cupy", "conv": "cupy", "pool": "cupy", "tile": 16, "col2im": "cupy", "dweight": "cupy"})
+ _counts = Counter()
+ _library = None
+ _dll_directories = []
+@@ -29,16 +29,18 @@
+ 
+ 
+ @contextmanager
+-def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, col2im="cupy"):
++def backend(matmul="cupy", conv="cupy", pool="cupy", tile=16, col2im="cupy", dweight="cupy"):
+     if matmul not in ("cupy", "basic", "blocked", "shared"):
+         raise ValueError("matmul must be cupy/basic/blocked/shared")
+     if conv not in ("cupy", "direct", "im2col") or pool not in ("cupy", "native"):
+         raise ValueError("conv must be cupy/direct/im2col; pool must be cupy/native")
+     if col2im not in ("cupy", "native"):
+         raise ValueError("col2im must be cupy/native")
++    if dweight not in ("cupy", "packed"):
++        raise ValueError("dweight must be cupy/packed")
+     if tile not in (16, 32):
+         raise ValueError("tile must be 16 or 32")
+-    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile, col2im=col2im))
++    token = _config.set(dict(matmul=matmul, conv=conv, pool=pool, tile=tile, col2im=col2im, dweight=dweight))
+     try:
+         yield
+     finally:
+@@ -69,10 +71,11 @@
+             "hy_pool": [p]*3 + [i]*12 + [p],
+             "hy_col2im": [p]*2 + [ct.c_int64]*18 + [p],
+             "hy_col2im_fast": [p, p, ct.c_char_p, p],
++            "hy_sgd_multi": [p, ct.c_int64, ct.c_float, p],
+         }
+         for name, args in signatures.items():
+             # Optional extension preserves loading older ABI-1 libraries.
+-            if name in ("hy_col2im", "hy_col2im_fast") and not hasattr(lib, name):
++            if name in ("hy_col2im", "hy_col2im_fast", "hy_sgd_multi") and not hasattr(lib, name):
+                 continue
+             fn = getattr(lib, name)
+             fn.argtypes, fn.restype = args, ct.c_char_p if name == "hy_cuda_error" else i
+@@ -263,3 +266,83 @@
+         _call("hy_col2im", _ptr(col), _ptr(out), *metadata)
+     _counts["col2im_native"] += 1
+     return out
++
++
++def packed_dweight(x, gy, kernel, stride=1, pad=0):
++    """Fresh backward-only workspace; no numerical cache or dtype conversion."""
++    import cupy as cp
++    if (not isinstance(x, cp.ndarray) or not isinstance(gy, cp.ndarray) or
++            x.dtype != cp.float32 or gy.dtype != cp.float32):
++        raise NotImplementedError("packed dWeight requires FP32 x and gy")
++    device = cp.cuda.runtime.getDevice()
++    if x.device.id != device or gy.device.id != device:
++        raise NotImplementedError("packed dWeight requires the current device")
++    if x.ndim != 4 or gy.ndim != 4:
++        raise NotImplementedError("packed dWeight requires NCHW")
++    try:
++        g = _geometry(x, kernel, stride, pad)
++        if any(not isinstance(v, (int, np.integer)) or v > 2**31-1 for v in g):
++            raise ValueError("packed dWeight geometry exceeds the int32 CUDA ABI")
++        n,c,h,w,kh,kw,sh,sw,ph,pw,oh,ow = g
++        _shape_ok(x.shape)
++        _shape_ok((n*oh*ow,c*kh*kw))
++        if gy.shape[0] != n or gy.shape[2:] != (oh,ow):
++            raise ValueError("gy geometry mismatch")
++    except ValueError as exc:
++        raise NotImplementedError(str(exc)) from exc
++    x = cp.ascontiguousarray(x)
++    col = cp.empty((n*oh*ow,c*kh*kw), dtype=cp.float32)
++    _call("hy_im2col", _ptr(x), _ptr(col), *g)
++    gm = gy.transpose(1,0,2,3).reshape(gy.shape[1],-1)
++    result = (gm @ col).reshape(gy.shape[1],c,kh,kw)
++    _counts["dweight_packed"] += 1
++    return result
++
++
++class _SgdTensor(ct.Structure):
++    _fields_ = [("p",ct.c_uint64),("g",ct.c_uint64),("n",ct.c_uint64)]
++
++
++def _sgd_multi_candidate(params, lr):
++    """Return False before any update if the whole sequence needs legacy semantics."""
++    import cupy as cp
++    # Python float is weak FP32 for this verified range; explicit FP64 stays legacy.
++    if type(lr) not in (float, np.float32) or not np.isfinite(lr) or abs(lr)>np.finfo(np.float32).max:
++        return False
++    device = cp.cuda.runtime.getDevice()
++    arrays = []
++    intervals = []
++    for param in params:
++        p,g = param.data,param.grad.data
++        if (not isinstance(p,cp.ndarray) or not isinstance(g,cp.ndarray) or
++            p.dtype!=cp.float32 or g.dtype!=cp.float32 or p.shape!=g.shape or
++            not p.flags.c_contiguous or not g.flags.c_contiguous or
++            p.device.id!=device or g.device.id!=device or p.size>2**63-1):
++            return False
++        if not p.size:
++            continue
++        pp,gp,n = p.data.ptr,g.data.ptr,p.size
++        intervals.extend(((pp,pp+n*4,True),(gp,gp+n*4,False)))
++        arrays.append((pp,gp,n))
++    # All write/write and write/read overlaps force ordered fallback, even across groups.
++    write_end = read_end = -1
++    for start,end,write in sorted(intervals):
++        if start < write_end or (write and start < read_end):
++            return False
++        if write:write_end=max(write_end,end)
++        else:read_end=max(read_end,end)
++    if not arrays:
++        return True
++    lib = load_library()
++    if not hasattr(lib,"hy_sgd_multi"):
++        return False
++    descriptors = (_SgdTensor*len(arrays))(*(_SgdTensor(*v) for v in arrays))
++    _call("hy_sgd_multi", ct.cast(descriptors,ct.c_void_p), len(arrays), float(lr))
++    _counts["sgd_multi"] += 1
++    return True
++
++
++def sgd_multi(params, lr):
++    # Rejected by exact subnormal acceptance: CuPy 14.2 uses FTZ; this kernel must not.
++    # Preserve ordered legacy semantics until a compatible policy is explicitly chosen.
++    return False
+--- a/hytorch/backends/cuda/kernels.cu
++++ b/hytorch/backends/cuda/kernels.cu
+@@ -262,3 +262,54 @@
+         p.v[6],p.v[7],p.v[8],p.v[9],p.v[10],p.v[11],p.v[12],p.v[13],
+         p.v[14],p.v[15],p.v[16],p.v[17],stream);
+ }
++
++// ABI extension: a private host descriptor array, no device pointer table allocation.
++struct SgdTensor { uint64_t p, g, n; };
++struct SgdBlock { uint64_t p, g, n, begin, end; };
++struct SgdBatch { SgdBlock tensors[32]; int64_t count; };
++static_assert(sizeof(SgdTensor)==24 && alignof(SgdTensor)==8, "SGD ctypes layout");
++static_assert(sizeof(SgdBatch)==1288, "SGD launch parameter layout");
++__global__ void sgd_multi_kernel(const __grid_constant__ SgdBatch batch, float lr) {
++    int t=0;
++    while (t<batch.count && blockIdx.x>=batch.tensors[t].end) ++t;
++    if (t==batch.count) return;
++    const SgdBlock& d=batch.tensors[t];
++    float* p=(float*)(uintptr_t)d.p;
++    const float* g=(const float*)(uintptr_t)d.g;
++    uint64_t i=((uint64_t)blockIdx.x-d.begin)*blockDim.x+threadIdx.x;
++    const uint64_t step=(d.end-d.begin)*blockDim.x;
++    while (i<d.n) {
++        const float delta=__fmul_rn(lr,g[i]);
++        p[i]=__fsub_rn(p[i],delta);
++        if (d.n-i<=step) break;
++        i+=step;
++    }
++}
++API int hy_sgd_multi(const SgdTensor* tensors, int64_t count, float lr, void* stream) {
++    if (count<0 || (count && !tensors)) return (int)cudaErrorInvalidValue;
++    // Validate the entire sequence before any launch, not after a partial update.
++    for (int64_t i=0;i<count;++i) {
++        const SgdTensor& d=tensors[i];
++        if (d.n>(uint64_t)INT64_MAX || (d.n && (!d.p || !d.g)) ||
++            (d.p%4) || (d.g%4)) return (int)cudaErrorInvalidValue;
++    }
++    for (int64_t offset=0;offset<count;) {
++        SgdBatch batch={};
++        batch.count=count-offset<32 ? count-offset : 32;
++        uint64_t blocks=0;
++        for (int t=0;t<batch.count;++t) {
++            const SgdTensor& d=tensors[offset+t];
++            uint64_t b=d.n ? (d.n-1)/256+1 : 0;
++            b=b<256 ? b : 256;
++            batch.tensors[t]={d.p,d.g,d.n,blocks,blocks+b};
++            blocks+=b;
++        }
++        if (blocks) {
++            sgd_multi_kernel<<<(unsigned)blocks,256,0,(cudaStream_t)stream>>>(batch,lr);
++            cudaError_t status=cudaGetLastError();
++            if (status!=cudaSuccess) return (int)status;
++        }
++        offset+=batch.count;
++    }
++    return 0;
++}
+--- a/hytorch/functions_conv.py
++++ b/hytorch/functions_conv.py
+@@ -155,6 +155,12 @@
+             gW_matrix = cpu_gemm(gy_matrix.transpose(1, 0), col)
+             return gW_matrix.reshape(gy.shape[1], x.shape[1], kh, kw)
+ 
++        from hytorch.backends.cuda.runtime import current_config, packed_dweight, _counts
++        if current_config().get("dweight", "cupy") == "packed":
++            try:
++                return packed_dweight(x, gy, self.kernel_size, self.stride, self.pad)
++            except NotImplementedError:
++                _counts["dweight_fallback"] += 1
+         col = im2col_array(x, self.kernel_size, self.stride, self.pad,
+                            to_matrix=False)
+         gW = xp.tensordot(gy, col, ((0, 2, 3), (0, 4, 5)))
+@@ -162,7 +168,7 @@
+ 
+     def backward(self, gys):
+         x, gy = self.inputs
+-        gW, = self.outputs
++        gW = gys  # Incoming cotangent, not the weak reference to our output.
+ 
+         xh, xw = x.shape[2:]
+         gx = deconv2d(gy, gW, stride=self.stride, pad=self.pad,
+--- a/hytorch/optimizers.py
++++ b/hytorch/optimizers.py
+@@ -83,15 +83,33 @@
+ # SGD / MomentumSGD / AdaGrad / AdaDelta / Adam
+ # =============================================================================
+ # 随机梯度下降法
+-class SGD(Optimizer):
+-    def __init__(self, lr=0.01):
+-        super().__init__()
+-        self.lr = lr
+-
+-    def update_one(self, param):  # 更新权重和偏移
+-        param.data -= self.lr * param.grad.data
+-
+-
++class SGD(Optimizer):
++    def __init__(self, lr=0.01, backend="legacy"):
++        super().__init__()
++        self.lr = lr
++        if backend not in ("legacy", "native"):
++            raise ValueError("SGD backend must be legacy/native")
++        self.backend = backend
++
++    def update(self):
++        if type(self) is not SGD or self.backend != "native":
++            return super().update()
++        params = [p for p in self.target.params() if p.grad is not None]
++        for hook in self.hooks:
++            hook(params)
++        params = [p for p in params if p.grad is not None]
++        from hytorch.backends.cuda.runtime import sgd_multi
++        # Avoid importing/initializing a GPU for CPU-only models.
++        if params and cuda.get_array_module(params[0].data).__name__ == "cupy":
++            if sgd_multi(params, self.lr):
++                return
++        for param in params:
++            self.update_one(param)
++
++    def update_one(self, param):  # 更新权重和偏移
++        param.data -= self.lr * param.grad.data
++
++
+ class MomentumSGD(Optimizer):
+     def __init__(self, lr=0.01, momentum=0.9):
+         super().__init__()
+--- /dev/null
++++ b/tests/test_final_optimization.py
+@@ -0,0 +1,132 @@
++import numpy as np
++import pytest
++import hytorch
++from hytorch import Variable, Parameter, no_grad
++from hytorch import functions_conv as FC
++from hytorch.backends.cuda import runtime as rt
++from hytorch.optimizers import SGD, FreezeParam, WeightDecay, ClipGrad
++from test_col2im_cuda import cp
++
++class Target:
++    def __init__(self,params):self.items=params
++    def params(self):return iter(self.items)
++def make_params(xp,n):
++    rng=np.random.default_rng(91)
++    return [make_param(xp,rng.normal(size=(i*13+1,)).astype(np.float32),rng.normal(size=(i*13+1,)).astype(np.float32)) for i in range(n)]
++def make_param(xp,p,g):
++    q=Parameter(xp.asarray(p));q.grad=Variable(xp.asarray(g));return q
++
++@pytest.mark.parametrize('n',[0,1,16,32,33,65])
++def test_sgd_multi_counts(cp,n):
++    p=make_params(cp,n);a=[q.data.copy() for q in p];opt=SGD(.001,backend='native').setup(Target(p))
++    rt.dispatch_stats(True)
++    stream=cp.cuda.Stream(non_blocking=True);cp.cuda.get_current_stream().synchronize()
++    with stream:
++        for lr in [.001,.25,-.125,np.float32(.05)]:
++            opt.lr=lr
++            for q in p:q.grad=Variable(q.grad.data*.99)
++            for x,q in zip(a,p):x-=lr*q.grad.data
++            opt.update()
++        stream.synchronize()
++    for x,q in zip(a,p):np.testing.assert_array_equal(cp.asnumpy(x).view(np.uint32),cp.asnumpy(q.data).view(np.uint32))
++    assert rt.dispatch_stats().get('sgd_multi',0)==0  # rejected candidate falls back
++
++@pytest.mark.parametrize('kind',['empty','noncontiguous','fp64','explicit_lr64','duplicate','overlap','selfgrad','crossgrad'])
++def test_sgd_fallbacks(cp,kind):
++    p=make_params(cp,2);lr=.1
++    if kind=='empty':p=[make_param(cp,np.zeros(0,np.float32),np.zeros(0,np.float32))]
++    if kind=='noncontiguous':
++        p[0].data=cp.ones(2,cp.float32)[::2];p[0].grad.data=cp.ones(2,cp.float32)[::2]
++        p[1].data=cp.ones(28,cp.float32)[::2]
++    if kind=='fp64':p[0].data=p[0].data.astype(cp.float64);p[0].grad.data=p[0].grad.data.astype(cp.float64)
++    if kind=='explicit_lr64':lr=np.float64(.1)
++    if kind=='duplicate':p=[p[0],p[0]]
++    if kind in ['overlap','selfgrad','crossgrad']:
++        store=cp.arange(6,dtype=cp.float32)
++        p=[make_param(cp,np.ones(3,np.float32),np.ones(3,np.float32)) for _ in range(2)]
++        p[0].data=store[:3];p[1].data=store[2:5] if kind=='overlap' else store[3:6]
++        if kind=='selfgrad':p[0].grad.data=p[0].data
++        if kind=='crossgrad':p[0].grad.data=p[1].data
++    # Preserve aliasing in reference via a first sequential update and restoring all backing arrays.
++    arrays=[v for q in p for v in [q.data,q.grad.data]];initial=[v.copy() for v in arrays]
++    for q in p:q.data-=lr*q.grad.data
++    expected=[q.data.copy() for q in p]
++    for v,x in zip(arrays,initial):v[...] = x
++    rt.dispatch_stats(True);SGD(lr,backend='native').setup(Target(p)).update()
++    for q,x in zip(p,expected):np.testing.assert_array_equal(cp.asnumpy(q.data),cp.asnumpy(x))
++    assert rt.dispatch_stats().get('sgd_multi',0)==0
++
++@pytest.mark.parametrize('lr',[.001,1.,-0.,np.float32(.5)])
++def test_sgd_rounding_special(cp,lr):
++    v=np.array([0.,-0.,1e-45,-1e-45,1e-38,-1e-38,1e30,-1e30,1.,-1.,np.inf,-np.inf,np.nan],np.float32)
++    p=make_param(cp,v,v[::-1].copy());ref=p.data.copy();ref-=lr*p.grad.data
++    assert (lr*p.grad.data).dtype==cp.float32
++    SGD(lr,backend='native').setup(Target([p])).update()
++    a,b=cp.asnumpy(ref),cp.asnumpy(p.data);finite=np.isfinite(a)
++    np.testing.assert_array_equal(a[finite].view(np.uint32),b[finite].view(np.uint32))
++    np.testing.assert_array_equal(np.isnan(a),np.isnan(b));np.testing.assert_array_equal(np.isposinf(a),np.isposinf(b));np.testing.assert_array_equal(np.isneginf(a),np.isneginf(b))
++
++def test_sgd_hooks_subclass_cpu():
++    p=make_params(np,3);seen=[]
++    for backend in ['legacy','native']:
++        q=make_params(np,3);o=SGD(.1,backend).setup(Target(q))
++        o.add_hook(lambda ps:seen.append(len(ps)));o.add_hook(FreezeParam(q[0]));o.add_hook(lambda ps:seen.append((len(ps),ps[0].grad is None)));o.update()
++    assert seen==[3,(3,True),3,(3,True)]
++    class Custom(SGD):
++        def update_one(self,p):p.data+=7
++    p=make_params(np,1);old=p[0].data.copy();Custom(backend='native').setup(Target(p)).update();np.testing.assert_array_equal(p[0].data,old+7)
++
++def test_sgd_hooks_gpu(cp):
++    a=make_params(cp,16);b=make_params(cp,16)
++    for items,mode in [(a,'legacy'),(b,'native')]:
++        o=SGD(.01,mode).setup(Target(items));o.add_hook(WeightDecay(.1));o.add_hook(ClipGrad(1.));o.add_hook(FreezeParam(items[0]));o.update()
++    for x,y in zip(a,b):np.testing.assert_array_equal(cp.asnumpy(x.data),cp.asnumpy(y.data))
++
++@pytest.mark.parametrize('layout',['contiguous','negative','slice'])
++@pytest.mark.parametrize('shape,kernel,stride,pad',[((2,3,9,13),(3,5),(2,3),(1,2)),((1,2,7,8),(1,3),(1,2),(0,1)),((3,1,8,11),(2,2),(3,1),(1,0))])
++def test_dweight_layouts(cp,shape,kernel,stride,pad,layout):
++    rng=np.random.default_rng(777);x=cp.asarray(rng.normal(size=shape).astype(np.float32));kh,kw=kernel;oh=(shape[2]+2*pad[0]-kh)//stride[0]+1;ow=(shape[3]+2*pad[1]-kw)//stride[1]+1;g=cp.asarray(rng.normal(size=(shape[0],4,oh,ow)).astype(np.float32))
++    if layout=='negative':x=x[...,::-1];g=g[...,::-1]
++    if layout=='slice':
++        xx=cp.empty((*x.shape[:-1],x.shape[-1]*2),cp.float32);xx[...,::2]=x;x=xx[...,::2]
++        gg=cp.empty((*g.shape[:-1],g.shape[-1]*2),cp.float32);gg[...,::2]=g;g=gg[...,::2]
++    cp.cuda.get_current_stream().synchronize();stream=cp.cuda.Stream(non_blocking=True)
++    with stream:b=rt.packed_dweight(x,g,kernel,stride,pad);stream.synchronize()
++    col=FC.im2col_array(cp.asnumpy(x).astype(np.float64),kernel,stride,pad,True);ref=cp.asnumpy(g).astype(np.float64).transpose(1,0,2,3).reshape(4,-1)@col
++    np.testing.assert_allclose(cp.asnumpy(b).reshape(4,-1),ref,atol=2e-5,rtol=2e-4)
++
++@pytest.mark.parametrize('device',['cpu','cuda'])
++def test_dweight_second_derivative(device,request):
++    import torch
++    xp=np if device=='cpu' else request.getfixturevalue('cp')
++    rng=np.random.default_rng(11);a=rng.normal(0,.1,(2,2,5,7)).astype(np.float32);g=rng.normal(0,.1,(2,3,3,4)).astype(np.float32);v=rng.normal(size=(3,2,3,2)).astype(np.float32)
++    for mode in ['cupy','packed']:
++        x=Variable(xp.asarray(a));gy=Variable(xp.asarray(g));w=Variable(xp.zeros(v.shape,np.float32))
++        with rt.backend(dweight=mode):
++            y=FC.conv2d(x,w,stride=(1,2),pad=(0,1));dw=FC.Conv2DGradW(y.creator)(x,gy);(dw*Variable(xp.asarray(v))).sum().backward()
++        tx=torch.tensor(a,requires_grad=True);tg=torch.tensor(g,requires_grad=True);tw=torch.tensor(v);ty=torch.nn.functional.conv2d(tx,tw,stride=(1,2),padding=(0,1));(ty*tg).sum().backward()
++        np.testing.assert_allclose(hytorch.cuda.as_numpy(x.grad.data),tx.grad.numpy(),atol=2e-6,rtol=2e-5)
++        np.testing.assert_allclose(hytorch.cuda.as_numpy(gy.grad.data),tg.grad.numpy(),atol=2e-6,rtol=2e-5)
++
++@pytest.mark.parametrize('dtype',[np.float32,np.float64])
++def test_dweight_mutation_repeated_fallback(cp,dtype):
++    x=Variable(cp.ones((1,2,5,5),dtype));w=Variable(cp.ones((3,2,3,3),dtype));rt.dispatch_stats(True)
++    with rt.backend(dweight='packed'):
++        y=FC.conv2d(x,w);x.data*=2
++        y.sum().backward();first=w.grad.data.copy();x.cleargrad();w.cleargrad();y.cleargrad();y.sum().backward()
++        np.testing.assert_array_equal(cp.asnumpy(w.grad.data),cp.asnumpy(first))
++        np.testing.assert_array_equal(cp.asnumpy(first),np.full(w.shape,18,dtype))
++        with no_grad():assert FC.conv2d(x,w).creator is None
++    if dtype==np.float64:assert rt.dispatch_stats().get('dweight_packed',0)==0
++
++def test_dweight_mixed_dtype(cp):
++    x=cp.ones((1,1,3,3),cp.float32);g=cp.ones((1,1,1,1),cp.float64)
++    with pytest.raises(NotImplementedError):rt.packed_dweight(x,g,(3,3))
++
++
++def test_dweight_geometry_fallback(cp):
++    x=cp.ones((1,1,3,3),cp.float32);g=cp.ones((1,1,1,1),cp.float32)
++    with pytest.raises(NotImplementedError,match='int32'):
++        rt.packed_dweight(x,g,(1,1),stride=(2**32,2**32))
++    with pytest.raises(NotImplementedError,match='int32'):
++        rt.packed_dweight(x,g,(1,1),stride=(3.5,3.5))

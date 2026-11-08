@@ -1,0 +1,120 @@
+diff --git a/README.md b/README.md
+index 286a222..e162d35 100644
+--- a/README.md
++++ b/README.md
+@@ -2,7 +2,7 @@
+ 
+ 供队友在 NVIDIA GPU 上编译、验证和运行课程实验的源码包。
+ 
+-**当前状态：代码已在 Mac 完成主机侧检查，CUDA 编译和 GPU 正确性/性能尚未验收。不要把本仓库当作已获得加速结果的实验。**
++**当前状态：2026-11-06 已在 A100 40GB 完成 CUDA 编译、GPU 单元测试、算子与合成训练实验，并完成 shared GEMM 第一轮优化。配对测试测得 1.72–2.47 倍算子加速，但合成 DonkeyNet 未获得端到端加速；原始大矩阵 GEMM 的严格误差门限仍未通过。详见 [A100 复现与优化记录](docs/A100复现与优化记录.md)。真实数据训练和迁移学习尚未验收。**
+ 
+ ## 队友第一次运行：只做这四步
+ 
+@@ -122,7 +122,8 @@ python -m pytest tests/test_cuda_host.py tests/test_conv2d_gemm_cpu.py tests/tes
+ 
+ - [完整开发与 GPU 验收指南](docs/CUDA开发与GPU验收指南.md)
+ - [Mac 上的验证记录](docs/CUDA验证记录.md)
++- [A100 算子、合成训练与优化记录](docs/A100复现与优化记录.md)
+ - [核心修改清单](docs/CUDA修改清单.json)
+-- `UPLOAD_MANIFEST.json`：本次上传文件及 SHA256，用于确认源码包内容。
++- `UPLOAD_MANIFEST.json`：原始上传源码包的文件及 SHA256，不代表后续优化版本。
+ 
+-文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布；验证记录描述的是本机已做的检查。当前仓库只声明实现状态，不包含实测 GPU 加速结论。
++Mac 文档中提到的 `.cuda_baseline_backup/` 和既有 CPU 烟测输出保留在开发者本机，未随仓库发布。A100 实测结论、范围与未通过项见新的优化记录；原始 GPU 日志和动态库保存在实验服务器，未随 Git 发布。
+diff --git a/hytorch/backends/cuda/kernels.cu b/hytorch/backends/cuda/kernels.cu
+index 771a3b8..73f656f 100644
+--- a/hytorch/backends/cuda/kernels.cu
++++ b/hytorch/backends/cuda/kernels.cu
+@@ -47,6 +47,47 @@ template<int T> __global__ void gemm_shared(const float* a, const float* b,
+     if (r<m && col<n) c[(int64_t)r*n+col]=v;
+ }
+ 
++// A 64x64 output tile with sixteen FP32 accumulators per thread. Reuse each
++// shared-memory operand across four outputs instead of loading it per FMA.
++// Keep the original kernel for small/narrow matrices to avoid wasted lanes.
++template<int K> __global__ void gemm_register(const float* a, const float* b,
++                                             float* c, int m, int n, int k) {
++    __shared__ float sa[K][65], sb[K][64];
++    int tx=threadIdx.x, ty=threadIdx.y, tid=ty*16+tx;
++    int row0=blockIdx.y*64, col0=blockIdx.x*64;
++    float acc[4][4]={};
++    for (int base=0; base<k; base+=K) {
++        for (int i=tid; i<64*K; i+=256) {
++            int r=i/K, q=i%K;
++            sa[q][r]=(row0+r<m && base+q<k)?a[(int64_t)(row0+r)*k+base+q]:0;
++            q=i/64; int col=i%64;
++            sb[q][col]=(base+q<k && col0+col<n)?b[(int64_t)(base+q)*n+col0+col]:0;
++        }
++        __syncthreads();
++        #pragma unroll
++        for (int q=0; q<K; ++q) {
++            float av[4], bv[4];
++            #pragma unroll
++            for (int i=0; i<4; ++i) {
++                av[i]=sa[q][ty+i*16];
++                bv[i]=sb[q][tx+i*16];
++            }
++            #pragma unroll
++            for (int i=0; i<4; ++i)
++                #pragma unroll
++                for (int j=0; j<4; ++j) acc[i][j]+=av[i]*bv[j];
++        }
++        __syncthreads();
++    }
++    #pragma unroll
++    for (int i=0; i<4; ++i)
++        #pragma unroll
++        for (int j=0; j<4; ++j) {
++            int r=row0+ty+i*16, col=col0+tx+j*16;
++            if (r<m && col<n) c[(int64_t)r*n+col]=acc[i][j];
++        }
++}
++
+ API int hy_cuda_abi_version() { return 1; }
+ API const char* hy_cuda_error(int code) { return cudaGetErrorString((cudaError_t)code); }
+ API int hy_gemm(const float* a, const float* b, float* c, int m, int n,
+@@ -55,7 +96,11 @@ API int hy_gemm(const float* a, const float* b, float* c, int m, int n,
+         (tile!=16 && tile!=32)) return (int)cudaErrorInvalidValue;
+     cudaStream_t s=(cudaStream_t)stream;
+     if (variant==0) gemm_basic<<<((int64_t)m*n+255)/256,256,0,s>>>(a,b,c,m,n,k);
+-    else {
++    else if (variant==2 && m>=64 && n>=64 && k>=64) {
++        dim3 block(16,16), grid((n+63)/64,(m+63)/64);
++        if (tile==16) gemm_register<16><<<grid,block,0,s>>>(a,b,c,m,n,k);
++        else gemm_register<32><<<grid,block,0,s>>>(a,b,c,m,n,k);
++    } else {
+         dim3 block(tile,tile), grid((n+tile-1)/tile,(m+tile-1)/tile);
+         if (variant==1) {
+             if (tile==16) gemm_blocked<16><<<grid,block,0,s>>>(a,b,c,m,n,k);
+diff --git a/tests/test_cuda_device.py b/tests/test_cuda_device.py
+index ef7edb1..6cb2e46 100644
+--- a/tests/test_cuda_device.py
++++ b/tests/test_cuda_device.py
+@@ -54,6 +54,26 @@ def test_gemm_views_and_alias_rejection(cp):
+         gemm(square,square,out=square)
+ 
+ 
++@pytest.mark.parametrize("shape",[(64,64,64),(65,67,71),(127,129,193),(128,256,192)])
++@pytest.mark.parametrize("tile",[16,32])
++def test_gemm_register_tiles_and_tails(cp,shape,tile):
++    m,k,n=shape
++    rng=np.random.default_rng(93)
++    a=rng.normal(size=(m,k)).astype(np.float32)
++    b=rng.normal(size=(k,n)).astype(np.float32)
++    with cp.cuda.Stream(non_blocking=True) as stream:
++        da,db=cp.asarray(a),cp.asarray(b)
++        out=cp.full((m,n),cp.nan,dtype=cp.float32)
++        actual=gemm(da,db,"shared",tile,out=out)
++        assert actual is out
++        original=gemm(da,db,"basic",tile)
++        stream.synchronize()
++        host=cp.asnumpy(actual)
++        np.testing.assert_array_equal(host,cp.asnumpy(original))
++    np.testing.assert_allclose(host,a.astype(np.float64)@b.astype(np.float64),
++                               atol=5e-5,rtol=2e-5)
++
++
+ @pytest.mark.parametrize("variant",["direct","im2col"])
+ @pytest.mark.parametrize("bias",[False,True])
+ @pytest.mark.parametrize("stride,pad",[((1,1),(0,0)),((2,1),(1,2))])

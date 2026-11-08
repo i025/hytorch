@@ -1,0 +1,9 @@
+{
+  "check_returncode": 0,
+  "apply_returncode": 0,
+  "stderr": "",
+  "byte_exact": {
+    "hytorch/core.py": true,
+    "tests/test_compact_function.py": true
+  }
+}

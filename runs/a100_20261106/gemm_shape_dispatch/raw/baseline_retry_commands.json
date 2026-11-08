@@ -1,0 +1,48 @@
+[
+  {
+    "name": "baseline_gpu_retry",
+    "argv": [
+      "/home/xieminhui_pubuse/hytorch-env/bin/python",
+      "-c",
+      "import torch,pytest,sys; sys.exit(pytest.main(sys.argv[1:]))",
+      "tests/test_cuda_device.py",
+      "tests/test_backward_dtype.py",
+      "-k",
+      "cuda",
+      "-q"
+    ],
+    "start_utc": "2026-11-06T03:45:25.729208+00:00",
+    "end_utc": "2026-11-06T03:45:30.448034+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "baseline_host",
+    "argv": [
+      "/home/xieminhui_pubuse/hytorch-env/bin/python",
+      "-c",
+      "import torch,pytest,sys; sys.exit(pytest.main(sys.argv[1:]))",
+      "tests/test_cuda_host.py",
+      "tests/test_conv2d_gemm_cpu.py",
+      "tests/test_gemm_blocked_packed.py",
+      "-q"
+    ],
+    "start_utc": "2026-11-06T03:45:30.448321+00:00",
+    "end_utc": "2026-11-06T03:45:33.970234+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "baseline_host_dtype",
+    "argv": [
+      "/home/xieminhui_pubuse/hytorch-env/bin/python",
+      "-c",
+      "import torch,pytest,sys; sys.exit(pytest.main(sys.argv[1:]))",
+      "tests/test_backward_dtype.py",
+      "-k",
+      "not cuda and not donkey",
+      "-q"
+    ],
+    "start_utc": "2026-11-06T03:45:33.970513+00:00",
+    "end_utc": "2026-11-06T03:45:36.512705+00:00",
+    "returncode": 0
+  }
+]

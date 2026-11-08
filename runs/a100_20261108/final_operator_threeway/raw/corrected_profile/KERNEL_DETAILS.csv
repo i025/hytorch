@@ -1,0 +1,271 @@
+op,case,scope,mode,kernel,gridX,gridY,gridZ,blockX,blockY,blockZ,registers_per_thread,calls,total_kernel_us,mean_kernel_us
+dweight,conv1_contiguous,array,cupy,im2col,7121,1,1,128,1,1,32,15,479.29799999999994,31.9532
+dweight,conv1_contiguous,array,cupy,cupy_copy__float32_float32,2279,1,1,128,1,1,16,15,146.52799999999996,9.768533333333334
+dweight,conv1_contiguous,array,cupy,cupy_copy__float32_float32,7121,1,1,128,1,1,16,15,270.529,18.03526666666667
+dweight,conv1_contiguous,array,cupy,ampere_sgemm_64x32_sliced1x4_nt,2,1,54,256,1,1,82,15,343.424,22.894933333333334
+dweight,conv1_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,159.747,10.6498
+dweight,conv1_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",3561,1,1,256,1,1,23,15,495.872,33.05813333333333
+dweight,conv1_contiguous,array,native,cupy_copy__float32_float32,2279,1,1,128,1,1,16,15,138.369,9.224599999999999
+dweight,conv1_contiguous,array,native,ampere_sgemm_32x32_sliced1x4_nn,3,1,72,128,1,1,86,15,333.468,22.231199999999998
+dweight,conv1_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,164.41699999999997,10.961133333333335
+dweight,conv1_contiguous,function,cupy,im2col,7121,1,1,128,1,1,32,15,478.851,31.9234
+dweight,conv1_contiguous,function,cupy,cupy_copy__float32_float32,2279,1,1,128,1,1,16,15,146.337,9.755799999999999
+dweight,conv1_contiguous,function,cupy,cupy_copy__float32_float32,7121,1,1,128,1,1,16,15,272.959,18.197266666666668
+dweight,conv1_contiguous,function,cupy,ampere_sgemm_64x32_sliced1x4_nt,2,1,54,256,1,1,82,15,343.682,22.912133333333333
+dweight,conv1_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,159.42399999999998,10.628266666666667
+dweight,conv1_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",3561,1,1,256,1,1,23,15,496.64,33.10933333333333
+dweight,conv1_contiguous,function,native,cupy_copy__float32_float32,2279,1,1,128,1,1,16,15,138.08,9.205333333333332
+dweight,conv1_contiguous,function,native,ampere_sgemm_32x32_sliced1x4_nn,3,1,72,128,1,1,86,15,333.056,22.203733333333332
+dweight,conv1_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",3,2,1,32,16,1,32,15,164.287,10.952466666666668
+dweight,conv2_contiguous,array,cupy,im2col,12338,1,1,128,1,1,32,15,755.907,50.3938
+dweight,conv2_contiguous,array,cupy,cupy_copy__float32_float32,741,1,1,128,1,1,16,15,121.667,8.111133333333333
+dweight,conv2_contiguous,array,cupy,cupy_copy__float32_float32,12338,1,1,128,1,1,16,15,587.6810000000002,39.178733333333334
+dweight,conv2_contiguous,array,cupy,ampere_sgemm_64x32_sliced1x4_nt,10,2,5,256,1,1,82,15,530.9459999999999,35.3964
+dweight,conv2_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,110.97699999999999,7.398466666666667
+dweight,conv2_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",6169,1,1,256,1,1,23,15,786.883,52.458866666666665
+dweight,conv2_contiguous,array,native,cupy_copy__float32_float32,741,1,1,128,1,1,16,15,109.88900000000001,7.325933333333333
+dweight,conv2_contiguous,array,native,ampere_sgemm_128x32_sliced1x4_nn,5,2,10,256,1,1,134,15,566.496,37.7664
+dweight,conv2_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,122.368,8.157866666666667
+dweight,conv2_contiguous,function,cupy,im2col,12338,1,1,128,1,1,32,15,755.904,50.3936
+dweight,conv2_contiguous,function,cupy,cupy_copy__float32_float32,741,1,1,128,1,1,16,15,121.56799999999998,8.104533333333334
+dweight,conv2_contiguous,function,cupy,cupy_copy__float32_float32,12338,1,1,128,1,1,16,15,587.2349999999999,39.149
+dweight,conv2_contiguous,function,cupy,ampere_sgemm_64x32_sliced1x4_nt,10,2,5,256,1,1,82,15,531.426,35.4284
+dweight,conv2_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,111.52099999999999,7.434733333333334
+dweight,conv2_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",6169,1,1,256,1,1,23,15,786.5609999999999,52.4374
+dweight,conv2_contiguous,function,native,cupy_copy__float32_float32,741,1,1,128,1,1,16,15,109.888,7.325866666666667
+dweight,conv2_contiguous,function,native,ampere_sgemm_128x32_sliced1x4_nn,5,2,10,256,1,1,134,15,567.682,37.84546666666667
+dweight,conv2_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",19,3,1,32,16,1,32,15,122.848,8.189866666666667
+dweight,conv3_contiguous,array,cupy,im2col,3094,1,1,128,1,1,32,15,263.716,17.58106666666667
+dweight,conv3_contiguous,array,cupy,cupy_copy__float32_float32,165,1,1,128,1,1,16,15,105.47300000000003,7.031533333333333
+dweight,conv3_contiguous,array,cupy,cupy_copy__float32_float32,3094,1,1,128,1,1,16,15,229.377,15.2918
+dweight,conv3_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_nt,29,2,4,128,1,1,86,15,338.59,22.572666666666667
+dweight,conv3_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,108.35300000000002,7.223533333333333
+dweight,conv3_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1547,1,1,256,1,1,23,15,269.185,17.945666666666668
+dweight,conv3_contiguous,array,native,cupy_copy__float32_float32,165,1,1,128,1,1,16,15,97.151,6.476733333333334
+dweight,conv3_contiguous,array,native,ampere_sgemm_64x32_sliced1x4_nn,15,2,7,256,1,1,82,15,297.37699999999995,19.825133333333333
+dweight,conv3_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,125.439,8.3626
+dweight,conv3_contiguous,function,cupy,im2col,3094,1,1,128,1,1,32,15,263.938,17.595866666666666
+dweight,conv3_contiguous,function,cupy,cupy_copy__float32_float32,165,1,1,128,1,1,16,15,106.40000000000003,7.093333333333334
+dweight,conv3_contiguous,function,cupy,cupy_copy__float32_float32,3094,1,1,128,1,1,16,15,228.38299999999998,15.225533333333333
+dweight,conv3_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_nt,29,2,4,128,1,1,86,15,338.59299999999996,22.572866666666666
+dweight,conv3_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,108.32000000000002,7.221333333333334
+dweight,conv3_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1547,1,1,256,1,1,23,15,268.898,17.926533333333335
+dweight,conv3_contiguous,function,native,cupy_copy__float32_float32,165,1,1,128,1,1,16,15,97.53600000000002,6.502400000000001
+dweight,conv3_contiguous,function,native,ampere_sgemm_64x32_sliced1x4_nn,15,2,7,256,1,1,82,15,296.89699999999993,19.793133333333333
+dweight,conv3_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",29,3,1,32,16,1,32,15,124.60900000000001,8.307266666666667
+dweight,conv4_contiguous,array,cupy,im2col,810,1,1,128,1,1,32,15,140.801,9.386733333333334
+dweight,conv4_contiguous,array,cupy,cupy_copy__float32_float32,120,1,1,128,1,1,16,15,99.872,6.658133333333333
+dweight,conv4_contiguous,array,cupy,cupy_copy__float32_float32,810,1,1,128,1,1,16,15,140.704,9.380266666666666
+dweight,conv4_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_nt,14,2,3,128,1,1,86,15,225.31400000000002,15.020933333333334
+dweight,conv4_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,105.27799999999999,7.018533333333333
+dweight,conv4_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",405,1,1,256,1,1,23,15,149.66400000000002,9.9776
+dweight,conv4_contiguous,array,native,cupy_copy__float32_float32,120,1,1,128,1,1,16,15,95.77600000000001,6.385066666666667
+dweight,conv4_contiguous,array,native,ampere_sgemm_32x32_sliced1x4_nn,14,2,3,128,1,1,86,15,220.671,14.711400000000001
+dweight,conv4_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,104.51400000000001,6.9676
+dweight,conv4_contiguous,function,cupy,im2col,810,1,1,128,1,1,32,15,141.183,9.4122
+dweight,conv4_contiguous,function,cupy,cupy_copy__float32_float32,120,1,1,128,1,1,16,15,99.83999999999999,6.656
+dweight,conv4_contiguous,function,cupy,cupy_copy__float32_float32,810,1,1,128,1,1,16,15,141.15399999999997,9.410266666666667
+dweight,conv4_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_nt,14,2,3,128,1,1,86,15,226.21000000000004,15.080666666666666
+dweight,conv4_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,105.602,7.040133333333333
+dweight,conv4_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",405,1,1,256,1,1,23,15,149.44099999999997,9.962733333333333
+dweight,conv4_contiguous,function,native,cupy_copy__float32_float32,120,1,1,128,1,1,16,15,96.70300000000002,6.446866666666667
+dweight,conv4_contiguous,function,native,ampere_sgemm_32x32_sliced1x4_nn,14,2,3,128,1,1,86,15,221.05899999999997,14.737266666666667
+dweight,conv4_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",14,4,1,32,16,1,32,15,104.25500000000001,6.950333333333333
+dweight,conv5_contiguous,array,cupy,im2col,324,1,1,128,1,1,32,15,121.73,8.115333333333334
+dweight,conv5_contiguous,array,cupy,cupy_copy__float32_float32,36,1,1,128,1,1,16,15,92.29,6.152666666666667
+dweight,conv5_contiguous,array,cupy,cupy_copy__float32_float32,324,1,1,128,1,1,16,15,113.216,7.547733333333333
+dweight,conv5_contiguous,array,cupy,ampere_sgemm_32x32_sliced1x4_nt,18,2,1,128,1,1,86,15,218.91200000000003,14.594133333333334
+dweight,conv5_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",162,1,1,256,1,1,23,15,121.70000000000002,8.113333333333333
+dweight,conv5_contiguous,array,native,cupy_copy__float32_float32,36,1,1,128,1,1,16,15,91.13600000000001,6.075733333333333
+dweight,conv5_contiguous,array,native,ampere_sgemm_32x32_sliced1x4_nn,18,2,1,128,1,1,86,15,213.505,14.233666666666666
+dweight,conv5_contiguous,function,cupy,im2col,324,1,1,128,1,1,32,15,121.85799999999998,8.123866666666666
+dweight,conv5_contiguous,function,cupy,cupy_copy__float32_float32,36,1,1,128,1,1,16,15,91.90599999999998,6.127066666666667
+dweight,conv5_contiguous,function,cupy,cupy_copy__float32_float32,324,1,1,128,1,1,16,15,112.86499999999998,7.524333333333333
+dweight,conv5_contiguous,function,cupy,ampere_sgemm_32x32_sliced1x4_nt,18,2,1,128,1,1,86,15,218.04499999999996,14.536333333333333
+dweight,conv5_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",162,1,1,256,1,1,23,15,121.24800000000002,8.0832
+dweight,conv5_contiguous,function,native,cupy_copy__float32_float32,36,1,1,128,1,1,16,15,90.94300000000001,6.062866666666666
+dweight,conv5_contiguous,function,native,ampere_sgemm_32x32_sliced1x4_nn,18,2,1,128,1,1,86,15,213.986,14.265733333333333
+dweight,overlap_contiguous,array,cupy,im2col,3137,1,1,128,1,1,32,15,265.66499999999996,17.711000000000002
+dweight,overlap_contiguous,array,cupy,cupy_copy__float32_float32,233,1,1,128,1,1,16,15,103.29599999999999,6.8864
+dweight,overlap_contiguous,array,cupy,cupy_copy__float32_float32,3137,1,1,128,1,1,16,15,224.03299999999996,14.935533333333334
+dweight,overlap_contiguous,array,cupy,ampere_sgemm_64x32_sliced1x4_nt,3,1,35,256,1,1,82,15,239.36,15.957333333333333
+dweight,overlap_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",6,1,1,32,16,1,32,15,138.46599999999998,9.231066666666667
+dweight,overlap_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1569,1,1,256,1,1,23,15,278.175,18.544999999999998
+dweight,overlap_contiguous,array,native,cupy_copy__float32_float32,233,1,1,128,1,1,16,15,97.76000000000002,6.517333333333333
+dweight,overlap_contiguous,array,native,ampere_sgemm_64x32_sliced1x4_nn,3,1,32,256,1,1,82,15,240.03099999999998,16.002066666666668
+dweight,overlap_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",6,1,1,32,16,1,32,15,123.394,8.226266666666668
+dweight,overlap_contiguous,function,cupy,im2col,3137,1,1,128,1,1,32,15,265.76,17.717333333333332
+dweight,overlap_contiguous,function,cupy,cupy_copy__float32_float32,233,1,1,128,1,1,16,15,103.35900000000001,6.8906
+dweight,overlap_contiguous,function,cupy,cupy_copy__float32_float32,3137,1,1,128,1,1,16,15,224.641,14.976066666666666
+dweight,overlap_contiguous,function,cupy,ampere_sgemm_64x32_sliced1x4_nt,3,1,35,256,1,1,82,15,239.905,15.993666666666666
+dweight,overlap_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",6,1,1,32,16,1,32,15,138.78299999999996,9.2522
+dweight,overlap_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1569,1,1,256,1,1,23,15,277.95399999999995,18.530266666666666
+dweight,overlap_contiguous,function,native,cupy_copy__float32_float32,233,1,1,128,1,1,16,15,98.27100000000003,6.551399999999999
+dweight,overlap_contiguous,function,native,ampere_sgemm_64x32_sliced1x4_nn,3,1,32,256,1,1,82,15,240.51000000000002,16.034
+dweight,overlap_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",6,1,1,32,16,1,32,15,123.36000000000001,8.224
+dweight,nonoverlap_contiguous,array,cupy,im2col,117,1,1,128,1,1,32,15,116.38299999999998,7.758866666666666
+dweight,nonoverlap_contiguous,array,cupy,cupy_copy__float32_float32,29,1,1,128,1,1,16,15,93.28099999999999,6.218733333333334
+dweight,nonoverlap_contiguous,array,cupy,cupy_copy__float32_float32,117,1,1,128,1,1,16,15,104.96100000000001,6.9974
+dweight,nonoverlap_contiguous,array,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,609.536,40.635733333333334
+dweight,nonoverlap_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",59,1,1,256,1,1,23,15,105.72700000000002,7.048466666666667
+dweight,nonoverlap_contiguous,array,native,cupy_copy__float32_float32,29,1,1,128,1,1,16,15,92.542,6.169466666666667
+dweight,nonoverlap_contiguous,array,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,594.72,39.648
+dweight,nonoverlap_contiguous,function,cupy,im2col,117,1,1,128,1,1,32,15,116.48100000000001,7.7654
+dweight,nonoverlap_contiguous,function,cupy,cupy_copy__float32_float32,29,1,1,128,1,1,16,15,91.20000000000002,6.08
+dweight,nonoverlap_contiguous,function,cupy,cupy_copy__float32_float32,117,1,1,128,1,1,16,15,105.184,7.012266666666667
+dweight,nonoverlap_contiguous,function,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,609.4409999999999,40.6294
+dweight,nonoverlap_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",59,1,1,256,1,1,23,15,106.14300000000001,7.0762
+dweight,nonoverlap_contiguous,function,native,cupy_copy__float32_float32,29,1,1,128,1,1,16,15,90.72099999999999,6.048066666666667
+dweight,nonoverlap_contiguous,function,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,594.9450000000002,39.663000000000004
+dweight,asymmetric_contiguous,array,cupy,im2col,51,1,1,128,1,1,32,15,111.841,7.456066666666667
+dweight,asymmetric_contiguous,array,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,90.591,6.0394
+dweight,asymmetric_contiguous,array,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,98.23900000000002,6.549266666666666
+dweight,asymmetric_contiguous,array,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,314.814,20.9876
+dweight,asymmetric_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,103.29500000000002,6.886333333333333
+dweight,asymmetric_contiguous,array,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,88.929,5.9286
+dweight,asymmetric_contiguous,array,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,316.319,21.087933333333336
+dweight,asymmetric_contiguous,function,cupy,im2col,51,1,1,128,1,1,32,15,111.647,7.443133333333334
+dweight,asymmetric_contiguous,function,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,92.51100000000001,6.1674
+dweight,asymmetric_contiguous,function,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,99.48800000000001,6.632533333333333
+dweight,asymmetric_contiguous,function,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,314.49699999999996,20.96646666666667
+dweight,asymmetric_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,103.84200000000001,6.9228
+dweight,asymmetric_contiguous,function,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,89.66499999999999,5.977666666666667
+dweight,asymmetric_contiguous,function,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,315.777,21.0518
+dweight,asymmetric_sliced,array,cupy,im2col,51,1,1,128,1,1,32,15,111.39300000000001,7.426200000000001
+dweight,asymmetric_sliced,array,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,92.60900000000001,6.173933333333333
+dweight,asymmetric_sliced,array,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,99.392,6.626133333333333
+dweight,asymmetric_sliced,array,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,318.147,21.2098
+dweight,asymmetric_sliced,array,native,cupy_copy__float32_float32,19,1,1,128,1,1,18,15,85.568,5.704533333333333
+dweight,asymmetric_sliced,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,103.84000000000003,6.922666666666666
+dweight,asymmetric_sliced,array,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,89.699,5.979933333333333
+dweight,asymmetric_sliced,array,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,315.523,21.034866666666666
+dweight,asymmetric_sliced,function,cupy,im2col,51,1,1,128,1,1,32,15,111.52000000000002,7.434666666666667
+dweight,asymmetric_sliced,function,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,92.482,6.165466666666667
+dweight,asymmetric_sliced,function,cupy,cupy_copy__float32_float32,51,1,1,128,1,1,16,15,99.04100000000001,6.602733333333333
+dweight,asymmetric_sliced,function,cupy,ampere_sgemm_32x128_nt,2,1,1,256,1,1,57,15,318.04600000000005,21.20306666666667
+dweight,asymmetric_sliced,function,native,cupy_copy__float32_float32,19,1,1,128,1,1,18,15,86.015,5.734333333333333
+dweight,asymmetric_sliced,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,104.25400000000002,6.950266666666667
+dweight,asymmetric_sliced,function,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,89.82299999999998,5.9882
+dweight,asymmetric_sliced,function,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,315.81100000000004,21.054066666666667
+dweight,holes_contiguous,array,cupy,im2col,4,1,1,128,1,1,32,15,109.28000000000003,7.285333333333334
+dweight,holes_contiguous,array,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,91.35799999999999,6.090533333333333
+dweight,holes_contiguous,array,cupy,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,91.362,6.0908
+dweight,holes_contiguous,array,cupy,ampere_sgemm_32x128_nt,1,1,1,256,1,1,57,15,272.19100000000003,18.146066666666666
+dweight,holes_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",2,1,1,256,1,1,23,15,93.311,6.2207333333333334
+dweight,holes_contiguous,array,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,88.447,5.896466666666667
+dweight,holes_contiguous,array,native,ampere_sgemm_32x128_nn,1,1,1,256,1,1,57,15,268.291,17.886066666666668
+dweight,holes_contiguous,function,cupy,im2col,4,1,1,128,1,1,32,15,106.97600000000001,7.131733333333333
+dweight,holes_contiguous,function,cupy,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,89.95199999999998,5.9968
+dweight,holes_contiguous,function,cupy,cupy_copy__float32_float32,4,1,1,128,1,1,16,15,89.56799999999998,5.9712
+dweight,holes_contiguous,function,cupy,ampere_sgemm_32x128_nt,1,1,1,256,1,1,57,15,273.05899999999997,18.20393333333333
+dweight,holes_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",2,1,1,256,1,1,23,15,93.665,6.2443333333333335
+dweight,holes_contiguous,function,native,cupy_copy__float32_float32,8,1,1,128,1,1,16,15,86.65599999999999,5.777066666666666
+dweight,holes_contiguous,function,native,ampere_sgemm_32x128_nn,1,1,1,256,1,1,57,15,268.386,17.892400000000002
+dweight,narrow_contiguous,array,cupy,im2col,52,1,1,128,1,1,32,15,110.46300000000001,7.3642
+dweight,narrow_contiguous,array,cupy,ampere_sgemm_32x128_tn,2,1,1,256,1,1,57,15,340.159,22.677266666666664
+dweight,narrow_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,106.23900000000002,7.0826
+dweight,narrow_contiguous,array,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,335.936,22.395733333333332
+dweight,narrow_contiguous,function,cupy,im2col,52,1,1,128,1,1,32,15,111.135,7.409
+dweight,narrow_contiguous,function,cupy,ampere_sgemm_32x128_tn,2,1,1,256,1,1,57,15,340.35499999999996,22.69033333333333
+dweight,narrow_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",26,1,1,256,1,1,23,15,105.98500000000001,7.065666666666667
+dweight,narrow_contiguous,function,native,ampere_sgemm_32x128_nn,2,1,1,256,1,1,57,15,335.549,22.369933333333332
+dweight,tiny_contiguous,array,cupy,im2col,1,1,1,12,1,1,32,15,102.561,6.8374
+dweight,tiny_contiguous,array,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.76000000000002,6.517333333333333
+dweight,tiny_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.48000000000002,5.898666666666666
+dweight,tiny_contiguous,array,native,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.98700000000001,6.532466666666666
+dweight,tiny_contiguous,function,cupy,im2col,1,1,1,12,1,1,32,15,103.138,6.875866666666667
+dweight,tiny_contiguous,function,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.729,6.515266666666666
+dweight,tiny_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.769,5.917933333333333
+dweight,tiny_contiguous,function,native,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.95300000000002,6.5302
+dweight,tiny_sliced,array,cupy,im2col,1,1,1,12,1,1,32,15,99.74600000000001,6.649733333333333
+dweight,tiny_sliced,array,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,97.408,6.4938666666666665
+dweight,tiny_sliced,array,native,cupy_copy__float32_float32,1,1,1,12,1,1,18,15,74.977,4.998466666666666
+dweight,tiny_sliced,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.70300000000002,5.9135333333333335
+dweight,tiny_sliced,array,native,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,99.29799999999999,6.619866666666667
+dweight,tiny_sliced,function,cupy,im2col,1,1,1,12,1,1,32,15,99.842,6.656133333333333
+dweight,tiny_sliced,function,cupy,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,98.36900000000001,6.557933333333334
+dweight,tiny_sliced,function,native,cupy_copy__float32_float32,1,1,1,12,1,1,18,15,75.108,5.0072
+dweight,tiny_sliced,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1,1,1,256,1,1,23,15,88.51299999999999,5.9008666666666665
+dweight,tiny_sliced,function,native,"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",1,1,1,8,16,1,159,15,99.039,6.6026
+dweight,large_channels_contiguous,array,cupy,im2col,2592,1,1,128,1,1,32,15,239.45600000000002,15.963733333333334
+dweight,large_channels_contiguous,array,cupy,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,122.33500000000001,8.155666666666667
+dweight,large_channels_contiguous,array,cupy,cupy_copy__float32_float32,2592,1,1,128,1,1,16,15,215.80999999999997,14.387333333333334
+dweight,large_channels_contiguous,array,cupy,ampere_sgemm_64x32_sliced1x4_nt,9,3,8,256,1,1,82,15,335.935,22.395666666666667
+dweight,large_channels_contiguous,array,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",18,6,1,32,16,1,32,15,115.39100000000002,7.692733333333333
+dweight,large_channels_contiguous,array,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1296,1,1,256,1,1,23,15,245.24999999999997,16.35
+dweight,large_channels_contiguous,array,native,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,100.928,6.728533333333333
+dweight,large_channels_contiguous,array,native,ampere_sgemm_32x32_sliced1x4_nn,18,3,4,128,1,1,86,15,307.841,20.522733333333335
+dweight,large_channels_contiguous,array,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",18,6,1,32,16,1,32,15,108.673,7.244866666666667
+dweight,large_channels_contiguous,function,cupy,im2col,2592,1,1,128,1,1,32,15,238.978,15.931866666666666
+dweight,large_channels_contiguous,function,cupy,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,122.65599999999999,8.177066666666667
+dweight,large_channels_contiguous,function,cupy,cupy_copy__float32_float32,2592,1,1,128,1,1,16,15,215.23200000000003,14.3488
+dweight,large_channels_contiguous,function,cupy,ampere_sgemm_64x32_sliced1x4_nt,9,3,8,256,1,1,82,15,336.03299999999996,22.4022
+dweight,large_channels_contiguous,function,cupy,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",18,6,1,32,16,1,32,15,114.84899999999999,7.6566
+dweight,large_channels_contiguous,function,native,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",1296,1,1,256,1,1,23,15,245.50499999999997,16.367
+dweight,large_channels_contiguous,function,native,cupy_copy__float32_float32,432,1,1,128,1,1,16,15,101.12100000000001,6.7414
+dweight,large_channels_contiguous,function,native,ampere_sgemm_32x32_sliced1x4_nn,18,3,4,128,1,1,86,15,309.21400000000006,20.614266666666666
+dweight,large_channels_contiguous,function,native,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",18,6,1,32,16,1,32,15,108.35300000000001,7.223533333333333
+pool_backward,tiny_net_pool,array,cupy,cupy_arange__int_int_int64,8,1,1,128,1,1,22,15,80.86299999999999,5.390866666666667
+pool_backward,tiny_net_pool,array,cupy,cupy_add__int64_int64_int64,8,1,1,128,1,1,24,15,87.20100000000001,5.8134
+pool_backward,tiny_net_pool,array,cupy,cupy_scatter_update,8,1,1,128,1,1,30,15,100.03100000000002,6.668733333333333
+pool_backward,tiny_net_pool,array,cupy,col2im,32,1,1,128,1,1,32,15,157.089,10.4726
+pool_backward,tiny_net_pool,array,native,cupy_arange__int_int_int64,8,1,1,128,1,1,22,15,81.11999999999999,5.408
+pool_backward,tiny_net_pool,array,native,cupy_add__int64_int64_int64,8,1,1,128,1,1,24,15,87.2,5.8133333333333335
+pool_backward,tiny_net_pool,array,native,cupy_scatter_update,8,1,1,128,1,1,30,15,100.128,6.675199999999999
+pool_backward,tiny_net_pool,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",16,1,1,256,1,1,38,15,132.706,8.847066666666667
+pool_backward,tiny_net_pool,function,cupy,cupy_arange__int_int_int64,8,1,1,128,1,1,22,15,79.93499999999999,5.329
+pool_backward,tiny_net_pool,function,cupy,cupy_add__int64_int64_int64,8,1,1,128,1,1,24,15,87.01300000000002,5.800866666666667
+pool_backward,tiny_net_pool,function,cupy,cupy_scatter_update,8,1,1,128,1,1,30,15,100.06400000000004,6.670933333333333
+pool_backward,tiny_net_pool,function,cupy,col2im,32,1,1,128,1,1,32,15,157.154,10.476933333333333
+pool_backward,tiny_net_pool,function,native,cupy_arange__int_int_int64,8,1,1,128,1,1,22,15,79.29599999999999,5.2864
+pool_backward,tiny_net_pool,function,native,cupy_add__int64_int64_int64,8,1,1,128,1,1,24,15,86.40000000000002,5.76
+pool_backward,tiny_net_pool,function,native,cupy_scatter_update,8,1,1,128,1,1,30,15,100.22500000000002,6.681666666666667
+pool_backward,tiny_net_pool,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",16,1,1,256,1,1,38,15,132.416,8.827733333333335
+pool_backward,overlap_pool,array,cupy,cupy_arange__int_int_int64,126,1,1,128,1,1,22,15,85.15199999999999,5.6768
+pool_backward,overlap_pool,array,cupy,cupy_add__int64_int64_int64,126,1,1,128,1,1,24,15,96.384,6.4256
+pool_backward,overlap_pool,array,cupy,cupy_scatter_update,126,1,1,128,1,1,30,15,110.11100000000002,7.3407333333333336
+pool_backward,overlap_pool,array,cupy,col2im,126,1,1,128,1,1,32,15,268.35200000000003,17.890133333333335
+pool_backward,overlap_pool,array,native,cupy_arange__int_int_int64,126,1,1,128,1,1,22,15,85.471,5.698066666666667
+pool_backward,overlap_pool,array,native,cupy_add__int64_int64_int64,126,1,1,128,1,1,24,15,96.95900000000002,6.463933333333333
+pool_backward,overlap_pool,array,native,cupy_scatter_update,126,1,1,128,1,1,30,15,110.14400000000003,7.342933333333334
+pool_backward,overlap_pool,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,169.31300000000002,11.287533333333332
+pool_backward,overlap_pool,function,cupy,cupy_arange__int_int_int64,126,1,1,128,1,1,22,15,86.589,5.7726
+pool_backward,overlap_pool,function,cupy,cupy_add__int64_int64_int64,126,1,1,128,1,1,24,15,96.80100000000002,6.4534
+pool_backward,overlap_pool,function,cupy,cupy_scatter_update,126,1,1,128,1,1,30,15,110.11200000000001,7.340800000000001
+pool_backward,overlap_pool,function,cupy,col2im,126,1,1,128,1,1,32,15,268.38300000000004,17.892200000000003
+pool_backward,overlap_pool,function,native,cupy_arange__int_int_int64,126,1,1,128,1,1,22,15,86.91199999999999,5.794133333333333
+pool_backward,overlap_pool,function,native,cupy_add__int64_int64_int64,126,1,1,128,1,1,24,15,96.47900000000001,6.431933333333333
+pool_backward,overlap_pool,function,native,cupy_scatter_update,126,1,1,128,1,1,30,15,110.04900000000004,7.336600000000001
+pool_backward,overlap_pool,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",63,1,1,256,1,1,38,15,168.896,11.259733333333333
+pool_backward,asym_pool,array,cupy,cupy_arange__int_int_int64,1,1,1,108,1,1,22,15,70.784,4.718933333333333
+pool_backward,asym_pool,array,cupy,cupy_add__int64_int64_int64,1,1,1,108,1,1,24,15,77.05499999999999,5.1370000000000005
+pool_backward,asym_pool,array,cupy,cupy_scatter_update,1,1,1,108,1,1,30,15,91.233,6.0822
+pool_backward,asym_pool,array,cupy,col2im,5,1,1,128,1,1,32,15,322.84800000000007,21.523200000000003
+pool_backward,asym_pool,array,native,cupy_arange__int_int_int64,1,1,1,108,1,1,22,15,70.943,4.729533333333333
+pool_backward,asym_pool,array,native,cupy_add__int64_int64_int64,1,1,1,108,1,1,24,15,76.705,5.113666666666667
+pool_backward,asym_pool,array,native,cupy_scatter_update,1,1,1,108,1,1,30,15,91.42399999999998,6.0949333333333335
+pool_backward,asym_pool,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",3,1,1,256,1,1,38,15,138.21200000000002,9.214133333333333
+pool_backward,asym_pool,function,cupy,cupy_arange__int_int_int64,1,1,1,108,1,1,22,15,69.79199999999999,4.6528
+pool_backward,asym_pool,function,cupy,cupy_add__int64_int64_int64,1,1,1,108,1,1,24,15,76.605,5.107
+pool_backward,asym_pool,function,cupy,cupy_scatter_update,1,1,1,108,1,1,30,15,91.26299999999998,6.0842
+pool_backward,asym_pool,function,cupy,col2im,5,1,1,128,1,1,32,15,321.85200000000003,21.4568
+pool_backward,asym_pool,function,native,cupy_arange__int_int_int64,1,1,1,108,1,1,22,15,69.82399999999998,4.654933333333333
+pool_backward,asym_pool,function,native,cupy_add__int64_int64_int64,1,1,1,108,1,1,24,15,76.512,5.1008000000000004
+pool_backward,asym_pool,function,native,cupy_scatter_update,1,1,1,108,1,1,30,15,91.202,6.080133333333333
+pool_backward,asym_pool,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",3,1,1,256,1,1,38,15,137.15099999999998,9.1434
+pool_backward,negative_pool,array,cupy,cupy_arange__int_int_int64,1,1,1,126,1,1,22,15,69.472,4.631466666666666
+pool_backward,negative_pool,array,cupy,cupy_add__int64_int64_int64,1,1,1,126,1,1,24,15,76.064,5.0709333333333335
+pool_backward,negative_pool,array,cupy,cupy_scatter_update,1,1,1,126,1,1,30,15,89.662,5.9774666666666665
+pool_backward,negative_pool,array,cupy,col2im,1,1,1,126,1,1,32,15,204.481,13.632066666666667
+pool_backward,negative_pool,array,native,cupy_arange__int_int_int64,1,1,1,126,1,1,22,15,69.663,4.6442
+pool_backward,negative_pool,array,native,cupy_add__int64_int64_int64,1,1,1,126,1,1,24,15,76.80099999999999,5.120066666666667
+pool_backward,negative_pool,array,native,cupy_scatter_update,1,1,1,126,1,1,30,15,89.91900000000001,5.9946
+pool_backward,negative_pool,array,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,126.62299999999999,8.441533333333334
+pool_backward,negative_pool,function,cupy,cupy_arange__int_int_int64,1,1,1,126,1,1,22,15,70.848,4.723199999999999
+pool_backward,negative_pool,function,cupy,cupy_add__int64_int64_int64,1,1,1,126,1,1,24,15,77.18099999999998,5.1454
+pool_backward,negative_pool,function,cupy,cupy_scatter_update,1,1,1,126,1,1,30,15,90.52800000000002,6.0352
+pool_backward,negative_pool,function,cupy,col2im,1,1,1,126,1,1,32,15,205.47299999999996,13.6982
+pool_backward,negative_pool,function,native,cupy_arange__int_int_int64,1,1,1,126,1,1,22,15,71.041,4.736066666666667
+pool_backward,negative_pool,function,native,cupy_add__int64_int64_int64,1,1,1,126,1,1,24,15,76.51399999999998,5.100933333333334
+pool_backward,negative_pool,function,native,cupy_scatter_update,1,1,1,126,1,1,30,15,90.24000000000001,6.016
+pool_backward,negative_pool,function,native,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",1,1,1,256,1,1,38,15,127.61600000000001,8.507733333333334

@@ -1,0 +1,68 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 192,
+    "measured_step_total_s": 0.9503959310241044,
+    "mean_step_s": 0.00494997880741721,
+    "samples_per_sec": 808.0842677561102,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 4,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 0.2,
+    "gpu_utilization_pct_mean": 24.0,
+    "gpu_utilization_pct_max": 39.0,
+    "gpu_memory_used_mib_mean": 499.0,
+    "gpu_memory_used_mib_max": 499.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 28.75,
+    "gpu_temperature_c_max": 29.0,
+    "gpu_power_w_mean": 47.682500000000005,
+    "gpu_power_w_max": 48.06,
+    "cpu_utilization_pct_mean": 2.5250000000000004,
+    "cpu_utilization_pct_max": 4.7,
+    "process_rss_mib_mean": 540.22265625,
+    "process_rss_mib_max": 540.22265625,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266056381922681,
+      "train_wall_s": 0.33274165401235223,
+      "samples": 256,
+      "train_samples_per_sec": 769.365653241889
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0004873677125942777,
+      "train_wall_s": 0.32162760896608233,
+      "samples": 256,
+      "train_samples_per_sec": 795.9515690302471
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126575373098603,
+      "train_wall_s": 0.32385576516389847,
+      "samples": 256,
+      "train_samples_per_sec": 790.4753521075727
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 1536,
+    "conv_im2col": 960
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": "3966bba37018bf878414e8d8764afc39aa706a4e2d2a157aa972d6a82df70184"
+}

@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/opt/nvidia/nsight-compute/2025.2.1/ncu",
+    "--clock-control",
+    "none",
+    "--pipeline-boost-state",
+    "dynamic",
+    "--cache-control",
+    "none",
+    "--launch-count",
+    "1",
+    "--export",
+    "/home/xieminhui_pubuse/hytorch/runs/ncu_availability_check/recheck_20261108T082100Z/basic",
+    "--set",
+    "basic",
+    "/home/xieminhui_pubuse/hytorch-env/bin/python",
+    "-c",
+    "import torch; a=torch.ones((512,512),device=\"cuda\"); b=a+a; torch.cuda.synchronize(); print(b[0,0].item())"
+  ],
+  "started_utc": "2026-11-08T08:21:01.193291+00:00",
+  "ended_utc": "2026-11-08T08:21:03.881444+00:00",
+  "exit_code": 9
+}

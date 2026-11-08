@@ -1,0 +1,20 @@
+警告: 未找到scipy，无法加载SVHN数据集
+1/18 dweight conv1_contiguous
+2/18 dweight conv2_contiguous
+3/18 dweight conv3_contiguous
+4/18 dweight conv4_contiguous
+5/18 dweight conv5_contiguous
+6/18 dweight overlap_contiguous
+7/18 dweight nonoverlap_contiguous
+8/18 dweight asymmetric_contiguous
+9/18 dweight asymmetric_sliced
+10/18 dweight holes_contiguous
+11/18 dweight narrow_contiguous
+12/18 dweight tiny_contiguous
+13/18 dweight tiny_sliced
+14/18 dweight large_channels_contiguous
+15/18 pool_backward tiny_net_pool
+16/18 pool_backward overlap_pool
+17/18 pool_backward asym_pool
+18/18 pool_backward negative_pool
+FINISHED

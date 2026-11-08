@@ -1,0 +1,9 @@
+{
+  "steps": 20,
+  "activity_span_us": 95451.412,
+  "observed_kernel_copy_memset_busy_union_us": 33362.13,
+  "observed_gap_fraction": 0.6504804978683815,
+  "kernel_busy_union_us": 32563.984,
+  "kernels_per_step": 142.0,
+  "interpretation": "gaps in recorded kernel/copy/memset timeline, not SM occupancy; profiler overhead changes host scheduling"
+}

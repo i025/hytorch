@@ -1,0 +1,417 @@
+[
+  {
+    "path": "hytorch/__init__.py",
+    "sha256": "491f8ed4a3b2a440e9dfd69876ffb09de72d2b7401dbdad02726862f88c79b42",
+    "bytes": 1544
+  },
+  {
+    "path": "hytorch/augmentations.py",
+    "sha256": "fc4196439b90f598c32ac38eaebe084ddb49a38aaf1f8274d11a29c422e573a4",
+    "bytes": 5292
+  },
+  {
+    "path": "hytorch/backends/__init__.py",
+    "sha256": "cfe10c731da79c6d1b04ae6cdbd40b3ce62e249268f58bd9bc2cef495e673d6e",
+    "bytes": 79
+  },
+  {
+    "path": "hytorch/backends/cpu/__init__.py",
+    "sha256": "4eba96a1b96bfe84c4aadb738c7afa8d2559ea77f89c5c6f8a6f7158647378e0",
+    "bytes": 63
+  },
+  {
+    "path": "hytorch/backends/cpu/gemm.py",
+    "sha256": "4c41ca001643d1901d80d8fcb1349eb84e0fa7ae9dc53b85c3fc9f3f652fa580",
+    "bytes": 7712
+  },
+  {
+    "path": "hytorch/backends/cuda/__init__.py",
+    "sha256": "97d72d162f35ce975d7f5bc7c81ce385f73f9fa5fa420e0ef315973c9a84e6e6",
+    "bytes": 206
+  },
+  {
+    "path": "hytorch/backends/cuda/build/build.json",
+    "sha256": "44043e448f16f3959aa7ebd803ec7d62f2ad97ce6be472c4d5d6cc5d2bb4d144",
+    "bytes": 740
+  },
+  {
+    "path": "hytorch/backends/cuda/build/build.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "hytorch/backends/cuda/build/libhytorch_cuda.so",
+    "sha256": "ead6af170bc71039542c6c2d992ce5b41d88875df5e969a9ae1ec7779b4e4ab2",
+    "bytes": 362736
+  },
+  {
+    "path": "hytorch/backends/cuda/kernels.cu",
+    "sha256": "7d89c71136dfc543c14e75133344c0d2c3bebfffcbca2940d6d2fa2033e8fcf6",
+    "bytes": 14268
+  },
+  {
+    "path": "hytorch/backends/cuda/runtime.py",
+    "sha256": "6402dae745c39d26697c1c25ddc6c38c46ca0c1e54fb6a4cd46ba667fd0206dc",
+    "bytes": 15256
+  },
+  {
+    "path": "hytorch/callbacks.py",
+    "sha256": "e7f3d21879a655c625e1a5627927425e8892b9f31002079f6e381766b2898bc1",
+    "bytes": 5537
+  },
+  {
+    "path": "hytorch/core.py",
+    "sha256": "fd03dc6195f550ffe70cbd7c168f2949b8a2d254ef9b7e635fce03877f772755",
+    "bytes": 12542
+  },
+  {
+    "path": "hytorch/core_simple.py",
+    "sha256": "dc58aaa64d3049b621c631e522eee6425f01909858c19244c033eeb976b0aaeb",
+    "bytes": 7538
+  },
+  {
+    "path": "hytorch/cuda.py",
+    "sha256": "96fd77d7504bd0acab0e00b1cfb80e0a03aa3141b8c482318a6ed2ba2f351ef1",
+    "bytes": 1423
+  },
+  {
+    "path": "hytorch/dataloaders.py",
+    "sha256": "02cad50a7596808f7e0e275f7095bbccaffc84d4c4f09bc2d224e488540355a4",
+    "bytes": 7988
+  },
+  {
+    "path": "hytorch/datasets.py",
+    "sha256": "8a68bdfde4a32abfedeb1543d9a695df2d7e77ba4a3945b20b13692ed255fa74",
+    "bytes": 19841
+  },
+  {
+    "path": "hytorch/distributed/__init__.py",
+    "sha256": "f5f2bd7a37ffde5c8d62832a291c681eed828b06e37c7d423e082654f4d59b7a",
+    "bytes": 565
+  },
+  {
+    "path": "hytorch/distributed/benchmark.py",
+    "sha256": "daad5c3130cb367102bc34680be129adb6d55af7c152923afcf4e0641f353f36",
+    "bytes": 11277
+  },
+  {
+    "path": "hytorch/distributed/config.py",
+    "sha256": "41528f87724fb7cdf031150e8bb428d7e0f95dff54094f0b0d8e76345a386ea2",
+    "bytes": 4913
+  },
+  {
+    "path": "hytorch/distributed/launcher.py",
+    "sha256": "f993cee65fc4467e67c955c0fdc1b0b6034d06010b7ce17383c347d15032b71c",
+    "bytes": 9685
+  },
+  {
+    "path": "hytorch/distributed/monitor.py",
+    "sha256": "36234853356aebec2f68795435cfa1a9bf7a33e4e20ed13eaa55241ee9cf39bf",
+    "bytes": 6659
+  },
+  {
+    "path": "hytorch/distributed/protocol.py",
+    "sha256": "b5dd3769e371cfb238053664b347da275c6550627290e6ab558f337eb6c790f9",
+    "bytes": 4919
+  },
+  {
+    "path": "hytorch/distributed/ring.py",
+    "sha256": "6e7be388547a8c99cc881592ab2718c9d017dddc705a47fda77ed74e99106a33",
+    "bytes": 8680
+  },
+  {
+    "path": "hytorch/distributed/ring_worker.py",
+    "sha256": "0d5066dd50f85979f051726db36cd4ec0e3792078e52d18c9fddfea86aa6ecf9",
+    "bytes": 10238
+  },
+  {
+    "path": "hytorch/distributed/server.py",
+    "sha256": "265dab8be358cdd354f0645d6008ce719ddd8e3f8298918a12aa98833b9e1ed2",
+    "bytes": 13413
+  },
+  {
+    "path": "hytorch/distributed/task.py",
+    "sha256": "27b1a90a89cca46259816314f1b0d3fc4fae6e27ea51ec59383857e7164b9ebb",
+    "bytes": 3955
+  },
+  {
+    "path": "hytorch/distributed/transport.py",
+    "sha256": "c835340d26825a51eba6aa81c5585562ed121c092dca4cd25186e4bf738f0547",
+    "bytes": 5376
+  },
+  {
+    "path": "hytorch/distributed/windows_monitor.py",
+    "sha256": "93fedaaae8148373ea834023eb6bdf9b585ecf13412261ad169468795ef925aa",
+    "bytes": 3506
+  },
+  {
+    "path": "hytorch/distributed/worker.py",
+    "sha256": "78ac71445f8603faacba49e42433d8ca5f5f037d896061527a49f09d2c3b8af1",
+    "bytes": 13202
+  },
+  {
+    "path": "hytorch/functions.py",
+    "sha256": "b07918e6318aef94b57c69051bcfff58b41deaf756959c528c9f9bb8f94a56d8",
+    "bytes": 22039
+  },
+  {
+    "path": "hytorch/functions_conv.py",
+    "sha256": "38d52b2a84b50f27c29d10db65b24ee195193dd7be70f8ba338fb7b27d25b407",
+    "bytes": 22088
+  },
+  {
+    "path": "hytorch/layers.py",
+    "sha256": "1de813480b7592642b254502b96eb438cbda6bd5446a34537cf3c074e90e4c60",
+    "bytes": 18382
+  },
+  {
+    "path": "hytorch/metrics.py",
+    "sha256": "c057efbbf608a656626385993d4c25731d30f1e982aeea768ed54691bfe24798",
+    "bytes": 5804
+  },
+  {
+    "path": "hytorch/model_zoo.py",
+    "sha256": "385a8a065f7180061deb99b9e37ce99b95e097f774b3dd2527ae9d22df518324",
+    "bytes": 6281
+  },
+  {
+    "path": "hytorch/models.py",
+    "sha256": "740ca520609e56d5d74af55dc8e9c45c0cbda131d6358593ac9116809a3c7a7d",
+    "bytes": 11088
+  },
+  {
+    "path": "hytorch/onnx.py",
+    "sha256": "83b0c75d26265a79c4e076380d67b1df151585ba038afda10c3917268e48cdc3",
+    "bytes": 14082
+  },
+  {
+    "path": "hytorch/optimizers.py",
+    "sha256": "3c6847e538f5bf77d1d72b8586ac19b331662df7d0df2350c51714c10d92a2d9",
+    "bytes": 7870
+  },
+  {
+    "path": "hytorch/profiling.py",
+    "sha256": "3f351897d685c84bb3c98107f21b97303ab59efdc3b0c23705fe8c31a3c0cb4b",
+    "bytes": 9015
+  },
+  {
+    "path": "hytorch/quantization.py",
+    "sha256": "444e86fe38e9e3e07a8405a3d22f990877a83f9a509a2d85c7b8de86ed2b2303",
+    "bytes": 7898
+  },
+  {
+    "path": "hytorch/recorder.py",
+    "sha256": "ea0a73c153ee452dc3b51d7c5cfd4322b2439a41908190f62eb20779e879129d",
+    "bytes": 4120
+  },
+  {
+    "path": "hytorch/run_inspector.py",
+    "sha256": "95adb570ae5531a302cfdc0219fc5dac034de93c9ccedfb46576aa805e61ce48",
+    "bytes": 6909
+  },
+  {
+    "path": "hytorch/training.py",
+    "sha256": "c74b4f3597aeaa35a4ff1b621cab0a002ed1dc10c2d1f5de3fd4ff1cea5d8a25",
+    "bytes": 8941
+  },
+  {
+    "path": "hytorch/transformer/BeamSearch.py",
+    "sha256": "0e1abb29317e0e3d5cae9e06498fcaef2d73a30f26c59ba8ff1ca3c413637da8",
+    "bytes": 5074
+  },
+  {
+    "path": "hytorch/transformer/BeamSearchKV.py",
+    "sha256": "37fee3d4d409d2e4c9f280ad62cd29f972eedf013467d90a2fb6b0a11106e95f",
+    "bytes": 4028
+  },
+  {
+    "path": "hytorch/transformer/__init__.py",
+    "sha256": "dca71392934f83773f84c9668df9c85eb85db876acacc17ae5591e23bd6e4a04",
+    "bytes": 720
+  },
+  {
+    "path": "hytorch/transformer/attention.py",
+    "sha256": "3997be093fa8266de0506f03fedb949b5e8473c22d5b2d2de212e0549ca6c801",
+    "bytes": 2316
+  },
+  {
+    "path": "hytorch/transformer/decoder.py",
+    "sha256": "bdadf9b7abe0f788edca8fe07174d9ca4ef69aa6daf298b14af53cdf0ca7120a",
+    "bytes": 891
+  },
+  {
+    "path": "hytorch/transformer/decoder_block.py",
+    "sha256": "7f8a52a1d6bd87ea9de8d945c5d4270ebf7938bbe90790c6d97b587d2278ffe2",
+    "bytes": 1540
+  },
+  {
+    "path": "hytorch/transformer/decoder_only.py",
+    "sha256": "fb611df669e5a8c92b9fcf0ef7b4e00f1418460da5f20dc5fc618cc9cb80fce6",
+    "bytes": 847
+  },
+  {
+    "path": "hytorch/transformer/embedding.py",
+    "sha256": "1b15a76c08a3337bd907fcacb818e202abaf4f8ad0036abbcc256c955753b1b1",
+    "bytes": 2732
+  },
+  {
+    "path": "hytorch/transformer/encoder.py",
+    "sha256": "8c6574e1904f229a05652b1f5ba724c5b7f84cf455b5504f3cb0268e20ffab4a",
+    "bytes": 956
+  },
+  {
+    "path": "hytorch/transformer/encoder_block.py",
+    "sha256": "6d9951a18525ce5ec7b0d9068acb8d5f96e38466637c09ef55f2f558ca4b68e5",
+    "bytes": 1128
+  },
+  {
+    "path": "hytorch/transformer/feedforward.py",
+    "sha256": "dc7c682731018ccc17db5b7e997a560cc84587503e6ce5ff57b56a933a470d89",
+    "bytes": 639
+  },
+  {
+    "path": "hytorch/transformer/masks.py",
+    "sha256": "f54614d445591a6548c1a1458aed44e126c307a89d0b5dcb0c26cad351cb46c6",
+    "bytes": 783
+  },
+  {
+    "path": "hytorch/transformer/seq2seq_wrapper.py",
+    "sha256": "0fe15fd7c17bdf83e0e696c6054775771a0da9f0b51a35e6d18defbe5bdd3c2e",
+    "bytes": 6299
+  },
+  {
+    "path": "hytorch/transformer/transformer.py",
+    "sha256": "d2672610ee6443311cfdf3bb7753ee67f7e13d9fb96c54a4b7cf843a84309521",
+    "bytes": 788
+  },
+  {
+    "path": "hytorch/transforms.py",
+    "sha256": "42bba19aef355d9bfe43168d2a8005c987fa2e7b400a31ac53083894c33a4641",
+    "bytes": 19090
+  },
+  {
+    "path": "hytorch/utils.py",
+    "sha256": "8c9b1bedb7ae0878c6e4a96b63d8a5c793ae72a1fc23582944a20645b1ae6e3d",
+    "bytes": 12366
+  },
+  {
+    "path": "hytorch/utils_data.py",
+    "sha256": "c241402c1d047745c10264d2137b4085e63513266ff8d98d7bef412e2fd78d9c",
+    "bytes": 7080
+  },
+  {
+    "path": "hytorch/visualizer.py",
+    "sha256": "56aeae8d9df55525a0d47013665e53ba95cee0274d88dcd69761b496809f5018",
+    "bytes": 15363
+  },
+  {
+    "path": "tests/test_backward_dtype.py",
+    "sha256": "d49672155532672025438cc1584bccc29ce178cdfa969cdb8badb78bf864f6de",
+    "bytes": 6885
+  },
+  {
+    "path": "tests/test_col2im_binding.py",
+    "sha256": "860366e04a7e18ec133c642a2bbc5afc931890af69e43fd378aef16fbf2ae246",
+    "bytes": 3458
+  },
+  {
+    "path": "tests/test_col2im_cuda.py",
+    "sha256": "ee9eb9f4e54550e4010cc0fe46430989f7a5bfe667bdb6208e3641258ce8d471",
+    "bytes": 6279
+  },
+  {
+    "path": "tests/test_col2im_host.py",
+    "sha256": "e27a429046f3f27e7d69d4af5b3e084165492b2f096e06876a236bcc69dd2506",
+    "bytes": 535
+  },
+  {
+    "path": "tests/test_conv2d_gemm_cpu.py",
+    "sha256": "4617c1034cc0ec5ccb01c241340d2efea937678889923af12fc584960ccc2aa6",
+    "bytes": 1938
+  },
+  {
+    "path": "tests/test_cuda_device.py",
+    "sha256": "d76df2c639a53b1fdbf3673effa7f74430e242489b55b2d65df779380e4f0ff2",
+    "bytes": 5571
+  },
+  {
+    "path": "tests/test_cuda_host.py",
+    "sha256": "0afdbffbfa9182b67b892c06145c5dec3438ba8c7d5bcb3e73cf29b74e337eab",
+    "bytes": 6081
+  },
+  {
+    "path": "tests/test_final_optimization.py",
+    "sha256": "8dc48a9bd6d4c94135ce09e468f0c2dbd89880df017a22a416d1958e809c9879",
+    "bytes": 8137
+  },
+  {
+    "path": "tests/test_framework_metadata.py",
+    "sha256": "328de75ba22cc4f86436742ef4a71ce0c13f20f8544a8464bc3ae155de690655",
+    "bytes": 4074
+  },
+  {
+    "path": "tests/test_gemm_blocked_packed.py",
+    "sha256": "84071f7e5e7d6fae984b37c3becfea1d1e253d95298fb4edda4f2abb7dab773e",
+    "bytes": 1879
+  },
+  {
+    "path": "tests/test_gemm_dispatch.py",
+    "sha256": "3276e5f1c7486c6ebdc7e3db8a4539537bb0cfca104663dcd1f883eedfd903ee",
+    "bytes": 3337
+  },
+  {
+    "path": "benchmarks/bench_cuda_gemm.py",
+    "sha256": "ffa72ae73a82c4b6b4b73cc29e69def0e58fad4b58e93c6fcb21ce3b727aa5c5",
+    "bytes": 6936
+  },
+  {
+    "path": "benchmarks/bench_cuda_ops.py",
+    "sha256": "8670e6227c1c5ebbe05620d1fc23f6e8e13be50780efb9873be5d0cdec916f20",
+    "bytes": 3637
+  },
+  {
+    "path": "benchmarks/bench_cuda_revisions.py",
+    "sha256": "10aa1f5200cfc2b40dc9f1bf17113449af2a9f987909628beab90f291f5961cb",
+    "bytes": 5413
+  },
+  {
+    "path": "benchmarks/bench_cuda_training.py",
+    "sha256": "6975e28bc708cbef0f851cc8fcc14b9ef0106c5342fc218dcff3a8101a679428",
+    "bytes": 14359
+  },
+  {
+    "path": "donkeycar_hy/model.py",
+    "sha256": "e0373d80b271012026d15f2b55bbe7ff90b39befd6aa02f1a414b74dd43c4931",
+    "bytes": 4548
+  },
+  {
+    "path": "donkeycar_hy/tub_dataset.py",
+    "sha256": "875a3c4bd0c17817da892438bc32ebb4655798e62a6c49e11e0115ba4cb9fb36",
+    "bytes": 5113
+  },
+  {
+    "path": "scripts/build_cuda.py",
+    "sha256": "b4b8f7708114897775331820c42a1000ca504c189cb708cdc0d4b43ae16647d4",
+    "bytes": 2365
+  },
+  {
+    "path": "scripts/convert_imagenet_weights.py",
+    "sha256": "e37dac3a7a4a50bcf4d9fd3c20d66053965006b3c0c5d9685dd083d1d75cc668",
+    "bytes": 3364
+  },
+  {
+    "path": "scripts/report_cuda.py",
+    "sha256": "a74766b02a0aa67928619159a18b28738bc061f6971436c77c759ea520b3833f",
+    "bytes": 7628
+  },
+  {
+    "path": "scripts/run_cuda_comparison.py",
+    "sha256": "3a074a102817c616d661b6b05c8caafb97f9ca5d25a3c862f2c83448f8f07b7d",
+    "bytes": 2703
+  },
+  {
+    "path": "scripts/validate_cuda.py",
+    "sha256": "6467c2790f35a19ec3e8cc3277a0d16d0a073ee147a5c044e3b4a99e2ecd231c",
+    "bytes": 1839
+  }
+]

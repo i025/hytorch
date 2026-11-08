@@ -1,0 +1,30 @@
+{
+  "rows": [
+    {
+      "diff": "float16",
+      "gy": "float16",
+      "scale": "float16"
+    },
+    {
+      "diff": "float32",
+      "gy": "float32",
+      "scale": "float32"
+    },
+    {
+      "diff": "float64",
+      "gy": "float64",
+      "scale": "float64"
+    },
+    {
+      "diff": "int64",
+      "gy": "float64",
+      "scale": "float64"
+    },
+    {
+      "diff": "float32",
+      "gy": "float64",
+      "scale": "float64"
+    }
+  ],
+  "note": "CuPy dtype-only computation, no CUDA context or GPU work. Final result_type guard preserves the GPU-tested homogeneous FP32/FP64 coefficient types; integer guard verified on CPU."
+}

@@ -1,0 +1,68 @@
+{
+  "status": "COMPLETED",
+  "gpu_status": "EXECUTED",
+  "timing": {
+    "steps": 192,
+    "measured_step_total_s": 0.9514413080178201,
+    "mean_step_s": 0.00495542347925948,
+    "samples_per_sec": 807.1964014259676,
+    "mode": "throughput",
+    "phase_fraction": {}
+  },
+  "hardware": {
+    "sample_count": 4,
+    "scope": "whole_device",
+    "memory_peak_kind": "sampled_device_peak_including_other_processes",
+    "sampling_interval_s": 0.2,
+    "gpu_utilization_pct_mean": 23.5,
+    "gpu_utilization_pct_max": 39.0,
+    "gpu_memory_used_mib_mean": 499.0,
+    "gpu_memory_used_mib_max": 499.0,
+    "gpu_memory_total_mib_mean": 40960.0,
+    "gpu_memory_total_mib_max": 40960.0,
+    "gpu_temperature_c_mean": 28.75,
+    "gpu_temperature_c_max": 29.0,
+    "gpu_power_w_mean": 47.5375,
+    "gpu_power_w_max": 48.16,
+    "cpu_utilization_pct_mean": 1.225,
+    "cpu_utilization_pct_max": 1.4,
+    "process_rss_mib_mean": 540.482421875,
+    "process_rss_mib_max": 540.546875,
+    "errors": [],
+    "time_scope": "training_and_validation_excluding_warmup"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0007266056381922681,
+      "train_wall_s": 0.33266228809952736,
+      "samples": 256,
+      "train_samples_per_sec": 769.5492069825744
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0004873677125942777,
+      "train_wall_s": 0.32234612898901105,
+      "samples": 256,
+      "train_samples_per_sec": 794.177367052319
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.00038126575373098603,
+      "train_wall_s": 0.3245509550906718,
+      "samples": 256,
+      "train_samples_per_sec": 788.7821495656351
+    }
+  ],
+  "dispatch_counts": {
+    "gemm_shared": 1536,
+    "conv_im2col": 960
+  },
+  "bottleneck_hypotheses": [
+    {
+      "observation": "Mean sampled device utilization below 50%",
+      "next_action": "Check data waits and small kernel launches on timeline; not proof of either"
+    }
+  ],
+  "final_state_sha256": "3966bba37018bf878414e8d8764afc39aa706a4e2d2a157aa972d6a82df70184"
+}

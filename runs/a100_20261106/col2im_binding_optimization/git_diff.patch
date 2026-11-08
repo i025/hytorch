@@ -1,0 +1,194 @@
+--- a/hytorch/backends/cuda/runtime.py
++++ b/hytorch/backends/cuda/runtime.py
+@@ -5,6 +5,9 @@
+ from contextlib import contextmanager
+ from contextvars import ContextVar
+ from collections import Counter
++from functools import lru_cache
++import operator
++import struct
+ import numpy as np
+ 
+ _config = ContextVar("hytorch_cuda_backend", default={
+@@ -65,10 +68,11 @@
+             "hy_conv_pack": [p]*3 + [i]*3 + [p],
+             "hy_pool": [p]*3 + [i]*12 + [p],
+             "hy_col2im": [p]*2 + [ct.c_int64]*18 + [p],
++            "hy_col2im_fast": [p, p, ct.c_char_p, p],
+         }
+         for name, args in signatures.items():
+             # Optional extension preserves loading older ABI-1 libraries.
+-            if name == "hy_col2im" and not hasattr(lib, name):
++            if name in ("hy_col2im", "hy_col2im_fast") and not hasattr(lib, name):
+                 continue
+             fn = getattr(lib, name)
+             fn.argtypes, fn.restype = args, ct.c_char_p if name == "hy_cuda_error" else i
+@@ -199,6 +203,29 @@
+     return mode
+ 
+ 
++@lru_cache(maxsize=128)
++def _col2im_metadata(img_shape, col_shape, byte_strides, stride, pad):
++    """Bounded, value-keyed immutable metadata only; no buffers, devices or streams."""
++    n,c,h,w = img_shape
++    cn,cc,kh,kw,oh,ow = col_shape
++    sh,sw = stride
++    ph,pw = pad
++    if min(n,c,h,w,kh,kw,oh,ow,sh,sw) <= 0 or min(ph,pw) < 0:
++        raise ValueError("Invalid col2im geometry")
++    if (n,c) != (cn,cc) or oh != (h+2*ph-kh)//sh+1 or ow != (w+2*pw-kw)//sw+1:
++        raise ValueError("col shape does not match image/kernel/stride/padding")
++    if any(v % 4 for v in byte_strides):
++        raise NotImplementedError("col strides must be integral element offsets")
++    strides = tuple(v // 4 for v in byte_strides)
++    limit = 2**63-1
++    if (max(n,c,h,w,kh,kw,oh,ow,sh,sw,ph,pw) > 2**31-1 or
++        n*c*h*w > limit or sum((d-1)*abs(s) for d,s in zip(col_shape,strides)) > limit):
++        raise NotImplementedError("col2im indexing exceeds supported int64 geometry")
++    values = (n,c,h,w,kh,kw,oh,ow,sh,sw,ph,pw,*strides)
++    # bytes are immutable, CPU-only, and kept alive throughout the synchronous ABI call.
++    return values, struct.pack("=18q", *values)
++
++
+ def col2im(col, img_shape, stride=1, pad=0, out=None):
+     """FP32 six-axis col view -> contiguous NCHW, preserving real signed strides.
+ 
+@@ -212,23 +239,14 @@
+         raise TypeError("Native col2im requires a CuPy float32 array")
+     if col.ndim != 6 or len(img_shape) != 4:
+         raise ValueError("col2im expects (N,C,KH,KW,OH,OW) and NCHW output")
+-    n, c, h, w = (operator.index(v) for v in img_shape)
+-    sh, sw = (operator.index(v) for v in pair(stride))
+-    ph, pw = (operator.index(v) for v in pair(pad))
+-    cn, cc, kh, kw, oh, ow = col.shape
+-    if min(n,c,h,w,kh,kw,oh,ow,sh,sw) <= 0 or min(ph,pw) < 0:
+-        raise ValueError("Invalid col2im geometry")
+-    if (n,c) != (cn,cc) or oh != (h+2*ph-kh)//sh+1 or ow != (w+2*pw-kw)//sw+1:
+-        raise ValueError("col shape does not match image/kernel/stride/padding")
++    # Normalize every call: cache equality must never admit float geometry keys.
++    img_shape = tuple(operator.index(v) for v in img_shape)
++    stride = tuple(operator.index(v) for v in pair(stride))
++    pad = tuple(operator.index(v) for v in pair(pad))
+     if col.device.id != cp.cuda.runtime.getDevice():
+         raise ValueError("col must belong to the current CUDA device")
+-    if any(v % col.itemsize for v in col.strides):
+-        raise NotImplementedError("col strides must be integral element offsets")
+-    strides = tuple(v // col.itemsize for v in col.strides)
+-    limit = 2**63-1
+-    if (max(n,c,h,w,kh,kw,oh,ow,sh,sw,ph,pw) > 2**31-1 or
+-        n*c*h*w > limit or sum((d-1)*abs(s) for d,s in zip(col.shape,strides)) > limit):
+-        raise NotImplementedError("col2im indexing exceeds supported int64 geometry")
++    metadata, packed = _col2im_metadata(img_shape, col.shape, col.strides, stride, pad)
++    n,c,h,w = img_shape
+     if not hasattr(load_library(), "hy_col2im"):
+         raise NotImplementedError("CUDA library has no col2im extension; rebuild to enable it")
+     if out is None:
+@@ -238,6 +256,10 @@
+         raise ValueError("out must be contiguous FP32 NCHW on the input device")
+     if cp.may_share_memory(col, out):
+         raise ValueError("out must not overlap col")
+-    _call("hy_col2im", _ptr(col), _ptr(out), n,c,h,w,kh,kw,oh,ow,sh,sw,ph,pw,*strides)
++    lib = load_library()
++    if hasattr(lib, "hy_col2im_fast"):
++        _call("hy_col2im_fast", _ptr(col), _ptr(out), packed)
++    else:
++        _call("hy_col2im", _ptr(col), _ptr(out), *metadata)
+     _counts["col2im_native"] += 1
+     return out
+--- a/hytorch/backends/cuda/kernels.cu
++++ b/hytorch/backends/cuda/kernels.cu
+@@ -248,3 +248,17 @@
+         kh,kw,oh,ow,sh,sw,ph,pw,s0,s1,s2,s3,s4,s5);
+     return (int)cudaGetLastError();
+ }
++
++// Optional ABI-1 host binding extension. Native-endian signed 64-bit POD fields.
++// Byte input is copied to an aligned local object; the caller owns it until return.
++struct Col2imParams { int64_t v[18]; };
++static_assert(sizeof(Col2imParams) == 144, "col2im POD size");
++static_assert(alignof(Col2imParams) == alignof(int64_t), "col2im POD alignment");
++API int hy_col2im_fast(const float* col, float* img, const void* params, void* stream) {
++    if (!params) return (int)cudaErrorInvalidValue;
++    Col2imParams p;
++    memcpy(&p, params, sizeof(p));
++    return hy_col2im(col,img,p.v[0],p.v[1],p.v[2],p.v[3],p.v[4],p.v[5],
++        p.v[6],p.v[7],p.v[8],p.v[9],p.v[10],p.v[11],p.v[12],p.v[13],
++        p.v[14],p.v[15],p.v[16],p.v[17],stream);
++}
+--- /dev/null
++++ b/tests/test_col2im_binding.py
+@@ -0,0 +1,74 @@
++"""Binding cache safety and optional ABI compatibility; no shape-specific fast paths."""
++import struct
++import numpy as np
++import pytest
++from hytorch.backends.cuda import runtime as rt
++from test_col2im_cuda import cp, scatter_reference
++
++
++def test_metadata_pod_layout_and_bound_cpu():
++    rt._col2im_metadata.cache_clear()
++    for w in range(1,151):
++        args=((1,1,1,w),(1,1,1,1,1,w),(4*w,4*w,4*w,4*w,4*w,4),(1,1),(0,0))
++        values,packed=rt._col2im_metadata(*args)
++        assert isinstance(values,tuple) and isinstance(packed,bytes)
++        assert len(packed)==144 and struct.unpack('=18q',packed)==values
++    assert rt._col2im_metadata.cache_info().currsize==128
++
++
++def test_cache_changes_buffers_streams(cp):
++    rt._col2im_metadata.cache_clear()
++    for repeat in range(3):
++        for w in [5,7,5]:
++            host=np.arange(2*3*3*5*w,dtype=np.float32).reshape(1,2,3,3,5,w)
++            col=cp.asarray(host);shape=(1,2,5,w)
++            if repeat==1:col=col[...,::-1]
++            if repeat==2:col=cp.broadcast_to(col[...,:1],col.shape)
++            out=cp.empty(shape,cp.float32)
++            cp.cuda.get_current_stream().synchronize()
++            stream=cp.cuda.Stream(non_blocking=True)
++            with stream:
++                rt.col2im(col,shape,pad=1,out=out)
++            stream.synchronize()
++            np.testing.assert_array_equal(cp.asnumpy(out),scatter_reference(cp.asnumpy(col),shape,(1,1),(1,1)))
++    # Same metadata, different live addresses: no pointers retained in the cache.
++    a=cp.ones((1,1,1,1,2,3),cp.float32);b=a*7
++    np.testing.assert_array_equal(cp.asnumpy(rt.col2im(a,(1,1,2,3))),np.ones((1,1,2,3),np.float32))
++    np.testing.assert_array_equal(cp.asnumpy(rt.col2im(b,(1,1,2,3))),np.full((1,1,2,3),7,np.float32))
++    assert rt._col2im_metadata.cache_info().hits>0
++
++
++def test_warm_cache_checks_each_call(cp,monkeypatch):
++    col=cp.ones((1,1,1,1,2,3),cp.float32);shape=(1,1,2,3)
++    rt.col2im(col,shape)
++    with pytest.raises(TypeError):rt.col2im(col,(1.,1,2,3))
++    with pytest.raises(TypeError):rt.col2im(col.astype(cp.float64),shape)
++    for out in [cp.empty(shape,cp.float64),cp.empty((1,1,3,2),cp.float32),cp.empty((1,1,2,6),cp.float32)[...,::2],col.reshape(shape)]:
++        with pytest.raises(ValueError):rt.col2im(col,shape,out=out)
++    # Mock current-device ID, without touching another user's GPU.
++    with monkeypatch.context() as m:
++        m.setattr(cp.cuda.runtime,'getDevice',lambda:col.device.id+1)
++        with pytest.raises(ValueError,match='current CUDA device'):rt.col2im(col,shape)
++    class WrongDeviceArray(cp.ndarray):
++        @property
++        def device(self):
++            class D:id=999
++            return D()
++    wrong=cp.empty(shape,cp.float32).view(type=WrongDeviceArray)
++    with pytest.raises(ValueError,match='input device'):rt.col2im(col,shape,out=wrong)
++    with pytest.raises(ValueError):rt.col2im(col,shape,stride=0)
++    with pytest.raises(ValueError):rt.col2im(col,shape,pad=-1)
++
++
++def test_legacy_col2im_abi_fallback(cp,monkeypatch):
++    lib=rt.load_library()
++    class Legacy:
++        hy_col2im=lib.hy_col2im
++        hy_cuda_error=lib.hy_cuda_error
++    monkeypatch.setattr(rt,'load_library',lambda:Legacy())
++    col=cp.ones((1,1,1,1,2,3),cp.float32)
++    np.testing.assert_array_equal(cp.asnumpy(rt.col2im(col,(1,1,2,3))),np.ones((1,1,2,3),np.float32))
++
++
++def test_fast_abi_null_params(cp):
++    assert rt.load_library().hy_col2im_fast(None,None,None,cp.cuda.get_current_stream().ptr)!=0

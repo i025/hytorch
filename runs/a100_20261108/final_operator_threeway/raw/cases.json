@@ -1,0 +1,2806 @@
+[
+  {
+    "op": "gemm",
+    "id": "real_12152_24_75",
+    "mnk": [
+      12152,
+      24,
+      75
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_2632_36_600",
+    "mnk": [
+      2632,
+      36,
+      600
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_440_48_900",
+    "mnk": [
+      440,
+      48,
+      900
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_240_64_432",
+    "mnk": [
+      240,
+      64,
+      432
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_72_64_576",
+    "mnk": [
+      72,
+      64,
+      576
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_4_100_1152",
+    "mnk": [
+      4,
+      100,
+      1152
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_4_50_100",
+    "mnk": [
+      4,
+      50,
+      100
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_4_1_50",
+    "mnk": [
+      4,
+      1,
+      50
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_4_50_1",
+    "mnk": [
+      4,
+      50,
+      1
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_50_1_4",
+    "mnk": [
+      50,
+      1,
+      4
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_4_100_50",
+    "mnk": [
+      4,
+      100,
+      50
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_100_50_4",
+    "mnk": [
+      100,
+      50,
+      4
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_4_1152_100",
+    "mnk": [
+      4,
+      1152,
+      100
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_1152_100_4",
+    "mnk": [
+      1152,
+      100,
+      4
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_576_72_64",
+    "mnk": [
+      576,
+      72,
+      64
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_64_576_72",
+    "mnk": [
+      64,
+      576,
+      72
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_432_240_64",
+    "mnk": [
+      432,
+      240,
+      64
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_64_432_240",
+    "mnk": [
+      64,
+      432,
+      240
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_900_440_48",
+    "mnk": [
+      900,
+      440,
+      48
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_48_900_440",
+    "mnk": [
+      48,
+      900,
+      440
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_600_2632_36",
+    "mnk": [
+      600,
+      2632,
+      36
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_36_600_2632",
+    "mnk": [
+      36,
+      600,
+      2632
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_75_12152_24",
+    "mnk": [
+      75,
+      12152,
+      24
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "real_24_75_12152",
+    "mnk": [
+      24,
+      75,
+      12152
+    ],
+    "origin": "instrumented",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_256_256_256",
+    "mnk": [
+      256,
+      256,
+      256
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_512_512_512",
+    "mnk": [
+      512,
+      512,
+      512
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_1024_1024_1024",
+    "mnk": [
+      1024,
+      1024,
+      1024
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_2048_2048_2048",
+    "mnk": [
+      2048,
+      2048,
+      2048
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_4096_4096_4096",
+    "mnk": [
+      4096,
+      4096,
+      4096
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_63_65_67",
+    "mnk": [
+      63,
+      65,
+      67
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_65_63_129",
+    "mnk": [
+      65,
+      63,
+      129
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_1025_127_259",
+    "mnk": [
+      1025,
+      127,
+      259
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_8192_16_75",
+    "mnk": [
+      8192,
+      16,
+      75
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_8_4096_257",
+    "mnk": [
+      8,
+      4096,
+      257
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_511_513_129",
+    "mnk": [
+      511,
+      513,
+      129
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "gemm",
+    "id": "ext_1024_512_256",
+    "mnk": [
+      1024,
+      512,
+      256
+    ],
+    "origin": "extension",
+    "layout": "contiguous"
+  },
+  {
+    "op": "im2col",
+    "id": "conv1_contiguous",
+    "spec": {
+      "id": "conv1",
+      "x": [
+        4,
+        3,
+        66,
+        200
+      ],
+      "oc": 24,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "conv",
+    "id": "conv1_contiguous",
+    "spec": {
+      "id": "conv1",
+      "x": [
+        4,
+        3,
+        66,
+        200
+      ],
+      "oc": 24,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "dweight",
+    "id": "conv1_contiguous",
+    "spec": {
+      "id": "conv1",
+      "x": [
+        4,
+        3,
+        66,
+        200
+      ],
+      "oc": 24,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv1_training",
+    "spec": {
+      "id": "conv1",
+      "x": [
+        4,
+        3,
+        66,
+        200
+      ],
+      "oc": 24,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv1_contiguous",
+    "spec": {
+      "id": "conv1",
+      "x": [
+        4,
+        3,
+        66,
+        200
+      ],
+      "oc": 24,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv1_negative",
+    "spec": {
+      "id": "conv1",
+      "x": [
+        4,
+        3,
+        66,
+        200
+      ],
+      "oc": 24,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "real"
+  },
+  {
+    "op": "im2col",
+    "id": "conv2_contiguous",
+    "spec": {
+      "id": "conv2",
+      "x": [
+        4,
+        24,
+        31,
+        98
+      ],
+      "oc": 36,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "conv",
+    "id": "conv2_contiguous",
+    "spec": {
+      "id": "conv2",
+      "x": [
+        4,
+        24,
+        31,
+        98
+      ],
+      "oc": 36,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "dweight",
+    "id": "conv2_contiguous",
+    "spec": {
+      "id": "conv2",
+      "x": [
+        4,
+        24,
+        31,
+        98
+      ],
+      "oc": 36,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv2_training",
+    "spec": {
+      "id": "conv2",
+      "x": [
+        4,
+        24,
+        31,
+        98
+      ],
+      "oc": 36,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv2_contiguous",
+    "spec": {
+      "id": "conv2",
+      "x": [
+        4,
+        24,
+        31,
+        98
+      ],
+      "oc": 36,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv2_negative",
+    "spec": {
+      "id": "conv2",
+      "x": [
+        4,
+        24,
+        31,
+        98
+      ],
+      "oc": 36,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "real"
+  },
+  {
+    "op": "im2col",
+    "id": "conv3_contiguous",
+    "spec": {
+      "id": "conv3",
+      "x": [
+        4,
+        36,
+        14,
+        47
+      ],
+      "oc": 48,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "conv",
+    "id": "conv3_contiguous",
+    "spec": {
+      "id": "conv3",
+      "x": [
+        4,
+        36,
+        14,
+        47
+      ],
+      "oc": 48,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "dweight",
+    "id": "conv3_contiguous",
+    "spec": {
+      "id": "conv3",
+      "x": [
+        4,
+        36,
+        14,
+        47
+      ],
+      "oc": 48,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv3_training",
+    "spec": {
+      "id": "conv3",
+      "x": [
+        4,
+        36,
+        14,
+        47
+      ],
+      "oc": 48,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv3_contiguous",
+    "spec": {
+      "id": "conv3",
+      "x": [
+        4,
+        36,
+        14,
+        47
+      ],
+      "oc": 48,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv3_negative",
+    "spec": {
+      "id": "conv3",
+      "x": [
+        4,
+        36,
+        14,
+        47
+      ],
+      "oc": 48,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "real"
+  },
+  {
+    "op": "im2col",
+    "id": "conv4_contiguous",
+    "spec": {
+      "id": "conv4",
+      "x": [
+        4,
+        48,
+        5,
+        22
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "conv",
+    "id": "conv4_contiguous",
+    "spec": {
+      "id": "conv4",
+      "x": [
+        4,
+        48,
+        5,
+        22
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "dweight",
+    "id": "conv4_contiguous",
+    "spec": {
+      "id": "conv4",
+      "x": [
+        4,
+        48,
+        5,
+        22
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv4_training",
+    "spec": {
+      "id": "conv4",
+      "x": [
+        4,
+        48,
+        5,
+        22
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv4_contiguous",
+    "spec": {
+      "id": "conv4",
+      "x": [
+        4,
+        48,
+        5,
+        22
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv4_negative",
+    "spec": {
+      "id": "conv4",
+      "x": [
+        4,
+        48,
+        5,
+        22
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "real"
+  },
+  {
+    "op": "im2col",
+    "id": "conv5_contiguous",
+    "spec": {
+      "id": "conv5",
+      "x": [
+        4,
+        64,
+        3,
+        20
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "conv",
+    "id": "conv5_contiguous",
+    "spec": {
+      "id": "conv5",
+      "x": [
+        4,
+        64,
+        3,
+        20
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "dweight",
+    "id": "conv5_contiguous",
+    "spec": {
+      "id": "conv5",
+      "x": [
+        4,
+        64,
+        3,
+        20
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv5_training",
+    "spec": {
+      "id": "conv5",
+      "x": [
+        4,
+        64,
+        3,
+        20
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv5_contiguous",
+    "spec": {
+      "id": "conv5",
+      "x": [
+        4,
+        64,
+        3,
+        20
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "real"
+  },
+  {
+    "op": "col2im",
+    "id": "conv5_negative",
+    "spec": {
+      "id": "conv5",
+      "x": [
+        4,
+        64,
+        3,
+        20
+      ],
+      "oc": 64,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "real"
+  },
+  {
+    "op": "im2col",
+    "id": "overlap_contiguous",
+    "spec": {
+      "id": "overlap",
+      "x": [
+        2,
+        7,
+        31,
+        37
+      ],
+      "oc": 13,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        2,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "overlap_contiguous",
+    "spec": {
+      "id": "overlap",
+      "x": [
+        2,
+        7,
+        31,
+        37
+      ],
+      "oc": 13,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        2,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "overlap_contiguous",
+    "spec": {
+      "id": "overlap",
+      "x": [
+        2,
+        7,
+        31,
+        37
+      ],
+      "oc": 13,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        2,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "overlap_training",
+    "spec": {
+      "id": "overlap",
+      "x": [
+        2,
+        7,
+        31,
+        37
+      ],
+      "oc": 13,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        2,
+        2
+      ]
+    },
+    "layout": "training",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "overlap_contiguous",
+    "spec": {
+      "id": "overlap",
+      "x": [
+        2,
+        7,
+        31,
+        37
+      ],
+      "oc": 13,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        2,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "overlap_negative",
+    "spec": {
+      "id": "overlap",
+      "x": [
+        2,
+        7,
+        31,
+        37
+      ],
+      "oc": 13,
+      "k": [
+        5,
+        5
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        2,
+        2
+      ]
+    },
+    "layout": "negative",
+    "origin": "extension"
+  },
+  {
+    "op": "im2col",
+    "id": "nonoverlap_contiguous",
+    "spec": {
+      "id": "nonoverlap",
+      "x": [
+        3,
+        5,
+        30,
+        33
+      ],
+      "oc": 11,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "nonoverlap_contiguous",
+    "spec": {
+      "id": "nonoverlap",
+      "x": [
+        3,
+        5,
+        30,
+        33
+      ],
+      "oc": 11,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "nonoverlap_contiguous",
+    "spec": {
+      "id": "nonoverlap",
+      "x": [
+        3,
+        5,
+        30,
+        33
+      ],
+      "oc": 11,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "nonoverlap_training",
+    "spec": {
+      "id": "nonoverlap",
+      "x": [
+        3,
+        5,
+        30,
+        33
+      ],
+      "oc": 11,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "nonoverlap_contiguous",
+    "spec": {
+      "id": "nonoverlap",
+      "x": [
+        3,
+        5,
+        30,
+        33
+      ],
+      "oc": 11,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "nonoverlap_negative",
+    "spec": {
+      "id": "nonoverlap",
+      "x": [
+        3,
+        5,
+        30,
+        33
+      ],
+      "oc": 11,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "extension"
+  },
+  {
+    "op": "im2col",
+    "id": "asymmetric_contiguous",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "im2col",
+    "id": "asymmetric_sliced",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "sliced",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "asymmetric_contiguous",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "asymmetric_sliced",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "sliced",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "asymmetric_contiguous",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "asymmetric_sliced",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "sliced",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "asymmetric_training",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "training",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "asymmetric_contiguous",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "asymmetric_negative",
+    "spec": {
+      "id": "asymmetric",
+      "x": [
+        2,
+        3,
+        17,
+        23
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "negative",
+    "origin": "extension"
+  },
+  {
+    "op": "im2col",
+    "id": "holes_contiguous",
+    "spec": {
+      "id": "holes",
+      "x": [
+        2,
+        4,
+        19,
+        22
+      ],
+      "oc": 9,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "holes_contiguous",
+    "spec": {
+      "id": "holes",
+      "x": [
+        2,
+        4,
+        19,
+        22
+      ],
+      "oc": 9,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "holes_contiguous",
+    "spec": {
+      "id": "holes",
+      "x": [
+        2,
+        4,
+        19,
+        22
+      ],
+      "oc": 9,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "holes_training",
+    "spec": {
+      "id": "holes",
+      "x": [
+        2,
+        4,
+        19,
+        22
+      ],
+      "oc": 9,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "holes_contiguous",
+    "spec": {
+      "id": "holes",
+      "x": [
+        2,
+        4,
+        19,
+        22
+      ],
+      "oc": 9,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "holes_negative",
+    "spec": {
+      "id": "holes",
+      "x": [
+        2,
+        4,
+        19,
+        22
+      ],
+      "oc": 9,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        3,
+        3
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "extension"
+  },
+  {
+    "op": "im2col",
+    "id": "narrow_contiguous",
+    "spec": {
+      "id": "narrow",
+      "x": [
+        1,
+        9,
+        7,
+        41
+      ],
+      "oc": 5,
+      "k": [
+        5,
+        1
+      ],
+      "s": [
+        1,
+        2
+      ],
+      "p": [
+        2,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "narrow_contiguous",
+    "spec": {
+      "id": "narrow",
+      "x": [
+        1,
+        9,
+        7,
+        41
+      ],
+      "oc": 5,
+      "k": [
+        5,
+        1
+      ],
+      "s": [
+        1,
+        2
+      ],
+      "p": [
+        2,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "narrow_contiguous",
+    "spec": {
+      "id": "narrow",
+      "x": [
+        1,
+        9,
+        7,
+        41
+      ],
+      "oc": 5,
+      "k": [
+        5,
+        1
+      ],
+      "s": [
+        1,
+        2
+      ],
+      "p": [
+        2,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "narrow_training",
+    "spec": {
+      "id": "narrow",
+      "x": [
+        1,
+        9,
+        7,
+        41
+      ],
+      "oc": 5,
+      "k": [
+        5,
+        1
+      ],
+      "s": [
+        1,
+        2
+      ],
+      "p": [
+        2,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "narrow_contiguous",
+    "spec": {
+      "id": "narrow",
+      "x": [
+        1,
+        9,
+        7,
+        41
+      ],
+      "oc": 5,
+      "k": [
+        5,
+        1
+      ],
+      "s": [
+        1,
+        2
+      ],
+      "p": [
+        2,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "narrow_negative",
+    "spec": {
+      "id": "narrow",
+      "x": [
+        1,
+        9,
+        7,
+        41
+      ],
+      "oc": 5,
+      "k": [
+        5,
+        1
+      ],
+      "s": [
+        1,
+        2
+      ],
+      "p": [
+        2,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "extension"
+  },
+  {
+    "op": "im2col",
+    "id": "tiny_contiguous",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "im2col",
+    "id": "tiny_sliced",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "sliced",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "tiny_contiguous",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "tiny_sliced",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "sliced",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "tiny_contiguous",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "tiny_sliced",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "sliced",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "tiny_training",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "training",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "tiny_contiguous",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "tiny_negative",
+    "spec": {
+      "id": "tiny",
+      "x": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "oc": 2,
+      "k": [
+        1,
+        1
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "negative",
+    "origin": "extension"
+  },
+  {
+    "op": "im2col",
+    "id": "large_channels_contiguous",
+    "spec": {
+      "id": "large_channels",
+      "x": [
+        2,
+        64,
+        32,
+        35
+      ],
+      "oc": 96,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "conv",
+    "id": "large_channels_contiguous",
+    "spec": {
+      "id": "large_channels",
+      "x": [
+        2,
+        64,
+        32,
+        35
+      ],
+      "oc": 96,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "dweight",
+    "id": "large_channels_contiguous",
+    "spec": {
+      "id": "large_channels",
+      "x": [
+        2,
+        64,
+        32,
+        35
+      ],
+      "oc": 96,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "large_channels_training",
+    "spec": {
+      "id": "large_channels",
+      "x": [
+        2,
+        64,
+        32,
+        35
+      ],
+      "oc": 96,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "training",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "large_channels_contiguous",
+    "spec": {
+      "id": "large_channels",
+      "x": [
+        2,
+        64,
+        32,
+        35
+      ],
+      "oc": 96,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "col2im",
+    "id": "large_channels_negative",
+    "spec": {
+      "id": "large_channels",
+      "x": [
+        2,
+        64,
+        32,
+        35
+      ],
+      "oc": 96,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "negative",
+    "origin": "extension"
+  },
+  {
+    "op": "pool_forward",
+    "id": "tiny_net_pool",
+    "spec": {
+      "id": "tiny_net_pool",
+      "x": [
+        4,
+        4,
+        16,
+        16
+      ],
+      "oc": 4,
+      "k": [
+        2,
+        2
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "tiny_net"
+  },
+  {
+    "op": "pool_backward",
+    "id": "tiny_net_pool",
+    "spec": {
+      "id": "tiny_net_pool",
+      "x": [
+        4,
+        4,
+        16,
+        16
+      ],
+      "oc": 4,
+      "k": [
+        2,
+        2
+      ],
+      "s": [
+        2,
+        2
+      ],
+      "p": [
+        0,
+        0
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "tiny_net"
+  },
+  {
+    "op": "pool_forward",
+    "id": "overlap_pool",
+    "spec": {
+      "id": "overlap_pool",
+      "x": [
+        2,
+        7,
+        31,
+        37
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "pool_backward",
+    "id": "overlap_pool",
+    "spec": {
+      "id": "overlap_pool",
+      "x": [
+        2,
+        7,
+        31,
+        37
+      ],
+      "oc": 7,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "pool_forward",
+    "id": "asym_pool",
+    "spec": {
+      "id": "asym_pool",
+      "x": [
+        1,
+        3,
+        11,
+        17
+      ],
+      "oc": 3,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "pool_backward",
+    "id": "asym_pool",
+    "spec": {
+      "id": "asym_pool",
+      "x": [
+        1,
+        3,
+        11,
+        17
+      ],
+      "oc": 3,
+      "k": [
+        3,
+        5
+      ],
+      "s": [
+        2,
+        3
+      ],
+      "p": [
+        1,
+        2
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "pool_forward",
+    "id": "negative_pool",
+    "spec": {
+      "id": "negative_pool",
+      "x": [
+        1,
+        2,
+        7,
+        9
+      ],
+      "oc": 2,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  },
+  {
+    "op": "pool_backward",
+    "id": "negative_pool",
+    "spec": {
+      "id": "negative_pool",
+      "x": [
+        1,
+        2,
+        7,
+        9
+      ],
+      "oc": 2,
+      "k": [
+        3,
+        3
+      ],
+      "s": [
+        1,
+        1
+      ],
+      "p": [
+        1,
+        1
+      ]
+    },
+    "layout": "contiguous",
+    "origin": "extension"
+  }
+]

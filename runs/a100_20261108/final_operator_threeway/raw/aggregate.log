@@ -1,0 +1,157 @@
+[
+  {
+    "op": "col2im",
+    "scope": "array",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 654.387950308642,
+    "case_count": 36,
+    "cupy_us": 50.89936728395062,
+    "native_us": 27.27558827160494,
+    "native_vs_numpy": 23.991708035492234,
+    "native_vs_cupy": 1.8661143722036253
+  },
+  {
+    "op": "conv",
+    "scope": "array",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 694.7619595238095,
+    "case_count": 14,
+    "cupy_us": 134.06070634920636,
+    "native_us": 90.30070555555555,
+    "native_vs_numpy": 7.693870775974971,
+    "native_vs_cupy": 1.4846030883637826
+  },
+  {
+    "op": "dweight",
+    "scope": "array",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 861.6860674603175,
+    "case_count": 14,
+    "cupy_us": 125.82071190476191,
+    "native_us": 77.33856825396825,
+    "native_vs_numpy": 11.14173803464618,
+    "native_vs_cupy": 1.6268818358724404
+  },
+  {
+    "op": "gemm",
+    "scope": "array",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 8176.831580185185,
+    "case_count": 36,
+    "cupy_us": 281.3286824074074,
+    "native_us": 454.04349462962966,
+    "native_vs_numpy": 18.008916936152016,
+    "native_vs_cupy": 0.6196073410035124
+  },
+  {
+    "op": "im2col",
+    "scope": "array",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 538.411607936508,
+    "case_count": 14,
+    "cupy_us": 68.04776587301588,
+    "native_us": 31.174487301587302,
+    "native_vs_numpy": 17.270904978414634,
+    "native_vs_cupy": 2.1828030470785356
+  },
+  {
+    "op": "pool_backward",
+    "scope": "array",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 111.68963611111111,
+    "case_count": 4,
+    "cupy_us": 125.24813055555555,
+    "native_us": 109.61699444444444,
+    "native_vs_numpy": 1.0189080322551365,
+    "native_vs_cupy": 1.1425977439933659
+  },
+  {
+    "op": "pool_forward",
+    "scope": "array",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 259.98734444444443,
+    "case_count": 4,
+    "cupy_us": 108.01485,
+    "native_us": 34.19662777777778,
+    "native_vs_numpy": 7.602718786599003,
+    "native_vs_cupy": 3.1586403987527683
+  },
+  {
+    "op": "col2im",
+    "scope": "function",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 663.2978351851852,
+    "case_count": 36,
+    "cupy_us": 56.18615401234568,
+    "native_us": 32.29406635802469,
+    "native_vs_numpy": 20.539309848180935,
+    "native_vs_cupy": 1.7398290258477804
+  },
+  {
+    "op": "conv",
+    "scope": "function",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 699.3887888888889,
+    "case_count": 14,
+    "cupy_us": 149.73156111111112,
+    "native_us": 105.68568888888889,
+    "native_vs_numpy": 6.617630033373593,
+    "native_vs_cupy": 1.4167628813824473
+  },
+  {
+    "op": "dweight",
+    "scope": "function",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 868.1859634920635,
+    "case_count": 14,
+    "cupy_us": 137.16053492063492,
+    "native_us": 89.03136507936507,
+    "native_vs_numpy": 9.751461888943721,
+    "native_vs_cupy": 1.5405866774969263
+  },
+  {
+    "op": "gemm",
+    "scope": "function",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 8442.27125925926,
+    "case_count": 36,
+    "cupy_us": 330.5768703703704,
+    "native_us": 540.5323851851851,
+    "native_vs_numpy": 15.61843747135883,
+    "native_vs_cupy": 0.6115764372880554
+  },
+  {
+    "op": "im2col",
+    "scope": "function",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 546.4498857142858,
+    "case_count": 14,
+    "cupy_us": 75.09149682539683,
+    "native_us": 35.337607142857145,
+    "native_vs_numpy": 15.46369236335632,
+    "native_vs_cupy": 2.124974012015842
+  },
+  {
+    "op": "pool_backward",
+    "scope": "function",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 116.32595277777779,
+    "case_count": 4,
+    "cupy_us": 131.59405,
+    "native_us": 114.22723333333333,
+    "native_vs_numpy": 1.0183731968568306,
+    "native_vs_cupy": 1.152037444660745
+  },
+  {
+    "op": "pool_forward",
+    "scope": "function",
+    "aggregation": "equal case weight, arithmetic means of sync-complete means",
+    "numpy_us": 267.1756222222222,
+    "case_count": 4,
+    "cupy_us": 113.91396666666667,
+    "native_us": 38.115375,
+    "native_vs_numpy": 7.009654823603919,
+    "native_vs_cupy": 2.9886618370320814
+  }
+]
+accuracy max 0.00013398176785806015 rel 2.085343189650321e-06 fails 0

@@ -1,0 +1,1184 @@
+--- a/hytorch/profiling.py
++++ b/hytorch/profiling.py
+@@ -7,6 +7,9 @@
+ import threading
+ import time
+ import math
++
++# Keep the original flat-module imports and legacy profilers compatible.
++from hytorch.training_monitor import TrainingMonitor
+ 
+ 
+ def dump_json(path, value):
+--- /dev/null
++++ b/hytorch/training_monitor.py
+@@ -0,0 +1,517 @@
++"""Optional training telemetry; no CUDA, NVML or psutil imports at module import.
++
++GPU indices are *logical CUDA indices*, resolved by runtime UUID/PCI identity.
++Throughput mode never synchronizes phases/steps. ``stop`` (or explicit
++``flush_events`` at a safe boundary) completes the recorded streams. Event
++intervals include stream idle time and are not kernel-only measurements.
++"""
++from contextlib import contextmanager, nullcontext
++import csv
++import importlib
++import json
++import math
++import os
++from pathlib import Path
++import re
++import tempfile
++import threading
++import time
++
++
++_NULL = nullcontext()
++_PHASES = ("data_load", "data_prepare", "h2d", "forward", "loss", "backward", "optimizer")
++
++
++def _text(value):
++    return value.decode() if isinstance(value, bytes) else str(value)
++
++
++def _finite(value):
++    if value is None:
++        return None
++    return value if math.isfinite(value) else None
++
++
++class _CudaTimer:
++    def __init__(self, backend, device):
++        self.backend, self.device = backend, device
++        self.module = importlib.import_module("cupy" if backend == "cupy" else "torch")
++        if backend == "cupy":
++            self.selector = ("pci", self.module.cuda.Device(device).pci_bus_id)
++            self.pool = self.module.get_default_memory_pool()
++        else:
++            self.selector = ("uuid", _text(self.module.cuda.get_device_properties(device).uuid))
++
++    def stream(self):
++        if self.backend == "cupy":
++            if self.module.cuda.runtime.getDevice() != self.device:
++                raise ValueError("TrainingMonitor current CUDA device changed")
++            return self.module.cuda.get_current_stream()
++        return self.module.cuda.current_stream(self.device)
++
++    def stream_id(self, stream):
++        return stream.ptr if self.backend == "cupy" else stream.cuda_stream
++
++    def event(self):
++        return self.module.cuda.Event() if self.backend == "cupy" else self.module.cuda.Event(enable_timing=True)
++
++    def elapsed(self, start, end):
++        ms = self.module.cuda.get_elapsed_time(start, end) if self.backend == "cupy" else start.elapsed_time(end)
++        return ms / 1000
++
++    def allocator(self):
++        if self.backend == "cupy":
++            return {"cupy_active_bytes": self.pool.used_bytes(), "cupy_reserved_bytes": self.pool.total_bytes()}
++        return {"torch_allocated_bytes": self.module.cuda.memory_allocated(self.device),
++                "torch_reserved_bytes": self.module.cuda.memory_reserved(self.device)}
++
++
++class _Resources:
++    """Owned by the sampling thread. Unsupported counters stay null."""
++    def __init__(self, selector):
++        self.nvml = self.handle = self.psutil = self.process = None
++        self.errors = []
++        self.identity = dict(gpu_uuid=None, physical_gpu_index=None, gpu_name=None, pci_bus_id=None)
++        self.first_cpu = True
++        try:
++            self.psutil = importlib.import_module("psutil")
++            self.process = self.psutil.Process(os.getpid())
++            self.psutil.cpu_percent(None)
++            self.process.cpu_percent(None)
++        except Exception as exc:
++            self.errors.append("psutil: " + str(exc))
++            self.psutil = self.process = None
++        if selector is None:
++            self.errors.append("NVML: no runtime UUID/PCI identity; no physical index guessed")
++            return
++        try:
++            nvml = importlib.import_module("pynvml")
++            nvml.nvmlInit()
++            self.nvml = nvml
++            kind, value = selector
++            self.handle = (nvml.nvmlDeviceGetHandleByUUID(value) if kind == "uuid"
++                           else nvml.nvmlDeviceGetHandleByPciBusId(value))
++            self.identity = dict(gpu_uuid=_text(nvml.nvmlDeviceGetUUID(self.handle)),
++                                 physical_gpu_index=nvml.nvmlDeviceGetIndex(self.handle),
++                                 gpu_name=_text(nvml.nvmlDeviceGetName(self.handle)),
++                                 pci_bus_id=_text(nvml.nvmlDeviceGetPciInfo(self.handle).busId))
++        except Exception as exc:
++            self.errors.append("NVML: " + str(exc))
++            self.handle = None
++
++    def sample(self):
++        gpu = {k: None for k in ("gpu_utilization_pct", "memory_utilization_pct", "gpu_used_bytes",
++                               "gpu_total_bytes", "gpu_temperature_c", "gpu_power_w", "sm_clock_mhz",
++                               "memory_clock_mhz", "process_gpu_used_bytes", "compute_processes_json")}
++        cpu = {k: None for k in ("system_cpu_pct", "process_cpu_pct", "process_rss_bytes", "process_threads")}
++        statuses = {}
++
++        def get(label, fn):
++            try:
++                value = fn()
++                statuses[label] = "OK"
++                return value
++            except Exception as exc:
++                statuses[label] = type(exc).__name__ + ": " + str(exc)
++                return None
++
++        if self.handle is not None:
++            n, h = self.nvml, self.handle
++            util = get("utilization", lambda: n.nvmlDeviceGetUtilizationRates(h))
++            mem = get("device_memory", lambda: n.nvmlDeviceGetMemoryInfo(h))
++            if util is not None:
++                gpu.update(gpu_utilization_pct=_finite(util.gpu), memory_utilization_pct=_finite(util.memory))
++            if mem is not None:
++                gpu.update(gpu_used_bytes=mem.used, gpu_total_bytes=mem.total)
++            gpu["gpu_temperature_c"] = get("temperature", lambda: n.nvmlDeviceGetTemperature(h, n.NVML_TEMPERATURE_GPU))
++            power = get("power", lambda: n.nvmlDeviceGetPowerUsage(h))
++            gpu["gpu_power_w"] = power / 1000 if power is not None else None
++            gpu["sm_clock_mhz"] = get("sm_clock", lambda: n.nvmlDeviceGetClockInfo(h, n.NVML_CLOCK_SM))
++            gpu["memory_clock_mhz"] = get("memory_clock", lambda: n.nvmlDeviceGetClockInfo(h, n.NVML_CLOCK_MEM))
++            procs = get("compute_processes", lambda: n.nvmlDeviceGetComputeRunningProcesses(h))
++            if procs is not None:
++                rows = []
++                unavailable = getattr(n, "NVML_VALUE_NOT_AVAILABLE", 2**64-1)
++                unavailable = getattr(unavailable, "value", unavailable)
++                for p in procs:
++                    used = getattr(p, "usedGpuMemory", None)
++                    rows.append(dict(pid=p.pid, used_bytes=used if used is not None and used < unavailable else None))
++                gpu["compute_processes_json"] = json.dumps(rows)
++                own = [p["used_bytes"] for p in rows if p["pid"] == os.getpid()]
++                gpu["process_gpu_used_bytes"] = sum(own) if own and all(x is not None for x in own) else None
++        else:
++            statuses["nvml"] = "UNAVAILABLE"
++        if self.psutil is not None:
++            if not self.first_cpu:
++                cpu["system_cpu_pct"] = get("system_cpu", lambda: self.psutil.cpu_percent(None))
++                cpu["process_cpu_pct"] = get("process_cpu", lambda: self.process.cpu_percent(None))
++            else:
++                statuses["cpu_percent"] = "PRIMING: first sample is null"
++            cpu["process_rss_bytes"] = get("rss", lambda: self.process.memory_info().rss)
++            cpu["process_threads"] = get("threads", lambda: self.process.num_threads())
++        else:
++            statuses["psutil"] = "UNAVAILABLE"
++        self.first_cpu = False
++        return gpu, cpu, statuses
++
++    def close(self):
++        if self.nvml is not None:
++            self.nvml.nvmlShutdown()
++
++
++class TrainingMonitor:
++    """Reusable optional telemetry with explicitly named timing semantics.
++
++    ``gpu_index`` is a logical CUDA index. Supply ``cuda_backend='cupy'`` or
++    ``'torch'`` to resolve it and record events; for resource-only clients without
++    CUDA imports, supply an explicit ``gpu_uuid`` or ``gpu_pci_bus_id`` instead.
++    No numeric CUDA_VISIBLE_DEVICES mapping is guessed.
++
++    ``mode='throughput'`` records host_iteration_s; CUDA step_wall_s stays null.
++    ``mode='latency'`` synchronizes once at step end, never at phase boundaries.
++    Allocator peaks are opt-in diagnostics: CuPy hook covers allocations on the
++    calling thread/default pool; PyTorch resets that device's peak counters.
++    """
++    def __init__(self, enabled=False, gpu_index=0, sample_interval=0.2,
++                 output_dir="runs/monitor", *, timing=True, resources=True,
++                 cuda_backend="cupy", mode="throughput", gpu_uuid=None,
++                 gpu_pci_bus_id=None, allocator_peaks=False):
++        if not math.isfinite(sample_interval) or sample_interval <= 0:
++            raise ValueError("sample_interval must be finite and positive")
++        if mode not in ("throughput", "latency") or cuda_backend not in (None, "cupy", "torch"):
++            raise ValueError("Invalid mode or CUDA backend")
++        if gpu_uuid is not None and gpu_pci_bus_id is not None:
++            raise ValueError("Choose UUID or PCI identity, not both")
++        if (gpu_uuid or gpu_pci_bus_id) and cuda_backend is not None and gpu_index is not None:
++            raise ValueError("Explicit NVML identity requires cuda_backend=None; CUDA clients use runtime identity")
++        if gpu_index is not None and (type(gpu_index) is not int or gpu_index < 0):
++            raise ValueError("gpu_index must be a nonnegative logical CUDA index or None")
++        self.enabled, self.timing, self.resources = enabled, timing, resources
++        self.gpu_index, self.sample_interval = gpu_index, sample_interval
++        self.output_dir, self.cuda_backend, self.mode = Path(output_dir), cuda_backend, mode
++        self.explicit_selector = ("uuid", gpu_uuid) if gpu_uuid else (("pci", gpu_pci_bus_id) if gpu_pci_bus_id else None)
++        self.allocator_peaks = allocator_peaks
++        self.running = False
++        self.thread = None
++        self.run_dir = None
++        self._reset()
++
++    def _reset(self):
++        self.steps, self.gpu_samples, self.cpu_samples, self.errors = [], [], [], []
++        self._pending, self._streams, self._ids = [], {}, set()
++        self._active = self._phase_name = self._timer = self._hook = None
++        self._peak = {}
++        self.event_status = "DISABLED" if self.cuda_backend is None else "NOT_STARTED"
++        self.started_ns = self.stopped_ns = None
++
++    def start(self):
++        if not self.enabled:
++            return self
++        if self.running or (self.thread is not None and self.thread.is_alive()):
++            raise RuntimeError("TrainingMonitor is already running")
++        self._reset()
++        self.output_dir.mkdir(parents=True, exist_ok=True)
++        self.run_dir = Path(tempfile.mkdtemp(prefix="run_", dir=self.output_dir))
++        self.owner = threading.get_ident()
++        self.started_ns, self.started_unix_s = time.perf_counter_ns(), time.time()
++        selector = self.explicit_selector
++        if self.cuda_backend is not None and self.gpu_index is not None:
++            try:
++                self._timer = _CudaTimer(self.cuda_backend, self.gpu_index)
++                # Runtime identity wins; reject misleading explicit cross-device selection.
++                if selector is not None and selector != self._timer.selector:
++                    raise ValueError("Use runtime mapping OR an explicit resource identity, not both")
++                selector = self._timer.selector
++                self.event_status = "ENABLED" if self.timing else "DISABLED"
++            except Exception as exc:
++                self.errors.append("CUDA timer unavailable: " + str(exc))
++                self._timer = None
++                self.event_status = "UNAVAILABLE"
++        self.selector = selector
++        self.running = True
++        if self.allocator_peaks and self._timer is not None:
++            self._start_peak_tracking()
++        self._stop_event = threading.Event()
++        if self.resources:
++            self.thread = threading.Thread(target=self._sample_loop, name="HyTorchTrainingMonitor-"+self.run_dir.name, daemon=True)
++            self.thread.start()
++        return self
++
++    def _start_peak_tracking(self):
++        timer = self._timer
++        if timer.backend == "torch":
++            timer.module.cuda.reset_peak_memory_stats(timer.device)
++            self._peak["source"] = "torch_allocator_peak_counters_since_start"
++            return
++        monitor = self
++        class PeakHook(timer.module.cuda.MemoryHook):
++            def malloc_postprocess(self, **kwargs):
++                monitor._track_cupy_peak()
++        self._hook = PeakHook()
++        self._hook.__enter__()
++        self._track_cupy_peak()
++
++    def _track_cupy_peak(self):
++        used = self._timer.pool.used_bytes()
++        reserved = self._timer.pool.total_bytes()
++        if used >= self._peak.get("active_bytes", -1):
++            self._peak.update(active_bytes=used, monotonic_ns=time.perf_counter_ns(),
++                              phase=self._phase_name, step_id=self._active["step_id"] if self._active else None)
++        self._peak["reserved_bytes"] = max(reserved, self._peak.get("reserved_bytes", 0))
++        self._peak["source"] = "cupy_default_pool_allocation_hook_main_thread; host_allocation_phase_not_GPU_execution_phase"
++
++    def _sample_loop(self):
++        provider = None
++        try:
++            provider = _Resources(self.selector)
++            self.errors.extend(provider.errors)
++            allocator_available = self._timer is not None
++            # CuPy MemoryPool counters are per *current* device. A fresh sampler
++            # thread defaults to logical device 0; bind nonzero targets once on
++            # this thread only. This neither synchronizes nor touches device 0.
++            if self._timer is not None and self._timer.backend == "cupy" and self._timer.device != 0:
++                try:
++                    self._timer.module.cuda.runtime.setDevice(self._timer.device)
++                except Exception as exc:
++                    allocator_available = False
++                    self.errors.append("sampler allocator device: " + str(exc))
++            deadline = time.perf_counter_ns()
++            interval_ns = int(self.sample_interval * 1e9)
++            while not self._stop_event.is_set():
++                now = time.perf_counter_ns()
++                unix_s = time.time()
++                active, phase = self._active, self._phase_name
++                gpu, cpu, status = provider.sample()
++                common = dict(timestamp_unix_s=unix_s, monotonic_ns=now,
++                              elapsed_s=(now-self.started_ns)/1e9, scheduled_monotonic_ns=deadline,
++                              schedule_delay_s=max(0, now-deadline)/1e9, sample_interval_s=self.sample_interval,
++                              step_id=active["step_id"] if active else None,
++                              host_phase=phase, scope="sampled; not a per-step GPU attribution")
++                gpu.update(common, **provider.identity, logical_cuda_index=self.gpu_index if self._timer else None,
++                           cuda_visible_devices=os.environ.get("CUDA_VISIBLE_DEVICES"), scope="whole_physical_GPU_including_other_processes")
++                if allocator_available:
++                    try:
++                        gpu.update(self._timer.allocator())
++                        status["allocator"] = "SAMPLED; not exact peak"
++                    except Exception as exc:
++                        status["allocator"] = str(exc)
++                gpu["status_json"] = json.dumps(status)
++                cpu.update(common, status_json=json.dumps(status), pid=os.getpid(), cpu_percent_unit="system:0..100; process:100 per busy core")
++                end = time.perf_counter_ns()
++                gpu["sample_collection_s"] = cpu["sample_collection_s"] = (end-now)/1e9
++                self.gpu_samples.append(gpu)
++                self.cpu_samples.append(cpu)
++                deadline += interval_ns
++                if deadline < end:
++                    deadline += ((end-deadline)//interval_ns+1)*interval_ns
++                self._stop_event.wait(max(0, (deadline-time.perf_counter_ns())/1e9))
++        except Exception as exc:
++            self.errors.append("sampling: " + repr(exc))
++        finally:
++            if provider is not None:
++                try:
++                    provider.close()
++                except Exception as exc:
++                    self.errors.append("NVML close: " + str(exc))
++
++    def _check_owner(self):
++        if not self.running or self.owner != threading.get_ident():
++            raise RuntimeError("Timing contexts require a running monitor on its owner thread")
++
++    def _event(self):
++        if self._timer is None or not self.timing or self.event_status != "ENABLED":
++            return None
++        try:
++            stream = self._timer.stream()
++            key = self._timer.stream_id(stream)
++            self._streams[key] = stream
++            event = self._timer.event()
++            event.record(stream)
++            return event, key
++        except Exception as exc:
++            self.errors.append("CUDA event: " + repr(exc))
++            self.event_status = "UNAVAILABLE"
++            return None
++
++    def step(self, step_id=None, *, epoch=None, batch_size=None, data_bytes=None):
++        if not self.enabled or not self.timing:
++            return _NULL
++        return self._step(step_id, epoch, batch_size, data_bytes)
++
++    @contextmanager
++    def _step(self, step_id, epoch, batch_size, data_bytes):
++        self._check_owner()
++        if self._active is not None:
++            raise RuntimeError("Nested steps are not supported")
++        step_id = len(self.steps) if step_id is None else step_id
++        if step_id in self._ids:
++            raise ValueError("step_id must be unique within a run")
++        self._ids.add(step_id)
++        row = dict(step_id=step_id, epoch=epoch, batch_size=batch_size, data_bytes=data_bytes,
++                   mode=self.mode, timestamp_unix_s=time.time(), start_monotonic_ns=time.perf_counter_ns(),
++                   status="OK", error=None, step_wall_s=None, step_gpu_interval_s=None,
++                   gpu_event_status=self.event_status)
++        for name in _PHASES:
++            row[name+"_cpu_s"] = row[name+"_gpu_event_s"] = None
++        self._active = row
++        first = self._event()
++        try:
++            yield self
++        except BaseException as exc:
++            row.update(status="ERROR", error=type(exc).__name__+": "+str(exc))
++            raise
++        finally:
++            try:
++                last = self._event()
++                if first is not None and last is not None:
++                    self._pending.append((row, "step_gpu_interval_s", first, last))
++                if self.event_status == "UNAVAILABLE":
++                    row["gpu_event_status"] = "UNAVAILABLE"
++                row["host_iteration_s"] = (time.perf_counter_ns()-row["start_monotonic_ns"])/1e9
++                if self.mode == "latency" and self._timer is not None:
++                    for stream in self._streams.values():
++                        stream.synchronize()
++                if (self.mode == "latency" and self._timer is not None) or self.cuda_backend is None or self.gpu_index is None:
++                    row["step_wall_s"] = (time.perf_counter_ns()-row["start_monotonic_ns"])/1e9
++                row["end_monotonic_ns"] = time.perf_counter_ns()
++            finally:
++                self.steps.append(row)
++                self._active = None
++
++    def set_step_metadata(self, *, batch_size=None, data_bytes=None):
++        if not self.enabled or not self.timing:
++            return
++        self._check_owner()
++        if self._active is None:
++            raise RuntimeError("No active step")
++        if batch_size is not None:
++            self._active["batch_size"] = batch_size
++        if data_bytes is not None:
++            self._active["data_bytes"] = data_bytes
++
++    def phase(self, name, *, gpu=True):
++        if not self.enabled or not self.timing:
++            return _NULL
++        if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*", name):
++            raise ValueError("phase name must be an identifier")
++        return self._phase(name, gpu)
++
++    @contextmanager
++    def _phase(self, name, gpu):
++        self._check_owner()
++        if self._active is None or self._phase_name is not None:
++            raise RuntimeError("Phases require an active step and cannot be nested")
++        self._phase_name = name
++        start = time.perf_counter_ns()
++        first = self._event() if gpu else None
++        try:
++            yield
++        finally:
++            try:
++                last = self._event() if gpu else None
++                key = name+"_cpu_s"
++                self._active[key] = (self._active.get(key) or 0)+(time.perf_counter_ns()-start)/1e9
++                if first is not None and last is not None:
++                    self._pending.append((self._active, name+"_gpu_event_s", first, last))
++            finally:
++                self._phase_name = None
++
++    def flush_events(self):
++        """Explicit safe completion boundary; call between epochs for long runs.
++
++        Retained event storage is O(steps * phases) since the preceding flush.
++        No synchronization is performed by the resource sampling thread.
++        """
++        if not self.enabled:
++            return
++        self._check_owner()
++        if self._active is not None:
++            raise RuntimeError("flush_events must be outside a step")
++        for stream in self._streams.values():
++            stream.synchronize()
++        for row, key, first, last in self._pending:
++            if first[1] != last[1]:
++                row["gpu_event_status"] = "UNSUPPORTED_CROSS_STREAM_INTERVAL"
++                row[key] = None
++            else:
++                row[key] = (row.get(key) or 0)+self._timer.elapsed(first[0], last[0])
++        self._pending.clear()
++
++    def stop(self):
++        if not self.enabled or not self.running:
++            return
++        self._check_owner()
++        if self._active is not None:
++            raise RuntimeError("Cannot stop inside a step")
++        try:
++            self.flush_events()
++            if self.allocator_peaks and self._timer is not None and self.cuda_backend == "torch":
++                t = self._timer
++                self._peak.update(active_bytes=t.module.cuda.max_memory_allocated(t.device),
++                                  reserved_bytes=t.module.cuda.max_memory_reserved(t.device))
++        finally:
++            if self._hook is not None:
++                self._hook.__exit__(None, None, None)
++                self._hook = None
++            self._stop_event.set()
++            if self.thread is not None:
++                self.thread.join(timeout=5)
++                if self.thread.is_alive():
++                    self.errors.append("sampler did not stop within 5 seconds; samples may be incomplete")
++            self.stopped_ns = time.perf_counter_ns()
++            self.running = False
++            self.export()
++
++    def summary(self):
++        peaks = {}
++        for key in ("gpu_used_bytes", "process_gpu_used_bytes", "cupy_active_bytes", "cupy_reserved_bytes",
++                    "torch_allocated_bytes", "torch_reserved_bytes"):
++            vals = [r.get(key) for r in self.gpu_samples if r.get(key) is not None]
++            peaks[key] = max(vals) if vals else None
++        def mean(key):
++            values = [r[key] for r in self.steps if r.get(key) is not None]
++            return sum(values)/len(values) if values else None
++        return dict(enabled=self.enabled, timing=self.timing, resources=self.resources, mode=self.mode,
++                    cuda_backend=self.cuda_backend, logical_cuda_index=self.gpu_index,
++                    cuda_visible_devices=os.environ.get("CUDA_VISIBLE_DEVICES"),
++                    resolved_selector=getattr(self, "selector", None), gpu_event_status=self.event_status,
++                    run_dir=str(self.run_dir) if self.run_dir else None, steps=len(self.steps),
++                    sample_count=len(self.gpu_samples), sample_interval_s=self.sample_interval,
++                    sampled_peaks_bytes=peaks, peak_kind="sampled maxima; not instantaneous/exact device peaks",
++                    allocator_tracked_peak=self._peak or None, errors=list(self.errors),
++                    mean_host_iteration_s=mean("host_iteration_s"),
++                    mean_completed_step_wall_s=mean("step_wall_s"),
++                    mean_step_gpu_interval_s=mean("step_gpu_interval_s"),
++                    phase_means_cpu_s={p: mean(p+"_cpu_s") for p in _PHASES},
++                    phase_means_gpu_event_s={p: mean(p+"_gpu_event_s") for p in _PHASES},
++                    run_completed_wall_s=(self.stopped_ns-self.started_ns)/1e9 if self.stopped_ns else None,
++                    event_limitation="stream intervals include idle gaps; concurrent streams may overlap; do not sum across streams")
++
++    def export(self):
++        if not self.enabled or self.run_dir is None:
++            return
++        if self.running:
++            raise RuntimeError("Export after stop; use flush_events at an explicit safe boundary")
++        for name, rows, defaults in (("STEP_TIMINGS", self.steps, ["step_id", "epoch", "batch_size", "step_wall_s", "host_iteration_s"]),
++                                      ("GPU_SAMPLES", self.gpu_samples, ["timestamp_unix_s", "gpu_uuid", "gpu_used_bytes"]),
++                                      ("CPU_SAMPLES", self.cpu_samples, ["timestamp_unix_s", "system_cpu_pct", "process_cpu_pct"])):
++            fields = list(dict.fromkeys(defaults + [k for row in rows for k in row]))
++            with (self.run_dir/(name+".csv")).open("w", newline="", encoding="utf-8") as f:
++                writer = csv.DictWriter(f, fieldnames=fields)
++                writer.writeheader()
++                writer.writerows(rows)
++            (self.run_dir/(name+".json")).write_text(json.dumps(rows, ensure_ascii=False, allow_nan=False), encoding="utf-8")
++        (self.run_dir/"SUMMARY.json").write_text(json.dumps(self.summary(), ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
++
++    def __enter__(self):
++        return self.start()
++
++    def __exit__(self, exc_type, exc, tb):
++        try:
++            self.stop()
++        except Exception:
++            if exc_type is None:
++                raise
++            # Do not replace the original training exception with a telemetry error.
++            self.errors.append("monitor cleanup/export failed during training exception")
++        return False
+--- /dev/null
++++ b/hytorch/monitor_loop.py
+@@ -0,0 +1,56 @@
++"""Small reusable loop demonstrating explicit data-load and phase boundaries.
++
++Callbacks keep model/loss/optimizer semantics with the caller. No GPU transfers,
++synchronization, scalar extraction or logging are added outside those callbacks.
++The caller owns monitor.start/stop and the final training completion boundary.
++"""
++import time
++from hytorch.dataloaders import DataLoader
++
++
++def monitored_epochs(dataset, batch_size, epochs, *, monitor, transfer, predict,
++                     loss_fn, backward, update, retain_loss=lambda x: x,
++                     prepare_batch=lambda batch: batch, num_workers=0,
++                     steps_per_epoch=0, phase_context=None):
++    """Return retained losses and epoch *host submission* times, not GPU latency.
++
++    ``retain_loss`` should detach a scalar array from its graph without copying
++    it to CPU. Read the returned values only after a final completion boundary.
++    ``phase_context`` optionally supplies diagnostic NVTX contexts; omitted in
++    normal training. ``data_prepare`` is an identity operation by default.
++    """
++    from contextlib import nullcontext
++    extra = phase_context or (lambda _: nullcontext())
++    losses, epoch_rows = [], []
++    step_id = 0
++    for epoch in range(1, epochs+1):
++        epoch_start = time.perf_counter_ns()
++        loader = DataLoader(dataset, batch_size, shuffle=False, num_workers=num_workers)
++        iterator = iter(loader)
++        limit = loader.max_iter if not steps_per_epoch else min(loader.max_iter, steps_per_epoch)
++        try:
++            for _ in range(limit):
++                with monitor.step(step_id, epoch=epoch), extra("step"):
++                    with monitor.phase("data_load", gpu=False), extra("data_load"):
++                        batch = next(iterator)
++                    with monitor.phase("data_prepare", gpu=False), extra("data_prepare"):
++                        x, target = prepare_batch(batch)
++                        count = len(x)
++                        monitor.set_step_metadata(batch_size=count, data_bytes=x.nbytes+target.nbytes)
++                    with monitor.phase("h2d"), extra("h2d"):
++                        x, target = transfer(x), transfer(target)
++                    with monitor.phase("forward"), extra("forward"):
++                        prediction = predict(x)
++                    with monitor.phase("loss"), extra("loss"):
++                        loss = loss_fn(prediction, target)
++                    with monitor.phase("backward"), extra("backward"):
++                        backward(loss)
++                    with monitor.phase("optimizer"), extra("optimizer"):
++                        update()
++                losses.append((epoch, count, retain_loss(loss)))
++                step_id += 1
++        finally:
++            if hasattr(iterator, "_shutdown_workers"):
++                iterator._shutdown_workers()
++        epoch_rows.append(dict(epoch=epoch, host_submission_s=(time.perf_counter_ns()-epoch_start)/1e9))
++    return losses, epoch_rows
+--- a/benchmarks/bench_cuda_training.py
++++ b/benchmarks/bench_cuda_training.py
+@@ -1,6 +1,6 @@
+ """Matched HyTorch/CuPy, HyTorch/CUDA C and PyTorch training experiment."""
+ import argparse
+-from contextlib import nullcontext
++from contextlib import nullcontext, contextmanager
+ import hashlib
+ import json
+ from pathlib import Path
+@@ -18,7 +18,8 @@
+ from hytorch.backends.cuda.runtime import load_library
+ from hytorch.dataloaders import DataLoader
+ from hytorch.optimizers import SGD
+-from hytorch.profiling import StepProfiler, ResourceMonitor, dump_json, diagnose
++from hytorch.profiling import StepProfiler, TrainingMonitor, dump_json, diagnose
++from hytorch.monitor_loop import monitored_epochs
+ 
+ 
+ class TinyNet(L.Layer):
+@@ -143,11 +144,27 @@
+     p.add_argument("--lr", type=float, default=.001)
+     p.add_argument("--mode", choices=["phases","throughput"], default="phases")
+     p.add_argument("--interval", type=float, default=1.)
+-    p.add_argument("--no-monitor", action="store_true")
++    p.add_argument("--no-monitor", action="store_true", help="Explicitly disable optional resource monitoring (default)")
++    p.add_argument("--monitor", action="store_true", help="Use TrainingMonitor and asynchronous phase events; legacy --mode ignored")
++    p.add_argument("--monitor-components", choices=["disabled", "timing", "resources", "all"], default="all")
++    p.add_argument("--monitor-interval", type=float, default=.2, help="NVML/CPU sample period in seconds")
++    p.add_argument("--monitor-mode", choices=["throughput", "latency"], default="throughput", help="latency synchronizes step end; diagnostic only")
++    p.add_argument("--monitor-allocator-peaks", action="store_true", help="Optional allocator hook/peak-counter diagnostic")
++    p.add_argument("--col2im", choices=["cupy", "native"], default="cupy")
++    p.add_argument("--dweight", choices=["cupy", "packed"], default="cupy")
++    p.add_argument("--metadata-cache", action="store_true")
++    p.add_argument("--compact-function", action="store_true")
++    p.add_argument("--final-config", action="store_true", help="Select accepted Native kernels, packed dWeight, F1+O1; no fused SGD")
+     p.add_argument("--nvtx", action="store_true")
+     p.add_argument("--output", required=True)
+     args = p.parse_args()
+-    native = args.matmul != "cupy" or args.conv != "cupy" or args.pool != "cupy"
++    if args.no_monitor:
++        args.monitor = False
++    if args.final_config:
++        args.matmul, args.conv, args.pool = "shared", "im2col", "native"
++        args.col2im, args.dweight = "native", "packed"
++        args.metadata_cache = args.compact_function = True
++    native = args.matmul != "cupy" or args.conv != "cupy" or args.pool != "cupy" or args.col2im != "cupy" or args.dweight != "cupy"
+     if native and (args.device != "cuda" or args.framework != "hytorch"):
+         p.error("Native backend requires --framework hytorch --device cuda")
+     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
+@@ -156,6 +173,8 @@
+         p.error("NVTX ranges here require HyTorch CUDA")
+     if args.data and args.model != "donkey":
+         p.error("Real DonkeyCar data requires --model donkey")
++    if args.monitor and args.monitor_id is not None:
++        p.error("TrainingMonitor maps --gpu via runtime UUID/PCI; do not pass legacy --monitor-id")
+     out = Path(args.output); out.mkdir(parents=True, exist_ok=False)
+     shape = (3, 16, 16) if args.model == "tiny" else (3, 66, 200)
+     val_ds = None
+@@ -182,6 +201,10 @@
+     monitor_id = None
+     cp = None
+     if args.device == "cuda":
++        # In mixed-runtime installations load PyTorch's CUDA runtime before
++        # CuPy initializes one; otherwise late torch imports can fail to link.
++        if args.framework == "torch":
++            import torch
+         import cupy as cp
+         cp.cuda.Device(args.gpu).use()
+         monitor_id = args.monitor_id or cp.cuda.Device(args.gpu).pci_bus_id
+@@ -195,6 +218,8 @@
+         optimizer = SGD(args.lr).setup(model)
+         convert = lambda x: cp.asarray(x) if cp is not None else x
+         forward = lambda x,t: F.mean_square_error(model(x), t)
++        loss_fn = F.mean_square_error
++        retain_loss = lambda loss: loss.data
+         backward = lambda loss: (model.cleargrads(), loss.backward())
+         update = optimizer.update
+         restore = lambda: [setattr(v, "data", convert(initial[k].copy())) for k,v in parameters(model).items()]
+@@ -211,6 +236,8 @@
+         optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
+         convert = lambda x: torch.from_numpy(x).to(device)
+         forward = lambda x,t: torch.nn.functional.mse_loss(model(x), t)
++        loss_fn = torch.nn.functional.mse_loss
++        retain_loss = lambda loss: loss.detach()
+         backward = lambda loss: (optimizer.zero_grad(set_to_none=True), loss.backward())
+         update = optimizer.step
+         saved = {k:v.detach().clone() for k,v in model.state_dict().items()}
+@@ -224,7 +251,7 @@
+                     optimizer="SGD, no momentum or weight decay", dropout=0., dtype="float32",
+                     python=sys.version, platform=platform.platform(), numpy=np.__version__,
+                     data_fingerprint="filename/label/file-size manifest" if args.data else "full array bytes",
+-                    backward_backend="original", status="RUNNING")
++                    backward_backend=f"dweight={args.dweight}, col2im={args.col2im}; other backward paths unchanged", status="RUNNING")
+     if cp is not None:
+         metadata.update(cupy=cp.__version__, gpu_name=str(cp.cuda.runtime.getDeviceProperties(args.gpu)["name"]),
+                         runtime=cp.cuda.runtime.runtimeGetVersion(), physical_monitor_id=monitor_id)
+@@ -232,17 +259,61 @@
+         metadata["torch"] = torch.__version__
+     dump_json(out/"config.json", metadata)
+     profile = StepProfiler(out/"steps.jsonl", sync, args.mode, args.nvtx)
+-    monitor = ResourceMonitor(out/"hardware.jsonl", monitor_id, args.interval)
++    monitor = TrainingMonitor(enabled=args.monitor and args.monitor_components != "disabled",
++                              gpu_index=args.gpu if cp is not None else None,
++                              cuda_backend=("cupy" if args.framework == "hytorch" else "torch") if cp is not None else None,
++                              output_dir=out/"monitor", sample_interval=args.monitor_interval,
++                              timing=args.monitor_components in ("timing", "all"),
++                              resources=args.monitor_components in ("resources", "all"),
++                              mode=args.monitor_mode, allocator_peaks=args.monitor_allocator_peaks)
+     epochs = []
+-    context = backend(args.matmul, args.conv, args.pool, args.tile)
+-    with context:
++    context = backend(args.matmul, args.conv, args.pool, args.tile, col2im=args.col2im,
++                      dweight=args.dweight, metadata_cache=args.metadata_cache)
++    with context, hytorch.core.using_config("compact_function", args.compact_function):
+         # Warmup uses same shapes; restore model, clear grads; SGD has no state.
+         warm = [dataset[i] for i in range(min(args.batch, len(dataset)))]
+         wx, wt = convert(np.stack([v[0] for v in warm])), convert(np.stack([v[1] for v in warm]))
+         for _ in range(args.warmup):
+             loss = forward(wx, wt); backward(loss); update()
+         sync(); restore(); dispatch_stats(reset=True)
+-        with monitor if not args.no_monitor else nullcontext():
++        if args.monitor:
++            @contextmanager
++            def monitor_nvtx(name):
++                cp.cuda.nvtx.RangePush(name)
++                try:
++                    yield
++                finally:
++                    cp.cuda.nvtx.RangePop()
++            with monitor:
++                sync()
++                train_started = time.perf_counter()
++                losses, epoch_rows = monitored_epochs(
++                    dataset, args.batch, args.epochs, monitor=monitor, transfer=convert,
++                    predict=model, loss_fn=loss_fn, backward=backward, update=update,
++                    retain_loss=retain_loss, num_workers=args.workers, steps_per_epoch=args.steps,
++                    phase_context=monitor_nvtx if args.nvtx else None)
++                sync()
++                completed_wall = time.perf_counter()-train_started
++            # Scalar extraction/export is outside the measured training window.
++            for epoch_row in epoch_rows:
++                selected = [(count, value) for epoch, count, value in losses if epoch == epoch_row["epoch"]]
++                values = [float(cuda.as_numpy(v)) if args.framework == "hytorch" else float(v.cpu()) for _, v in selected]
++                if not np.isfinite(values).all():
++                    raise RuntimeError("Non-finite training loss")
++                samples = sum(n for n, _ in selected)
++                epoch_row.update(train_loss=sum(n*v for (n,_),v in zip(selected, values))/samples, samples=samples,
++                                 time_scope="epoch host submission only; full completed duration in summary")
++                epochs.append(epoch_row)
++                print(json.dumps(epoch_row), flush=True)
++            if val_ds is not None:
++                # Preserve evaluation mathematics; validation is explicitly outside monitoring.
++                val_total = 0.
++                evaluation = hytorch.no_grad() if args.framework == "hytorch" else torch.no_grad()
++                with evaluation:
++                    for x,t in DataLoader(val_ds,args.batch,shuffle=False):
++                        val_total += scalar(forward(convert(x),convert(t)))*len(x)
++                epochs[-1]["val_loss"] = val_total/len(val_ds)
++        else:
+             for epoch in range(1, args.epochs+1):
+                 epoch_start = time.perf_counter()
+                 epoch_dataset = LimitedDataset(dataset, args.steps*args.batch) if args.steps else dataset
+@@ -289,10 +360,14 @@
+                 print(json.dumps(record), flush=True)
+     hardware = monitor.summary()
+     hardware["time_scope"] = "training_and_validation_excluding_warmup"
+-    timing = profile.summary()
++    timing = monitor.summary() if args.monitor else profile.summary()
+     summary = dict(status="COMPLETED", gpu_status="EXECUTED" if cp is not None else "NOT_EXECUTED",
+                    timing=timing, hardware=hardware, epochs=epochs, dispatch_counts=dispatch_stats(),
+-                   bottleneck_hypotheses=diagnose(timing,hardware))
++                   bottleneck_hypotheses=[] if args.monitor else diagnose(timing,hardware))
++    if args.monitor:
++        summary["completed_train_wall_s"] = completed_wall
++        summary["completed_train_samples_per_s"] = sum(e["samples"] for e in epochs)/completed_wall
++        summary["monitor_output"] = str(monitor.run_dir) if monitor.run_dir else None
+     if args.framework == "hytorch":
+         final = snapshot(model)
+     else:
+--- a/requirements-cuda.txt
++++ b/requirements-cuda.txt
+@@ -6,5 +6,7 @@
+ Pillow>=9
+ matplotlib>=3.6
+ psutil>=5.9
++# Optional GPU telemetry (import name: pynvml); TrainingMonitor degrades gracefully.
++nvidia-ml-py>=12
+ # Optional, installed separately on the target host:
+ # torch, torchvision: matched-framework benchmark and official weight conversion.
+--- /dev/null
++++ b/examples/training_monitor.py
+@@ -0,0 +1,42 @@
++"""Minimal reusable monitor integration: python examples/training_monitor.py --device cpu."""
++import argparse
++from pathlib import Path
++import sys
++sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
++import numpy as np
++from hytorch.profiling import TrainingMonitor
++from hytorch.monitor_loop import monitored_epochs
++from hytorch.optimizers import SGD
++import hytorch.functions as F
++from benchmarks.bench_cuda_training import TinyNet, SyntheticDataset, initialize
++
++
++def main():
++    p = argparse.ArgumentParser(description=__doc__)
++    p.add_argument('--device', choices=['cpu', 'cuda'], default='cpu')
++    p.add_argument('--output', default='runs/monitor_example')
++    args = p.parse_args()
++    xp = np
++    if args.device == 'cuda':
++        import cupy as xp
++    model = TinyNet()
++    initialize(model, (3,16,16), 42)
++    if args.device == 'cuda':
++        model.to_gpu()
++    optimizer = SGD(.001, backend='legacy').setup(model)
++    data = SyntheticDataset(32, (3,16,16), 42)
++    monitor = TrainingMonitor(enabled=True, output_dir=args.output,
++                              cuda_backend='cupy' if args.device == 'cuda' else None,
++                              gpu_index=0 if args.device == 'cuda' else None)
++    with monitor:
++        # The helper wraps next(iterator), not merely the body of `for batch`.
++        monitored_epochs(data, 4, 1, monitor=monitor, transfer=xp.asarray, predict=model,
++                         loss_fn=F.mean_square_error,
++                         backward=lambda loss: (model.cleargrads(), loss.backward()),
++                         update=optimizer.update, retain_loss=lambda loss: loss.data)
++    print(monitor.run_dir)
++    print(monitor.summary())
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ b/tests/test_training_monitor.py
+@@ -0,0 +1,261 @@
++"""CPU-safe telemetry contracts, fake runtime mapping, and failure cleanup."""
++import csv
++import json
++import sys
++import threading
++import time
++from types import SimpleNamespace
++import pytest
++import hytorch.training_monitor as tm
++from hytorch.profiling import TrainingMonitor
++
++
++def monitor(tmp_path, **kw):
++    return TrainingMonitor(enabled=True, cuda_backend=None, gpu_index=None,
++                           resources=False, output_dir=tmp_path, **kw)
++
++
++def test_disabled_is_noop(tmp_path, monkeypatch):
++    monkeypatch.setattr(tm.importlib, 'import_module', lambda name: pytest.fail('disabled import'))
++    m = TrainingMonitor(output_dir=tmp_path/'absent')
++    with m:
++        with m.step(1):
++            with m.phase('forward'):
++                m.set_step_metadata(batch_size=4)
++    m.stop(); m.export(); m.flush_events()
++    assert not (tmp_path/'absent').exists()
++    assert m.thread is None and m.steps == []
++
++
++def test_lifecycle_export_and_reuse(tmp_path):
++    m = monitor(tmp_path)
++    for run in range(2):
++        with m:
++            with m.step(1, epoch=2, batch_size=3):
++                with m.phase('data_load', gpu=False):
++                    sum(range(20))
++                with m.phase('custom'):
++                    pass
++                with m.phase('custom'):
++                    pass
++                m.set_step_metadata(batch_size=2, data_bytes=64)
++            assert m.steps[0]['step_wall_s'] > 0
++        m.stop()
++        rows = list(csv.DictReader((m.run_dir/'STEP_TIMINGS.csv').open()))
++        assert len(rows) == 1 and rows[0]['data_bytes'] == '64'
++        assert json.loads((m.run_dir/'STEP_TIMINGS.json').read_text())[0]['custom_cpu_s'] > 0
++        assert m.summary()['sample_count'] == 0
++    assert len(list(tmp_path.glob('run_*'))) == 2
++
++
++def test_empty_run(tmp_path):
++    with monitor(tmp_path) as m:
++        pass
++    assert m.steps == [] and (m.run_dir/'STEP_TIMINGS.csv').read_text().startswith('step_id,')
++    assert m.summary()['sampled_peaks_bytes']['gpu_used_bytes'] is None
++
++
++def test_misuse(tmp_path):
++    m = monitor(tmp_path)
++    with pytest.raises(RuntimeError):
++        with m.step(): pass
++    with m:
++        with pytest.raises(RuntimeError): m.start()
++        with pytest.raises(RuntimeError):
++            with m.phase('forward'): pass
++        with pytest.raises(ValueError): m.phase('illegal space')
++        with pytest.raises(RuntimeError): m.export()
++        with m.step(3):
++            with pytest.raises(RuntimeError): m.stop()
++            with pytest.raises(RuntimeError): m.flush_events()
++            with pytest.raises(RuntimeError):
++                with m.step(4): pass
++            with m.phase('forward'):
++                with pytest.raises(RuntimeError):
++                    with m.phase('nested'): pass
++        with pytest.raises(ValueError):
++            with m.step(3): pass
++        with pytest.raises(RuntimeError): m.set_step_metadata(batch_size=4)
++
++
++@pytest.mark.parametrize('kwargs', [dict(sample_interval=0), dict(sample_interval=float('nan')),
++                                    dict(mode='bad'), dict(cuda_backend='bad'), dict(gpu_index=-1),
++                                    dict(gpu_uuid='A', gpu_pci_bus_id='B'), dict(gpu_uuid='A')])
++def test_invalid_configuration(kwargs):
++    with pytest.raises(ValueError): TrainingMonitor(**kwargs)
++
++
++def test_exception_preserved_and_saved(tmp_path):
++    m = monitor(tmp_path)
++    with pytest.raises(ValueError, match='model failed'):
++        with m:
++            with m.step(0):
++                with m.phase('backward'):
++                    raise ValueError('model failed')
++    assert not m.running and m._active is None and m._phase_name is None
++    assert m.steps[0]['status'] == 'ERROR'
++    assert 'model failed' in m.steps[0]['error']
++    with m: pass
++
++
++def test_missing_optional_dependencies(tmp_path, monkeypatch):
++    original = tm.importlib.import_module
++    def missing(name):
++        if name in ('psutil', 'pynvml'): raise ImportError(name+' unavailable')
++        return original(name)
++    monkeypatch.setattr(tm.importlib, 'import_module', missing)
++    m = TrainingMonitor(enabled=True, output_dir=tmp_path, cuda_backend=None,
++                        gpu_uuid='GPU-test', sample_interval=.005)
++    with m:
++        with m.step(1):
++            with m.phase('forward'): time.sleep(.02)
++    assert not m.thread.is_alive()
++    assert m.gpu_samples and m.cpu_samples
++    assert all(r['gpu_utilization_pct'] is None for r in m.gpu_samples)
++    assert all(r['system_cpu_pct'] is None for r in m.cpu_samples)
++    assert m.steps[0]['forward_cpu_s'] > 0
++    assert len(m.errors) == 2
++
++
++def test_nvml_mapping_missing_metric_and_cpu_priming(monkeypatch):
++    calls=[]
++    class NVML:
++        NVML_TEMPERATURE_GPU=0;NVML_CLOCK_SM=1;NVML_CLOCK_MEM=2
++        def nvmlInit(self): calls.append('init')
++        def nvmlShutdown(self): calls.append('close')
++        def nvmlDeviceGetHandleByPciBusId(self, bus):
++            assert bus=='0000:E1:00.0';return 'physical1'
++        def nvmlDeviceGetUUID(self,h):return b'GPU-one'
++        def nvmlDeviceGetIndex(self,h):return 1
++        def nvmlDeviceGetName(self,h):return b'A100'
++        def nvmlDeviceGetPciInfo(self,h):return SimpleNamespace(busId=b'0000:E1:00.0')
++        def nvmlDeviceGetUtilizationRates(self,h):return SimpleNamespace(gpu=45,memory=12)
++        def nvmlDeviceGetMemoryInfo(self,h):return SimpleNamespace(used=123,total=456)
++        def nvmlDeviceGetTemperature(self,h,v):return 42
++        def nvmlDeviceGetPowerUsage(self,h):raise RuntimeError('NOT_SUPPORTED')
++        def nvmlDeviceGetClockInfo(self,h,v):return 1000
++        def nvmlDeviceGetComputeRunningProcesses(self,h):return [SimpleNamespace(pid=tm.os.getpid(),usedGpuMemory=2**64-1)]
++    proc=SimpleNamespace(cpu_percent=lambda _:150,memory_info=lambda:SimpleNamespace(rss=512),num_threads=lambda:4)
++    ps=SimpleNamespace(Process=lambda pid:proc,cpu_percent=lambda _:25)
++    monkeypatch.setattr(tm.importlib,'import_module',lambda name:NVML() if name=='pynvml' else ps)
++    r=tm._Resources(('pci','0000:E1:00.0'))
++    g,c,status=r.sample();assert r.identity['physical_gpu_index']==1
++    assert g['gpu_power_w'] is None and 'NOT_SUPPORTED' in status['power']
++    assert g['process_gpu_used_bytes'] is None and c['system_cpu_pct'] is None
++    g,c,status=r.sample();assert c['process_cpu_pct']==150 and c['system_cpu_pct']==25
++    r.close();assert calls==['init','close']
++
++
++def test_runtime_pci_mapping_not_visible_index(monkeypatch):
++    monkeypatch.setenv('CUDA_VISIBLE_DEVICES','1')
++    fake=SimpleNamespace(cuda=SimpleNamespace(Device=lambda i:SimpleNamespace(pci_bus_id='0000:E1:00.0')),get_default_memory_pool=lambda:None)
++    monkeypatch.setattr(tm.importlib,'import_module',lambda _:fake)
++    timer=tm._CudaTimer('cupy',0)
++    assert timer.selector==('pci','0000:E1:00.0')
++
++
++class FakeTimer:
++    def __init__(self,*_):
++        self.selector=('pci','actual');self.backend='fake';self.synced=0;self.which=1
++    def stream(self):return SimpleNamespace(ptr=self.which,synchronize=self.sync)
++    def sync(self):self.synced+=1
++    def stream_id(self,s):return s.ptr
++    def event(self):return SimpleNamespace(record=lambda stream:None)
++    def elapsed(self,a,b):return .001
++
++
++def test_events_deferred_and_cross_stream_invalid(tmp_path,monkeypatch):
++    monkeypatch.setattr(tm,'_CudaTimer',FakeTimer)
++    m=TrainingMonitor(enabled=True,resources=False,output_dir=tmp_path)
++    with m:
++        with m.step(1):
++            with m.phase('forward'):pass
++            with m.phase('overlapping'):
++                m._timer.which=2
++        assert m._timer.synced==0
++        assert m.steps[0]['forward_gpu_event_s'] is None
++        assert m.steps[0]['step_wall_s'] is None
++    assert m._timer.synced==2
++    assert m.steps[0]['forward_gpu_event_s']==.001
++    assert m.steps[0]['overlapping_gpu_event_s'] is None
++    assert m.steps[0]['gpu_event_status']=='UNSUPPORTED_CROSS_STREAM_INTERVAL'
++    assert not m._pending
++
++
++def test_latency_sync_only_step_end(tmp_path,monkeypatch):
++    monkeypatch.setattr(tm,'_CudaTimer',FakeTimer)
++    with TrainingMonitor(enabled=True,resources=False,mode='latency',output_dir=tmp_path) as m:
++        with m.step(1):
++            with m.phase('forward'):pass
++            assert m._timer.synced==0
++        assert m._timer.synced==1 and m.steps[0]['step_wall_s']>0
++
++
++def test_event_failure_keeps_host_metrics(tmp_path,monkeypatch):
++    class Broken(FakeTimer):
++        def event(self):raise RuntimeError('event failed')
++    monkeypatch.setattr(tm,'_CudaTimer',Broken)
++    with TrainingMonitor(enabled=True,resources=False,output_dir=tmp_path) as m:
++        with m.step(0):
++            with m.phase('forward'):pass
++    assert m.steps[0]['host_iteration_s']>0 and m.steps[0]['gpu_event_status']=='UNAVAILABLE'
++
++
++def test_wrong_thread_rejected(tmp_path):
++    with monitor(tmp_path) as m:
++        errors=[]
++        def work():
++            try:
++                with m.step(0):pass
++            except RuntimeError:errors.append(True)
++        t=threading.Thread(target=work);t.start();t.join();assert errors==[True]
++
++
++def test_resources_only_no_steps(tmp_path,monkeypatch):
++    class Provider:
++        identity={};errors=[]
++        def __init__(self, selector):pass
++        def sample(self):return {'gpu_used_bytes':None},{'system_cpu_pct':None},{}
++        def close(self):pass
++    monkeypatch.setattr(tm,'_Resources',Provider)
++    with TrainingMonitor(enabled=True,timing=False,cuda_backend=None,output_dir=tmp_path,sample_interval=.005) as m:
++        with m.step(0):
++            with m.phase('forward'):time.sleep(.025)
++    assert not m.steps and len(m.gpu_samples)>=2 and not m.thread.is_alive()
++    times=[r['monotonic_ns'] for r in m.gpu_samples]
++    assert times==sorted(times) and all(r['schedule_delay_s']>=0 for r in m.gpu_samples)
++
++
++def test_loop_covers_next_and_matches_unmonitored_cpu(tmp_path):
++    import numpy as np
++    from hytorch.monitor_loop import monitored_epochs
++    class Dataset:
++        def __len__(self):return 4
++        def __getitem__(self,index):return np.array([index],dtype='f'),np.array([index],dtype='f')
++    calls=[]
++    with monitor(tmp_path) as m:
++        losses,epochs=monitored_epochs(Dataset(),2,1,monitor=m,transfer=lambda x:x,
++            predict=lambda x:x,loss_fn=lambda x,t:np.sum(x-t),backward=lambda loss:calls.append('backward'),
++            update=lambda:calls.append('update'))
++    assert calls==['backward','update']*2
++    assert len(losses)==2 and len(epochs)==1
++    assert all(r['data_load_cpu_s']>0 and r['data_bytes']==16 for r in m.steps)
++
++
++def test_nonzero_sampler_allocator_device_selected_once(tmp_path,monkeypatch):
++    calls=[]
++    class Timer(FakeTimer):
++        def __init__(self,*_):
++            super().__init__();self.backend='cupy';self.device=1
++            self.module=SimpleNamespace(cuda=SimpleNamespace(runtime=SimpleNamespace(setDevice=lambda d:calls.append((d,threading.get_ident())))))
++        def allocator(self):return {'cupy_active_bytes':32,'cupy_reserved_bytes':64}
++    class Provider:
++        identity={};errors=[]
++        def __init__(self,selector):pass
++        def sample(self):return {},{},{}
++        def close(self):pass
++    monkeypatch.setattr(tm,'_CudaTimer',Timer);monkeypatch.setattr(tm,'_Resources',Provider)
++    with TrainingMonitor(enabled=True,timing=False,gpu_index=1,output_dir=tmp_path,sample_interval=.005) as m:
++        time.sleep(.02)
++    assert len(calls)==1 and calls[0][0]==1 and calls[0][1]!=threading.get_ident()
++    assert m.gpu_samples[0]['cupy_active_bytes']==32
+--- /dev/null
++++ b/tests/test_training_monitor_cuda.py
+@@ -0,0 +1,91 @@
++"""Real CUDA events and current-stream telemetry; do not silently accept GPU skips."""
++import json
++import os
++import time
++import numpy as np
++import pytest
++# This shared environment has CUDA 12.4 CuPy and a CUDA 12.8 PyTorch wheel.
++# Load PyTorch's compatible CUDA runtime before the first CuPy CUDA operation.
++import torch
++import hytorch
++import hytorch.functions as F
++from hytorch.profiling import TrainingMonitor
++from hytorch.backends.cuda import runtime as rt
++from test_col2im_cuda import cp
++
++
++@pytest.mark.parametrize('nondefault',[False,True])
++def test_stream_events_mapping_and_repeat(cp,tmp_path,nondefault):
++    stream=cp.cuda.Stream(non_blocking=True) if nondefault else cp.cuda.get_current_stream()
++    m=TrainingMonitor(enabled=True,gpu_index=cp.cuda.runtime.getDevice(),sample_interval=.01,output_dir=tmp_path)
++    for run in range(2):
++        with stream, m:
++            with m.step(0,epoch=1,batch_size=4,data_bytes=4096):
++                with m.phase('forward'):
++                    x=cp.ones((32,32),cp.float32);y=x+x
++            deadline=time.monotonic()+2
++            while len(m.gpu_samples)<2 and time.monotonic()<deadline:time.sleep(.01)
++            assert m.steps[0]['step_wall_s'] is None
++        assert m.steps[0]['forward_gpu_event_s']>0
++        assert not m.thread.is_alive() and not m._pending
++        np.testing.assert_array_equal(cp.asnumpy(y),np.full((32,32),2,np.float32))
++        assert m.gpu_samples
++        row=m.gpu_samples[-1]
++        if row.get('gpu_uuid') is None:
++            assert m.errors or 'UNAVAILABLE' in row['status_json']
++        else:
++            assert row['pci_bus_id'].lower().split(':')[-2:]==cp.cuda.Device().pci_bus_id.lower().split(':')[-2:]
++            assert row['logical_cuda_index']==cp.cuda.runtime.getDevice()
++            assert row['gpu_used_bytes']>0 and row['gpu_total_bytes']>=row['gpu_used_bytes']
++            if os.environ.get('CUDA_VISIBLE_DEVICES')=='1':assert row['physical_gpu_index']==1
++        assert m.cpu_samples[0]['system_cpu_pct'] is None
++    assert len(list(tmp_path.glob('run_*')))==2
++
++
++def test_allocator_peak_and_exception(cp,tmp_path):
++    m=TrainingMonitor(enabled=True,resources=False,output_dir=tmp_path,allocator_peaks=True)
++    with pytest.raises(RuntimeError,match='intentional'):
++        with m:
++            with m.step(7):
++                with m.phase('backward'):
++                    x=cp.empty((1024,1024),cp.float32)
++                    raise RuntimeError('intentional')
++    peak=m.summary()['allocator_tracked_peak']
++    assert peak['active_bytes']>=x.nbytes and peak['phase']=='backward' and peak['step_id']==7
++    assert m._hook is None and not m.running
++    assert json.loads((m.run_dir/'STEP_TIMINGS.json').read_text())[0]['status']=='ERROR'
++
++
++@pytest.mark.parametrize('mode',['throughput','latency'])
++def test_enabled_disabled_numeric_alignment(cp,tmp_path,mode):
++    rng=np.random.default_rng(91);initial=rng.normal(0,.1,(3,2,3,3)).astype('f')
++    x=cp.asarray(rng.normal(0,.1,(2,2,7,9)).astype('f'))
++    results=[]
++    for enabled in [False,True]:
++        w=hytorch.Variable(cp.asarray(initial))
++        with rt.backend(conv='im2col',col2im='native',dweight='packed',metadata_cache=True),hytorch.core.using_config('compact_function',True):
++            m=TrainingMonitor(enabled=enabled,resources=False,mode=mode,output_dir=tmp_path)
++            with m:
++                for step in range(3):
++                    with m.step(step):
++                        with m.phase('forward'):y=F.conv2d(x,w,pad=1)
++                        with m.phase('loss'):loss=(y*y).sum()
++                        with m.phase('backward'):w.cleargrad();loss.backward()
++                        with m.phase('optimizer'):w.data-=np.float32(.001)*w.grad.data
++            cp.cuda.get_current_stream().synchronize()
++            results.append([cp.asnumpy(v) for v in (w.data,w.grad.data,loss.data)])
++            if enabled:
++                assert all(r['step_wall_s'] is not None for r in m.steps) if mode=='latency' else all(r['step_wall_s'] is None for r in m.steps)
++    for a,b in zip(*results):assert a.tobytes()==b.tobytes()
++
++
++def test_torch_events_and_allocator(cp,tmp_path):
++    import torch
++    stream=torch.cuda.Stream()
++    with torch.cuda.stream(stream), TrainingMonitor(enabled=True,cuda_backend='torch',resources=False,
++            output_dir=tmp_path,allocator_peaks=True) as m:
++        with m.step(0):
++            with m.phase('forward'):x=torch.ones((32,32),device='cuda');y=x+x
++    assert m.steps[0]['forward_gpu_event_s']>0
++    assert m.summary()['allocator_tracked_peak']['active_bytes']>=x.nelement()*x.element_size()
++    assert y.cpu().numpy().sum()==2048

@@ -1,0 +1,9 @@
+{
+  "reason": "Initial diagnostic MatMul label assumed all MatMul calls were backward; corrected labels using recorded attrs.native and backend. Shapes, dtypes, timing, NVTX ids and execution unchanged; diagnostic source fixed.",
+  "counts": {
+    "workload": 9,
+    "native_trace": 90,
+    "native_plain": 0,
+    "cupy_trace": 90
+  }
+}

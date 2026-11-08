@@ -1,0 +1,13 @@
+trace,scope,name,count,calls_per_step,mean_us,total_us,us_per_step,timing,denominator
+cupy_trace,cuda_api_cpu_wall,cuLaunchKernel,1170,117.0,4.565140170940171,5341.213999999999,534.1213999999999,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cuProfilerStart,1,0.1,11.922,11.922,1.1922000000000001,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cuStreamGetCaptureInfo_v2,480,48.0,0.10929583333333333,52.46200000000008,5.246200000000008,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaEventCreateWithFlags_v3020,20,2.0,1.8792,37.58399999999999,3.758399999999999,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaEventDestroy_v3020,21,2.1,1.065,22.365000000000002,2.2365000000000004,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaEventQuery_v3020,41,4.1,1.8946585365853659,77.68100000000001,7.768100000000001,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaEventRecord_v3020,100,10.0,5.16665,516.6649999999996,51.666499999999964,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaLaunchKernel_v7000,340,34.0,5.222644117647059,1775.6990000000003,177.56990000000002,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaMalloc_v3020,1,0.1,221.39,221.39,22.139,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaMemcpyAsync_v3020,30,3.0,15.8456,475.36800000000017,47.536800000000014,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaStreamIsCapturing_v10000,270,27.0,0.5487407407407408,148.16000000000008,14.816000000000008,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations
+cupy_trace,cuda_api_cpu_wall,cudaStreamSynchronize_v3020,21,2.1,4.273428571428571,89.742,8.9742,CUPTI CPU API duration; may overlap kernel execution,not additive with GPU durations

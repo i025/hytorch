@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/lib_before.so",
+    "bytes": 309040,
+    "sha256": "5b93982d8c31438a033c7da6d43164a3389a15cf0e94baddc0e390df67199ec0",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch/lib_after.so",
+    "bytes": 309040,
+    "sha256": "c72293ac7efc50699eda649fc52c748e5cd871080776b227cfb14598b6327ddd",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/libhytorch_cuda_baseline.so",
+    "bytes": 169656,
+    "sha256": "324203dcd0142fa6896e31d9f96012cc5a12b04afcc379440bd1f1a307c4a526",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/hytorch/backends/cuda/build/libhytorch_cuda.so",
+    "bytes": 309040,
+    "sha256": "c72293ac7efc50699eda649fc52c748e5cd871080776b227cfb14598b6327ddd",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/gemm.nsys-rep",
+    "bytes": 999961,
+    "sha256": "274dbd7f238960463744c5cf68b327a4e708e3e4746d5ae40ceefeb15bccedbf",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/gemm.sqlite",
+    "bytes": 2150400,
+    "sha256": "3ecfb55e3fb5a032fd9834faf37d154fd0532518d941a586a4f054ab024b5d90",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/train_new.nsys-rep",
+    "bytes": 541743,
+    "sha256": "a1b876cf19018c27ad85e46ab60fd43757796125b9a5bd42a41132935418be74",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/train_new.sqlite",
+    "bytes": 1089536,
+    "sha256": "5eea1b55d64aa9b0327afb2600eb5185c3277732231a4b6e3caeeccab4c87584",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/train_old.nsys-rep",
+    "bytes": 541949,
+    "sha256": "f1ad939671d9a4d2e17774427f4621e920a366bcada4263c70f3355134d018ee",
+    "included": false
+  },
+  {
+    "path": "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/gemm_shape_dispatch_traces/train_old.sqlite",
+    "bytes": 1077248,
+    "sha256": "6a935967397366741c14adce5db68a45dc9ea4ffbd61f773cd76255c90dfeedc",
+    "included": false
+  }
+]

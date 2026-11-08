@@ -8,6 +8,9 @@ import threading
 import time
 import math
 
+# Keep the original flat-module imports and legacy profilers compatible.
+from hytorch.training_monitor import TrainingMonitor
+
 
 def dump_json(path, value):
     Path(path).write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False), encoding="utf-8")

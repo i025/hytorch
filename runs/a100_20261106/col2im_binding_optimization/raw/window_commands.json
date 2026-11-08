@@ -1,0 +1,341 @@
+{
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "CUDA_PATH": "/usr/local/cuda",
+    "LD_LIBRARY_PATH": "/usr/local/cuda/lib64",
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "PYTHONHASHSEED": "0",
+    "HYTORCH_REQUIRE_CUDA": "1",
+    "NVIDIA_TF32_OVERRIDE": "0"
+  },
+  "commands": [
+    {
+      "name": "gpu_before",
+      "argv": [
+        "nvidia-smi"
+      ],
+      "start_utc": "2026-11-06T09:04:37.293854+00:00",
+      "end_utc": "2026-11-06T09:04:38.181050+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "gpu_tests",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "-c",
+        "import torch,pytest,sys;sys.exit(pytest.main(sys.argv[1:]))",
+        "tests/test_cuda_device.py",
+        "tests/test_backward_dtype.py",
+        "tests/test_gemm_dispatch.py",
+        "tests/test_col2im_cuda.py",
+        "tests/test_col2im_binding.py",
+        "-k",
+        "not cpu",
+        "-q"
+      ],
+      "start_utc": "2026-11-06T09:04:38.249749+00:00",
+      "end_utc": "2026-11-06T09:04:43.949162+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "host",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "-c",
+        "import torch,pytest,sys;sys.exit(pytest.main(sys.argv[1:]))",
+        "tests/test_cuda_host.py",
+        "tests/test_conv2d_gemm_cpu.py",
+        "tests/test_gemm_blocked_packed.py",
+        "tests/test_col2im_host.py",
+        "tests/test_col2im_binding.py",
+        "-k",
+        "not cache_changes and not warm_cache and not legacy_col2im and not fast_abi",
+        "-q"
+      ],
+      "start_utc": "2026-11-06T09:04:43.949556+00:00",
+      "end_utc": "2026-11-06T09:04:47.558838+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "dtype_host",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "-c",
+        "import torch,pytest,sys;sys.exit(pytest.main(sys.argv[1:]))",
+        "tests/test_backward_dtype.py",
+        "-k",
+        "not cuda and not donkey",
+        "-q"
+      ],
+      "start_utc": "2026-11-06T09:04:47.559225+00:00",
+      "end_utc": "2026-11-06T09:04:50.057427+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "memcheck",
+      "argv": [
+        "/usr/local/cuda/bin/compute-sanitizer",
+        "--tool",
+        "memcheck",
+        "--error-exitcode",
+        "99",
+        "--target-processes",
+        "all",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "-c",
+        "import torch,pytest,sys;sys.exit(pytest.main(sys.argv[1:]))",
+        "tests/test_col2im_cuda.py",
+        "tests/test_col2im_binding.py",
+        "-q"
+      ],
+      "start_utc": "2026-11-06T09:04:50.057843+00:00",
+      "end_utc": "2026-11-06T09:04:53.686427+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "racecheck",
+      "argv": [
+        "/usr/local/cuda/bin/compute-sanitizer",
+        "--tool",
+        "racecheck",
+        "--error-exitcode",
+        "99",
+        "--target-processes",
+        "all",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "-c",
+        "import torch,pytest,sys;sys.exit(pytest.main(sys.argv[1:]))",
+        "tests/test_col2im_cuda.py",
+        "tests/test_col2im_binding.py",
+        "-q"
+      ],
+      "start_utc": "2026-11-06T09:04:53.686799+00:00",
+      "end_utc": "2026-11-06T09:04:57.890715+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "cpu",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/cpu.py"
+      ],
+      "start_utc": "2026-11-06T09:04:57.891154+00:00",
+      "end_utc": "2026-11-06T09:05:01.327932+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "bench",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/bench.py"
+      ],
+      "start_utc": "2026-11-06T09:05:01.328441+00:00",
+      "end_utc": "2026-11-06T09:05:03.880536+00:00",
+      "returncode": 1
+    },
+    {
+      "name": "gpu_after",
+      "argv": [
+        "nvidia-smi"
+      ],
+      "start_utc": "2026-11-06T09:05:03.881019+00:00",
+      "end_utc": "2026-11-06T09:05:04.570272+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "gpu_resume",
+      "argv": [
+        "nvidia-smi"
+      ],
+      "start_utc": "2026-11-06T09:06:13.856587+00:00",
+      "end_utc": "2026-11-06T09:06:14.625802+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "gpu_resume_2",
+      "argv": [
+        "nvidia-smi"
+      ],
+      "start_utc": "2026-11-06T09:06:33.784199+00:00",
+      "end_utc": "2026-11-06T09:06:34.593352+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "bench_corrected",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/bench.py"
+      ],
+      "start_utc": "2026-11-06T09:06:34.663287+00:00",
+      "end_utc": "2026-11-06T09:06:38.247182+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "training",
+      "argv": [
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/train.py",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/raw/training"
+      ],
+      "start_utc": "2026-11-06T09:06:38.247657+00:00",
+      "end_utc": "2026-11-06T09:07:06.402176+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "col2im",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/col2im",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/bench.py",
+        "--profile"
+      ],
+      "start_utc": "2026-11-06T09:07:06.402673+00:00",
+      "end_utc": "2026-11-06T09:07:17.077905+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "col2im_export",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "export",
+        "--type=sqlite",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/col2im.sqlite",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/col2im.nsys-rep"
+      ],
+      "start_utc": "2026-11-06T09:07:17.078409+00:00",
+      "end_utc": "2026-11-06T09:07:17.129489+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_cupy",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_cupy",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/train.py",
+        "--trace",
+        "cupy",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/raw/train_cupy"
+      ],
+      "start_utc": "2026-11-06T09:07:17.129865+00:00",
+      "end_utc": "2026-11-06T09:07:27.785014+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_cupy_export",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "export",
+        "--type=sqlite",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_cupy.sqlite",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_cupy.nsys-rep"
+      ],
+      "start_utc": "2026-11-06T09:07:27.785499+00:00",
+      "end_utc": "2026-11-06T09:07:27.827709+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_old",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_old",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/train.py",
+        "--trace",
+        "old",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/raw/train_old"
+      ],
+      "start_utc": "2026-11-06T09:07:27.828133+00:00",
+      "end_utc": "2026-11-06T09:07:38.756833+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_old_export",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "export",
+        "--type=sqlite",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_old.sqlite",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_old.nsys-rep"
+      ],
+      "start_utc": "2026-11-06T09:07:38.757338+00:00",
+      "end_utc": "2026-11-06T09:07:38.799758+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_fast",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--trace=cuda,nvtx,osrt",
+        "--capture-range=cudaProfilerApi",
+        "--capture-range-end=stop",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_fast",
+        "/home/xieminhui_pubuse/hytorch-env/bin/python",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/diagnostics/train.py",
+        "--trace",
+        "fast",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_optimization/raw/train_fast"
+      ],
+      "start_utc": "2026-11-06T09:07:38.800123+00:00",
+      "end_utc": "2026-11-06T09:07:49.729062+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_fast_export",
+      "argv": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "export",
+        "--type=sqlite",
+        "--output",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_fast.sqlite",
+        "/home/xieminhui_pubuse/hytorch/runs/a100_20261106/col2im_binding_traces/train_fast.nsys-rep"
+      ],
+      "start_utc": "2026-11-06T09:07:49.729625+00:00",
+      "end_utc": "2026-11-06T09:07:49.770422+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "gpu_final",
+      "argv": [
+        "nvidia-smi"
+      ],
+      "start_utc": "2026-11-06T09:07:49.770899+00:00",
+      "end_utc": "2026-11-06T09:07:50.497543+00:00",
+      "returncode": 0
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "utc": "2026-11-08T08:21:01.169444+00:00",
+  "gpus": "index, uuid, name, utilization.gpu [%], memory.used [MiB], memory.total [MiB], driver_version\n0, GPU-af2dc3da-4948-7c30-005b-1ab38ccd4863, NVIDIA A100-PCIE-40GB, 0 %, 20543 MiB, 40960 MiB, 580.95.05\n1, GPU-0bc09ee6-967a-b53d-bf80-38379585cf08, NVIDIA A100-PCIE-40GB, 0 %, 0 MiB, 40960 MiB, 580.95.05\n",
+  "processes": "GPU-af2dc3da-4948-7c30-005b-1ab38ccd4863, 570250, VLLM::EngineCore, 20534 MiB\n"
+}

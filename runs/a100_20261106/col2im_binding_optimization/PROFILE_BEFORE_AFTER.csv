@@ -1,0 +1,520 @@
+mode,scope,phase,category,layer,name,count,calls_per_step,mean_us,us_per_step,total_us,pct_kernel_sum,grid,block,registers
+cupy,kernel_by_layer,forward,forward,conv1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,27.008,27.008,270.08,1.995398791249946,"3561,1,1","256,1,1",23
+cupy,kernel_by_layer,forward,forward,conv1,cupy_copy__float32_float32,10,1.0,3.6544000000000003,3.6544000000000003,36.544000000000004,0.26999353312884344,"15,1,1","128,1,1",16
+cupy,kernel_by_layer,forward,forward,conv1,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,26.784,26.784,267.84,1.9788492752087732,"2,760,1","16,16,1",32
+cupy,kernel_by_layer,forward,forward,conv1,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,9.091199999999999,9.0912,90.912,0.6716739296138741,"1140,1,1","256,1,1",24
+cupy,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,6.0833,6.0832999999999995,60.83299999999999,0.44944495952350394,"2279,1,1","128,1,1",18
+cupy,kernel_by_layer,forward,forward,conv2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,43.4176,43.41760000000001,434.17600000000004,3.2077690520947,"6169,1,1","256,1,1",23
+cupy,kernel_by_layer,forward,forward,conv2,cupy_copy__float32_float32,10,1.0,4.252800000000001,4.252800000000001,42.528000000000006,0.3142043831245472,"169,1,1","128,1,1",16
+cupy,kernel_by_layer,forward,forward,conv2,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,72.0544,72.05440000000002,720.5440000000001,5.323506467129744,"3,165,1","16,16,1",32
+cupy,kernel_by_layer,forward,forward,conv2,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,6.8031999999999995,6.8031999999999995,68.032,0.502632444336183,"371,1,1","256,1,1",24
+cupy,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,4.1472,4.147200000000001,41.47200000000001,0.30640246841942304,"741,1,1","128,1,1",18
+cupy,kernel_by_layer,forward,forward,conv3,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,13.7891,13.7891,137.891,1.0187630876934473,"1547,1,1","256,1,1",23
+cupy,kernel_by_layer,forward,forward,conv3,cupy_copy__float32_float32,10,1.0,4.563199999999999,4.5632,45.632,0.3371372839244577,"338,1,1","128,1,1",16
+cupy,kernel_by_layer,forward,forward,conv3,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,51.9458,51.945800000000006,519.4580000000001,3.8378475463015205,"3,28,1","16,16,1",32
+cupy,kernel_by_layer,forward,forward,conv3,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,4.6048,4.604799999999999,46.047999999999995,0.3402107654749611,"83,1,1","256,1,1",24
+cupy,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.6448,3.644800000000001,36.44800000000001,0.2692842681556503,"165,1,1","128,1,1",18
+cupy,kernel_by_layer,forward,forward,conv4,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,6.848,6.848000000000001,68.48,0.5059423475444176,"405,1,1","256,1,1",23
+cupy,kernel_by_layer,forward,forward,conv4,cupy_copy__float32_float32,10,1.0,4.4352,4.4352,44.352000000000004,0.32768041761521627,"216,1,1","128,1,1",16
+cupy,kernel_by_layer,forward,forward,conv4,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,26.086399999999998,26.086400000000005,260.86400000000003,1.9273093538234076,"4,15,1","16,16,1",32
+cupy,kernel_by_layer,forward,forward,conv4,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,4.4832,4.4832,44.832,0.3312267424811818,"60,1,1","256,1,1",24
+cupy,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.6512000000000002,3.6512000000000002,36.512,0.26975711147111237,"120,1,1","128,1,1",18
+cupy,kernel_by_layer,forward,forward,conv5,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,5.3152,5.3152,53.152,0.3926963734912512,"162,1,1","256,1,1",23
+cupy,kernel_by_layer,forward,forward,conv5,cupy_copy__float32_float32,10,1.0,4.6944,4.6944,46.943999999999996,0.34683057189143013,"288,1,1","128,1,1",16
+cupy,kernel_by_layer,forward,forward,conv5,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,33.6385,33.6385,336.385,2.485271854245457,"4,5,1","16,16,1",32
+cupy,kernel_by_layer,forward,forward,conv5,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,4.1568000000000005,4.1568,41.568,0.3071117333926161,"18,1,1","256,1,1",24
+cupy,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.3472,3.3472,33.472,0.24729705398666393,"36,1,1","128,1,1",18
+cupy,kernel_by_layer,forward,forward,fc1,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,63.6609,63.66089999999999,636.6089999999999,4.703379847078039,"7,1,1","16,16,1",32
+cupy,kernel_by_layer,forward,forward,fc1,cupy_add__float32_float32_float32,10,1.0,4.016,4.016,40.16,0.2967091804524504,"4,1,1","128,1,1",16
+cupy,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.0336,3.0335999999999994,30.335999999999995,0.22412773152902232,"4,1,1","128,1,1",18
+cupy,kernel_by_layer,forward,forward,fc2,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,8.2464,8.2464,82.464,0.6092586119728803,"4,1,1","16,16,1",32
+cupy,kernel_by_layer,forward,forward,fc2,cupy_add__float32_float32_float32,10,1.0,3.088,3.0879999999999996,30.879999999999995,0.22814689971044994,"2,1,1","128,1,1",16
+cupy,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,2.4415999999999998,2.4415999999999998,24.415999999999997,0.1803897248487806,"2,1,1","128,1,1",18
+cupy,kernel_by_layer,forward,forward,fc3,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,4.7904,4.7904,47.903999999999996,0.3539232216233612,"1,1,1","16,16,1",32
+cupy,kernel_by_layer,forward,forward,fc3,cupy_add__float32_float32_float32,10,1.0,3.1616,3.1615999999999995,31.615999999999996,0.23358459783826377,"1,1,1","4,1,1",16
+cupy,kernel_by_layer,forward,forward,,cupy_tanh__float32_float32,10,1.0,2.8224,2.822399999999999,28.223999999999993,0.20852390211877392,"1,1,1","4,1,1",21
+cupy,kernel_by_layer,forward,forward,,cupy_subtract__float32_float32_float32,10,1.0,2.8127999999999997,2.8127999999999997,28.127999999999997,0.20781463714558085,"1,1,1","4,1,1",22
+cupy,kernel_by_layer,forward,forward,,cupy_square__float32_float32,10,1.0,2.8161,2.8160999999999996,28.160999999999994,0.20805844698011594,"1,1,1","4,1,1",18
+cupy,kernel_by_layer,forward,forward,,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,3.152,3.1519999999999997,31.519999999999996,0.23287533286507067,"1,1,1","256,1,1",32
+cupy,kernel_by_layer,forward,forward,,cupy_true_divide__float32_float_float32,10,1.0,2.704,2.7039999999999997,27.039999999999996,0.1997763007827256,"1,1,1","1,1,1",16
+cupy,kernel_by_layer,backward,other_backward,,cupy_fill,20,2.0,2.2192,4.438399999999999,44.383999999999986,0.3279168392729472,"1,1,1","1,1,1",16
+cupy,kernel_by_layer,backward,other_backward,,cupy_subtract__float32_float32_float32,10,1.0,2.6432,2.6431999999999998,26.432,0.19528428928583594,"1,1,1","4,1,1",22
+cupy,kernel_by_layer,backward,other_backward,,cupy_multiply__float32_float32_float32,20,2.0,2.98405,5.968100000000001,59.681000000000004,0.4409337798451867,"1,1,1","4,1,1",16
+cupy,kernel_by_layer,backward,other_backward,,cupy_negative__float32_float32,10,1.0,2.5792,2.5791999999999997,25.791999999999998,0.1905558561312152,"1,1,1","4,1,1",18
+cupy,kernel_by_layer,backward,activation_backward,,cupy_fill,10,1.0,2.1792000000000002,2.1792000000000002,21.792,0.1610031489148357,"1,1,1","1,1,1",16
+cupy,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_float32_float32,20,2.0,2.6593,5.318600000000001,53.18600000000001,0.39294757150259046,"1,1,1","4,1,1",22
+cupy,kernel_by_layer,backward,activation_backward,,cupy_subtract__float32_float32_float32,10,1.0,3.0112,3.0111999999999997,30.111999999999995,0.22247277992490505,"1,1,1","4,1,1",16
+cupy,kernel_by_layer,backward,linear_bias_backward,fc3,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,2.7392,2.7391999999999994,27.391999999999992,0.202376939017767,"1,1,1","256,1,1",32
+cupy,kernel_by_layer,backward,linear_backward,fc3,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,2.9152,2.9151999999999996,29.151999999999994,0.21538013019297397,"2,1,1","256,1,1",20
+cupy,kernel_by_layer,backward,linear_backward,fc3,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,4.380800000000001,4.380800000000001,43.80800000000001,0.3236612494337887,"7,1,1","8,32,1",32
+cupy,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,2.4864,2.4863999999999997,24.863999999999997,0.18369962805701515,"2,1,1","128,1,1",18
+cupy,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,2.5888,2.5888,25.887999999999998,0.1912651211044083,"2,1,1","128,1,1",24
+cupy,kernel_by_layer,backward,linear_bias_backward,fc2,cupy_sum,10,1.0,3.1553,3.1552999999999995,31.552999999999997,0.23311914269960582,"1,1,1","512,1,1",29
+cupy,kernel_by_layer,backward,linear_backward,fc2,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,6.4992,6.4992,64.992,0.4801723868517347,"13,1,1","128,1,1",40
+cupy,kernel_by_layer,backward,linear_backward,fc2,ampere_sgemm_32x128_nt,10,1.0,6.2912,6.2912,62.912,0.46480497909921725,"2,1,1","256,1,1",57
+cupy,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.12,3.1199999999999997,31.199999999999996,0.2305111162877603,"4,1,1","128,1,1",18
+cupy,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.3856,3.3856,33.856,0.25013411387943635,"4,1,1","128,1,1",24
+cupy,kernel_by_layer,backward,linear_bias_backward,fc1,cupy_sum,10,1.0,3.1968,3.1967999999999996,31.967999999999996,0.2361852360733052,"1,1,1","512,1,1",29
+cupy,kernel_by_layer,backward,linear_backward,fc1,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,7.3696,7.369600000000001,73.69600000000001,0.5444790777545766,"144,1,1","128,1,1",40
+cupy,kernel_by_layer,backward,linear_backward,fc1,ampere_sgemm_32x128_nt,10,1.0,7.276800000000001,7.2768,72.768,0.5376228496803764,"4,9,1","256,1,1",57
+cupy,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.1872000000000003,3.1872,31.871999999999996,0.2354759711001121,"36,1,1","128,1,1",18
+cupy,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.4528,3.4528,34.528,0.2550989686917881,"36,1,1","128,1,1",24
+cupy,kernel_by_layer,backward,conv_dInput,conv5,cupy_copy__float32_float32,10,1.0,3.6864,3.6864000000000003,36.864000000000004,0.2723577497061538,"36,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dInput,conv5,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,9.5328,9.5328,95.328,0.704300118380757,"3,18,1","128,1,1",86
+cupy,kernel_by_layer,backward,conv_dInput,conv5,col2im,10,1.0,14.0704,14.070400000000001,140.704,1.0395460290433665,"120,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv5,im2col,10,1.0,5.376,5.3759999999999994,53.76,0.3971883849881409,"324,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv5,cupy_copy__float32_float32,10,1.0,3.6704000000000003,3.6704,36.704,0.27117564141749856,"36,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv5,cupy_copy__float32_float32,10,1.0,4.7808,4.780799999999999,47.80799999999999,0.3532139566501681,"324,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv5,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,10.700800000000001,10.7008,107.008,0.7905940234525851,"18,2,1","128,1,1",86
+cupy,kernel_by_layer,backward,conv_dBias,conv5,cupy_sum,10,1.0,5.248,5.247999999999999,52.48,0.38773151867889943,"16,1,1","512,1,1",31
+cupy,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.5776,3.5776000000000003,35.776,0.26431941334329856,"120,1,1","128,1,1",18
+cupy,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.7216,3.721600000000001,37.21600000000001,0.2749583879411952,"120,1,1","128,1,1",24
+cupy,kernel_by_layer,backward,conv_dInput,conv4,cupy_copy__float32_float32,10,1.0,3.9232,3.9232,39.232,0.28985295237825043,"120,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dInput,conv4,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,10.7264,10.726400000000002,107.26400000000001,0.7924853967144336,"8,14,1","128,1,1",86
+cupy,kernel_by_layer,backward,conv_dInput,conv4,col2im,10,1.0,14.192,14.191999999999998,141.92,1.0485300520371457,"165,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv4,im2col,10,1.0,6.380800000000001,6.3808,63.808,0.4714247855156863,"810,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv4,cupy_copy__float32_float32,10,1.0,4.2336,4.2336,42.336,0.31278585317816093,"120,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv4,cupy_copy__float32_float32,10,1.0,6.5408,6.5408,65.408,0.4832458684022381,"810,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv4,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,11.1328,11.1328,111.328,0.8225109472462752,"14,2,3","128,1,1",86
+cupy,kernel_by_layer,backward,conv_dWeight,conv4,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,4.6208,4.6208,46.208,0.3413928737636164,"14,4,1","32,16,1",32
+cupy,kernel_by_layer,backward,conv_dBias,conv4,cupy_sum,10,1.0,5.4879999999999995,5.487999999999999,54.87999999999999,0.4054631430087271,"32,1,1","512,1,1",31
+cupy,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.6224000000000003,3.6224000000000003,36.224000000000004,0.26762931655153305,"165,1,1","128,1,1",18
+cupy,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.7887999999999997,3.7887999999999997,37.888,0.2799232427535469,"165,1,1","128,1,1",24
+cupy,kernel_by_layer,backward,conv_dInput,conv3,cupy_copy__float32_float32,10,1.0,4.0064,4.0064,40.064,0.29599991547925736,"165,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dInput,conv3,ampere_sgemm_32x128_nt,10,1.0,14.5795,14.579500000000001,145.79500000000002,1.0771592371530136,"14,8,1","256,1,1",57
+cupy,kernel_by_layer,backward,conv_dInput,conv3,col2im,10,1.0,40.01,40.010000000000005,400.1,2.9560095393183627,"741,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv3,im2col,10,1.0,13.52,13.52,135.2,0.998881503913628,"3094,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv3,cupy_copy__float32_float32,10,1.0,4.4256,4.4256,44.256,0.32697115264202314,"165,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv3,cupy_copy__float32_float32,10,1.0,11.6416,11.6416,116.416,0.8601019908255099,"3094,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv3,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,17.616,17.616000000000007,176.16000000000005,1.3015012258093548,"29,2,4","128,1,1",86
+cupy,kernel_by_layer,backward,conv_dWeight,conv3,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,4.8671999999999995,4.8671999999999995,48.672,0.3595973414089061,"29,3,1","32,16,1",32
+cupy,kernel_by_layer,backward,conv_dBias,conv3,cupy_sum,10,1.0,5.84,5.84,58.4,0.4314695253591411,"48,1,1","512,1,1",31
+cupy,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,4.128,4.128,41.28,0.30498393847303673,"741,1,1","128,1,1",18
+cupy,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,4.336,4.336,43.36000000000001,0.32035134622555417,"741,1,1","128,1,1",24
+cupy,kernel_by_layer,backward,conv_dInput,conv2,cupy_copy__float32_float32,10,1.0,4.544,4.544,45.44,0.3357187539780715,"741,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dInput,conv2,ampere_sgemm_128x32_nt,10,1.0,22.0962,22.0962,220.962,1.6325063229864132,"21,19,1","256,1,1",57
+cupy,kernel_by_layer,backward,conv_dInput,conv2,col2im,10,1.0,81.2832,81.28320000000001,812.8320000000001,6.0053465280260525,"2279,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv2,im2col,10,1.0,41.856,41.855999999999995,418.55999999999995,3.0923952831219537,"12338,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv2,cupy_copy__float32_float32,10,1.0,5.184,5.184,51.84,0.3830030855242787,"741,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv2,cupy_copy__float32_float32,10,1.0,32.3809,32.3809,323.80899999999997,2.3923581427571596,"12338,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv2,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,28.8739,28.873900000000003,288.73900000000003,2.1332547822375525,"10,2,5","256,1,1",82
+cupy,kernel_by_layer,backward,conv_dWeight,conv2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,4.9856,4.9856,49.856,0.3683449427449545,"19,3,1","32,16,1",32
+cupy,kernel_by_layer,backward,conv_dBias,conv2,cupy_sum,10,1.0,9.8081,9.8081,98.08099999999999,0.7246397691224301,"36,1,1","512,1,1",31
+cupy,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,6.2144,6.2143999999999995,62.14399999999999,0.4591308593136723,"2279,1,1","128,1,1",18
+cupy,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,6.2336,6.2336,62.336,0.46054938926005856,"2279,1,1","128,1,1",24
+cupy,kernel_by_layer,backward,conv_dInput,conv1,cupy_copy__float32_float32,10,1.0,6.368,6.368,63.68,0.47047909888476214,"2279,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dInput,conv1,ampere_sgemm_128x32_nt,10,1.0,14.176,14.176000000000002,141.76000000000002,1.0473479437484907,"95,3,1","256,1,1",57
+cupy,kernel_by_layer,backward,conv_dInput,conv1,col2im,10,1.0,51.2448,51.2448,512.448,3.786056426904814,"1238,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv1,im2col,10,1.0,25.9232,25.9232,259.232,1.9152518492791248,"7121,1,1","128,1,1",32
+cupy,kernel_by_layer,backward,conv_dWeight,conv1,cupy_copy__float32_float32,10,1.0,6.8864,6.886399999999999,68.86399999999999,0.5087794074371899,"2279,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv1,cupy_copy__float32_float32,10,1.0,13.821,13.821000000000002,138.21,1.0211199160939537,"7121,1,1","128,1,1",16
+cupy,kernel_by_layer,backward,conv_dWeight,conv1,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,18.118499999999997,18.1185,181.185,1.3386268142499314,"2,1,54","256,1,1",82
+cupy,kernel_by_layer,backward,conv_dWeight,conv1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,8.3809,8.3809,83.80900000000001,0.6191957097743881,"3,2,1","32,16,1",32
+cupy,kernel_by_layer,backward,conv_dBias,conv1,cupy_sum,10,1.0,23.456,23.455999999999996,234.55999999999995,1.732970751168495,"24,1,1","512,1,1",31
+cupy,kernel_by_layer,update,update,conv3,cupy_multiply__float_float32_float32,10,1.0,4.1056,4.105600000000001,41.056000000000004,0.3033289868689195,"338,1,1","128,1,1",18
+cupy,kernel_by_layer,update,update,conv3,cupy_subtract__float32_float32_float32,10,1.0,4.1248000000000005,4.1248000000000005,41.248000000000005,0.3047475168153057,"338,1,1","128,1,1",22
+cupy,kernel_by_layer,update,update,conv3,cupy_multiply__float_float32_float32,10,1.0,2.6112,2.6111999999999997,26.112,0.19292007270852557,"1,1,1","48,1,1",18
+cupy,kernel_by_layer,update,update,conv3,cupy_subtract__float32_float32_float32,10,1.0,2.7296,2.7295999999999996,27.295999999999996,0.20166767404457386,"1,1,1","48,1,1",22
+cupy,kernel_by_layer,update,update,conv2,cupy_multiply__float_float32_float32,10,1.0,3.6224000000000003,3.6224000000000003,36.224000000000004,0.26762931655153305,"169,1,1","128,1,1",18
+cupy,kernel_by_layer,update,update,conv2,cupy_subtract__float32_float32_float32,10,1.0,4.064,4.064000000000001,40.64000000000001,0.3002555053184161,"169,1,1","128,1,1",22
+cupy,kernel_by_layer,update,update,conv2,cupy_multiply__float_float32_float32,10,1.0,2.5728,2.5728,25.727999999999998,0.19008301281575313,"1,1,1","36,1,1",18
+cupy,kernel_by_layer,update,update,conv2,cupy_subtract__float32_float32_float32,10,1.0,2.72,2.7199999999999998,27.199999999999996,0.20095840907138077,"1,1,1","36,1,1",22
+cupy,kernel_by_layer,update,update,conv5,cupy_multiply__float_float32_float32,10,1.0,4.0384,4.0384,40.384,0.29836413205656775,"288,1,1","128,1,1",18
+cupy,kernel_by_layer,update,update,conv5,cupy_subtract__float32_float32_float32,10,1.0,3.9328,3.9327999999999994,39.327999999999996,0.2905622173514435,"288,1,1","128,1,1",22
+cupy,kernel_by_layer,update,update,conv5,cupy_multiply__float_float32_float32,10,1.0,2.688,2.6879999999999997,26.879999999999995,0.1985941924940704,"1,1,1","64,1,1",18
+cupy,kernel_by_layer,update,update,conv5,cupy_subtract__float32_float32_float32,10,1.0,2.7168,2.7167999999999997,27.167999999999996,0.20072198741364974,"1,1,1","64,1,1",22
+cupy,kernel_by_layer,update,update,conv4,cupy_multiply__float_float32_float32,10,1.0,3.9712,3.9712000000000005,39.712,0.293399277244216,"216,1,1","128,1,1",18
+cupy,kernel_by_layer,update,update,conv4,cupy_subtract__float32_float32_float32,10,1.0,4.1536,4.1536,41.536,0.3068753117348851,"216,1,1","128,1,1",22
+cupy,kernel_by_layer,update,update,conv4,cupy_multiply__float_float32_float32,10,1.0,2.5632,2.5631999999999997,25.631999999999998,0.18937374784256003,"1,1,1","64,1,1",18
+cupy,kernel_by_layer,update,update,conv4,cupy_subtract__float32_float32_float32,10,1.0,2.6752,2.6751999999999994,26.751999999999995,0.19764850586314625,"1,1,1","64,1,1",22
+cupy,kernel_by_layer,update,update,fc1,cupy_multiply__float_float32_float32,10,1.0,4.6178,4.6178,46.178,0.34117122845949344,"900,1,1","128,1,1",18
+cupy,kernel_by_layer,update,update,fc1,cupy_subtract__float32_float32_float32,10,1.0,4.8831999999999995,4.8832,48.832,0.3607794496975613,"900,1,1","128,1,1",22
+cupy,kernel_by_layer,update,update,fc1,cupy_multiply__float_float32_float32,10,1.0,2.7104,2.7103999999999995,27.103999999999996,0.20024914409818767,"1,1,1","100,1,1",18
+cupy,kernel_by_layer,update,update,fc1,cupy_subtract__float32_float32_float32,10,1.0,2.752,2.752,27.519999999999996,0.20332262564869114,"1,1,1","100,1,1",22
+cupy,kernel_by_layer,update,update,fc3,cupy_multiply__float_float32_float32,10,1.0,2.8192,2.8191999999999995,28.191999999999993,0.2082874804610429,"1,1,1","50,1,1",18
+cupy,kernel_by_layer,update,update,fc3,cupy_subtract__float32_float32_float32,10,1.0,2.6848,2.6848,26.848,0.19835777083633938,"1,1,1","50,1,1",22
+cupy,kernel_by_layer,update,update,fc3,cupy_multiply__float_float32_float32,10,1.0,2.7424,2.7423999999999995,27.423999999999996,0.20261336067549804,"1,1,1","1,1,1",18
+cupy,kernel_by_layer,update,update,fc3,cupy_subtract__float32_float32_float32,10,1.0,3.0272,3.0271999999999997,30.271999999999995,0.22365488821356025,"1,1,1","1,1,1",22
+cupy,kernel_by_layer,update,update,fc2,cupy_multiply__float_float32_float32,10,1.0,3.5872,3.5872,35.872,0.26502867831649163,"40,1,1","128,1,1",18
+cupy,kernel_by_layer,update,update,fc2,cupy_subtract__float32_float32_float32,10,1.0,3.792,3.7920000000000003,37.92,0.28015966441127793,"40,1,1","128,1,1",22
+cupy,kernel_by_layer,update,update,fc2,cupy_multiply__float_float32_float32,10,1.0,2.7617,2.7617,27.616999999999997,0.20403927879868836,"1,1,1","50,1,1",18
+cupy,kernel_by_layer,update,update,fc2,cupy_subtract__float32_float32_float32,10,1.0,2.7393,2.739299999999999,27.392999999999994,0.20238432719457106,"1,1,1","50,1,1",22
+cupy,kernel_by_layer,update,update,conv1,cupy_multiply__float_float32_float32,10,1.0,3.2735999999999996,3.2735999999999996,32.736,0.24185935585885007,"15,1,1","128,1,1",18
+cupy,kernel_by_layer,update,update,conv1,cupy_subtract__float32_float32_float32,10,1.0,3.1904000000000003,3.1903999999999995,31.903999999999996,0.23571239275784311,"15,1,1","128,1,1",22
+cupy,kernel_by_layer,update,update,conv1,cupy_multiply__float_float32_float32,10,1.0,2.56,2.5599999999999996,25.599999999999998,0.189137326184829,"1,1,1","24,1,1",18
+cupy,kernel_by_layer,update,update,conv1,cupy_subtract__float32_float32_float32,10,1.0,2.8352,2.8351999999999995,28.351999999999997,0.2094695887496981,"1,1,1","24,1,1",22
+cupy,phase_gpu_sum,,,,forward,,,,485.2457000000001,,,,,
+cupy,phase_gpu_sum,,,,backward,,,,764.0021999999992,,,,,
+cupy,phase_gpu_sum,,,,update,,,,104.26600000000003,,,,,
+cupy,phase_cpu_elapsed,,,,forward,,,,1428.3813,,,,,
+cupy,phase_cpu_elapsed,,,,backward,,,,3033.8213,,,,,
+cupy,phase_cpu_elapsed,,,,transfer,,,,191.2825,,,,,
+cupy,phase_cpu_elapsed,,,,final_sync,,,,1.0416,,,,,
+cupy,phase_cpu_elapsed,,,,data,,,,178.3461,,,,,
+cupy,phase_cpu_elapsed,,,,update,,,,406.5268,,,,,
+cupy,category_gpu_sum,,,,forward,,,,485.2457000000001,,,,,
+cupy,category_gpu_sum,,,,other_backward,,,,15.628900000000002,,,,,
+cupy,category_gpu_sum,,,,linear_backward,,,,34.73279999999999,,,,,
+cupy,category_gpu_sum,,,,conv_dInput,,,,294.4392999999997,,,,,
+cupy,category_gpu_sum,,,,conv_dBias,,,,49.84010000000001,,,,,
+cupy,category_gpu_sum,,,,conv_dWeight,,,,295.91760000000016,,,,,
+cupy,category_gpu_sum,,,,linear_bias_backward,,,,9.091300000000002,,,,,
+cupy,category_gpu_sum,,,,activation_backward,,,,64.35220000000005,,,,,
+cupy,category_gpu_sum,,,,update,,,,104.26600000000003,,,,,
+cupy,api_cpu_elapsed,,,,cuProfilerStart,1,,,1.1744999999999999,,,,,
+cupy,api_cpu_elapsed,,,,cudaEventQuery_v3020,40,,,9.9053,,,,,
+cupy,api_cpu_elapsed,,,,cudaEventDestroy_v3020,20,,,2.6621999999999995,,,,,
+cupy,api_cpu_elapsed,,,,cudaStreamIsCapturing_v10000,180,,,9.795100000000001,,,,,
+cupy,api_cpu_elapsed,,,,cudaMemcpyAsync_v3020,20,,,18.824900000000007,,,,,
+cupy,api_cpu_elapsed,,,,cudaEventCreateWithFlags_v3020,20,,,4.182999999999999,,,,,
+cupy,api_cpu_elapsed,,,,cudaEventRecord_v3020,60,,,30.730000000000008,,,,,
+cupy,api_cpu_elapsed,,,,cudaLaunchKernel_v7000,400,,,185.8119000000001,,,,,
+cupy,api_cpu_elapsed,,,,cuLaunchKernel,1070,,,399.87820000000056,,,,,
+cupy,api_cpu_elapsed,,,,cuStreamGetCaptureInfo_v2,240,,,3.101100000000002,,,,,
+cupy,api_cpu_elapsed,,,,cudaStreamSynchronize_v3020,1,,,0.7102999999999999,,,,,
+old,kernel_by_layer,forward,forward,conv1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,31.2256,31.225599999999996,312.256,2.2076459508733435,"3561,1,1","256,1,1",23
+old,kernel_by_layer,forward,forward,conv1,cupy_copy__float32_float32,10,1.0,4.1921,4.1921,41.921,0.296380937136713,"15,1,1","128,1,1",16
+old,kernel_by_layer,forward,forward,conv1,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,31.0049,31.0049,310.049,2.1920424889268078,"2,760,1","16,16,1",32
+old,kernel_by_layer,forward,forward,conv1,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,10.4032,10.403200000000002,104.03200000000001,0.7355049176357082,"1140,1,1","256,1,1",24
+old,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,6.9409,6.940900000000001,69.409,0.49072074773316743,"2279,1,1","128,1,1",18
+old,kernel_by_layer,forward,forward,conv2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,50.2305,50.23049999999999,502.30499999999995,3.5512899651357692,"6169,1,1","256,1,1",23
+old,kernel_by_layer,forward,forward,conv2,cupy_copy__float32_float32,10,1.0,4.9088,4.908799999999999,49.087999999999994,0.3470515360360431,"169,1,1","128,1,1",16
+old,kernel_by_layer,forward,forward,conv2,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,83.4307,83.4307,834.307,5.898539885015137,"3,165,1","16,16,1",32
+old,kernel_by_layer,forward,forward,conv2,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,7.6095999999999995,7.609599999999999,76.09599999999999,0.53799775273384,"371,1,1","256,1,1",24
+old,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,4.7456,4.7456,47.455999999999996,0.33551331678060753,"741,1,1","128,1,1",18
+old,kernel_by_layer,forward,forward,conv3,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,15.9136,15.913599999999999,159.136,1.1250894972015923,"1547,1,1","256,1,1",23
+old,kernel_by_layer,forward,forward,conv3,cupy_copy__float32_float32,10,1.0,5.2193000000000005,5.2193,52.193,0.3690038465679841,"338,1,1","128,1,1",16
+old,kernel_by_layer,forward,forward,conv3,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,59.8049,59.804899999999996,598.049,4.228198828121324,"3,28,1","16,16,1",32
+old,kernel_by_layer,forward,forward,conv3,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,5.244800000000001,5.2448,52.448,0.3708066933266459,"83,1,1","256,1,1",24
+old,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,4.1952,4.195200000000002,41.95200000000001,0.29660010674266807,"165,1,1","128,1,1",18
+old,kernel_by_layer,forward,forward,conv4,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,7.8911999999999995,7.8911999999999995,78.91199999999999,0.5579068369392974,"405,1,1","256,1,1",23
+old,kernel_by_layer,forward,forward,conv4,cupy_copy__float32_float32,10,1.0,4.9856,4.9856,49.856,0.35248128627389524,"216,1,1","128,1,1",16
+old,kernel_by_layer,forward,forward,conv4,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,30.0737,30.073700000000002,300.737,2.126206767292852,"4,15,1","16,16,1",32
+old,kernel_by_layer,forward,forward,conv4,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,5.1552,5.1552,51.552,0.3644719847158185,"60,1,1","256,1,1",24
+old,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,4.1953000000000005,4.1953000000000005,41.953,0.2966071767299568,"120,1,1","128,1,1",18
+old,kernel_by_layer,forward,forward,conv5,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,6.1024,6.1024,61.024,0.4314389043159937,"162,1,1","256,1,1",23
+old,kernel_by_layer,forward,forward,conv5,cupy_copy__float32_float32,10,1.0,5.3856,5.3856,53.856,0.3807612354293746,"288,1,1","128,1,1",16
+old,kernel_by_layer,forward,forward,conv5,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,38.6944,38.694399999999995,386.94399999999996,2.7356891615044545,"4,5,1","16,16,1",32
+old,kernel_by_layer,forward,forward,conv5,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,4.771199999999999,4.771199999999999,47.711999999999996,0.33732323352655824,"18,1,1","256,1,1",24
+old,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.8335999999999997,3.8335999999999997,38.336,0.27103503270611456,"36,1,1","128,1,1",18
+old,kernel_by_layer,forward,forward,fc1,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,72.8642,72.8642,728.6419999999999,5.151489678136705,"7,1,1","16,16,1",32
+old,kernel_by_layer,forward,forward,fc1,cupy_add__float32_float32_float32,10,1.0,4.592,4.592,45.919999999999995,0.3246538163049034,"4,1,1","128,1,1",16
+old,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.5136,3.5136000000000003,35.136,0.24841107338173105,"4,1,1","128,1,1",18
+old,kernel_by_layer,forward,forward,fc2,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,9.6256,9.6256,96.256,0.6805286964774563,"4,1,1","16,16,1",32
+old,kernel_by_layer,forward,forward,fc2,cupy_add__float32_float32_float32,10,1.0,3.6353,3.6353,36.353,0.25701524791228564,"2,1,1","128,1,1",16
+old,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,2.864,2.8639999999999994,28.639999999999993,0.20248443595323246,"2,1,1","128,1,1",18
+old,kernel_by_layer,forward,forward,fc3,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,5.5584,5.5584,55.583999999999996,0.39297817346454167,"1,1,1","16,16,1",32
+old,kernel_by_layer,forward,forward,fc3,cupy_add__float32_float32_float32,10,1.0,3.6224,3.6224000000000003,36.224000000000004,0.2561032195520215,"1,1,1","4,1,1",16
+old,kernel_by_layer,forward,forward,,cupy_tanh__float32_float32,10,1.0,3.3888,3.3888,33.888,0.23958772924522143,"1,1,1","4,1,1",21
+old,kernel_by_layer,forward,forward,,cupy_subtract__float32_float32_float32,10,1.0,3.2672,3.2672,32.672,0.23099062470195572,"1,1,1","4,1,1",22
+old,kernel_by_layer,forward,forward,,cupy_square__float32_float32,10,1.0,3.3312,3.3312,33.312,0.23551541656683242,"1,1,1","4,1,1",18
+old,kernel_by_layer,forward,forward,,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,3.8176,3.8176,38.176,0.2699038347398954,"1,1,1","256,1,1",32
+old,kernel_by_layer,forward,forward,,cupy_true_divide__float32_float_float32,10,1.0,3.2032,3.2032,32.032,0.226465832837079,"1,1,1","1,1,1",16
+old,kernel_by_layer,backward,other_backward,,cupy_fill,20,2.0,2.5456,5.0912,50.912,0.3599471928509418,"1,1,1","1,1,1",16
+old,kernel_by_layer,backward,other_backward,,cupy_subtract__float32_float32_float32,10,1.0,3.0272,3.0271999999999997,30.271999999999995,0.21402265520866803,"1,1,1","4,1,1",22
+old,kernel_by_layer,backward,other_backward,,cupy_multiply__float32_float32_float32,20,2.0,3.424,6.848000000000002,68.48000000000002,0.48415272954180744,"1,1,1","4,1,1",16
+old,kernel_by_layer,backward,other_backward,,cupy_negative__float32_float32,10,1.0,2.9888,2.9887999999999995,29.887999999999995,0.21130778008974202,"1,1,1","4,1,1",18
+old,kernel_by_layer,backward,activation_backward,,cupy_fill,10,1.0,2.4992,2.4991999999999996,24.991999999999997,0.17669312232343526,"1,1,1","1,1,1",16
+old,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_float32_float32,20,2.0,3.06405,6.1281,61.281,0.43325589104923323,"1,1,1","4,1,1",22
+old,kernel_by_layer,backward,activation_backward,,cupy_subtract__float32_float32_float32,10,1.0,3.4528,3.4528,34.528,0.24411252111009815,"1,1,1","4,1,1",16
+old,kernel_by_layer,backward,linear_bias_backward,fc3,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,3.1648,3.1647999999999996,31.647999999999996,0.22375095771815298,"1,1,1","256,1,1",32
+old,kernel_by_layer,backward,linear_backward,fc3,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,3.392,3.3920000000000003,33.92,0.23981396883846529,"2,1,1","256,1,1",20
+old,kernel_by_layer,backward,linear_backward,fc3,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,4.9792,4.9792,49.791999999999994,0.3520288070874075,"7,1,1","8,32,1",32
+old,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,2.88,2.8799999999999994,28.799999999999994,0.20361563391945164,"2,1,1","128,1,1",18
+old,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.1201,3.1201,31.200999999999997,0.22059067340002816,"2,1,1","128,1,1",24
+old,kernel_by_layer,backward,linear_bias_backward,fc2,cupy_sum,10,1.0,3.6768,3.6768,36.768,0.25994929263716665,"1,1,1","512,1,1",29
+old,kernel_by_layer,backward,linear_backward,fc2,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,7.3504,7.3504000000000005,73.504,0.5196723456810894,"13,1,1","128,1,1",40
+old,kernel_by_layer,backward,linear_backward,fc2,ampere_sgemm_32x128_nt,10,1.0,7.2481,7.248099999999999,72.481,0.5124397486845755,"2,1,1","256,1,1",57
+old,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.616,3.6160000000000005,36.160000000000004,0.2556507403655338,"4,1,1","128,1,1",18
+old,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.9424,3.9423999999999992,39.42399999999999,0.2787271788764049,"4,1,1","128,1,1",24
+old,kernel_by_layer,backward,linear_bias_backward,fc1,cupy_sum,10,1.0,3.8144,3.8144000000000005,38.144000000000005,0.26967759514665157,"1,1,1","512,1,1",29
+old,kernel_by_layer,backward,linear_backward,fc1,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,8.48,8.48,84.80000000000001,0.5995349220961633,"144,1,1","128,1,1",40
+old,kernel_by_layer,backward,linear_backward,fc1,ampere_sgemm_32x128_nt,10,1.0,8.4288,8.4288,84.28800000000001,0.5959150886042619,"4,9,1","256,1,1",57
+old,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.6512000000000002,3.6512000000000002,36.512,0.25813937589121594,"36,1,1","128,1,1",18
+old,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.8975999999999997,3.8975999999999997,38.976,0.27555982457099126,"36,1,1","128,1,1",24
+old,kernel_by_layer,backward,conv_dInput,conv5,cupy_copy__float32_float32,10,1.0,4.256,4.256,42.56,0.3008986590143008,"36,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dInput,conv5,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,10.9696,10.9696,109.696,0.775549325639867,"3,18,1","128,1,1",86
+old,kernel_by_layer,backward,conv_dInput,conv5,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,7.4816,7.4816,74.816,0.5289481690040867,"60,1,1","256,1,1",38
+old,kernel_by_layer,backward,conv_dWeight,conv5,im2col,10,1.0,6.1761,6.1761,61.760999999999996,0.43664948494789074,"324,1,1","128,1,1",32
+old,kernel_by_layer,backward,conv_dWeight,conv5,cupy_copy__float32_float32,10,1.0,4.2176,4.2176,42.176,0.2981837838953748,"36,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv5,cupy_copy__float32_float32,10,1.0,5.408,5.4079999999999995,54.08,0.3823449125820815,"324,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv5,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,12.313600000000001,12.313600000000001,123.13600000000001,0.8705699548022778,"18,2,1","128,1,1",86
+old,kernel_by_layer,backward,conv_dBias,conv5,cupy_sum,10,1.0,6.0384,6.038400000000001,60.384000000000015,0.4269141124511171,"16,1,1","512,1,1",31
+old,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,4.1088000000000005,4.1088000000000005,41.08800000000001,0.29049163772508446,"120,1,1","128,1,1",18
+old,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,4.4959999999999996,4.496,44.96,0.31786662850758846,"120,1,1","128,1,1",24
+old,kernel_by_layer,backward,conv_dInput,conv4,cupy_copy__float32_float32,10,1.0,4.5088,4.508800000000001,45.08800000000001,0.31877158688056384,"120,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dInput,conv4,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,12.361600000000001,12.3616,123.61599999999999,0.8739635487009352,"8,14,1","128,1,1",86
+old,kernel_by_layer,backward,conv_dInput,conv4,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,10.896,10.896,108.96000000000001,0.7703458149952588,"83,1,1","256,1,1",38
+old,kernel_by_layer,backward,conv_dWeight,conv4,im2col,10,1.0,7.392,7.392,73.92,0.5226134603932593,"810,1,1","128,1,1",32
+old,kernel_by_layer,backward,conv_dWeight,conv4,cupy_copy__float32_float32,10,1.0,4.864,4.864,48.64,0.34388418173062946,"120,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv4,cupy_copy__float32_float32,10,1.0,7.5489,7.548900000000001,75.489,0.5337062704494961,"810,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv4,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,12.822600000000001,12.822599999999998,128.22599999999997,0.9065561901026251,"14,2,3","128,1,1",86
+old,kernel_by_layer,backward,conv_dWeight,conv4,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,5.3024000000000004,5.3024000000000004,53.024,0.3748790060050349,"14,4,1","32,16,1",32
+old,kernel_by_layer,backward,conv_dBias,conv4,cupy_sum,10,1.0,6.304,6.304,63.04,0.4456919986903553,"32,1,1","512,1,1",31
+old,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,4.1504,4.1504,41.504000000000005,0.29343275243725425,"165,1,1","128,1,1",18
+old,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,4.528099999999999,4.5281,45.281,0.3201360944273156,"165,1,1","128,1,1",24
+old,kernel_by_layer,backward,conv_dInput,conv3,cupy_copy__float32_float32,10,1.0,4.5664,4.5664,45.663999999999994,0.32284389955895276,"165,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dInput,conv3,ampere_sgemm_32x128_nt,10,1.0,16.8769,16.8769,168.769,1.1931946847552757,"14,8,1","256,1,1",57
+old,kernel_by_layer,backward,conv_dInput,conv3,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,15.936,15.935999999999998,159.35999999999999,1.126673174354299,"371,1,1","256,1,1",38
+old,kernel_by_layer,backward,conv_dWeight,conv3,im2col,10,1.0,15.6128,15.612799999999998,156.128,1.1038229754366717,"3094,1,1","128,1,1",32
+old,kernel_by_layer,backward,conv_dWeight,conv3,cupy_copy__float32_float32,10,1.0,5.0272,5.0272,50.272,0.35542240098606503,"165,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv3,cupy_copy__float32_float32,10,1.0,13.3568,13.356800000000002,133.568,0.9443240621997682,"3094,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv3,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,20.5664,20.566400000000005,205.66400000000004,1.454041865778129,"29,2,4","128,1,1",86
+old,kernel_by_layer,backward,conv_dWeight,conv3,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,5.584,5.584,55.839999999999996,0.3947880902104924,"29,3,1","32,16,1",32
+old,kernel_by_layer,backward,conv_dBias,conv3,cupy_sum,10,1.0,6.688,6.688000000000001,66.88000000000001,0.4728407498796156,"48,1,1","512,1,1",31
+old,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,4.739199999999999,4.739199999999999,47.391999999999996,0.3350608375941199,"741,1,1","128,1,1",18
+old,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,5.0016,5.0016,50.016,0.3536124842401144,"741,1,1","128,1,1",24
+old,kernel_by_layer,backward,conv_dInput,conv2,cupy_copy__float32_float32,10,1.0,5.2193000000000005,5.2193,52.193,0.3690038465679841,"741,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dInput,conv2,ampere_sgemm_128x32_nt,10,1.0,25.3409,25.3409,253.40900000000002,1.7915984088852197,"21,19,1","256,1,1",57
+old,kernel_by_layer,backward,conv_dInput,conv2,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,31.5488,31.548799999999993,315.48799999999994,2.2304961497909708,"1140,1,1","256,1,1",38
+old,kernel_by_layer,backward,conv_dWeight,conv2,im2col,10,1.0,48.3523,48.3523,483.523,3.4185014638762166,"12338,1,1","128,1,1",32
+old,kernel_by_layer,backward,conv_dWeight,conv2,cupy_copy__float32_float32,10,1.0,5.9776,5.977600000000001,59.776,0.42261556017948415,"741,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv2,cupy_copy__float32_float32,10,1.0,37.0304,37.0304,370.304,2.6180445730176602,"12338,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv2,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,33.3408,33.3408,333.408,2.357190322007519,"10,2,5","256,1,1",82
+old,kernel_by_layer,backward,conv_dWeight,conv2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,5.667199999999999,5.667199999999999,56.672,0.4006703196348321,"19,3,1","32,16,1",32
+old,kernel_by_layer,backward,conv_dBias,conv2,cupy_sum,10,1.0,11.2865,11.2865,112.865,0.7979541153582955,"36,1,1","512,1,1",31
+old,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,7.0688,7.0688,70.688,0.49976326147563194,"2279,1,1","128,1,1",18
+old,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,7.1616,7.1616,71.616,0.5063242096797032,"2279,1,1","128,1,1",24
+old,kernel_by_layer,backward,conv_dInput,conv1,cupy_copy__float32_float32,10,1.0,7.2096,7.209600000000002,72.09600000000002,0.5097178035783608,"2279,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dInput,conv1,ampere_sgemm_128x32_nt,10,1.0,16.304000000000002,16.304000000000002,163.04000000000002,1.1526907275773404,"95,3,1","256,1,1",57
+old,kernel_by_layer,backward,conv_dInput,conv1,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,20.3936,20.3936,203.936,1.4418249277429618,"619,1,1","256,1,1",38
+old,kernel_by_layer,backward,conv_dWeight,conv1,im2col,10,1.0,29.9043,29.9043,299.043,2.1142302088255063,"7121,1,1","128,1,1",32
+old,kernel_by_layer,backward,conv_dWeight,conv1,cupy_copy__float32_float32,10,1.0,7.8496,7.849600000000001,78.49600000000001,0.5549657222271278,"2279,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv1,cupy_copy__float32_float32,10,1.0,16.1376,16.1376,161.376,1.1409262687286608,"7121,1,1","128,1,1",16
+old,kernel_by_layer,backward,conv_dWeight,conv1,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,20.9088,20.908800000000003,209.08800000000002,1.4782495022552193,"2,1,54","256,1,1",82
+old,kernel_by_layer,backward,conv_dWeight,conv1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,9.4848,9.484799999999998,94.84799999999998,0.6705741543747274,"3,2,1","32,16,1",32
+old,kernel_by_layer,backward,conv_dBias,conv1,cupy_sum,10,1.0,27.0818,27.081799999999998,270.818,1.9146798175971549,"24,1,1","512,1,1",31
+old,kernel_by_layer,update,update,conv3,cupy_multiply__float_float32_float32,10,1.0,4.7456,4.7456,47.455999999999996,0.33551331678060753,"338,1,1","128,1,1",18
+old,kernel_by_layer,update,update,conv3,cupy_subtract__float32_float32_float32,10,1.0,5.0337,5.0337,50.336999999999996,0.3558819501598416,"338,1,1","128,1,1",22
+old,kernel_by_layer,update,update,conv3,cupy_multiply__float_float32_float32,10,1.0,3.0368,3.0367999999999995,30.367999999999995,0.21470137398839953,"1,1,1","48,1,1",18
+old,kernel_by_layer,update,update,conv3,cupy_subtract__float32_float32_float32,10,1.0,3.1392,3.1391999999999998,31.391999999999996,0.2219410409722023,"1,1,1","48,1,1",22
+old,kernel_by_layer,update,update,conv2,cupy_multiply__float_float32_float32,10,1.0,4.1857,4.185700000000001,41.857000000000006,0.2959284579502253,"169,1,1","128,1,1",18
+old,kernel_by_layer,update,update,conv2,cupy_subtract__float32_float32_float32,10,1.0,4.2112,4.2112,42.112,0.2977313047088871,"169,1,1","128,1,1",22
+old,kernel_by_layer,update,update,conv2,cupy_multiply__float_float32_float32,10,1.0,3.0304,3.0303999999999993,30.303999999999995,0.2142488948019119,"1,1,1","36,1,1",18
+old,kernel_by_layer,update,update,conv2,cupy_subtract__float32_float32_float32,10,1.0,3.3855999999999997,3.3856,33.856,0.23936148965197765,"1,1,1","36,1,1",22
+old,kernel_by_layer,update,update,conv5,cupy_multiply__float_float32_float32,10,1.0,4.5344,4.5344,45.344,0.3205815036265145,"288,1,1","128,1,1",18
+old,kernel_by_layer,update,update,conv5,cupy_subtract__float32_float32_float32,10,1.0,4.5952,4.5952,45.952000000000005,0.3248800558981474,"288,1,1","128,1,1",22
+old,kernel_by_layer,update,update,conv5,cupy_multiply__float_float32_float32,10,1.0,3.1648,3.1647999999999996,31.647999999999996,0.22375095771815298,"1,1,1","64,1,1",18
+old,kernel_by_layer,update,update,conv5,cupy_subtract__float32_float32_float32,10,1.0,3.0752,3.0751999999999997,30.751999999999995,0.21741624910732557,"1,1,1","64,1,1",22
+old,kernel_by_layer,update,update,conv4,cupy_multiply__float_float32_float32,10,1.0,4.5153,4.5153,45.153,0.31923113605434034,"216,1,1","128,1,1",18
+old,kernel_by_layer,update,update,conv4,cupy_subtract__float32_float32_float32,10,1.0,4.6815999999999995,4.6815999999999995,46.815999999999995,0.33098852491573083,"216,1,1","128,1,1",22
+old,kernel_by_layer,update,update,conv4,cupy_multiply__float_float32_float32,10,1.0,3.056,3.0559999999999996,30.559999999999995,0.21605881154786258,"1,1,1","64,1,1",18
+old,kernel_by_layer,update,update,conv4,cupy_subtract__float32_float32_float32,10,1.0,3.0306,3.0305999999999997,30.305999999999997,0.21426303477648964,"1,1,1","64,1,1",22
+old,kernel_by_layer,update,update,fc1,cupy_multiply__float_float32_float32,10,1.0,5.28,5.279999999999999,52.8,0.3732953288523281,"900,1,1","128,1,1",18
+old,kernel_by_layer,update,update,fc1,cupy_subtract__float32_float32_float32,10,1.0,5.5775999999999994,5.5775999999999994,55.775999999999996,0.39433561102400466,"900,1,1","128,1,1",22
+old,kernel_by_layer,update,update,fc1,cupy_multiply__float_float32_float32,10,1.0,3.1104,3.1103999999999994,31.103999999999996,0.21990488463300778,"1,1,1","100,1,1",18
+old,kernel_by_layer,update,update,fc1,cupy_subtract__float32_float32_float32,10,1.0,3.2736,3.2735999999999996,32.736,0.23144310388844339,"1,1,1","100,1,1",22
+old,kernel_by_layer,update,update,fc3,cupy_multiply__float_float32_float32,10,1.0,3.1584,3.1583999999999994,31.583999999999996,0.2232984785316653,"1,1,1","50,1,1",18
+old,kernel_by_layer,update,update,fc3,cupy_subtract__float32_float32_float32,10,1.0,3.1744000000000003,3.1743999999999994,31.743999999999996,0.22442967649788448,"1,1,1","50,1,1",22
+old,kernel_by_layer,update,update,fc3,cupy_multiply__float_float32_float32,10,1.0,3.2192,3.2192,32.192,0.22759703080329818,"1,1,1","1,1,1",18
+old,kernel_by_layer,update,update,fc3,cupy_subtract__float32_float32_float32,10,1.0,3.456,3.4560000000000004,34.56,0.24433876070334198,"1,1,1","1,1,1",22
+old,kernel_by_layer,update,update,fc2,cupy_multiply__float_float32_float32,10,1.0,4.0832,4.0832,40.831999999999994,0.28868172097913364,"40,1,1","128,1,1",18
+old,kernel_by_layer,update,update,fc2,cupy_subtract__float32_float32_float32,10,1.0,4.1985,4.1985,41.985,0.29683341632320065,"40,1,1","128,1,1",22
+old,kernel_by_layer,update,update,fc2,cupy_multiply__float_float32_float32,10,1.0,3.072,3.0719999999999996,30.719999999999995,0.21719000951408174,"1,1,1","50,1,1",18
+old,kernel_by_layer,update,update,fc2,cupy_subtract__float32_float32_float32,10,1.0,3.1296,3.1295999999999995,31.295999999999996,0.22126232219247077,"1,1,1","50,1,1",22
+old,kernel_by_layer,update,update,conv1,cupy_multiply__float_float32_float32,10,1.0,3.7025,3.7024999999999997,37.025,0.2617662793704062,"15,1,1","128,1,1",18
+old,kernel_by_layer,update,update,conv1,cupy_subtract__float32_float32_float32,10,1.0,3.648,3.6480000000000006,36.480000000000004,0.25791313629797213,"15,1,1","128,1,1",22
+old,kernel_by_layer,update,update,conv1,cupy_multiply__float_float32_float32,10,1.0,3.152,3.1519999999999997,31.519999999999996,0.22284599934517763,"1,1,1","24,1,1",18
+old,kernel_by_layer,update,update,conv1,cupy_subtract__float32_float32_float32,10,1.0,3.2864,3.2863999999999995,32.864,0.23234806226141871,"1,1,1","24,1,1",22
+old,phase_gpu_sum,,,,forward,,,,559.4414000000004,,,,,
+old,phase_gpu_sum,,,,backward,,,,735.0452000000007,,,,,
+old,phase_gpu_sum,,,,update,,,,119.9431,,,,,
+old,phase_cpu_elapsed,,,,forward,,,,1366.944,,,,,
+old,phase_cpu_elapsed,,,,backward,,,,2962.6973000000003,,,,,
+old,phase_cpu_elapsed,,,,transfer,,,,177.0507,,,,,
+old,phase_cpu_elapsed,,,,final_sync,,,,1.0119,,,,,
+old,phase_cpu_elapsed,,,,data,,,,135.5224,,,,,
+old,phase_cpu_elapsed,,,,update,,,,401.0502,,,,,
+old,category_gpu_sum,,,,forward,,,,559.4414000000004,,,,,
+old,category_gpu_sum,,,,other_backward,,,,17.95520000000001,,,,,
+old,category_gpu_sum,,,,linear_backward,,,,39.8785,,,,,
+old,category_gpu_sum,,,,conv_dInput,,,,193.86910000000006,,,,,
+old,category_gpu_sum,,,,conv_dBias,,,,57.398699999999984,,,,,
+old,category_gpu_sum,,,,conv_dWeight,,,,340.84579999999994,,,,,
+old,category_gpu_sum,,,,linear_bias_backward,,,,10.656000000000002,,,,,
+old,category_gpu_sum,,,,activation_backward,,,,74.4419,,,,,
+old,category_gpu_sum,,,,update,,,,119.9431,,,,,
+old,api_cpu_elapsed,,,,cuProfilerStart,1,,,1.183,,,,,
+old,api_cpu_elapsed,,,,cudaEventQuery_v3020,41,,,8.278699999999997,,,,,
+old,api_cpu_elapsed,,,,cudaEventDestroy_v3020,21,,,1.9357999999999997,,,,,
+old,api_cpu_elapsed,,,,cudaStreamIsCapturing_v10000,180,,,8.026099999999998,,,,,
+old,api_cpu_elapsed,,,,cudaMemcpyAsync_v3020,20,,,18.919100000000004,,,,,
+old,api_cpu_elapsed,,,,cudaEventCreateWithFlags_v3020,20,,,3.679,,,,,
+old,api_cpu_elapsed,,,,cudaEventRecord_v3020,60,,,27.900500000000005,,,,,
+old,api_cpu_elapsed,,,,cudaLaunchKernel_v7000,450,,,199.2934,,,,,
+old,api_cpu_elapsed,,,,cuLaunchKernel,1020,,,364.7209999999999,,,,,
+old,api_cpu_elapsed,,,,cuStreamGetCaptureInfo_v2,240,,,2.9876000000000023,,,,,
+old,api_cpu_elapsed,,,,cudaStreamSynchronize_v3020,1,,,0.6578999999999999,,,,,
+fast,kernel_by_layer,forward,forward,conv1,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,28.979200000000002,28.9792,289.792,2.201134230663354,"3561,1,1","256,1,1",23
+fast,kernel_by_layer,forward,forward,conv1,cupy_copy__float32_float32,10,1.0,3.936,3.936,39.36,0.2989614734668646,"15,1,1","128,1,1",16
+fast,kernel_by_layer,forward,forward,conv1,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,28.7265,28.726499999999998,287.265,2.1819402356569833,"2,760,1","16,16,1",32
+fast,kernel_by_layer,forward,forward,conv1,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,9.6928,9.692800000000002,96.92800000000001,0.7362230106757178,"1140,1,1","256,1,1",24
+fast,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,6.5120000000000005,6.5120000000000005,65.12,0.49462325081712966,"2279,1,1","128,1,1",18
+fast,kernel_by_layer,forward,forward,conv2,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,46.5988,46.5988,465.98799999999994,3.5394425583810287,"6169,1,1","256,1,1",23
+fast,kernel_by_layer,forward,forward,conv2,cupy_copy__float32_float32,10,1.0,4.569599999999999,4.569599999999999,45.69599999999999,0.3470869789517745,"169,1,1","128,1,1",16
+fast,kernel_by_layer,forward,forward,conv2,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,77.3283,77.3283,773.283,5.873521978833269,"3,165,1","16,16,1",32
+fast,kernel_by_layer,forward,forward,conv2,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,7.12,7.12,71.2,0.5408042914339624,"371,1,1","256,1,1",24
+fast,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,4.470400000000001,4.4704,44.704,0.33955217758797546,"741,1,1","128,1,1",18
+fast,kernel_by_layer,forward,forward,conv3,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,14.758500000000002,14.758500000000003,147.58500000000004,1.1209915920123785,"1547,1,1","256,1,1",23
+fast,kernel_by_layer,forward,forward,conv3,cupy_copy__float32_float32,10,1.0,4.8448,4.8448,48.448,0.3679899762836041,"338,1,1","128,1,1",16
+fast,kernel_by_layer,forward,forward,conv3,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,55.7697,55.769699999999986,557.6969999999999,4.236024310672001,"3,28,1","16,16,1",32
+fast,kernel_by_layer,forward,forward,conv3,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,4.9504,4.9504,49.504,0.3760108938644224,"83,1,1","256,1,1",24
+fast,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.936,3.936,39.36,0.2989614734668646,"165,1,1","128,1,1",18
+fast,kernel_by_layer,forward,forward,conv4,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,7.3792,7.379200000000002,73.79200000000002,0.5604919982232438,"405,1,1","256,1,1",23
+fast,kernel_by_layer,forward,forward,conv4,cupy_copy__float32_float32,10,1.0,4.72,4.72,47.199999999999996,0.35851071005172785,"216,1,1","128,1,1",16
+fast,kernel_by_layer,forward,forward,conv4,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,28.1056,28.105600000000003,281.05600000000004,2.1347793670402213,"4,15,1","16,16,1",32
+fast,kernel_by_layer,forward,forward,conv4,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,4.8191999999999995,4.8191999999999995,48.19199999999999,0.3660455114155268,"60,1,1","256,1,1",24
+fast,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.8944,3.8944,38.944,0.2958017180562392,"120,1,1","128,1,1",18
+fast,kernel_by_layer,forward,forward,conv5,"im2col_kernel(const float *, float *, int, int, int, int, int, int, int, int, int, int, int, int)",10,1.0,5.6895999999999995,5.6896,56.896,0.43215731693015064,"162,1,1","256,1,1",23
+fast,kernel_by_layer,forward,forward,conv5,cupy_copy__float32_float32,10,1.0,4.8511999999999995,4.8511999999999995,48.51199999999999,0.3684760925006233,"288,1,1","128,1,1",16
+fast,kernel_by_layer,forward,forward,conv5,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,36.0449,36.0449,360.449,2.7378141298185437,"4,5,1","16,16,1",32
+fast,kernel_by_layer,forward,forward,conv5,"conv_pack(const float *, const float *, float *, int, int, int)",10,1.0,4.4512,4.4512,44.512,0.3380938289369176,"18,1,1","256,1,1",24
+fast,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.6128,3.6128,36.128,0.27441260450739036,"36,1,1","128,1,1",18
+fast,kernel_by_layer,forward,forward,fc1,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,67.4406,67.4406,674.4060000000001,5.122495210236136,"7,1,1","16,16,1",32
+fast,kernel_by_layer,forward,forward,fc1,cupy_add__float32_float32_float32,10,1.0,4.3232,4.323200000000001,43.232000000000006,0.3283715045965318,"4,1,1","128,1,1",16
+fast,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,3.312,3.312,33.12,0.2515651423074836,"4,1,1","128,1,1",18
+fast,kernel_by_layer,forward,forward,fc2,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,8.8416,8.8416,88.416,0.671569553812152,"4,1,1","16,16,1",32
+fast,kernel_by_layer,forward,forward,fc2,cupy_add__float32_float32_float32,10,1.0,3.3152,3.3152,33.152,0.2518082004159933,"2,1,1","128,1,1",16
+fast,kernel_by_layer,forward,forward,,cupy_maximum__float_float32_float32,10,1.0,2.6624000000000003,2.6623999999999994,26.623999999999995,0.20222434628002545,"2,1,1","128,1,1",18
+fast,kernel_by_layer,forward,forward,fc3,"void gemm_shared<(int)16>(const float *, const float *, float *, int, int, int)",10,1.0,5.1584,5.1584,51.584,0.3918096709175494,"1,1,1","16,16,1",32
+fast,kernel_by_layer,forward,forward,fc3,cupy_add__float32_float32_float32,10,1.0,3.3984,3.3984,33.984,0.2581277112372441,"1,1,1","4,1,1",16
+fast,kernel_by_layer,forward,forward,,cupy_tanh__float32_float32,10,1.0,3.0496,3.0495999999999994,30.495999999999995,0.23163437740969262,"1,1,1","4,1,1",21
+fast,kernel_by_layer,forward,forward,,cupy_subtract__float32_float32_float32,10,1.0,3.04,3.0399999999999996,30.399999999999995,0.23090520308416368,"1,1,1","4,1,1",22
+fast,kernel_by_layer,forward,forward,,cupy_square__float32_float32,10,1.0,3.0176,3.0175999999999994,30.175999999999995,0.22920379632459614,"1,1,1","4,1,1",18
+fast,kernel_by_layer,forward,forward,,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,3.3954,3.3954,33.954,0.25789984426051626,"1,1,1","256,1,1",32
+fast,kernel_by_layer,forward,forward,,cupy_true_divide__float32_float_float32,10,1.0,3.0944,3.0943999999999994,30.943999999999996,0.23503719092882766,"1,1,1","1,1,1",16
+fast,kernel_by_layer,backward,other_backward,,cupy_fill,20,2.0,2.3792,4.7584,47.583999999999996,0.3614274073538436,"1,1,1","1,1,1",16
+fast,kernel_by_layer,backward,other_backward,,cupy_subtract__float32_float32_float32,10,1.0,2.8255999999999997,2.8255999999999992,28.255999999999993,0.2146203098140174,"1,1,1","4,1,1",22
+fast,kernel_by_layer,backward,other_backward,,cupy_multiply__float32_float32_float32,20,2.0,3.21285,6.425700000000001,64.257,0.4880682774532602,"1,1,1","4,1,1",16
+fast,kernel_by_layer,backward,other_backward,,cupy_negative__float32_float32,10,1.0,2.7872,2.7871999999999995,27.871999999999996,0.21170361251190167,"1,1,1","4,1,1",18
+fast,kernel_by_layer,backward,activation_backward,,cupy_fill,10,1.0,2.3904,2.3903999999999996,23.903999999999996,0.18156440705670554,"1,1,1","1,1,1",16
+fast,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_float32_float32,20,2.0,2.8575999999999997,5.7152,57.152,0.4341017817982278,"1,1,1","4,1,1",22
+fast,kernel_by_layer,backward,activation_backward,,cupy_subtract__float32_float32_float32,10,1.0,3.2256,3.2256,32.256,0.2450025733777232,"1,1,1","4,1,1",16
+fast,kernel_by_layer,backward,linear_bias_backward,fc3,"void cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::DeviceReduceSingleTileKernel<cub::CUB_300102_SM_500_520_600_610_700_750_800_860_890_900_1000_1200::detail::reduce::policy_hub<float, unsigned int, cuda::std::__4::plus<void>>::Policy1000, float *, float *, unsigned int, cuda::std::__4::plus<void>, float, float, cuda::std::__4::identity>(T2, T3, T4, T5, T6, T8)",10,1.0,2.9888,2.9887999999999995,29.887999999999995,0.22701627334800933,"1,1,1","256,1,1",32
+fast,kernel_by_layer,backward,linear_backward,fc3,"void gemmk1_kernel<int, float, (int)256, (int)5, (bool)1, (bool)0, (bool)0, (bool)0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float, (int)0>(cublasGemmk1Params<T2, T9, T10, T11, T12, biasType<T11::value_type, T12>::type>)",10,1.0,3.1584000000000003,3.1583999999999994,31.583999999999996,0.23989835309902058,"2,1,1","256,1,1",20
+fast,kernel_by_layer,backward,linear_backward,fc3,"void gemvNSP_kernel<float, float, float, float, (int)1, (int)32, (int)4, (int)1024, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T10)",10,1.0,4.7616,4.7616,47.616,0.3616704654623533,"7,1,1","8,32,1",32
+fast,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,2.704,2.7039999999999997,27.039999999999996,0.20538410169065086,"2,1,1","128,1,1",18
+fast,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,2.9024,2.902399999999999,29.023999999999994,0.22045370441824888,"2,1,1","128,1,1",24
+fast,kernel_by_layer,backward,linear_bias_backward,fc2,cupy_sum,10,1.0,3.4049,3.4049,34.049,0.2586214230201543,"1,1,1","512,1,1",29
+fast,kernel_by_layer,backward,linear_backward,fc2,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,6.688,6.688000000000001,66.88000000000001,0.5079914467851603,"13,1,1","128,1,1",40
+fast,kernel_by_layer,backward,linear_backward,fc2,ampere_sgemm_32x128_nt,10,1.0,6.7488,6.7488,67.488,0.5126095508468435,"2,1,1","256,1,1",57
+fast,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.36,3.3600000000000003,33.6,0.2552110139351283,"4,1,1","128,1,1",18
+fast,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.7088,3.7088,37.088,0.2817043477626798,"4,1,1","128,1,1",24
+fast,kernel_by_layer,backward,linear_bias_backward,fc1,cupy_sum,10,1.0,3.4336,3.4335999999999998,34.336,0.2608013504308502,"1,1,1","512,1,1",29
+fast,kernel_by_layer,backward,linear_backward,fc1,"void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)",10,1.0,7.952,7.952000000000001,79.52000000000001,0.6039993996464704,"144,1,1","128,1,1",40
+fast,kernel_by_layer,backward,linear_backward,fc1,ampere_sgemm_32x128_nt,10,1.0,7.824,7.824000000000001,78.24000000000001,0.5942770753060845,"4,9,1","256,1,1",57
+fast,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.4208,3.4208,34.208,0.2598291179968116,"36,1,1","128,1,1",18
+fast,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,3.7536,3.7536,37.536,0.2851071612818148,"36,1,1","128,1,1",24
+fast,kernel_by_layer,backward,conv_dInput,conv5,cupy_copy__float32_float32,10,1.0,4.0129,4.0129,40.129000000000005,0.3048024636369871,"36,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dInput,conv5,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,10.249600000000001,10.249600000000001,102.49600000000001,0.7785151215563962,"3,18,1","128,1,1",86
+fast,kernel_by_layer,backward,conv_dInput,conv5,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,6.912,6.912000000000001,69.12,0.5250055143808354,"60,1,1","256,1,1",38
+fast,kernel_by_layer,backward,conv_dWeight,conv5,im2col,10,1.0,5.7664,5.766399999999999,57.663999999999994,0.43799071153438207,"324,1,1","128,1,1",32
+fast,kernel_by_layer,backward,conv_dWeight,conv5,cupy_copy__float32_float32,10,1.0,3.9776,3.9776,39.775999999999996,0.30212122887748993,"36,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv5,cupy_copy__float32_float32,10,1.0,5.0688,5.0688,50.688,0.3850040438792793,"324,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv5,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,11.478399999999999,11.478399999999999,114.78399999999999,0.8718494352241002,"18,2,1","128,1,1",86
+fast,kernel_by_layer,backward,conv_dBias,conv5,cupy_sum,10,1.0,5.632,5.632,56.32,0.42778227097697696,"16,1,1","512,1,1",31
+fast,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.84,3.8400000000000007,38.400000000000006,0.2916697302115753,"120,1,1","128,1,1",18
+fast,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,4.2016,4.201600000000001,42.016000000000005,0.31913529647316524,"120,1,1","128,1,1",24
+fast,kernel_by_layer,backward,conv_dInput,conv4,cupy_copy__float32_float32,10,1.0,4.2048000000000005,4.2048000000000005,42.04800000000001,0.31937835458167496,"120,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dInput,conv4,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,11.558399999999999,11.558399999999999,115.58399999999999,0.8779258879368413,"8,14,1","128,1,1",86
+fast,kernel_by_layer,backward,conv_dInput,conv4,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,10.1762,10.1762,101.762,0.7729399761924562,"83,1,1","256,1,1",38
+fast,kernel_by_layer,backward,conv_dWeight,conv4,im2col,10,1.0,6.8736,6.873600000000001,68.736,0.5220888170787197,"810,1,1","128,1,1",32
+fast,kernel_by_layer,backward,conv_dWeight,conv4,cupy_copy__float32_float32,10,1.0,4.5312,4.5312,45.312,0.34417028164965874,"120,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv4,cupy_copy__float32_float32,10,1.0,7.0016,7.001600000000001,70.016,0.5318111414191055,"810,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv4,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,11.936,11.936,119.36,0.9066067447409797,"14,2,3","128,1,1",86
+fast,kernel_by_layer,backward,conv_dWeight,conv4,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,4.8031999999999995,4.8031999999999995,48.032,0.36483022087297867,"14,4,1","32,16,1",32
+fast,kernel_by_layer,backward,conv_dBias,conv4,cupy_sum,10,1.0,5.888,5.887999999999999,58.87999999999999,0.4472269196577486,"32,1,1","512,1,1",31
+fast,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,3.888,3.8879999999999995,38.879999999999995,0.2953156018392199,"165,1,1","128,1,1",18
+fast,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,4.2144,4.2143999999999995,42.144,0.3201075289072038,"165,1,1","128,1,1",24
+fast,kernel_by_layer,backward,conv_dInput,conv3,cupy_copy__float32_float32,10,1.0,4.2592,4.2592,42.592,0.32351034242633886,"165,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dInput,conv3,ampere_sgemm_32x128_nt,10,1.0,15.648,15.648,156.48,1.1885541506121688,"14,8,1","256,1,1",57
+fast,kernel_by_layer,backward,conv_dInput,conv3,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,14.716800000000001,14.716800000000001,147.168,1.117824241035862,"371,1,1","256,1,1",38
+fast,kernel_by_layer,backward,conv_dWeight,conv3,im2col,10,1.0,14.521600000000001,14.521600000000001,145.216,1.1029976964167736,"3094,1,1","128,1,1",32
+fast,kernel_by_layer,backward,conv_dWeight,conv3,cupy_copy__float32_float32,10,1.0,4.6975999999999996,4.6975999999999996,46.976,0.3568093032921604,"165,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv3,cupy_copy__float32_float32,10,1.0,12.4256,12.4256,124.25599999999999,0.9437946353429554,"3094,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv3,ampere_sgemm_32x32_sliced1x4_nt,10,1.0,19.024,19.024,190.24,1.4449804550898455,"29,2,4","128,1,1",86
+fast,kernel_by_layer,backward,conv_dWeight,conv3,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,5.2896,5.289599999999999,52.895999999999994,0.4017750533664448,"29,3,1","32,16,1",32
+fast,kernel_by_layer,backward,conv_dBias,conv3,cupy_sum,10,1.0,6.2563,6.2563,62.563,0.47520138883403074,"48,1,1","512,1,1",31
+fast,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,4.438400000000001,4.4384,44.384,0.337121596502879,"741,1,1","128,1,1",18
+fast,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,4.707199999999999,4.707199999999999,47.071999999999996,0.35753847761768925,"741,1,1","128,1,1",24
+fast,kernel_by_layer,backward,conv_dInput,conv2,cupy_copy__float32_float32,10,1.0,4.8991999999999996,4.8992,48.992000000000004,0.3721219641282681,"741,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dInput,conv2,ampere_sgemm_128x32_nt,10,1.0,23.631999999999998,23.631999999999998,236.32,1.7949841313437358,"21,19,1","256,1,1",57
+fast,kernel_by_layer,backward,conv_dInput,conv2,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,29.2418,29.241799999999994,292.41799999999995,2.2210801866929266,"1140,1,1","256,1,1",38
+fast,kernel_by_layer,backward,conv_dWeight,conv2,im2col,10,1.0,44.8608,44.8608,448.608,3.407431623196728,"12338,1,1","128,1,1",32
+fast,kernel_by_layer,backward,conv_dWeight,conv2,cupy_copy__float32_float32,10,1.0,5.5904,5.590400000000001,55.904,0.4246225155663516,"741,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv2,cupy_copy__float32_float32,10,1.0,35.0278,35.0278,350.27799999999996,2.6605596291419307,"12338,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv2,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,30.976,30.976,309.76,2.3528024903733735,"10,2,5","256,1,1",82
+fast,kernel_by_layer,backward,conv_dWeight,conv2,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,5.2544,5.2544,52.544000000000004,0.3991014141728388,"19,3,1","32,16,1",32
+fast,kernel_by_layer,backward,conv_dBias,conv2,cupy_sum,10,1.0,10.4832,10.4832,104.83200000000001,0.7962583634776004,"36,1,1","512,1,1",31
+fast,kernel_by_layer,backward,activation_backward,,cupy_greater__float32_float_bool,10,1.0,6.6048,6.6048,66.048,0.5016719359639094,"2279,1,1","128,1,1",18
+fast,kernel_by_layer,backward,activation_backward,,cupy_multiply__float32_bool_float32,10,1.0,6.6688,6.6688,66.688,0.5065330981341023,"2279,1,1","128,1,1",24
+fast,kernel_by_layer,backward,conv_dInput,conv1,cupy_copy__float32_float32,10,1.0,6.7744,6.774400000000002,67.74400000000001,0.5145540157149208,"2279,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dInput,conv1,ampere_sgemm_128x32_nt,10,1.0,15.1616,15.161599999999998,151.61599999999999,1.1516093181187028,"95,3,1","256,1,1",57
+fast,kernel_by_layer,backward,conv_dInput,conv1,"col2im_strided(const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",10,1.0,18.5952,18.5952,185.95199999999997,1.4124106685495528,"619,1,1","256,1,1",38
+fast,kernel_by_layer,backward,conv_dWeight,conv1,im2col,10,1.0,27.7891,27.7891,277.891,2.1107394009954388,"7121,1,1","128,1,1",32
+fast,kernel_by_layer,backward,conv_dWeight,conv1,cupy_copy__float32_float32,10,1.0,7.3952,7.3952,73.952,0.5617072887657919,"2279,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv1,cupy_copy__float32_float32,10,1.0,15.1968,15.1968,151.968,1.1542829573123088,"7121,1,1","128,1,1",16
+fast,kernel_by_layer,backward,conv_dWeight,conv1,ampere_sgemm_64x32_sliced1x4_nt,10,1.0,19.4432,19.443199999999997,194.432,1.476821067304609,"2,1,54","256,1,1",82
+fast,kernel_by_layer,backward,conv_dWeight,conv1,"void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float, float, float, float, (bool)0, float, float, float, (bool)1, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",10,1.0,8.8032,8.8032,88.03200000000001,0.6686528565100363,"3,2,1","32,16,1",32
+fast,kernel_by_layer,backward,conv_dBias,conv1,cupy_sum,10,1.0,25.1841,25.1841,251.841,1.9128749095368052,"24,1,1","512,1,1",31
+fast,kernel_by_layer,update,update,conv3,cupy_multiply__float_float32_float32,10,1.0,4.3616,4.3616,43.616,0.33128820189864755,"338,1,1","128,1,1",18
+fast,kernel_by_layer,update,update,conv3,cupy_subtract__float32_float32_float32,10,1.0,4.6048,4.6048,46.048,0.3497606181453806,"338,1,1","128,1,1",22
+fast,kernel_by_layer,update,update,conv3,cupy_multiply__float_float32_float32,10,1.0,2.8544,2.854399999999999,28.543999999999993,0.21680783279060417,"1,1,1","48,1,1",18
+fast,kernel_by_layer,update,update,conv3,cupy_subtract__float32_float32_float32,10,1.0,2.8672,2.8671999999999995,28.671999999999993,0.21778006522464277,"1,1,1","48,1,1",22
+fast,kernel_by_layer,update,update,conv2,cupy_multiply__float_float32_float32,10,1.0,3.92,3.9200000000000004,39.2,0.2977461829243164,"169,1,1","128,1,1",18
+fast,kernel_by_layer,update,update,conv2,cupy_subtract__float32_float32_float32,10,1.0,4.3936,4.393600000000001,43.93600000000001,0.333718782983744,"169,1,1","128,1,1",22
+fast,kernel_by_layer,update,update,conv2,cupy_multiply__float_float32_float32,10,1.0,2.8608,2.8608,28.607999999999997,0.21729394900762353,"1,1,1","36,1,1",18
+fast,kernel_by_layer,update,update,conv2,cupy_subtract__float32_float32_float32,10,1.0,2.8992,2.8991999999999996,28.991999999999994,0.22021064630973924,"1,1,1","36,1,1",22
+fast,kernel_by_layer,update,update,conv5,cupy_multiply__float_float32_float32,10,1.0,4.3712,4.3712,43.712,0.33201737622417654,"288,1,1","128,1,1",18
+fast,kernel_by_layer,update,update,conv5,cupy_subtract__float32_float32_float32,10,1.0,4.576099999999999,4.5760999999999985,45.76099999999999,0.3475806907346846,"288,1,1","128,1,1",22
+fast,kernel_by_layer,update,update,conv5,cupy_multiply__float_float32_float32,10,1.0,2.9215999999999998,2.9215999999999993,29.215999999999994,0.22191205306930678,"1,1,1","64,1,1",18
+fast,kernel_by_layer,update,update,conv5,cupy_subtract__float32_float32_float32,10,1.0,2.8992,2.8991999999999996,28.991999999999994,0.22021064630973924,"1,1,1","64,1,1",22
+fast,kernel_by_layer,update,update,conv4,cupy_multiply__float_float32_float32,10,1.0,4.176,4.176,41.760000000000005,0.3171908316050881,"216,1,1","128,1,1",18
+fast,kernel_by_layer,update,update,conv4,cupy_subtract__float32_float32_float32,10,1.0,4.5056,4.5056,45.056000000000004,0.3422258167815816,"216,1,1","128,1,1",22
+fast,kernel_by_layer,update,update,conv4,cupy_multiply__float_float32_float32,10,1.0,2.9024,2.902399999999999,29.023999999999994,0.22045370441824888,"1,1,1","64,1,1",18
+fast,kernel_by_layer,update,update,conv4,cupy_subtract__float32_float32_float32,10,1.0,2.8512,2.8511999999999995,28.511999999999993,0.21656477468209456,"1,1,1","64,1,1",22
+fast,kernel_by_layer,update,update,fc1,cupy_multiply__float_float32_float32,10,1.0,4.96,4.96,49.6,0.3767400681899513,"900,1,1","128,1,1",18
+fast,kernel_by_layer,update,update,fc1,cupy_subtract__float32_float32_float32,10,1.0,5.1616,5.1616,51.616,0.39205272902605903,"900,1,1","128,1,1",22
+fast,kernel_by_layer,update,update,fc1,cupy_multiply__float_float32_float32,10,1.0,2.8576,2.8575999999999997,28.575999999999997,0.2170508908991139,"1,1,1","100,1,1",18
+fast,kernel_by_layer,update,update,fc1,cupy_subtract__float32_float32_float32,10,1.0,2.9728,2.9727999999999994,29.727999999999994,0.2258009828054611,"1,1,1","100,1,1",22
+fast,kernel_by_layer,update,update,fc3,cupy_multiply__float_float32_float32,10,1.0,2.8287999999999998,2.8287999999999998,28.287999999999997,0.21486336792252705,"1,1,1","50,1,1",18
+fast,kernel_by_layer,update,update,fc3,cupy_subtract__float32_float32_float32,10,1.0,2.896,2.8959999999999995,28.959999999999994,0.2199675882012296,"1,1,1","50,1,1",22
+fast,kernel_by_layer,update,update,fc3,cupy_multiply__float_float32_float32,10,1.0,2.8768,2.8767999999999994,28.767999999999994,0.2185092395501717,"1,1,1","1,1,1",18
+fast,kernel_by_layer,update,update,fc3,cupy_subtract__float32_float32_float32,10,1.0,3.2096,3.2095999999999996,32.096,0.24378728283517492,"1,1,1","1,1,1",22
+fast,kernel_by_layer,update,update,fc2,cupy_multiply__float_float32_float32,10,1.0,3.792,3.7920000000000003,37.92,0.28802385858393054,"40,1,1","128,1,1",18
+fast,kernel_by_layer,update,update,fc2,cupy_subtract__float32_float32_float32,10,1.0,3.936,3.936,39.36,0.2989614734668646,"40,1,1","128,1,1",22
+fast,kernel_by_layer,update,update,fc2,cupy_multiply__float_float32_float32,10,1.0,2.944,2.944,29.439999999999998,0.22361345982887434,"1,1,1","50,1,1",18
+fast,kernel_by_layer,update,update,fc2,cupy_subtract__float32_float32_float32,10,1.0,2.9088,2.9087999999999994,29.087999999999994,0.22093982063526818,"1,1,1","50,1,1",22
+fast,kernel_by_layer,update,update,conv1,cupy_multiply__float_float32_float32,10,1.0,3.3152,3.3152,33.152,0.2518082004159933,"15,1,1","128,1,1",18
+fast,kernel_by_layer,update,update,conv1,cupy_subtract__float32_float32_float32,10,1.0,3.424,3.4240000000000004,34.24,0.26007217610532124,"15,1,1","128,1,1",22
+fast,kernel_by_layer,update,update,conv1,cupy_multiply__float_float32_float32,10,1.0,2.976,2.976,29.759999999999998,0.2260440409139708,"1,1,1","24,1,1",18
+fast,kernel_by_layer,update,update,conv1,cupy_subtract__float32_float32_float32,10,1.0,3.0048,3.0047999999999995,30.047999999999995,0.22823156389055754,"1,1,1","24,1,1",22
+fast,phase_gpu_sum,,,,forward,,,,519.8098999999999,,,,,
+fast,phase_gpu_sum,,,,backward,,,,684.7188000000002,,,,,
+fast,phase_gpu_sum,,,,update,,,,112.02890000000002,,,,,
+fast,phase_cpu_elapsed,,,,forward,,,,1416.1178,,,,,
+fast,phase_cpu_elapsed,,,,backward,,,,3033.3787,,,,,
+fast,phase_cpu_elapsed,,,,transfer,,,,192.2143,,,,,
+fast,phase_cpu_elapsed,,,,final_sync,,,,0.9304,,,,,
+fast,phase_cpu_elapsed,,,,data,,,,135.2206,,,,,
+fast,phase_cpu_elapsed,,,,update,,,,397.9812,,,,,
+fast,category_gpu_sum,,,,forward,,,,519.8098999999999,,,,,
+fast,category_gpu_sum,,,,other_backward,,,,16.7969,,,,,
+fast,category_gpu_sum,,,,linear_backward,,,,37.1328,,,,,
+fast,category_gpu_sum,,,,conv_dInput,,,,180.04210000000006,,,,,
+fast,category_gpu_sum,,,,conv_dBias,,,,53.44359999999999,,,,,
+fast,category_gpu_sum,,,,conv_dWeight,,,,317.7320999999999,,,,,
+fast,category_gpu_sum,,,,linear_bias_backward,,,,9.827300000000005,,,,,
+fast,category_gpu_sum,,,,activation_backward,,,,69.744,,,,,
+fast,category_gpu_sum,,,,update,,,,112.02890000000002,,,,,
+fast,api_cpu_elapsed,,,,cuProfilerStart,1,,,1.0984,,,,,
+fast,api_cpu_elapsed,,,,cudaEventQuery_v3020,41,,,9.5468,,,,,
+fast,api_cpu_elapsed,,,,cudaEventDestroy_v3020,21,,,2.8038000000000003,,,,,
+fast,api_cpu_elapsed,,,,cudaStreamIsCapturing_v10000,180,,,9.976,,,,,
+fast,api_cpu_elapsed,,,,cudaMemcpyAsync_v3020,20,,,19.249700000000004,,,,,
+fast,api_cpu_elapsed,,,,cudaEventCreateWithFlags_v3020,20,,,4.1289,,,,,
+fast,api_cpu_elapsed,,,,cudaEventRecord_v3020,60,,,32.5704,,,,,
+fast,api_cpu_elapsed,,,,cudaLaunchKernel_v7000,450,,,207.07359999999989,,,,,
+fast,api_cpu_elapsed,,,,cuLaunchKernel,1020,,,376.4566000000005,,,,,
+fast,api_cpu_elapsed,,,,cuStreamGetCaptureInfo_v2,240,,,2.7072999999999996,,,,,
+fast,api_cpu_elapsed,,,,cudaStreamSynchronize_v3020,1,,,0.6461,,,,,

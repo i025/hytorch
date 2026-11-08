@@ -1,6 +1,6 @@
 """Matched HyTorch/CuPy, HyTorch/CUDA C and PyTorch training experiment."""
 import argparse
-from contextlib import nullcontext
+from contextlib import nullcontext, contextmanager
 import hashlib
 import json
 from pathlib import Path
@@ -18,7 +18,8 @@ from hytorch.backends.cuda import backend, dispatch_stats
 from hytorch.backends.cuda.runtime import load_library
 from hytorch.dataloaders import DataLoader
 from hytorch.optimizers import SGD
-from hytorch.profiling import StepProfiler, ResourceMonitor, dump_json, diagnose
+from hytorch.profiling import StepProfiler, TrainingMonitor, dump_json, diagnose
+from hytorch.monitor_loop import monitored_epochs
 
 
 class TinyNet(L.Layer):
@@ -143,11 +144,27 @@ def main():
     p.add_argument("--lr", type=float, default=.001)
     p.add_argument("--mode", choices=["phases","throughput"], default="phases")
     p.add_argument("--interval", type=float, default=1.)
-    p.add_argument("--no-monitor", action="store_true")
+    p.add_argument("--no-monitor", action="store_true", help="Explicitly disable optional resource monitoring (default)")
+    p.add_argument("--monitor", action="store_true", help="Use TrainingMonitor and asynchronous phase events; legacy --mode ignored")
+    p.add_argument("--monitor-components", choices=["disabled", "timing", "resources", "all"], default="all")
+    p.add_argument("--monitor-interval", type=float, default=.2, help="NVML/CPU sample period in seconds")
+    p.add_argument("--monitor-mode", choices=["throughput", "latency"], default="throughput", help="latency synchronizes step end; diagnostic only")
+    p.add_argument("--monitor-allocator-peaks", action="store_true", help="Optional allocator hook/peak-counter diagnostic")
+    p.add_argument("--col2im", choices=["cupy", "native"], default="cupy")
+    p.add_argument("--dweight", choices=["cupy", "packed"], default="cupy")
+    p.add_argument("--metadata-cache", action="store_true")
+    p.add_argument("--compact-function", action="store_true")
+    p.add_argument("--final-config", action="store_true", help="Select accepted Native kernels, packed dWeight, F1+O1; no fused SGD")
     p.add_argument("--nvtx", action="store_true")
     p.add_argument("--output", required=True)
     args = p.parse_args()
-    native = args.matmul != "cupy" or args.conv != "cupy" or args.pool != "cupy"
+    if args.no_monitor:
+        args.monitor = False
+    if args.final_config:
+        args.matmul, args.conv, args.pool = "shared", "im2col", "native"
+        args.col2im, args.dweight = "native", "packed"
+        args.metadata_cache = args.compact_function = True
+    native = args.matmul != "cupy" or args.conv != "cupy" or args.pool != "cupy" or args.col2im != "cupy" or args.dweight != "cupy"
     if native and (args.device != "cuda" or args.framework != "hytorch"):
         p.error("Native backend requires --framework hytorch --device cuda")
     if min(args.batch, args.epochs, args.samples) <= 0 or min(args.steps, args.workers, args.warmup) < 0:
@@ -156,6 +173,8 @@ def main():
         p.error("NVTX ranges here require HyTorch CUDA")
     if args.data and args.model != "donkey":
         p.error("Real DonkeyCar data requires --model donkey")
+    if args.monitor and args.monitor_id is not None:
+        p.error("TrainingMonitor maps --gpu via runtime UUID/PCI; do not pass legacy --monitor-id")
     out = Path(args.output); out.mkdir(parents=True, exist_ok=False)
     shape = (3, 16, 16) if args.model == "tiny" else (3, 66, 200)
     val_ds = None
@@ -182,6 +201,10 @@ def main():
     monitor_id = None
     cp = None
     if args.device == "cuda":
+        # In mixed-runtime installations load PyTorch's CUDA runtime before
+        # CuPy initializes one; otherwise late torch imports can fail to link.
+        if args.framework == "torch":
+            import torch
         import cupy as cp
         cp.cuda.Device(args.gpu).use()
         monitor_id = args.monitor_id or cp.cuda.Device(args.gpu).pci_bus_id
@@ -195,6 +218,8 @@ def main():
         optimizer = SGD(args.lr).setup(model)
         convert = lambda x: cp.asarray(x) if cp is not None else x
         forward = lambda x,t: F.mean_square_error(model(x), t)
+        loss_fn = F.mean_square_error
+        retain_loss = lambda loss: loss.data
         backward = lambda loss: (model.cleargrads(), loss.backward())
         update = optimizer.update
         restore = lambda: [setattr(v, "data", convert(initial[k].copy())) for k,v in parameters(model).items()]
@@ -211,6 +236,8 @@ def main():
         optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
         convert = lambda x: torch.from_numpy(x).to(device)
         forward = lambda x,t: torch.nn.functional.mse_loss(model(x), t)
+        loss_fn = torch.nn.functional.mse_loss
+        retain_loss = lambda loss: loss.detach()
         backward = lambda loss: (optimizer.zero_grad(set_to_none=True), loss.backward())
         update = optimizer.step
         saved = {k:v.detach().clone() for k,v in model.state_dict().items()}
@@ -224,7 +251,7 @@ def main():
                     optimizer="SGD, no momentum or weight decay", dropout=0., dtype="float32",
                     python=sys.version, platform=platform.platform(), numpy=np.__version__,
                     data_fingerprint="filename/label/file-size manifest" if args.data else "full array bytes",
-                    backward_backend="original", status="RUNNING")
+                    backward_backend=f"dweight={args.dweight}, col2im={args.col2im}; other backward paths unchanged", status="RUNNING")
     if cp is not None:
         metadata.update(cupy=cp.__version__, gpu_name=str(cp.cuda.runtime.getDeviceProperties(args.gpu)["name"]),
                         runtime=cp.cuda.runtime.runtimeGetVersion(), physical_monitor_id=monitor_id)
@@ -232,17 +259,61 @@ def main():
         metadata["torch"] = torch.__version__
     dump_json(out/"config.json", metadata)
     profile = StepProfiler(out/"steps.jsonl", sync, args.mode, args.nvtx)
-    monitor = ResourceMonitor(out/"hardware.jsonl", monitor_id, args.interval)
+    monitor = TrainingMonitor(enabled=args.monitor and args.monitor_components != "disabled",
+                              gpu_index=args.gpu if cp is not None else None,
+                              cuda_backend=("cupy" if args.framework == "hytorch" else "torch") if cp is not None else None,
+                              output_dir=out/"monitor", sample_interval=args.monitor_interval,
+                              timing=args.monitor_components in ("timing", "all"),
+                              resources=args.monitor_components in ("resources", "all"),
+                              mode=args.monitor_mode, allocator_peaks=args.monitor_allocator_peaks)
     epochs = []
-    context = backend(args.matmul, args.conv, args.pool, args.tile)
-    with context:
+    context = backend(args.matmul, args.conv, args.pool, args.tile, col2im=args.col2im,
+                      dweight=args.dweight, metadata_cache=args.metadata_cache)
+    with context, hytorch.core.using_config("compact_function", args.compact_function):
         # Warmup uses same shapes; restore model, clear grads; SGD has no state.
         warm = [dataset[i] for i in range(min(args.batch, len(dataset)))]
         wx, wt = convert(np.stack([v[0] for v in warm])), convert(np.stack([v[1] for v in warm]))
         for _ in range(args.warmup):
             loss = forward(wx, wt); backward(loss); update()
         sync(); restore(); dispatch_stats(reset=True)
-        with monitor if not args.no_monitor else nullcontext():
+        if args.monitor:
+            @contextmanager
+            def monitor_nvtx(name):
+                cp.cuda.nvtx.RangePush(name)
+                try:
+                    yield
+                finally:
+                    cp.cuda.nvtx.RangePop()
+            with monitor:
+                sync()
+                train_started = time.perf_counter()
+                losses, epoch_rows = monitored_epochs(
+                    dataset, args.batch, args.epochs, monitor=monitor, transfer=convert,
+                    predict=model, loss_fn=loss_fn, backward=backward, update=update,
+                    retain_loss=retain_loss, num_workers=args.workers, steps_per_epoch=args.steps,
+                    phase_context=monitor_nvtx if args.nvtx else None)
+                sync()
+                completed_wall = time.perf_counter()-train_started
+            # Scalar extraction/export is outside the measured training window.
+            for epoch_row in epoch_rows:
+                selected = [(count, value) for epoch, count, value in losses if epoch == epoch_row["epoch"]]
+                values = [float(cuda.as_numpy(v)) if args.framework == "hytorch" else float(v.cpu()) for _, v in selected]
+                if not np.isfinite(values).all():
+                    raise RuntimeError("Non-finite training loss")
+                samples = sum(n for n, _ in selected)
+                epoch_row.update(train_loss=sum(n*v for (n,_),v in zip(selected, values))/samples, samples=samples,
+                                 time_scope="epoch host submission only; full completed duration in summary")
+                epochs.append(epoch_row)
+                print(json.dumps(epoch_row), flush=True)
+            if val_ds is not None:
+                # Preserve evaluation mathematics; validation is explicitly outside monitoring.
+                val_total = 0.
+                evaluation = hytorch.no_grad() if args.framework == "hytorch" else torch.no_grad()
+                with evaluation:
+                    for x,t in DataLoader(val_ds,args.batch,shuffle=False):
+                        val_total += scalar(forward(convert(x),convert(t)))*len(x)
+                epochs[-1]["val_loss"] = val_total/len(val_ds)
+        else:
             for epoch in range(1, args.epochs+1):
                 epoch_start = time.perf_counter()
                 epoch_dataset = LimitedDataset(dataset, args.steps*args.batch) if args.steps else dataset
@@ -289,10 +360,14 @@ def main():
                 print(json.dumps(record), flush=True)
     hardware = monitor.summary()
     hardware["time_scope"] = "training_and_validation_excluding_warmup"
-    timing = profile.summary()
+    timing = monitor.summary() if args.monitor else profile.summary()
     summary = dict(status="COMPLETED", gpu_status="EXECUTED" if cp is not None else "NOT_EXECUTED",
                    timing=timing, hardware=hardware, epochs=epochs, dispatch_counts=dispatch_stats(),
-                   bottleneck_hypotheses=diagnose(timing,hardware))
+                   bottleneck_hypotheses=[] if args.monitor else diagnose(timing,hardware))
+    if args.monitor:
+        summary["completed_train_wall_s"] = completed_wall
+        summary["completed_train_samples_per_s"] = sum(e["samples"] for e in epochs)/completed_wall
+        summary["monitor_output"] = str(monitor.run_dir) if monitor.run_dir else None
     if args.framework == "hytorch":
         final = snapshot(model)
     else:

@@ -1,0 +1,11 @@
+{
+  "python_tracemalloc_bytes_after_256": 52000,
+  "after_5000": 69513,
+  "cache_info": {
+    "hits": 0,
+    "misses": 5000,
+    "maxsize": 256,
+    "currsize": 256
+  },
+  "scope": "CPU traced Python allocations, includes ContextVar context; not GPU memory"
+}

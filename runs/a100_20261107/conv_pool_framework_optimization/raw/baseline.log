@@ -1,0 +1,11 @@
+警告: 未找到scipy，无法加载SVHN数据集
+{'mode': 'B0', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.803785040974617, 'samples_per_s': 955.4793394372873, 'loss': 0.00025566318072378635, 'repeat': 0, 'order': 0}
+{'mode': 'torch', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.3068148219026625, 'samples_per_s': 2503.138522569973, 'loss': 0.0002556628314778209, 'repeat': 0, 'order': 1}
+{'mode': 'torch', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.3017882057465613, 'samples_per_s': 2544.8310615722294, 'loss': 0.00025566297699697316, 'repeat': 1, 'order': 0}
+{'mode': 'B0', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.7861235192976892, 'samples_per_s': 976.9457103714687, 'loss': 0.00025566318072378635, 'repeat': 1, 'order': 1}
+{'mode': 'B0', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.7829986629076302, 'samples_per_s': 980.8445868196845, 'loss': 0.00025566318072378635, 'repeat': 2, 'order': 0}
+{'mode': 'torch', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.30322606582194567, 'samples_per_s': 2532.763790996021, 'loss': 0.0002556628023739904, 'repeat': 2, 'order': 1}
+{'mode': 'torch', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.3049801327288151, 'samples_per_s': 2518.1968186855534, 'loss': 0.00025566286058165133, 'repeat': 3, 'order': 0}
+{'mode': 'B0', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.7905011437833309, 'samples_per_s': 971.5355961717644, 'loss': 0.00025566318072378635, 'repeat': 3, 'order': 1}
+{'mode': 'B0', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.7909296578727663, 'samples_per_s': 971.0092324335942, 'loss': 0.00025566318072378635, 'repeat': 4, 'order': 0}
+{'mode': 'torch', 'model': 'donkey', 'batch': 4, 'steps': 192, 'wall_s': 0.30974837113171816, 'samples_per_s': 2479.431924674799, 'loss': 0.0002556628896854818, 'repeat': 4, 'order': 1}
